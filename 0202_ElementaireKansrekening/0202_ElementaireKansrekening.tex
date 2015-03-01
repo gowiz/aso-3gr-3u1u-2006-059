@@ -507,6 +507,8 @@ Uit een spel van 52 kaarten trekt men ná elkaar vijf kaarten (met terugleggen).
 groot is de kans op: minstens één aas?
 \end{oefening}
 
+\pagebreak
+
 \subsection{Somregel}
 
 \subsubsection{Doorsnede van twee gebeurtenissen $A\cap B$}
@@ -545,6 +547,8 @@ $$A\mbox{ en }B\mbox{ disjunct }\Leftrightarrow A\cap B = \emptyset$$
 \paragraph*{Voorbeeld}
 Beschouw experiment $E$, het kiezen van een leerling uit de klas. Dan is de gebeurtenis $A$ een jongen kiezen disjunct met de gebeurtenis $B$ een meisje kiezen.
 
+\pagebreak
+\begin{samepage}
 \subsubsection{De kans op de vereniging van twee gebeurtenissen}
 
 \paragraph*{Stelling }Voor de vereniging van twee willekeurige gebeurtenissen A en B, geldt:\\
@@ -571,6 +575,7 @@ Neem $\#U = n$. Op het Venndiagram stel je vast dat: $\#(A\cup B)=\#A + \#B - \#
               &=& \dfrac{\#A}{n} + \dfrac{\#B}{n} - \dfrac{\#(A\cap B)}{n}\\
               &=& P(A) + P(B) - P(A\cap B)
 \end{eqnarray*}
+\end{samepage}
 
 \begin{oefening}
 We gooien lukraak met een zuivere dobbelsteen. Bereken de kans op gebeurtenis C:
@@ -663,7 +668,54 @@ Uit een spel van 32 kaarten (2, 3, 4, 5 en 6 zijn weggenomen) trekt men op asele
 \end{enumerate}
 \end{oefening}
 
-%\newpage
+\begin{oefening}
+In een klas van 25 leerlingen zijn er 10 die graag dansen en 5 die graag
+zingen. Daarbij zijn er 2 leerlingen die zowel graag dansen als zingen. Als we lukraak een
+leerling aanduiden, wat is de kans dat die graag danst of graag zingt.
+\end{oefening}
+
+\begin{oefening}
+Men gooit lukraak drie dobbelstenen op. Wat is de kans dat de som van
+het aantal ogen ten minste gelijk is aan 5.
+\end{oefening}
+
+\begin{oefening}
+Uit een spel van 52 kaarten trek je lukraak vier kaarten. Wat is de kans
+dat er precies één boer bij is?
+\end{oefening}
+
+\begin{oefening}
+Bij een spelletje poker krijgt een speler 5 kaarten uit een spel van 52
+kaarten. Bereken voor deze speler de kans dat hij 5 kaarten krijgt van dezelfde kleur.
+\end{oefening}
+
+\begin{oefening}
+A en B zijn 2 gebeurtenissen bij een kansexperiment waarvoor geldt dat $P(A\bigcup B)=\frac{5}{9}$, $P(\bar{A})=\frac{5}{9}$ en $P(A\bigcap B)=\frac{1}{9}$. Bereken
+\begin{exlist}{3}
+  \item $P(A)$
+  \item $P(B)$
+  \item $P(A\setminus B)$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening}
+Uit een spel van 52 kaarten trekken we lukraak een kaart. Bereken de kans dat het geen getal is (dus boer, koningin of koning)  is.
+\end{oefening}
+
+\begin{oefening}
+Men gooit lukraak drie dobbelstenen op. Wat is de kans dat de som van het aantal ogen ten minste gelijk is aan 5.
+\end{oefening}
+
+\begin{oefening}*
+Een vaas bevat 3 rode en 2 witte knikkers, een tweede vaas 4 rode en 1 witte. Als men met een dobbelsteen een zes werpt neemt men een knikker uit vaas 2, in alle andere gevallen uit vaas 1. Hoe groot is de kans een witte knikker uit vaas 1 te trekken? 
+\end{oefening}
+
+\begin{oefening}*
+In een schroevenfabriek fabriceren de machines A, B en C resp. 25, 35 en 40 \% van de totale productie. Van hun producten zijn er resp. 5, 4 en 2 \% defect. Men kiest willekeurig een schroef en deze is slecht. Hoe groot is de kans dat deze gemaakt
+is door A, B of C?
+\end{oefening}
+
+\pagebreak
 \section{Voorwaardelijke kansen}
 
 \subsection{Inleiding}
@@ -792,7 +844,29 @@ Bereken $P(A)$, $P(B)$, $P(A|B)$ en $P(B|A)$.
 Je ontmoet een dochter van een gezin met twee kinderen. Hoe groot is de kans dat ook het andere kind een meisje is?
 \end{oefening}
 
-\newpage
+\begin{oefening} % Bron: wwwhome.cs.utwente.nl/~meijertmj/
+Uit statistische gegevens met betrekking tot fietsendiefstallen is het volgende af te leiden.
+\begin{itemize}
+  \item Van de gestolen fietsen is 40\% verzekerd
+  \item Bij diefstal van een fiets wordt in 72\% van de gevallen aangifte gedaan.
+  \item Bij diefstal van een verzekerde fiets wordt in 90\% van de gevallen aangifte gedaan.
+\end{itemize}
+\begin{enumerate}[(a)]
+  \item Op de vraag hoe groot de kans is dat een (willekeurige) gestolen fiets verzekerd is en er aangifte wordt gedaan van diefstal, antwoordt Gilles $0.90\times0.40 = 36\%$ en Emma $0.72\times0.40 = 28.8\%$. Wie heeft er gelijk? 
+  \item Bereken de kans dat een fiets, waarvan de eigenaar aangifte doet van diefstal, verzekerd is.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening} % Bron: wwwhome.cs.utwente.nl/~meijertmj/
+ELISA-tests worden gebruikt om donor-bloed te onderzoeken op aanwezigheid van het AIDS-virus. De test detecteert in feite antilichamen, stoffen die door het lichaam worden geproduceerd wanneer het virus aanwezig is. Als er antilichamen zijn, is ELISA positief met kans 0.997 en negatief met kans 0.003. Indien het onderzochte bloed niet met AIDS-antilichamen is besmet, is de kans dat ELISA een positief resultaat geeft gelijk aan 0.015, en de kans dat er een negatief resultaat komt is 0.985. (Omdat ELISA tot doel heeft het AIDS-virus buiten de bloedbanken te houden, is de betrekkelijk grote kans (0.015) op een foutief positief antwoord acceptabel, tegenover de geringe kans (0.003) op het niet herkennen van besmet bloed. Deze kansen zijn afhankelijk van de deskundigheid van het laboratorium dat de tests uitvoert.) Veronderstel dat 1\% van een grote populatie de AIDS-antilichamen in het bloed heeft.
+\begin{enumerate}[(a)]
+  \item Bereken de kans dat ELISA voor een aselect gekozen persoon uit deze populatie een positief resultaat laat zien.
+  \item Bereken de kans dat iemand de antilichamen heeft, gegeven dat ELISA positief was.
+\end{enumerate}
+{\em (Deze opgave illustreert een feit dat belangrijk wordt wanneer men overweegt voorstellen te doen voor grootschalig testen op AIDS of illegale drugs: als het verschijnsel waarop getest wordt in de populatie ongewoon is, zullen de meeste positieve uitkomsten foutief zijn, zelfs als de test een zeer grote kans heeft om per geval een corrcet resultaat te geven.)}
+\end{oefening}
+
+\pagebreak
 \section{Statistisch (on)afhankelijke gebeurtenissen}
 
 \subsection{Definitie onafhankelijke gebeurtenissen}
