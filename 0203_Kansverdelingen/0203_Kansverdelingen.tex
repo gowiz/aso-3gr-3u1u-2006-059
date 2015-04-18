@@ -1,0 +1,577 @@
+\documentclass[12pt,twoside]{article}
+
+\input{../gowiz.tex}
+
+%\renewcommand{\rmdefault}{phv} % Arial
+%\renewcommand{\sfdefault}{phv} % Arial
+
+\newcommand{\dice}[1]{
+\begin{tikzpicture}[x=1em,y=1em,radius=0.1]
+  \draw[rounded corners=1] (0,0) rectangle (1,1);
+  \ifodd#1
+    \fill (0.5,0.5) circle;
+  \fi
+  \ifnum#1>1
+    \fill (0.2,0.2) circle;
+    \fill (0.8,0.8) circle;
+   \ifnum#1>3
+     \fill (0.2,0.8) circle;
+     \fill (0.8,0.2) circle;
+    \ifnum#1>5
+      \fill (0.8,0.5) circle;
+      \fill (0.2,0.5) circle;
+    \fi
+  \fi
+\fi
+\end{tikzpicture}
+}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+  \begin{mdframed}
+  \centering
+  \fontsize{40}{60}\selectfont Kansverdelingen
+  \end{mdframed}
+  %\vfill
+  \includegraphics[width=0.8\textwidth]{normal}
+  %\vfill
+\end{center}
+%\vfill
+\vspace*{-2cm}
+\subsection*{Doelstellingen}
+{\singlespacing
+Je kan \hfill  {\scriptsize(LP 2006-059, LI 2.3, ET 33 34 35 36)}
+\begin{itemize}
+  \itemsep0em
+  \item aan de hand van een toepassing de kansfunctie en de verdelingsfunctie van een discrete kansvariabele opstellen en grafisch voorstellen
+  \item de verwachtingswaarde en de standaardafwijking van een discrete kansvariabele bepalen (met behulp van ICT) en de betekenis ervan interpreteren
+  \item bij opgaven bepalen of de kansverdeling binomiaal is of niet
+  \item bij een binomiale verdeling de kansfunctie, de verdelingsfunctie, de verwachtingswaarde en de standaardafwijking bepalen (met behulp van ICT)
+  \item in betekenisvolle situaties gebruik maken van een normale verdeling als continu model bij data met een
+klokvormige frequentieverdeling en het gemiddelde en de standaardafwijking van de gegeven data gebruiken als schatting voor het gemiddelde en de standaardafwijking van deze normale verdeling
+  \item het gemiddelde en de standaardafwijking van een normale verdeling grafisch interpreteren
+  \item grafisch het verband leggen tussen een normale verdeling en de standaardnormale verdeling
+  \item bij een normale verdeling de relatieve frequentie interpreteren van een verzameling gegevens met waarden
+tussen twee gegeven grenzen, met waarden groter dan een gegeven grens of met waarden kleiner dan een gegeven grens als de oppervlakte van een gepast gebied
+  \item de normale verdeling bij gepaste gevallen gebruiken als benadering voor de binomiale verdeling
+\end{itemize}}
+%\subsection*{Algemene vaardigheden en attitudes}
+%{\singlespacing
+%Je \hfill {\scriptsize(LP 2006/059, ET1, ET9, ET11)}
+%\begin{itemize}
+%  \itemsep0em
+%  \item begrijpt en gebruikt wiskundetaal.
+%  \item gebruikt kennis, inzicht en vaardigheden die je verwerft in de wiskunde bij het verkennen, vertolken en verklaren van problemen uit de realiteit.
+%  \item ontwikkelt zelfregulatie met betrekking tot het verwerven en verwerken van wiskundige informatie en het oplossen van problemen
+%\end{itemize}
+%}
+\vspace*{-2cm}
+
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\clearpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\clearpage
+\pagenumbering{arabic} 
+
+\fancyhead[RO,LE]{Kansverdelingen}
+\fancyhead[RE,LO]{}
+
+\section{Discrete kansvariabelen}
+
+\vspace*{-0.5cm}
+We kunnen aan elk element van de uitkomstenverzameling $U$ een (reëel) getal toekennen. Op deze manier krijgen we dus een functie $X$ van $U$ naar $R$, we noemen zo'n functie een {\bf kansvariabele} $X$.
+
+\vspace*{-0.5cm}
+\subsection{Voorbeelden}
+
+\vspace*{-0.5cm}
+\paragraph*{Voorbeeld 1} Een zuiver muntstuk opgooien
+
+{\em Een speler gooit een zuiver muntstuk op. Er wordt afgesproken dat hij 2 EUR krijgt als hij kop werpt en 1 EUR als hij munt werpt.}
+
+Uitkomstenverzameling: $U=\{k, m\}$\\
+Met elke uitkomst associëren we nu een reëel getal:
+\begin{itemize}
+  \item $k \to 2$
+  \item $m \to 1$
+\end{itemize}
+We krijgen aldus de kansvariable $X:U\to\mathbb{R}$ waarvoor geldt $X(k)=2$ en $X(m)=1$.
+
+\paragraph*{Voorbeeld 2} Controle van geleverde onderdelen
+
+{\em Van de onderdelen geleverd door een onbetrouwbare leverancier is 25\% defect. Bij een controle onderzoeken we twee onderdelen en tellen we het aantal defecte stukken. ($d$=defect; $g$=goed)}
+
+Uitkomstenverzameling: $U=\{(d,d), (d,g), (g,d), (g,g)\}$\\
+We associëren opnieuw met elk element van U een reëel getal, nl. het aantal defecte onderdelen:
+\begin{itemize}
+  \item $(d,d) \to 2$
+  \item $(d,g) \to 1$
+  \item $(g,d) \to 1$
+  \item $(g,g) \to 0$
+\end{itemize}
+We krijgen opnieuw een functie $Y$ van $U$ naar $\mathbb{R}$, de kansvariable $Y:U\to\mathbb{R}$.
+
+\subsection{Definitie}
+
+\begin{mdframed}
+\paragraph*{Definitie}
+Bij het uitvoeren van een experiment met uitkomstenverzameling $U$ noemen we een {\bf kansvariabele} $X$ een functie die elk element van $U$ afbeeldt op een reëel getal.
+$$X:U\to\mathbb{R}:u\mapsto X(u)=x$$
+\end{mdframed}
+
+\begin{oefening}
+We gooien twee dobbelstenen tegelijk. We zijn geïnteresseerd in de som van de ogen.
+\begin{enumerate}[(a)]
+  \item Definieer de bijhorende kansvariabele.
+  \item Stel de kansvariabele grafisch voor, teken hiervoor een venndiagram voor de uitkomstenverzameling en een getallenas voor de reële getallen.
+  \item Welke waarden kan de kansvariabele aannemen?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een fietsenmaker heeft een doos met 10 fietsbellen. Er zijn 6 goede en 4 slechte, maar dat weet de fietsenmaker niet. Hij test de bellen één voor één tot hij een goede heeft. Een fietsbel die getest is, wordt niet terug in de doos gestoken. Het aantal fietsbellen dat hij hierbij test is een kansvariabele.
+Welke waarden kan die variabele aannemen?
+\end{oefening}
+
+\begin{oefening}
+We kiezen telkens een leerling uit onze school en nemen de lengte van de leerling als kansvariabele. Welke waarden kan die variabele aannemen?
+\end{oefening}
+
+\subsection{Discrete en continue kansvariabelen}
+
+Een kansvariabele $X$ is {\bf discreet} als de verzameling van haar getalwaarden (bereik van $X$) ofwel
+\begin{itemize}
+  \item Eindig is (voorbeelden 1 en 2)
+  \item Oneindig aftelbaar is (voorbeeld bereik van $X=\mathbb{N}$)
+\end{itemize}
+
+Een kansvariabele $X$ is {\bf continu} als de verzameling van haar getalwaarden overaftelbaar is (voorbeeld: bereik van $X = \mathbb{R}$ of bereik van $X = [0,15]$)
+
+\begin{oefening}
+Zijn de volgende kansvariabelen discreet of continue?
+\begin{enumerate}[(a)]
+  \item De som van de ogen van twee tegelijk gegooide dobelstenen.
+  \item Aantal fietsbellen dat getest wordt door telkens de fietsbel terug te leggen.
+  \item Lengte van willekeurig gekozen leerlingen.
+\end{enumerate}
+\end{oefening}
+
+\pagebreak
+\section{Kansfunctie van een discrete kansvariabele}
+
+We willen nu van elk van de beelden van de kansvariabele $X$ weten hoe groot de kans is dat we deze bereiken. De beelden van de kansvariabele liggen in $\mathbb{R}$ en de kansen liggen altijd in $[0,1]$. We zullen dus een nieuwe functie $f:\mathbb{R}\to[0,1]$ krijgen die we de {\bf kansfunctie} van de kansvariabele $X$ zullen noemen.
+
+\subsection{Voorbeelden}
+
+\paragraph*{Voorbeeld 1} Een zuiver muntstuk opgooien
+
+{\em Een speler gooit een zuiver muntstuk op. Er wordt afgesproken dat hij 2 EUR krijgt als hij kop werpt en 1 EUR als hij munt werpt. Wat is de kans dat hij 2 euro krijgt? Wat is de kans dat hij 1 euro krijgt?}
+
+\begin{itemize}
+  \item $P(X=2)=P(\{k\})=\dfrac{1}{2}$\\
+  We lezen dit als volgt:
+  \begin{itemize}
+    \item $P(X=2)$ is "Wat is de kans dat de kansvariabele als beeld $2$ heeft"
+    \item $=P(\{k\})$ is "Wat is de kans dat we kop gooien"
+    \item $=\dfrac{1}{2}$ deze is één gedeeld door twee.
+  \end{itemize}
+  \item $P(X=1)=P(\{m\})=\dfrac{1}{2}$
+\end{itemize}
+
+We associëren nu met de beelden van $X$ een functie $f$ van $\mathbb{R}$ naar $[0,1]$:
+  $$f(1) = \dfrac{1}{2} \qquad\qquad f(2) = \dfrac{1}{2}$$
+
+Deze functie $f$ noemen we de kansfunctie van de kansvariabele $X$ en kan geplot worden:
+\begin{center}
+\begin{tikzpicture}[scale=3, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-0.21,0) -- (2.25,0);
+\foreach \x in {1,2}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.26) -- (0,1.11);
+\foreach \y in {,0.5,1}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.21,-0.26) rectangle (2.25,1.11);
+\draw [line width=1.6pt] (0,0.5)-- (2,0.5);
+\draw (1.7,0.7) node[anchor=north west] {$f$};
+\end{tikzpicture}
+\end{center}
+
+
+\begin{oefening} Controle van geleverde onderdelen
+
+{\em Van de onderdelen geleverd door een onbetrouwbare leverancier is 25\% defect. Bij een controle onderzoeken we twee onderdelen en tellen we het aantal defecte stukken. Wat is de kans dat Y respectievelijk de getalwaarden 0 , 1 , 2 aanneemt? Ga ervan uit dat een lukraak getrokken onderdeel een kans 0.25 heeft om defect te zijn en een kans 0.75 heeft om in orde te zijn.}\\
+
+\begin{itemize}
+  \itemsep1em
+  \item $P(Y=0)=$\arulefill
+  \item $P(Y=1)=$\arulefill
+  \item $P(Y=2)=$\arulefill
+\end{itemize}
+
+$$f(0)=\arule{1cm} \qquad\qquad f(1)=\arule{1cm} \qquad\qquad f(2)=\arule{1cm}$$
+
+We krijgen dus een kansfunctie $f$ van de kansvariabele $Y$ van $\mathbb{R}$ naar $[0,1]$ en deze kan geplot worden:
+
+\begin{center}
+  \assenstelsel{-1}{7}{-1}{10}
+\end{center}
+
+\end{oefening}
+
+\pagebreak
+\subsection{Definitie}
+
+\paragraph*{Definitie}
+\begin{mdframed}
+Bij het uitvoeren van een experiment met uitomstenverzameling $U$ en kansvariabele $X$, noemen we de {\bf kansfunctie} van $X$ de functie van $\mathbb{R}$ naar $[0,1]$ die aangeeft met welke kans elke getalwaarde van $X$ wordt aangenomen.
+\end{mdframed}
+
+\paragraph*{Notatie}
+$$f(x_i)=P(x=x_i)$$
+waarbij $f(x_i)$ de kans is dat de getalwaarde $x_i$ door de kansvariabele $X$ wordt aangenomen.
+
+\begin{oefening}
+We gooien twee dobbelstenen tegelijk op. Bepaal de kansfunctie die hoort bij de kansvariabele die weergeeft wat de som van de ogen is. Stel ook de kansfunctie grafisch voor.
+\end{oefening}
+
+\begin{oefening}
+Bepaal voor de kansvariabele dat het aantal fietsbellen dat getest wordt door ze telkens terug te leggen, waarbij we weten dat er 6 goede en 4 slechte fietsbellen zijn, de kansfunctie en geef deze grafisch weer.
+\end{oefening}
+
+\pagebreak
+
+\section{Verdelingsfunctie van een kansvariabele}
+
+\subsection{Definitie}
+
+\paragraph*{Definitie}
+\begin{mdframed}
+Bij het uitvoeren van een experiment met uitkomstenverzameling $U$ en kansvariabele $X$, noemen we de verdelingsfunctie van $X$ de functie $F$ van $\mathbb{R}$ naar $[0,1]$ die voor elk reëel getal $x$ aangeeft met welke kans de getalwaarde van $X$ kleiner is of gelijk is aan $x$.
+\end{mdframed}
+
+\paragraph*{Notatie}
+Als $X$ een kansvariabele is, dan is de functie
+$$F(k)=P(X\leq k)$$
+de verdelingsfunctie van $x$.
+
+\paragraph*{Verband met de kansfunctie}
+Zijn $x_1$, $x_2$, \ldots, $x_n$ alle getalwaarden van $X$ die ten hoogste gelijk zijn aan $k$, dan hebben we dus
+$$F(k) = f(x_1) + f(x_2) + \ldots + f(x_n)$$
+
+\subsection{Opmerking}
+
+De verdelingsfunctie kan vergeleken worden met de cumulatieve relatieve frequentie uit de cursus statistiek uit het vierde jaar.
+
+\subsection{Grafiek van een verdelingsfunctie}
+
+De grafiek van een verdelingsfunctie is een {\bf trapfunctie}.
+
+\paragraph*{Voorbeeld} Beschouw bijvoorbeeld het opgooien van een eerlijke dobbelsteen. De kansvariabele is het aantal ogen.
+\begin{itemize}
+  \item Kansvariabele: $X(\dice{1})=1$, $X(\dice{2})=2$, \ldots, $X(\dice{6})=6$
+  \item Kansfunctie: $f(1)=f(2)=\ldots=f(6)=1/6$
+  \item Verdelingsfunctie: $F(1)=1/6$, $F(2)=2/6$, \ldots, $F(6)=6/6$
+\end{itemize}
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+  Kansfunctie
+\begin{tikzpicture}[yscale=6, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-0.82,0) -- (6.58,0);
+\foreach \x in {,1,2,3,4,5,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.13) -- (0,1.07);
+\foreach \y in {,0.2,0.4,0.6,0.8,1}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (5,0.3) node[right] {$f$};
+\clip(-0.82,-0.13) rectangle (6.58,1.07);
+\draw[line width=1.6pt, smooth,samples=100,domain=0:6] plot(\x,{1/6});
+\end{tikzpicture}
+\end{center}  
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+  Verdelingsfunctie
+\begin{tikzpicture}[yscale=6, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-0.82,0) -- (6.58,0);
+\foreach \x in {,1,2,3,4,5,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.13) -- (0,1.07);
+\foreach \y in {,0.2,0.4,0.6,0.8,1}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (5,0.9) node[right] {$F$};
+\clip(-0.82,-0.13) rectangle (6.58,1.07);
+\draw[line width=1.6pt, smooth,samples=100,domain=0:1] plot(\x,{0/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=1:2] plot(\x,{1/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=2:3] plot(\x,{2/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=3:4] plot(\x,{3/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=4:5] plot(\x,{4/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=5:6] plot(\x,{5/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=6:6.1] plot(\x,{6/6});
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\begin{oefening}
+Een zuiver muntstuk opgooien
+
+{\em Een speler gooit een zuiver muntstuk op. Er wordt afgesproken dat hij 2 EUR krijgt als hij kop werpt en 1 EUR als hij munt werpt.}
+
+\begin{enumerate}[(a)]
+  \item Bereid de tabel van de kansfunctie uit met een kolom voor de verdelingsfunctie:
+  \begin{center}
+    \begin{tabular}{c|c|c}
+      $x_i$ & $f(x_i)$ & $F(x_i)$\\
+      \hline
+      $1$ & $\dfrac{1}{2}$ &\\
+      $2$ & $\dfrac{1}{2}$ &\\
+    \end{tabular}
+  \end{center}
+  \item Maak de grafiek van de verdelingsfunctie:
+  \begin{center}
+    \assenstelsel{-1}{3}{-1}{3}
+  \end{center}
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening} Controle van geleverde onderdelen
+
+{\em Van de onderdelen geleverd door een onbetrouwbare leverancier is 25\% defect. Bij een controle onderzoeken we twee onderdelen en tellen we het aantal defecte stukken. Wat is de kans dat Y respectievelijk de getalwaarden 0 , 1 , 2 aanneemt? Ga ervan uit dat een lukraak getrokken onderdeel een kans 0.25 heeft om defect te zijn en een kans 0.75 heeft om in orde te zijn.}
+
+\begin{enumerate}[(a)]
+  \item Bereid de tabel van de kansfunctie uit met een kolom voor de verdelingsfunctie:
+  \begin{center}
+    \begin{tabular}{c|c|c}
+      $x_i$ & $f(x_i)$ & $F(x_i)$\\
+      \hline
+      $0$ & $\dfrac{9}{16}$ &\\
+      $1$ & $\dfrac{6}{16}$ &\\
+      $2$ & $\dfrac{1}{16}$ &\\
+    \end{tabular}
+  \end{center}
+  \item Maak de grafiek van de verdelingsfunctie:
+  \begin{center}
+    \assenstelsel{-1}{8}{-1}{8}
+  \end{center}
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+In een bak zitten vijf knikkers: één rode (r), twee blauwe (b1, b2) en twee gele (g1, g2). Bij een kansspel trekt een speler lukraak twee knikkers tegelijkertijd uit de bak. Voor een rode knikker krijgt de speler 10 euro, voor een blauwe 5 euro en voor een gele 1 euro.
+We onderzoeken de kansvariabele $X$ die als getalwaarde de opbrengst heeft voor de speler bij dit spel.
+\begin{enumerate}[(a)]
+  \item Bepaal de uitkomstenverzameling $U$.
+  \item Geef de kansvariabele $X$.
+  \item Geef de kansfunctie $f$ en stel deze grafisch voor.
+  \item Geef de verdelingsfunctie $F$ en stel deze grafisch voor.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Geef de verdelingsfunctie en stel deze grafisch voor van de volgende kansvariabelen:
+\begin{enumerate}[(a)]
+  \item Een fietsenmaker heeft een doos met 10 fietsbellen. Er zijn 6 goede en 4 slechte, maar dat weet de fietsenmaker niet. Hij test de bellen één voor één tot hij een goede heeft. Een fietsbel die getest is, wordt niet terug in de doos gestoken. Het aantal fietsbellen dat hij hierbij test is een kansvariabele.
+  \item Je gooit met 2 dobbelstenen. Als kansvariabele neem je de som van het ogenaantal.
+\end{enumerate}
+\end{oefening}
+
+\pagebreak
+
+\section{Verwachtingswaarde van een discrete kansvariabele}
+
+\subsection{Voorbeeld}
+
+\begin{oefening}
+In een farmaceutisch bedrijf worden tabletten van een geneesmiddel vervaardigd. De kans dat een lukraak uit de productie genomen tablet voldoet aan alle wettelijke normen inzake dosering, is gelijk aan 0.96. Zo’n tablet kan dan met een winst van 0.30 euro verkocht worden. De kans dat een tablet niet voldoet aan de normen is 0.04. In dit geval moet ze worden vernietigd, wat neerkomt op een verlies van 2.20 euro.
+
+Onderzoek de winst die de firma mag verwachten als ze een grote hoeveelheid tabletten vervaardigt.
+
+\begin{enumerate}[(a)]
+  \item Uitkomstenverzameling: \arulefill
+  \item Kansvariabele $X$: {\em Beschouw als getalwaarde de winst per tablet!}
+  \item Kansfunctie $f$ van $X$: \arulefill
+  \item Onderzoek van de winst:\\
+  Veronderstel dat er 10000 tabletten worden geproduceerd:\\
+  \begin{itemize}
+    \itemsep1em
+    \item Aantal goede tabletten: \arule{2cm} \hfill Winst: \arule{2cm}
+    \item Aantal slechte tabletten: \arule{2cm} \hfill Winst: \arule{2cm}
+    \item Totaal te verwachten winst: \arule{2cm}
+    \item Winst per tablet: \arule{2cm}
+  \end{itemize}
+\end{enumerate}
+\end{oefening}
+
+De te verwachten winst per tablet noemen we de {\bf verwachtingswaarde} van de kansvariabele $X$. We noteren dit met $\bf E(X)$.We vinden het door elke mogelijke getalwaarde van $X$ te vermenigvuldigen met de kans dat deze getalwaarde voorkomt en daarna de verkregen producten op te tellen.
+
+\subsection{Definitie}
+\paragraph*{Definitie}
+\begin{mdframed}
+Is aan een experiment met uitkomstenverzameling $U$ een kansvariabele $X$ verbonden, dan noemen we de {\bf verwachtingswaarde} $E(X)$ van deze kansvariabele:
+
+De som van de producten die we verkrijgen door elke getalwaarde van X te vermenigvuldigen met de kans dat die getalwaarde optreedt.
+
+$$E(X)=\sum_i x_i\cdot f(x_i)$$
+\end{mdframed}
+
+\subsection{Oefeningen}
+
+\begin{oefening}
+Bereken de verwachtingswaarde van het aantal beurten dat de fietsenmaker nodig heeft om een werkende fietsbel uit de doos te halen, aangenomen dat er 6 goede en 4 slechte fietsbellen in de doos zitten.
+\end{oefening}
+
+\begin{oefening}
+Bereken de verwachtingswaarde van de som van het aantal ogen bij het tegelijk werpen met twee dobbelstenen.
+\end{oefening}
+
+\pagebreak
+
+\section{Variatie en standaardafwijking}
+
+\subsection{Voorbeeld}
+
+\begin{oefening}
+Be beschouwen opnieuw het farmaceutisch bedrijf waar tabletten van een geneesmiddel worden vervaardigd.
+
+\begin{enumerate}[(a)]
+  \item De kans dat een lukraak uit de productie genomen tablet voldoet aan alle wettelijke normen inzake dosering, is gelijk aan 0.96. Zo’n tablet kan dan met een winst van 0.30 euro verkocht worden. De kans dat een tablet niet voldoet aan de normen is 0.04. In dit geval moet ze worden vernietigd, wat neerkomt op een verlies van 2.20 euro.\\
+  We krijgen een kansvariabele $X$ met:
+  \begin{center}
+    \begin{tabular}{c|c}
+    $x$ & $f(x)$\\
+    \hline
+    0.30 & 0.96\\
+    -2.20 & 0.04\\      
+    \end{tabular}
+  \end{center}
+  en met verwachtingswaarde
+  $$E(X) = 0.2$$
+  \item We wijzigen nu de gegevens door voor de winst de getallen 0.50 en –7 te gebruiken. We krijgen dan een kansvariabele $Y$ met kansfunctie $g$ en verwachtingswaarde $E(Y)$:
+  \begin{center}
+    \begin{tabular}{c|c}
+    $y$ & $f(y)$\\
+    \hline
+    \arule{2cm} & \arule{2cm}\\
+    \arule{2cm} & \arule{2cm}\\
+    \end{tabular}
+  \end{center}
+  
+  $$E(Y) = \arule{2cm}$$
+\end{enumerate}
+Om te weten over welke kansvariabele deze verwachtingswaarde het meest zegt, berekenen we de standaardafwijking (zie statistiek van het vierde jaar):
+\begin{itemize}
+  \itemsep1em
+  \item $\Var(X) =$\arulefill\vspace*{0.2cm}
+        $\Rightarrow\sigma = $\arulefill
+  \item $\Var(Y) =$\arulefill\vspace*{0.2cm}
+        $\Rightarrow\sigma = $\arulefill
+\end{itemize}
+\end{oefening}
+
+\pagebreak
+\subsection{Definitie}
+
+\paragraph*{Definitie}
+\begin{mdframed}
+Is aan een experiment met uitkomstenverzameling $U$ een kansvariabele $X$ verbonden met verwachtingswaarde $E(X)$, dan noemen we de {\bf variantie} $\Var(X)$ van deze kansvariabele:
+$$\Var(X)=\sum_i(x_i-E(X))^2\cdot f(x_i)$$
+De positieve vierkantswortel van de variantie van $X$ noemen we de {\bf standaardafwijking} $\sigma$:
+$$\sigma=\sqrt{\Var(X)}$$
+\end{mdframed}
+
+\subsection{Oefeningen}
+
+\begin{oefening}
+Speler A gooit met een zuivere dobbelsteen. Als hij één of twee ogen gooit, dan betaalt hij 1 euro aan speler B; als hij 3, 4 of 5 ogen gooit, dan krijgt hij 0.50 euro van speler B; als hij 6 ogen gooit, dan krijgt hij 2 euro van speler B.\\
+Onderzoek de kansvariabele X die als getalwaarden de opbrengst van het spel voor speler A heeft.
+\end{oefening}
+
+\begin{oefening}
+Geef voor de kansvariabele $X$ de kansfunctie $f$ en de verdelingsfunctie $F$. Bereken voor elke kansvariabele de verwachtingswaarde $E(X)$, de variatie $\Var(X)$ en de standaardafwijking $\sigma$.
+\begin{enumerate}[(a)]
+  \item Een zuivere dobbelsteen gooien, $X$ heeft als getalwaarde het aantal ogen.
+  \item Opgooien van twee zuivere muntstukken. $X$ heeft als getalwaarde het aantal maal kruis.
+  \item Gooien met 2 zuivere dobbelstenen. $X$ heeft als getalwaarde de som van het aantal ogen op elke steen.
+  \item Een bakje bevat 5 knikkers: 3 witte en 2 rode. We trekken aselect 2 knikkers tegelijkertijd (zonder terugleggen). $X$ heeft als getalwaarde het aantal getrokken witte knikkers.
+  \item Een spel bestaat uit 52 kaarten. We trekken aselect 4 kaarten tegelijkertijd. $X$ heeft als getalwaarde het aantal getrokken azen.
+  \item Een partij van 6 autobanden bevat drie banden met ernstige constructiefouten. Een garagehouder kiest lukraak twee van deze banden en monteert ze op twee wagens. $X$ heeft als getalwaarde het aantal gemonteerde banden met een constructiefout.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bij het opzoeken van onzuiverheden in een metaal gebruikt men een proef waarbij de kans om een bestaande fout te ontdekken gelijk is aan $0.7$. Wordt een fout gevonden, dan stopt het onderzoek. Wordt geen fout gevonden, dan herhaalt men veiligheidshalve de proef een tweede keer, waarna het onderzoek stopt. Neem nu een stuk metaal dat onzuiverheden bevat en stel dat $X$ de kansvariabele is die als getalwaarde het aantal proeven heeft die bij het onderzoek worden uitgevoerd. Bereken $E(X)$ en $\Var(X)$.
+\end{oefening}
+
+\begin{oefening}
+Bij een bloedonderzoek naar syfilis bij de strijdkrachten van de Verenigde Staten is de kans op een positieve reactie van een individu 0.05. Om een groep van 5 personen te onderzoeken, voegt men hun 5 bloedmonsters samen en onderwerpt dit geheel aan de test. Is de reactie negatief, dan eindigt het onderzoek. Is de reactie positief, dan worden opnieuw 5 bloedmonsters aan de test onderworpen, maar nu elk afzonderlijk. Als de kansvariabele $X$ als getalwaarde het totaal aantal proeven heeft dat we voor 5 personen moeten uitvoeren, bereken dan $E(X)$ en $\Var(X)$.
+\end{oefening}
+
+\begin{oefening}
+Een kansspel wordt “eerlijk” genoemd als de verwachtingswaarde van de winst van elke speler gelijk is aan nul. Een eventuele inzet van een speler wordt hierbij als een negatieve winst opgevat.
+
+Onderzoek of het volgende spel eerlijk is: bij het gooien met een vervalste dobbelsteen is de kans op 6 ogen gelijk aan 1/4, de kans op 1 oog gelijk aan 1/12 en zijn de kansen op elk van de andere uitkomsten gelijk aan 1/6. Een speler geeft een inzet van 1 euro, gooit precies éénmaal en krijgt voor elk oog 0.25 euro terug.
+
+Bereken ook de standaardafwijking van zijn winst.
+\end{oefening}
+
+\begin{oefening}
+Uit een spel van 52 kaarten wordt lukraak een kaart getrokken. Eén speler houdt de bank bij en ontvangt de inzet van de drie andere spelers. Deze drie anderen raden of de getrokken kaart een harten, een ruiten of een klaveren is. Is de getrokken kaart een schoppen, dan behoudt de bank alle inzetten. Zoniet , dan krijgt een speler die goed geraden heeft driemaal zijn inzet terug en dan verliest een speler zijn inzet als hij verkeerd raadt. Bereken de verwachtingswaarde en de standaardafwijking van de winst van de bank in de volgende gevallen:
+
+\begin{enumerate}[(a)]
+  \item Op elk van de soorten harten, ruiten en klaveren is 2 euro ingezet.
+  \item Op harten is driemaal 2 euro ingezet.
+  \item Op harten is 10 euro ingezet, op ruiten 4 euro en op klaveren 2 euro.
+\end{enumerate}
+\end{oefening}
+
+
+
+\pagebreak
+\section{Binomiale kansverdeling}
+
+\section{Normale kansverdeling}
+
+\section{Standaardnormale kansverdeling}
+
+\section{Relatieve frequenties interpreteren}
+
+\section{Binomiale verdeling benaderen door een normale verdeling}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+\begin{minipage}[c]{0.4\textwidth}
+\end{minipage}
+\begin{minipage}[c]{0.6\textwidth}
+\dotlines{10}
+\end{minipage}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
