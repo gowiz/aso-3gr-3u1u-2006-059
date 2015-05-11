@@ -779,22 +779,27 @@ In de uitkomstenverzameling $U$ onderscheiden we twee gebeurtenissen $A$ en $B$,
 $$P(B|A)=\dfrac{P(A\cap B)}{P(A)}\qquad\mbox{ met }P(A)\neq 0\;.$$
 \end{mdframed}
 
+\paragraph*{Definitie}
+Voorgaande formule kan ook geschreven worden in de vorm
+$$P(A\cap B)=P(B|A)\cdot P(A)$$
+en we spreken dan van de {\bf productregel}.
+
 \paragraph*{Definitie} Een kans waarop geen voorwaarde wordt gesteld zullen we een {\bf gewone kans} noemen.
 
 \begin{oefening}
 Zeg telkens om welke kans het gaat en bereken de kans:
 \begin{enumerate}[(a)]
-  \item $P(M\cap K)$:\arulefill
+  \item $P(M\cap K)=$\arulefill
   \arules{1}
-  \item $P(M|K)$:\arulefill
+  \item $P(M|K)=$\arulefill
   \arules{1}
-  \item $P(K|M)$:\arulefill
+  \item $P(K|M)=$\arulefill
   \arules{1}
 \end{enumerate}
 \end{oefening}
 
 \begin{oefening}
-Uit de 20 nummers $\{1,2,3,\ldots,20\}$ rek je er één. Als je 3, 5, 6, 11 of 18 trekt heb je
+Uit de 20 nummers $\{1,2,3,\ldots,20\}$ trek je er één. Als je 3, 5, 6, 11 of 18 trekt heb je
 prijs. Bereken de kans op volgende gebeurtenissen:
 \begin{enumerate}[(a)]
   \item $A$: je hebt prijs.
@@ -828,7 +833,7 @@ Bewijs voorgaande stelling.
 \end{oefening}
 
 \begin{oefening}*
-Stel $U=\{1,2,3,4\}$. Beschouw de gebeurtenissen $A=\{1\}$, $B=\{2\}$ en $C=\{1,4\}$. Bepaal $P(A|C)$ en $P(B|C)$.
+Stel $U=\{1,2,3,4\}$. Beschouw de gebeurtenissen $A=\{1\}$, $B=\{2\}$ en $C=\{1,4\}$. Bepaal $P((A\cap B)|C)$.
 \end{oefening}
 
 \subsection{Oefeningen}
@@ -859,6 +864,10 @@ Uit statistische gegevens met betrekking tot fietsendiefstallen is het volgende 
 \end{enumerate}
 \end{oefening}
 
+\begin{oefening}
+We gooien met een eerlijke dobbelsteen. Bepaal de kans om minder dan vier ogen te gooien gegeven dat er een even aantal ogen gegooid werd.
+\end{oefening}
+
 \begin{oefening} % Bron: wwwhome.cs.utwente.nl/~meijertmj/
 ELISA-tests worden gebruikt om donor-bloed te onderzoeken op aanwezigheid van het AIDS-virus. De test detecteert in feite antilichamen, stoffen die door het lichaam worden geproduceerd wanneer het virus aanwezig is. Als er antilichamen zijn, is ELISA positief met kans 0.997 en negatief met kans 0.003. Indien het onderzochte bloed niet met AIDS-antilichamen is besmet, is de kans dat ELISA een positief resultaat geeft gelijk aan 0.015, en de kans dat er een negatief resultaat komt is 0.985. (Omdat ELISA tot doel heeft het AIDS-virus buiten de bloedbanken te houden, is de betrekkelijk grote kans (0.015) op een foutief positief antwoord acceptabel, tegenover de geringe kans (0.003) op het niet herkennen van besmet bloed. Deze kansen zijn afhankelijk van de deskundigheid van het laboratorium dat de tests uitvoert.) Veronderstel dat 1\% van een grote populatie de AIDS-antilichamen in het bloed heeft.
 \begin{enumerate}[(a)]
@@ -866,6 +875,36 @@ ELISA-tests worden gebruikt om donor-bloed te onderzoeken op aanwezigheid van he
   \item Bereken de kans dat iemand de antilichamen heeft, gegeven dat ELISA positief was.
 \end{enumerate}
 {\em (Deze opgave illustreert een feit dat belangrijk wordt wanneer men overweegt voorstellen te doen voor grootschalig testen op AIDS of illegale drugs: als het verschijnsel waarop getest wordt in de populatie ongewoon is, zullen de meeste positieve uitkomsten foutief zijn, zelfs als de test een zeer grote kans heeft om per geval een corrcet resultaat te geven.)}
+\end{oefening}
+
+\begin{oefening}
+In een zak zitten 6 blauwe en 3 gele ballen. Alle ballen hebben een gelijke kans om getrokken te worden en elke bal die getrokken wordt, moet je onmiddellijk terug in de zak leggen.
+\begin{enumerate}[(a)]
+  \item Je trekt een bal uit de zak. Formuleer een zo gedetailleerd mogelijke uitkomstenverzameling.
+  \item Je trekt 4 ballen uit de zak. Formuleer een zo gedetailleerd mogelijke uitkomstenverzameling.
+  \item Je trekt twee ballen uit de zak. Wat is de kans dat ze allebei blauw zijn?
+  \item Je trekt drie keer een bal. Wat is de kans dat de tweede bal geel is?
+  \item Je trekt drie keer een bal. Wat is de kans dat de je juist één blauwe bal trekt?
+  \item Wat is de kans dat je bij het trekken van 3 ballen minstens één blauwe bal uit de zak haalt?
+  \item Wat is de kans om bij drie trekkingen twee ballen van een verschillende kleur uit de zak te halen?
+  \item Je trekt 3 ballen. Gegeven dat er minstens één blauwe bij is, wat is de kans dat de andere 2 geel zijn?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een familie heeft drie kinderen die we rangschikken in volgorde van geboorte $(X_1, X_2, X_3)$. $X_i$ kan de waarde $M$ of $J$ aannemen, naargelang het $i$-de geboren kind een jongen of een meisje is. Veronderstel dat de kans op een jongen en een meisje dezelfde is en dat opeenvolgende geboortes elkaar niet beïnvloeden. Wat is de kans dat er twee meisjes zijn, gegeven:
+\begin{enumerate}[(a)]
+  \item dat er minstens één jongen is, of
+  \item de oudste van de drie zeker een jongen is.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Toon aan dat uit $P(A|B)=P(A)$ volgt dat $P(B|A)=P(B)$, voor twee gebeurtenissen $A$ en $B$ met niet nul kansen.
+\end{oefening}
+
+\begin{oefening}
+Een dronken bestuurder pleegt 10 maal zoveel vluchtmisdrijf als een nuchtere bestuurder. Iemand pleegt een vluchtmisdrijf. Wat is de kans dat hij dronken was, als je weet dat 1 op 50 autobestuurders dronken is.
 \end{oefening}
 
 \pagebreak
@@ -876,7 +915,7 @@ ELISA-tests worden gebruikt om donor-bloed te onderzoeken op aanwezigheid van he
 We veronderstellen dat $A$ en $B$ gebeurtenissen zijn horende bij een experiment $E$ met uitkomstenverzameling $U$ en dat $P(A)\cdot P(B) \neq 0$. Dan definiëren we
 $$A \mbox{ {\bf onafhankelijk} van } B \Leftrightarrow P(A)=P(A|B)$$
 
-\paragraph*{Eigenschap 1} $A$ onafhankelijk van $B \Leftrightarrow A$ onafhankelijk van $B$
+\paragraph*{Eigenschap 1} $A$ onafhankelijk van $B \Leftrightarrow B$ onafhankelijk van $A$
 
 \paragraph*{Eigenschap 2} $A$ onafhankelijk van $B \Leftrightarrow P(A\cap B)=P(A)\cdot P(B)$
 
@@ -901,7 +940,8 @@ $$A \mbox{ {\bf onafhankelijk} van } B \Leftrightarrow P(A\cap B)=P(A)\cdot P(B)
 $$A \mbox{ {\bf afhankelijk} van } B \Leftrightarrow P(A\cap B)\neq P(A)\cdot P(B)$$
 \end{mdframed}
 
-\begin{oefening} We kiezen willekeurig een getal uit $\{1,2,\ldots, 12\}$. Daarbij beschouwen de volgende gebeurtenissen: $A$, het getal is even en $B$, het getal is een drievoud. Onderzoek de (on)afhankelijkheid van $A$ en $B$.\\
+\begin{oefening} We kiezen willekeurig een getal van $1$ tot $12$. Daarbij beschouwen de volgende gebeurtenissen: $A$, het getal is even en $B$, het getal is een drievoud. Onderzoek de (on)afhankelijkheid van $A$ en $B$.\\
+$U=\{\arule{8cm}\}$ met $\#U=\arule{2cm}$\\
 $A=\{\arule{8cm}\}$ met $\#A=\arule{2cm}$\\
 $B=\{\arule{8cm}\}$ met $\#B=\arule{2cm}$\\
 
@@ -933,7 +973,7 @@ Deze stellen ons in staat om gemakkelijk de kans op een samengestelde beslissing
 Dit wordt meestal gebruikt als we besluiten moeten trekken over de kanswaarde van een trekking met en zonder terugleggen, zoals bijvoorbeeld in de volgende oefeningen:
 
 \begin{oefening}
-In een vaas zitten 3 gele, 5 rode en 10 groene bollen. Jan trekt eerst een bol, legt deze terug en daarna trekt Karel een bol. Bereken de kans op: Jan trekt een gele bol en Karel trekt een groene bol.
+In een vaas zitten 3 gele, 5 rode en 10 groene bollen. Jan trekt eerst een bol, legt deze terug en daarna trekt Karel een bol. Bereken de kans op: Jan trekt een rode bol en Karel trekt een groene bol.
 
 Definieer de gebeurtenissen:
 \begin{itemize}
@@ -953,7 +993,7 @@ $$\arule{10cm}$$
 \end{oefening}
 
 \begin{oefening}
-In een vaas zitten 3 gele, 5 rode en 10 groene bollen. Jan trekt eerst een bol, legt deze {\em niet} terug en daarna trekt Karel een bol. Bereken de kans op: Jan trekt een gele bol en Karel trekt een groene bol.
+In een vaas zitten 3 gele, 5 rode en 10 groene bollen. Jan trekt eerst een bol, legt deze {\em niet} terug en daarna trekt Karel een bol. Bereken de kans op: Jan trekt een rode bol en Karel trekt een groene bol.
 
 Definieer de gebeurtenissen:
 \begin{itemize}
@@ -975,7 +1015,12 @@ $$\arule{10cm}$$
 
 \paragraph*{Opmerking}
 
-Aangezien $P(A\cap B\cap C)=P(A)\cdot P(B|A) \cdot P(C|(A\cap B))$, ligt de uitbreiding van de formule naar 3 verzamelingen niet voor de hand! We zullen bijgevolg geen kansen berekenen waarbij de doorsnede van meer dan 2 afhankelijke gebeurtenissen wordt gevraagd. Het geval waarbij de verschillende gebeurtenissen onafhankelijk, bijvoorbeeld een trekking met teruglegging die steeds herhaald wordt, is kan wel gemakkelijk veralgemeend worden:
+Aangezien $P(A\cap B\cap C)=P(A)\cdot P(B|A) \cdot P(C|(A\cap B))$, ligt de uitbreiding van de formule naar 3 verzamelingen niet voor de hand! We zullen bijgevolg geen kansen berekenen waarbij de doorsnede van meer dan 2 afhankelijke gebeurtenissen wordt gevraagd. Het geval waarbij de verschillende gebeurtenissen onafhankelijk, bijvoorbeeld een trekking met teruglegging die steeds herhaald wordt, is kan wel gemakkelijk veralgemeend worden.
+
+\begin{oefening}
+Maak deze veralgemening:\\
+$A$, $B$ en $C$ zijn paarsgewijze onafhankelijk, dan geldt $$P(A\cap B\cap C)=\arule{6cm}$$
+\end{oefening}
 
 \subsection{Herhaalde experimenten}
 
@@ -1008,7 +1053,7 @@ Dan is:
                                              &=p\cdot p\cdot p\cdot \cdots \cdot p\\
                                              &= p^n
 \end{align*}
-In ons voorbeeld is $p=\dfrac{13}{52}={1}{4}$. De kans om dus vijf keer na elkaar schoppen te bekomen is dus:
+In ons voorbeeld is $p=\dfrac{13}{52}=\dfrac{1}{4}$. De kans om dus vijf keer na elkaar schoppen te bekomen is dus:
 $$P(A_1\cap A_2 \cap A_3\cap A_4 \cap A_5)=\left(\dfrac{1}{4}\right)^5=\dfrac{1}{1024}\;.$$
 
 %\newpage
