@@ -537,6 +537,128 @@ Uit een spel van 52 kaarten wordt lukraak een kaart getrokken. Eén speler houdt
 \pagebreak
 \section{Binomiale kansverdeling}
 
+\subsection{Kenmerken}
+
+\begin{itemize}
+  \item Veel experimenten hebben juist twee mogelijke uitkomsten. We spreken in dit geval van een {\bf binomiaal experiment}. De twee mogelijke uitkomsten noemen we {\bf succes} en {\bf mislukking}.
+  \paragraph*{Voorbeelden:}
+  \begin{center}
+    \begin{tabular}{c|c|c}
+    Experiment & Succes & Mislukking\\
+    \hline
+    Muntstuk opgooien & Kop & Munt\\
+    Stemmen op referendum & Voor & Tegen\\
+    Meerkeuzevraag beantwoorden & Juist & Fout\\
+    Medische test uitvoeren & Positief & Negatief\\
+    \end{tabular}
+  \end{center}
+  \item De kans op succes hoeft niet noodzakelijk gelijk te zijn aan de kans op mislukking.
+  \begin{oefening}
+  Geef bij het opgooien van een eerlijk muntstuk de kans op kop en de kans op munt.
+  \arules{1}
+  \end{oefening}
+  \begin{oefening}
+  Geef bij het willekeurig beantwoorden van een meerkeuzevraag met vier mogelijkheden, waarbij er precies één juist antwoord is, is de kans op fout en de kans op juist.
+  \arules{1}
+  \end{oefening}
+
+  \item Vaak worden de experimenten herhaald:
+  \begin{itemize}
+    \item 10 keer een muntstuk opgooien
+    \item 20 meerkeuzevragen beantwoorden
+  \end{itemize}
+  We spreken in dit geval van deelexperimenten. Als er bijvoorbeeld $n$ deelexperimenten zijn, dan kan een uitkomst voorgesteld worden met behulp van een $n$-tal (een $2$-tal noemen we kort een koppel).
+\end{itemize}
+
+De kansvariabele $X$ die voor elk mogelijk aantal successen de kans op dat aantal successen geeft noemen we {\bf binomiaal verdeeld}.
+
+\subsection{Definitie}
+
+\paragraph*{Binomiale verdeling}
+\begin{mdframed}
+Een kansexperiment dat bestaat uit $n$ onafhankelijke deelexperimenten, elk met juist twee uitkomsten, {\em succes} met kans $p$ en {\em mislukking} met kans $q=1-p$ heeft een $n$-tal als uitkomst. De kansvariabele $X$ die elke uitkomst afbeeldt op het aantal successen volgt een {\bf binomiale verdeling}.
+\end{mdframed}
+
+\paragraph*{Notatie} Zulk kansexperiment met $n$ deelexperimenten en kans $p$ op succes noteren we
+$$X \sim B(n, p)$$
+
+\subsection{Kansfunctie en verdelingsfunctie}
+
+
+Voor een kansvariabele $X \sim B(n, p)$ gaan we uit dat $x$ de waarden $0, 1, 2, \cdot, k, \cdot, n-1, n$ kan aannemen.
+
+\paragraph*{Kansfunctie}
+\begin{mdframed}
+De {\bf kansfunctie} $f$ van die kansvariabele $X \sim B(n, p)$ geeft de kans op $k$ successen en wordt gegeven door
+$$ f(k)=C_n^k\cdot p^k\cdot q^{n-k}$$
+met $q=1-p$.
+\end{mdframed}
+
+\paragraph*{Verdelingsfunctie}
+\begin{mdframed}
+De bijhorende {\bf verdelingsfunctie} $F$ geeft de kans op hoogstens $k$ successen en wordt gegeven door
+$$ F(k)=f(0) + f(1) + \cdots + f(k)$$
+\end{mdframed}
+
+\begin{oefening}
+We gooien 20 maal een eerlijk muntstuk op en we nemen de uitslag kop als succes.
+\begin{enumerate}[(a)]
+  \item Bereken de kans dat er 11 maal kop gegooid wordt.
+  \arules{3}
+  \item Bereken de kans dat er hoogstens 11 maal kop gegooid wordt.
+  \arules{3}
+\end{enumerate}
+\end{oefening}
+
+\section{Eigenschappen van de binomiale verdeling}
+
+\begin{mdframed}
+Als $X \sim B(n,p)$ met $q=1-p$, dan geldt:
+\begin{itemize}
+  \item Verwachtingswaarde: $E(X)=np$
+  \item Variantie: $\Var(X)=npq$
+  \item Standaardafwijking: $\sigma = \sqrt{npq}$
+\end{itemize}
+\end{mdframed}
+
+\begin{oefening}
+Firma A vervaardigt in opdracht van firma B onderdelen voor een precisietoestel. In firma A is de productie zo georganiseerd, dat slechts 2\% van de afgewerkte stukken niet aan alle gestelde eisen voldoet, m.a.w. defect is.
+Er is afgesproken dat de levering gebeurt in partijen van 50 stuks. We voeren nu de toevalsveranderlijke $X$ in die als getalwaarde het aantal defecte stukken heeft in een partij van 50.
+
+Dus: $X=\arule{2cm}$\\
+$\qquad\qquad\Rightarrow  n=\arule{1cm}, \qquad p=\arule{1cm}, \qquad q=\arule{1cm}$
+
+In het contract heeft firma B bedongen dat A een schadevergoeding betaalt voor elke partij van 50 stuks waarin het aantal defecte stukken meer dan twee standaardafwijkingen groter is dan de verwachtingswaarde. Stel dat vandaag een partij wordt geleverd. Wat is de kans dat firma A een schadevergoeding moet betalen?
+
+We berekenen de verwachtingswaarde $E(X)=\arule{3cm}$\\
+En ook de standaardafwijking $\sigma=\arule{3cm}$\\
+Bedrijf A moet dus een schadevergoeding betalen vanaf \arule{1cm} of meer defecte stukken. Bereken hier de kansverdeling voor:
+\arules{4}
+\end{oefening}
+
+\section{Oefeningen}
+
+\begin{oefening}
+We gooien zesmaal een zuiver muntstuk op. Bereken de kans op driemaal kop, op ten hoogst driemaal kop, op ten minste driemaal kop.
+\end{oefening}
+
+\begin{oefening}
+We gooien negenmaal met een zuivere dobbelsteen. Bereken de kans op precies tweemaal zes ogen, op ten hoogste driemaal zes ogen.
+\end{oefening}
+
+\begin{oefening}
+We trekken lukraak en met terugleggen 5 kaarten uit een spel van 52 kaarten. Bereken de kans op twee schoppen, op tenminste twee schoppen, op ten hoogste twee schoppen. Geef ook de verwachtingswaarde en de variantie van het aantal schoppen in deze 5 trekkingen.
+\end{oefening}
+
+\begin{oefening}
+Door een verkeerde regeling van de machines bij de fabricage zijn 10\% van de afgewerkte stukken defect. We kiezen lukraak tien stukken. Bereken de kans dat er ten hoogste drie defecte stukken bij zijn.
+\end{oefening}
+
+\begin{oefening}
+In 30\% van de gevallen leidt het in contact komen met zekere ziekteverwekkende bacillen tot infectie. Een groep van 12 lukraak gekozen personen komt nu in contact met de bacillen. Bereken de kans dat er ten minste drie ziektegevallen zijn.
+\end{oefening}
+
+\pagebreak
 \section{Normale kansverdeling}
 
 \section{Standaardnormale kansverdeling}
