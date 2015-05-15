@@ -658,9 +658,228 @@ Door een verkeerde regeling van de machines bij de fabricage zijn 10\% van de af
 In 30\% van de gevallen leidt het in contact komen met zekere ziekteverwekkende bacillen tot infectie. Een groep van 12 lukraak gekozen personen komt nu in contact met de bacillen. Bereken de kans dat er ten minste drie ziektegevallen zijn.
 \end{oefening}
 
+\begin{oefening} % bron: Wiskundige Basisvaardigheden
+Ann en Pieter spelen een spel waarbij twee eerlijke dobbelstenen gegooid worden. Ann krijgt 20 euro van Pieter als de som van de ogen kleiner is dan 7. Is de som 7 of meer, dan betaalt Ann 15 euro aan Pieter. Voer een gepaste kansvariabele in en bepaal in wiens voordeel dit spel is. Bereken ook $\Var(X)$ en $\sigma_X$.
+\end{oefening}
+
 \pagebreak
 \section{Normale kansverdeling}
 
+\subsection{Inleiding}
+
+Naast de binomiale verdeling, kunnen we ook de normale verdeling beschouwen. De normale verdeling is zonder twijfel de meest gebruikte verdeling in de statistiek. Van heel wat gegevens is immers geweten dat ze normaal verdeeld zijn:
+
+\begin{minipage}{0.6\textwidth}
+\begin{itemize}
+  \item punten op een examen
+  \item lengte en gewicht van mensen en dieren
+  \item het IQ
+  \item de effectieve inhoud van machinaal gevulde verpakkingen
+  \item sportprestaties
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.4\textwidth}
+  \begin{center}
+    \includegraphics[width=\textwidth]{student_score}
+  \end{center}
+\end{minipage}
+
+\begin{minipage}{0.35\textwidth}
+Men mag hier echter niet uit besluiten dat alles normaal verdeeld zou zijn. Typische voorbeelden van niet-normaal verdeelde gegevens zijn:
+
+\begin{itemize}
+  \item winst of verlies bij beursgang
+  \item leeftijd bij het overlijden van mens of dier
+  \item inkomen
+\end{itemize}
+\end{minipage}
+\begin{minipage}{0.65\textwidth}
+  \begin{center}
+    \includegraphics[width=\textwidth]{non-normal}
+  \end{center}
+\end{minipage}
+
+\subsection{Definitie}
+
+\paragraph*{Definitie van de normale verdeling}
+\begin{mdframed}
+Een kansvariabele $X$ is {\bf normaal verdeeld} als haar kansfunctie $f$ gegeven wordt door
+$$f(x)=\dfrac{1}{\sigma{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}$$
+\end{mdframed}
+
+\paragraph*{Notatie}
+Een kansvariabele $X$ die normaal verdeeld is wordt kort genoteerd met
+$$X\sim N(\mu, \sigma)$$
+
+Het is duidelijk dat de kansfunctie afhangt van twee parameters, het gemiddelde $\mu$ en de standaardafwijking $\sigma$ die de ligging van de verdeling bepalen.
+
+\paragraph*{Eigenschappen van de normale verdeling}
+\begin{mdframed}
+Als $X\sim N(\mu, \sigma)$, dan geldt
+\begin{itemize}
+  \item verwachtingswaarde: $E(X)=\mu$
+  \item variantie: $\Var(X)=\sigma^2$
+  \item standaardafwijking: $\sigma$
+\end{itemize}
+\end{mdframed}
+
+\subsection{Grafische betekenis van $\mu$ en $\sigma$}
+
+\subsection*{Grafische betekenis van $\mu$}
+
+We laten in het functievoorschrift van de normale verdeling
+$$f(x)=\dfrac{1}{\sigma{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}$$
+het gemiddelde $\mu$ variëren, terwijl de standaardafwijking $\sigma$ constant houden ($\sigma=1$). Hieronder zie je de grafieken voor verschillende waarden van $\mu$:
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[yscale=8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=0.1cm] (-6,-0.1) grid (6,0.6);
+\draw[->,color=black] (-6,0) -- (6,0);
+\foreach \x in {-6,-5,-4,-3,-2,-1,1,2,3,4,5}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.1) -- (0,0.6);
+\clip(-6,-0.1) rectangle (6,0.6);
+\foreach \y in {,0.2,0.3,0.4,0.5}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x)+3)^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x)-2)^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw (-5.5,0.38) node[anchor=north west] {$\mu=-3$};
+\draw (0.3,0.5) node[anchor=north west] {$\mu=0$};
+\draw (2.82,0.35) node[anchor=north west] {$\mu=2$};
+\end{tikzpicture}
+\end{center}
+
+We merken dat de grafieken van al deze normale verdelingen met constante $\sigma=1$ op een verschuiving evenwijdig met de $x$-as met $\mu$ eenheden na gelijk zijn.
+
+\begin{oefening}
+Voor welke $x$-waarde vinden we steeds de top van de klokvormige kromme?
+\arules{1}
+\end{oefening}
+
+\subsection*{Grafische betekenis van $\sigma$}
+
+We laten nu in het functievoorschrift 
+$$f(x)=\dfrac{1}{\sigma{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}$$
+de standaardafwijking $\sigma$ variëren, terwijl we het gemiddelde $\mu$ constant houden op $\mu=0$.
+
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[yscale=8, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=2.0cm,ystep=0.2cm] (-5.5,-0.1) grid (5.5,0.85);
+\draw[->,color=black] (-6,0) -- (7,0);
+\foreach \x in {-6,-4,-2,2,4,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.1) -- (0,0.9);
+\foreach \y in {,0.2,0.4,0.6,0.8}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\clip(-6,-0.1) rectangle (6,0.85);
+\draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x))/0.5)^2)/2)/(sqrt(2*3.1415926535)*abs(0.5))});
+\draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x))/2)^2)/2)/(sqrt(2*3.1415926535)*abs(2))});
+\draw[line width=1.6pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x))/4)^2)/2)/(sqrt(2*3.1415926535)*abs(4))});
+\draw (0.6,0.76) node[anchor=north west] {$\sigma=0.5$};
+\draw (1.0,0.35) node[anchor=north west] {$\sigma=1$};
+\draw (1.7,0.22) node[anchor=north west] {$\sigma=2$};
+\draw (4,0.13) node[anchor=north west] {$\sigma=4$};
+\end{tikzpicture}
+\end{center}
+
+We merken dat de grafieken van al deze normale verdelingen met constante $\mu=0$ qua vorm gelijk zijn. Ze hebben wel allemaal een uitrekking of inkrimping evenwijdig met de $y$-as ondergaan.
+
+\begin{oefening}
+Vul volgende tabel aan:
+\begin{center}
+  \begin{tabular}{c|c}
+    $\sigma$ & Hoogte van de top\\
+    \hline
+    0.25 & \arule{2cm}\\
+    0.5 & \arule{2cm}\\
+    1 & \arule{2cm}\\
+    2 & \arule{2cm}\\
+    4 & \arule{2cm}
+  \end{tabular}
+\end{center}
+\end{oefening}
+
+\pagebreak
+\paragraph*{Besluit grafische betekenis van $\mu$ en $\sigma$}
+\begin{mdframed}
+Voor elke $x$ geldt $f(\mu-x)=f(\mu+x)$. $f$ is dus {\em symmetrisch} ten opzichte van $x=\mu$. In $\mu$ bereikt $f$ haar {\em maximum}. De waarde van $\mu$ bepaalt dus de centrale ligging en de waarde van $\sigma$ bepaalt de spreiding.
+\end{mdframed}
+
+\begin{oefening}
+Bepaal in de onderstaande grafieken het gemiddelde $\mu$ en de standaardafwijking $\sigma$ van de vet gedrukte functie.
+
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{multicols}{2}
+\begin{center}
+\begin{tikzpicture}[xscale=0.6,yscale=5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=2.0cm,ystep=0.2cm] (-5.9,-0.1) grid (5.9,0.9);
+\draw[->,color=black] (-6,0) -- (6,0);
+\foreach \x in {-4,-2,2,4}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.1) -- (0,1);
+\foreach \y in {,0.2,0.4,0.6,0.8}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\clip(-6,-0.1) rectangle (6,1);
+\draw[line width=1.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[line width=2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x)-3)/0.5)^2)/2)/(sqrt(2*3.1415926535)*abs(0.5))});
+\end{tikzpicture}
+$$\mu=\arule{1cm} \sigma=\arule{1cm}$$
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.6,yscale=5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=2.0cm,ystep=0.2cm] (-5.9,-0.1) grid (5.9,0.9);
+\draw[->,color=black] (-6,0) -- (6,0);
+\foreach \x in {-4,-2,2,4}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.1) -- (0,1);
+\foreach \y in {,0.2,0.4,0.6,0.8}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\clip(-6,-0.1) rectangle (6,1);
+\draw[line width=1.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[line width=2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x)+2)/2)^2)/2)/(sqrt(2*3.1415926535)*abs(2))});
+\end{tikzpicture}
+$$\mu=\arule{1cm} \sigma=\arule{1cm}$$
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.6,yscale=5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=2.0cm,ystep=0.2cm] (-5.9,-0.1) grid (5.9,0.9);
+\draw[->,color=black] (-6,0) -- (6,0);
+\foreach \x in {-4,-2,2,4}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.1) -- (0,1);
+\foreach \y in {,0.2,0.4,0.6,0.8}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\clip(-6,-0.1) rectangle (6,1);
+\draw[line width=1.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[line width=2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x)+3)/1)^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\end{tikzpicture}
+$$\mu=\arule{1cm} \sigma=\arule{1cm}$$
+\end{center}
+
+\begin{center}
+\begin{tikzpicture}[xscale=0.6,yscale=5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=2.0cm,ystep=0.2cm] (-5.9,-0.1) grid (5.9,0.9);
+\draw[->,color=black] (-6,0) -- (6,0);
+\foreach \x in {-4,-2,2,4}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.1) -- (0,1);
+\foreach \y in {,0.2,0.4,0.6,0.8}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\clip(-6,-0.1) rectangle (6,1);
+\draw[line width=1.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[line width=2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x)-0)/4)^2)/2)/(sqrt(2*3.1415926535)*abs(4))});
+\end{tikzpicture}
+$$\mu=\arule{1cm} \sigma=\arule{1cm}$$
+\end{center}
+\end{multicols}
+\end{oefening}
+
+\pagebreak
 \section{Standaardnormale kansverdeling}
 
 \section{Relatieve frequenties interpreteren}
