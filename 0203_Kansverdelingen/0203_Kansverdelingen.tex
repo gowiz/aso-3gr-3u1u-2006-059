@@ -1110,10 +1110,217 @@ Bepaal volgende kansen, {\bf zonder} gebruik te maken van de tabel van de standa
 \pagebreak
 \section{Kansen berekenen bij de normale verdeling}
 
+\subsection{Standaardisering}
 
+We hebben gezien dat alle normale verdelingen dezelfde vorm hebben, op een horizontale verschuiving of verticale uitrekking na. De kansdichtheidsfunctie van een normale verdeling kan dus steeds
+\begin{itemize}
+  \item verschoven worden zodat het gemiddelde $\mu=0$ wordt,
+  \item herschaald worden zodat de standaardafwijking $\sigma=1$ wordt.
+\end{itemize}
+
+Dit wil zeggen dat een kansvariabele die een normale verdeling volgt steeds {\em gestandaardiseerd} kan worden tot een andere kansvariabele die eveneens normaal verdeeld is, maar met gemiddelde 0 en standaardafwijking 1
+
+\subsection{Z-Score}
+
+Om een waarneming $x$ te standaardiseren wordt het gemiddelde ervan afgetrokken en vervolgens gedeeld door de standaardafwijking $\sigma$. We noteren deze {\em gestandaardiseerde waarde} van $x$ de $z$-score en noteren ze met de letter $z$. Dus
+$z=\dfrac{x-\mu}{\sigma}\;.$
+
+\paragraph*{Gestandaardiseerde normale verdeling}
+\begin{mdframed}
+Als $X$ een kansvariabele is met $X\sim N(\mu,\sigma)$, dan volgt de kansvariabele $Z$ gegeven door
+$$Z=\dfrac{X-\mu}{\sigma}$$
+de standaardnormale verdeling. Er geldt dus $Z\sim N(0,1)$.
+\end{mdframed}
+
+Een $z$-score geeft aan hoeveel standaardafwijkingen de oorspronkelijke waarneming van het gemiddelde verwijderd is en in welke richting. Waarnemingen groter dan het gemiddelde geven een positieve $z$-score, waarnemingen die kleiner zijn dan het gemiddelde een negatieve.
+
+$z$-scores worden o.a. gebruikt om waarnemingen uit verschillende populaties en/of steekproeven met elkaar te vergelijken.
+
+\begin{oefening}
+Robbe zit in klas A en behaalde op zijn laatste toets wiskunde 14 op 20. Het klasgemiddelde was 11 met een standaardafwijking van 3.\\
+Zijn zus Kathy zit in klas B en behaalde op haar laatste toets wiskunde 23 op 30. Het klasgemiddelde was 19 met een standaardafwijking van 5.\\
+Wie heeft nu relatief gezien het beste gewerkt?
+\end{oefening}
+
+\subsection{Kansen berekenen}
+
+Omdat er geen tabellen bestaan voor de niet-standaard normaal verdeelde populaties, herleiden we de normaal verdeelde waarnemingen tot standaardnormaal verdeelde waarnemingen met behulp van de $z$-score.
+
+\subsubsection*{Voorbeeld}
+
+\underline{Gegeven:} Een normaal verdeelde populatie met gemiddelde $\mu=20$ en standaardafwijking $\sigma=4$. Bereken het percentage waarnemingen groter dan 22.\\
+\underline{Methode:}
+\begin{enumerate}[(a)]
+  \item We berekenen eerst de $z$-score van $x=22$:
+  $$z=\dfrac{x-\mu}{\sigma}=\dfrac{22-20}{4}=0.5$$
+  \item Vervolgens zoeken we in de tabel van de standaardnormale verdeling het percentage waarnemingen met een $z$-score kleiner dan $0.5$:
+  $$P(X\leq 22)=P(Z\leq 0.5)=\Phi(0.5)=0.69146=69.15\%$$
+  \item Antwoord: $69.15\%$ van de waarnemingen is groter dan $22$.
+\end{enumerate}
+
+\begin{oefening}
+Het gewicht van een bepaalde soort peer is bij benadering normaal verdeeld met gemiddelde 150g en standaardafwijking 30g. 
+Welke percentage peren weegt minder dan 125g?
+\begin{enumerate}[(a)]
+  \item Bereken eerst de $z$-score van $x=125$.
+  \arules{2}
+  \item Bepaal nu met behulp van de tabel de kans dat een peer minder weegt dan $125\g$.
+  \arules{4}
+  \item Formuleer nu je antwoord.
+  \arules{1}
+\end{enumerate}
+\end{oefening}
+
+\subsection{Oefeningen}
+
+\begin{oefening}
+De voetlengten van volwassen vrouwen zijn bij benadering normaal verdeeld met een gemiddelde van $26.3 \cm$ en een standaardafwijking van $2.7 \cm$.
+\begin{enumerate}[(a)]
+  \item Welk percentage heeft een voetlengte die kleiner is dan $25 \cm$?
+  \item Welk percentage heeft een voetlengte die groter is dan $28 \cm$?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+De tijd die huisarts A tijdens zijn spreekuur aan een patiënt besteedt, is bij benadering normaal verdeeld met een gemiddelde van 15 minuten en een standaardafwijking van 3.4 minuten.
+\begin{enumerate}[(a)]
+  \item Welk percentage van de patiënten valt in de categorie van consultaties die beneden de 10 minuten valt?
+  \item Welk percentage van de consultatie duurt tussen 14 en 18 minuten?
+  \item Welk percentage van de consultaties duurt langer dan 18 minuten?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Vaak worden in de statistiek gerekend met ‘mooie’ betrouwbaarheidsintervallen, zoals 90\%, 95\% en 99\%. Bepaal bij elk percentage de bijhorende $z$-score.
+\end{oefening}
+
+\begin{oefening}
+Welk van de volgende resultaten op een examen statistiek is het meest uitzonderlijke?
+\begin{enumerate}[(A)]
+  \item 16 in een groep met gemiddelde 15 en standaardafwijking 1.27
+  \item 17 in een groep met gemiddelde 16 en standaardafwijking 2.45
+  \item 16 in een groep met gemiddelde 13 en standaardafwijking 0.50
+  \item 17 in een groep met gemiddelde 17 en standaardafwijking 0.12
+  \item 16 in een groep met gemiddelde 15 en standaardafwijking 3
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Punten van verschillende leerlingen in eenzelfde klas zouden normaal verdeeld moeten zijn. We kunnen dit gebruiken om {\em relatief gezien} je beste resultaat over de verschillende dagelijkse werken te vinden. Maak hiervoor een tabel met 5 kolommen als volgt:
+\begin{center}
+  \begin{tabular}{l|c|c|c|c}
+  Leerling & DW2 & Z-score DW2 & DW3 & Z-score DW3\\
+  \hline
+  \vdots&&&&\\
+%  \vdots&&&&\\
+%  \vdots&&&&\\
+  \hline
+  gemiddelde&&&&\\
+  standaardafwijking&&&&\\
+  \end{tabular}
+\end{center}
+Je kan dit bijvoorbeeld gebruiken wanneer je absoluut gezien een lager cijfer hebt bij DW3, maar relatief gezien een hoger cijfer bij DW3 om je ouders gerust te stellen.
+\end{oefening}
 
 \pagebreak
 \section{Binomiale verdeling benaderen door een normale verdeling}
+
+\begin{oefening}
+Vroeger moest men aan de universiteit een 12 op 20 halen voor een vak om zeker geslaagd te zijn in eerste zit voor dat vak. Want haalde je voor één van de andere vakken minder dan 10 op 20, dan moest je een herexamen doen voor alle vakken onder de 12.\\
+Bereken de kans om minstens 60\% te halen op een meerkeuze examens bestaande uit 50 vragen met telkens 4 keuzes en zonder gok correctie, die je volledig willekeurig beantwoordt?
+\end{oefening}
+
+Leerlingen die de vorige oefening wensen te maken zullen snel inzien dat het hier een binomiale verdeling
+$$X\sim B(50, 1/4)$$
+betreft en dat ze minimaal 20 keer de formule
+$$f(k)=C_{50}^{k}(1/4)^k(3/4)^{n-k}$$
+moeten gebruiken om $F(30)=1-F(20)$ uit te rekenen. Laten we in de plaats van het vele rekenen eens kijken naar de grafiek van de kansfunctie met behulp van {\em Geogebra}. Als we in het invoervenster het commando \verb#BinomialDist[50,1/4]# ingeven krijgen we de volgende plot:
+
+\begin{center}
+\includegraphics[width=0.7\textwidth]{binomial_punten}
+\end{center}
+
+Merk op dat we de $x$ waarden door hebben laten lopen tot aan $x=50$ want de kans is niet onbestaand dat we heel veel geluk hebben en dat we alle vragen juist beantwoorden.
+
+\begin{oefening}
+Bereken voor voorgaande oefening de verwachtingswaarde en de standaardafwijking. Duid deze aan op de bovenstaande grafiek.
+\begin{itemize}
+  \item $\mu=E(X)=n\cdot p=$ \arulefill
+  \item $\sigma=\sqrt{n\cdot p\cdot q}=$ \arulefill
+\end{itemize}
+\end{oefening}
+
+Mochten we nu de toppen van bovenstaande staafjes verbinden met een lijn, dan merken we op dat deze lijn goed te benaderen is door een normale verdeling met hetzelfde gemiddelde $\mu$ als de verwachtingswaarde en met dezelfde standaardafwijking $\sigma$ als die bij de binomiale verdeling horen.
+
+Deze benadering zal steeds gelden voor voldoende grote $n$, we zullen afspreken
+
+\paragraph*{Binomiale verdeling benaderen}
+\begin{mdframed}
+Een binomiale verdeling $X\sim B(n,p)$ met verwachtingswaarde $\mu$ en standaardafwijking $\sigma$ mag worden benaderd door een normale verdeling
+$$B(n,p)\sim N(\mu,\sigma)$$
+op voorwaarde dat $n\cdot p>5$ en $n\cdot q>5$.
+\end{mdframed}
+
+\paragraph*{Opmerking} De binomiale verdeling is een discrete verdeling. Ze wordt nu dus benaderd door een continue verdeling.
+
+Kansen berekenen van een binomiale verdeling wordt nu kinderspel, want de binomiale verdeling is normaal verdeeld en de normale verdeling kunnen we standaardiseren. We hoeven dus enkel maar nog op te zoeken in de tabel.
+
+\begin{oefening}
+Bereken de kans om minstens 60\% te halen op een meerkeuze examens bestaande uit 50 vragen
+met telkens 4 keuzes en zonder gok correctie, die je volledig willekeurig beantwoordt?
+\begin{enumerate}[(a)]
+  \itemsep0.2em
+  \item Bepaal de verdeling van de opgave: \arulefill
+  \item Controleer de randvoorwaarden om te zien of we kunnen overgaan naar een normale verdeling:
+  \arules{1}
+  \item Ga over naar de normale verdeling: \arulefill
+  \item Bereken de $z$-score:\arulefill
+  \item Bepaal de gevraagde kans:
+  \arules{1}
+  \item Antwoord: \arulefill
+\end{enumerate}
+\end{oefening}
+
+%\subsection{Oefeningen}
+
+\begin{oefening}
+Van een groot aantal schapen in een bepaald gebied is één op de twintig bruin. We willen de kans weten dat bij een steekproef van 1200 schapen het aantal bruine schapen niet groter dan 50 is.
+\end{oefening}
+
+\begin{oefening}
+Ongeveer 1 op elke 20 mannen heeft last van "rood-groen" kleurenblindheid.
+Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen inderdaad 750 rood-groen-kleurenblinden voorkomen? 
+\end{oefening}
+
+\begin{oefening}
+De kans op kleurenblindheid is bij vrouwen veel kleiner, maar ongeveer 0.4\% van de Westerse vrouwen is kleurenblind.
+Hoe groot is de kans dat in een representatieve steekproef van 250 vrouwen inderdaad 1 kleurenblinde voorkomt? 
+\end{oefening}
+
+\begin{oefening}
+Je gooit 15 keer met een eerlijk geldstuk. Het gaat je om de kans dat je slechts 6 keer munt gooit.
+\begin{enumerate}[(a)]
+  \item Gebruik de binomiale verdeling om deze kans te berekenen. (Doe alle berekeningen!)
+  \item Gebruik de normale verdeling om deze kans te berekenen.
+  \item Vergelijk je antwoorden met elkaar. Wat valt je op? Geef hiervoor een verklaring.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Ongeveer 6\% van de koffers die door een bepaalde machine geproduceerd worden, vertoont defecten. 
+\begin{enumerate}[(a)]
+  \item Geef een normale benadering van de kans dat van de 100 koffers die op een morgen worden gemaakt er hooguit 3 zijn die defecten vertonen.
+  \item Hoe groot is de kans dat dit er precies 11 zijn?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+In een restaurant met een capaciteit van 350 tafels zijn voor de komende feestdagen alle tafels gereserveerd. De restauranthouder weet dat het aantal reserveringen waarbij niemand komt opdagen bij benadering normaal is verdeeld met een gemiddelde van 17.5 en een standaardafwijking van 4.1.
+\begin{enumerate}[(a)]
+  \item Hoe groot is de kans dat iemand die heeft gereserveerd ook komt opdagen?
+  \item De eigenaar van het restaurant wil zoveel reserveringen aannemen dat de kans dat voor iedereen die heeft gereserveerd en dan ook inderdaad verschijnt plaats is, minstens 99\% is. Hoeveel reserveringen zal hij maximaal kunnen noteren?
+\end{enumerate}
+\end{oefening}
 
 
 \newpage
