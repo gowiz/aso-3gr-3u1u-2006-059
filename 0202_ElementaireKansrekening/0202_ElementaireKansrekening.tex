@@ -121,7 +121,7 @@ waarneming, een proefneming, een telling zijn. Wel moet steeds gelden:
   \item Een experiment is {\bf niet tijdsgebonden}: het kan onder dezelfde omstandigheden
 herhaald worden.
   \item De afloop wordt beheerst door {\bf het toeval}: die afloop kan niet met zekerheid
-vooraf bepaald worden; het aantal mogelijkheden die zich kunnen voordoen is
+vooraf bepaald worden; het aantal mogelijkheden dat zich kan voordoen is
 echter wel gekend.
 \end{itemize}
 
@@ -362,7 +362,7 @@ een kommagetal geschreven.
     $U =\{k, m\}$ met $\#U = 2$\\
     $A = \{k\}$ met $\#A = 1$.
   \end{minipage}
-  Bij de gebeurtenis $A$ hoort de kanswaarde $P(A) =\dfrac{1}{2}$ meegeven. Dit drukt dus uit dat we $\dfrac{1}{2}$ kans hebben dat wanneer we een muntstuk opgooien, het kop zal zijn.
+  Bij de gebeurtenis $A$ hoort de kanswaarde $P(A) =\dfrac{1}{2}$. Dit drukt dus uit dat we $\dfrac{1}{2}$ kans hebben dat wanneer we een muntstuk opgooien, het kop zal zijn.
   \item Welke is de kans om een harten te trekken uit een spel van 52 kaarten?\\
   Je weet $B = \{2_h , 3_h , 4_h , ..., h_h , a_h\}$, dus $\#B=13$.
   Nu hoort bij de gebeurtenis $B$ de kanswaarde $P(B)=\dfrac{13}{52}=\dfrac{1}{4}$. De breuk $\dfrac{1}{4}$ drukt hier uit: de kans dat we een harten zullen trekken bij een volgende beurt.
@@ -370,7 +370,7 @@ een kommagetal geschreven.
 
 \subsection{Regel van Laplace}
 
-Uit de vorige voorbeelden komt al naar voor dat het berekenen van de kanswaarde betrekkelijk eenvoudig kan. We moeten enkel eisen dat het aantal uitkomsten eindig is en dat elke uitkomst even waarschijnlijk is. Dit dat geval spreken we van het {\em model van Laplace} en berekenen we de kans met de {\bf regel van Laplace}:
+Uit de vorige voorbeelden komt al naar voor dat het berekenen van de kanswaarde betrekkelijk eenvoudig kan. We moeten enkel eisen dat het aantal uitkomsten eindig is en dat elke uitkomst even waarschijnlijk is. In dat geval spreken we van het {\em model van Laplace} en berekenen we de kans met de {\bf regel van Laplace}:
 
 $$P(A)=\dfrac{\mbox{aantal elementen van }A}{\mbox{aantal elementen van }U}\;.$$
 
@@ -586,6 +586,7 @@ een priemgetal of een even getal gooien.
 Stel $A$: een priemgetal gooien. $A=\arule{5cm}$\\
 Stel $B$: een even getal gooien. $B=\arule{5cm}$\\
 Dan is $A\cap B$: een even priemgetal gooien. $A\cap B=\arule{5cm}$\\
+En dan is $A\cup B$: \arulefill
 Dus $P(C)=P(A\cup B)=$
 \arules{2}
 \end{oefening}
@@ -748,14 +749,14 @@ Bepaal volgende kansen:
 \end{enumerate}
 \end{oefening}
 
-\paragraph*{Opmerking} In de vorige oefening zijn telkens alle experimenten betrokken!
+\paragraph*{Opmerking} In de vorige oefening zijn telkens alle uitkomsten betrokken!
 
 
 Veronderstel nu dat we zeker weten dat de proefpersoon een vrouw is. We moeten dan enkel nog kijken naar de relevante data, dus enkel bij de rij van de vrouwen. Wat is dan de kans dat ze kleurenblind is? Hiervoor voeren we een nieuwe notatie in:
 $$K|V:\mbox{De gekozen persoon is kleurenblind, op voorwaarde dat het een vrouw is}$$
 $$\Rightarrow\quad P(K|V)=\dfrac{6}{600}=\dfrac{1}{100}$$
 
-\paragraph*{Opmerking} Bij een voorwaardelijke kans is slechts een deel van de experimenten betrokken!
+\paragraph*{Opmerking} Bij een voorwaardelijke kans is slechts een deel van de uitkomsten betrokken!
 
 \begin{oefening}
 Bereken het product $P(V)\cdot P(K|V)=\arule{3cm}$\\
@@ -924,7 +925,7 @@ Bewijs eigenschap 2.
 \arules{6}
 \end{oefening}
 
-Voorgaande eigenschap kan men nu ook gaan beschouwen als een nieuwe definitie voor twee onafhankelike gebeurtenissen. M.a.w.:
+Voorgaande eigenschap kan men nu ook gaan beschouwen als een nieuwe definitie voor twee onafhankelijke gebeurtenissen. M.a.w.:
 
 \paragraph*{Definitie}
 \begin{mdframed}
@@ -940,7 +941,7 @@ $$A \mbox{ {\bf onafhankelijk} van } B \Leftrightarrow P(A\cap B)=P(A)\cdot P(B)
 $$A \mbox{ {\bf afhankelijk} van } B \Leftrightarrow P(A\cap B)\neq P(A)\cdot P(B)$$
 \end{mdframed}
 
-\begin{oefening} We kiezen willekeurig een getal van $1$ tot $12$. Daarbij beschouwen de volgende gebeurtenissen: $A$, het getal is even en $B$, het getal is een drievoud. Onderzoek de (on)afhankelijkheid van $A$ en $B$.\\
+\begin{oefening} We kiezen willekeurig een getal van $1$ tot $12$. Daarbij beschouwen we de volgende gebeurtenissen: $A$, het getal is even en $B$, het getal is een drievoud. Onderzoek de (on)afhankelijkheid van $A$ en $B$.\\
 $U=\{\arule{8cm}\}$ met $\#U=\arule{2cm}$\\
 $A=\{\arule{8cm}\}$ met $\#A=\arule{2cm}$\\
 $B=\{\arule{8cm}\}$ met $\#B=\arule{2cm}$\\
@@ -953,7 +954,7 @@ En dus $A$ en $B$ zijn \arule{4cm} want \arule{4cm}
 \end{oefening}
 
 \begin{oefening}
-We kiezen willekeurig een getal uit $\{1,2,\ldots, 9\}$. Daarbij beschouwen de volgende gebeurtenissen: $A$, het getal is even en $B$, het getal is een drievoud. Onderzoek de (on)afhankelijkheid van $A$ en $B$.
+We kiezen willekeurig een getal uit $\{1,2,\ldots, 9\}$. Daarbij beschouwen we de volgende gebeurtenissen: $A$, het getal is even en $B$, het getal is een drievoud. Onderzoek de (on)afhankelijkheid van $A$ en $B$.
 \end{oefening}
 
 \subsection{Productwetten}
@@ -968,7 +969,7 @@ We kunnen nu voorgaande definities en eigenschappen samennemen om de zogenaamde 
 \end{eqnarray*}
 \end{mdframed}
 
-Deze stellen ons in staat om gemakkelijk de kans op een samengestelde beslissing $P(A\cap B)$ te berekenen, de eerste twee formules wanneer de ene gebeurtenis de andere beïnvloed (gebeurtenissen afhankelijk) en de laatste formule wanneer de gebeurtenissen elkaar niet beïnvloeden (gebeurtenissen onafhankelijk).
+Deze stellen ons in staat om gemakkelijk de kans op een samengestelde beslissing $P(A\cap B)$ te berekenen, de eerste twee formules wanneer de ene gebeurtenis de andere beïnvloedt (gebeurtenissen afhankelijk) en de laatste formule wanneer de gebeurtenissen elkaar niet beïnvloeden (gebeurtenissen onafhankelijk).
 
 Dit wordt meestal gebruikt als we besluiten moeten trekken over de kanswaarde van een trekking met en zonder terugleggen, zoals bijvoorbeeld in de volgende oefeningen:
 
@@ -1024,7 +1025,7 @@ $A$, $B$ en $C$ zijn paarsgewijze onafhankelijk, dan geldt $$P(A\cap B\cap C)=\a
 
 \subsection{Herhaalde experimenten}
 
-Stel dat we een experiment $E$ $n$ keer herhalen. Hoe groot is de kans dat de gebeurtenis $A$ zich telkens voordoet?
+Stel dat we een experiment $E$ onder dezelfde omstandigheden $n$ keer herhalen. Hoe groot is de kans dat de gebeurtenis $A$ zich telkens voordoet?
 Laten we dit probleem met een voorbeeld verduidelijken.
 
 
@@ -1058,7 +1059,10 @@ $$P(A_1\cap A_2 \cap A_3\cap A_4 \cap A_5)=\left(\dfrac{1}{4}\right)^5=\dfrac{1}
 
 %\newpage
 \paragraph*{Uitbreiding} We kunnen dit op een voor de hand liggende manier uitbreiden naar een experiment $E$ dat we $n$ keer herhalen, maar waarbij we willen weten wat de kans is om $n$ verschillende gebeurtenissen na elkaar waar te nemen. Met andere woorden, hoe groot is de kans dat de gebeurtenis $A_1$ zich de eerste keer voordoet, de gebeurtenis $B_2$ zich de tweede keer voordoet, \ldots?
+
+Het antwoord is
 $$P(\underbrace{A_1\cap B_2\cap\cdots}_{n\mbox{ \scriptsize gebeurtenissen}})=\underbrace{P(A_1)\cdot P(B_2)\cdot \cdots}_{n\mbox{ \scriptsize factoren}}$$
+met $A_1, B_2, \ldots$ onafhankelijk.
 
 \begin{oefening}
 In een vaas zitten 3 rode, 5 gele en 10 groene bollen. Je trekt drie keer na elkaar een bol en legt hem telkens terug. Bereken de kans dat je eerst een rode dan een groene en tenslotte opnieuw een rode bol trekt.
