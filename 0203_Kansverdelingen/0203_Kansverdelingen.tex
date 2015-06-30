@@ -128,7 +128,7 @@ $$X:U\to\mathbb{R}:u\mapsto X(u)=x$$
 \end{mdframed}
 
 \begin{oefening}
-We gooien twee dobbelstenen tegelijk. We zijn geïnteresseerd in de som van de ogen.
+We gooien twee dobbelstenen na elkaar. We zijn geïnteresseerd in de som van de ogen.
 \begin{enumerate}[(a)]
   \item Definieer de bijhorende kansvariabele.
   \item Stel de kansvariabele grafisch voor, teken hiervoor een venndiagram voor de uitkomstenverzameling en een getallenas voor de reële getallen.
@@ -156,11 +156,11 @@ Een kansvariabele $X$ is {\bf discreet} als de verzameling van haar getalwaarden
 Een kansvariabele $X$ is {\bf continu} als de verzameling van haar getalwaarden overaftelbaar is (voorbeeld: bereik van $X = \mathbb{R}$ of bereik van $X = [0,15]$)
 
 \begin{oefening}
-Zijn de volgende kansvariabelen discreet of continue?
+Zijn de volgende kansvariabelen discreet of continu?
 \begin{enumerate}[(a)]
-  \item De som van de ogen van twee tegelijk gegooide dobelstenen.
+  \item De som van de ogen van twee gegooide dobbelstenen.
   \item Aantal fietsbellen dat getest wordt door telkens de fietsbel terug te leggen.
-  \item Lengte van willekeurig gekozen leerlingen.
+  \item Lengte van een willekeurig gekozen leerling.
 \end{enumerate}
 \end{oefening}
 
@@ -185,6 +185,7 @@ We willen nu van elk van de beelden van de kansvariabele $X$ weten hoe groot de 
   \end{itemize}
   \item $P(X=1)=P(\{m\})=\dfrac{1}{2}$
 \end{itemize}
+
 
 We associëren nu met de beelden van $X$ een functie $f$ van $\mathbb{R}$ naar $[0,1]$:
   $$f(1) = \dfrac{1}{2} \qquad\qquad f(2) = \dfrac{1}{2}$$
@@ -240,7 +241,7 @@ $$f(x_i)=P(x=x_i)$$
 waarbij $f(x_i)$ de kans is dat de getalwaarde $x_i$ door de kansvariabele $X$ wordt aangenomen.
 
 \begin{oefening}
-We gooien twee dobbelstenen tegelijk op. Bepaal de kansfunctie die hoort bij de kansvariabele die weergeeft wat de som van de ogen is. Stel ook de kansfunctie grafisch voor.
+We gooien twee dobbelstenen na elkaar. Bepaal de kansfunctie die hoort bij de kansvariabele die weergeeft wat de som van de ogen is. Stel ook de kansfunctie grafisch voor.
 \end{oefening}
 
 \begin{oefening}
@@ -404,8 +405,8 @@ Onderzoek de winst die de firma mag verwachten als ze een grote hoeveelheid tabl
   Veronderstel dat er 10000 tabletten worden geproduceerd:\\
   \begin{itemize}
     \itemsep1em
-    \item Aantal goede tabletten: \arule{2cm} \hfill Winst: \arule{2cm}
-    \item Aantal slechte tabletten: \arule{2cm} \hfill Winst: \arule{2cm}
+    \item Aantal goede tabletten: \arule{2cm} \hfill Winst: \arule{6cm}
+    \item Aantal slechte tabletten: \arule{2cm} \hfill Winst: \arule{6cm}
     \item Totaal te verwachten winst: \arule{2cm}
     \item Winst per tablet: \arule{2cm}
   \end{itemize}
@@ -436,7 +437,7 @@ Bereken de verwachtingswaarde van de som van het aantal ogen bij het tegelijk we
 
 \pagebreak
 
-\section{Variatie en standaardafwijking}
+\section{Variantie en standaardafwijking}
 
 \subsection{Voorbeeld}
 
@@ -472,9 +473,9 @@ Om te weten over welke kansvariabele deze verwachtingswaarde het meest zegt, ber
 \begin{itemize}
   \itemsep1em
   \item $\Var(X) =$\arulefill\vspace*{0.2cm}
-        $\Rightarrow\sigma = $\arulefill
+        $\Rightarrow\sigma_X = $\arulefill
   \item $\Var(Y) =$\arulefill\vspace*{0.2cm}
-        $\Rightarrow\sigma = $\arulefill
+        $\Rightarrow\sigma_Y = $\arulefill
 \end{itemize}
 \end{oefening}
 
@@ -569,7 +570,7 @@ Uit een spel van 52 kaarten wordt lukraak een kaart getrokken. Eén speler houdt
   \arules{1}
   \end{oefening}
   \begin{oefening}
-  Geef bij het willekeurig beantwoorden van een meerkeuzevraag met vier mogelijkheden, waarbij er precies één juist antwoord is, is de kans op fout en de kans op juist.
+  Geef bij het willekeurig beantwoorden van een meerkeuzevraag met vier mogelijkheden, waarbij er precies één juist antwoord is, de kans op fout en de kans op juist.
   \arules{1}
   \end{oefening}
 
@@ -636,7 +637,7 @@ Als $X \sim B(n,p)$ met $q=1-p$, dan geldt:
 Firma A vervaardigt in opdracht van firma B onderdelen voor een precisietoestel. In firma A is de productie zo georganiseerd, dat slechts 2\% van de afgewerkte stukken niet aan alle gestelde eisen voldoet, m.a.w. defect is.
 Er is afgesproken dat de levering gebeurt in partijen van 50 stuks. We voeren nu de toevalsveranderlijke $X$ in die als getalwaarde het aantal defecte stukken heeft in een partij van 50.
 
-Dus: $X\sim\arule{2cm}$\\
+Dus: $X\sim\arule{2cm}$ waarbij succes = \arule{3cm}\\
 $\qquad\qquad\Rightarrow  n=\arule{1cm}, \qquad p=\arule{1cm}, \qquad q=\arule{1cm}$
 
 In het contract heeft firma B bedongen dat A een schadevergoeding betaalt voor elke partij van 50 stuks waarin het aantal defecte stukken meer dan twee standaardafwijkingen groter is dan de verwachtingswaarde. Stel dat vandaag een partij wordt geleverd. Wat is de kans dat firma A een schadevergoeding moet betalen?
@@ -741,7 +742,7 @@ Als $X\sim N(\mu, \sigma)$, dan geldt
 
 We laten in het functievoorschrift van de normale verdeling
 $$f(x)=\dfrac{1}{\sigma{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}$$
-het gemiddelde $\mu$ variëren, terwijl de standaardafwijking $\sigma$ constant houden ($\sigma=1$). Hieronder zie je de grafieken voor verschillende waarden van $\mu$:
+het gemiddelde $\mu$ variëren, terwijl we de standaardafwijking $\sigma$ constant houden ($\sigma=1$). Hieronder zie je de grafieken voor verschillende waarden van $\mu$:
 \begin{center}
 \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
 \begin{tikzpicture}[yscale=8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -1148,14 +1149,14 @@ Omdat er geen tabellen bestaan voor de niet-standaard normaal verdeelde populati
 
 \subsubsection*{Voorbeeld}
 
-\underline{Gegeven:} Een normaal verdeelde populatie met gemiddelde $\mu=20$ en standaardafwijking $\sigma=4$. Bereken het percentage waarnemingen groter dan 22.\\
+\underline{Gegeven:} Een normaal verdeelde populatie met gemiddelde $\mu=20$ en standaardafwijking $\sigma=4$. Bereken het percentage waarnemingen kleiner dan 22.\\
 \underline{Methode:}
 \begin{enumerate}[(a)]
   \item We berekenen eerst de $z$-score van $x=22$:
   $$z=\dfrac{x-\mu}{\sigma}=\dfrac{22-20}{4}=0.5$$
   \item Vervolgens zoeken we in de tabel van de standaardnormale verdeling het percentage waarnemingen met een $z$-score kleiner dan $0.5$:
   $$P(X\leq 22)=P(Z\leq 0.5)=\Phi(0.5)=0.69146=69.15\%$$
-  \item Antwoord: $69.15\%$ van de waarnemingen is groter dan $22$.
+  \item Antwoord: $69.15\%$ van de waarnemingen is kleiner dan $22$.
 \end{enumerate}
 
 \begin{oefening}
@@ -1232,9 +1233,9 @@ Bereken de kans om minstens 60\% te halen op een meerkeuze examens bestaande uit
 
 Leerlingen die de vorige oefening wensen te maken zullen snel inzien dat het hier een binomiale verdeling
 $$X\sim B(50, 1/4)$$
-betreft en dat ze minimaal 20 keer de formule
+betreft en dat ze minimaal 21 keer de formule
 $$f(k)=C_{50}^{k}(1/4)^k(3/4)^{n-k}$$
-moeten gebruiken om $F(30)=1-F(20)$ uit te rekenen. Laten we in de plaats van het vele rekenen eens kijken naar de grafiek van de kansfunctie met behulp van {\em Geogebra}. Als we in het invoervenster het commando \verb#BinomialDist[50,1/4]# ingeven krijgen we de volgende plot:
+moeten gebruiken om $P(X\geq 30)=f(30)+f(31)+\cdots +f(50)$ uit te rekenen. Laten we in de plaats van het vele rekenen eens kijken naar de grafiek van de kansfunctie met behulp van {\em Geogebra}. Als we in het invoervenster het commando \verb#BinomialDist[50,1/4]# ingeven krijgen we de volgende plot:
 
 \begin{center}
 \includegraphics[width=0.7\textwidth]{binomial_punten}
@@ -1258,7 +1259,7 @@ Deze benadering zal steeds gelden voor voldoende grote $n$, we zullen afspreken
 \begin{mdframed}
 Een binomiale verdeling $X\sim B(n,p)$ met verwachtingswaarde $\mu$ en standaardafwijking $\sigma$ mag worden benaderd door een normale verdeling
 $$B(n,p)\sim N(\mu,\sigma)$$
-op voorwaarde dat $n\cdot p>5$ en $n\cdot q>5$.
+op voorwaarde dat $n\cdot p\geq5$, $n\cdot q\geq5$ en $n\geq 20$.
 \end{mdframed}
 
 \paragraph*{Opmerking} De binomiale verdeling is een discrete verdeling. Ze wordt nu dus benaderd door een continue verdeling.
@@ -1266,7 +1267,7 @@ op voorwaarde dat $n\cdot p>5$ en $n\cdot q>5$.
 Kansen berekenen van een binomiale verdeling wordt nu kinderspel, want de binomiale verdeling is normaal verdeeld en de normale verdeling kunnen we standaardiseren. We hoeven dus enkel maar nog op te zoeken in de tabel.
 
 \begin{oefening}
-Bereken de kans om minstens 60\% te halen op een meerkeuze examens bestaande uit 50 vragen
+Bereken de kans om minstens 60\% te halen op een meerkeuze examen bestaande uit 50 vragen
 met telkens 4 keuzes en zonder gok correctie, die je volledig willekeurig beantwoordt?
 \begin{enumerate}[(a)]
   \itemsep0.2em
@@ -1289,7 +1290,11 @@ Van een groot aantal schapen in een bepaald gebied is één op de twintig bruin.
 
 \begin{oefening}
 Ongeveer 1 op elke 20 mannen heeft last van "rood-groen" kleurenblindheid.
-Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen inderdaad 750 rood-groen-kleurenblinden voorkomen? 
+\begin{enumerate}[(a)]
+  \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen juist 750 rood-groen-kleurenblinden voorkomen? 
+  \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen minstens 750 rood-groen-kleurenblinden voorkomen? 
+  \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen meer dan 750 rood-groen-kleurenblinden voorkomen? 
+\end{enumerate}
 \end{oefening}
 
 \begin{oefening}
@@ -1298,7 +1303,7 @@ Hoe groot is de kans dat in een representatieve steekproef van 250 vrouwen inder
 \end{oefening}
 
 \begin{oefening}
-Je gooit 15 keer met een eerlijk geldstuk. Het gaat je om de kans dat je slechts 6 keer munt gooit.
+Je gooit 15 keer met een eerlijk geldstuk. Het gaat je om de kans dat je hoogstens 6 keer munt gooit.
 \begin{enumerate}[(a)]
   \item Gebruik de binomiale verdeling om deze kans te berekenen. (Doe alle berekeningen!)
   \item Gebruik de normale verdeling om deze kans te berekenen.
