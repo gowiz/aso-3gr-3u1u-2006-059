@@ -1,0 +1,676 @@
+\documentclass[12pt,twoside]{article}
+
+\input{../gowiz.tex}
+
+\usepackage{pgfplots}
+
+\usepackage{relsize}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+  \begin{mdframed}
+  \centering
+  \fontsize{40}{60}\selectfont Logaritmische functies
+  \end{mdframed}
+  \vfill
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-2.52,0) -- (6.4,0);
+\foreach \x in {-2,2,4,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-1.22) -- (0,4.36);
+\foreach \y in {,2,4}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-2.52,-1.22) rectangle (6.4,4.36);
+\draw[line width=1.6pt,dash pattern=on 3pt off 4pt, smooth,samples=50,domain=-2.5:6.4] plot(\x,{(\x)});
+\draw[color=gray,line width=1.6pt, smooth,samples=100,domain=-2.5:2.4] plot(\x,{exp(\x)});
+\draw[line width=1.6pt, smooth,samples=100,domain=0.1:6.4] plot(\x,{ln((\x))});
+\draw[color=gray] (1.26,3.98) node[anchor=north west] {$f(x)=e^x$};
+\draw (3.5,1.3) node[anchor=north west] {$f^{-1}(x)=\ln(x)$};
+\end{tikzpicture}
+%  \includegraphics[width=0.8\textwidth]{}
+  \vfill
+\end{center}
+
+\subsection*{Doelstellingen}
+\vspace*{-0.8cm}
+{\singlespacing
+Je \hfill  {\scriptsize(LP2006-059, LI1.8, ET23,14,32,25,31,24)}
+\begin{itemize}
+  \itemsep-0.2em
+  \item kent de definitie van een logaritme met een willekeurig grondtal;
+  \item kan de onderstaande rekenregels toepassen: (U)
+  \begin{itemize}
+    \item logaritme van een product,
+    \item logaritme van een quotiënt,
+    \item logaritme van een macht,
+    \item verandering van grondtal;
+  \end{itemize}
+  \item kent de logaritmische functie $f( x ) = \log_a x$ als inverse van de exponentiële functie $f( x ) = a^x$;
+  \item kan domein, bereik, bijzondere waarden, tekenverloop, stijgen\&dalen en asymptotisch gedrag bepalen van logaritmische functies;
+  \item kent de begrippen beginwaarde, groeifactor, groeipercentage, halveringstijd en verdubbelingstijd;
+  \item kan vraagstukken en problemen oplossen die aanleiding geven tot een exponentiële vergelijking of functie;
+  \item kan uit de betrekking $a^b = c$ de derde veranderlijke berekenen als de twee andere gegeven zijn.
+\end{itemize}}
+
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\clearpage
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\clearpage
+\pagenumbering{arabic} 
+
+\fancyhead[RO,LE]{Logaritmische functies}
+\fancyhead[RE,LO]{}
+
+
+\section{Definitie}
+
+\paragraph{Logaritme}
+\begin{mdframed}
+De {\bf logaritme met grondtal $a$} ($a\in\mathbb{R}\backslash\{0,1\}$) van een reëel getal $x$ is de exponent
+waartoe we a moeten verheffen om dit getal te bekomen:
+$$\log_a x = y \Leftrightarrow a^y=x$$
+\end{mdframed}
+
+Een logaritme zoeken is dus een exponent zoeken!
+
+\paragraph{Voorbeelden}
+\begin{enumerate}[(a)]
+  \item $\log_3 9 = 2$ want $3^2=9$
+  \item $\log_5\sqrt{125} = ?$
+  \begin{eqnarray*}
+    \log_5\sqrt{125}=y &\LRA& \sqrt{125} = 5^y\\
+                       &\LRA& 125^\frac{1}{2} = 5^y\\
+                       &\LRA& (5^3)^\frac{1}{2} = 5^y\\
+                       &\LRA& 5^\frac{3}{2} = 5^y\\
+                       &\LRA& y=\frac{3}{2}
+  \end{eqnarray*}
+  Dus $\log_5\sqrt{125} = \dfrac{3}{2}$
+\end{enumerate}
+
+\begin{oefening} % from mathcentre logarithms 2009
+Herschrijf met behulp van logaritmen i.p.v. met machten.
+\begin{multicols}{4}
+\begin{enumerate}[(a)]
+  \item $8^2=64$
+  \item $10^6=1000000$
+  \item $5^{-1}=\dfrac{1}{5}$
+  \item $3^5=243$
+  \item $10^{-3}=0.001$
+  \item $\sqrt{49}=7$
+  \item $2^{10}=1024$
+  \item $3^{-2}=\dfrac{1}{9}$
+  \item $27^{2/3}=9$
+  \item $5^3=125$
+  \item $6^0=1$
+  \item $32^{-2/5}=\dfrac{1}{4}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Zoek de logaritme met grondtal $a$ van de volgende getallen:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep0.7em
+  \item $\log_2 16$
+  \item $\log_3 81$
+  \item $\log_2 8$
+  \item $\log_{10} 10000$
+  \item $\log_3 \dfrac{1}{9}$
+  \item $\log_e \sqrt{e}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+
+\pagebreak
+\paragraph{Gevolgen}
+\begin{itemize}
+  \item Nul en strikt negatieve getallen hebben geen logaritme
+  \item Uit $\log_a x = y \Leftrightarrow a^y=x$ volgt
+  \begin{mdframed}
+  $$\log_a a^y=y$$
+  \end{mdframed}
+  Dit zie je in door in de eerste gelijkheid $x$ te vervangen door $a^y$.
+  \item Ook volgt $x=a^{\log_a x}$ door $y$ in de tweede gelijkheid door $\log_a x$ te vervangen.
+  \item Als $y=0$ dan hebben we $\log_a a^0=0$ en dus
+  \begin{mdframed}
+  $$\log_a 1=0$$
+  \end{mdframed}
+  \item Als $y=1$ dan hebben we $\log_a a^1=1$ en dus
+  \begin{mdframed}
+  $$\log_a a=1$$
+  \end{mdframed}
+\end{itemize}
+
+\begin{oefening} % from mathcentre logarithms 2009
+Bepaal de waarde van de volgende logaritmen.
+\begin{multicols}{4}
+\begin{enumerate}[(a)]
+  \item $\log_3 9$
+  \item $\log_4 64$
+  \item $\log_3 \dfrac{1}{27}$
+  \item $\log_a a^5$
+  \item $\log_2 32$
+  \item $\log_25 5$
+  \item $\log_7 1$
+  \item $\log_c \sqrt{c}$
+  \item $\log_5 125$
+  \item $\log_8 2$
+  \item $\log_8 \dfrac{1}{8}$
+  \item $\log_s s$
+  \item $\log_{10} 10000$
+  \item $\log_{81} 8$
+  \item $\log_4 8$
+  \item $\log_e \dfrac{1}{e^3}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Bereken:
+\begin{exlist}{3}
+  \item $\log_2 \sqrt{2}$
+  \item $\log_9 \sqrt[5]{9}$
+  \item $\log \sqrt{10}$
+  \item $\log_4 0.5$
+  \item $\log_{\frac{1}{5}} 0.2$
+  \item $\ln \dfrac{1}{e\sqrt{e}}$
+\end{exlist}
+\end{oefening}
+
+\pagebreak
+\section{Briggse logaritmen en Neperiaanse logaritmen}
+
+Is het grondtal $a$ gelijk aan 10 dan spreken we van {\bf Briggse logaritmen}.
+
+De Engelse wiskundige Henry Briggs publiceerde in 1617 een tafel met deze naar hem genoemde logaritmen.
+
+\paragraph{Notatie} $\log x = \log_{10} x$
+
+\paragraph{Voorbeelden}
+\begin{enumerate}[(a)]
+  \item $\log 10 = 1$
+  \item $\log 1 = 0$
+  \item $\log 0.0001 = \log 10^{-4} = -4$
+\end{enumerate}
+
+\paragraph{Rekenmachine} We kunnen de Briggse logaritmen berekenen op het \zrm{ZRM} met de toets \zrm{log}. Zo is $\log 3459 = 3.5389506$
+
+Is het grondtal $a$ gelijk aan $e$ dan spreken we van {\bf natuurlijke logaritmen} of Neperiaanse logaritmen, naar de Engelse wiskundige John Napier (1550-1617).
+
+\paragraph{Notatie} $\ln x = \log_{e} x$
+
+\paragraph{Voorbeelden}
+\begin{enumerate}[(a)]
+  \item $\ln e = 1$
+  \item $\ln 1 = 0$
+  \item $\ln e^{-2} = -2$
+\end{enumerate}
+
+\paragraph{Rekenmachine} Natuurlijke logaritmen kunnen op de zakrekenmachine met de \zrm{ln} toets worden berekend.
+Zo is $\ln 3459 = 8.1487348$
+
+\begin{oefening}
+Bereken met je \zrm{ZRM}, noteer je resultaat met 3 decimalen nauwkeurig.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $\log 12345$
+  \item $\log 98.76$
+  \item $\log 1.111$
+  \item $\ln 12345$
+  \item $\ln 98.76$
+  \item $\ln 1.111$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\pagebreak
+
+\section{Rekenregels}
+
+\paragraph*{Rekenregels van logaritmen met grondtal $a$}
+\begin{mdframed}
+$\forall x,y \in \mathbb{R}_0^+, \forall p\in \mathbb{R}:$
+\begin{align*}
+\log_a(x\cdot y) &= \log x + \log y && \mbox{logaritme van een product}\\
+\log_a \dfrac{x}{y} &= \log_a x + \log_a y && \mbox{logaritme van een quotiënt}\\
+\log_a \dfrac{1}{y} &= - \log_a y && \mbox{logaritme van een invers}\\
+\log_a(x^p) &= p\cdot\log_a x && \mbox{logaritme van een macht}
+\end{align*}
+\end{mdframed}
+
+\paragraph{Bewijs} Logaritme van een product
+\begin{eqnarray*}
+  \log_a(x\cdot y) &=& \log_a\left(a^{\log_a x}\cdot a^{\log_a y}\right)\\
+                   &=& \log_a\left(a^{\log_a x + \log_a y}\right)\\
+                   &=& \log_a x + \log_a y
+\end{eqnarray*}
+
+\begin{oefening}
+Bewijs de andere rekenregels.
+\end{oefening}
+
+\begin{oefening} % argument
+Pas de eigenschappen voor de logaritme van een product, quotiënt en macht toe.
+\begin{exlist}{3}
+  \item $\log \left(x^2y\right)$
+  \item $\log \left(x\sqrt{y}\right)$
+  \item $\log \left(\dfrac{x\cdot y}{z^2}\right)$
+  \item $\log \left(\dfrac{100}{x}\right)$
+  \item $\log \left(\dfrac{1}{10}x^2y^3\right)$
+  \item $\log_2 \left(8x\sqrt{z}\right)$
+  \item $\log \left(2\cdot 10^{-2x}\right)$
+  \item $\log \left(5.1\cdot 10^{7x}\right)$
+  \item $\ln \left(5\cdot e^{3x}\right)$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening} % argument
+Schrijf als één logaritme.
+\begin{exlist}{2}
+  \item $2\log x + 5 \log y$
+  \item $\log x - 3 \log y$
+  \item $\dfrac{1}{2}\log x + 2 \log y$
+  \item $\log 7 + x \log 5$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening} % argument
+Bereken zonder \zrm{ZRM}.
+\begin{exlist}{2}
+  \item $\log_5 10 + \log_5 15 - \log_5 6$
+  \item $2\log_2 5 - \log_2 50$
+  \item $\log_2 135 - \log_2 18 - \log_2 6 - \log_2 10$
+  \item $\log_3 270 - \log_3 12 + 2\log_3 6 - \log_3 30$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening} % from mathcentre logarithms 2009
+Elk van de volgende uitdrukkingen kan herschreven worden als $\log N$. Bepaal de $N$ voor elke uitdrukking. Er wordt dus niet gevraagd om de logaritme uit te rekenen, wel om deze korter te herschrijven.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $\log 3 + \log 5$
+  \item $2\log 3 - 3\log 2$
+  \item $5\log 2 + 2\log 5$
+  \item $\log 12 - 2\log 2 + \log 3$
+  \item $\log 16 - \log 2$
+  \item $\log 236 - 7\log 2$
+  \item $\log 128 - 7\log 2$
+  \item $5\log 2 + 4\log 3 - 3\log 4$
+  \item $3\log 4$
+  \item $\log 236 - \log 1$
+  \item $\log 2 + \log 3 + \log 4$
+  \item $\log 10 + 2\log 3 - \log 2$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening} % argument
+Zoek $x$.
+\begin{exlist}{2}
+  \item $\log x + \log 4x = 2$
+  \item $2\log_2 x + \log_2 8x = -3$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening} % argument
+Bepaal het grondtal $a$.
+\begin{exlist}{2}
+  \item $\log_a 2 + \log_a 8 = 4$
+  \item $\log_a 16 = 2\cdot \log_4 16$
+  \item $\log_a 3 + \log_a 27 = 4$
+  \item $2 \log_a 2 - \log_a 3 + \dfrac{2}{3}\log_a 27 = 2$  
+\end{exlist}
+\end{oefening}
+
+\begin{oefening} % from mathcentre logarithms 2009
+Gebruik logaritmen om de volgende vergelijkingen op te lossen. Geef de oplossingen in decimale notatie met 3 cijfers na de komma. Geef steeds de oplossingenverzameling en maak steeds de proef.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $10^x=5$
+  \item $4^x=12$
+  \item $\pi^x=10$
+  \item $e^x=8$
+  \item $3^x=2$
+  \item $e^x=\pi$
+  \item $10^x=\dfrac{1}{2}$
+  \item $7^x=1$
+  \item $\left(\dfrac{1}{3}\right)^x=2$
+  \item $e^x=0.1$
+  \item $\left(\dfrac{1}{2}\right)^x=\dfrac{1}{100}$
+  \item $10^x=e^{2x-1}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\pagebreak
+\paragraph*{Veranderen van grondtal}
+\begin{mdframed}
+$\forall a,b,c \in \mathbb{R}_0^+\backslash\{1\}:$
+\begin{align*}
+\log_b x &= \dfrac{\log_a x}{\log_a b} && \mbox{veranderen van grondtal}\\
+\log_b x &= \dfrac{1}{\log_x b} && \mbox{omwisseling grondtal en argument}
+\end{align*}
+\end{mdframed}
+
+\begin{oefening} % argument
+Bereken zonder \zrm{ZRM}
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+  \item $\log_2 7 \cdot \log_7 16$
+  \item $\log 11 \cdot \log_11 0.1$
+  \item $\log_9 27$
+  \item $\log_32 64$
+  \item $\dfrac{\ln 81}{\ln 3}$
+  \item $\dfrac{\ln 81}{\ln 27}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\pagebreak
+\section{Logaritmische functie}
+
+\subsection{Definitie}
+De reële functie die elk reëel getal afbeeldt op zijn logaritme met grondtal $a$ noemen we de {\bf logaritmische functie met grondtal $a$}:
+$$f(x) = \log_a x$$
+
+\subsection{Hoofdeigenschap}
+
+\begin{mdframed}
+De logaritmische functie met grondtal $a$ en de exponentiële functie met grondtal $a$ zijn inverse functies.
+\end{mdframed}
+
+\paragraph{Voorbeeld} $y=\log_2 x$ en $y=2^x$
+
+\subsection{Gevolgen}
+
+\begin{itemize}
+  \item De grafieken van de logaritmische en exponentiële functies zijn elkaars spiegelbeeld ten opzichte van de eerste bissectrice in een orthonormaal assenstelsel.
+  \begin{center}
+  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \draw[->,color=black] (-2.52,0) -- (6.4,0);
+    \foreach \x in {-2,2,4,6}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[->,color=black] (0,-1.22) -- (0,4.36);
+    \foreach \y in {,2,4}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-2.52,-1.22) rectangle (6.4,4.36);
+    \draw[line width=1.6pt,dash pattern=on 3pt off 4pt, smooth,samples=50,domain=-2.5:6.4] plot(\x,{(\x)});
+    \draw[color=gray,line width=1.6pt, smooth,samples=100,domain=-2.5:2.4] plot(\x,{exp(ln(2)*\x)});
+    \draw[line width=1.6pt, smooth,samples=100,domain=0.1:6.4] plot(\x,{ln((\x))/ln(2)});
+    \draw[color=gray] (0.6,4) node[anchor=north west] {$y=2^x$};
+    \draw (3.5,1.8) node[anchor=north west] {$y=\log_2 x$};
+  \end{tikzpicture}
+  \end{center}
+  \item $\dom \log_a x = \mathbb{R}^+_0$ en $\ber \log_a x = \mathbb{R}$
+  \item Bijzondere punten: $(1, 0)$ en $(a, 1)$\\
+\end{itemize}
+  \begin{minipage}{0.5\textwidth}
+    \centering $a>1$
+    \begin{itemize}
+      \item $\log_a x$ is stijgend in $\mathbb{R}^+_0$
+      \item $\lim_{+\infty} \log_a x = +\infty$
+      \item $\lim_{x\underset{>}{\to}0} \log_a x = -\infty$
+    \end{itemize}
+  \end{minipage}\vline
+  \begin{minipage}{0.5\textwidth}
+    \centering $0<a<1$
+    \begin{itemize}
+      \item $\log_a x$ is dalend in $\mathbb{R}^+_0$
+      \item $\lim_{+\infty} \log_a x = -\infty$
+      \item $\lim_{x\underset{>}{\to}0} \log_a x = +\infty$
+    \end{itemize}
+  \end{minipage}
+  \begin{itemize}
+    \item De $y$-as met vergelijking $x=0$ is een verticale asymptoot.
+  \end{itemize}
+
+\begin{oefening}
+Teken op éénzelfde assenstelsel de functies
+$$f(x)=e^x\qquad g(x)=\ln(x)$$
+\begin{enumerate}[(a)]
+  \item Via welke transformatie kunnen we van $f$ naar $g$ gaan?
+  \item Teken deze transformatie ook op het assenstelsel.
+  \item Hoe noemen we twee functies die dit verband hebben?
+  \item Toon dit ook algebraïsch aan.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening} % argument, modified
+Maak de grafiek van de logaritmische functie met voorschrift:
+\begin{exlist}{3}
+  \item $f(x)=\log_2 x$
+  \item $f(x)=\log_{0.5}x$
+  \item $f(x)=\ln x$
+  \item $f(x)=3+\log_2 x$
+  \item $f(x)=\log_2(x-3)$
+  \item $f(x)=3\log_2 x$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening}
+Hieronder vind je de grafiek van een logaritmische functie met voorschrift $f(x)=\log_a x$. Lees $a$ op de figuur af.
+\begin{exlist}{2}
+  \item
+  \begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.5cm,ystep=0.5cm] (-0.5,-0.5) grid (5.5,5.5);
+\draw[->,color=black] (-0.5,0) -- (5.5,0);
+\foreach \x in {1,2,3,4,5}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.5) -- (0,5.5);
+\foreach \y in {1,2,3,4,5}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.5,-0.5) rectangle (5.5,5.5);
+\draw[line width=1.6,smooth,samples=100,domain=0.01:5.5] plot(\x,{ln((\x))/ln(1.5)});
+\end{tikzpicture}
+  \end{center}
+  \item
+  \begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.5cm,ystep=0.5cm] (-0.5,-0.5) grid (5.5,5.5);
+\draw[->,color=black] (-0.5,0) -- (5.5,0);
+\foreach \x in {1,2,3,4,5}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.5) -- (0,5.5);
+\foreach \y in {1,2,3,4,5}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.5,-0.5) rectangle (5.5,5.5);
+\draw[line width=1.6,smooth,samples=100,domain=0.01:5.5] plot(\x,{ln((\x))/ln(0.75)});
+\end{tikzpicture}
+  \end{center}
+\end{exlist}
+\end{oefening}
+
+\begin{oefening} % argument, modified
+Bepaal:
+\begin{exlist}{3}
+  \item $\displaystyle\lim_{x\to +\infty}\log_5 x$
+  \item $\displaystyle\lim_{x\to +\infty}\log_{0.3} x$
+  \item $\displaystyle\lim_{x\underset{>}{\to} 0}\log_4 x$
+  \item $\displaystyle\lim_{x\underset{>}{\to} 0}\log_{0.4} x$
+  \item $\displaystyle\lim_{x\to +\infty}\log_{1.01} x$
+  \item $\displaystyle\lim_{x\to +\infty}\log_{0.99} x$
+  \item $\displaystyle\lim_{x\to +\infty}\log_{3} (8x)$
+  \item $\displaystyle\lim_{x\underset{>}{\to} 0}\log_{2} x$
+  \item $\displaystyle\lim_{x\underset{<}{\to} 0}\log (-x)$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening} % argument, modified
+Een functie met voorschrift $f(x)=\log_a kx$ gaat door $P(2,1)$ en door $Q(4,\dfrac{3}{2})$. Bepaal $a$ en $k$.
+\end{oefening}
+
+\section{Toepassingen}
+
+\begin{oefening} % argument, modified
+Een blauwe plek heelt exponentieel. Als $S_0$ de oorspronkelijke oppervlakte is, dan is de oppervlakte $S$ na $t$ dagen:
+$$S_t=S_0e^{-0.35\cdot t}$$
+\begin{enumerate}[(a)]
+  \item Hoeveel percent blijft er over na 10 dagen?
+  \item Na hoeveel dagen is de helft van de blauwe plek geheeld?
+\end{enumerate}
+\end{oefening}
+
+\vspace*{-0.5cm}
+
+\begin{oefening}
+Op het tijdstip $t=0$ bevat een bacteriën kolonie 400 bacteriën. Elk uur groeit het aantal aan met $5 \%$. We vonden de formule voor het aantal $N$ na $t$ uur:
+$$N=400\cdot 1.05^t\;.$$
+Na hoeveel uur is het aantal bacteriën verdubbeld?
+\end{oefening}
+
+\begin{oefening}
+Een patiënt wordt voor een operatie onder narcose gebracht door $1200 \mg$ van een verdovingsmiddel in te spuiten. De nieren zorgen er echter voor dat die hoeveelheid ieder uur vermindert met $26 \%$. Tijdens de operatie is een minimum van $500 \mg$ vereist. Hoelang mag de operatie duren?
+\end{oefening}
+
+\begin{oefening}
+Een satelliet heeft een elektriciteitsvoorziening met een vermogen van
+$$P=120\cdot e^{-0.004\cdot t}\;.$$
+Daarin is $P$ uitgedrukt in watt en is $t$ het aantal dagen na de lancering.
+\begin{enumerate}[(a)]
+  \item Hoeveel watt is er nog beschikbaar na $1$ jaar?
+  \item Voor de werking van de satelliet is een minimaal vermogen van 10 watt nodig. Bereken de levensduur van de satelliet.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een blauwe plek heelt exponentieel. Als $S_0$ de oorspronkelijke oppervlakte is, dan is de oppervlakte $S$ na $t$ dagen:
+$$S=S_0 e^{-0.35\cdot t}\;.$$
+\begin{enumerate}[(a)]
+  \item Hoeveel percent blijft er over na 10 dagen?
+  \item Na hoeveel dagen is de helft van de blauwe plek geheeld?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Als je geld belegt, dan is de {\em verdubbelingstijd} de tijd nodig om je geld te verdubbelen.
+\begin{enumerate}[(a)]
+  \item Je belegt je geld tegen $1.8 \%$ per jaar. Bereken de verdubbelingstijd.
+%  \item Je ouders en grootouders konden indertijd hun geld op de bank parkeren tegen een interest van $7 \%$. Bereken de verdubbelingstijd.
+  \item Tegen welk percentage moet je je geld beleggen om een verdubbelingstijd van 5 jaar te verkrijgen?
+\end{enumerate}
+\end{oefening}
+
+
+\newpage
+\section*{Extra Oefeningen}
+
+\begin{oefening}
+Herschrijf met behulp van een logaritme i.p.v. met macht.
+\begin{exlist}{3}
+  \item $a^x=y$
+  \item $e^3=20.086$
+  \item $\sqrt{49}=7$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening}
+Bepaal de waarde van de volgend logaritme.
+\begin{exlist}{3}
+  \item $\log 1000$
+  \item $\log_2 32$
+  \item $\log_4 \dfrac{1}{64}$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening}
+Los op in $\mathbb{R}$.
+\begin{exlist}{2}
+  \item $3^x=12$
+  \item $e^x=\pi$
+  \item $\ln 27x^3 - \ln 3x = 2$
+  \item $2\log_a 72 = 3\log_a 12 + \log 10$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening}\\
+\begin{minipage}{0.5\textwidth}
+Hiernaast vind je de grafiek van een logaritmische functie met voorschrift $f(x)=\log_a x$. Lees $a$ op de figuur af.\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.5cm,ystep=0.5cm] (-0.5,-0.5) grid (5.5,2.5);
+\draw[->,color=black] (-0.5,0) -- (5.5,0);
+\foreach \x in {1,2,3,4,5}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.5) -- (0,2.5);
+\foreach \y in {1,2}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.5,-0.5) rectangle (5.5,2.5);
+\draw[line width=1.6,smooth,samples=100,domain=0.01:5.5] plot(\x,{ln((\x))/ln(2.5)});
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\end{oefening}
+
+\begin{oefening}
+Bepaal:
+\begin{exlist}{2}
+  \item $\displaystyle\lim_{x\to +\infty}\log_8 x$
+  \item $\displaystyle\lim_{x\to +\infty}\log_{0.99} x$
+  \item $\displaystyle\lim_{x\underset{>}{\to} 0}\log_2 x$
+  \item $\displaystyle\lim_{x\underset{>}{\to} 0}\log_{2^{-1}} x$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening}
+Je belegt je geld tegen $1.8 \%$ per jaar. Bereken de verdubbelingstijd, de tijd nodig om je geld te verdubbelen. Maak gebruik van logaritmen om deze oefening op te lossen.
+\end{oefening}
+
+\begin{oefening} % Pauls Online Notes
+De groei van een bacteriënkolonie wordt gegeven door
+$$Q=Q_0e^{0.195t}\;.$$
+Als er initieel 500 bacteriën zijn en $t$ wordt gegeven in uren, bepaal dan hoeveel bacteriën $Q$ er zullen zijn na een halve dag. Hoe lang zal het duren tegen dat er 10000 bacteriën in de kolonie zullen zijn?
+\end{oefening}
+
+\vspace*{-1cm}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\end{document}
+
+
+
+
+\begin{minipage}[c]{0.4\textwidth}
+\end{minipage}
+\begin{minipage}[c]{0.6\textwidth}
+\dotlines{10}
+\end{minipage}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
