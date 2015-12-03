@@ -1,5 +1,5 @@
 \textwidth 17cm \textheight 25cm \evensidemargin 0cm
-\oddsidemargin 0cm \topmargin -2.5cm
+\oddsidemargin 0cm \topmargin -2cm
 \parindent 0pt
 %\parskip \bigskipamount
 
@@ -28,6 +28,8 @@
 \usepackage{cancel}
 \usepackage{mdframed}
 \usepackage{url}
+\usepackage{mathtools}
+\usepackage{changepage}
 
 \newcommand{\todo}[1]{{\color{red} TODO: #1}}
 
@@ -302,7 +304,7 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
 \newenvironment{exlist}[1] %
 { \begin{multicols}{#1}
   \begin{enumerate}[(a)]
-    \setlength{\itemsep}{0.8em} }
+    \setlength{\itemsep}{0.5em} }
 { \end{enumerate}
   \end{multicols} }
 

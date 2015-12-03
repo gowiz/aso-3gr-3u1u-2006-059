@@ -15,22 +15,21 @@
   \fontsize{40}{60}\selectfont Logaritmische functies
   \end{mdframed}
   \vfill
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw[->,color=black] (-2.52,0) -- (6.4,0);
-\foreach \x in {-2,2,4,6}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-1.22) -- (0,4.36);
-\foreach \y in {,2,4}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-2.52,-1.22) rectangle (6.4,4.36);
-\draw[line width=1.6pt,dash pattern=on 3pt off 4pt, smooth,samples=50,domain=-2.5:6.4] plot(\x,{(\x)});
-\draw[color=gray,line width=1.6pt, smooth,samples=100,domain=-2.5:2.4] plot(\x,{exp(\x)});
-\draw[line width=1.6pt, smooth,samples=100,domain=0.1:6.4] plot(\x,{ln((\x))});
-\draw[color=gray] (1.26,3.98) node[anchor=north west] {$f(x)=e^x$};
-\draw (3.5,1.3) node[anchor=north west] {$f^{-1}(x)=\ln(x)$};
-\end{tikzpicture}
-%  \includegraphics[width=0.8\textwidth]{}
+  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+  \draw[->,color=black] (-2.52,0) -- (6.4,0);
+  \foreach \x in {-2,2,4,6}
+  \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+  \draw[->,color=black] (0,-1.22) -- (0,4.36);
+  \foreach \y in {,2,4}
+  \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+  \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+  \clip(-2.52,-1.22) rectangle (6.4,4.36);
+  \draw[line width=1.6pt,dash pattern=on 3pt off 4pt, smooth,samples=50,domain=-2.5:6.4] plot(\x,{(\x)});
+  \draw[color=gray,line width=1.6pt, smooth,samples=100,domain=-2.5:2.4] plot(\x,{exp(\x)});
+  \draw[line width=1.6pt, smooth,samples=100,domain=0.1:6.4] plot(\x,{ln((\x))});
+  \draw[color=gray] (1.26,3.98) node[anchor=north west] {$f(x)=e^x$};
+  \draw (3.5,1.3) node[anchor=north west] {$f^{-1}(x)=\ln(x)$};
+  \end{tikzpicture}
   \vfill
 \end{center}
 
@@ -60,7 +59,8 @@ Je \hfill  {\scriptsize(LP2006-059, LI1.8, ET23,14,32,25,31,24)}
 \newpage
 \clearpage
 \thispagestyle{empty}
-\mbox{}
+%\mbox{}
+\tableofcontents
 \newpage
 \clearpage
 \pagenumbering{arabic} 
@@ -189,38 +189,44 @@ Bereken:
 \pagebreak
 \section{Briggse logaritmen en Neperiaanse logaritmen}
 
+\subsection{Briggse logaritmen}
+
 Is het grondtal $a$ gelijk aan 10 dan spreken we van {\bf Briggse logaritmen}.
 
 De Engelse wiskundige Henry Briggs publiceerde in 1617 een tafel met deze naar hem genoemde logaritmen.
 
 \paragraph{Notatie} $\log x = \log_{10} x$
 
-\paragraph{Voorbeelden}
+\paragraph{Voorbeelden}\begin{minipage}[t]{\textwidth}
 \begin{enumerate}[(a)]
   \item $\log 10 = 1$
   \item $\log 1 = 0$
   \item $\log 0.0001 = \log 10^{-4} = -4$
 \end{enumerate}
+\end{minipage}
 
 \paragraph{Rekenmachine} We kunnen de Briggse logaritmen berekenen op het \zrm{ZRM} met de toets \zrm{log}. Zo is $\log 3459 = 3.5389506$
+
+\subsection{Neperiaanse logaritmen}
 
 Is het grondtal $a$ gelijk aan $e$ dan spreken we van {\bf natuurlijke logaritmen} of Neperiaanse logaritmen, naar de Engelse wiskundige John Napier (1550-1617).
 
 \paragraph{Notatie} $\ln x = \log_{e} x$
 
-\paragraph{Voorbeelden}
+\paragraph{Voorbeelden}\begin{minipage}[t]{\textwidth}
 \begin{enumerate}[(a)]
   \item $\ln e = 1$
   \item $\ln 1 = 0$
   \item $\ln e^{-2} = -2$
 \end{enumerate}
+\end{minipage}
 
 \paragraph{Rekenmachine} Natuurlijke logaritmen kunnen op de zakrekenmachine met de \zrm{ln} toets worden berekend.
 Zo is $\ln 3459 = 8.1487348$
 
 \begin{oefening}
 Bereken met je \zrm{ZRM}, noteer je resultaat met 3 decimalen nauwkeurig.
-\begin{multicols}{2}
+\begin{multicols}{3}
 \begin{enumerate}[(a)]
   \item $\log 12345$
   \item $\log 98.76$
@@ -236,12 +242,14 @@ Bereken met je \zrm{ZRM}, noteer je resultaat met 3 decimalen nauwkeurig.
 
 \section{Rekenregels}
 
-\paragraph*{Rekenregels van logaritmen met grondtal $a$}
+\subsection{Rekenregels van logaritmen met grondtal $a$}
+
+%\paragraph*{Rekenregels van logaritmen met grondtal $a$}
 \begin{mdframed}
 $\forall x,y \in \mathbb{R}_0^+, \forall p\in \mathbb{R}:$
 \begin{align*}
-\log_a(x\cdot y) &= \log x + \log y && \mbox{logaritme van een product}\\
-\log_a \dfrac{x}{y} &= \log_a x + \log_a y && \mbox{logaritme van een quotiënt}\\
+\log_a(x\cdot y) &= \log_a x + \log_a y && \mbox{logaritme van een product}\\
+\log_a \dfrac{x}{y} &= \log_a x - \log_a y && \mbox{logaritme van een quotiënt}\\
 \log_a \dfrac{1}{y} &= - \log_a y && \mbox{logaritme van een invers}\\
 \log_a(x^p) &= p\cdot\log_a x && \mbox{logaritme van een macht}
 \end{align*}
@@ -295,8 +303,7 @@ Bereken zonder \zrm{ZRM}.
 
 \begin{oefening} % from mathcentre logarithms 2009
 Elk van de volgende uitdrukkingen kan herschreven worden als $\log N$. Bepaal de $N$ voor elke uitdrukking. Er wordt dus niet gevraagd om de logaritme uit te rekenen, wel om deze korter te herschrijven.
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
+\begin{exlist}{2}
   \item $\log 3 + \log 5$
   \item $2\log 3 - 3\log 2$
   \item $5\log 2 + 2\log 5$
@@ -309,8 +316,7 @@ Elk van de volgende uitdrukkingen kan herschreven worden als $\log N$. Bepaal de
   \item $\log 236 - \log 1$
   \item $\log 2 + \log 3 + \log 4$
   \item $\log 10 + 2\log 3 - \log 2$
-\end{enumerate}
-\end{multicols}
+\end{exlist}
 \end{oefening}
 
 \begin{oefening} % argument
@@ -333,8 +339,7 @@ Bepaal het grondtal $a$.
 
 \begin{oefening} % from mathcentre logarithms 2009
 Gebruik logaritmen om de volgende vergelijkingen op te lossen. Geef de oplossingen in decimale notatie met 3 cijfers na de komma. Geef steeds de oplossingenverzameling en maak steeds de proef.
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
+\begin{exlist}{2}
   \item $10^x=5$
   \item $4^x=12$
   \item $\pi^x=10$
@@ -347,12 +352,11 @@ Gebruik logaritmen om de volgende vergelijkingen op te lossen. Geef de oplossing
   \item $e^x=0.1$
   \item $\left(\dfrac{1}{2}\right)^x=\dfrac{1}{100}$
   \item $10^x=e^{2x-1}$
-\end{enumerate}
-\end{multicols}
+\end{exlist}
 \end{oefening}
 
-\pagebreak
-\paragraph*{Veranderen van grondtal}
+\subsection{Veranderen van grondtal}
+
 \begin{mdframed}
 $\forall a,b,c \in \mathbb{R}_0^+\backslash\{1\}:$
 \begin{align*}
@@ -363,16 +367,20 @@ $\forall a,b,c \in \mathbb{R}_0^+\backslash\{1\}:$
 
 \begin{oefening} % argument
 Bereken zonder \zrm{ZRM}
-\begin{multicols}{3}
-\begin{enumerate}[(a)]
+\begin{exlist}{3}
   \item $\log_2 7 \cdot \log_7 16$
-  \item $\log 11 \cdot \log_11 0.1$
+  \item $\log 11 \cdot \log_{11} 0.1$
   \item $\log_9 27$
-  \item $\log_32 64$
+  \item $\log_{32} 64$
   \item $\dfrac{\ln 81}{\ln 3}$
   \item $\dfrac{\ln 81}{\ln 27}$
-\end{enumerate}
-\end{multicols}
+  \item $\log_8 27 \cdot \log_3 8$
+  \item $\ln 4 \cdot \log_4 (\sqrt{e}\cdot e^2)$
+  \item $\dfrac{1}{\log_8 2}$
+  \item $\log_27 3$
+  \item $\dfrac{\log_8 125}{\log_8 5}$
+  \item $\log_8 16$
+\end{exlist}
 \end{oefening}
 
 \pagebreak
@@ -407,7 +415,7 @@ De logaritmische functie met grondtal $a$ en de exponentiële functie met grondt
     \draw[line width=1.6pt,dash pattern=on 3pt off 4pt, smooth,samples=50,domain=-2.5:6.4] plot(\x,{(\x)});
     \draw[color=gray,line width=1.6pt, smooth,samples=100,domain=-2.5:2.4] plot(\x,{exp(ln(2)*\x)});
     \draw[line width=1.6pt, smooth,samples=100,domain=0.1:6.4] plot(\x,{ln((\x))/ln(2)});
-    \draw[color=gray] (0.6,4) node[anchor=north west] {$y=2^x$};
+    \draw[color=gray] (0.5,4) node[anchor=north west] {$y=2^x$};
     \draw (3.5,1.8) node[anchor=north west] {$y=\log_2 x$};
   \end{tikzpicture}
   \end{center}
@@ -548,19 +556,10 @@ Daarin is $P$ uitgedrukt in watt en is $t$ het aantal dagen na de lancering.
 \end{oefening}
 
 \begin{oefening}
-Een blauwe plek heelt exponentieel. Als $S_0$ de oorspronkelijke oppervlakte is, dan is de oppervlakte $S$ na $t$ dagen:
-$$S=S_0 e^{-0.35\cdot t}\;.$$
-\begin{enumerate}[(a)]
-  \item Hoeveel percent blijft er over na 10 dagen?
-  \item Na hoeveel dagen is de helft van de blauwe plek geheeld?
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}
 Als je geld belegt, dan is de {\em verdubbelingstijd} de tijd nodig om je geld te verdubbelen.
 \begin{enumerate}[(a)]
   \item Je belegt je geld tegen $1.8 \%$ per jaar. Bereken de verdubbelingstijd.
-%  \item Je ouders en grootouders konden indertijd hun geld op de bank parkeren tegen een interest van $7 \%$. Bereken de verdubbelingstijd.
+  \item Je ouders en grootouders konden indertijd hun geld op de bank parkeren tegen een interest van $7 \%$. Bereken de verdubbelingstijd.
   \item Tegen welk percentage moet je je geld beleggen om een verdubbelingstijd van 5 jaar te verkrijgen?
 \end{enumerate}
 \end{oefening}
@@ -582,7 +581,7 @@ Herschrijf met behulp van een logaritme i.p.v. met macht.
 \end{oefening}
 
 \begin{oefening}
-Bepaal de waarde van de volgend logaritme.
+Bepaal de waarde van de volgend logaritme zonder \zrm{ZRM}.
 \begin{exlist}{3}
   \item $\log 1000$
   \item $\log_4 16$
@@ -591,7 +590,9 @@ Bepaal de waarde van de volgend logaritme.
   \item $\ln \dfrac{1}{e^3}$
   \item $\log_4 \dfrac{1}{64}$
   \item $\ln \left(e\cdot \sqrt{e}\right)$
-  \item $\log_3 324$
+  \item $\log_9 27+ \log_4 8$
+  \item $\dfrac{\log_6 25}{\log_6 5}$
+  \item $\log_4 48 - \log_4 3$
 \end{exlist}
 \end{oefening}
 
