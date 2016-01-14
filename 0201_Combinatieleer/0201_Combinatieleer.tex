@@ -2,7 +2,7 @@
 
 \input{../gowiz.tex}
 
-\usepackage{pgfplots}
+%\usepackage{pgfplots}
 
 %\renewcommand{\rmdefault}{phv} % Arial
 %\renewcommand{\sfdefault}{phv} % Arial
@@ -835,7 +835,7 @@ Stel algemeen de formule op van $V^k_n$ door gebruik te maken van faculteiten.
 \arules{6}
 \end{oefening}
 
-\paragraph*{Het aantal variaties van $k$ elementen uit $n$ elementen}
+\paragraph*{Variaties} (formule m.b.v. faculteiten)
 \begin{mdframed}
 $$V^k_n=\dfrac{n!}{(n-k)!}$$
 \end{mdframed}
@@ -1058,7 +1058,9 @@ Bereken de coëfficiënten van $(x+y)^4$:
 \end{oefening}
 
 \newpage
-Deze formule is dusdanig handig dat we deze coëfficiënten een naam geven, algemeen noemen we dit de {\bf binomiaalcoëfficiënt} van $k$ uit $n$ en noteren:
+Deze formule is dusdanig handig dat we deze coëfficiënten een naam geven, algemeen noemen we dit de {\bf binomiaalcoëfficiënt} van $k$ uit $n$ en noteren
+
+\paragraph*{Binomiaalcoëfficiënten}
 \begin{mdframed}
 $${k \choose n} = \dfrac{n!}{k!\cdot\left(n-k!\right)}$$
 \end{mdframed}
@@ -1165,37 +1167,43 @@ Zoek de eerste vier termen in de ontwikkeling van $\left(2+\dfrac{x}{3}\right)^{
 
 \subsection{Voorbeeld}
 
-Op hoeveel manieren kunnen vier identieke bollen in zes verschillende vakjes geplaatst worden? In elk vakje mag hoogstens één bol voorkomen.
+Op hoeveel manieren kunnen twee identieke bollen in vijf verschillende vakjes geplaatst worden? In elk vakje mag hoogstens één bol voorkomen.
 
 We definiëren:
 \begin{itemize}
   \item De bollen zijn identiek, we duiden één bol aan met de letter $B$
-  \item De verzameling vakjes = $\{a, b, c, d, e, f\}$
+  \item De verzameling vakjes = $\{a, b, c, d, e\}$
 \end{itemize}
 
-We moeten vier gelijke bollen in zes vakjes leggen. Dit is hetzelfde als: we moeten de vier bollen tegelijkertijd in de bakjes leggen. Vermits de 4 bollen identiek zijn heeft alléén het vakje belang waarin een bol ligt. De bol zelf speelt geen rol.
+We moeten twee gelijke bollen in vijf vakjes leggen. Dit is hetzelfde als: we moeten de twee bollen tegelijkertijd in de bakjes leggen. Vermits de 2 bollen identiek zijn heeft alléén het vakje belang waarin een bol ligt. De bol zelf speelt geen rol.
 
 \begin{oefening}
 Teken een mogelijke plaatsing van de bollen:
 \arules{2}
 \end{oefening}
 
-Elke plaatsing zouden we als een viertal $(a, c, d, f)$ kunnen noteren. Maar elk viertal, waarin dezelfde vakjes voorkomen zoals $(a, c, d, f)$, $(c, a, f, d)$, $(d, a, f, c)$, \ldots, $(f, d, c, a)$ stelt eenzelfde plaatsing voor.
+Elke plaatsing zouden we als een tweetal $(a, c)$ kunnen noteren. Maar elk tweetal, waarin dezelfde vakjes voorkomen zoals $(a, c)$ en $(c, a)$ stelt eenzelfde plaatsing voor.
 
 De volgorde waarin de vakjes opgesomd worden heeft geen belang. We spreken nu
 af om de plaatsing te noteren als een verzameling waarin de elementen in
 alfabetische volgorde worden geschreven. De hierboven voorgestelde plaatsing
-wordt dan : $\{a, c, d, f\}$ en is een deelverzameling van de gegeven verzameling vakjes $\{a, b, c, d, e, f\}$.
+wordt dan : $\{a, c\}$ en is een deelverzameling van de gegeven verzameling vakjes $\{a, b, c, d, e\}$.
 
 Daar er bovendien in elk vakje hoogstens één bol ligt wordt geen enkel vakje
 herhaald. In een verzameling wordt óók geen element herhaald. Wel, de
-deelverzameling $\{a, c, d, f\}$, noemt men nu een combinatie zonder herhaling, kortweg combinatie, van 4 elementen gekozen uit 6 elementen.
-Het aantal van zulke combinaties stellen we nu voor door het symbool $C^4_6$ en kunnen we berekenen met behulp van faculteiten:
-
-$$C^4_6=\dfrac{6!}{4!\cdot (6-4)!}$$
+deelverzameling $\{a, c\}$, noemt men nu een combinatie zonder herhaling, kortweg combinatie, van 2 elementen gekozen uit 5 elementen.
+Het aantal van zulke combinaties stellen we nu voor door het symbool $C^2_5$ en kunnen we als volgt bepalen:
 
 \begin{oefening}
-Maak voorgaande berekening. Met andere woorden, op hoeveel manieren kunnen vier identieke bollen in zes verschillende vakjes geplaatst worden als in één vakje hoogstens één bol mag voorkomen?
+Codeer het gegeven probleem als volgt: We kiezen 5 plaatsen, 2 ervan moeten gevuld worden met de letter $B$ van bol plaatsen, de overige drie moeten gevuld worden met de letter $L$ van leeg laten. Los dit probleem nu op met behulp van een wegenrooster.
+\ruitjes{4cm}
+\end{oefening}
+
+Eenvoudiger is om onmiddellijk de formule te gebruiken:
+$$C^2_5=\dfrac{5!}{2!\cdot (5-2)!}$$
+
+\begin{oefening}
+Maak voorgaande berekening. Met andere woorden, op hoeveel manieren kunnen twee identieke bollen in vijf verschillende vakjes geplaatst worden als in één vakje hoogstens één bol mag voorkomen?
 \arules{2}
 \end{oefening}
 
@@ -1203,6 +1211,7 @@ Let op de notatie : De $C$ is het symbool voor het aantal combinaties zonder
 herhaling. Het aantal vakjes (elementen) waarover je beschikt wordt als index
 genoteerd. Het aantal te vullen vakjes wordt bovenaan genoteerd.
 
+\vspace*{-1cm}
 \subsection{Formule}
 
 \paragraph*{Combinaties}
@@ -1306,13 +1315,170 @@ Joni gooit 13 keer met een geldstuk. Telkens noteert hij K(op) en M(unt). Zo ont
 \end{enumerate}
 \end{oefening}
 
+\pagebreak
+\section{Herhalingscombinaties}
+
+\subsection{Voorbeeld}
+
+Marieke wordt 5 jaar. Voor haar verjaardagsfeestje hangt de vader 5 ballonnen aan de voordeur. Hij heeft ballonnen in 4 kleuren: blauwe (B), gele (G), rode (R) en witte (W). Marieke mag de kleuren kiezen, een mengeling van kleuren of zelfs allemaal in één kleur. Op hoeveel manieren kan ze dit doen?
+
+\paragraph*{Belangrijk}
+\begin{itemize}
+  \item Het maakt niet uit in welke volgorde dat de ballonnen worden gekozen, {\bf volgorde onbelangrijk}.
+  \item Ze kan een kleur van ballon opnieuw kiezen, {\bf herhaling toegestaan}.
+\end{itemize}
+
+We tellen het aantal mogelijkheden.
+
+Hou voor elk kleur voldoende ruimte:
+
+\verb# B | G | R | W #
+
+Op deze manier worden de kleuren van elkaar gescheiden door een eerste symbool \verb#|#
+
+We nemen een tweede symbool \verb#*# om de gekozen kleur voor te stellen.
+
+\begin{oefening}
+Stel de volgende keuzes voor:
+\begin{enumerate}[(a)]
+  \item drie blauwe ballonnen, één groene, één rode: \arulefill
+  \item Marieke kiest allemaal witte ballonnen: \arulefill
+  \item twee blauwe, één witte en de rest ook blauw: \arulefill
+\end{enumerate}
+\end{oefening}
+
+Merk nu op dat elke code bestaat uit 8 plaatsen, waaruit we er 5 moeten kiezen om een \verb#*# te zetten. We vinden dus het aantal mogelijkheden met een combinatie: $C^5_8=\dfrac{8!}{5!3!}=56$
+
+We noemen het aantal keuzemogelijkheden het aantal {\bf herhalingscombinaties van 5 uit 4}, ja want we kiezen 5 ballonnen en voor elke ballon hebben we vier kleuren om uit te kiezen. We nemen dus 5 beslissingen en voor elke beslissing hebben we vier keuzes. We noteren dit kort als
+$$\bar{C}^5_4=C^5_8=56$$
+
+\pagebreak
+\subsection{Algemeen}
+
+\paragraph*{Herhalingscombinaties}
+\begin{mdframed}
+Het aantal {\bf herhalingscombinaties van $k$ elementen gekozen uit $n$ verschillende elementen} noteren we $\bar{C}^k_n$ en er geldt:
+$$\bar{C}^k_n=C^k_{n+k-1}$$
+\end{mdframed}
+
+\paragraph*{Belangrijk}
+\begin{itemize}
+  \item Het maakt niet uit in welke volgorde dat de elementen worden gekozen, {\bf volgorde onbelangrijk}.
+  \item Elk element kunnen we meerdere keren opnieuw kiezen, {\bf herhaling toegestaan}.
+\end{itemize}
+
+\paragraph*{Opmerking}
+In de formule kan $k$, het aantal elementen dat wordt gekozen, groter zijn dan $n$, het aantal elementen waaruit we kiezen.
 
 
+\subsection{Oefeningen}
+
+\begin{oefening}
+Een bloemist maakt bloemstukjes waarin hij telkens 11 voorjaarsbloemen verwerkt. Hij beschikt over tulpen (witte, gele en oranje), narcissen (witte en gele) en anemonen (witte en paarse).
+\begin{enumerate}[(a)]
+  \item Hoeveel verschillende composities kan hij maken?
+  \item Hoeveel composities bevatten geen witte bloemen?
+  \item Hoeveel composities bevatten enkel tulpen?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+In het casino wordt een gokspel gespeeld waarbij je jetons op een speelbord met zes velden mag plaatsen. Je mag de jetons verdelen zoals je wilt.
+\begin{enumerate}[(a)]
+  \item Hoeveel verdelingen van de jetons zijn er mogelijk als je er 5 inzet?
+  \item Hoeveel verdelingen van de jetons zijn er mogelijk als je er 10 inzet?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Er worden doosjes gevuld met pralines. Er is een voorraad pralines gemaakt in 4 soorten: pure chocolade, melkchocolade, witte chocolade en gemengd. Van elke soort zijn er 10 verschillende vormen en vullingen.
+\begin{enumerate}[(a)]
+  \item Hoeveel mogelijkheden zijn er als je van elke soort chocolade 5 pralines van verschillende vormen en vullingen in het doosje steekt?
+  \item Hoeveel mogelijkheden zijn er als je van elke soort chocolade 5 pralines in het doosje steekt zonder op de vorm en de vulling te letten?
+\end{enumerate}
+\end{oefening}
+
+\section{Anagrammen}
+
+\subsection{Voorbeeld}
+
+Hoeveel anagrammen zijn er van het woord \verb#ANANAS#?
+
+We moeten dus zes letters rangschikken, waarvan
+\begin{itemize}
+  \item 3 keer de letter \verb#A#
+  \item 2 keer de letter \verb#N#
+  \item 1 keer de letter \verb#S#
+\end{itemize}
+
+\begin{enumerate}
+  \item Veronderstel dat de zes letters allemaal verschillend zijn:\\
+  $$\Rightarrow \#=6\cdot5\cdot4\cdot3\cdot2\cdot1=720=6!=P_6$$
+  \item We hebben echter teveel geteld, om dit in te zien noteren we de letters als volgt:
+  $$A_1N_1A_2N_2A_3S_1$$
+  We tellen nu op hoeveel manieren we éénzelfde anagram kunnen bekomen, bijvoorbeeld \verb#NAANSA#:
+  \begin{center}
+  \begin{tabular}{ccc}
+    $N_1A_1A_2N_2S_1A_3$ & $N_1A_1A_3N_2S_1A_2$ & $N_1A_2A_1N_2S_1A_3$\\
+    $N_1A_2A_3N_2S_1A_1$ & $N_1A_3A_1N_2S_1A_2$ & $N_1A_3A_3N_2S_1A_1$\\
+    $N_2A_1A_2N_1S_1A_3$ & $N_2A_1A_3N_1S_1A_2$ & $N_2A_2A_1N_1S_1A_3$\\
+    $N_2A_2A_3N_1S_1A_1$ & $N_2A_3A_1N_1S_1A_2$ & $N_2A_3A_3N_1S_1A_1$\\
+  \end{tabular}
+  \end{center}
+  We merken dus op dat we elk uniek anagram op 12 manieren kunnen bekomen:
+  \begin{itemize}
+    \item \verb#N# neemt 2 plaatsen in, dit kan op $P_2=2!=2$ manieren
+    \item \verb#A# neemt 3 plaatsen in, dit kan op $P_3=3!=3\cdot2=6$ manieren
+  \end{itemize}
+  $$\Rightarrow \#=P_2\cdot P_3=2\cdot6=12$$
+  \item Dus het aantal anagrammen van het woord \verb#ANANAS#
+  $$=\dfrac{P_6}{P_2\cdot P_3}=\dfrac{6!}{2!\cdot 3!}=\dfrac{720}{12}=60$$
+\end{enumerate}
+
+\begin{oefening}
+Bepaal het aantal anagrammen van je eigen naam.
+\arules{4}
+\end{oefening}
+
+\subsection{Algemeen}
+
+We rangschikken $n$ elementen, waarvan
+\begin{itemize}
+  \item $n_1$ van de eerste soort
+  \item $n_2$ van de tweede soort
+  \item $n_3$ van de derde soort
+  \item $\vdots$
+  \item $n_k$ van de $k$-de soort
+\end{itemize}
+met $n_1+n_2+n_3+\dots+n_k=n$. De bekomen resultaten noemen we {\bf anagrammen}. Het aantal anagrammen wordt gegeven door
+
+\paragraph*{Anagrammen}
+\begin{mdframed}
+$$P^{n_1,n_2,n_3,\dots,n_k}_n = \dfrac{n!}{n_1!\cdot n_2!\cdot n_3!\cdot \cdots \cdot n_k!}$$
+\end{mdframed}
+
+\subsection{Oefeningen}
+
+\vspace*{-0.5cm}
+\begin{oefening}
+Noteer alle anagrammen van het woord \verb#EEFJE#. Bereken vervolgens het aantal anagrammen met de formule.
+\end{oefening}
+
+\begin{oefening}
+Noem $V$ de verzameling van alle natuurlijke getallen van 5 cijfers die tweemaal het cijfer 1 en driemaal het cijfer 2 bevatten.
+\begin{enumerate}[(a)]
+  \item Noteer het aantal elementen van $V$ van klein naar groot.
+  \item Bereken het aantal elementen van $V$.
+  \item Bereken het aantal getallen van $V$ die even zijn.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bereken het aantal anagrammen van \verb#MISSISSIPPI#.
+\end{oefening}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
-
 
 
 
