@@ -9,6 +9,7 @@
 *.synctex.gz
 *-dot2tex-*
 *.pdf
+*.dvi
 *.aux
 *~
 *.~*#
