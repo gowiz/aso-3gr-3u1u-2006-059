@@ -64,14 +64,14 @@ Je \hfill {\scriptsize(LP 2006/059, ET1, ET9, ET11)}
 \vspace*{-2cm}
 
 \thispagestyle{empty}
-\mbox{}
 \newpage
-\clearpage
 \thispagestyle{empty}
-\mbox{}
+\tableofcontents
 \newpage
 \clearpage
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\lhead{}
 
 \fancyhead[RO,LE]{Elementaire kansrekening}
 \fancyhead[RE,LO]{}
@@ -166,7 +166,7 @@ leven richten. In geval van experiment $E_2$ zullen we waarnemer 1 volgen.
   \item $E_1$: Een muntstuk opgooien.\\
   De mogelijke uitkomsten: kop (k) en munt (m) zijn je voldoende bekend.
   \item $E_2$: Een kaart trekken uit een spel van 52 kaarten.\\
-  Uitkomsten: klaverennegen ($9_k$), hartenaas ($a_h$), ruitenboer ($b_r$), schoppenacht ($8_s$) ... enz.\footnote{Zie de bijlage voor een kaartspel}
+  Uitkomsten: klaverennegen ($k_9$), hartenaas ($h_1$), ruitenboer ($r_b$), schoppenacht ($s_8$) ... enz.\footnote{Zie de bijlage voor een kaartspel en de gebruikte notaties. Hiermee moet men ook leren werken, de bijlage mag gebruikt worden op toetsen en examens.}
   \item $E_3$: Verjaren in de maand mei.\\
   Uitkomsten: 3 mei, 15 mei, 26 mei, 31 mei ... enz.
   \item $E_4$: Twee dobbelstenen tegelijk opgooien.\\
@@ -196,7 +196,7 @@ $U=\{u_1, u_2, \ldots, u_n\}$ met $\#U=n$.
   \item $E_1$: Een muntstuk opgooien.\\
   $U_1 = \{k,m\}$ met $\#U_1=2$
   \item $E_2$: Een kaart trekken uit een spel van 52 kaarten.\\
-  $U_2 = \{2_h, 3_h, \ldots , 10_h, b_h, d_h, k_h, a_h, 2_r, \ldots, a_r, 2_s, \ldots, a_s, 2_k, \ldots, a_k \}$ met $\#U_2=52$
+  $U_2 = \{h_1, h_2, h_3, \ldots , h_{10}, h_b, h_d, h_k, r_1, \ldots, a_k, s_1, \ldots, s_k, k_1, \ldots, k_k \}$ met $\#U_2=52$
   \item $E_3$: Verjaren in de maand mei.\\
   Er zijn 31 dagen in mei, we hebben dus als uitkomst 1 mei, 2 mei, ... enz. Laten we voor het gemak enkel het getal van de dag gebruiken in de uitkomstenverzameling, dat het in de maand mei valt weten we reeds.\\
   $U_3 = \{1, 2, 3, \ldots, 30, 31\}$ met $\#U_3=31$
@@ -252,11 +252,11 @@ We zoeken ook telkens het aantal elementen op.
   \item $E_2$: Een kaart trekken uit een spel van 52 kaarten.
   \begin{itemize}
     \item $A_2$: Een harten trekken\\
-    $A_2=\{2_h, 3_h, \ldots, h_h, a_h\}$ met $\#A_2=13$
+    $A_2=\{h_1, h_2, \ldots, h_d, h_k\}$ met $\#A_2=13$
     \item $B_2$: Een aas trekken\\
-    $B_2=\{a_h, a_r, a_s, a_k\}$ met $\#B_2=4$
+    $B_2=\{h_1, r_1, s_1, k_1\}$ met $\#B_2=4$
     \item $C_2$: Een zwarte kaart trekken\\
-    $C_2=\{2_s, \ldots, a_s, 2_k, \ldots, a_k\}$ met $\#C_2=26$
+    $C_2=\{s_1, \ldots, s_k, k_1, \ldots, k_h\}$ met $\#C_2=26$
   \end{itemize}
   We stellen ook hier vast dat: $A_2\subset U_2$, $B_2\subset U_2$ en $C_2\subset U_2$.
   \item $E_3$: Verjaren in de maand mei.
@@ -334,6 +334,7 @@ Neem experiment $E_1$, het gooien van een muntstuk. Deze heeft twee elementaire 
 \paragraph*{Opmerking}
 Er bestaat juist één onmogelijke gebeurtenis al kan die wel op veel manieren omschreven zijn. Zo ook is er slechts één zekere gebeurtenis per experiment. Als $\#U = n$ dan zijn er $n$ elementaire gebeurtenissen.
 
+\pagebreak
 \section{Kanswaarde}
 
 Beschouw het experiment $E$ met uitkomstenverzameling $U$. Neem de gebeurtenis $A$.
@@ -364,7 +365,7 @@ een kommagetal geschreven.
   \end{minipage}
   Bij de gebeurtenis $A$ hoort de kanswaarde $P(A) =\dfrac{1}{2}$. Dit drukt dus uit dat we $\dfrac{1}{2}$ kans hebben dat wanneer we een muntstuk opgooien, het kop zal zijn.
   \item Welke is de kans om een harten te trekken uit een spel van 52 kaarten?\\
-  Je weet $B = \{2_h , 3_h , 4_h , ..., h_h , a_h\}$, dus $\#B=13$.
+  Je weet $B = \{h_1 , h_2 , h_3 , ..., h_d , h_h\}$, dus $\#B=13$.
   Nu hoort bij de gebeurtenis $B$ de kanswaarde $P(B)=\dfrac{13}{52}=\dfrac{1}{4}$. De breuk $\dfrac{1}{4}$ drukt hier uit: de kans dat we een harten zullen trekken bij een volgende beurt.
 \end{itemize}
 
@@ -424,17 +425,17 @@ Geef de uitkomstenverzameling $U$:
   \arules{1}
 \begin{enumerate}[(a)]
   \item Geef de gebeurtenis $A$ en de kans $P(A)$ dat het getrokken getal negatief is.
-  \arules{2}
+  \arules{1}
   \item Geef de gebeurtenis $B$ en de kans $P(B)$ dat het getrokken getal deelbaar door 7 is.
-  \arules{2}
+  \arules{1}
   \item Geef de gebeurtenis $C$ en de kans $P(C)$ dat het getrokken getal een priemgetal is.
-  \arules{2}
+  \arules{1}
   \item Geef de gebeurtenis $D$ en de kans $P(D)$ dat het getrokken getal $\leq 50$ is.
-  \arules{2}
+  \arules{1}
   \item Geef de gebeurtenis $E$ en de kans $P(E)$ dat het getrokken getal een veelvoud van 5 is.
-  \arules{2}
+  \arules{1}
   \item Geef de gebeurtenis $F$ en de kans $P(F)$ dat het getrokken getal deelbaar door 14 is.
-  \arules{2}
+  \arules{1}
 \end{enumerate}
 \end{oefening}
 
@@ -743,9 +744,9 @@ We krijgen de volgende data terug (mannen ($M$), vrouwen ($V$), kleurenblind ($K
 \begin{oefening}
 Bepaal volgende kansen:
 \begin{enumerate}[(a)]
-  \item $V$: De gekozen persoon is een vrouw\\$\Rightarrow$ $P(V)=\arule{2cm}$
-  \item $K$: De gekozen persoon is kleurenblind\\$\Rightarrow$ $P(K)=\arule{2cm}$
-  \item $V\cap K$: De gekozen persoon is een vrouw en is kleurenblind\\$\Rightarrow$ $P(V\cap K)=\arule{2cm}$
+  \item $V$: De gekozen persoon is een vrouw\\$\Rightarrow$ $P(V)=\arule{4cm}=\arule{4cm}$
+  \item $K$: De gekozen persoon is kleurenblind\\$\Rightarrow$ $P(K)=\arule{4cm}=\arule{4cm}$
+  \item $V\cap K$: De gekozen persoon is een vrouw en is kleurenblind\\$\Rightarrow$ $P(V\cap K)=\arule{4cm}=\arule{4cm}$
 \end{enumerate}
 \end{oefening}
 
@@ -988,7 +989,9 @@ $J_{rood}$ en $K_{groen}$ zijn \verb#afhankelijk#/\verb#onafhankelijk#.\\
 We gebruiken dus de formule:
 $\arule{10cm}$\\
 We berekenen:
-$$P(J_{rood})=\arule{4cm} \qquad\mbox{ en }\qquad P(K_{groen})=\arule{4cm}$$
+$$P(J_{rood})=\arule{4cm}$$
+en
+$$P(K_{groen})=\arule{4cm}$$
 Besluit:
 $$\arule{10cm}$$
 \end{oefening}
@@ -1118,9 +1121,13 @@ Een lot bevat 60 rode en 40 blauwe lampen. De kans dat een rode lamp kapot is be
 \section*{Bijlagen}
 
 \subsection*{Het kaartspel}
-Het kaartspel bestaat uit 4 soorten: klaveren (k), ruiten (r), harten (h) en schoppen (s). De soorten worden verder onderverdeeld in 13 kaarten: 2, 3, 4, 5, 6, 7, 8, 9, 10, boer (j), koningin (q) en koning (k), aas (a). Er zijn ook twee soorten kleuren, de klaveren en de schoppen zijn zwart, de ruiten en harten zijn rood. De jokers negeren wij. Als we over een kaart spreken, dan schrijven we eerst de volgorde en dan als index de soort. Zo wordt de harten dame $q_h$ en de schoppen zeven $7_s$.
+Het kaartspel bestaat uit 4 soorten: klaveren (k), ruiten (r), harten (h) en schoppen (s). De soorten worden verder onderverdeeld in 13 kaarten: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, boer (b), dame (d) en koning (k). De 1 wordt ook de aas genoemd. Er zijn ook twee soorten kleuren, de klaveren en de schoppen zijn zwart, de ruiten en harten zijn rood. De jokers negeren wij. Als we over een kaart spreken, dan schrijven we eerst de soort en dan als index de volgorde. Zo wordt de harten dame $h_q$ en de schoppen zeven $s_7$.
 
 \includegraphics[width=\textwidth, angle=0]{kaartspel}
+
+\newpage
+\thispagestyle{empty}
+\includegraphics[width=1.4\textwidth, angle=90]{kaartspel_2}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
