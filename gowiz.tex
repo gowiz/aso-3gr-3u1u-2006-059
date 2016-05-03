@@ -113,15 +113,15 @@
 
 \newcommand{\assenstelsel}[5][1]{
 \definecolor{cqcqcq}{rgb}{0.65,0.65,0.65}
-\begin{tikzpicture}[scale=#1,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=#1cm,y=#1cm]
 \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (#2,#4) grid (#3,#5);
 \draw[->,color=black] (#2,0) -- (#3,0);
-\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $1$};
-\draw[color=black] (#3.25,0.07) node [anchor=south west] { x};
+%\draw[shift={(1,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $1$};
+%\draw[color=black] (#3.25,0.07) node [anchor=south west] {$x$};
 \draw[->,color=black] (0,#4) -- (0,#5);
-\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $1$};
-\draw[color=black] (0.09,#5.25) node [anchor=west] { y};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+%\draw[shift={(0,1)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $1$};
+\draw[color=black] (0.09,#5.25) node [anchor=west] {\phantom{$y$}};
+%\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
 \end{tikzpicture}
 }
 
@@ -294,6 +294,8 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
 \newcommand\Pa{\qopname\relax o{\mathrm{Pa}}}
 
 \newcommand\dB{\qopname\relax o{\mathrm{dB}}}
+
+\newcommand\Var{\qopname\relax o{\mathrm{Var}}}
 
 \newcommand{\EE}[1]{\cdot 10^{#1}}
 
