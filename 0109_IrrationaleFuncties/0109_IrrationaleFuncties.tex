@@ -1,0 +1,307 @@
+\documentclass[12pt,twoside]{article}
+
+\input{../gowiz.tex}
+
+\usepackage{versions}
+
+\excludeversion{theorie}
+
+\begin{document}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Oefeningen Irrationale Functies}
+
+\begin{theorie}
+
+  \thispagestyle{empty}
+  \begin{center}
+    \begin{mdframed}
+      \centering
+      \fontsize{40}{60}\selectfont Irrationale Functies
+    \end{mdframed}
+    \vfill
+    \definecolor{aqaqaq}{rgb}{0.63,0.63,0.63}
+    \definecolor{wqwqwq}{rgb}{0.38,0.38,0.38}
+    \begin{tikzpicture}[scale=1.5, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \draw[->,color=black] (-3.43,0) -- (3.78,0);
+      \foreach \x in {-3,-2,-1,1,2,3}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+      \draw[->,color=black] (0,-3.46) -- (0,3.9);
+      \foreach \y in {-3,-2,-1,1,2,3}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+      \clip(-3.43,-3.46) rectangle (3.78,3.9);
+      \draw[line width=1.6pt,color=wqwqwq, smooth,samples=100,domain=-1.9999995090909108:1.999994949917767] plot(\x,{sqrt(4-(\x)^2)});
+      \draw[line width=1.6pt,color=aqaqaq, smooth,samples=100,domain=-1.9999995090909108:1.999994949917767] plot(\x,{0-sqrt(4-(\x)^2)});
+      \draw (0.58,2.43) node[anchor=north west] {$f: y=\sqrt{4-x^2}$};
+      \draw (1.46,-1.5) node[anchor=north west] {$g: y=-\sqrt{4-x^2}$};
+    \end{tikzpicture}
+    \vfill
+  \end{center}
+
+  \subsection*{Doelstellingen}
+  \vspace*{-0.8cm}
+  {\singlespacing
+    Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
+    \begin{itemize}
+      \itemsep-0.2em
+    \item kan irrationale vergelijkingen oplossen
+    \item kan aan de hand van het functievoorschrift een tabel, het domein, de nulwaarden en het tekenverloop bepalen van irrationale functies
+    \item kan aan de hand van de grafiek domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen, extrema en asymptotisch gedrag bepalen van irrationale functies
+    \item kan vraagstukken/problemen oplossen die aanleiding ge-
+      ven tot een irrationale vergelijking, ongelijkheid of func-
+      tie, eventueel met behulp van ICT
+    \item kan extremumvraagstukken (ook van buiten de wiskunde)
+      die aanleiding geven tot irrationale functies, oplossen
+    \end{itemize}}
+
+  \thispagestyle{empty}
+  \mbox{}
+  \newpage
+  \clearpage
+  \thispagestyle{empty}
+  % \mbox{}
+  \tableofcontents
+  \newpage
+  \clearpage
+  \pagenumbering{arabic} 
+
+  \fancyhead[RO,LE]{Irrationale functies}
+  \fancyhead[RE,LO]{}
+
+\end{theorie}
+
+\section{Irrationale vergelijkingen}
+
+\begin{theorie}
+  \subsection{Definitie}
+
+  \begin{mdframed}
+    Een {\bf irrationale vergelijking} is een vergelijking waarin de onbekende $x$ voorkomt onder het wortelteken.
+  \end{mdframed}
+
+  \subsection{Voorbeelden}
+  \begin{enumerate}[(a)]
+  \item $\sqrt{2x+3}=7$
+  \item $\sqrt{x^2-2x+5}=13$
+  \item $\sqrt{x^2-4}=\sqrt{x+2}$
+  \end{enumerate}
+  
+  
+  We zullen ons beperken tot irrationale vergelijkingen van de volgende simpele vorm:
+  $$\sqrt{ax^2+bx+c}=d\qquad\mbox{ met } d\in\mathbb{R}^+$$
+
+
+\end{theorie}
+
+\begin{oefening}
+Los de volgende irrationale vergelijkingen op in $\mathbb{R}$:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $\sqrt{x+2}=2$
+  \item $\sqrt{3-x}=2$
+  \item $\sqrt{7-3x}=1$
+  \item $\sqrt{x^2+x+3}=3$
+  \item $\sqrt{x^2-6x+13}=2$
+  \item $\sqrt{25-x^2}=4$
+  \item $6-\sqrt{8+x}=0$
+  \item $\sqrt{x-1}-8=0$
+  \item $-\sqrt{49-x^2}+7=0$
+  \item $\sqrt{11x^2+2x-9}-3=0$
+  \item $12-\sqrt{4x+9x^2}=0$
+  \item $\sqrt{4x^2-2}=2$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}* Toon aan dat de oplossingen van een irrationale vergelijking van de vorm $\sqrt{ax+b}=c>0$ altijd voldoen aan de bestaansvoorwaarde $ax+b\geq0$.
+\end{oefening}
+
+
+\begin{oefening}*
+De volgende irrationale vergelijking
+$$\sqrt{x+8}=x+2$$
+staat niet in onze eenvoudige standaardvorm ($\sqrt{ax^2+bx+c}=d\geq0$).
+\begin{enumerate}[(a)]
+  \item Wat is het probleem en is dit probleem oplosbaar?
+  \item Kan je deze irrationale vergelijking toch oplossen?
+  \item Maak de proef van je mogelijke oplossingen, wat wil dit zeggen voor de oplossingenverzameling?
+  \item Voordat je de vierkantswortel kan wegwerken, moet je een voorwaarde stellen op het rechterlid, welke voorwaarde is dit?
+\end{enumerate}
+{\em Opmerking: Deze voorwaarde wordt de kwadrateringsvoorwaarde (KV) genoemd.}
+\end{oefening}
+
+\begin{oefening}*
+Los de volgende irrationale vergelijkingen op in $\mathbb{R}$:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $x-2=\sqrt{7-2x}$
+  \item $x-1=\sqrt{x+7}+4$
+  \item $2\sqrt{2x^2-3x-2}=x-2$
+  \item $\sqrt{x-4}+\sqrt{x+1}=5$
+  \item $\sqrt{3x-5}=1+\sqrt{x+3}$
+  \item $\sqrt{4x+1}=\sqrt{9x^2-1}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}* % pauls online notes
+Los de volgende irrationale vergelijkingen op in $\mathbb{R}$:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $x=\sqrt{x+6}$
+  \item $y+\sqrt{y-4}=4$
+  \item $1=t+\sqrt{2t-3}$
+  \item $\sqrt{5z+6}-2=z$
+  \item $\sqrt{2x-1}-\sqrt{x-4}=2$
+  \item $\sqrt{t+7}+2=\sqrt{3-t}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\pagebreak
+\section{Bespreken van irrationale functies}
+
+\begin{oefening}
+Welke deeltaken zullen we uitvoeren wanneer we een irrationale functie bespreken?
+\end{oefening}
+
+\begin{oefening}
+Als je een functiewaardentabel opstelt, hoe weet je dan van waar tot waar je de $x$-waarden moet nemen?
+\end{oefening}
+
+\begin{oefening}
+Je nulwaarden kan je aflezen van de grafiek. Soms kan het echter handig zijn om ze algebraïsch te bepalen. Hoe? Waarom?
+\end{oefening}
+
+\begin{oefening}
+Bespreek volgende irrationale functies:
+\begin{enumerate}[(a)]
+  \item $f(x)=\sqrt{x-1}$
+  \item $f(x)=\sqrt{4+x^2}$
+  \item $f(x)=\sqrt{4-x^2}$
+  \item $f(x)=\sqrt{x^2-4}$
+  \item $f(x)=\sqrt{x^2-6x+13}-2$
+  \item $f(x)=2\sqrt{9-x^2}$
+  \item $f(x)=\sqrt{25-x^2}-5$
+  \item $f(x)=\sqrt{x^2+3x-2}$
+  \item $f(x)=\sqrt{-x^2+x+6}$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Gebruik geogebra om je resultaten uit de vorige oefening te controleren.
+\end{oefening}
+
+\begin{oefening}*
+De cirkel met middelpunt de oorsprong en met straal 2 wordt gegeven door de vergelijking
+$$x^2+y^2=4\;.$$
+Vorm deze vergelijking om tot je twee irrationale functies hebt, één die boven de $x$-as ligt en één die onder de $x$-as ligt.
+\end{oefening}
+
+\pagebreak
+\section{Toepassingen}
+
+\begin{oefening} %Jennekens, Beknopte analyse, p220
+Een satelliet die op $x$ km afstand van het centrum van de aarde om de aarde draait, kan ontsnappen aan de aantrekkingskracht van de aarde bij een snelheid $v$ gegeven door:
+$$v=\dfrac{893}{\sqrt{x}}\qquad\qquad\mbox{ (in km/s)}$$
+Hoe hoog boven de oppervlakte van de aarde draait een satelliet als zijn ontsnappingssnelheid $11$ km/s is? Neem als straal van de aarde 6378 km.
+\end{oefening}
+
+\begin{oefening} %Jennekens, Beknopte analyse, p220
+Wanneer is de positieve vierkantswortel van een reëel getal groter dan dat getal?
+\end{oefening}
+
+\begin{oefening} %Jennekens, Beknopte analyse, p220
+Wanneer is de positieve vierkantswortel van een getal groter dan het kwadraat van dat getal?
+\end{oefening}
+
+\begin{oefening} %Jennekens, Beknopte analyse, p220
+Wanneer is de positieve vierkantswortel van een reëel getal groter dan het omgekeerde van dat getal?
+\end{oefening}
+
+
+\begin{oefening} %Jennekens, Beknopte analyse, p221
+Voor een $\Delta ABC$ geldt:
+$$a=21\qquad b=20\qquad c=13$$
+Bereken de hoogte uit $A$ door de stelling van Pythagoras tweemaal te gebruiken.
+\end{oefening}
+
+\begin{oefening} %Jennekens, Beknopte analyse, p221
+De periode $T$ in seconden van een slinger met een lengte van $x$ meter wordt gegeven door de formule:
+$$T=2\pi\sqrt{\dfrac{x}{g}}\;.$$
+Daarin is $g$ de gravitatieconstante, gelijk aan $9.8$ m/s$^s$.
+\begin{enumerate}[(a)]
+  \item Maak de grafiek van de functie die $x$ op $T$ afbeeldt.
+  \item Hoe lang moet de slinger van een klok zijn om een periode van 4 s te verkrijgen?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening} %Pareit-Piaret-Piraet-Pirate
+Op het pretpark staat een toffe attractie, het {\em Piraten Schip}. De bezoekers zitten in een groot schip. Het schip schommelt van voor naar achter, net zoals een slinger. Het duurt tussen de 7 en 8 seconden om éénmaal van voor naar achteren te schommelen. De functie die de tijd $t$ in seconden geeft voor volledige zwaai, gebaseerd op de hoogte van de arm van de schommel $h$ in meter is
+$$t=2\pi\sqrt{\dfrac{h}{10}}\;.$$
+Hoe hoog moet de arm dan ongeveer zijn om één slingerbeweging uit te voeren? Los dit op met behulp van een grafiek.
+\end{oefening}
+
+\begin{oefening} % Mathematics in Everyday Things
+Als je naar de zee kijkt, dan is de afstand $d$ in kilometer die je kan zien tot aan de horizon gegeven door
+$$d=3.86\sqrt{h}$$
+waarbij $h$ je hoogte in meter boven het water is. Geef de grafiek van deze functie. Bepaal de hoogte waarop je 10 kilometer ver ziet.
+\end{oefening}
+
+\begin{oefening} % http://www.math30.ca/lessons/polynomials/radicalFunctions/radicalFunctions_notes.php
+Een ladder is 3 meter lang en leunt tegen een muur. De basis van de ladder staat op $d$ meter van de muur en de top van de ladder is $h$ meter boven de grond.
+\begin{enumerate}[(a)]
+  \item Geef een functie $h(d)$ die de hoogte van de ladder geeft in functie van zijn afstand basis-muur $d$.
+  \item Geef de grafiek, het domein en het bereik van de functie. Welke oriëntatie heeft de ladder als $d=0$ en als $d=3$.
+  \item Hoe ver is de basis van de ladder verwijderd van de muur als de top van de ladder $\sqrt{5}$ meter boven de grond is?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening} % http://www.math30.ca/lessons/polynomials/radicalFunctions/radicalFunctions_notes.php
+We laten een bal van $h$ meter hoog vallen. Het duurt $t=\sqrt{\dfrac{h}{4.9}}\s$ voordat de bal de grond raakt.
+\begin{enumerate}[(a)]
+  \item Als we de bal van dubbel zo hoog laten vallen, welke invloed zal dit hebben op de tijd voordat de bal de grond raakt?
+  \item Als we de bal van één-vierde zo hoog laten vallen, welke invloed zal dit hebben op de tijd voordat de bal de grond raakt?
+  \item Stel dat we initieel de bal van $h=4\m$ lieten vallen. Maak een grafiek waarbij we de tijd uitzetten ten opzichte van hoogte en zorg dat alle relevante experimenten zichtbaar zijn op de grafiek.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening} % http://www.math30.ca/lessons/polynomials/radicalFunctions/radicalFunctions_notes.php
+Een wegwerpbekertje heeft de vorm van een kegel. Het volume van de kegel is $V (\cm^3)$, de radius is $r (\cm)$, de hoogte is $h (\cm)$ en de schuine hoogte is $5 \cm$. Geef de functie $V(r)$ die het volume van het bekertje geeft in functie van $r$. Merk op dat het volume van een kegel gegeven wordt door $V=\dfrac{1}{3}\pi r^2 h$.
+\end{oefening}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\end{document}
+
+
+
+
+\begin{minipage}[c]{0.4\textwidth}
+\end{minipage}
+\begin{minipage}[c]{0.6\textwidth}
+  \dotlines{10}
+\end{minipage}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
