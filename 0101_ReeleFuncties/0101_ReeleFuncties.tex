@@ -1,0 +1,326 @@
+\documentclass[12pt,twoside]{article}
+
+\input{../gowiz.tex}
+
+\usepackage{pgfplots}
+
+\usepackage{relsize}
+
+
+\usepackage{versions}
+\excludeversion{theory}
+
+
+\begin{document}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Oefeningen Reële functies}
+
+\begin{theory}
+\thispagestyle{empty}
+\begin{center}
+  \begin{mdframed}
+  \centering
+  \fontsize{40}{60}\selectfont Irrationale Functies
+  \end{mdframed}
+  \vfill
+\definecolor{aqaqaq}{rgb}{0.63,0.63,0.63}
+\definecolor{wqwqwq}{rgb}{0.38,0.38,0.38}
+\begin{tikzpicture}[scale=1.5, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-3.43,0) -- (3.78,0);
+\foreach \x in {-3,-2,-1,1,2,3}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-3.46) -- (0,3.9);
+\foreach \y in {-3,-2,-1,1,2,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-3.43,-3.46) rectangle (3.78,3.9);
+\draw[line width=1.6pt,color=wqwqwq, smooth,samples=100,domain=-1.9999995090909108:1.999994949917767] plot(\x,{sqrt(4-(\x)^2)});
+\draw[line width=1.6pt,color=aqaqaq, smooth,samples=100,domain=-1.9999995090909108:1.999994949917767] plot(\x,{0-sqrt(4-(\x)^2)});
+\draw (0.58,2.43) node[anchor=north west] {$f: y=\sqrt{4-x^2}$};
+\draw (1.46,-1.5) node[anchor=north west] {$g: y=-\sqrt{4-x^2}$};
+\end{tikzpicture}
+  \vfill
+\end{center}
+
+\subsection*{Doelstellingen}
+\vspace*{-0.8cm}
+{\singlespacing
+Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
+\begin{itemize}
+  \itemsep-0.2em
+  \item kan irrationale vergelijkingen oplossen
+  \item kan aan de hand van het functievoorschrift een tabel, het domein, de nulwaarden en het tekenverloop bepalen van irrationale functies
+  \item kan aan de hand van de grafiek domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen, extrema en asymptotisch gedrag bepalen van irrationale functies
+  \item kan vraagstukken/problemen oplossen die aanleiding ge-
+ven tot een irrationale vergelijking, ongelijkheid of func-
+tie, eventueel met behulp van ICT
+  \item kan extremumvraagstukken (ook van buiten de wiskunde)
+die aanleiding geven tot irrationale functies, oplossen
+\end{itemize}}
+
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\clearpage
+\thispagestyle{empty}
+%\mbox{}
+\tableofcontents
+\newpage
+\clearpage
+\pagenumbering{arabic} 
+
+\fancyhead[RO,LE]{Irrationale functies}
+\fancyhead[RE,LO]{}
+
+\end{theory}
+
+\section{Definitie en voorstellingswijze}
+
+\begin{oefening}
+Geef twee koppels $(x,y)$ waarvan je weet dat ze niet tot dezelfde functie kunnen behoren.
+\end{oefening}
+
+\begin{oefening}
+Beschouw een functie met de naam $f$. De argumenten zijn steeds negatieve reële getallen zonder nul en de beelden zijn steeds positieve reële getallen. Noteer $f$ zo expliciet mogelijk.
+\end{oefening}
+
+\begin{oefening}
+Schrijf de functie met functievoorschrift
+$$f:\mathbb{R}\to\mathbb{R}:x\mapsto x^2+x+1$$
+nog korter.
+\end{oefening}
+
+\begin{oefening}
+Schrijf de volgende functies zo kort mogelijk
+\begin{enumerate}[(a)]
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \dfrac{1}{x^2+1}$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto 0$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \sqrt[3]{x^2+1}$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \left(x^2+1\right)^2$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto x$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Beschouw de volgende functies en herschrijf ze als een vergelijking van twee onbekenden
+\begin{enumerate}[(a)]
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto \sqrt{5+x^3}$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto 3$
+  \item $f:\mathbb{R}\to\mathbb{R}:x\mapsto x$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Teken met een rode kleur de grafiek van een functie $f$ die door de koppels $(-2, 4)$ en $(2,1)$ gaat. Teken nu met een groene kleur een de grafiek van een andere functie $g$ die door de zelfde koppels gaat.
+\end{oefening}
+
+\begin{oefening}
+Welke van de volgende grafieken stellen een functie voor?
+\begin{center}
+
+\begin{multicols}{2}
+
+\begin{tikzpicture}[scale=0.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-10,0) -- (10,0);
+\draw[color=black] (9.68,0.08) node [anchor=south west] { x};
+\draw[->,color=black] (0,-6) -- (0,8);
+\draw[color=black] (0.1,7.6) node [anchor=west] { y};
+\clip(-10,-6) rectangle (10,8);
+\draw [line width=1.6pt,domain=-10.0:0.0] plot(\x,{(-0--2*\x)/-4});
+\draw [line width=1.6pt,domain=0.0:10.0] plot(\x,{(-0--2*\x)/4});
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=0.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-10,0) -- (10,0);
+\draw[color=black] (9.68,0.08) node [anchor=south west] { x};
+\draw[->,color=black] (0,-6) -- (0,8);
+\draw[color=black] (0.1,7.6) node [anchor=west] { y};
+\clip(-10,-6) rectangle (10,8);
+\draw [shift={(0.83,3.84)},line width=1.2pt]  plot[domain=1.01:4.16,variable=\t]({1*2.67*cos(\t r)+0*2.67*sin(\t r)},{0*2.67*cos(\t r)+1*2.67*sin(\t r)});
+\draw [shift={(-10.73,-17.35)},line width=1.2pt]  plot[domain=0.8:1.08,variable=\t]({1*21.47*cos(\t r)+0*21.47*sin(\t r)},{0*21.47*cos(\t r)+1*21.47*sin(\t r)});
+\draw [shift={(3.03,-3.28)},line width=1.2pt]  plot[domain=-1.29:0.84,variable=\t]({1*1.79*cos(\t r)+0*1.79*sin(\t r)},{0*1.79*cos(\t r)+1*1.79*sin(\t r)});
+\draw [shift={(-0.34,11.96)},line width=1.2pt]  plot[domain=4.61:4.94,variable=\t]({1*17.39*cos(\t r)+0*17.39*sin(\t r)},{0*17.39*cos(\t r)+1*17.39*sin(\t r)});
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=0.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-10,0) -- (10,0);
+\draw[color=black] (9.68,0.08) node [anchor=south west] { x};
+\draw[->,color=black] (0,-6) -- (0,8);
+\draw[color=black] (0.1,7.6) node [anchor=west] { y};
+\clip(-10,-6) rectangle (10,8);
+\draw [line width=1.6pt,domain=0.0:10.0] plot(\x,{(--8.01-0.02*\x)/2.86});
+\draw [line width=1.6pt,domain=-10.0:0.0] plot(\x,{(-10.53-1.14*\x)/-3.76});
+\draw [line width=1.6pt,domain=-10.0:0.0] plot(\x,{(-10.08--0.86*\x)/-3.6});
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=0.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-10,0) -- (10,0);
+\draw[color=black] (9.73,0.07) node [anchor=south west] { x};
+\draw[->,color=black] (0,-6) -- (0,8);
+\draw[color=black] (0.09,7.66) node [anchor=west] { y};
+\clip(-10,-6) rectangle (10,8);
+\begin{scriptsize}
+\fill [color=black] (1.46,1.36) circle (4pt);
+\fill [color=black] (2.9,2.6) circle (4pt);
+\fill [color=black] (4.08,3.96) circle (4pt);
+\fill [color=black] (6.2,3.08) circle (4pt);
+\end{scriptsize}
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=0.2, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-10,0) -- (10,0);
+\draw[color=black] (9.73,0.07) node [anchor=south west] { x};
+\draw[->,color=black] (0,-6) -- (0,8);
+\draw[color=black] (0.09,7.66) node [anchor=west] { y};
+\clip(-10,-6) rectangle (10,8);
+\draw [samples=50,rotate around={-90:(0,0)},xshift=0cm,yshift=0cm,line width=1.6pt] plot (\x,{(\x)^2/2/1.0});
+\end{tikzpicture}
+
+\begin{tikzpicture}[scale=0.2,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-10,0) -- (10,0);
+\draw[color=black] (9.73,0.07) node [anchor=south west] { x};
+\draw[->,color=black] (0,-6) -- (0,8);
+\draw[color=black] (0.09,7.66) node [anchor=west] { y};
+\clip(-10,-6) rectangle (10,8);
+\draw [line width=1.6pt] (3,-6) -- (3,8);
+\end{tikzpicture}
+
+\end{multicols}
+
+\end{center}
+
+\end{oefening}
+
+
+\begin{oefening}
+Welke van onderstaande koppels behoren tot de functie met 
+$$f:\mathbb{R}\to\mathbb{R}:x\mapsto\frac{6}{x}$$
+als functievoorschrift?
+\end{oefening}
+$$(5,-8)\qquad(-1,4)\qquad(2,3)\qquad(\sqrt{2},\frac{2}{3})\qquad(-6,-1)$$
+
+\begin{oefening}
+Geef van een functie met functievoorschrift $f(x)=x^2-4$ een functiewaardentabel die begint bij -5 en eindigt bij 5. Teken daarna de grafiek.
+\end{oefening}
+
+\begin{oefening}
+Geef van een functie met functievoorschrift $f(x)=\sqrt{x+4}$ een functiewaardentabel die begint bij -5 en eindigt bij 5. Teken daarna de grafiek.
+\end{oefening}
+
+
+\pagebreak
+\section{Kenmerken van reële functies}
+
+\begin{oefening}
+Beschouw de grafiek van $f$ (de grafiek loopt verder buiten het assenstelsel):\\
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[scale=0.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 2pt off 2pt, xstep=2.0cm,ystep=2.0cm] (-6.32,-3.09) grid (8.6,4.95);
+\draw[->,color=black] (-6.32,0) -- (8.6,0);
+\foreach \x in {-6,-4,-2,2,4,6,8}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-3.09) -- (0,4.95);
+\foreach \y in {-2,2,4}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\draw[color=black] (6,3) node[right] {$f$};
+\clip(-6.32,-3.09) rectangle (8.6,4.95);
+\draw[line width=1.6pt, smooth,samples=100,domain=-6.322116381374722:8.604561667405768] plot(\x,{0.01*((\x)+4)*((\x)+1)*((\x)-2)*((\x)-6)});
+\end{tikzpicture}
+\end{center}
+Bepaal (rond af of benader waarden tot één cijfer na de komma):
+\begin{itemize}
+  \item $\dom f = $\arule{4cm}
+  \item $\ber f = $\arule{4cm}
+  \item nulwaarden: $x_1=\arule{1.5cm}$, $x_2=\arule{1.5cm}$, $x_3=\arule{1.5cm}$, \arule{3cm}
+  \item tekenverloop:\begin{center}\visgraad{6cm}\end{center}
+  \item stijgen\&dalen:\begin{center}\visgraad{6cm}\end{center}
+  \item extrema:
+  \begin{itemize}
+    \item absolute maximum: /
+    \item relatieve maximum: $y=\arule{1cm}$ bij $x=\arule{1cm}$
+    \item absolute minimum: $y=\arule{1cm}$ bij $x=\arule{1cm}$
+    \item relatieve minimum: $y=\arule{1cm}$ bij $x=\arule{1cm}$ en $y=\arule{1cm}$ bij $x=\arule{1cm}$
+  \end{itemize}
+\end{itemize}
+\end{oefening}
+
+\begin{oefening}
+Teken éérst de grafiek van de functie en bepaal dan net als hierboven de verschillende karakteristieken aan de hand van de grafiek:
+\begin{enumerate}[(a)]
+  \item $f:\mathbb{R}\mapsto\mathbb{R}: x\mapsto x^2 -4x + 5$
+  \item $g: y=\sqrt{x+3}-1$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Welke soort veeltermfunctie is het?
+\begin{center}
+\begin{tabular}{c|c|c|c}
+        & Constante & Eerstegraads & Tweedegraads\\
+\hline
+$\displaystyle f(x)=x$ &&&\\
+$\displaystyle f(x)=2$ &&&\\
+$\displaystyle f(x)=2x^2-x^2-x^2$ &&&\\
+$\displaystyle f(x)=-2x^2+x-4$ &&&\\
+$\displaystyle f(x)=0$ &&&\\
+$\displaystyle f(x)=4-x$ &&&\\
+\end{tabular}
+\end{center}
+\end{oefening}
+
+\begin{oefening}
+Beschouw de functie
+$$f(x)=-2x+8$$
+en bepaal ervan het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen\&dalen en de extrema.
+\end{oefening}
+
+\begin{oefening}
+Bepaal van de volgende functies
+\begin{enumerate}[(a)]
+  \item $\displaystyle f(x)=x^2-x-2$
+  \item $\displaystyle f(x)=-x^2+6x-5$
+  \item $\displaystyle f(x)=x^2-8x+16$
+  \item $\displaystyle f(x)=-x^2-2x+3$
+\end{enumerate}
+het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen\&dalen en de extrema.
+\end{oefening}
+
+
+
+\pagebreak
+\section{Symmetriën}
+
+\end{document}
+
+
+
+
+\begin{minipage}[c]{0.4\textwidth}
+\end{minipage}
+\begin{minipage}[c]{0.6\textwidth}
+\dotlines{10}
+\end{minipage}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
