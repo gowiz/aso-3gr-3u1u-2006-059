@@ -13,3 +13,6 @@
 *.aux
 *~
 *.~*#
+.hidden
+.predictive
+auto
