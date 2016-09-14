@@ -1,0 +1,197 @@
+\documentclass[12pt,twoside]{article}
+
+\input{../gowiz.tex}
+
+\usepackage{versions}
+\excludeversion{theorie}
+% \includeversion{theorie}
+
+\begin{document}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Oefeningen Complexe Getallen}
+
+\begin{theorie}
+
+  \thispagestyle{empty}
+  \begin{center}
+    \begin{mdframed}
+      \centering
+      \fontsize{40}{60}\selectfont Goniometrische Getallen
+    \end{mdframed}
+    \vfill
+    \vfill
+  \end{center}
+
+  \subsection*{Doelstellingen}
+  \vspace*{-0.8cm}
+  {\singlespacing
+    Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
+    \begin{itemize}
+      \itemsep-0.2em
+    \item kent het begrip complex getal
+    \item kan complexe getallen optellen, aftrekken, vermenigvuldigen en delen
+    \item kan de $k$-de macht van een complex getal berekenen
+    \item kan algebraïsch vierkantswortels uit een complex getal berekenen
+    \item kan vergelijkingen van de tweede graad met reële coëfficiënten oplossen in $\mathbb{C}$
+    \item kan complexe getallen voorstellen in het vlak van Gauss
+    \item kent de goniometrische gedaante van een complex getal
+    \item kan product, quotiënt en macht berekenen van complexe
+      getallen in goniometrische gedaante
+    \item kent de formule van de Moivre
+    \item kan goniometrisch de $n$-de wortels berekenen uit een complex getal in goniometrische gedaante
+    \end{itemize}}
+
+  \thispagestyle{empty}
+  \mbox{}
+  \newpage
+  \clearpage
+  \thispagestyle{empty}
+  % \mbox{}
+  \tableofcontents
+  \newpage
+  \clearpage
+  \pagenumbering{arabic}
+
+  \fancyhead[RO,LE]{Complexe Getallen}
+  \fancyhead[RE,LO]{}
+
+\end{theorie}
+
+\section{Definitie}
+
+\begin{oefening}
+  Maak gebruik van een venndiagram om de volgende getallen in de juiste getalverzameling te plaatsten:
+  $$-3\qquad\pi\qquad\dfrac{3}{4}\qquad2+3i\qquad10^{10}\qquad-\sqrt{9}$$
+\end{oefening}
+
+\begin{oefening}
+  Als $i^2=-1$, aan wat is dan $i^4$ gelijk?
+\end{oefening}
+
+\begin{oefening}
+  Bepaal van de volgende getallen het reëel en het imaginair deel:
+  $$2+3i\qquad -i+1\qquad 0 \qquad 2i$$
+\end{oefening}
+
+\pagebreak
+\section{Basisbewerkingen met complexe getallen}
+
+\begin{oefening}
+  Gegeven het complex getal $a+bi$, bepaal het neutraal element en het symmetrisch element in $\mathbb{C}, +$.
+\end{oefening}
+
+\begin{oefening}*
+  Gegeven het complex getal $a+bi$, bepaal het neutraal element en het symmetrisch element in $\mathbb{C}_0, \cdot$.
+\end{oefening}
+
+
+\begin{oefening}
+  Bereken
+  \begin{enumerate}[(a)]
+  \item $\displaystyle (2-i)+(3+4i)$
+  \item $\displaystyle (4i-2)-(2+5i)$
+  \item $\displaystyle (7+6i)+2(1+i)$
+  \item $\displaystyle (2-3i)\cdot (1-i)$
+  \item $\displaystyle 4i(8-2i)$
+  \item $\displaystyle (2+i)(-2+i)$
+  \item $\displaystyle (1-i)^2$
+  \item $\displaystyle (2+3i)^2$
+  \item $\displaystyle (2+i)^3$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Bereken
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item $\displaystyle \dfrac{2-4i}{1+i}$
+  \item $\displaystyle \dfrac{7+4i}{i}$
+  \item $\displaystyle \dfrac{3-2i}{3+2i}$
+  \item $\displaystyle \dfrac{-1}{5+2i}$
+  \item $\displaystyle \dfrac{1}{i}+1$
+  \item $\displaystyle \dfrac{1-3i}{2+3i}$
+  \item $\displaystyle \left(\dfrac{1+i\sqrt{2}}{1-i\sqrt{2}}\right)^2+\left(\dfrac{1-i\sqrt{2}}{1+i\sqrt{2}}\right)^2$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Geef het reëel deel en het imaginair deel van $z=\frac{i-4}{2i-3}$.
+\end{oefening}
+
+\section{Machtsverheffing}
+
+\begin{oefening}
+  Gegeven de complexe getallen:
+  $$z_1=3-2i \qquad z_2=-1-i \qquad z_3=4+5i$$
+  Bereken
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep 1em
+    \item $\displaystyle z_1+z_2-z_3$
+    \item $\displaystyle z_1\cdot z_2$
+    \item $\displaystyle \dfrac{z_1}{z_2}$
+    \item $\displaystyle \bar{z_2}$
+    \item $\displaystyle \dfrac{1}{\bar{z_1}}$
+    \item $\displaystyle z_3\cdot \bar{z_3}$
+    \item $\displaystyle z_2^2$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Bereken
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item $\displaystyle \left(6+2i\right)^{-2}$
+  \item $\displaystyle \left(1+2i\right)^4$
+  \item $\displaystyle \dfrac{i^{35}+i^{40}}{1+i^{21}}$
+  \item $\displaystyle \dfrac{(1+i)^2+(1-i)^2}{(1+i)^2-(1-i)^2}$
+  \item $\displaystyle \left(\dfrac{1+i}{1-i}\right)^{30}+\left(\dfrac{1-i}{1+i}\right)^{30}$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Vereenvoudig
+  \begin{enumerate}[(a)]
+    \itemsep 1em
+  \item $\frac{1+i}{1-i}-(1+2i)(2+2i)+\frac{3-i}{1+i}$;
+  \item $2i(i-1)+\left(\overline{\sqrt(3)+i}\right)^3+(1+i)\overline{(1+i)}.$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  We definiëren de {\bf positieve reële getallen} als $\mathbb{R}^+$. Dit zijn dus alle reële getallen met een positief teken, inclusief nul. We definiëren analoog de {\bf negatieve reële getallen} als $\mathbb{R}^-$. Dit zijn dus alle reële getallen met een negatief teken, inclusief nul.
+
+  De positieve reële getallen en de negatieve reële getallen hebben dus het getal nul gemeenschappelijk:
+  $$\mathbb{R}^+\cap\mathbb{R}^-=\{0\}$$
+
+  {\bf Niet-positieve reële getallen} zijn dan alle reële getallen zonder de positieve reële getallen, {\bf niet-negatieve reële getallen} zijn dan alle reële getallen zonder de negatieve reële getallen.
+
+  Als we een complex getal verschillend van nul vermenigvuldigen met zijn complex toegevoegde, dan krijgen we altijd een
+  \begin{enumerate}[(A)]
+  \item positief reëel getal.
+  \item negatief reëel getal.
+  \item niet-positief reëel getal.
+  \item niet-negatief reëel getal.
+  \end{enumerate}
+\end{oefening}
+
+\pagebreak
+\section{Vierkantswortel van een complex getal}
+
+\begin{oefening}
+  Bereken alle vierkantswortels van
+  \begin{enumerate}[(a)]
+    \itemsep 1em
+  \item $-9$
+  \item $2i$
+  \item $-3-4i$
+  \item $-i$
+  \end{enumerate}
+
+\end{oefening}
+
+
+\end{document}
