@@ -1,4 +1,4 @@
-\documentclass[12pt,twoside]{article}
+\documentclass[2pt,twoside]{article}
 
 \input{../gowiz.tex}
 
@@ -62,7 +62,7 @@ te stellen. (V)
 %\end{itemize}
 %}
 
-\thispagestyle{empty}
+\pagestyle{empty}
 \mbox{}
 \newpage
 \clearpage
@@ -70,6 +70,7 @@ te stellen. (V)
 \tableofcontents
 \newpage
 \clearpage
+\pagestyle{fancy}
 \pagenumbering{arabic} 
 
 \fancyhead[RO,LE]{Combinatieleer}
@@ -841,10 +842,10 @@ $$V^k_n=\dfrac{n!}{(n-k)!}$$
 \end{mdframed}
 
 \begin{oefening}
-Om het aantal variaties van 20 elementen uit 21 elementen te berekenen hebben we twee formules:\\
+Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we twee formules:\\
 \begin{itemize}
   \itemsep1em
-  \item $\displaystyle V^{20}_{24}=21\cdot20\cdot19\cdot18\cdot\;\cdots\;\cdot(24-20+1)$
+  \item $\displaystyle V^{20}_{24}=24\cdot23\cdot22\cdot21\cdot\;\cdots\;\cdot(24-20+1)$
   \item $\displaystyle V^{20}_{24}=\dfrac{24!}{(24-20)!}$
 \end{itemize}
 \begin{enumerate}[(a)]
@@ -944,7 +945,7 @@ Beschouw het volgende wegenrooster met de locatie van Marieke en Jan en daarbinn
 \definecolor{uququq}{rgb}{0.25,0.25,0.25}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \clip(1.45,1.41) rectangle (10.52,6.62);
-\fill[line width=0.4pt,fill=black,fill opacity=0.29] (8,3) -- (5,3) -- (5,5) -- (8,5) -- cycle;
+\fill[line width=0.4pt,fill=black,fill opacity=0.29] (7.5,2.5) -- (5.5,2.5) -- (5.5,4.5) -- (7.5,4.5) -- cycle;
 \draw [domain=2:10] plot(\x,{(--2-0*\x)/1});
 \draw [domain=2:10] plot(\x,{(--6-0*\x)/2});
 \draw [domain=2:10] plot(\x,{(--8-0*\x)/2});
@@ -1006,7 +1007,7 @@ Beschouw het volgende wegenrooster met de locaties $S$, $V$ en $T$.
 \subsection{Driehoek van Pascal}
 
 \begin{oefening}
-Teken een oneindig doorlopend wegenrooster met beginpunt $P$ en waarbij er bij elk kruispunt ten aantal mogelijke kortste wegen wordt genoteerd. Ga ervan uit dat er van $P$ naar $P$ één mogelijke kortste weg is, ter plaatse blijven staan, zet je bij $P$ het getal 1.
+Teken een oneindig doorlopend wegenrooster met beginpunt $P$ en waarbij er bij elk kruispunt het aantal mogelijke kortste wegen wordt genoteerd. Ga ervan uit dat er van $P$ naar $P$ één mogelijke kortste weg is, ter plaatse blijven staan, zet dus bij $P$ het getal 1.
 \begin{center}
   $P$
 \end{center}
@@ -1062,7 +1063,7 @@ Deze formule is dusdanig handig dat we deze coëfficiënten een naam geven, alge
 
 \paragraph*{Binomiaalcoëfficiënten}
 \begin{mdframed}
-$${k \choose n} = \dfrac{n!}{k!\cdot\left(n-k!\right)}$$
+$${n \choose k} = \dfrac{n!}{k!\cdot\left(n-k!\right)}$$
 \end{mdframed}
 
 \begin{oefening}
@@ -1479,11 +1480,6 @@ Bereken het aantal anagrammen van \verb#MISSISSIPPI#.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
-
-
-
-
 
 
 
