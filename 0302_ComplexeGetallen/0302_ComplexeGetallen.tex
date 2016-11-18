@@ -292,5 +292,66 @@ Bepaal $z\in\mathbb{C}$ zodat
 $$z^2+\overline{z}^2=0\;.$$
 \end{oefening}
 
+\pagebreak
+\section{Meetkundige voorstelling van een complex getal}
+
+\begin{oefening}
+Stel volgende complexe getallen voor in het vlak van Gauss. Gebruik voor het complex getal $z_i$ het beeldpunt $P_i$.
+$$z_1=5 \qquad z_2=1+i \qquad  z_3=2i \qquad  z_4=-2$$
+$$z_5=-5+2i \qquad  z_6=3-4i \qquad  z_7=-3i \qquad  z_8=-i-2$$
+\end{oefening}
+
+\begin{oefening}
+Bepaal de complexe getallen $z_i$ waarvan we in het vlak van Gauss de beeldpunten $P_i$ krijgen.
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 2pt off 2pt, xstep=1.0cm,ystep=1.0cm] (-3.92,-3.31) grid (4.93,3.65);
+\draw[->,color=black] (-3.92,0) -- (4.93,0);
+\foreach \x in {-3,-2,-1,1,2,3,4}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-3.31) -- (0,3.65);
+\foreach \y in {-3,-2,-1,1,2,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-3.92,-3.31) rectangle (4.93,3.65);
+\draw (4.23,0.63) node[anchor=north west] {Re};
+\draw (0.17,3.53) node[anchor=north west] {Im};
+\begin{scriptsize}
+\fill [color=black] (-2,2) circle (2.0pt);
+\draw[color=black] (-1.74,2.25) node {$P_1$};
+\fill [color=black] (0,1) circle (2.0pt);
+\draw[color=black] (0.26,1.25) node {$P_2$};
+\fill [color=black] (3,0) circle (2.0pt);
+\draw[color=black] (3.25,0.25) node {$P_3$};
+\fill [color=black] (-1,-3) circle (2.0pt);
+\draw[color=black] (-0.74,-2.75) node {$P_5$};
+\fill [color=black] (3,1) circle (2.0pt);
+\draw[color=black] (3.25,1.25) node {$P_4$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{oefening}
+
+\pagebreak
+\section{Modulus en argument van een complex getal}
+
+\begin{oefening}
+Bepaal de goniometrische vorm
+\begin{enumerate}[(a)]
+  \item $z=-1-i$
+  \item $z=3i$
+  \item $z=-2$
+  \item $z=12-5i$
+  \item $z=24-7i$
+  \item $z=\cos(\alpha)-i\sin(\alpha)$
+\end{enumerate}
+\end{oefening}
 
 \end{document}
+
+
+
+
+
+
