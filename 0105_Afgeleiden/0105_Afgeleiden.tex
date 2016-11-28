@@ -1,0 +1,665 @@
+\documentclass[12pt]{article}
+
+\input{../gowiz.tex}
+
+\newenvironment{definitie}
+{
+  \begin{mdframed}[nobreak=true,frametitle={Definitie}]
+  }{%
+  \end{mdframed}
+}
+
+\newenvironment{eigenschap}
+{
+  \begin{mdframed}[nobreak=true,frametitle={Eigenschap}]
+  }{%
+  \end{mdframed}
+}
+
+\newenvironment{onthoud}
+{
+  \begin{mdframed}[nobreak=true,frametitle={Te onthouden}]
+  }{%
+  \end{mdframed}
+}
+
+\newenvironment{kader}
+{
+  \begin{mdframed}[nobreak=true]
+  }{%
+  \end{mdframed}
+}
+
+\newenvironment{tip}
+{
+  \begin{mdframed}[nobreak=true,frametitle={Tip!}]
+  }{%
+  \end{mdframed}
+}
+
+
+\begin{document}
+
+
+\thispagestyle{empty}
+\begin{center}
+  \fontsize{50}{60}\selectfont Herhaling Afgeleiden
+  \vfill
+  \includegraphics[width=0.6\textwidth]{afgeleide}
+  \vfill
+\end{center}
+\vfill
+\subsection*{Doelstelling}
+Je \hfill  {\scriptsize(LP 2006-059, LI 1.5)}
+\begin{itemize}
+\item kent de definitie van afgeleid getal
+\item kan bij functies met behulp van het intuïtief begrip van limiet het verband leggen tussen:
+  \begin{itemize}
+  \item het begrip afgeleide,
+  \item het begrip differentiequotiënt,
+  \item de richtingscoëfficiënt van de raaklijn aan de grafiek,
+  \item de maat voor de ogenblikkelijke verandering
+  \end{itemize}
+\item kent het begrip afgeleide functie
+\item kan de afgeleide functie bereken van $f(x)=c (c\in\mathbb{R})$, $f(x)=x$, $f(x)=x^2$, $f(x)=x^3$ en $f(x)=x^n (n\in\mathbb{N})$.
+\item kan op de bovenstaande functies de somregel, de veelvoudregel, de productregel en de quotiëntregel toepassen
+\item kan het verband tussen het tekenverloop van de eerste afgeleide en het opsporen van extrema en kan het verloop van een veeltermfunctie van de derde graad uitleggen
+\item kan extremumvraagstukken (ook van buiten de wiskunde) die aanleiding geven tot veeltermfuncties en rationale functies, oplossen
+\end{itemize}
+
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\clearpage
+\thispagestyle{empty}
+\tableofcontents
+\newpage
+\clearpage
+\pagenumbering{arabic}
+
+\lhead{}
+\rhead{Herhaling afgeleiden}
+
+\onehalfspacing
+
+% \section{Limieten van functies}
+
+\section{Afgeleiden}
+
+\subsection{Differentiequotiënt}
+
+\begin{definitie}
+  We noemen het quotiënt
+  $$\dfrac{f(x)-f(a)}{x-a}$$
+  het {\bf differentiequotiënt in het interval $[x,a]$}.
+\end{definitie}
+
+\begin{center}
+  \begin{tikzpicture}[scale=2, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \draw[->,color=black] (-0.5,0) -- (3.33,0);
+    \foreach \x in {-0.5,0.5,1,1.5,2,2.5,3}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt);
+    \draw[->,color=black] (0,-0.65) -- (0,3.13);
+    \foreach \y in {-0.5,0.5,1,1.5,2,2.5,3}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+    \clip(-0.5,-0.65) rectangle (3.33,3.13);
+    \draw[line width=2pt, smooth,samples=100,domain=-0.5001340603726351:3.327196879862643] plot(\x,{((\x)-3)^3-(\x)+5});
+    \draw [line width=1.2pt,dash pattern=on 1pt off 6pt] (0,2)-- (2,2);
+    \draw [line width=1.2pt,dash pattern=on 1pt off 6pt] (0,2.38)-- (2.5,2.38);
+    \draw [line width=1.2pt,dash pattern=on 1pt off 6pt] (2,0)-- (2,2);
+    \draw [line width=1.2pt,dash pattern=on 1pt off 6pt] (2.5,0)-- (2.5,2.38);
+    \draw [line width=1.6pt,dash pattern=on 5pt off 3pt,domain=1:3] plot(\x,{(--0.25--0.38*\x)/0.5});
+    \draw (1.9,-0.1) node[anchor=north west] {a};
+    \draw (2.4,-0.1) node[anchor=north west] {x};
+    \draw (-0.5,2.1) node[anchor=north west] {f(a)};
+    \draw (-0.5,2.5) node[anchor=north west] {f(x)};
+    \draw (2.96,2.32) node[anchor=north west] {f};
+    \begin{scriptsize}
+      \fill [color=black] (2,0) circle (1.5pt);
+      \fill [color=black] (2.5,0) circle (1.5pt);
+      \fill [color=black] (2,2) circle (1.5pt);
+      \fill [color=black] (2.5,2.38) circle (1.5pt);
+      \fill [color=black] (0,2.38) circle (1.5pt);
+      \fill [color=black] (0,2) circle (1.5pt);
+    \end{scriptsize}
+  \end{tikzpicture}
+\end{center}
+
+Het differentiequotiënt geeft de helling van het lijnstuk dat door de punten $(a,f(a))$ en $(x,f(x))$ loopt, zie op bovenstaande figuur.
+
+Het quotiënt $\dfrac{f(a+h)-f(a)}{h}$ is dan analoog het differentiequotiënt in het interval $[a, a+h]$.
+
+\begin{oefening}
+  Maak zoals hierboven een grafiek van het differentiequotiënt in $[a, a+h]$.
+\end{oefening}
+
+Een differentiequotiënt in het interval $[a,b]$ kan symbolisch geschreven worden als $\dfrac{\Delta y}{\Delta x}_{[a,b]}$.
+
+\begin{oefening}
+  Gegeven de functie
+  $$f(x)=(x-3)^3-x+5$$
+  bereken het differentiequotiënt in de intervallen $[2,2.5]$, $[2.5,3]$ en $[2,3]$. Verklaar je resultaten aan de hand van een grafiek.
+
+\end{oefening}
+
+\subsection{Afgeleide waarde}
+\begin{definitie}
+  We noemen de {\bf afgeleide waarde van $f$ in $a$}
+  $$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}$$
+  als het rechterlid bestaat en een reëel getal is. We zeggen dat {\bf $f$ afleidbaar is in $a$}.
+\end{definitie}
+
+In voorgaande definitie konden we ook de volgende limiet gebruiken om afgeleide waarde te definiëren:
+$$f'(a)=\lim_{x\to a}\dfrac{f(x)-f(a)}{x-a}$$
+
+De afgeleide waarde van $f$ in $a$ wordt ook nog genoteerd als $Df(a)$ of $\dfrac{\mbox{d}f}{\mbox{d}x}(a)$. Wij zullen de notatie $f'(a)$ gebruiken.
+
+\begin{oefening}
+  Toon grafisch aan dat beide definities equivalent zijn.
+\end{oefening}
+
+\begin{oefening}
+  Bereken het afgeleid getal:
+  \begin{enumerate}[(a)]
+  \item $f(x)=x^2$ in $x=3$
+  \item $f(x)=x-1$ in $x=1$
+    % \item $f(x)=x^2-x$ in $x=3$
+  \item $f(x)=23$ in $x=-2$
+  \item $f(x)=\dfrac{1}{x^2}$ in $x=0$
+    % \item $f(x)=\dfrac{1}{x^2}$ in $x=-2$
+    % \item $f(x)=\dfrac{x+1}{x^2+4x+4}$ in $x=-1$
+  \item $f(x)=\dfrac{x^2+4x+4}{x-2}$ in $x=\frac{1}{2}$
+    % \item $f(x)=\dfrac{x}{x^2-x}$ in $x=-1$
+    % \item $f(x)=\sqrt{x-3}$ in $x=4$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Gegeven de functie
+  $$f(x)=(x-3)^3-x+5\;.$$
+  \begin{enumerate}[(a)]
+  \item Bereken $f'(2)$, $f'(2.5)$ en $f'(3)$ Teken ook de grafiek van $f(x)$.
+  \item Teken de grafiek van $f(x)$.
+  \item Teken de raaklijnen aan $f$ in de punten $(2, f(2))$, $(2.5, f(2.5))$ en $(3, f(3))$.
+  \item Geef het verband tussen de raaklijnen aan $f$ en de afgeleide waarden.
+  \end{enumerate}
+\end{oefening}
+
+\pagebreak
+\subsection{Afgeleide functie}
+
+\begin{definitie}
+  We zeggen dat de functie $f:\mathbb{R}\to\mathbb{R}$ afleidbaar is als de afgeleide waarde $f'(a)$ bestaat in elk punt $a\in\mathbb{R}$. De {\bf afgeleide functie $f'$} van $f$ is dan de functie die in elk punt $a\in\mathbb{R}$ de afgeleide $f'(a)$ als functiewaarde heeft:
+  $$f':\mathbb{R}\to\mathbb{R}:x\mapsto f'(x)\;.$$
+\end{definitie}
+
+Deze afgeleide functie wordt ook nog genoteerd als $Df$ of $\dfrac{\mbox{d}f}{\mbox{d}x}$. Wij gebruiken de notatie $f'$.
+
+
+\subsubsection*{Voorbeeld 1}
+
+De functie
+$$f(x)=x^2$$
+is afleidbaar in $\mathbb{R}$, neem bijvoorbeeld een willekeurige $a\in\mathbb{R}$, dan geldt
+\begin{align*}
+  \dfrac{f(x)-f(a)}{x-a} &= \dfrac{x^2-a^2}{x-a}\\
+                         &= \dfrac{(x-a)(x+a)}{x-a}\\
+                         &= x+a
+\end{align*}
+en dus
+\begin{align*}
+  \lim_{x\to a}\dfrac{f(x)-f(a)}{x-a} &= \lim_{x\to a}(x+a)\\
+                                      &= a+a\\
+                                      &= 2a
+\end{align*}
+Het getal $2a$ bestaat en is reëel aangezien $a$ reëel was. De limiet bestaat en is reëel, dus wegens de definitie is $f$ afleidbaar.
+
+\begin{oefening}
+  Maak gebruik van de andere definitie voor afgeleid getal, namelijk $$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}$$ om hetzelfde aan te tonen.
+\end{oefening}
+
+\subsubsection*{Voorbeeld 2}
+
+De functie
+$$f(x)=\sqrt[3]{x}$$
+is niet overal afleidbaar in $\mathbb{R}$, neem $a=0$, dan geldt
+\begin{align*}
+  \dfrac{f(x)-f(0)}{x-0} &= \dfrac{\sqrt[3]{x}-\sqrt[3]{0}}{x-0}\\
+                         &= \dfrac{\sqrt[3]{x}}{x}\\
+                         &= \dfrac{1}{\sqrt[3]{x^2}}\\
+\end{align*}
+en dus
+\begin{align*}
+  \lim_{x\to 0}\dfrac{f(x)-f(0)}{x-0} &= \lim_{x\to 0}\dfrac{1}{\sqrt[3]{x^2}}\\
+                                      &= +\infty\\
+\end{align*}
+De limiet bestaat wel, maar is niet reëel. Wegens de definitie is de functie dus niet afleidbaar in $\mathbb{R}$.
+
+Dit wordt wiskundig opgelost door uit het domein alle waarden te halen waar de functie niet afleidbaar is. We zeggen dan dat de functie wel afleidbaar is in een beperkt domein.
+
+\subsubsection*{Basisafgeleiden}
+
+\begin{kader}
+  \begin{multicols}{3}
+    % \centering
+    $\left(c\right)'=0$\\
+    $\left(x\right)'=1$\\
+    $\left(x^2\right)'=2x$\\
+    $\left(x^3\right)'=3x^2$\\
+    $\left(x^n\right)'=n\cdot x^{n-1}$\\
+    $\left(\sqrt{x}\right)'=\dfrac{1}{2\sqrt{x}}$\\
+    % $\left(e^x\right)'=e^x$\\
+    % $\left(a^x\right)'=a^x\cdot\ln a$\\
+    % $\left(\ln x\right)'=\dfrac{1}{x}$\\
+    % $\left(\log_a{x}\right)'=\dfrac{1}{x\cdot \ln a}$\\
+    % $\left(\sin x\right)'=\cos x$\\
+    % $\left(\cos x\right)'=-\sin x$\\
+    % $\left(\tan x\right)'=\sec^2 x$\\
+    % $\left(\cot x\right)'=-\csc^2 x$\\
+    % $\left(\arcsin x\right)'=\dfrac{1}{\sqrt{1-x^2}}$\\
+    % $\left(\arccos x\right)'=-\dfrac{1}{\sqrt{1-x^2}}$\\
+    % $\left(\arctan x\right)'=\dfrac{1}{1+x^2}$\\
+  \end{multicols}
+\end{kader}
+
+\begin{oefening}
+  Voorbeeld 1 hierboven gaf ons de afleiding van $f(x)=x^2$. Toon op dezelfde manier aan dat als
+  $$f(x)=x^3$$
+  dat dan
+  $$f'(x)=3x^2\;.$$
+\end{oefening}
+
+\subsubsection*{Eigenschappen van afgeleiden}
+
+\begin{kader}
+  \begin{itemize}
+  \item {\bf somregel}
+    $$(f+g)'(x)=f'(x)+g'(x)$$
+    De afgeleide van een som is dus de som van de afgeleiden.
+  \item {\bf veelvoudregel}
+    $$(c\cdot f)'(x) = c\cdot f'(x)$$
+    Een constante factor mag voorop gebracht worden.
+  \item {\bf productregel}
+    $$(f\cdot g)'(x)=f'(x)\cdot g(x) + f(x)\cdot g'(x)$$
+    De afgeleide van een product is de afgeleide van de eerste factor maal de tweede factor plus de eerste factor maal de afgeleide van de tweede factor
+  \item {\bf quotiëntregel}
+    $$\left(\dfrac{f}{g}\right)'(x)=\dfrac{f'(x)\cdot g(x)-f(a)\cdot g'(x)}{g^2(x)}$$
+    De afgeleide van een quotiënt is net zoals de productregel maar we vervangen de plus door een min en we delen alles door het kwadraat van de noemer.
+  \item {\bf kettingregel}
+    $$\left(g\left(f\left(x\right)\right)\right)'=g'(f(x))\cdot f'(x)$$
+  \end{itemize}
+\end{kader}
+
+\subsubsection*{Voorbeeld van de kettingregel}
+
+Als de functie die we moeten afleiden $(3x^2+x)^3$ is, dan kunnen we dit beschouwen als de samenstelling $g(f(x))$ met $f(x)=3x^2+x$ en met $g(x)=x^3$. We bepalen de afgeleiden:
+$$f'(x)=6x+1 \qquad en \qquad g'(x)=3x^2\;.$$
+Uit de kettingregel volgt dan
+\begin{align*}
+  \left((3x^2+x)^3\right)' & =\left(g\left(f\left(x\right)\right)\right)' =g'(f(x)) f'(x) &&\mbox{kettingregel}\\
+                           & =3(f(x))^2 (6x+1) &&\mbox{vervangen $f'$ en $g'$}\\
+                           & = 3(3x^2+x)^2(6x+1) &&\mbox{vervangen $f$}\\
+                           & = 162x^5 + 135x^4 + 36x^3 + 3x^2 &&\mbox{uitwerken}
+\end{align*}
+
+\begin{oefening}
+  Toon aan dat we met behulp van de kettingregel ook nog volgende eigenschap krijgen:
+  \begin{kader}
+    \begin{itemize}
+    \item {\bf machtregel}
+      $$(f^n)'(x)=n\cdot f^{n-1} \cdot f'(x)$$
+    \end{itemize}
+  \end{kader}
+\end{oefening}
+
+\begin{oefening}
+  Bereken volgende afgeleiden:
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+    \item $\left(21\right)'$
+    \item $\left(4x\right)'$
+    \item $\left(\dfrac{1}{3}x^3\right)'$
+    \item $\left(2\sqrt{x}\right)'$
+    \item $\left(x^4-x^3+x^2-x+1\right)'$
+    \item $\left(34+23-x^{43}\right)'$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Bereken volgende afgeleiden:
+  % \begin{multicols}{1}
+  \begin{enumerate}[(a)]
+  \item $D\left(x-3x^2)(x^2+2x)\right)$
+  \item $D\left[(x^7+x^5+x^3+x)(6x^6+4x^4+2x^2)\right]$
+  \item $D\left[\dfrac{2}{x+x^2+x^3}\right]$
+  \item $D\left[-\dfrac{3x-2x^2}{2x^2-3x}\right]$
+  \item $D\left[(3x^3+1)(2x^2+1)(x+1)\right]$
+  \item $D\left[(3x^2+x^6)\dfrac{x^7+3x}{x+1}\right]$
+  \end{enumerate}
+  % \end{multicols}
+\end{oefening}
+
+
+\begin{oefening}
+  Bepaal de afgeleide functie $f'$ voor de volgende functies $f$:
+  \begin{enumerate}[(a)]
+  \item $x^3-4x^2+8$
+  \item $-x+\dfrac{1}{x^2}$
+  \item $\sqrt[3]{x}-\dfrac{3}{x}+4x$
+  \item $\dfrac{4x^2-3x}{2+x}$
+  \item $\sqrt{4x^2-3x+1}$
+  \end{enumerate}
+\end{oefening}
+
+\pagebreak
+\section{Functieonderzoek}
+
+Het bespreken van het verloop van een functie $f$ kan het best aan de hand van haar afgeleide functie $f'$ als deze bestaat.
+
+\subsection{Stijgen en dalen van een functie}
+
+\begin{eigenschap}
+  Als $f$ een reële functie is die afleidbaar is in $]a,b[$, dan geldt
+  \begin{itemize}
+  \item als $f'(x)>0$ voor elk punt $x$ in $]a,b[$, dan is $f$ strikt stijgend op $[a,b]$,
+  \item als $f'(x)<0$ voor elk punt $x$ in $]a,b[$, dan is $f$ strikt dalend op $[a,b]$,
+  \item als $f'(x)=0$ voor elk punt $x$ in $]a,b[$, dan is $f$ een constante functie op $[a,b]$.
+  \end{itemize}
+\end{eigenschap}
+
+De laatste eigenschap zal meestal toegepast worden op één enkel punt, we zullen dit verder bespreken als we het over extrema hebben.
+
+\subsubsection*{Voorbeeld}
+
+Beschouw de grafiek van de functie $f$ (volle lijn) en van haar afgeleide $f'$ (stippellijn).
+\begin{center}
+  \begin{tikzpicture}[yscale=0.15, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \draw[->,color=black] (-3.57,0) -- (4.28,0);
+    \foreach \x in {-3,-2,-1,1,2,3,4}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[->,color=black] (0,-17.26) -- (0,18.13);
+    \foreach \y in {-15,-10,-5,5,10,15}
+    \draw[shift={(0,\y)},color=black] (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-3.57,-17.26) rectangle (4.28,18.13);
+    \draw[line width=1.6pt, smooth,samples=100,domain=-3.5716478839065284:4.279097160875563] plot(\x,{2*(\x)^3-3*(\x)^2-12*(\x)+6});
+    \draw[line width=1.2pt,dash pattern=on 7pt off 7pt, smooth,samples=100,domain=-3.5716478839065284:4.279097160875563] plot(\x,{6*(\x)^2-6*(\x)-12});
+    \draw (3.4,8.48) node[anchor=north west] {f};
+    \draw (2,11.87) node[anchor=north west] {f'};
+  \end{tikzpicture}
+\end{center}
+De afgeleide functie $f'$ is positief in het interval $]-\infty, -1[$. We zien aan de grafiek dat de functie $f$ in dit interval inderdaad aan het stijgen is (conform de eigenschap). In het interval $]-1, 2[$ is de afgeleide functie $f'$ negatief en de functie $f$ is daalt daar. Bepaal zelf verder het verloop van $f$ aan de hand van $f'$.
+
+In de praktijk maken we het tekenverloop van de afgeleide functie $f'$, hierop duiden we dan het stijgen en dalen van de functie $f$ aan. In ons voorbeeld wordt dit dan:
+\begin{center}
+  \begin{tabular}{c|ccccc}
+    $x$ & \hspace*{1.0cm} & $-1$ & \hspace*{1.0cm} & $2$ & \hspace*{1.0cm}\\
+    \hline
+    $f'(x)$ & + & 0 & - & 0 & +\\
+    \hline
+    $f(x)$ & $\nearrow$ & & $\searrow$ & & $\nearrow$
+  \end{tabular}
+\end{center}
+
+\begin{oefening}
+  Zoek een functie $f$, waarvoor geld $f(x)=1\quad \forall x\in\mathbb{R}$. Maak de grafiek van $f$ en van $f'$ en maak ook het tekenverloop van $f'$ met het stijgen en dalen van $f$.
+\end{oefening}
+
+% \begin{oefening}
+%   Zoek een functie $f$, waarvoor geld $f(x)=0\quad \forall x\in\mathbb{R}$. Maak de grafiek van $f$ en van $f'$ en maak ook het tekenverloop van $f'$ met het stijgen en dalen van $f$.
+% \end{oefening}
+
+\subsection{Extrema van een functie}
+
+\begin{eigenschap}
+  Als $f$ een relatief extremum heeft in $a$, dan geldt $f'(a)=0$.
+\end{eigenschap}
+
+De voorwaarde $f'(a)=0$ is niet voldoende om een relatief extremum te vinden in $a$. We kunnen hoogstens zeggen:
+
+\begin{kader}
+  Als $f'(x)=0$ in een punt $x$, dan heeft de functie $f$ {\em misschien} een extremum in $x$.
+\end{kader}
+Tekenonderzoek van $f'$ kan ons echter wel helpen om de extrema te vinden, we baseren ons op de volgende eigenschappen:
+
+\begin{eigenschap}
+  Als $f$ afleidbaar is in een interval rond $a$, dan geldt:
+  \begin{itemize}
+  \item als $f'$ overgaat van strikt negatief naar strikt positief in $a$, dan heeft $f$ in $a$ een relatief minimum,
+  \item als $f'$ overgaat van strikt positief naar strikt negatief in $a$, dan heeft $f$ in $a$ een relatief maximum.
+  \end{itemize}
+\end{eigenschap}
+
+In de praktijk lees je de extrema af op het tekenverloop waar $f'(x)=0$ is, zoals in ons vorig voorbeeld:
+
+\begin{center}
+  \begin{tabular}{c|ccccc}
+    $x$ & \hspace*{1.0cm} & $-1$ & \hspace*{1.0cm} & $2$ & \hspace*{1.0cm}\\
+    \hline
+    $f'(x)$ & + & 0 & - & 0 & +\\
+    \hline
+    $f(x)$ & $\nearrow$ &  $\underset{=13}{\bf max}$ & $\searrow$ & $\underset{=-12}{\bf min}$ & $\nearrow$
+  \end{tabular}
+\end{center}
+
+\subsection{Schetsen van een functie}
+
+Met de kennis die we nu hebben kunnen we een strategie ontwikkelen om een functie $f$ te schetsen. Hou steeds in gedachte dat de afgeleide $f'$ enkel dient om informatie over de oorspronkelijke functie $f$ te zoeken. Het hoofddoel is niet de afgeleide, maar de functie zelf!
+
+We gaan als volgt te werk voor een gegeven functie $f(x)=y$:
+\begin{enumerate}
+\item Bepaal het {\bf domein} van $f$.
+\item Bepaal de {\bf nulpunten} van $f$ en duid ze aan in een orthonormaal assenstelsel.
+\item Maak een {\bf tekenonderzoek} van $f$.
+\item Bepaal de horizontale, schuine en verticale {\bf asymptoten} van $f$ en teken deze op de grafiek.
+\item Bepaal de afgeleide functie $f'$, maak een tekenonderzoek van de afgeleide functie $f'$ en bepaal de intervallen waarop de functie $f$ {\bf stijgt of daalt}. Bepaal ook de extrema.
+\item Schets de {\bf grafiek} van $f$.
+\end{enumerate}
+
+\begin{oefening}
+  Bespreek volgende functies:
+  \begin{enumerate}[(a)]
+  \itemsep.75em
+  \item $f(x)=x^3-6x^2+11x-6$
+  \item $f(x)=-x^3+6x^2-13x+42$
+  \item $f(x)=-8x^4+14x^3+165x^2+77x+490$
+  \item $f(x)=\dfrac{3x^2-6}{x^2+x-6}$
+  \item $f(x)=\dfrac{-2x^2+7x-3}{x^2-9}$
+  \item $f(x)=\dfrac{x^2-3}{2x-4}$
+  \item $f(x)=\dfrac{x^3-1}{x^2}$
+  \item $f(x)=\dfrac{9x^2-25}{x^3-x}$
+  \end{enumerate}
+\end{oefening}
+
+\pagebreak
+\section{Toepassingen: extremumvraagstukken}
+
+De volgende problemen zijn extremumvraagstukken. Ze zijn één van de belangrijkste toepassingen van de eerste afgeleide. Veel studenten zijn geïntimideerd door deze problemen omdat ze de tekst eerst moeten omzetten naar een wiskundige functie. Daarnaast bestaat er geen éénduidige manier om alle extremumvraagstukken op te lossen. Echter, met een beetje geduld en de nodige oefening kan je je ongerustheid minimaliseren en je succes maximaliseren.
+
+Volgende tips kunnen alvast handig zijn:
+\begin{itemize}
+\item Lees elk probleem zorgvuldig. Lees elk probleem op zijn minst drie keer voordat je het probeert op te lossen. Het is heel belangrijk dat je heel goed weet wat er wordt gevraagd. Als je hier mist of te snel gaat, dan heb je geen kans om het vraagstuk correct op te lossen.
+\item
+\end{itemize}
+
+\begin{oefening}
+  De som van twee positieve getallen is $2004$. Bepaal die getallen zodat hun product maximaal is.
+\end{oefening}
+
+\begin{oefening}
+  De som van twee positieve getallen is $|5|$. Bepaal die getallen zodat de som van hun kwadraten minimaal is.
+\end{oefening}
+
+\begin{oefening}
+  Welke rechthoek met een omtrek van $100$m heeft de grootste oppervlakte? Hoeveel bedraagt deze oppervlakte?
+\end{oefening}
+
+\begin{oefening}
+  De route gevolgd door een groep bergbeklimmers wordt gegeven door de veeltermfunctie
+  $$h(t)=90t^2-10t^3\;.$$
+  Hierbij is:
+  \begin{itemize}
+  \item $h=$ de hoogte in meters,
+  \item $t=$ de tijd in uren,
+  \item $t=0$ is het tijdstip waarop de groep begint met de bergbeklimming.
+  \end{itemize}
+  Na hoeveel tijd bereiken onze klimmers de top? Op welke hoogte bevinden ze zich dan?
+\end{oefening}
+
+\begin{oefening}
+  Het verkopen van koelkasten binnen een bepaalde periode wordt pas lonend bij een serieuze verkoop. In het begin is er verlies. Dat verlies wordt weergegeven door de functie
+  $$v(x)=-2x^3-3x^2+36x+6\;,$$
+  waarbij $x$ uitgedrukt wordt in $1000$ verkochte eenheden en $v(x)$ in $10$ euro. Voor welke verkoop is het verlies maximaal?
+\end{oefening}
+
+\begin{oefening}\\
+  \begin{minipage}{0.6\textwidth}
+    Uit een rechthoekig stuk karton van 40 cm lang en 20 cm breed snijdt men 6 gelijke
+    vierkanten weg zoals op de figuur. Met het overblijvende deel maakt men dan een
+    taartdoos. Hoe groot moet de zijde van de vierkantjes zijn opdat de taartdoos een
+    maximale inhoud zou hebben? Bereken dan ook die inhoud.
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{rechthoekig-stuk-karton}
+  \end{minipage}
+\end{oefening}
+
+\begin{oefening}
+  Oliver wil dit jaar een klein zomerfestival organiseren. Hiervoor start hij met een promotiecampagne. Een ticket kost momenteel $30$ euro. Voor elke bezoeker meer dan $250$ zal hij de ticketprijs verlagen met $0.10$ euro. Hoeveel festivalgangers (we gaan ervan uit dat er meer dan $250$ bezoekers zijn) moeten aanwezig zijn opdat de inkomsten maximaal zijn? Geef hiervoor de ticketprijs.
+\end{oefening}
+
+\begin{oefening}
+  Bepaal twee getallen $x$ en $y$ waarvan de som 144 is en waarvoor het product maximaal
+  is. En voor welke waarden is het product $x^3\cdot y^2$ maximaal?
+\end{oefening}
+
+\begin{oefening}
+  Aan de vier hoeken van een vierkantig stuk karton met zijden van 20 cm knipt men
+  gelijke vierkanten weg. Onderzoek het verloop van de inhoud van de doos zonder
+  deksel die men hiermee kan vormen. Wanneer is die inhoud maximaal? Bepaal ook
+  het maximaal volume.
+\end{oefening}
+
+\begin{oefening}\\
+  \begin{minipage}{0.6\textwidth}
+    Een balkvormige doos met een vierkantig grondvlak bindt men toe met een lint dat
+    2 meter lang is (zoals op de figuur). Noem de zijden van het grondvlak $z$ en de hoogte
+    $h$. Bepaal $z$ en $h$ waarvoor de inhoud van de doos maximaal is. Bereken dan ook die
+    maximale inhoud.
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{doos-met-lint}
+  \end{minipage}
+\end{oefening}
+
+\begin{oefening}
+  Welke rechthoek beschreven in een cirkel met straal r heeft de grootste oppervlakte?
+\end{oefening}
+
+\begin{oefening}
+  Welke rechthoekige driehoek met een schuine zijde van 5 cm heeft de grootste
+  oppervlakte? Bepaal dan ook de oppervlakte van deze driehoek.
+\end{oefening}
+
+\begin{oefening}
+  Van een reëel getal trekken we het kwadraat af. Voor welk reëel getal is dat verschil het grootst.
+\end{oefening}
+
+\begin{oefening}
+  Een frisdrankenblik heeft een inhoud van 33 cl. De oppervlakte van het stuk blik dat
+  nodig is om het te maken hangt af van de hoogte $h$ en van de straal $r$ van het grond- en
+  bovenvlak.
+  \begin{enumerate}
+  \item Toon aan dat $h=\dfrac{330}{\pi r^2}$
+  \item Noem $A$ de totale oppervlakte van het blik. Toon aan dat $A=\dfrac{2\pi r^3 + 660}{r}$.
+  \item Bepaal de afmetingen $h$ en $r$ waarvoor de totale blikoppervlakte minimaal is.
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Een goudsmid vervaardigt een rechthoekig kadertje waarvan de twee overstaande
+  zijden gouden staafjes zijn van 100 euro per cm lengte en de twee andere zilveren staafjes
+  van 75 euro per cm lengte. Wat is de grootst mogelijke oppervlakte die hij kan bekomen
+  als de totale kostprijs 1 500 euro mag zijn?
+\end{oefening}
+
+\begin{oefening}
+  Verdeel het getal 120 in twee positieve getallen,
+  zo dat het product van het kwadraat van het eerste getal met het tweede getal maximaal is.
+\end{oefening}
+
+\begin{oefening}
+  Verdeel het getal 60 in twee positieve getallen,
+  zo dat som van de kwadraten van de twee getallen minimaal is.
+\end{oefening}
+
+\begin{oefening}
+  Een plaat van 1m breed plooi je, zo dat ze een goot vormt.
+  Bij welke afmetingen kan door de goot een maximale hoeveelheid water stromen?
+\end{oefening}
+
+\begin{oefening}
+  Uit een vierkant van 40x40cm knip je vierkantjes. Zo kan je het geheel plooien tot een doos.
+  Hoeveel knip je weg om een zo groot mogelijke doos te bekomen?
+\end{oefening}
+
+\begin{oefening}\\
+  \begin{minipage}{0.6\textwidth}
+    Een ondernemer wil een rechthoekig terrein aankopen en het omheinen. Het terrein
+    moet een oppervlakte van 1 200 m$^2$ hebben en het paalt aan een gebouw dat dus aan
+    één zijde als afsluiting dient. De afsluiting parallel met het gebouw kost 15 euro per meter
+    en aan de twee andere zijden 10 euro per meter. Voor welke afmetingen is de kostprijs
+    minimaal?
+  \end{minipage}
+  \begin{minipage}{0.4\textwidth}
+    \centering
+    \includegraphics[width=\textwidth]{terrein-omheinen}
+  \end{minipage}
+\end{oefening}
+
+\begin{oefening}
+  Uit een boomstam met een diameter van 30 cm wordt een rechthoekige balk gezaagd.
+  Het draagvermogen van zo'n balk hangt natuurlijk af van de hoogte en de breedte van de balk
+  en is evenredig met het product $b\cdot h^2$.
+  Bepaal de afmetingen van de balk zo dat het draagvermogen zo groot mogelijk wordt.
+\end{oefening}
+
+\begin{oefening}
+  Met een draad van 1000 meter lengte omspannen we een rechthoekige weide. Bepaal de afmetingen van de weide zodat de oppervlakte zo groot mogelijk is. De draad wordt uiteraard volledig opgebruikt.
+\end{oefening}
+
+\begin{oefening}
+  De totale oppervlakte van een cilindervormige doos is 12 dm$^2$. Bepaal straal en hoogte h van de doos zodat de inhoud maximaal is.
+\end{oefening}
+
+\begin{oefening}
+  In een cirkel met straal 10 cm kan men verschillende rechthoeken beschrijven. Bepaal de rechthoek met de grootste oppervlakte. (tip : gebruik Pythagoras).
+\end{oefening}
+
+\begin{oefening}
+  Vind de vergelijking van de rechte door het punt (3,4) die in het eerste kwadrant een
+  driehoek afsnijdt met minimale oppervlakte.
+\end{oefening}
+
+\begin{oefening}
+  Wat is de minimale afstand van het punt (4,2) tot de parabool $y^2 = 8x$?
+\end{oefening}
+
+% \begin{oefening}
+%   In welk punt in het eerste kwadrant van de parabool $y=4-x^2$ bepaalt de raaklijn
+%   samen met de coördinaatassen een driehoek met minimale oppervlakte.
+% \end{oefening}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+\end{document}
+
+
+
+\begin{minipage}[c]{0.4\textwidth}
+\end{minipage}
+\begin{minipage}[c]{0.6\textwidth}
+  \dotlines{10}
+\end{minipage}
