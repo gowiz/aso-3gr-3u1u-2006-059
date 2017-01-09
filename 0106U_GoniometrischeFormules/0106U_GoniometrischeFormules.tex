@@ -1,0 +1,433 @@
+\documentclass[a4paper,12pt]{article}
+
+\input{../gowiz.tex}
+
+\begin{document}
+
+\thispagestyle{empty}
+\begin{center}
+  \begin{mdframed}
+  \centering
+  \fontsize{40}{50}\selectfont Goniometrische formules
+  \end{mdframed}
+  \vfill
+  \includegraphics[width=0.7\textwidth]{unit-circle}
+  \vfill
+\end{center}
+\subsection*{Doelstelling}
+Je \hfill  {\scriptsize(LP 2006-059, LI 1.6.3)}
+\begin{itemize}
+  \item kan de optellingsformules voor sinus, cosinus en tangens opstellen en toepassen
+  \item de verdubbelingsformules voor sinus, cosinus en tangens opstellen en toepassen
+  \item de halveringsformules voor sinus en cosinus opstellen en toepassen
+  \item de formules van Simpson opstellen en toepassen
+\end{itemize}
+
+
+\pagestyle{empty}
+\mbox{}
+\newpage
+\clearpage
+\thispagestyle{empty}
+%\mbox{}
+\tableofcontents
+\newpage
+\clearpage
+\pagenumbering{arabic} 
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Goniometrische formules}
+
+\onehalfspacing
+
+\section{Goniometrische getallen}
+
+Voor een hoek met maatgetal $\alpha$ en beeldpunt $\vec{p}=(p_x,p_y)$ op de goniometrische cirkel definiëren we de goniometrische getallen als volgt:
+
+\begin{itemize}
+  \item De {\bf cosinus} van $\alpha$ is de $x$-coördinaat van $\vec{p}$: $\cos\alpha=p_x$
+  \item De {\bf sinus} van $\alpha$ is de $y$-coördinaat van $\vec{p}$: $\cos\alpha=p_y$
+\end{itemize}
+
+Merk op:
+\begin{itemize}
+  \item De goniometrische getallen liggen in het interval $[-1,1]$.
+  \item De goniometrische getallen hangen slechts van de hoek af en niet van zijn maatgetal, m.a.w.
+  $$\alpha = \alpha + k\cdot 360\degree\mbox{ met }k\in\mathbb{Z}$$
+\end{itemize}
+
+Door stelling van Pythagoras toe te passen vinden we de {\bf grondformule van de goniometrie}
+$$\cos^2\alpha + \sin^2\alpha = 1$$
+
+Verder worden nog volgende afgeleide goniometrische getallen gedefinieerd:
+\begin{itemize}
+  \item De {\bf tangens} van $\alpha$:
+  $$\tan\alpha=\dfrac{\sin\alpha}{\cos\alpha}$$
+  \item De {\bf cotangens} van $\alpha$:
+  $$\cot\alpha=\dfrac{\cos\alpha}{\sin\alpha}$$
+  \item De {\bf secans} van $\alpha$:
+  $$\sec\alpha=\dfrac{1}{\cos\alpha}$$
+  \item De {\bf cosecans} van $\alpha$:
+  $$\csc\alpha=\dfrac{1}{\cos\alpha}$$
+\end{itemize}
+
+\pagebreak
+\section{Goniometrische getallen van enkele bijzondere hoeken}
+\begin{center}
+  \begin{tabular}{c|c|c|c|c|c|c|c|c|c}
+    $x$ & $0\degree$ & $30\degree$ & $45\degree$ & $60\degree$ & $90\degree$ & $120\degree$ & $135\degree$ & $150\degree$ & $180\degree$ \\
+    \hline
+    $\sin x$&&&&&&&&&\\
+    \hline
+    $\cos x$&&&&&&&&&\\
+    \hline
+    $\tan x$&&&&&&&&&\\ 
+  \end{tabular}
+  \vfill
+  \includegraphics[width=0.8\textwidth]{unit-circle} %% SOURCE: http://etc.usf.edu
+  \vfill
+\end{center}
+
+
+\pagebreak
+\section{Goniometrische getallen van verwante hoeken}
+
+\subsection{Gelijke hoeken}
+We noemen twee hoeken $\alpha$ en $\beta$ \textbf{gelijk} als het maatgetal van $\alpha$ gelijk is aan het maatgetal van $\beta$.
+\paragraph{}
+Aangezien het maatgetal van een hoek slechts bepaald is op een geheel veelvoud van $360\degree$ zullen gelijke hoeken dezelfde goniometrische getallen hebben:
+\begin{align*}
+\sin(\alpha+k\cdot 360\degree)&=\sin(\alpha)\\
+\cos(\alpha+k\cdot 360\degree)&=\cos(\alpha)\\
+\tan(\alpha+k\cdot 360\degree)&=\tan(\alpha)\\
+\cot(\alpha+k\cdot 360\degree)&=\cot(\alpha)\\
+\end{align*}
+
+\subsection{Tegengestelde hoeken}
+\subsubsection*{Definitie}
+We noemen twee hoeken $\alpha$ en $\beta$ \textbf{tegengesteld} als $\alpha=-\beta$.
+\subsubsection*{Goniometrische getallen van tegengestelde hoeken}
+Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tussen $\sin(\alpha)$ en $\sin(-\alpha)$. Doe hetzelfde voor cos, tan en cot.
+\vspace*{2cm}
+\subsubsection*{Besluit}
+\begin{align*}
+  \sin(-\alpha)&=-\sin(\alpha)\\
+  \cos(-\alpha)&=\cos(\alpha)\\
+  \tan(-\alpha)&=-\tan(\alpha)\\
+  \cot(-\alpha)&=-\cot(\alpha)
+\end{align*}
+
+\subsection{Complementaire hoeken}
+
+\subsubsection*{Definitie}
+We noemen twee hoeken $\alpha$ en $\beta$ \textbf{complementair} als hun som $90\degree$ is.
+
+\subsubsection*{Goniometrische getallen van complementaire hoeken}
+Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tussen $\sin(\alpha)$ en $\sin(90\degree-\alpha)$. Doe hetzelfde voor cos, tan en cot.
+\vspace*{7cm}
+
+\subsubsection*{Besluit}
+\begin{align*}
+  \sin(90\degree-\alpha)&=\cos(\alpha)\\
+  \cos(90\degree-\alpha)&=\sin(\alpha)\\
+  \tan(90\degree-\alpha)&=\cot(\alpha)\\
+  \cot(90\degree-\alpha)&=\tan(\alpha)
+\end{align*}
+
+\pagebreak
+\subsection{Supplementaire hoeken}
+
+\subsubsection*{Definitie}
+We noemen twee hoeken $\alpha$ en $\beta$ \textbf{supplementair} als hun som $180\degree$ is.
+
+\subsubsection*{Goniometrische getallen van supplementaire hoeken}
+Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tussen $\sin(\alpha)$ en $\sin(180\degree-\alpha)$. Doe hetzelfde voor cos, tan en cot.
+\vspace*{7cm}
+\subsubsection*{Besluit}
+\begin{align*}
+  \sin(180\degree-\alpha)&=\sin(\alpha)\\
+  \cos(180\degree-\alpha)&=-\cos(\alpha)\\
+  \tan(180\degree-\alpha)&=-\tan(\alpha)\\
+  \cot(180\degree-\alpha)&=-\cot(\alpha)
+\end{align*}
+
+\pagebreak
+\subsection{Anti-supplementaire hoeken}
+
+\subsubsection*{Definitie}
+We noemen twee hoeken $\alpha$ en $\beta$ \textbf{anti-supplementair} als verschil $180\degree$.
+
+\subsubsection*{Goniometrische getallen van anti-supplementaire hoeken}
+Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tussen $\sin(\alpha)$ en $\sin(180\degree+\alpha)$. Doe hetzelfde voor cos, tan en cot.
+\vspace*{6cm}
+
+\subsubsection*{Besluit}
+\begin{align*}
+\sin(180\degree+\alpha)&=-\sin(\alpha)\\
+\cos(180\degree+\alpha)&=-\cos(\alpha)\\
+\tan(180\degree+\alpha)&=\tan(\alpha)\\
+\cot(180\degree+\alpha)&=\cot(\alpha)  
+\end{align*}
+
+\pagebreak
+\subsection{Oefeningen}
+
+\begin{oefening}
+Voor de hoek $\alpha$ van $135\degree$
+\begin{enumerate}[(a)]
+  \item Schets een goniometrische cirkel en duid hierop $\alpha$ aan.
+  \item Duid $\sin \alpha$, $\cos \alpha$ en $\cot \alpha$ aan.
+  \item Bereken $\sin \alpha$, $\cos \alpha$ en $\cot \alpha$ met behulp van verwante hoeken.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bepaal de waarde van de volgende hoeken:
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $\cos 150\degree$
+  \item $\tan 300\degree$
+  \item $\sin 315\degree$
+  \item $\sec -60\degree$
+  \item $\csc -30\degree$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Gegeven is dat de volgende vormen zinvol zijn. Schrijf ze zo eenvoudig mogelijk.
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $\dfrac{\cos(90\degree-\alpha)}{\tan(180\degree+\alpha)}$
+  \item $\dfrac{\sin(90\degree-\alpha)}{\cot(180\degree-\alpha)}$
+  \item $\dfrac{\sin(180\degree+\alpha).\tan(180\degree-\alpha)}{\tan(-\alpha)}$
+  \item $(1-\cos(-\alpha)).(1+\cos(\alpha))$
+  \item $\dfrac{\sin(90\degree-\alpha).\cos(360\degree+\alpha).\cot(90\degree-\alpha)}{\tan(180\degree-\alpha).\cot(\alpha+180\degree).\cos(-\alpha)}$
+\end{enumerate}
+\end{oefening}
+
+\newpage
+\section{Optellingsformules}
+
+\subsection{Inleiding}
+We willen een formule afleiden om de sinus, cosinus of tangens van een som van twee hoeken te berekenen:
+\begin{align*}
+  \sin(\alpha + \beta)\\
+  \cos(\alpha + \beta)\\
+  \tan(\alpha+\beta)
+\end{align*}
+
+Vul hiertoe de volgende uitdrukkingen aan en verbind wat aan elkaar gelijk is.
+
+\begin{minipage}{0.4\textwidth}
+  $$\sin(30\degree + 60\degree)=\arule{1cm}$$
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+  $$\sin(30\degree) + \sin(60\degree)=\arule{1cm}$$
+  $$\sin(30\degree)\cdot\cos(60\degree)+\cos(30\degree)\cdot\sin(60\degree)=\arule{1cm}$$
+\end{minipage}
+
+\begin{minipage}{0.4\textwidth}
+  $$\sin(90\degree - 30\degree)=\arule{1cm}$$
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+  $$\sin(90\degree) + \sin(30\degree)=\arule{1cm}$$
+  $$\sin(90\degree)\cdot\cos(30\degree)-\cos(90\degree)\cdot\sin(30\degree)=\arule{1cm}$$
+\end{minipage}
+
+\begin{minipage}{0.4\textwidth}
+  $$\cos(30\degree + 60\degree)=\arule{1cm}$$
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+  $$\cos(30\degree) + \cos(60\degree)=\arule{1cm}$$
+  $$\cos(30\degree)\cdot\cos(60\degree)-\sin(30\degree)\cdot\sin(60\degree)=\arule{1cm}$$
+\end{minipage}
+
+\begin{minipage}{0.4\textwidth}
+  $$\cos(90\degree - 30\degree)=\arule{1cm}$$
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+  $$\cos(90\degree) - \cos(30\degree)=\arule{1cm}$$
+  $$\cos(90\degree)\cdot\cos(30\degree)-\sin(90\degree)\cdot\sin(30\degree)=\arule{1cm}$$
+\end{minipage}
+
+
+
+\subsection{Optellingsformules voor sinus en cosinus}
+
+\subsubsection*{Besluit}
+\begin{align*}
+  \sin(\alpha + \beta)&=\sin(\alpha)\cdot \cos(\beta)+\cos(\alpha)\cdot \sin(\beta)\\
+  \sin(\alpha - \beta)&=\sin(\alpha)\cdot \cos(\beta)-\cos(\alpha)\cdot \sin(\beta)\\
+  \cos(\alpha + \beta)&=\cos(\alpha)\cdot \cos(\beta)-\sin(\alpha)\cdot \sin(\beta)\\
+  \cos(\alpha - \beta)&=\cos(\alpha)\cdot \cos(\beta)+\sin(\alpha)\cdot \sin(\beta)
+\end{align*}
+
+
+\subsubsection*{Voorbeelden}
+
+  \begin{enumerate}[(a)]
+    \item Bereken $\sin(75\degree)$:
+    \begin{align*}
+      \sin(75\degree)&=\sin(45\degree+30\degree)\\
+                     &=\sin(45\degree+30\degree)\\
+                     &=\sin(45\degree)\cdot \cos(30\degree)+\cos(45\degree)\cdot \sin(30\degree)\\
+                     &=\frac{\sqrt{2}}{2}\cdot \frac{\sqrt{3}}{2}+\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{1}}{2}\\
+                     &=\frac{\sqrt{6}+\sqrt{2}}{4}
+    \end{align*}
+    \item Vereenvoudig $\cos(4x)\cdot \cos(3x)-\sin(4x)\cdot \sin(3x)$
+    \begin{align*}
+      \cos(4x)\cdot \cos(3x)-\sin(4x)\cdot \sin(3x)&=\cos(3x+4x)\\
+                                                   &=\cos(7x)
+    \end{align*}
+  \end{enumerate}
+
+\begin{oefening}
+Bereken $\cos(15\degree)$
+\end{oefening}
+
+\begin{oefening}
+Vereenvoudig $\cos(19x)\cdot \cos(7x)+\sin(19x)\cdot \sin(7x)$
+\end{oefening}
+
+\pagebreak
+\subsection{Optellingsformules voor tangens}
+Uitgaande van deze formules leiden we nu een formule af voor de tangens van een som van 2 hoeken.
+
+\subsubsection*{Opstellen formule}
+\begin{align*}
+  \tan(\alpha + \beta) &= \dfrac{\sin(\alpha + \beta)}{\cos(\alpha+\beta)}\\
+                       &= \dfrac{\sin(\alpha)\cdot \cos(\beta)+\cos(\alpha)\cdot \sin(\beta)}{\cos(\alpha)\cdot \cos(\beta)-\sin(\alpha)\cdot \sin(\beta)}\\
+                       &= \dfrac{\dfrac{\sin\alpha\cdot\cos\beta}{\cos\alpha\cdot\cos\beta}+\dfrac{\cos\alpha\cdot\sin\beta}{\cos\alpha\cdot\cos\beta}}{\dfrac{\cos\alpha\cdot\cos\beta}{\cos\alpha\cdot\cos\beta}+\dfrac{\sin\alpha\cdot\sin\beta}{\cos\alpha\cdot\cos\beta}}\\
+                       &= \dfrac{\tan\alpha+\tan\beta}{1-\tan\alpha\cdot\tan\beta}
+\end{align*}
+
+In deze formule moeten $\alpha\neq 90\degree + k\cdot 180\degree$ en $\beta \neq 90\degree + k\cdot 180\degree$ teneinde te beletten dat $\tan\alpha$ en $\tan\beta$ niet zouden bestaan!
+
+We spreken af om enkel hoeken te gebruiken waarvoor de gegeven vormen zinvol zijn. Er geldt ook:
+\begin{align*}
+  \tan(\alpha - \beta) &= \tan(\alpha + (-\beta))\\
+                       &= \dfrac{\tan\alpha + \tan(-\beta)}{1-\tan\alpha\cdot\tan(-\beta)}\\
+                       &= \dfrac{\tan\alpha - \tan\beta}{1+\tan\alpha\cdot\tan\beta}
+\end{align*}
+
+\subsubsection*{Besluit}
+\begin{align*}
+  \tan(\alpha + \beta)&=\frac{\tan(\alpha)+\tan(\beta)}{1-\tan(\alpha)\cdot\tan(\beta)}\\
+  \tan(\alpha - \beta)&=\frac{\tan(\alpha)-\tan(\beta)}{1+\tan(\alpha)\cdot\tan(\beta)}
+\end{align*}
+\textbf{\[
+\]}
+
+\pagebreak
+\subsubsection*{Voorbeelden}
+Bereken
+\begin{enumerate}[(a)]
+  \item $\tan(60\degree - 30\degree)$
+  \vspace*{-0.5cm}
+  \begin{align*}
+    \tan(60\degree - 30\degree)&=\dfrac{\tan(60\degree)-\tan(30\degree)}{1+\tan(60\degree)\cdot\tan(30\degree)}\\
+                               &=\dfrac{\sqrt{3}-\frac{\sqrt{3}}{3}}{1+\sqrt{3}\cdot\frac{\sqrt{3}}{3}}\\
+                               &=\dfrac{\frac{2}{3}\cdot\sqrt{3}}{2}\\
+                               &=\dfrac{\sqrt{3}}{3}
+  \end{align*}
+  \item $\tan(75\degree)$
+  \vspace*{-0.5cm}
+  \begin{align*}
+    \tan(75\degree) &= \tan(45\degree + 30\degree)\\
+                    &= \dfrac{\tan45\degree+\tan30\degree}{1-\tan45\degree\cdot\tan30\degree}\\
+                    &= \dfrac{1+\frac{\sqrt{3}}{3}}{1-1\cdot\frac{\sqrt{3}}{3}}\\
+                    &= \ldots\\
+                    &= 2+\sqrt{3}
+  \end{align*}
+\end{enumerate}
+
+
+\subsection{Oefeningen}
+
+\begin{oefening}
+Bereken
+\begin{enumerate}[(a)]
+  \item $\cos(75\degree)$
+  \item $\sin(15\degree)$
+  \item $\tan(105\degree)$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Vereenvoudig
+\begin{enumerate}[(a)]
+  \item $\sin\frac{2x}{3}\cdot \cos\frac{x}{6}-\cos\frac{2x}{3}\cdot \sin\frac{x}{6}$
+  \item $\cos\frac{8x}{5}\cdot \cos\frac{x}{10}+\sin\frac{8x}{5}\cdot \sin\frac{x}{10}$
+  \item $\cos(110\degree)\cdot \cos(50\degree)+\sin(110\degree)\cdot \sin(50\degree)$
+  \item $\sin(72\degree)\cdot \cos(27\degree)-\cos(72\degree)\cdot \sin(27\degree)$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bewijs $\displaystyle \cot(\alpha+\beta)=\dfrac{\cot\alpha\cdot\cot\beta-1}{\cot\alpha+\cot\beta}$.
+\end{oefening}
+
+\newpage
+\section{Formules van Simpson}
+Uit de optellingsformules kunnen we formules afleiden die een product van sinussen en/of cosinussen omzetten in een som en omgekeerd.
+\subsection{Eerste vorm van de formules van Simpson: product omzetten naar som}
+\[2\cdot \sin(\alpha)\cdot \cos(\beta)=\sin(\alpha-\beta)+\sin(\alpha+\beta)
+\]
+\[2\cdot \cos(\alpha)\cdot \cos(\beta)=\cos(\alpha-\beta)+\cos(\alpha+\beta)
+\]
+\[2\cdot \sin(\alpha)\cdot \sin(\beta)=\cos(\alpha-\beta)-\cos(\alpha+\beta)
+\]
+
+\subsubsection*{Voorbeelden}
+
+\begin{enumerate}[(1)]
+  \item\underline{Schrijf als som}
+    \begin{enumerate}[(a)]
+      \item $2\cdot \sin(3x)\cdot \cos(2x)= $\dotfill
+      \item $2\cdot \cos(4x)\cdot \cos(2x)= $\dotfill
+      \item $2\cdot \sin(5x)\cdot \sin(x)= $\dotfill
+      \item $2\cdot \sin(x)\cdot \cos(3x)= $\dotfill
+      \item $\cos(3x)\cdot \cos(2x)= $\dotfill
+      \item $\sin(3x)\cdot \sin(-3x)= $\dotfill
+    \end{enumerate}
+  \item \underline{Bereken exact}
+    \begin{enumerate}[(a)]
+      \item $2\cdot \cos(75\degree)\cdot \cos(15\degree) = \dotfill \newline =$\dotfill
+      \item $2\cdot \sin(75\degree)\cdot \cos(15\degree) = \dotfill \newline =$\dotfill
+      \item $2\cdot \sin(\frac{5\pi}{12})\cdot \sin(\frac{\pi}{12}) = $\dotfill \newline =\dotfill
+      \item $2\cdot \cos(120\degree)\cdot \cos(60\degree) = $\dotfill \newline =\dotfill
+    \end{enumerate}
+\end{enumerate}
+
+\newpage
+\subsection{Tweede vorm van de formules van Simpson: som onzetten naar product}
+\[\sin(p)+\sin(q)=2\cdot \sin(\frac{p+q}{2})\cdot \cos(\frac{p-q}{2})
+\]
+\[\sin(p)-\sin(q)=2\cdot \cos(\frac{p+q}{2})\cdot \sin(\frac{p-q}{2})
+\]
+\[\cos(p)+\cos(q)=2\cdot \cos(\frac{p+q}{2})\cdot \cos(\frac{p-q}{2})
+\]
+\[\cos(p)-\cos(q)=-2\cdot \sin(\frac{p+q}{2})\cdot \sin(\frac{p-q}{2})
+\]
+
+\subsubsection*{Voorbeelden}
+
+\begin{enumerate}[(1)]
+  \item\underline{Schrijf als product}
+    \begin{enumerate}[(a)]
+      \item $\cos5x+\cos x=$ \dotfill
+      \item $\cos x-\cos17x=$ \dotfill
+      \item $\sin8x+\sin2x=$ \dotfill
+      \item $\cos(\frac{\pi}{5})+\cos(\frac{\pi}{7})=$ \dotfill
+    \end{enumerate}
+  \item \underline{Bereken exact}
+    \begin{enumerate}[(a)]
+      \item $\sin(75\degree)+\sin(15\degree) =$ \dotfill \newline =\dotfill
+      \item $\cos(75\degree)+\cos(15\degree) =$ \dotfill \newline =\dotfill
+      \item $\cos(\frac{-\pi}{12})-\cos(\frac{7\pi}{12}) =$ \dotfill \newline =\dotfill
+    \end{enumerate}
+\end{enumerate}
+
+%\newpage
+\end{document}
