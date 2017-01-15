@@ -84,9 +84,9 @@ Verder worden nog volgende afgeleide goniometrische getallen gedefinieerd:
     \hline
     $\tan x$&&&&&&&&&\\ 
   \end{tabular}
-  \vfill
+  \vspace*{2cm}\mbox{}
   \includegraphics[width=0.6\textwidth]{unit-circle} %% SOURCE: http://etc.usf.edu
-  \vfill
+  \vspace*{1cm}
 \end{center}
 
 \begin{oefening}
@@ -128,7 +128,7 @@ Bereken:
 We noemen twee hoeken $\alpha$ en $\beta$ \textbf{tegengesteld} als $\alpha=-\beta$.
 \subsubsection*{Goniometrische getallen van tegengestelde hoeken}
 Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tussen $\sin(\alpha)$ en $\sin(-\alpha)$. Doe hetzelfde voor cos, tan en cot.
-\vspace*{2cm}
+\vspace*{7cm}
 \subsubsection*{Besluit}
 \begin{align*}
   \sin(-\alpha)&=-\sin(\alpha)\\
@@ -317,29 +317,25 @@ Vul hiertoe de volgende uitdrukkingen aan en verbind wat aan elkaar gelijk is.
 
 \subsubsection*{Voorbeelden}
 
-  \begin{enumerate}[(a)]
-    \item Bereken $\sin(75\degree)$:
-    \begin{align*}
-      \sin(75\degree)&=\sin(45\degree+30\degree)\\
-                     &=\sin(45\degree+30\degree)\\
-                     &=\sin(45\degree)\cdot \cos(30\degree)+\cos(45\degree)\cdot \sin(30\degree)\\
-                     &=\frac{\sqrt{2}}{2}\cdot \frac{\sqrt{3}}{2}+\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{1}}{2}\\
-                     &=\frac{\sqrt{6}+\sqrt{2}}{4}
-    \end{align*}
-    \item Vereenvoudig $\cos(4x)\cdot \cos(3x)-\sin(4x)\cdot \sin(3x)$
-    \begin{align*}
-      \cos(4x)\cdot \cos(3x)-\sin(4x)\cdot \sin(3x)&=\cos(3x+4x)\\
-                                                   &=\cos(7x)
-    \end{align*}
-  \end{enumerate}
-
-\begin{oefening}
-Bereken $\cos(15\degree)$
-\end{oefening}
-
-\begin{oefening}
-Vereenvoudig $\cos(19x)\cdot \cos(7x)+\sin(19x)\cdot \sin(7x)$
-\end{oefening}
+\begin{enumerate}[(a)]
+  \item Bereken $\sin(75\degree)$
+  \begin{align*}
+    \sin(75\degree)&=\sin(45\degree+30\degree)\\
+                   &=\sin(45\degree+30\degree)\\
+                   &=\sin(45\degree)\cdot \cos(30\degree)+\cos(45\degree)\cdot \sin(30\degree)\\
+                   &=\frac{\sqrt{2}}{2}\cdot \frac{\sqrt{3}}{2}+\frac{\sqrt{2}}{2}\cdot\frac{\sqrt{1}}{2}\\
+                   &=\frac{\sqrt{6}+\sqrt{2}}{4}
+  \end{align*}
+  \item Bereken $\cos(15\degree)$
+  \\\ldots
+  \item Vereenvoudig $\cos(4x)\cdot \cos(3x)-\sin(4x)\cdot \sin(3x)$
+  \begin{align*}
+    \cos(4x)\cdot \cos(3x)-\sin(4x)\cdot \sin(3x)&=\cos(3x+4x)\\
+                                                 &=\cos(7x)
+  \end{align*}
+  \item Vereenvoudig $\cos(19x)\cdot \cos(7x)+\sin(19x)\cdot \sin(7x)$
+  \\\ldots
+\end{enumerate}
 
 \pagebreak
 \subsection{Optellingsformules voor tangens}
@@ -419,8 +415,170 @@ Vereenvoudig
 Bewijs $\displaystyle \cot(\alpha+\beta)=\dfrac{\cot\alpha\cdot\cot\beta-1}{\cot\alpha+\cot\beta}$.
 \end{oefening}
 
+\pagebreak
+\section{Verdubbelingsformules}
+
+\subsection{Inleiding}
+Is $\sin(2\alpha)$ gelijk aan $2\sin\alpha$?
+
+Probeer het eens met bijvoorbeeld $\alpha=30\degree$?
+
+\begin{minipage}{0.3\textwidth}
+\begin{align*}
+  \sin(2\cdot30\degree) &= \sin 60\degree\\
+                        &= \dfrac{\sqrt{3}}{2}
+\end{align*}  
+\end{minipage}
+\begin{minipage}{0.3\textwidth}
+\begin{align*}
+  2\cdot\sin(30\degree) &= 2\cdot\dfrac{1}{2}\\
+                        &= 1
+\end{align*}  
+\end{minipage}
+
+Als we een hoek verdubbelen betekent dit niet dat de sinus, cosinus of tangens van deze hoek ook verdubbeld wordt!
+
+\subsection{Formules voor $\sin 2\alpha$ en $\cos 2\alpha$}
+
+%\subsubsection*{Opstellen formules}
+
+Stellen we $\beta=\alpha$ in de optellingsformule $\sin(\alpha+\beta)=\sin\alpha\cdot\cos\beta + \cos\alpha\cdot\sin\beta$ dan krijgen we
+\begin{align*}
+       && \sin 2\alpha &= \sin\alpha\cdot\cos\alpha+\cos\alpha\cdot\sin\alpha\\
+  \LRA && \sin 2\alpha &= 2\cdot\sin\alpha\cdot\cos\alpha
+\end{align*}
+
+Stellen we $\beta=\alpha$ in de optellingsformule $\cos(\alpha+\beta)=\cos\alpha\cdot\cos\beta + \sin\alpha\cdot\sin\beta$ dan krijgen we
+\begin{align*}
+       && \cos 2\alpha &= \cos\alpha\cdot\cos\alpha+\sin\alpha\cdot\sin\alpha\\
+  \LRA && \cos 2\alpha &= \cos^2\alpha -\sin^2\alpha
+\end{align*}
+
+Het blijkt dus dat voor het berekenen van $\sin 2\alpha$ of $\cos 2\alpha$ zowel $\sin\alpha$ als $\cos\alpha$
+nodig is. Vermits $\sin^2\alpha + \cos^2\alpha = 1$ volstaat echter de kennis van of $\sin\alpha$ of
+$\cos\alpha$. Vooral bij $\cos 2\alpha$ wordt dit vaak toegepast:
+\begin{align*}
+       \cos 2\alpha &= \cos^2\alpha - \sin^2\alpha\\
+                    &= (1 - \sin^2\alpha) - \sin^2\alpha\\
+                    &= 1 - 2\sin^2\alpha
+\end{align*}
+\begin{align*}
+       \cos 2\alpha &= \cos^2\alpha - \sin^2\alpha\\
+                    &= \cos^2\alpha - (1 - \cos^2\alpha)\\
+                    &= 2\cos^2\alpha - 1
+\end{align*}
+
+\subsubsection*{Besluit}
+\begin{align*}
+  \sin 2\alpha &= 2\cdot\sin\alpha\cdot\cos\alpha\\
+  \cos 2\alpha &= \cos^2\alpha -\sin^2\alpha\\
+  \cos 2\alpha &= 1 - 2\sin^2\alpha\\
+  \cos 2\alpha &= 2\cos^2\alpha - 1\\
+\end{align*}
+En ook
+\begin{align*}
+  1 - \cos 2\alpha &= 2\sin^2\alpha\\
+  1 + \cos 2\alpha &= 2\cos^2\alpha \\
+\end{align*}
+
+\subsubsection*{Voorbeelden}
+\begin{enumerate}[(a)]
+  \item Bepaal $\sin 2\alpha$ en $\cos 2\alpha$ als je weet dat $\alpha$ in het eerste kwadrant ligt en als er geldt dat $\cos\alpha=\dfrac{1}{3}$.
+    $$\cos 2\alpha = 2\cos^2\alpha - 1 = 2\cdot \dfrac{1}{9}-1=-\dfrac{7}{9}$$
+    \begin{align*}
+           && \cos^2 2\alpha + \sin^2 2\alpha &= 1\\
+      \LRA &&                  \sin^2 2\alpha &= 1 - \cos^2 2\alpha\\
+      \LRA &&                  \sin 2\alpha   &= \sqrt{1 - \cos^2 2\alpha}\\
+           &&                                 &= + \sqrt{1 - \dfrac{49}{81}}\\
+           &&                                 &= \dfrac{4}{9}\cdot\sqrt{2}
+    \end{align*}
+    Merk op dat gegeven is dat $\alpha\in\mbox{I}$ ligt, dus $2\alpha\in\mbox{I of II}$, dus $\sin 2\alpha$ is positief, vandaar de $+$ voor de wortel.
+    \item Bewijs $(\cos \alpha + \sin \alpha + 1)\cdot(\cos\alpha + \sin\alpha - 1)=\sin 2\alpha$
+    \begin{align*}
+      \mbox{LL} &= (\cos\alpha + \sin\alpha)^2 - 1^2\\
+                &= \underbrace{\cos^2\alpha + \sin^2\alpha}_1 + 2\cos\alpha\cdot\sin\alpha - 1\\
+                &= 2\cos\alpha\cdot\sin\alpha\\
+                &= \sin 2\alpha = \mbox{RL}
+    \end{align*}
+\end{enumerate}
+
+\begin{oefening}
+Bepaal $\sin 2\alpha$ en $\cos 2\alpha$ als je weet dat $\alpha$ in het derde kwadrant ligt en als er geldt dat $\sin\alpha=-\dfrac{1}{4}$ is.
+\end{oefening}
+
+\begin{oefening}
+Bewijs:
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $4(\cos^6\alpha-\sin^6\alpha)=\cos 2\alpha \cdot(4 - \sin^2 2\alpha)$
+  \item $\dfrac{1-\sin 2\alpha}{\cos 2\alpha}=\dfrac{1-\tan\alpha}{1+\tan\alpha}$
+\end{enumerate}
+\end{oefening}
+
+\subsection{Formule voor $\tan 2\alpha$}
+
+Stellen we $\beta=\alpha$ in $\tan(\alpha + \beta)=\dfrac{\tan\alpha + \tan\beta}{1-\tan\alpha\cdot\tan\beta}$ dan krijgen we
+$$\tan 2\alpha = \dfrac{2\cdot \tan\alpha}{1-\tan^2\alpha}$$
+
+\subsubsection*{Voorbeeld}
+
+Te bewijzen: $\tan\alpha = \dfrac{1}{\sin 2\alpha} - \cot 2\alpha$\\
+Bewijs:
+\begin{align*}
+  \mbox{RL} &= \dfrac{1}{2\sin\alpha \cos\alpha}-\dfrac{1-\tan^2\alpha}{2\tan\alpha}\\
+            &= \dfrac{1}{2\sin\alpha \cos\alpha}-\dfrac{1-\dfrac{\sin^2\alpha}{\cos^2\alpha}}{2\cdot \dfrac{\sin\alpha}{\cos\alpha}}\\
+            &= \dfrac{1}{2\sin\alpha \cos\alpha}-\dfrac{\cos^2\alpha - \sin^2\alpha}{2\sin\alpha\cos\alpha}\\
+            &= \dfrac{1 - \cos^2\alpha + \sin^2\alpha}{2\sin\alpha \cos\alpha}\\
+            &= \dfrac{2\sin^2\alpha}{2\sin\alpha \cos\alpha}\\
+            &= \dfrac{\sin\alpha}{\cos\alpha} = \mbox{LL}\\
+\end{align*}
+
+\begin{oefening}
+Bewijs:
+$$\tan^2\alpha\cdot\tan 2\alpha=\tan 2\alpha - 2\tan\alpha$$
+\end{oefening}
+
+\subsection{Vervangen van $2\alpha$ door $\alpha$}
+
+Aangezien voorgaande formules werden opgesteld onverschillig van de ligging van de
+beeldpunten van de beschouwde georiënteerde hoeken op de goniometrische cirkel,
+mag men in die formules $2\alpha$ vervangen door $\alpha$ op voorwaarde dat ook
+$\alpha$ door $\dfrac{\alpha}{2}$ wordt vervangen.
+
+\subsubsection*{Voorbeelden}
+\begin{itemize}
+  \item $\sin\alpha = 2\cdot\sin\dfrac{\alpha}{2}\cdot\cos\dfrac{\alpha}{2}$
+  \item $\cos\alpha = \cos^2\dfrac{\alpha}{2}-\sin^2\dfrac{\alpha}{2}$
+\end{itemize}
+
+\begin{oefening}
+Bewijs:
+$$\dfrac{\cos\dfrac{\alpha}{2}-\sin\dfrac{\alpha}{2}}{\sin\dfrac{\alpha}{2}+\cos\dfrac{\alpha}{2}}=\dfrac{1-\sin\alpha}{\cos\alpha}$$
+\end{oefening}
+
+\subsection{Formules voor $3\alpha$}
+
+Doordat $3\alpha=2\alpha + \alpha$ kan men volgende formules mits enig werk ook afleiden:
+\begin{align*}
+  \sin 3\alpha &= 3\sin\alpha -4\sin^3\alpha\\
+  \cos 3\alpha &= 4\cos^3\alpha -3\cos\alpha\\
+  \tan 3\alpha &= \dfrac{3\tan\alpha -\tan^3\alpha}{1-3\tan^2\alpha}
+\end{align*}
+
+\pagebreak
+\section{Halveringsformules en $t$-formules}
+
+\subsection{Inleiding}
+
+\subsection{Halveringsformules}
+
+\subsection{$t$-formules}
+
 \newpage
 \section{Formules van Simpson}
+
+\subsection{Inleiding}
+
 Uit de optellingsformules kunnen we formules afleiden die een product van sinussen en/of cosinussen omzetten in een som en omgekeerd.
 \subsection{Eerste vorm van de formules van Simpson: product omzetten naar som}
 \[2\cdot \sin(\alpha)\cdot \cos(\beta)=\sin(\alpha-\beta)+\sin(\alpha+\beta)
