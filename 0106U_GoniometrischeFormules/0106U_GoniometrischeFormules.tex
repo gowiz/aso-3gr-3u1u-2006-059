@@ -568,18 +568,107 @@ Doordat $3\alpha=2\alpha + \alpha$ kan men volgende formules mits enig werk ook 
 \pagebreak
 \section{Halveringsformules en $t$-formules}
 
+\vspace*{-0.5cm}
 \subsection{Inleiding}
+Hebben we in het voorgaande hoofdstuk de hoek verdubbeld en formules opgesteld
+voor $\sin 2\alpha$, $\cos 2\alpha$ en $\tan 2\alpha$ dan vraagt men ons ditmaal de hoek te halveren .
 
+\vspace*{-0.5cm}
 \subsection{Halveringsformules}
 
+We hernemen de verdubbelingsformules voor de cosinus
+\begin{align*}
+  \cos 2\alpha &= 1 - 2\sin^2\alpha\\
+  \cos 2\alpha &= 2\cos^2\alpha - 1
+\end{align*}
+en vervangen $2\alpha$ door $\alpha$ en $\alpha$ door $\dfrac{\alpha}{2}$ en krijgen
+\begin{align*}
+  \cos \alpha &= 1 - 2\sin^2\dfrac{\alpha}{2}\\
+  \cos \alpha &= 2\cos^2\dfrac{\alpha}{2} - 1\;.
+\end{align*}
+Uit de eerste formule leiden we $\sin\dfrac{\alpha}{2}$ af uitgedrukt in $\cos\alpha$:
+\begin{align*}
+          && \sin^2\dfrac{\alpha}{2} &= \dfrac{1-\cos\alpha}{2}\\
+     \LRA &&   \sin\dfrac{\alpha}{2} &= +\sqrt{\dfrac{1-\cos\alpha}{2}} \mbox{ of } \sin\dfrac{\alpha}{2}= -\sqrt{\dfrac{1-\cos\alpha}{2}}
+\end{align*}
+
+Uit de tweede formule leiden we $\cos\dfrac{\alpha}{2}$ af uitgedrukt in $\cos\alpha$:
+\begin{align*}
+          && \cos^2\dfrac{\alpha}{2} &= \dfrac{1+\cos\alpha}{2}\\
+     \LRA &&   \cos\dfrac{\alpha}{2} &= +\sqrt{\dfrac{1+\cos\alpha}{2}} \mbox{ of } \sin\dfrac{\alpha}{2}= -\sqrt{\dfrac{1+\cos\alpha}{2}}
+\end{align*}
+Het teken vóór de vierkantswortel wordt bepaald door het kwadrant waarin het
+beeldpunt van de georiënteerde hoek met maatgetal $\dfrac{\alpha}{2}$ valt.
+
+Door lid aan lid te delen bekomen we ook nog de halveringsformule voor de tangens
+$$\tan\dfrac{\alpha}{2} = +\sqrt{\dfrac{1-\cos\alpha}{1+\cos\alpha}} \mbox{ of } \tan\dfrac{\alpha}{2} = -\sqrt{\dfrac{1-\cos\alpha}{1+\cos\alpha}}$$
+
+Al deze formules hebben het nadeel {\em irrationaal} te zijn, ze bevatten een vierkantswortel in het rechterlid.
+Daarom doen we liever een beroep op de volgende formules.
+
 \subsection{$t$-formules}
+
+We leiden de $t$-formule voor sinus af:
+
+\begin{align*}
+  \left\{\begin{aligned}\sin 2\alpha = 2\sin\alpha\cos\alpha\\\sin^2\alpha + \cos^2\alpha = 1\end{aligned}\right. &\LRA \sin 2\alpha = \dfrac{2\sin\alpha\cos\alpha}{\sin^2\alpha + \cos^2\alpha}\\
+  &\LRA \sin 2\alpha = \dfrac{2\dfrac{\sin\alpha}{\cos\alpha}}{\dfrac{\sin^2\alpha}{\cos^2\alpha}+1}\\
+  &\LRA \sin 2\alpha = \dfrac{2\tan\alpha}{1+\tan^2\alpha}
+\end{align*}
+
+We vervangen terug $2\alpha$ door $\alpha$ en dus ook $\alpha$ door $\dfrac{\alpha}{2}$ en krijgen dan
+$$\sin\alpha = \dfrac{2\tan\dfrac{\alpha}{2}}{1+\tan^2\dfrac{\alpha}{2}}$$
+
+Stellen we nu $\tan\dfrac{\alpha}{2}=t$ dan krijgen we
+$$\sin\alpha = \dfrac{2t}{1+t^2}$$
+
+Analoog voor cosinus en tangens.
+
+\subsubsection*{Besluit}
+\begin{align*}
+  \sin\alpha &= \dfrac{2t}{1+t^2}\\
+  \cos\alpha &= \dfrac{1-t^2}{1+t^2}\\
+  \tan\alpha &= \dfrac{2t}{1-t^2}
+\end{align*}
+met $t=\tan \dfrac{\alpha}{2}$.
+
+\begin{oefening}
+Bewijs zelf de $t$-formules voor cosinus en tangens.
+\end{oefening}
+
+\subsection{Oefeningen}
+
+\begin{oefening}
+Bepaal $\sin\alpha$, $\cos\alpha$ en $\tan\alpha$ als gegeven is dat $\tan\dfrac{\alpha}{2}=2+\sqrt{3}$.
+\end{oefening}
+
+\begin{oefening}
+Bereken $\tan\dfrac{\alpha}{2}$ als $\sqrt{3}\cdot\sin\alpha+\cos\alpha=1$.
+\end{oefening}
+
+\begin{oefening}
+Bewijs
+$$\cos\alpha=\dfrac{1}{1+\tan\alpha\cdot\tan\dfrac{\alpha}{2}}\;.$$
+\end{oefening}
+
+\begin{oefening}
+Bepaal $\tan\dfrac{\alpha}{2}$ als $\cos\beta\cdot\sin\alpha+\tan\gamma\cdot\alpha=\tan\gamma\cdot\sin\beta$.
+\end{oefening}
+
 
 \newpage
 \section{Formules van Simpson}
 
 \subsection{Inleiding}
 
-Uit de optellingsformules kunnen we formules afleiden die een product van sinussen en/of cosinussen omzetten in een som en omgekeerd.
+Uit de optellingsformules kunnen we formules afleiden die een product van
+sinussen en/of cosinussen omzetten in een som en omgekeerd.
+
+Bepaalde toepassingen later eisen factoren (bij vermenigvuldiging) in plaats van
+termen (bij optelling) of vice versa.
+
+Deze formules zullen je toelaten van de ene naar de andere vorm over te stappen.
+
 \subsection{Eerste vorm van de formules van Simpson: product omzetten naar som}
 \[2\cdot \sin(\alpha)\cdot \cos(\beta)=\sin(\alpha-\beta)+\sin(\alpha+\beta)
 \]
