@@ -670,36 +670,111 @@ termen (bij optelling) of vice versa.
 Deze formules zullen je toelaten van de ene naar de andere vorm over te stappen.
 
 \subsection{Eerste vorm van de formules van Simpson: product omzetten naar som}
-\[2\cdot \sin(\alpha)\cdot \cos(\beta)=\sin(\alpha-\beta)+\sin(\alpha+\beta)
-\]
-\[2\cdot \cos(\alpha)\cdot \cos(\beta)=\cos(\alpha-\beta)+\cos(\alpha+\beta)
-\]
-\[2\cdot \sin(\alpha)\cdot \sin(\beta)=\cos(\alpha-\beta)-\cos(\alpha+\beta)
-\]
+
+\subsubsection*{Opstellen formules}
+
+We vertrekken vanuit de optellingsformules
+\begin{align*}
+                   \sin(\alpha + \beta) &= \sin\alpha\cdot\cos\beta + \cos\alpha\cdot\sin\beta\\
+  \mbox{en }\qquad \sin(\alpha - \beta) &= \sin\alpha\cdot\cos\beta - \cos\alpha\cdot\sin\beta
+\end{align*}
+
+Lid aan lid optellen geeft
+$$\sin(\alpha+\beta) + \sin(\alpha - \beta) = 2\cdot\sin\alpha\cdot\cos\beta$$
+
+Lid aan lid aftrekken geeft
+$$\sin(\alpha+\beta) - \sin(\alpha - \beta) = 2\cdot\cos\alpha\cdot\sin\beta$$
+
+Analoog kunnen we dit ook met de optellingsformules voor cosinus doen
+\begin{align*}
+                   \cos(\alpha + \beta) &= \cos\alpha\cdot\cos\beta - \sin\alpha\cdot\sin\beta\\
+  \mbox{en }\qquad \cos(\alpha - \beta) &= \cos\alpha\cdot\cos\beta + \sin\alpha\cdot\sin\beta
+\end{align*}
+
+Lid aan lid optellen geeft
+$$\cos(\alpha+\beta) + \cos(\alpha - \beta) = 2\cdot\cos\alpha\cdot\cos\beta$$
+
+Lid aan lid aftrekken geeft
+$$\cos(\alpha+\beta) - \cos(\alpha - \beta) = 2\cdot\sin\alpha\cdot\sin\beta$$
+
+
+\subsubsection*{Opmerkingen}
+\begin{itemize}
+  \item Deze formules worden meestal van rechts naar links toegepast, we zullen ze in ons besluit dan ook zo noteren.
+  \item De eerste twee formules die we gevonden hebben zijn in wezen dezelfde. Het volstaat immers om $\alpha$ en $\beta$ van plaatst te wisselen en gebruik te maken van het feit dat $\sin(-\alpha)=-\sin(\alpha)$.
+\end{itemize}
+
+
+\subsubsection*{Besluit}
+\begin{align*}
+  2\cdot \sin\alpha\cdot \cos\beta &= \sin(\alpha-\beta)+\sin(\alpha+\beta)\\
+  2\cdot \cos\alpha\cdot \cos\beta &= \cos(\alpha-\beta)+\cos(\alpha+\beta)\\
+  2\cdot \sin\alpha\cdot \sin\beta &= \cos(\alpha-\beta)-\cos(\alpha+\beta)
+\end{align*}
+
+Onthoud dat een dubbelproduct van goniometrische getallen overgaat in een som van goniometrische getallen.
 
 \subsubsection*{Voorbeelden}
 
-\begin{enumerate}[(1)]
-  \item\underline{Schrijf als som}
-    \begin{enumerate}[(a)]
-      \item $2\cdot \sin(3x)\cdot \cos(2x)= $\dotfill
-      \item $2\cdot \cos(4x)\cdot \cos(2x)= $\dotfill
-      \item $2\cdot \sin(5x)\cdot \sin(x)= $\dotfill
-      \item $2\cdot \sin(x)\cdot \cos(3x)= $\dotfill
-      \item $\cos(3x)\cdot \cos(2x)= $\dotfill
-      \item $\sin(3x)\cdot \sin(-3x)= $\dotfill
-    \end{enumerate}
-  \item \underline{Bereken exact}
-    \begin{enumerate}[(a)]
-      \item $2\cdot \cos(75\degree)\cdot \cos(15\degree) = \dotfill \newline =$\dotfill
-      \item $2\cdot \sin(75\degree)\cdot \cos(15\degree) = \dotfill \newline =$\dotfill
-      \item $2\cdot \sin(\frac{5\pi}{12})\cdot \sin(\frac{\pi}{12}) = $\dotfill \newline =\dotfill
-      \item $2\cdot \cos(120\degree)\cdot \cos(60\degree) = $\dotfill \newline =\dotfill
-    \end{enumerate}
+\begin{enumerate}[(a)]
+  \item Bewijs $\cos 15\degree \cdot \cos 30\degree \cdot \cos 75\degree = \dfrac{\sqrt{3}}{8}$
+  \begin{align*}
+    \mbox{LL} &= \dfrac{1}{2}(\cos 15\degree + \cos 45\degree)\cdot 75\degree\\
+              &= \dfrac{1}{2}\cos 15\degree \cos 75\degree + \dfrac{1}{2}\cos 45\degree \cos 75\degree\\
+              &= \dfrac{1}{4}(\cos 60\degree + \cos 90\degree + \cos 30\degree + \cos 120\degree)\\
+              &= \dfrac{1}{4}(\cos 60\degree + 0 + \cos 30\degree - \cos 60\degree)\\
+              &= \dfrac{1}{4}\cos 30\degree\\
+              &= \dfrac{1}{4}\cdot\dfrac{\sqrt{3}}{2}\\
+              &= \dfrac{\sqrt{3}}{8} = \mbox{RL}
+  \end{align*}
+  \item Vereenvoudig $\sin(x+30\degree)+\sin(x-30\degree)$\\
+  \ldots
+  \item Vereenvoudig $\cos(30\degree-x)+\cos(30\degree+x)$\\
+  \ldots
+  \item Bewijs $\cos(x+y)\cdot\sin(x-y)+\cos(y+z)\cdot\sin(y-z)+\cos(z+x)\cdot\sin(z-x)=0$\\
+  \ldots
 \end{enumerate}
 
+\begin{oefening}
+Schrijf als som
+\begin{enumerate}[(a)]
+\itemsep.5em
+  \item $2\cdot \sin(3x)\cdot \cos(2x)$
+  \item $2\cdot \cos(4x)\cdot \cos(2x)$
+  \item $2\cdot \sin(5x)\cdot \sin(x)$
+  \item $2\cdot \sin(x)\cdot \cos(3x)$
+  \item $\cos(3x)\cdot \cos(2x)$
+  \item $\sin(3x)\cdot \sin(-3x)$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bereken exact
+\begin{enumerate}[(a)]
+\itemsep.5em
+  \item $2\cdot \cos(75\degree)\cdot \cos(15\degree)$
+  \item $2\cdot \sin(75\degree)\cdot \cos(15\degree)$
+  \item $2\cdot \sin(75\degree)\cdot \sin(15\degree)$
+  \item $2\cdot \cos(120\degree)\cdot \cos(60\degree)$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Kan je uit de formules van Simpson de verdubbelingsformules afleiden?
+\end{oefening}
+
+\begin{oefening}
+Schrijf als een algebraïsche som
+\begin{enumerate}[(a)]
+\itemsep.5em
+  \item $4 \cos x \cdot \cos 2x \cdot \cos 3x$
+  \item $\sin 6x \cdot \sin 3x \cdot \cos 2x$
+\end{enumerate}
+\end{oefening}
+
+
 \newpage
-\subsection{Tweede vorm van de formules van Simpson: som onzetten naar product}
+\subsection{Tweede vorm van de formules van Simpson: som omzetten naar product}
 \[\sin(p)+\sin(q)=2\cdot \sin(\frac{p+q}{2})\cdot \cos(\frac{p-q}{2})
 \]
 \[\sin(p)-\sin(q)=2\cdot \cos(\frac{p+q}{2})\cdot \sin(\frac{p-q}{2})
