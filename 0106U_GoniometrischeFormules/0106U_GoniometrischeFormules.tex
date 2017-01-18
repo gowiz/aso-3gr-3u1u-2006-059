@@ -611,9 +611,10 @@ Daarom doen we liever een beroep op de volgende formules.
 We leiden de $t$-formule voor sinus af:
 
 \begin{align*}
-  \left\{\begin{aligned}\sin 2\alpha = 2\sin\alpha\cos\alpha\\\sin^2\alpha + \cos^2\alpha = 1\end{aligned}\right. &\LRA \sin 2\alpha = \dfrac{2\sin\alpha\cos\alpha}{\sin^2\alpha + \cos^2\alpha}\\
-  &\LRA \sin 2\alpha = \dfrac{2\dfrac{\sin\alpha}{\cos\alpha}}{\dfrac{\sin^2\alpha}{\cos^2\alpha}+1}\\
-  &\LRA \sin 2\alpha = \dfrac{2\tan\alpha}{1+\tan^2\alpha}
+  \left\{\begin{aligned}\sin 2\alpha = 2\sin\alpha\cos\alpha\\\sin^2\alpha + \cos^2\alpha = 1\end{aligned}\right. \quad
+  &\LRA\quad \sin 2\alpha = \dfrac{2\sin\alpha\cos\alpha}{\sin^2\alpha + \cos^2\alpha}\\
+  &\LRA\quad \sin 2\alpha = \dfrac{2\dfrac{\sin\alpha}{\cos\alpha}}{\dfrac{\sin^2\alpha}{\cos^2\alpha}+1}\\
+  &\LRA\quad \sin 2\alpha = \dfrac{2\tan\alpha}{1+\tan^2\alpha}
 \end{align*}
 
 We vervangen terug $2\alpha$ door $\alpha$ en dus ook $\alpha$ door $\dfrac{\alpha}{2}$ en krijgen dan
@@ -735,6 +736,9 @@ Onthoud dat een dubbelproduct van goniometrische getallen overgaat in een som va
   \ldots
 \end{enumerate}
 
+\pagebreak
+\subsection{Oefeningen op eerste vorm}
+
 \begin{oefening}
 Schrijf als som
 \begin{enumerate}[(a)]
@@ -775,32 +779,113 @@ Schrijf als een algebraïsche som
 
 \newpage
 \subsection{Tweede vorm van de formules van Simpson: som omzetten naar product}
-\[\sin(p)+\sin(q)=2\cdot \sin(\frac{p+q}{2})\cdot \cos(\frac{p-q}{2})
-\]
-\[\sin(p)-\sin(q)=2\cdot \cos(\frac{p+q}{2})\cdot \sin(\frac{p-q}{2})
-\]
-\[\cos(p)+\cos(q)=2\cdot \cos(\frac{p+q}{2})\cdot \cos(\frac{p-q}{2})
-\]
-\[\cos(p)-\cos(q)=-2\cdot \sin(\frac{p+q}{2})\cdot \sin(\frac{p-q}{2})
-\]
+
+\subsubsection*{Opstellen formules}
+
+We voeren $p$ en $q$ in als de som en het verschil van $\alpha$ en $\beta$ en lossen op naar $\alpha$ en $\beta$
+$$
+  \left\{\begin{aligned}p&=\alpha+\beta\\q&=\alpha-\beta\end{aligned}\right. 
+  \;\LRA\; \left\{\begin{aligned}p+q&=2\alpha\\p-q&=2\beta\end{aligned}\right.
+  \;\LRA\; \left\{\begin{aligned}\alpha&=\dfrac{p+q}{2}\\\beta&=\dfrac{p-q}{2}\end{aligned}\right.
+$$
+
+We schrijven nu de formules van Simpson uit de eerste vorm m.b.v. $p$ en $q$ en krijgen
+
+\subsubsection*{Besluit}
+\begin{align*}
+  \sin(p)+\sin(q) &= 2\cdot \sin(\frac{p+q}{2})\cdot \cos(\frac{p-q}{2})\\
+  \sin(p)-\sin(q) &= 2\cdot \cos(\frac{p+q}{2})\cdot \sin(\frac{p-q}{2})\\
+  \cos(p)+\cos(q) &= 2\cdot \cos(\frac{p+q}{2})\cdot \cos(\frac{p-q}{2})\\
+  \cos(p)-\cos(q) &= -2\cdot \sin(\frac{p+q}{2})\cdot \sin(\frac{p-q}{2})
+\end{align*}
+
+\subsubsection*{Opmerkingen}
+\begin{itemize}
+  \item In die tweede gedaante herken je allicht de eerste gedaante, gelezen van rechts
+naar links.
+  \item Onthoud vooral de structuur van de formules: een verschil van sinussen gaat
+naar een dubbelproduct van een sinus met een cosinus, \ldots
+  \item Er geldt $\cos\dfrac{p-q}{2}=\cos\dfrac{q-p}{2}$ en $\sin\dfrac{p-q}{2}=-\sin\dfrac{q-p}{2}$
+  \item Let op de halveringen in het tweede lid.
+  \item Zetten we even de optelformules en de formules van Simpson onder elkaar:\\
+\begin{tabular}{c|c|c}
+optelformules & $\sin(\alpha + \beta)$ & sinus van een som\\
+              & \ldots\\
+Simpson & $\sin\alpha + \sin\beta$ & som van sinussen\\
+              & \ldots\\
+  
+\end{tabular}
+\end{itemize}
 
 \subsubsection*{Voorbeelden}
 
-\begin{enumerate}[(1)]
-  \item\underline{Schrijf als product}
-    \begin{enumerate}[(a)]
-      \item $\cos5x+\cos x=$ \dotfill
-      \item $\cos x-\cos17x=$ \dotfill
-      \item $\sin8x+\sin2x=$ \dotfill
-      \item $\cos(\frac{\pi}{5})+\cos(\frac{\pi}{7})=$ \dotfill
-    \end{enumerate}
-  \item \underline{Bereken exact}
-    \begin{enumerate}[(a)]
-      \item $\sin(75\degree)+\sin(15\degree) =$ \dotfill \newline =\dotfill
-      \item $\cos(75\degree)+\cos(15\degree) =$ \dotfill \newline =\dotfill
-      \item $\cos(\frac{-\pi}{12})-\cos(\frac{7\pi}{12}) =$ \dotfill \newline =\dotfill
-    \end{enumerate}
+\begin{enumerate}[(a)]
+  \item Vereenvoudig $\dfrac{\sin 12x - \sin 6x}{\cos 12x + \cos 6x}$
+  \begin{align*}
+    \dfrac{\sin 12x - \sin 6x}{\cos 12x + \cos 6x} &= \dfrac{2\cos \dfrac{12x + 6x}{2} \sin \dfrac{12x - 6x}{2}}{2\cos \dfrac{12x + 6x}{2} \cos \dfrac{12x - 6x}{2}}\\
+                                                   &= \dfrac{\sin 3x}{\cos 3x}\\
+                                                   &= \tan 3x
+  \end{align*}
+  \item Bewijs $\cos\alpha + \cos\beta + \cos\gamma + \cos(\alpha + \beta + \gamma)=4\cdot \cos\dfrac{\alpha+\beta}{2} \cdot \cos\dfrac{\beta+\gamma}{2} \cdot \cos\dfrac{\gamma+\alpha}{2}$
+  \begin{align*}
+    \mbox{LL } &= \underbrace{\cos\alpha + \cos\beta} \qquad + \qquad \underbrace{\cos\gamma + \cos(\alpha + \beta + \gamma)}\\
+               &= 2 \cos\dfrac{\alpha-\beta}{2}\cdot\cos\dfrac{\alpha+\beta}{2}+2\cos\dfrac{\alpha+\beta}{2}\cdot\cos\dfrac{\alpha+\beta+2\gamma}{2}\\
+               &= 2 \cos\dfrac{\alpha+\beta}{2}\cdot\left(\cos\dfrac{\alpha-\beta}{2} + \cos\dfrac{\alpha+\beta+2\gamma}{2}\right)\\
+               &= 2 \cos\dfrac{\alpha+\beta}{2} \cdot 2 \cos\left(\dfrac{1}{2}\cdot\dfrac{2\alpha+2\gamma}{2}\right) \cdot \cos\left(\dfrac{1}{2}\cdot\dfrac{2\beta+2\gamma}{2}\right)\\
+               &= 4\cdot \cos\dfrac{\alpha+\beta}{2} \cdot \cos\dfrac{\alpha+\gamma}{2} \cdot \cos\dfrac{\beta + \gamma}{2} = \mbox{ RL}
+  \end{align*}
 \end{enumerate}
+
+\pagebreak
+\subsection{Oefeningen op tweede vorm}
+
+\begin{oefening}
+Schrijf als product
+\begin{enumerate}[(a)]
+\itemsep.5em
+  \item $\cos5x+\cos x$
+  \item $\cos x-\cos17x$
+  \item $\sin8x+\sin2x$
+  \item $\cos(\dfrac{180\degree}{5})+\cos(\dfrac{180\degree}{7})$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bereken exact
+\begin{enumerate}[(a)]
+\itemsep.5em
+  \item $\sin(75\degree)+\sin(15\degree)$
+  \item $\cos(75\degree)+\cos(15\degree)$
+  \item $\cos(15\degree)-\cos(105\degree)$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bewijs
+\begin{enumerate}[(a)]
+\itemsep.5em
+  \item $\sin x + \sin 2x + \sin 3x = \sin 2x \cdot (1 + 2\cos x)$
+  \item $\sin x + \sin y + \sin(x+y) = 4\sin\dfrac{x+y}{2}\cdot\cos\dfrac{x}{2}\cdot\cos\dfrac{y}{2}$
+  \item $\left(\sin x + \sin y\right)^2 + \left(\cos x + \cos y\right)^2 = 4\cos^2\dfrac{x-y}{2}$
+  \item $\sin(\alpha + 45\degree) + \sin(\alpha - 45\degree) = \sqrt{2}\sin\alpha$
+  \item $\cos \alpha + \cos(120\degree + \alpha) + \cos(120\degree - \alpha) = 0$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Vereenvoudig\\
+\begin{enumerate}[(a)]
+\itemsep.8em
+  \item $\dfrac{1+\cos 2a + \cos 4a + \cos 6a}{\cos a \cdot \cos 2a \cdot \cos 3a}$
+  \item $\sin 70\degree - \sin 50\degree$
+\end{enumerate}
+\end{oefening}
+ 
+ \begin{oefening}Bewijs:\\
+ Als $\alpha$, $\beta$ en $\gamma$ hoeken van een driehoek zijn, dan geldt
+ $$\sin\alpha + \sin\beta + \sin\gamma = 4 \cos\dfrac{\alpha}{2}\cdot\cos\dfrac{\beta}{2}\cos\dfrac{\gamma}{2}$$
+ \end{oefening}
+ 
 
 %\newpage
 \end{document}
