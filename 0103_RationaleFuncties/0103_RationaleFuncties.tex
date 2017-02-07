@@ -1,0 +1,343 @@
+\documentclass[a4paper,12pt]{article}
+
+\input{../gowiz.tex}
+
+\usepackage{versions}
+\excludeversion{theorie}
+
+\begin{document}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Oefeningen Rationale functies}
+
+\begin{theorie}
+
+\thispagestyle{empty}
+\begin{center}
+  \begin{mdframed}
+  \centering
+  \fontsize{40}{50}\selectfont Rationale functies
+  \end{mdframed}
+  \vfill
+  \vfill
+\end{center}
+\subsection*{Doelstelling}
+Je kan de afgeleiden functie bepalen van\hfill  {\scriptsize(LP 2006-059, LI 1.6.13, 1.7.8, 1.8.6, 1.9.6)}
+\begin{itemize}
+  \item goniometrische functies
+  \item exponentiële functies
+  \item logaritmische functies
+  \item irrationale functies
+\end{itemize}
+
+
+\pagestyle{empty}
+\mbox{}
+\newpage
+\clearpage
+\thispagestyle{empty}
+%\mbox{}
+\tableofcontents
+\newpage
+\clearpage
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Afgeleiden van bijzondere functies}
+
+\end{theorie}
+
+\onehalfspacing
+
+\section{Rationale vergelijkingen}
+
+\begin{oefening} % voorbeeld oefeningen
+Los op in $\mathbb{R}$:\\
+\begin{enumerate}[(a)]
+  \itemsep.4em
+  \item $\dfrac{x-6}{x+4}=0$
+  \item $\dfrac{3}{x-2}=1$
+  \item $\dfrac{x}{x-5}+2=\dfrac{5}{x-5}$
+  \item $\dfrac{x-2}{x+2}=2+\dfrac{1}{x+2}$
+  \item $\dfrac{1}{x}+\dfrac{1}{x+1}=\dfrac{2}{x+2}$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening} % graad teller/noemer ten hoogste 2
+Los op in $\mathbb{R}$:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep0.4em
+  \item $\dfrac{x-1}{x+1}=3-\dfrac{2}{x+1}$
+  \item $\dfrac{x+4}{x+2}=-x^2-2x+2$
+  \item $\dfrac{x-3}{2(x-2)}+\dfrac{1}{x-3}=\dfrac{1}{(x-2)(x-3)}$
+  \item $1+\dfrac{4}{x}=-\dfrac{4}{x^2}$
+  \item $\dfrac{4x+9}{x+1}=\dfrac{4x+1}{x-1}$
+  \item $\dfrac{3}{2x-5}=x$
+  \item $\dfrac{3}{5-x}+\dfrac{2}{4-x}=\dfrac{5}{3-x}$
+  \item $\dfrac{x-3}{x+2}=0$
+  \item $\dfrac{2}{x-5}=1$
+  \item $\dfrac{x}{x-5}+2=\dfrac{5}{x-5}$
+  \item $\dfrac{x-1}{x+1}=3+\dfrac{1}{x+1}$
+  \item $\dfrac{1}{x}+\dfrac{1}{x+1}=\dfrac{2}{x+2}$
+  \item $\dfrac{1}{x+2}+\dfrac{4}{3x-4}=1$
+  \item $\dfrac{x^2-1}{(x+1)^2}=0$
+  \item $\dfrac{x+2}{x-7}+2=\dfrac{3x+1}{x-3}$
+  \item $\dfrac{1}{x}-\dfrac{5}{2x-3}=\dfrac{x+1}{2x^2-3x}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening} % hogere graads oefeningen
+Los op in $\mathbb{R}$:\\
+\begin{enumerate}[(a)]
+  \itemsep.4em
+  \item $\dfrac{7}{x+3} + x - \dfrac{6}{x} = \dfrac{4x-9}{x(x+3)} + 2$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}{\scriptsize\em IJkingsproef industrieel ingenieur, Ann De Bodt, Tanje Van Hecke}\\
+Bepaal de weerstand $r$, uitgedrukt in $\Omega$, als je weet dat:
+$$\dfrac{100}{4.7-r}=\dfrac{120}{\quad\dfrac{5.6r}{5.6+r}\quad}$$
+Bereken de oplossing tot op 3 cijfers na het decimaal punt nauwkeurig uit!
+Maak hier gebruik van een \zrm{ZRM}.
+\begin{enumerate}[(A)]
+  \itemsep.5em
+  \item $r \approx 7.013\ \Omega$ en $r \approx -1.121\ \Omega$
+  \item $r \approx 3.053\ \Omega$
+  \item $r \approx 7.013\ \Omega$
+  \item $r \approx 3.053\ \Omega$ en $r \approx -8.620\ \Omega$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een getal en zijn omgekeerde zijn samen $\frac{10}{3}$. Bepaal dit getal.
+\end{oefening}
+
+\begin{oefening}
+Iemand wil 60 knikkers onder enkele kinderen verdelen. Waren er drie kinderen minder, dan kreeg elk kind 1 noot meer. Hoeveel kinderen waren er?
+\end{oefening}
+
+\begin{oefening}
+Enkele personen verdelen 15000 euro. Indien er 5 personen minder geweest waren, dan zou elke persoon 150 euro meer gekregen hebben. Hoeveel personen zijn er?
+\end{oefening}
+
+\begin{oefening}
+Een vrachtwagen moet 400 ton zand vervoeren en maakt daarvoor een aantal ritten, telkens volgeladen. Als de vrachtwagen 2 ton meer per rit kon laden, dan moet hij 10 ritten minder maken. Bepaal het laadvermogen van de oorspronkelijke vrachtwagen.
+\end{oefening}
+
+\begin{oefening}
+Een getal en driemaal zijn omgekeerde zijn samen vier. Welk getal zoeken we? \hfill {\em (1 of 3)}
+\end{oefening}
+
+\begin{oefening}
+De som van de omgekeerden van twee opeenvolgende gehele getallen is $\frac{9}{20}$. Bepaal die getallen. \hfill {\em (4 en 5)}
+\end{oefening}
+
+\begin{oefening}
+Een leraar moet 200 overhoringen verbeteren. Per uur verbetert hij er 2 minder dan gepland en daarom moet hij 5 uur langer werken dan hij eerst gedacht had. Hoeveel overhoringen had hij er per uur willen verbeteren? \hfill {\em (10)}
+\end{oefening}
+
+\begin{oefening}
+Een handelaar bestelt een aantal kristallen glazen en betaalt hiervoor 6000 euro. Bij aankomst blijken er 10 glazen meer te zijn dan hij besteld had. Daardoor daalt de prijs per stuk met 1 euro. Hoeveel glazen heeft de handelaar besteld en wat was de oorspronkelijke prijs per stuk? \hfill {\em (240 glazen en 25 euro per stuk)}
+\end{oefening}
+
+\begin{oefening}
+Een knutselaar kocht voor 1200 euro verf. Als elke pot 20 euro meer zou kosten, dan had hij 5 potten minder kunnen kopen voor hetzelfde bedrag. Hoeveel potten verf kocht die knutselaar?
+\end{oefening}
+
+\pagebreak
+\section{Rationale functies}
+
+\begin{oefening}
+Bespreek volgende rationale functies (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, grafiek, tekenschema, stijgen/dalen/extrema):
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep0.6em
+  \item $f:y=\dfrac{2x+4}{x-1}$
+  \item $f:y=\dfrac{2x+12}{x-4}$
+  \item $f:y=\dfrac{4x+20}{4-x}$
+  \item $f:y=\dfrac{3x+12}{2-x}$
+  \item $f:y=\dfrac{10x+20}{5x-5}$
+  \item $f:y=\dfrac{5x+30}{6-x}$
+  \item $f:y=\dfrac{3x-27}{3x+9}$
+  \item $f:y=\dfrac{x^2-1}{x^2-4}$
+  \item $f:y=\dfrac{x^2-2x-24}{x^2-9}$
+  \item $f:y=\dfrac{x^2+2x-15}{x^2-4}$
+  \item $f:y=\dfrac{2x^2+2x+1}{x^2-1}$
+  \item $f:y=\dfrac{x+1}{(x-1)^2}$
+  \item $f:y=\dfrac{x^2}{x^2+2x+1}$
+  \item $f:y=\dfrac{x^2}{(x+1)^2}$
+  \item $f:y=\dfrac{x-1}{x^2}$
+  \item $f:y=\dfrac{x^2-4}{x^2-1}$
+  \item $f:y=\dfrac{x^2-1}{x+1}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+De grootte van een konijnenpopulatie wordt gegeven door
+$$f(x)=\dfrac{150x+90}{x+3}\;.$$
+De functie $f(x)$ stelt het aantal konijnen voor en $x$ de tijd in maanden.
+\begin{enumerate}[(a)]
+  \item Bepaal het praktische domein.
+  \item Hoeveel konijnen zijn er op tijdstip 0?
+  \item Na hoeveel maand zijn er meer dan 100 konijnen?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Het lokaal van de jeugdbeweging is aan een grondige opknapbeurt toe. {\em ''Vele handen maken licht werk''} redeneert men. De functie
+$$d(x)=\dfrac{3x+25}{x}$$
+geeft het aantal dagen nodig voor de opknapbeurt, in functie van het aantal vrijwilligers $x$.
+\begin{enumerate}[(a)]
+  \item Bepaal het praktische domein.
+  \item Hoeveel vrijwilligers heeft men minimaal nodig om de klus in 4 dagen te klaren?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een schoonmaakbedrijf hanteert de formule $k(x)=9+\dfrac{40}{x}$ voor het schoonmaken van gebouwen. Hierin is $k(x)$ het bedrag in euro dat per jaar per m$^2$ moet worden betaald en $x$ de oppervlakte in 100 m$^2$.
+\begin{enumerate}[(a)]
+  \item Een vloeroppervlak is 2000 m$^2$. Hoeveel moet er per jaar voor het schoonmaken betaald worden?
+  \item Kasper zou zijn studentenkot van 8 bij 6 meter door het bedrijf willen laten onderhouden. Hoeveel kost hem dat per jaar?
+  \item Firma Xanders betaalt jaarlijks 9.16 euro per m$^2$ voor het schoonmaken van zijn gebouw. Hoe groot is de oppervlakte van dit gebouw?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+De populatie vossen in een bepaald gebied was nagenoeg constant. Doch door een tot nu toe onbekende oorzaak werd dit evenwicht verstoord. De hoeveelheid vossen in functie van de tijd wordt nu benaderd door de functie
+$$v(t)=\dfrac{3t^2-12t+13}{t^2-4t+5}\;.$$
+Hierbij is
+\begin{itemize}
+  \item v = aantal vossen, uitgedrukt in duizendtallen
+  \item t = tijd in jaren
+  \item t = 0 komt overeen met januari 2010
+\end{itemize}
+Van wanneer tot wanneer waren er minder dan 2000 vossen in het gebied?
+\end{oefening}
+
+\begin{oefening}
+De temperatuur in een koele berging wordt gegeven door de volgende functie:
+$$T(t)=\dfrac{3t^2-6t+3}{t^2-2t+2}\;.$$
+Hierbij is
+\begin{itemize}
+  \item T = de temperatuur in graden Celsius
+  \item t = tijd in uren
+  \item t = 0 komt overeen met 3 uur 's nachts.
+\end{itemize}
+Als de temperatuur lager wordt dan 1 $^\circ$C is er gevaar voor schade aan het voedsel. Hoe lang bevond de temperatuur zich onder 1 $^\circ$C? Van wanneer tot wanneer?
+\end{oefening}
+
+\pagebreak
+\section{Rationale ongelijkheden}
+
+\begin{oefening}
+Los op in $\mathbb{R}$. Met andere woorden bepaal $V$.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $x-\dfrac{2}{x}>1$
+  \item $\dfrac{x-1}{x+2}\leq\dfrac{x+2}{x-4}$
+  \item $\dfrac{4x+9}{x+1}\geq\dfrac{4x+1}{x-1}$
+  \item $\dfrac{x+4}{x+2}\geq -x^2-2x+2$
+  \item $\dfrac{x}{x+3}\geq\dfrac{10}{(x+3)^2}$
+  \item $\dfrac{x^2+3x+2}{x^2-16}\geq0$
+  \item $\dfrac{(-2x-10)(3-x)}{(x^2+5)(x-2)^2}<0$
+  \item $\dfrac{x+1}{x-5}\leq 0$
+  \item $\dfrac{x^2+4x+3}{x-1}>0$
+  \item $\dfrac{x^2-16}{(x-1)^2}<0$
+  \item $\dfrac{3x+1}{x+4}\geq 1$
+  \item $\dfrac{x-8}{x}\leq 3-x$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}{\scriptsize\em IJkingsproef hoger onderwijs, Ann De Bodt, Tanje Van Hecke}\\
+Los op naar $x\in\mathbb{R}$ : $\dfrac{1}{|x-2|}\leq 1$\\
+\begin{enumerate}[(A)]
+  \itemsep.5em
+  \item $x\in]-\infty, 1]$
+  \item $x\in]-\infty, 1]\cup[3,+\infty[$
+  \item $x\in[3,+\infty[$
+  \item $x\in]3,+\infty[$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}{\scriptsize\em IJkingsproef hoger onderwijs, Ann De Bodt, Tanje Van Hecke}\\
+Bepaal de oplossingsverzameling van $\dfrac{1}{x} - 4 \geq 1$\\
+\begin{enumerate}[(A)]
+  \itemsep.5em
+  \item $]-\infty, 5]$
+  \item $[0, \dfrac{1}{5}]$
+  \item $]0, \dfrac{1}{5}]$
+  \item $]-\infty, \dfrac{1}{5}]$
+\end{enumerate}
+\end{oefening}
+
+
+
+\begin{oefening}
+De grootte van een konijnenpopulatie wordt gegeven door
+$$f(x)=\dfrac{150x+90}{x+3}\;.$$
+De functie $f(x)$ stelt het aantal konijnen voor en $x$ de tijd in maanden.
+\begin{enumerate}[(a)]
+  \item Bepaal het praktische domein.
+  \item Hoeveel konijnen zijn er op tijdstip 0?
+  \item Na hoeveel maand zijn er meer dan 100 konijnen?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Het lokaal van de jeugdbeweging is aan een grondige opknapbeurt toe. {\em ''Vele handen maken licht werk''} redeneert men. De functie
+$$d(x)=\dfrac{3x+25}{x}$$
+geeft het aantal dagen nodig voor de opknapbeurt, in functie van het aantal vrijwilligers $x$.
+\begin{enumerate}[(a)]
+  \item Bepaal het praktische domein.
+  \item Hoeveel vrijwilligers heeft men minimaal nodig om de klus in 4 dagen te klaren?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een schoonmaakbedrijf hanteert de formule $k(x)=9+\dfrac{40}{x}$ voor het schoonmaken van gebouwen. Hierin is $k(x)$ het bedrag in euro dat per jaar per m$^2$ moet worden betaald en $x$ de oppervlakte in 100 m$^2$.
+\begin{enumerate}[(a)]
+  \item Een vloeroppervlak is 2000 m$^2$. Hoeveel moet er per jaar voor het schoonmaken betaald worden?
+  \item Kasper zou zijn studentenkot van 8 bij 6 meter door het bedrijf willen laten onderhouden. Hoeveel kost hem dat per jaar?
+  \item Firma Xanders betaalt jaarlijks 9.16 euro per m$^2$ voor het schoonmaken van zijn gebouw. Hoe groot is de oppervlakte van dit gebouw?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+De populatie vossen in een bepaald gebied was nagenoeg constant. Doch door een tot nu toe onbekende oorzaak werd dit evenwicht verstoord. De hoeveelheid vossen in functie van de tijd wordt nu benaderd door de functie
+$$v(t)=\dfrac{3t^2-12t+13}{t^2-4t+5}\;.$$
+Hierbij is
+\begin{itemize}
+  \item v = aantal vossen, uitgedrukt in duizendtallen
+  \item t = tijd in jaren
+  \item t = 0 komt overeen met januari 2010
+\end{itemize}
+Van wanneer tot wanneer waren er minder dan 2000 vossen in het gebied?
+\end{oefening}
+
+\begin{oefening}
+De temperatuur in een koele berging wordt gegeven door de volgende functie:
+$$T(t)=\dfrac{3t^2-6t+3}{t^2-2t+2}\;.$$
+Hierbij is
+\begin{itemize}
+  \item T = de temperatuur in graden Celsius
+  \item t = tijd in uren
+  \item t = 0 komt overeen met 3 uur 's nachts.
+\end{itemize}
+Als de temperatuur lager wordt dan 1 $^\circ$C is er gevaar voor schade aan het voedsel. Hoe lang bevond de temperatuur zich onder 1 $^\circ$C? Van wanneer tot wanneer?
+\end{oefening}
+
+%\newpage
+\end{document}
+
+
+
+
+
+
