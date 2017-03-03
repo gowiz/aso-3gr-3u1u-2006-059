@@ -139,7 +139,7 @@ Bereken
 Zij
 $$f(x)=\ln x \log x - \ln g \log_g x$$
 met $g\in \mathbb{R}^+$. Dan is $f'(x)$ gelijk aan
-\begin{enumerate}[(a)]
+\begin{enumerate}[(A)]
   \itemsep.8em
   \item $\frac{1}{x} \log x + \dfrac{\ln x}{x \ln 10} - \frac{1}{g}\log_g x - \frac{1}{x}$
   \item $\dfrac{\ln \frac{x^2}{10}}{x \ln 10}$
@@ -200,7 +200,7 @@ Wat is de oppervlakte van de grootste rechthoek die kan worden uitgefreesd?\\
 \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
 \clip(-0.57,-0.39) rectangle (4.16,1.32);
 \fill[line width=1.2pt,fill=black,fill opacity=0.13] (0.1,0.1) -- (0.8,0.1) -- (0.8,0.4) -- (0.1,0.4) -- cycle;
-\draw[line width=1.6pt, smooth,samples=100,domain=-0.5668076151119694:4.161079687635897] plot(\x,{2.718281828^(-(\x))});
+\draw[line width=1.6pt, smooth,samples=100,domain=-0.5668076151119694:4.161079687635897] plot(\x,{exp(-(\x))});
 \draw [line width=1.2pt] (0.1,0.1)-- (0.8,0.1);
 \draw [line width=1.2pt] (0.8,0.1)-- (0.8,0.4);
 \draw [line width=1.2pt] (0.8,0.4)-- (0.1,0.4);
@@ -267,7 +267,6 @@ langs de $x$-as maximaal, met $v_0$ de beginsnelheid en $g$ de valversnelling.
 
 %\newpage
 \end{document}
-
 
 
 
