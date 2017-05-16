@@ -66,6 +66,7 @@ Dit is dezelfde opdeling die wij gebruiken om hoeken te meten!
 
 De zestigdelige graad is nu eenmaal geen zo een handige talstelsel om in te rekenen. Gelukkig hebben wij wiskundigen hier een oplossing voor gevonden. We hebben gewoon nog een nieuwe eenheid ingevoerd, de radiaal!
 
+\pagebreak
 \subsection{De radiaal}
 De meest natuurlijke hoekeenheid is echter de radiaal. Het woord radiaal is afgeleid van het Latijnse woord ‘radius’, dat straal betekent.
 
@@ -331,11 +332,13 @@ Bepaal de amplitude
 \end{enumerate}
 \end{oefening}
 
+De amplitude kan van elke periodieke functie genomen worden die steeds uitwijkt ten opzichte van een evenwichtsstand.
+
 \begin{oefening}
-De amplitude kan van elke periodieke functie genomen worden die steeds uitwijkt ten opzichte van een evenwichtsstand. Bepaal voor volgende functie
+Bepaal voor volgende functie
 \begin{center}
 \definecolor{cqcqcq}{rgb}{0.7529411764705882,0.7529411764705882,0.7529411764705882}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[scale=0.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \draw [color=cqcqcq,, xstep=1.0cm,ystep=1.0cm] (-5.7606187437084495,-1.794685586926735) grid (5.594801414325579,3.4769983316916453);
 \draw[->,color=black] (-5.7606187437084495,0.) -- (5.594801414325579,0.);
 \foreach \x in {-5.,-4.,-3.,-2.,-1.,1.,2.,3.,4.,5.}
@@ -361,6 +364,55 @@ De amplitude kan van elke periodieke functie genomen worden die steeds uitwijkt 
 \end{enumerate}
 \end{oefening}
 
+\begin{oefening}
+Bepaal voor volgende functie
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[scale=0.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-3.65,-2.55) grid (6.38,2.25);
+\draw[->,color=black] (-3.65,0) -- (6.38,0);
+\foreach \x in {-3,-2,-1,1,2,3,4,5,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-2.55) -- (0,2.25);
+\foreach \y in {-2,-1,1,2}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-3.65,-2.55) rectangle (6.38,2.25);
+\draw[line width=2pt, smooth,samples=100,domain=-3.6545454545454543:6.381818181818182] plot(\x,{1.5*sin((3.1415926535*(\x))*180/pi)});
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item periode $P=\arule{3cm}$
+  \item evenwichtsstand $\arule{5cm}$
+  \item amplitude $A=\arule{3cm}$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bepaal voor volgende functie
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-2.42,-3.36) grid (12.26,2.26);
+\draw[->,color=black] (-2.42,0) -- (12.26,0);
+\foreach \x in {-2,-1,1,2,3,4,5,6,7,8,9,10,11,12}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-3.36) -- (0,2.26);
+\foreach \y in {-3,-2,-1,1,2}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-2.42,-3.36) rectangle (12.26,2.26);
+\draw[line width=2pt, smooth,samples=100,domain=-2.4205950413223127:12.259404958677681] plot(\x,{2*sin((3.1415926535*(\x))*180/pi)+sin((2*3.1415926535*(\x)+1)*180/pi)});
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item periode $P=\arule{3cm}$
+  \item evenwichtsstand $\arule{5cm}$
+  \item amplitude $A=\arule{3cm}$
+\end{enumerate}
+\end{oefening}
 \pagebreak
 \subsection{De tangensfunctie}
 \subsubsection{Tabel}
@@ -1174,6 +1226,7 @@ Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tus
   \item $\frac{sin(\frac{\pi}{2}-\alpha).\cos(2\pi+\alpha).\cot(\frac{\pi}{2}-\alpha)}{\tan(\pi-\alpha).\cot(\alpha+\pi).\cos(-\alpha)}=$ \arules{2}
 \end{enumerate}
 
+\end{document}
 \newpage
 \section{Optellingsformules}
 

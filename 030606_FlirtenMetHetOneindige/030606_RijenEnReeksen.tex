@@ -1,0 +1,138 @@
+\documentclass[12pt,twoside]{article}
+
+\input{../gowiz.tex}
+
+
+\DeclareMathOperator*{\Bgsin}{Bgsin}
+\DeclareMathOperator*{\Bgcos}{Bgcos}
+\DeclareMathOperator*{\Bgtan}{Bgtan}
+\DeclareMathOperator*{\Bgcot}{Bgcot}
+
+\begin{document}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Oefeningen Rijen en Reeksen}
+
+\section{Rijen}
+
+\begin{oefening}
+Onderzoek de convergentie van de volgende rijen:
+\begin{enumerate}[(a)]
+  \item $1, \frac{4}{3}, \frac{3}{2}, \ldots, \frac{2n}{n+1}, \ldots$
+  \item $1, \sqrt[3]{2}, \sqrt[3]{3}, \ldots, \sqrt[3]{n}, \ldots$
+  \item $\frac{1}{2}, \frac{\sqrt{3}}{2}, 1, \ldots, \sin\frac{n\pi}{6}, \ldots$
+  \item $0, -\frac{1}{2}, -\frac{\sqrt{2}}{2}, \ldots, \cos\frac{n\pi}{n+1}, \ldots$
+  \item $\frac{\pi}{6}, \Bgsin\frac{2}{3}, \ldots, \Bgsin\frac{n}{n+1}, \ldots$
+  \item $\tan 1, 2\tan\frac{1}{2}, \ldots, n\tan\frac{1}{n}, \ldots$
+  \item $4\sqrt{2}, \sqrt{11}, \ldots, \frac{2}{n}\sqrt{n^2+7}, \ldots$
+  \item $\frac{1}{2}, \frac{4}{3}, \frac{9}{4}, \ldots, \frac{n^2}{n+1}, \ldots$
+  \item $1, \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{3}}, \ldots, \frac{1}{\sqrt{n}}, \ldots$
+  \item $\frac{3}{4}, \frac{5}{8}, \frac{9}{16}, \ldots, \frac{2^n\;+\; 1}{2^{n+1}}, \ldots$
+  \item $\frac{1}{2}, \frac{3}{8}, \frac{9}{26}, \ldots, \frac{3^{n-1}}{3^n\;-\;1}, \ldots$
+  \item $0, -\Bgtan\frac{3}{5}, \ldots, \Bgtan\frac{1-n^2}{1+n^2}, \ldots$
+  \item $4, 4\sqrt{2}, \ldots, 4n\sin\frac{\pi}{2n}, \ldots$
+  \item $\frac{1}{10}, \frac{2\sqrt{2}}{13}, \ldots, \frac{n\;\sqrt{n}}{3n+7}, \ldots$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Van een rij worden enkele opeenvolgende termen gegeven. In welk geval kan het een rekenkundige of een meetkundige rij zijn?
+\begin{enumerate}[(a)]
+  \item $\ldots, 6, 13, 20, 27, \ldots$
+  \item $\ldots, \frac{1}{4}, \frac{7}{12}, \frac{11}{12}, \frac{5}{4}, \ldots$
+  \item $\ldots, 7, 106, 204, 303, \ldots$
+  \item $\ldots, 3, -6, 12, -24, \ldots$
+  \item $\ldots, 0, \frac{1}{3}, \frac{1}{6}, \frac{1}{12}, \ldots$
+  \item $\ldots, 128, -32, 8, -2, \ldots$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bepaal de eerste drie termen van een rekenkundige rij waarvoor:
+\begin{enumerate}[(a)]
+  \item $u_5=-7, u_8=-16$
+  \item $u_1+u_4=16, u_3+u_5=28$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bepaal de eerste drie termen van een meetkundige rij waarvoor:
+\begin{enumerate}[(a)]
+  \item $u_2=12, u_5=324$
+  \item $u_4=24, u_6=96$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bepaal vier opeenvolgende termen van een rekenkundige rij als hun som 8 is en hun product -15 is.
+\end{oefening}
+
+\section{Reeksen}
+
+\begin{oefening}
+Voor de volgende reeksen: stel een formule op voor de partiële som $s_n$, onderzoek het convergentiegedrag van de reeks, en geef de som als ze convergeren.
+\begin{enumerate}[(a)]
+  \item $\frac{2}{1\cdot 3} + \frac{2}{3\cdot 5} + \frac{2}{5\cdot 7} + \cdots + \frac{2}{(2n-1)(2n+1)} + \cdots$
+  \item $\frac{2}{1\cdot 3} + \frac{2}{2\cdot 4} + \frac{2}{3\cdot 5} + \cdots + \frac{2}{n(n+2)} + \cdots$
+  \item $\frac{1}{\sqrt{2}+1} + \frac{1}{\sqrt{3}+\sqrt{2}} + \frac{1}{2+\sqrt{3}} + \cdots + \frac{1}{\sqrt{n+1}+\sqrt{n}} + \cdots$
+  \item $\frac{4\cdot2}{1^2\cdot 3^2} + \frac{4\cdot3}{2^2\cdot 4^2} + \frac{4\cdot4}{3^2\cdot 5^2} + \cdots + \frac{4(n+1)}{n^2(n+2)^2} + \cdots$
+  \item $\frac{1}{1\cdot 4} + \frac{1}{4\cdot 7} + \frac{1}{7\cdot 10} + \cdots + \frac{1}{(3n-2)(3n+1)} + \cdots$
+  \item $\frac{1}{1\cdot2\cdot3} + \frac{1}{2\cdot3\cdot4} + \frac{1}{3\cdot4\cdot5} + \cdots + \frac{1}{n(n+1)(n+2)} + \cdots$
+  \item $\sin\frac{1}{2}\cdot\sin\frac{3}{2} + \sin\frac{1}{6}\cdot\sin\frac{5}{6} + \cdots + \sin\frac{1}{n(n+1)}\cdot\sin\frac{2n+1}{n(n+1)} + \cdots$
+  \item $2\cos\frac{3}{4}\cdot\sin\frac{1}{4} + 2\cos\frac{5}{12}\cdot\sin\frac{1}{12} + \cdots + 2\cos\frac{2n+1}{2n(n+1)}\cdot\sin\frac{1}{2n(n+1)} + \cdots$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Onderzoek het convergentiegedrag van de volgende reeksen die alle tot een bekend type behoren. Maak gebruik van de theorie.
+\begin{enumerate}[(a)]
+  \item $0.1 + 0.2 + 0.3 + \cdots + 0.1\cdot n + \cdots$
+  \item $1 + 1.01 + 1.01^2 + \cdots + 1.01^{n-1} + \cdots$
+  \item $3 - 2 + \frac{4}{3} - \cdots + 3\cdot\left(-\frac{2}{3}\right)^{n-1}+ \cdots$
+  \item $1 + 3 + 5 + \cdots + (2n-1) + \cdots$
+  \item $1 + 0.99 + 0.99^2 + \cdots + 0.99^{n-1} + \cdots$
+  \item $1 + \frac{1}{2\sqrt{2}} + \frac{1}{3\sqrt{3}} + \cdots + \frac{1}{n\sqrt{n}} + \cdots$
+  \item $1 + \frac{1}{\sqrt{2}} + \frac{1}{\sqrt{3}} + \cdots + \frac{1}{\sqrt{n}} + \cdots$
+  \item $\frac{7}{3} + 2 + \frac{5}{3} + \cdots + \frac{8-n}{3} + \cdots$
+  \item $1 + \frac{\sqrt{2}}{\sqrt[10]{2^{15}}} + \frac{\sqrt{3}}{\sqrt[10]{3^{15}}} + \cdots + \frac{\sqrt{n}}{\sqrt[10]{n^{15}}} + \cdots$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Onderzoek het convergentiegedrag van de volgende reeksen met het kenmerk van d'Alembert:
+\begin{enumerate}[(a)]
+  \item $3 + \frac{3^2}{2!} + \frac{3^3}{3!} + \cdots + \frac{3^n}{n!} + \cdots$
+  \item $2! + \frac{4!}{2^2} + \frac{6!}{3^2} + \cdots + \frac{(2n)!}{n^2} + \cdots$
+  \item $\frac{1}{2} + \frac{2}{4} + \frac{6}{8} + \cdots + \frac{n!}{2^n} + \cdots$
+  \item $\frac{1}{2} + \frac{\sqrt{2}}{4} + \frac{\sqrt{3}}{8} + \cdots + \frac{\sqrt{n}}{2^n} + \cdots$
+  \item $(4 + \frac{4}{1})^{-1} + (4 + \frac{4}{2})^{-2} + (4 + \frac{4}{3})^{-3} + \cdots + (4 + \frac{4}{n})^{-n} + \cdots$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Onderzoek met de uitgebreide vorm van het kenmerk van d'Alembert het convergentiegedrag van de volgende reeksen:
+\begin{enumerate}[(a)]
+  \item $2 - \frac{3}{2!} + \frac{4}{3!} + \cdots + \frac{(-1)^{n-1}(n+1)}{n!} + \cdots$
+  \item $-2 + \frac{2^2}{2} - \frac{2^3}{3} + \cdots + (-1)^n\cdot\frac{2^n}{n} + \cdots$
+  \item $-\frac{1}{2} + \frac{2}{4} - \frac{3}{8} + \cdots + (-1)^n\cdot\frac{n}{2^n} + \cdots$
+  \item $\frac{3}{1\cdot2} - \frac{3^2}{2\cdot3} + \frac{3^3}{3\cdot 4} + \cdots + \frac{(-1)^{n-1}\cdot 3^n}{n\cdot(n+1)} + \cdots$
+  \item $\frac{1}{2} - \frac{1}{2^3\cdot 3!} + \cdots + \frac{(-1)^{n-1}}{2^{2n-1}\cdot(2n-1)!} + \cdots$
+  \item $2 - \frac{2\cdot 5}{1\cdot 3} + \frac{2\cdot 5\cdot 8}{1\cdot 3\cdot 5} - \cdots + (-1)^{n-1}\cdot\frac{2\cdot 5\cdot \cdots \cdot (3n-1)}{1\cdot 3\cdot \cdots \cdot (2n-1)} + \cdots$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Onderzoek het convergentiegedrag met een methode naar keuze van de volgende reeksen:
+\begin{enumerate}[(a)]
+  \item $\frac{\sin^2\alpha}{1} + \frac{\sin^4\alpha}{2} + \frac{\sin^6\alpha}{3} + \cdots + \frac{\sin^{2n}\alpha}{n} + \cdots$
+  \item $\tan\alpha + \frac{\tan^2\alpha}{\sqrt{2}} + \frac{\tan^3\alpha}{\sqrt{3}} + \cdots + \frac{\tan^n\alpha}{\sqrt{n}} + \cdots$
+  \item $\frac{4!}{(1!)^2\cdot 2!} + \frac{8!}{(2!)^2\cdot 4!} + \frac{12!}{(3!)^2\cdot 6!} + \cdots + \frac{(4n)!}{(n!)^2\cdot (2n)!} + \cdots$
+  \item $\frac{2!\cdot 3!}{1!\cdot 4!} + \frac{4!\cdot 6!}{2!\cdot 8!} + \frac{6!\cdot 9!}{3!\cdot 12!} + \cdots + \frac{(2n)!\cdot (3n)!}{n!\cdot (4n)!} + \cdots$
+  \item $\frac{2\cdot 1!}{1} - \frac{2^2\cdot 2!}{2^2} + \frac{2^3\cdot 3!}{3^3} + \cdots + \frac{(-1)^{n-1}\cdot 2^n\cdot n!}{n^n} + \cdots$
+\end{enumerate}
+\end{oefening}
+
+\end{document}
+
+
