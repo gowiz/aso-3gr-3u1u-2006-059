@@ -72,14 +72,18 @@ tussen twee gegeven grenzen, met waarden groter dan een gegeven grens of met waa
 \vspace*{-2cm}
 
 \thispagestyle{empty}
-\mbox{}
 \newpage
-\clearpage
 \thispagestyle{empty}
-\mbox{}
+{
+\small
+\singlespacing
+\tableofcontents
+}
 \newpage
 \clearpage
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
+\pagestyle{fancy}
+\lhead{}
 
 \fancyhead[RO,LE]{Kansverdelingen}
 \fancyhead[RE,LO]{}
@@ -87,7 +91,7 @@ tussen twee gegeven grenzen, met waarden groter dan een gegeven grens of met waa
 \section{Discrete kansvariabelen}
 
 \vspace*{-0.5cm}
-We kunnen aan elk element van de uitkomstenverzameling $U$ een (reëel) getal toekennen. Op deze manier krijgen we dus een functie $X$ van $U$ naar $R$, we noemen zo'n functie een {\bf kansvariabele} $X$.
+We kunnen aan elk element van de uitkomstenverzameling $U$ een (reëel) getal toekennen. Op deze manier krijgen we dus een functie $X$ van $U$ naar $\mathbb{R}$, we noemen zo'n functie een {\bf kansvariabele} $X$.
 
 \vspace*{-0.5cm}
 \subsection{Voorbeelden}
@@ -122,7 +126,6 @@ We krijgen opnieuw een functie $Y$ van $U$ naar $\mathbb{R}$, de kansvariable $Y
 \subsection{Definitie}
 
 \begin{mdframed}
-\paragraph*{Definitie}
 Bij het uitvoeren van een experiment met uitkomstenverzameling $U$ noemen we een {\bf kansvariabele} $X$ een functie die elk element van $U$ afbeeldt op een reëel getal.
 $$X:U\to\mathbb{R}:u\mapsto X(u)=x$$
 \end{mdframed}
@@ -167,7 +170,7 @@ Een kansvariabele $X$ is {\bf continu} als de verzameling van haar getalwaarden 
 \begin{oefening}
 Zijn de volgende kansvariabelen discreet of continu?
 \begin{enumerate}[(a)]
-  \item De som van de ogen van twee gegooide dobbelstenen.
+  \item De som van de ogen van twee na elkaar gegooide dobbelstenen.
   \item Aantal fietsbellen dat getest wordt door telkens de fietsbel terug te leggen.
   \item Lengte van een willekeurig gekozen leerling.
 \end{enumerate}
@@ -241,7 +244,6 @@ We krijgen dus een kansfunctie $f$ van de kansvariabele $Y$ van $\mathbb{R}$ naa
 \pagebreak
 \subsection{Definitie}
 
-\paragraph*{Definitie}
 \begin{mdframed}
 Bij het uitvoeren van een experiment met uitomstenverzameling $U$ en kansvariabele $X$, noemen we de {\bf kansfunctie} van $X$ de functie van $\mathbb{R}$ naar $[0,1]$ die aangeeft met welke kans elke getalwaarde van $X$ wordt aangenomen.
 \end{mdframed}
@@ -264,9 +266,8 @@ Bepaal voor de kansvariabele dat het aantal fietsbellen dat getest wordt door ze
 
 \subsection{Definitie}
 
-\paragraph*{Definitie}
 \begin{mdframed}
-Bij het uitvoeren van een experiment met uitkomstenverzameling $U$ en kansvariabele $X$, noemen we de verdelingsfunctie van $X$ de functie $F$ van $\mathbb{R}$ naar $[0,1]$ die voor elk reëel getal $x$ aangeeft met welke kans de getalwaarde van $X$ kleiner is of gelijk is aan $x$.
+Bij het uitvoeren van een experiment met uitkomstenverzameling $U$ en kansvariabele $X$, noemen we de {\bf verdelingsfunctie} van $X$ de functie $F$ van $\mathbb{R}$ naar $[0,1]$ die voor elk reëel getal $x$ aangeeft met welke kans de getalwaarde van $X$ kleiner is of gelijk is aan $x$.
 \end{mdframed}
 
 \paragraph*{Notatie}
@@ -457,7 +458,7 @@ De te verwachten winst per tablet noemen we de {\bf verwachtingswaarde} van de k
 
 \pagebreak
 \subsection{Definitie}
-\paragraph*{Definitie}
+
 \begin{mdframed}
 Is aan een experiment met uitkomstenverzameling $U$ een kansvariabele $X$ verbonden, dan noemen we de {\bf verwachtingswaarde} $E(X)$ van deze kansvariabele:
 
@@ -523,7 +524,6 @@ Om te weten over welke kansvariabele deze verwachtingswaarde het meest zegt, ber
 \pagebreak
 \subsection{Definitie}
 
-\paragraph*{Definitie}
 \begin{mdframed}
 Is aan een experiment met uitkomstenverzameling $U$ een kansvariabele $X$ verbonden met verwachtingswaarde $E(X)$, dan noemen we de {\bf variantie} $\Var(X)$ van deze kansvariabele:
 $$\Var(X)=\sum_i(x_i-E(X))^2\cdot f(x_i)$$
@@ -627,7 +627,6 @@ De kansvariabele X die als getalwaarde het aantal mogelijke successen aanneemt, 
 
 \subsection{Definitie}
 
-\paragraph*{Binomiale verdeling}
 \begin{mdframed}
 Een kansexperiment dat bestaat uit $n$ onafhankelijke deelexperimenten, elk met juist twee uitkomsten, {\em succes} met kans $p$ en {\em mislukking} met kans $q=1-p$ heeft een $n$-tal als uitkomst. De kansvariabele $X$ die elke uitkomst afbeeldt op het aantal successen volgt een {\bf binomiale verdeling}.
 \end{mdframed}
@@ -640,14 +639,13 @@ $$X \sim B(n, p)$$
 
 Voor een kansvariabele $X \sim B(n, p)$ gaan we uit dat $x$ de waarden $$0, 1, 2, \cdots, k, \cdots, n-1, n$$ kan aannemen.
 
-\paragraph*{Kansfunctie}
 \begin{mdframed}
 De {\bf kansfunctie} $f$ van die kansvariabele $X \sim B(n, p)$ geeft de kans op $k$ successen en wordt gegeven door
 $$ f(k)=C_n^k\cdot p^k\cdot q^{n-k}$$
 met $q=1-p$.
 \end{mdframed}
+\vspace*{1cm}
 
-\paragraph*{Verdelingsfunctie}
 \begin{mdframed}
 De bijhorende {\bf verdelingsfunctie} $F$ geeft de kans op hoogstens $k$ successen en wordt gegeven door
 $$ F(k)=f(0) + f(1) + \cdots + f(k)$$
@@ -656,6 +654,8 @@ $$ F(k)=f(0) + f(1) + \cdots + f(k)$$
 \begin{oefening}
 We gooien 20 maal een muntstuk op en we nemen de uitslag kop als succes.
 \begin{enumerate}[(a)]
+  \item Geef de verdelingsfunctie.
+  \arules{2}
   \item Bereken de kans dat er 11 maal kop gegooid wordt.
   \arules{3}
   \item Bereken de kans dat er hoogstens 11 maal kop gegooid wordt.
@@ -687,9 +687,10 @@ We berekenen de verwachtingswaarde $E(X)=$\arulefill
 En ook de standaardafwijking $\sigma=$\arulefill
 Bedrijf A moet dus een schadevergoeding betalen vanaf \arule{1cm} of meer defecte stukken.\\
 Bereken hiervoor de kans:
-\arules{3}
+\arules{10}
 \end{oefening}
 
+\pagebreak
 \subsection{Oefeningen}
 
 \begin{oefening}
@@ -763,7 +764,6 @@ Men mag hier echter niet uit besluiten dat alles normaal verdeeld zou zijn. Typi
 \pagebreak
 \subsection{Definitie}
 
-\paragraph*{Definitie van de normale verdeling}
 \begin{mdframed}
 Een kansvariabele $X$ is {\bf normaal verdeeld} als haar kansfunctie $f$ gegeven wordt door
 $$f(x)=\dfrac{1}{\sigma{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}$$
@@ -833,8 +833,8 @@ de standaardafwijking $\sigma$ variëren, terwijl we het gemiddelde $\mu$ consta
 \foreach \x in {-6,-4,-2,2,4,6}
 %\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
 \draw[->,color=black] (0,-0.1) -- (0,0.85);
-\foreach \y in {,0.2,0.4,0.6,0.8}
-%\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\foreach \y in {0.2,0.4,0.6,0.8}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \clip(-6,-0.1) rectangle (8,0.85);
 \draw[line width=1.6pt, smooth,samples=100,domain=-6.0:8.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
 \draw[line width=1.6pt, smooth,samples=100,domain=-6.0:8.0] plot(\x,{exp((-(((\x))/0.5)^2)/2)/(sqrt(2*3.1415926535)*abs(0.5))});
@@ -1385,8 +1385,10 @@ In een restaurant met een capaciteit van 350 tafels zijn voor de komende feestda
 \end{enumerate}
 \end{oefening}
 
-\newpage\mbox{}
-\newpage
+%\newpage\mbox{}
+%\newpage
+
+\pagebreak
 \appendix
 %\section*{Bijlagen}
 
@@ -1407,6 +1409,7 @@ In een restaurant met een capaciteit van 350 tafels zijn voor de komende feestda
   \addplot [fill=gray!40, draw=none, domain=-4:1.5] {gauss(0,1)} \closedcycle;
   \addplot [very thick,black!50!black, domain=-4:4] {gauss(0,1)};
   \draw [yshift=-0.1cm] (axis cs:1.5,0) node[anchor=north] {$z$};
+  \draw [yshift=-0.1cm] (axis cs:0,0) node[anchor=north] {\small 0};
   \draw (axis cs:0,0.2) node[anchor=north] {$\Phi(z)=P(Z\leq z)$};
 \end{axis}
 \end{tikzpicture}
