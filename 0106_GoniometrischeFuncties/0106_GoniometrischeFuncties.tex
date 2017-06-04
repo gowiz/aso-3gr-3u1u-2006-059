@@ -403,7 +403,7 @@ Bepaal voor volgende functie
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
 \clip(-2.42,-3.36) rectangle (12.26,2.26);
-\draw[line width=2pt, smooth,samples=100,domain=-2.4205950413223127:12.259404958677681] plot(\x,{2*sin((3.1415926535*(\x))*180/pi)+sin((2*3.1415926535*(\x)+1)*180/pi)});
+\draw[line width=1.6pt, smooth,samples=100,domain=-2.4205950413223127:12.259404958677681] plot(\x,{2*sin((3.1415926535*(\x))*180/pi)+sin((2*3.1415926535*(\x)+1)*180/pi)});
 \end{tikzpicture}
 \end{center}
 \begin{enumerate}[(a)]
@@ -413,6 +413,33 @@ Bepaal voor volgende functie
   \item amplitude $A=\arule{3cm}$
 \end{enumerate}
 \end{oefening}
+
+\begin{oefening}
+Bepaal voor volgende functie
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.71,-1.49) grid (8.57,3.21);
+\draw[->,color=black] (-5.71,0) -- (8.57,0);
+\foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-1.49) -- (0,3.21);
+\foreach \y in {-1,1,2,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-5.71,-1.49) rectangle (8.57,3.21);
+\draw[line width=1.6pt, smooth,samples=100,domain=-5.705720690038618:8.570469617334128] plot(\x,{sin((1/2*3.1415926535*(\x))*180/pi)+cos((2*3.1415926535*(\x))*180/pi)+0.85});
+\draw (-2.6,1.61) node[anchor=north west] {f};
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item periode $P=\arule{3cm}$
+  \item evenwichtsstand $\arule{5cm}$
+  \item amplitude $A=\arule{3cm}$
+\end{enumerate}
+\end{oefening}
+
 \pagebreak
 \subsection{De tangensfunctie}
 \subsubsection{Tabel}
@@ -565,6 +592,27 @@ Geef telkens amplitude en periode van volgende functies.
 \end{center}
 \end{adjustwidth}
 
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.85,0.85,0.85}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 2pt off 2pt, xstep=1.0cm,ystep=1.0cm] (-2.9,-1.9) grid (9.4,1.9);
+\draw[->,color=black] (-2.9,0) -- (9.4,0);
+\foreach \x in {-2,-1,1,2,3,4,5,6,7,8,9}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-1.9) -- (0,1.9);
+\foreach \y in {-1,1}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-2.9,-1.9) rectangle (9.4,1.9);
+\draw[color=gray, line width=1.2pt, smooth,samples=100,domain=-2.9:9.4] plot(\x,{sin(((\x))*180/pi)});
+\draw[line width=1.2pt, smooth,samples=100,domain=-2.9:9.4] plot(\x,{sin((2*(\x))*180/pi)});
+\begin{scriptsize}
+\draw [color=gray] (1.0,1.46) node[anchor=north west] {$\sin(x)$};
+\draw (2.80,1.46) node[anchor=north west] {$\sin(2x)$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
 \subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin (2x)}$}
 De grafiek van $y=\sin (2x)$ bekom je door deze van $y=\sin x$ horizontaal samen te duwen. We spreken van een verschaling  evenwijdig met de $x$-as met factor $\frac{1}{2}$.\\
 Hierdoor wordt de periode $P$ door $2$ gedeeld, terwijl de amplitude $A$ gelijk blijft:  
@@ -671,6 +719,16 @@ Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=
     &&&
   \end{tabular}
 \end{center}
+\end{oefening}
+
+\begin{oefening}
+Hoe kan je de grafiek van volgende functies bekomen uit deze van de sinusfunctie?
+\begin{enumerate}[(a)]
+  \item $f(x)=\sin(x-2\pi)$
+  \item $f(x)=\sin(x+2\pi)$
+  \item $f(x)=\sin(x+4\pi)$
+  \item $f(x)=\sin(x+2k\pi)$ met $k\in\mathbb{Z}$
+\end{enumerate}
 \end{oefening}
 
 \subsection{$\boldsymbol{f(x)=\sin x + d}$ met $\boldsymbol{d\in \mathbb{R}}$} 
