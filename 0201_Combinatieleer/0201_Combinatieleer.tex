@@ -1,4 +1,4 @@
-\documentclass[2pt,twoside]{article}
+\documentclass[12pt,twoside]{article}
 
 \input{../gowiz.tex}
 
@@ -67,7 +67,7 @@ te stellen. (V)
 \newpage
 \clearpage
 \thispagestyle{empty}
-{\small\tableofcontents}
+{\scriptsize\tableofcontents}
 \newpage
 \clearpage
 \pagestyle{fancy}
@@ -813,7 +813,7 @@ Vereenvoudig:
   \item $\dfrac{n!}{(n+1)!}$
   \item $\dfrac{(n+1)!}{(n-2)!}$
   \item $\dfrac{(n+2)!}{n!}$
-  \item $\dfrac{(2n+2)!}{2n!}$ \hfill {\em opgelet, $2n!$ is niet gelijk aan $(2n)!$}
+  \item $\dfrac{(2n+2)!}{2n!}$ \hfill {\em\scriptsize opgelet, $2n!$ is niet gelijk aan $(2n)!$}
   \item $\dfrac{(n+1)!}{n!}-\dfrac{n!}{(n-1)!}$
   \item $\dfrac{(n+1)!}{(n-1)!}-\dfrac{n!}{(n-2)!}$
   \item $\dfrac{n}{n!}$  
@@ -1142,7 +1142,39 @@ Bereken zonder \zrm{ZRM} $$\left(\sqrt{2}+1\right)^5+\left(\sqrt{2}-1\right)^5$$
 \end{oefening}
 
 \pagebreak
-\subsection{Extra Oefeningen}  % mathcentre
+\subsection{Oefeningen}  % mathcentre
+
+\begin{oefening}
+Beschouw het volgende wegenrooster met de locatie van Aline en Birgit en daarbinnen ook een moeras.
+\begin{center}
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(1.45,1.41) rectangle (10.52,6.62);
+\fill[line width=0.4pt,fill=black,fill opacity=0.29] (0,1) -- (5.5,1) -- (5.5,5.5) -- (0,5.5) -- cycle;
+\draw [domain=2:9] plot(\x,{(--2-0*\x)/1});
+\draw [domain=2:9] plot(\x,{(--6-0*\x)/2});
+\draw [domain=2:9] plot(\x,{(--8-0*\x)/2});
+\draw [domain=2:9] plot(\x,{(--10-0*\x)/2});
+\draw [domain=2:9] plot(\x,{(--12-0*\x)/2});
+\draw (2,2) -- (2,6);
+\draw (3,2) -- (3,6);
+\draw (4,2) -- (4,6);
+\draw (5,2) -- (5,6);
+\draw (6,2) -- (6,6);
+\draw (7,2) -- (7,6);
+\draw (8,2) -- (8,6);
+\draw (9,2) -- (9,6);
+\fill (2,6) circle (1.8pt);
+\draw (1.69,6.34) node {$A$};
+\fill  (9,2) circle (1.8pt);
+\draw (9.22,1.81) node {$B$};
+\end{tikzpicture}
+\end{center}
+\begin{enumerate}[(a)]
+  \item Hoeveel kortste wegen zijn er van Aline en Birgit? Maak gebruik van een {\bf formule}.
+  \item Hoeveel zijn er als ze niet langs het moeras kan wandelen? Maak zoveel mogelijk gebruik van {\bf formules}.
+\end{enumerate}
+\end{oefening}
 
 \begin{oefening}
 Werk uit m.b.v. binomium van Newton:
@@ -1165,11 +1197,13 @@ Gebruik het binomium van Newton om de eerste drie termen in dalende macht van $x
 \end{oefening}
 
 \begin{oefening}
-Zoek de coëfficiënt van $x^5$ in de ontwikkeling van $\left(1+4x\right)^9$.
-\end{oefening}
-
-\begin{oefening}
-Zoek in de ontwikkeling van $\left(1-x\right)^8$ de coëfficiënt die hoort bij $x^7$.
+Zoek de coëfficiënt horende bij de term met de gegeven graad in de ontwikkeling:
+\begin{enumerate}[(a)]
+  \item in de ontwikkeling van $\left(1-x\right)^8$ de coëfficiënt die hoort bij $x^7$.
+  \item coëfficiënt van $x^5$ in de ontwikkeling van $\left(1+4x\right)^9$.
+  \item in de ontwikkeling van $\left(1+3x\right)^{21}$ de coëfficiënt van $x^5$ .
+  \item coëfficiënt van $x^2$ in de ontwikkeling van $\left(x-\dfrac{1}{x}\right)^6$.
+\end{enumerate}
 \end{oefening}
 
 \begin{oefening}
@@ -1493,7 +1527,6 @@ Bereken het aantal anagrammen van \verb#MISSISSIPPI#.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
 
 
 
