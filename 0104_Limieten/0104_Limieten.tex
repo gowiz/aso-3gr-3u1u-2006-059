@@ -3,7 +3,8 @@
 \input{../gowiz.tex}
 
 \usepackage{versions}
-\excludeversion{theorie}
+%\excludeversion{theorie}
+\includeversion{theorie}
 
 \newenvironment{definitie}
 {
@@ -216,12 +217,16 @@ Limieten van functies in een reëel getal $a$ (zowel eindige limieten als limiet
   Bepaal nogmaals de limiet $\displaystyle\lim_{x\to-1} f(x)$ van de functie in oefening 2. Gebruik nu linker- en rechterlimieten.
 \end{oefening}
 
+\begin{theorie}
+
 Ook oneindige linker- en rechterlimieten in een getal worden gedefinieerd. Bijvoorbeeld voor linkerlimieten wordt dit:
 
 \begin{definitie}
   We zeggen de {\bf linkerlimiet is van $f$ voor $x$ gaande naar $a$ is $+\infty$} als de functiewaarden $f(x)$ willekeurig groot worden voor $x$-waarden in de buurt van $a$ en links van $a$ genomen. We noteren dit als
   $$\lim_{x\underset{<}{\to}a}f(x)=+\infty$$
 \end{definitie}
+
+\end{theorie}
 
 \begin{oefening}
   Definieer zelf de oneindige rechterlimiet in een getal.
