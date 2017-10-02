@@ -3,8 +3,8 @@
 \input{../gowiz.tex}
 
 \usepackage{versions}
-\excludeversion{theorie}
-%\includeversion{theorie}
+%\excludeversion{theorie}
+\includeversion{theorie}
 
 \begin{document}
 
@@ -18,25 +18,10 @@
   \begin{center}
     \begin{mdframed}
       \centering
-      \fontsize{40}{60}\selectfont Irrationale Functies
+      \fontsize{40}{60}\selectfont Exponentiële functies
     \end{mdframed}
     \vfill
-    \definecolor{aqaqaq}{rgb}{0.63,0.63,0.63}
-    \definecolor{wqwqwq}{rgb}{0.38,0.38,0.38}
-    \begin{tikzpicture}[scale=1.5, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-      \draw[->,color=black] (-3.43,0) -- (3.78,0);
-      \foreach \x in {-3,-2,-1,1,2,3}
-      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-      \draw[->,color=black] (0,-3.46) -- (0,3.9);
-      \foreach \y in {-3,-2,-1,1,2,3}
-      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-      \clip(-3.43,-3.46) rectangle (3.78,3.9);
-      \draw[line width=1.6pt,color=wqwqwq, smooth,samples=100,domain=-1.9999995090909108:1.999994949917767] plot(\x,{sqrt(4-(\x)^2)});
-      \draw[line width=1.6pt,color=aqaqaq, smooth,samples=100,domain=-1.9999995090909108:1.999994949917767] plot(\x,{0-sqrt(4-(\x)^2)});
-      \draw (0.58,2.43) node[anchor=north west] {$f: y=\sqrt{4-x^2}$};
-      \draw (1.46,-1.5) node[anchor=north west] {$g: y=-\sqrt{4-x^2}$};
-    \end{tikzpicture}
+    \includegraphics{exp_func} %TODO: replace
     \vfill
   \end{center}
 
@@ -46,14 +31,18 @@
     Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
     \begin{itemize}
       \itemsep-0.2em
-    \item kan irrationale vergelijkingen oplossen
-    \item kan aan de hand van het functievoorschrift een tabel, het domein, de nulwaarden en het tekenverloop bepalen van irrationale functies
-    \item kan aan de hand van de grafiek domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen, extrema en asymptotisch gedrag bepalen van irrationale functies
-    \item kan vraagstukken/problemen oplossen die aanleiding ge-
-      ven tot een irrationale vergelijking, ongelijkheid of func-
-      tie, eventueel met behulp van ICT
-    \item kan extremumvraagstukken (ook van buiten de wiskunde)
-      die aanleiding geven tot irrationale functies, oplossen
+      \item kan n-de wortel berekenen in $\mathbb{R}$
+      \item kent de definitie van een macht met een rationale exponent en kunnen de elementaire rekenregels toepassen
+      \item kan voor geschikte domeinen een verband leggen tussen de onderstaande functies en conclusies trekken in verband met hun grafieken:
+      \begin{itemize}
+        \item $x^2$ en $\sqrt{x}$
+        \item $x^3$ en $\sqrt[3]{x}$
+        \item $x^n$ en $\sqrt[n]{x}$
+      \end{itemize}
+      \item kent de definitie van een exponentiële functie $f(x)=a^x$
+      \item kan het onderscheid tussen een lineair en een exponentieel groeiproces
+      \item kunt van een exponentiële functie de de tabel, de grafiek, het domein, enkele bijzondere waarden, het stijgen/dalen en het asymptotisch gedrag bepalen, eventueel met behulp van ICT
+      \item kunt aan de hand van de grafiek het domein, het bereik, de bijzondere waarden, het tekenverloop, het stijgen/dalen en het asymptotisch gedrag bepalen van exponentiële functies
     \end{itemize}}
 
   \thispagestyle{empty}
@@ -101,7 +90,7 @@ Leid volgende eigenschappen van de machtsverheffing af:
 Bereken zonder \zrm{ZRM}.
 \begin{multicols}{4}
   \begin{enumerate}[(a)]
-    \itemsep1em
+    \itemsep.5em
     \item $5^2$
     \item $5^3$
     \item $(-5)^2$
@@ -122,6 +111,7 @@ Bereken zonder \zrm{ZRM}.
 Bereken en controleer nadien met het \zrm{ZRM}.
 \begin{multicols}{4}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $\left(-3\right)^0$
   \item $\left(-4\right)^1$
   \item $\left(\dfrac{1}{3}\right)^5:\dfrac{1}{3}$
@@ -153,6 +143,7 @@ Bereken en controleer nadien met het \zrm{ZRM}.
 Bereken volgende machten zonder \zrm{ZRM}. Maak steeds een tussenstap.
 \begin{multicols}{3}
   \begin{enumerate}[(a)]
+    \itemsep.5em
     \item $-(-2)^3$
     \item $-(-3)^2$
     \item $-2^{-3}$
@@ -187,6 +178,7 @@ Bereken volgende machten zonder \zrm{ZRM}. Maak steeds een tussenstap.
 Vereenvoudig:
 \begin{multicols}{3}
   \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $a^2\cdot a^3$
   \item $a^2+a^3$
   \item $a^9\cdot2^{-5}$
@@ -201,6 +193,7 @@ Vereenvoudig:
 Schrijf zo eenvoudig mogelijk.
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $a^2\cdot a^8$
   \item $a^4\cdot a^{-2}$
   \item $x^2\cdot y^2$
@@ -227,8 +220,9 @@ Schrijf zo eenvoudig mogelijk.
 
 \begin{oefening}
 Werk uit:
-\begin{multicols}{4}
+\begin{multicols}{3}
   \begin{enumerate}[(a)]
+  \itemsep.5em
     \item $2^3\cdot 2^2$
     \item $10^4\cdot 10^2$
     \item $\left(\dfrac{2}{3}\right)\cdot \left(\dfrac{2}{3}\right)^2$
@@ -269,7 +263,7 @@ Werk uit:
 Noteer korter, indien mogelijk.
 \begin{multicols}{3}
   \begin{enumerate}[(a)]
-    \itemsep1.75em
+    \itemsep1.5em
     \item $x\cdot x\cdot x$
     \item $x+x+x$
     \item $a^5\cdot a^2$
@@ -301,9 +295,9 @@ Noteer korter, indien mogelijk.
 
 \begin{oefening}
 Werk zo ver mogelijk uit en schrijf de uitkomst steeds met een positieve exponent.
-\begin{multicols}{4}
+\begin{multicols}{3}
   \begin{enumerate}[(a)]
-    \itemsep1.75em
+    \itemsep1.5em
     \item $\left(2a\right)^{4}$
     \item $\left(-2b\right)^{3}$
     \item $\left(-ax\right)\cdot\left(-ax\right)^{2}$
@@ -363,6 +357,7 @@ Leid mbv. de definitie de volgende eigenschappen van machtswortels af:
 Werk uit en vereenvoudig:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $2\sqrt[3]{8}+\sqrt[3]{8}$
   \item $\left(\sqrt{4}\right)^2$
   \item $\sqrt{32}$
@@ -403,6 +398,7 @@ $$\sqrt{1+101\cdot99}$$
 Bereken zonder \zrm{ZRM}. Controleer je antwoord met het \zrm{ZRM}.
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item ${81}^{\frac{1}{2}}$
   \item ${100}^{\frac{1}{2}}$
   \item ${8}^{\frac{1}{3}}$
@@ -427,6 +423,7 @@ Bereken zonder \zrm{ZRM}. Controleer je antwoord met het \zrm{ZRM}.
 Bereken met het \zrm{ZRM}. Schrijf het antwoord telkens in wetenschappelijke notatie, rond af op 3 decimalen.
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item ${4}^{2.2}$
   \item ${7}^{3.71}$
   \item ${10}^{0.3}$
@@ -444,6 +441,7 @@ Bereken met het \zrm{ZRM}. Schrijf het antwoord telkens in wetenschappelijke not
 Bereken en vereenvoudig:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $2^\frac{2}{5}\cdot2^\frac{1}{5}$
   \item $3^\frac{1}{4}\cdot 2^\frac{1}{4}$
   \item $5^q\frac{1}{3}\cdot 5^\frac{1}{2}$
@@ -462,6 +460,7 @@ Bereken en vereenvoudig:
 Schrijf zo eenvoudig mogelijk door de eigenschappen van de machten toe te passen. Vermeld al je tussenstappen.
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $a^{-4}\cdot a^{1/2}\cdot a^{-3/2}$
   \item $\left(a^{\frac{2}{3}}\right)^{\frac{3}{4}}\cdot \sqrt{a}$
   \item $\left(b^{-4}\right)^{-3}\cdot b^{-7}$
@@ -473,8 +472,9 @@ Schrijf zo eenvoudig mogelijk door de eigenschappen van de machten toe te passen
 
 \begin{oefening}
 Schrijf in een eenvoudigere wortelvorm door over te gaan op rationale exponenten.
-\begin{multicols}{2}
+\begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $\sqrt[3]{\sqrt[4]{2}}$
   \item $\sqrt[4]{\sqrt{256}}$
   \item $\dfrac{\sqrt[4]{48}}{\sqrt[4]{3}}$
@@ -486,6 +486,7 @@ Schrijf in een eenvoudigere wortelvorm door over te gaan op rationale exponenten
 Bereken of vereenvoudig zoveel mogelijk (controleer zelf nadien je resultaat):
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $64^{\frac{1}{3}}$
   \item $32^{\frac{2}{5}}$
   \item $\left(4^{\frac{2}{3}}\right)^{-3}$
@@ -506,9 +507,10 @@ Bereken of vereenvoudig zoveel mogelijk (controleer zelf nadien je resultaat):
 \begin{oefening}
 Bereken met het \zrm{ZRM}. Rond af op 5 decimalen. Indien een macht niet te berekenen is, geef dan ook de reden.
 \begin{exlist}{3}
+  \itemsep.5em
   \item $15^{0.5}$
-  \item $(-\sqrt{15})^{\pi}$
-  \item $\sqrt{3}^e$
+  \item $\left(-\sqrt{15}\right)^{\pi}$
+  \item $\left(\sqrt{3}\right)^e$
   \item $-11^{1/4}$
   \item $(-17)^{1/4}$
   \item $11^{1/11}$
@@ -519,9 +521,13 @@ Bereken met het \zrm{ZRM}. Rond af op 5 decimalen. Indien een macht niet te bere
 Bereken of vereenvoudig zoveel mogelijk:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $\sqrt{x\sqrt{x\sqrt{x}}}$
-  \item $\sqrt[4]{a^{4x}b^{8y}}$
   \item $\dfrac{\sqrt{4a^{-2}b^4}}{b^2}$
+  \item $\sqrt[4]{a^{4x}b^{8y}}$
+  \item $\sqrt{\dfrac{\sqrt{\sqrt[3]{13}}}{\sqrt[3]{\sqrt{13}}}}$
+  \item $\sqrt{x^2+2x+1}$
+  \item $\sqrt{36+16x-96x}$
 \end{enumerate}
 \end{multicols}
 \end{oefening}
@@ -538,6 +544,7 @@ $$\sqrt{\left(8a\right)^{-4}\left(3b\right)^{-2}\sqrt{\left(4a\right)^{-4}\left(
 Maak de grafiek van de volgende exponentiële functies
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $f(x)=10^x$
   \item $f(x)=0.5^x$
   \item $f(x)=e^x$
@@ -606,6 +613,7 @@ Gegeven de grafiek van de exponentiële functie $f(x)=a^x$. Bepaal telkens de wa
 Maak de grafiek van de volgende functies:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $f(x)=2^x+2.5$
   \item $f(x)=2^{x-1.5}$
   \item $f(x)=0.5^{2x}$
@@ -618,6 +626,7 @@ Hint: Probeer (c) eerst in de vorm $f(x)=a^x$ te brengen.
 Bepaal de volgende limieten:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $\displaystyle\lim_{x\to+\infty}3^x$
   \item $\displaystyle\lim_{x\to-\infty}3^x$
   \item $\displaystyle\lim_{x\to0}3^x$
@@ -635,6 +644,7 @@ Bepaal de volgende limieten:
 Gegeven de grafiek van $f(x)=e^x$, schets de grafieken van de functies met voorschriften:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $g(x)=f(x)-1$
   \item $g(x)=-f(x)$
   \item $g(x)=2\cdot f(x)$
@@ -649,7 +659,7 @@ Gegeven de grafiek van $f(x)=e^x$, schets de grafieken van de functies met voors
 Een functie met voorschrift $y=k\cdot a^x$ gaat door $P(-1,2)$ en $Q(2,\dfrac{125}{32})$. Bepaal $a$ en $k$.
 \end{oefening}
 
-\pagebreak
+%\pagebreak
 \section{Toepassingen op exponentiële functies}
 
 \begin{oefening}
@@ -695,7 +705,7 @@ In een bepaald land neemt de bevolking jaarlijks met $2\%$ toe. Momenteel wonen 
 
 \begin{oefening}
 Los op in $\mathbb{R}$.
-\begin{exlist}{2}
+\begin{exlist}{3}
   \item $5^{3x}=5^{7x-2}$
   \item $4^{t^2}=4^{6-t}$
   \item $3^z=9^{z+5}$
@@ -710,6 +720,7 @@ Los op in $\mathbb{R}$.
 Los op in $\mathbb{R}$, geef telkens de oplossingenverzameling en maak de proef.
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $7^x=49$
   \item $4^x=1$
   \item $6^{3x}=36$
@@ -723,9 +734,22 @@ Los op in $\mathbb{R}$, geef telkens de oplossingenverzameling en maak de proef.
 \end{multicols}
 \end{oefening}
 
+\begin{oefening}
+Los op in $\mathbb{R}$, geef telkens de oplossingenverzameling en maak de proef.
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $\left(2^{x+1}\right)^2=1024$
+  \item $2^{x+1}+2^{x-2}=72$
+  \item $9^{x+1}-28\cdot 3^x=-3$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+
 \begin{oefening}*
 Los op in $\mathbb{R}$ door telkens een gepaste substitutie te maken, geef telkens de oplossingenverzameling en maak de proef.
-\begin{multicols}{3}
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \item $3^{2x}+3^x-12=0$
   \item $2^{2x}-2^x-12=0$
@@ -819,8 +843,6 @@ Volgende machten kennen we nog uit het hoofd:
 \begin{minipage}[c]{0.6\textwidth}
   \dotlines{10}
 \end{minipage}
-
-
 
 
 
