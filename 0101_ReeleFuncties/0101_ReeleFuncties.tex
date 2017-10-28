@@ -8,8 +8,8 @@
 
 
 \usepackage{versions}
-\excludeversion{theory}
-
+%\excludeversion{theory}
+\includeversion{theory}
 
 \begin{document}
 
@@ -22,42 +22,31 @@
 \begin{center}
   \begin{mdframed}
   \centering
-  \fontsize{40}{60}\selectfont Irrationale Functies
+  \fontsize{40}{60}\selectfont Reële functies
   \end{mdframed}
   \vfill
-\definecolor{aqaqaq}{rgb}{0.63,0.63,0.63}
-\definecolor{wqwqwq}{rgb}{0.38,0.38,0.38}
-\begin{tikzpicture}[scale=1.5, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw[->,color=black] (-3.43,0) -- (3.78,0);
-\foreach \x in {-3,-2,-1,1,2,3}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-3.46) -- (0,3.9);
-\foreach \y in {-3,-2,-1,1,2,3}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-3.43,-3.46) rectangle (3.78,3.9);
-\draw[line width=1.6pt,color=wqwqwq, smooth,samples=100,domain=-1.9999995090909108:1.999994949917767] plot(\x,{sqrt(4-(\x)^2)});
-\draw[line width=1.6pt,color=aqaqaq, smooth,samples=100,domain=-1.9999995090909108:1.999994949917767] plot(\x,{0-sqrt(4-(\x)^2)});
-\draw (0.58,2.43) node[anchor=north west] {$f: y=\sqrt{4-x^2}$};
-\draw (1.46,-1.5) node[anchor=north west] {$g: y=-\sqrt{4-x^2}$};
-\end{tikzpicture}
+  \includegraphics[width=0.8\textwidth]{FunctieMachine}
   \vfill
 \end{center}
 
 \subsection*{Doelstellingen}
 \vspace*{-0.8cm}
 {\singlespacing
-Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
+Je \hfill  {\scriptsize(LP2006-059, LI1.1, ET14)}
 \begin{itemize}
   \itemsep-0.2em
-  \item kan irrationale vergelijkingen oplossen
-  \item kan aan de hand van het functievoorschrift een tabel, het domein, de nulwaarden en het tekenverloop bepalen van irrationale functies
-  \item kan aan de hand van de grafiek domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen, extrema en asymptotisch gedrag bepalen van irrationale functies
-  \item kan vraagstukken/problemen oplossen die aanleiding ge-
-ven tot een irrationale vergelijking, ongelijkheid of func-
-tie, eventueel met behulp van ICT
-  \item kan extremumvraagstukken (ook van buiten de wiskunde)
-die aanleiding geven tot irrationale functies, oplossen
+  \item kent de definitie van een reële functie en de drie aspecten (functievoorschrift, tabel en grafiek) ervan
+  \item kent de begrippen
+  \begin{itemize}
+    \item domein
+    \item bereik
+    \item nulwaarde
+    \item tekenverloop
+    \item stijgen/dalen/constant
+    \item extremum
+  \end{itemize}
+  en kan deze aflezen op een grafiek
+  \item kan symmetrieën aflezen op een grafiek
 \end{itemize}}
 
 \thispagestyle{empty}
@@ -71,7 +60,7 @@ die aanleiding geven tot irrationale functies, oplossen
 \clearpage
 \pagenumbering{arabic} 
 
-\fancyhead[RO,LE]{Irrationale functies}
+\fancyhead[RO,LE]{Reële functies}
 \fancyhead[RE,LO]{}
 
 \end{theory}
@@ -304,7 +293,6 @@ het domein, het bereik, de nulwaarde(n), het tekenverloop, het stijgen\&dalen en
 \begin{minipage}[c]{0.6\textwidth}
 \dotlines{10}
 \end{minipage}
-
 
 
 
