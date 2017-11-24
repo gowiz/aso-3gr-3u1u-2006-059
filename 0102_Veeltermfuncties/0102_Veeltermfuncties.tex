@@ -1,0 +1,260 @@
+\documentclass[12pt,twoside]{article}
+
+\input{../gowiz.tex}
+
+\usepackage{pgfplots}
+
+\usepackage{relsize}
+
+
+\usepackage{versions}
+\excludeversion{theorie}
+%\includeversion{theorie}
+
+\newtheorem{definition}{Definitie}
+\newtheorem{eigenschap}{Eigenschap}
+
+% vergelijkingen mooi uitlijnen:
+% \begin{alignat}{2}
+%   &&    a^2-b^2 &= 0\\
+%   \lra && (a-b)(a+b) &= 0\\
+% \end{alignat}
+\newcommand{\lra}{\ensuremath{\Leftrightarrow\qquad}}
+
+
+
+\begin{document}
+
+\pagestyle{fancy}
+\lhead{}
+\rhead{Oefeningen Veeltermfuncties}
+
+\begin{theorie}
+\thispagestyle{empty}
+\begin{center}
+  \begin{mdframed}
+  \centering
+  \fontsize{40}{60}\selectfont Veeltermfuncties
+  \end{mdframed}
+  \vfill
+  \vfill
+\end{center}
+
+\subsection*{Doelstellingen}
+\vspace*{-0.8cm}
+{\singlespacing
+Je \hfill  {\scriptsize(LP2006-059, LI1.1, ET14)}
+\begin{itemize}
+\end{itemize}}
+
+\thispagestyle{empty}
+\mbox{}
+\newpage
+\clearpage
+\thispagestyle{empty}
+%\mbox{}
+\tableofcontents
+\newpage
+\clearpage
+\pagenumbering{arabic} 
+
+\fancyhead[RO,LE]{Veeltermfuncties}
+\fancyhead[RE,LO]{}
+
+\end{theorie}
+
+\onehalfspacing
+
+\pagebreak
+
+\section{Veeltermvergelijking}
+
+\begin{oefening}
+  Los de volgende vergelijkingen van de eerste graad op in $\mathbb{R}$
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep0.7em
+    \item $4x-8=0$
+    \item $3x+9=0$
+    \item $-3x+9=0$
+    \item $2(x+6)=4-(x+7)$
+    \item $x - \dfrac{x-2}{3} = 4$
+    \item $2(x-3)+7=5-(2-x)$
+    \item $(x+1)^2-2=x(x-3)-(1-2x)$
+    \item $\dfrac{3+2x}{4}-\dfrac{4x-5}{5}=\dfrac{21-6x}{6}$
+    \item $\dfrac{4x}{3}-\left(\dfrac{3}{2}-\dfrac{x}{4}\right)=x+4\left(\dfrac{2x}{3}-1\right)$
+    \item $\dfrac{3(x-1)}{5}-\dfrac{2(1-4x)}{7}=x+\dfrac{x+1}{5}$
+    \item $\dfrac{5x}{8}-\dfrac{x-\frac{5}{2}}{4}=1$
+    \item $\dfrac{x}{5}+\dfrac{x}{2}=-7$
+    \item $\dfrac{3-x}{4}-\dfrac{x-2}{3}=\dfrac{x}{2}-\dfrac{4x+1}{12}$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Los de volgende vergelijkingen van de tweede graad op in $\mathbb{R}$
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep0.7em
+    \item $2x^2-4x-6=0$
+    \item $5x(x-2)=x(3x-4)-5$
+    \item $\frac{2}{3}x^2+5x+1=0$
+    \item $80x^2+8x=15$
+    \item $80x^2+15=-8x$
+    \item $(3-x)(3+x)=(x-4)^2$
+    \item $(x-2)^2=x^2-4$
+    \item $(3x+2)(3x-2)+6x+5=0$
+    \item $x+1=(x+1)(x-1)$
+    \item $4x^2-20x+25=0$
+    \item $3x^2+5=0$
+    \item $x=x^2$
+    \item $2\left(7x+32\right)=(3x+8)^2$
+    \item $11x+13=2x^2$
+    \item $x\left(x+3\right)+2\left(5+2x\right)=0$
+    \item $x^2+2x-8=0$
+    \item $(x+3)^2=16$
+    \item $9x^2+30x+25=0$
+    \item $10x^2+7x-3=0$
+    \item $x^2=x+1$
+    \item $37x^2+13x-50=0$
+    \item $3x(3x+10)+5=-20$
+    \item $x^2=3x-18$
+    \item $x^2=10x-25$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Los op in $\mathbb{R}$
+  \begin{enumerate}[(a)]
+      \itemsep1em
+    \item $x^2+x-8=(x-6)^2$% \tabto{6cm} {\color{gray}$V=\{\dfrac{44}{13}\}$}
+    \item $x^2+\dfrac{15}{2}=\dfrac{11x}{2}$% \tabto{6cm} {\color{gray}$V=\{\dfrac{5}{2}, 3\}$}
+    \item $(2x-4)(2x+4)=(x+2)^2$% \tabto{6cm} {\color{gray}$V=\{-2,\dfrac{10}{3}\}$}
+    \item $9x^2-36=(6+3x)^2$% \tabto{6cm} {\color{gray}$V=\{-2\}$}
+    \item $19-x+x^2=18-2x-x^2$% \tabto{6cm} {\color{gray}$V=\{\}$}
+    \item $25x^2+20x=-9$% \tabto{6cm} {\color{gray}$V=\{-\dfrac{3}{5}\}$}
+    \item $6x^2=x+1$% \tabto{6cm} {\color{gray}$V=\{-\dfrac{1}{3},\dfrac{1}{2}\}$}
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+De ring links en de cirkel rechts hebben dezelfde oppervlakte. Bepaal $x$.
+\begin{center}
+\begin{tikzpicture}[scale=0.6, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\clip(-2.05,-0.62) rectangle (18.68,10.69);
+\draw [line width=1.2pt,fill=gray!60] (4,5) circle (5cm);
+\draw [line width=1.2pt,fill=white] (4,5) circle (3cm);
+\draw [line width=1.2pt,fill=gray!60] (14,5) circle (4cm);
+\draw [line width=1.2pt] (14,5)-- (16.51,8.12);
+\draw [line width=1.2pt] (4,5)-- (5.94,7.29);
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt] (5.94,7.29)-- (7.23,8.82);
+\draw (5.8,8.5) node[anchor=north west] {$x$};
+\draw (4.3,6.7) node[anchor=north west] {3};
+\draw (14.4,6.9) node[anchor=north west] {4};
+\fill [color=black] (4,5) circle (1.5pt);
+\fill [color=black] (14,5) circle (1.5pt);
+\fill [color=black] (7.23,8.82) circle (1.5pt);
+\fill [color=black] (16.51,8.12) circle (1.5pt);
+\fill [color=black] (5.94,7.29) circle (1.5pt);
+\end{tikzpicture}
+\end{center}
+\end{oefening}
+
+\begin{oefening}
+  Los op in $\mathbb{R}$
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+    \itemsep0.7em
+    \item $x^3+2x-3=0$
+    \item $7x^3+8x^2+3x+2=0$
+    \item $x^3-x+6=0$
+    \item $3x^2(x-1)=\dfrac{7}{2}x^2-2$
+    \item $8x^3+12x^2+6x+2=0$
+    \item $20x^3+60x^2+45x=0$
+    \item $x^4-4x^3-x^2+16x-12=0$
+    \item $x+\dfrac{7x}{2}=\dfrac{3x^3}{2}+\dfrac{3x^2}{2}+\dfrac{3}{2}$
+    \item $x^3+(2x+1)^2=x+1$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening} % www3.ul.ie/~mlc/support/.../chap3/3_3.pdf
+  Los volgende vergelijkingen van graad hoger dan twee op in $\mathbb{R}$:
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \itemsep.7em
+  \item $x^3-17x^2+54x-8=0$
+  \item $x^3-6x^2+11x-6=0$
+  \item $x^3-7x=6$
+  \item $2x^3+9x^2+7x+2=2x^2$
+  \item $22x+8=3x^3+7x^2$
+  \item $2x^4+8x^3-\dfrac{7x^2}{2}-\dfrac{67x}{2}-15=0$
+  \item $4x^4+8x^3+3x^2-2x-1=0$
+  \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Los op in $\mathbb{R}$:
+\begin{enumerate}[(a)]
+  \itemsep0.6em
+  \begin{multicols}{2}
+  \item $2x^3+3x^2-17x+12=0$
+  \item $3x^3+13x^2-18x-40=0$
+  \item $x^3+4x^2-15x-18=0$
+  \item $2x^3+9x^2+7x-6=0$
+  \item $-3x^3+16x^2-17x+4=0$
+  \item $2x^4+3x^3=17x^2-12x$
+  \item $16x^3+4x=3x^4+17x^2$
+  \item $2x^4-11x^3-12x^2+36x=0$
+  \item $x^4+3x^3-51x^2+37x+90=0$
+  \item $6x^3-11x^2-3x+2=0$
+  \item $x^3-9x^2+26x=24$
+  \item $x^3-3x+2=0$
+  \item $x^4+x^3=10x^2-8x$
+  \item $x^4+2x-1=2x^3$
+  \item $1=x^4$
+  \item $3x^2+x(x-1)^2=5x+4$
+  \item $(x+1)(x^2+2x+1)=2x(x+2)-1$
+  \item $x^3+70=39x$
+  \item $x^4+3x^2+10x=6x^3$
+  \item $-2(10x+x^3)=x^2(10+x^2)$
+  \item $x^4+82x+176=93x^2-2x^3$
+  \item $12x^3+22x^2-6x-4=0$
+  \item $2x(3x^3-26)=20+x^2(31-7x)$
+  \item $x^4-8x^3-3x^2+62x+56=0$
+  \item $-x^3+3x^2-3x=0$
+  \item $-x^4-x^3-7x^2-9x+18=0$
+  \end{multicols}
+\end{enumerate}
+\end{oefening}
+
+
+
+\end{document}
+
+
+
+
+\begin{minipage}[c]{0.4\textwidth}
+\end{minipage}
+\begin{minipage}[c]{0.6\textwidth}
+\dotlines{10}
+\end{minipage}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
