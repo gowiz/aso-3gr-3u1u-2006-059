@@ -230,6 +230,376 @@ Los op in $\mathbb{R}$:
 \end{enumerate}
 \end{oefening}
 
+\pagebreak
+\section{Veeltermfuncties}
+
+\begin{oefening}
+Bespreek volgende functies:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $\displaystyle f(x)=42$
+  \item $\displaystyle f(x)=0$
+  \item $\displaystyle f(x)=-2x+3$
+  \item $\displaystyle f(x)=\dfrac{1}{2}x-2$
+  \item $\displaystyle f(x)=-x^2+7x-10$
+  \item $\displaystyle f(x)=\dfrac{1}{4}x^2-x-3$
+  \item $f(x)=(x+2)^2-4$
+  \item $f(x)=4x+(x-2)^2$
+  \item $f(x)=(x-2)(x+2)$
+  \item $f(x)=(x+3)^2+(x-3)^2$
+  \item $f(x)=-(x-1)(x+1)$
+  \item $f(x)=-2x^2+29x-102$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Bepaal het functievoorschrift van
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item de rechte door $(-2, 3)$ en $(1, 0)$.
+  \item de rechte door $(-2, 0)$ en $(1, 3)$.
+  \item de rechte door $(1, -1)$ en $(3, -1)$.
+  \item de rechte door $(3, -1)$ en $(3, 6)$.
+  \item de parabool door $(1,4)$ en met nulwaarden 2 en 5.
+  \item de parabool met volgende functiewaardentabel
+  \begin{center}
+    \begin{tabular}{c|cccccc}
+    $x$ & -2 & -1 & 0 & 1 & 2 & 3\\
+    \hline
+    $y$ & 2.25 & -1.75 & -3.75 & -3.75 & -1.75 & 2.25
+    \end{tabular}
+  \end{center}
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Bespreek (domein, bereik, nulwaarden, tekenverloop, schets, stijgen\&dalen):\\
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $f:y=\dfrac{1}{8}(x^3-12x)$
+  \item $f:y=x^3-6x^2+32$
+  \item $f:y=\dfrac{1}{36}(x^3+3x^2-24x+20)$
+  \item $f:y=2x^3+6x^2-48x+40$
+  \item $f:y=x^3-\dfrac{9}{4}x$
+  \item $f:y=x^3+x^2-17x+15$
+  \item $f:y=4x^3-8.84x^2-20.752x+25.856$
+  \item $f:y=(x^2-1)(1+x^2)-x^4+2x^3-3x+19-7x^2$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Bespreek volgende functies:
+  \begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $f(x)=\dfrac{1}{10}(-2x^3-11x^2+21x+90)$
+  \item $f(x)=3x^2-0.5x^3$
+  \item $f(x)=x^3+3x^2-x-3$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+\begin{enumerate}[(a)]
+  \item Geef het functievoorschrift als een veeltermfunctie van de functie
+$$f(x)=(x-3)(x+1)(2x-1)$$
+  \item Geef alle nulwaarden van de functie.
+  \item Bepaal het tekenverloop van de functie.
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+\begin{enumerate}[(a)]
+  \item Bepaal het functievoorschrift van een derdegraadsfunctie die als nulwaarden $-3$, $2$ en $3.5$ heeft.
+  \item Bepaal nu het functievoorschrift van een andere derdegraadsfunctie met dezelfde nulwaarden.
+\end{enumerate}
+\end{oefening}
+
+
+
+\begin{oefening}
+Bespreek zo exact mogelijk, maak gebruik van de bijhorende grafiek (domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen):
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep0.5em
+  \item $f(x)=x^4-3x^3+6x-4$
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \draw[->,color=black] (-2.77,0) -- (3.78,0);
+    \foreach \x in {-2,-1,1,2,3}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[->,color=black] (0,-7.44) -- (0,2.26);
+    \foreach \y in {-7,-6,-5,-4,-3,-2,-1,1,2}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-2.77,-7.44) rectangle (3.78,2.26);
+    \draw[line width=1.6pt, smooth,samples=100,domain=-2.7709659189295555:3.7776369933097222] plot(\x,{(\x)^4-3*(\x)^3+6*(\x)-4});
+    \draw (2.5,1.46) node[anchor=north west] {f};
+    \end{tikzpicture}
+  \end{center}
+  \item $f(x)=x^5-x^4-13x^3+13x^2+36x-36$
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[xscale=.9, yscale=.12, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-4.24,0) -- (4.2,0);
+\foreach \x in {-4,-3,-2,-1,1,2,3,4}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-53.86) -- (0,26.88);
+\foreach \y in {-50,-40,-30,-20,-10,10,20}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-4.24,-53.86) rectangle (4.2,26.88);
+\draw[line width=1.6pt, smooth,samples=100,domain=-4:4] plot(\x,{(\x)^5-(\x)^4-13*(\x)^3+13*(\x)^2+36*(\x)-36});
+\draw (2.39,-11.21) node[anchor=north west] {f};
+\end{tikzpicture}
+  \end{center}
+  \item $f(x)=x^4-\dfrac{23}{12}x^3+\dfrac{29}{24}x^2-\dfrac{1}{4}x$
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[xscale=5, yscale=40,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-0.22,0) -- (1.04,0);
+\foreach \x in {-0.2,0.5,1}
+\draw[shift={(\x,0)},color=black] (0pt,.1pt) -- (0pt,-.1pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.02) -- (0,0.04);
+\foreach \y in {}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\clip(-0.22,-0.02) rectangle (1.04,0.04);
+\draw[line width=1.6pt, smooth,samples=100,domain=-0.1:1] plot(\x,{(\x)^4-23/12*(\x)^3+29/24*(\x)^2-1/4*(\x)});
+\draw (2.39,-12.67) node[anchor=north west] {f};
+\end{tikzpicture}
+  \end{center}
+  \item $f(x)=x^5-15x^3+10x^2+60x-72$
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[xscale=.7, yscale=.035,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-4.76,0) -- (4.19,0);
+\foreach \x in {-4,-2,2,4}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-148.05) -- (0,85.82);
+\foreach \y in {-140,-120,-100,-80,-60,-40,-20,20,40,60,80}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\clip(-4.76,-148.05) rectangle (4.19,85.82);
+\draw[line width=1.6pt, smooth,samples=100,domain=-4:4] plot(\x,{(\x)^5-15*(\x)^3+10*(\x)^2+60*(\x)-72});
+\draw (3.51,39.24) node[anchor=north west] {f};
+\end{tikzpicture}
+  \end{center}
+  \item $f(x)=x^6+2x^5-11x^4-12x^3+36x^2$
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+    \begin{tikzpicture}[xscale=.7, yscale=.1, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \draw[->,color=black] (-4.43,0) -- (3.29,0);
+    \foreach \x in {-4,-2,2}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[->,color=black] (0,-10) -- (0,60);
+    \foreach \y in {,50}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \clip(-4.43,-10) rectangle (3.29,70);
+    \draw[line width=1.6pt, smooth,samples=100,domain=-3.6:2.7] plot(\x,{(\x)^6+2*(\x)^5-11*(\x)^4-12*(\x)^3+36*(\x)^2});
+    \draw (-1.44,82.3) node[anchor=north west] {f};
+    \end{tikzpicture}
+  \end{center}
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Bespreek door gebruik te maken van ICT (domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen):
+\begin{enumerate}[(a)]
+  \itemsep0.5em
+  \item $f(x)=(x-2)^2(x+4)^2$
+  \item $f(x)=(x-16)^2-x^2-8x^4-64$
+  \item $f(x)=x(x-1)(x-2)(x-3)(x-4)$
+  \item $f(x)=-\dfrac{1}{8}(x^4+x^3-14x^2-8x+48)$
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Beschouw de functie $f(x)=-\dfrac{1}{4}(x^4+3x^3-3x^2-9x)$, met als grafiek:
+\begin{center}
+\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-4.31,-1.55) grid (3.31,2.64);
+\draw[->,color=black] (-4.31,0) -- (3.31,0);
+\foreach \x in {-4,-3,-2,-1,1,2,3}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-1.55) -- (0,2.64);
+\foreach \y in {-1,1,2}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-4.31,-1.55) rectangle (3.31,2.64);
+\draw[line width=1.6pt, smooth,samples=100,domain=-4.306720586404644:3.3067938031642226] plot(\x,{(-1)/4*((\x)^4+3*(\x)^3-3*(\x)^2-9*(\x))});
+\draw (1.54,2.02) node[anchor=north west] {f};
+\end{tikzpicture}
+\end{center}
+Bespreek (domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen).
+\end{oefening}
+
+\begin{oefening}
+Construeer een veeltermfunctie van de vierde graad met nulwaarden $x_0=-4$, $x_1=2$ en $x_2=3$. De nulwaarde $x_1$ komt tweemaal voor (we zeggen dat deze multipliciteit 2 heeft). De functie moet negatief zijn voor $x\in]-\infty,-4[$.
+\end{oefening}
+
+
+\pagebreak
+\section{Veeltermongelijkheden}
+
+\begin{oefening}
+Los op in $\mathbb{R}$:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep0.6em
+  \item $x^2(2-x)\leq6-5x$
+  \item $2x^3-x^2-13x<6$
+  \item $x(x+2)^2\leq9+x-x^2$
+  \item $x(x^2+12)>2(3x^2+4)$
+  \item $x(x^2-3)<2$
+  \item $x^4+27x^2+4x<36+12x^3$
+  \item $12+x^3\geq13x$
+  \item $x^4-71x^2-66x-4x^3>0$
+  \item $2x(x+1)-\frac{1}{2}x<2(x+1)^2$
+  \item $(1+2x)^2\leq(x-2)(x+2)$
+  \item $x(x+1)-\frac{x+3}{10}$
+  \item $-x^3+2x^2\leq6-5x$
+  \item $\frac{x(x^2-3)}{2}<1$
+  \item $x^3\geq8$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Welke reële getallen zijn groter dan hun derdemacht?
+\end{oefening}
+
+\begin{oefening}
+Voor welke reële getallen is het kwadraat groter dan de derdemacht
+\end{oefening}
+
+\begin{oefening}
+Heeft elke veeltermongelijkheid oplossingen? Indien je nee antwoord, geef een voorbeeld van een veeltermongelijkheid die geen oplossingen heeft.
+\end{oefening}
+
+
+\pagebreak
+\section{Toepassingen}
+
+\begin{oefening}
+Kasper heeft na zijn verjaardagsfeest nog een vuurpijl over. Hij vuurt die af vanuit zijn slaapkamer. De pijl vliegt eerst lichtjes naar beneden, maar gaat uiteindelijk toch de lucht in om na 5 seconden te ontploffen. De hoogte $h$ (in meters) in functie van de tijd $x$ (in seconden) wordt beschreven door de formule:
+$$h=x^3-4x^2+2x+8$$
+\begin{enumerate}[(a)]
+  \item Hoe hoog is de slaapkamer van Kasper?
+  \item Hoe hoog is de vuurpijl na 5 seconden?
+  \item Wanneer vliegt de vuurpijl op een hoogte van 5 meter?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+De hoogte $h$ (in meters) van een luchtballon $t$ uren na het opstijgen wordt gegeven door de functie:
+$$h(t)=-t^4+9t^3-120t^2+500t$$.
+\begin{enumerate}[(a)]
+  \item Bereken na hoeveel tijd de ballon weer op de grond komt.
+  \item Na hoeveel uren vliegt de ballon op een hoogte van 400m?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een bedrijf produceert fietscomputertjes. De bedrijfsleiding wil weten hoeveel computertjes per uur moeten geproduceerd worden om winst te maken in de huidige situatie. Het verband tussen de winst $W$ (in euro) en de productie $x$ (aantal geproduceerde computertjes) per uur is:
+$$W(x)=-\dfrac{1}{2}x^3+8x^2-\dfrac{55}{2}x$$
+\begin{enumerate}[(a)]
+  \item Bij welke productie zal de winst 0 euro bedragen?
+  \item Bij welke productie wordt er winst gemaakt?
+  \item Bij welke productie wordt er verlies gemaakt?
+  \item Bij welke productie is de winst gelijk aan 36 euro?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een game studio modelleert de winst op zijn laatste computer spelletje met behulp van
+$$W(n)=-2n^2+28n-90$$ waarbij $n$ het aantal per honderdduizend verkochte spelletjes is en waarbij $W$ de winst is in miljoenen euro.
+\begin{enumerate}[(a)]
+  \item Hoeveel spelletjes moet het bedrijf op zijn minst verkopen om uit de kosten te geraken?
+  \item Wanneer maakt het bedrijf winst/verlies?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+De bevolking van een Limburgse gemeente is sinds 1980 geëvolueert volgens de functie $$f(x)=5x^3-85x^2+80x+4000$$ waarbij $x=0$ overeenkomt met het jaar 1980.
+\begin{enumerate}[(a)]
+  \item Hoeveel inwonders waren er in 1980?
+  \item In welk jaar zullen er 31000 inwoners zijn? (één tijdstip volstaat)
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een groep bergbeklimmers vertrekt op tocht.  De route die zij volgen wordt beschreven	door de volgende veeltermfunctie $$h(x)=90x^2-10x^3$$ met
+\begin{itemize}
+  \item h = hoogte in meter
+  \item x = tijd in uren ( x = 0 is het tijdstip waarop de groep begint met de beklimming)
+\end{itemize}
+\begin{enumerate}[(a)]
+  \item Hoelang duurt de tocht?
+  \item Na hoeveel uur bereikt de groep een hoogte van 800 meter? (één tijdstip volstaat)
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Een bedrijf produceert gps-toestellen voor auto’s.  De bedrijfsleiding wil weten hoeveel toestellen er per uur geproduceerd moeten worden om winst te maken in de huidige situatie.  Het verband tussen de winst $W$ (in euro) en de productie $x$ (aantal geproduceerde toestellen) per uur is
+$$W=-\dfrac{3}{2}x^3+24x^2-72x\;.$$
+\begin{enumerate}[(a)]
+  \item Bij welke productie is de winst gelijk aan 0 euro ($W = 0$)?
+  \item Bij welke productie wordt er winst ($W > 0$) en bij welke productie wordt er verlies ($W < 0$) gemaakt?
+  \item Bij welke productie is de winst gelijk aan 108 euro?  (één oplossing volstaat)
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Ibuprofen is een pijnstillend middel.  Om het aantal mg $m$ van het middel in de bloedsomloop te schatten, $t$ uren nadat 100 mg van dit middel werd ingenomen, gebruiken we het verband
+$$m(t)=-t^4+4t^3-9t^2+36t$$
+met $m =$ aantal $\mg$ van het middel Ibuprofen in het bloed $t = $ aantal uren nadat je $100 \mg$ Ibuprofen hebt ingenomen.
+\begin{enumerate}[(a)]
+  \item Wanneer is het pijnstillend middel uitgewerkt?
+  \item Op welk tijdstip is het opgenomen gehalte in het bloed gelijk aan $30 \mg$? (één tijdstip volstaat)
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Het aantal bezoekers dat zich op een zonnige dag in de maand juli in een dierenpark bevindt, zou je kunnen benaderen door het functievoorschrift
+$$n(t)=100t+140t^2-15t^3$$
+met $n(t)$ het aantal bezoekers op tijdstip $t$ in uren, waarbij $t=0$ overeenkomt met 9u 's morgens (het openingsuur van het dierenpark).
+\begin{enumerate}[(a)]
+  \item Bepaal het sluitingsuur van het dierenpark.
+  \item Hoeveel bezoekers waren er om 12 uur 's middags?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Stef woont in een appartement en laat van in zijn venster een opgeblazen ballon vliegen.  Deze gaat eerst naar beneden om dan snel de hoogte in te gaan.  De baan kan beschreven worden door de volgende veeltermfunctie
+$$h(x)=-4x^3+16x^2-6x+12\;.$$
+Hierbij is
+\begin{itemize}
+  \item $h$ de hoogte in meter,
+  \item $x$ de afstand in meter.
+\end{itemize}
+Hoe hoog is de vensterbank van het raam waaruit Stef de ballon laat vliegen? Duid het juiste antwoord aan en leg uit waarom je die oplossing hebt gekozen.\\
+\begin{center}
+  \begin{tabular}{|ccccc|}
+  \hline
+  4 meter & 6 meter & 8 meter & 12 meter & 18 meter\\[0.2cm]
+  \hline    
+  \end{tabular}
+\end{center}
+\end{oefening}
+
+\begin{oefening}{\scriptsize\em Opmerking: Deze oefening kon je vorig jaar ook al oplossen want het betreft een tweedegraadsveeltermfunctie}\\
+Een ecologische verbindingsbrug moet worden ontworpen over een belangrijke snelweg. De brug over de snelweg wordt gebouwd in de vorm van een parabool. De snelweg is 8 meter breed en wordt gecentreerd onder de parabolische boog. De brug moet in het totaal een breedte van $16 \m$ overspannen. De brug moet een minimale hoogte van 4 m over de snelweg te bieden.
+\begin{enumerate}[(a)]
+  \item Teken de parabool en de snelweg, label alle relevante afmetingen.
+  \item Plaats een coördinatenstelsel op de tekening zodat de $y$-as de snelweg in het midden doorsnijdt en de $x$-as gelegen is aan de voet van de brug.
+  \item Vind de kwadratische functie in standaardvorm die de hoogte van de brug $y$ geeft als functie van de horizontale afstand van het centrum $x$.
+  \item Bepaal de maximale hoogte van de boog over de snelweg.
+\end{enumerate}
+\end{oefening}
+
+
 
 
 \end{document}
@@ -242,10 +612,6 @@ Los op in $\mathbb{R}$:
 \begin{minipage}[c]{0.6\textwidth}
 \dotlines{10}
 \end{minipage}
-
-
-
-
 
 
 
