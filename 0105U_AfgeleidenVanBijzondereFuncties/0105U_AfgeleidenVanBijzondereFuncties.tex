@@ -1,9 +1,13 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[12pt]{article}
 
 \input{../gowiz.tex}
 
+\usetikzlibrary{arrows,shapes}
+\usepackage{dot2texi}
+
 \usepackage{versions}
-\excludeversion{theorie}
+%\excludeversion{theorie}
+\includeversion{theorie}
 
 \begin{document}
 
@@ -17,12 +21,25 @@
 \begin{center}
   \begin{mdframed}
   \centering
-  \fontsize{40}{50}\selectfont Afgeleiden van bijzondere functies
+  \fontsize{40}{40}\selectfont Afgeleiden van bijzondere functies
   \end{mdframed}
   \vfill
+  \begin{center}
+    \begin{minipage}{0.3\textwidth}
+    Een afleidingsoperator en een functie hebben ruzie.\\
+    ''Pas op,'' dreigt de afleidingsoperator, ''of ik leid je af.''\\
+    ''Geeft niks,'' zegt de functie. ''Ik ben immers $e^x$.''\\
+    ''Maar ik ben $\frac{d}{dt}$.''
+    \end{minipage}
+  \end{center}
   \vfill
 \end{center}
 \subsection*{Doelstelling}
+Je kan\hfill  {\scriptsize(LP 2006-059, LI 1.5.8)}
+\begin{itemize}
+  \item de kettingregel voor het afleiden van samengestelde functies toepassen
+\end{itemize}
+
 Je kan de afgeleiden functie bepalen van\hfill  {\scriptsize(LP 2006-059, LI 1.6.13, 1.7.8, 1.8.6, 1.9.6)}
 \begin{itemize}
   \item goniometrische functies
@@ -51,7 +68,174 @@ Je kan de afgeleiden functie bepalen van\hfill  {\scriptsize(LP 2006-059, LI 1.6
 
 \onehalfspacing
 
+\section{Soorten functies}
+
+\subsection{Definities}
+We komen nu op een punt waarbij we veel verschillende soorten {\bf reële functies} hebben besproken. We zijn begonnen met de {\bf veeltermfuncties} die we onderverdeeld hebben in de {\bf constante functies}, {\bf lineaire functies}, {\bf kwadratische functies}, enz. Daarna hebben we de {\bf rationale}, {\bf irrationale}, {\bf exponentiële}, {\bf logaritmische} en {\bf goniometrische functies} nog gezien.
+
+Bij een groot deel van deze functies kunnen we het functievoorschrift opbouwen met behulp van de 6 algebraïsche hoofdbewerkingen, namelijk som, verschil, product, quotiënt, macht en wortel. Deze functies noemen we allemaal {\bf algebraïsche functies}.
+
+Voorbeelden zijn:
+\begin{multicols}{2}
+  \begin{itemize}
+    \item $\displaystyle f(x)=5x-2$
+    \item $\displaystyle f(x)=-2x^2-6$
+    \item $\displaystyle f(x)=\dfrac{3x-5}{2x+3}$
+    \item $\displaystyle f(x)=\dfrac{1}{x-1}-\dfrac{1}{x+1}$
+    \item $\displaystyle f(x)=\sqrt{3x+1}$
+    \item $\displaystyle f(x)=\sqrt[5]{8x^3+4x^2+2x+1}$
+    \item $\displaystyle f(x)=\dfrac{\sqrt{3x+2}}{x-2}$
+    \item $\displaystyle f(x)=\sqrt{\dfrac{4x-2}{x+1}}$
+  \end{itemize}
+\end{multicols}
+
+We herkennen hier vlot de veeltermfuncties en de rationale functies in. Alle algebraïsche functies die geen rationale functies zijn, ook na vereenvoudigen, noemen we {\bf irrationale functies}. Je kan ze herkennen omdat de onbepaalde $x$ onder de wortel voorkomt.
+
+Alle functies die niet opgebouwd worden door middel van de hoofdbewerkingen worden {\bf transcendente functies} genoemd. Wij hebben ons in de besprekingen beperkt tot de exponentiële, logaritmische en goniometrische functies. Transcendente functies zijn evengoed een som of product van een deze functies.
+
+Voorbeelden zijn:
+\begin{multicols}{2}
+  \begin{itemize}
+    \item $\displaystyle f(x)=e^{x+1}$
+    \item $\displaystyle f(x)=2^{x^2+1}$
+    \item $\displaystyle f(x)=\log_2{x}$
+    \item $\displaystyle f(x)=\ln{x^2+x+1}$
+    \item $\displaystyle f(x)=a\sin(b(x+c))+d$
+    \item $\displaystyle f(x)=3\tan(x)+2\cot(x)$
+    \item $\displaystyle f(x)=\dfrac{\ln{x}}{x}$
+    \item $\displaystyle f(x)=\sqrt{\sin(x)+\cos(x)}$
+  \end{itemize}
+\end{multicols}
+
+\subsection{Classificatie van de functies}
+Onze verschillende soorten geziene functies kunnen we als volgt classificeren
+\begin{center}
+  \begin{dot2tex}[scale=0.6,dot,tikz,options=-tmath]
+      digraph RepGraph {
+       reeel[texlbl="\parbox{2cm}{\centering Reële functie}"]
+       algebraisch[texlbl="\parbox{2cm}{\centering Algebraïsche functie}"]
+       transcendent[texlbl="\parbox{2.5cm}{\centering Transcendente functie}"]
+       rationaal[texlbl="\parbox{2cm}{\centering Rationale functie}"]
+       irrationaal[texlbl="\parbox{2cm}{\centering Irrationale functie}"]
+       veelterm[texlbl="\parbox{2cm}{\centering Veelterm- functie}"]
+       homografisch[texlbl="\parbox{2.3cm}{\centering Homografische functie}"]
+       constante[texlbl="\parbox{2cm}{\centering Constante functie}"]
+       lineair[texlbl="\parbox{2cm}{\centering Lineaire functie}"]
+       kwadratisch[texlbl="\parbox{2.3cm}{\centering Kwadratische functie}"]
+       hogeregraads[texlbl="\parbox{3.4cm}{\centering Hogeregraadsveelterm functie}"]
+       exponentieel[texlbl="\parbox{2cm}{\centering Exponentiële functie}"]
+       logaritmisch[texlbl="\parbox{2cm}{\centering Logaritmisch functie}"]
+       goniometrisch[texlbl="\parbox{2.5cm}{\centering Goniometrisch functie}"] 
+       reeel -> algebraisch
+       algebraisch -> rationaal
+       algebraisch -> irrationaal
+       rationaal -> veelterm
+       rationaal -> homografisch
+       veelterm -> constante
+       veelterm -> lineair
+       veelterm -> kwadratisch
+       veelterm -> hogeregraads
+       reeel -> transcendent
+       transcendent -> exponentieel
+       transcendent -> logaritmisch
+       transcendent -> goniometrisch
+      }
+  \end{dot2tex}
+\end{center}
+Hierbij gaan we van algemeen naar meer specifiek. Zo is bijvoorbeeld de functie
+$$f(x)=x^2-4$$
+een kwadratische functie want deze functie kan geschreven worden in de vorm
+$$f(x)=ax^2+bx+c\qquad\mbox{ met } a=1, b=0, c=-4$$
+en deze functie is ook een veeltermfunctie, want deze functie kan geschreven worden in de vorm
+$$f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots +a_1x+a_0\mbox{ met } a_n=a_{n-1}=\ldots=a_{3}=0, a_2=1, a_1=0, a_0=-4$$
+en het is ook een rationale functie, want deze functie kan geschreven worden als een breuk met in teller en in noemer een veelterm (de noemer is wel de heel eenvoudige veelterm, namelijk de constante 1)
+$$f(x)=\dfrac{t(x)}{n(x)}\quad\mbox{ met in teller en noemer veeltermen }\quad t(x)=x^2-4, n(x)=1$$
+en het is een algebraïsche functie want ze is opgebouwd uit een verschil van een kwadraat en een getal en uiteindelijk is het een reële functie want reële getallen $x$ worden afgebeeld op hoogstens één reëel getal $x$.\\[1cm]
+
+\subsection{Oefeningen}
+
+\begin{oefening}
+Classificeer volgende reële functies zo specifiek mogelijk
+\begin{multicols}{2}
+  \begin{enumerate}[(a)]
+    \itemsep1em
+    \item $\displaystyle f(x)=0$
+    \item $\displaystyle f(x)=\cos x$
+    \item $\displaystyle f(x)=\sin(x^2-1)$
+    \item $\displaystyle f(x)=\cos x - \sin x$
+    \item $\displaystyle f(x)=\dfrac{x-1}{x+1}$
+    \item $\displaystyle f(x)=\dfrac{x^2-1}{x+1}$
+    \item $\displaystyle f(x)=\dfrac{1}{x^2+1}$
+    \item $\displaystyle f(x)=2x^2+x+1$
+    \item $\displaystyle f(x)=x^{9}+2x^{8}+\ldots+9x+10$
+    \item $\displaystyle f(x)=\dfrac{x^2+1}{1}$
+    \item $\displaystyle f(x)=\dfrac{x}{x-1}+\dfrac{x}{x+1}$
+    \item $\displaystyle f(x)=\ln x + e^x$
+    \item $\displaystyle f(x)=e^{x^2+1}$
+    \item $\displaystyle f(x)=e^{\cos x}$
+    \item $\displaystyle f(x)=e^{\ln x}$
+    \item $\displaystyle f(x)=\sqrt{x^2+1}$
+    \item $\displaystyle f(x)=\sqrt{\dfrac{x^2+1}{x+1}}$
+    \item $\displaystyle f(x)=\dfrac{\sqrt{x+1}}{x-1}$
+    \item $\displaystyle f(x)=\sqrt{x^2+1}$
+    \item $\displaystyle f(x)=\ln \dfrac{x^2+1}{x-1}$
+    \item $\displaystyle f(x)=x^x$
+    \item $\displaystyle f(x)=x!$
+    \item $\displaystyle f(x)=xi+x \mbox{ met } i^2=-1$
+  \end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Geef een transcendente functie die geen exponentiële, logaritmische- of goniometrische functie is.
+\end{oefening}
+
+
+\pagebreak
 \section{Afgeleide functie van een irrationale functie}
+
+\subsection{De functie $f(x)=\sqrt{x}$}
+
+De functie $f(x)=\sqrt{x}$ is afleidbaar in haar domein. Haar afgeleide is de functie die $x$ afbeeldt op $\dfrac{1}{2\sqrt{x}}$.
+$$\left(\sqrt{x}\right)'=\dfrac{1}{2\sqrt{x}}$$
+
+Met de kettingregel wordt dit
+$$\left(\sqrt{f(x)}\right)'=\dfrac{f(x)}{2\sqrt{f(x)}}$$
+
+\subsection{Voorbeelden}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+\left(\sqrt{3x-5}\right)' &= \dfrac{(3x-5)'}{2\sqrt{3x-5}}\\
+                          &= \dfrac{3}{2\sqrt{3x-5}}
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+\left(\sqrt{x^2+1}\right)' &= \dfrac{(x^2+1)'}{2\sqrt{x^2+1}}\\
+                           &= \dfrac{2x}{2\sqrt{x^2+1}}\\
+                           &= \dfrac{x}{\sqrt{x^2+1}}
+\end{align*}
+\end{minipage}
+
+\subsection{Uitbreiding}
+We herinneren ons de definities voor machten met negatieve exponenten en deze voor machten met rationale exponenten:
+$$\forall a\in\mathbb{R}_0, \forall n\in\mathbb{N} : a^{-n}=\dfrac{1}{a^n}$$
+$$\forall a\in\mathbb{R}_0^+, \forall m\in\mathbb{Z}, \forall n\in\mathbb{N}_0 : a^{\frac{m}{n}}=\sqrt[n]{a^m}$$
+
+We merken nu dat we $\sqrt{x}$ evengoed kunnen afleiden door de machtregel te gebruiken
+$$
+  \left(\sqrt{x}\right)' = \left(x^{1/2}\right)'
+                         = \frac{1}{2}x^{1/2-1}
+                         = \frac{1}{2}x^{-1/2}
+                         = \frac{1}{2x^{1/2}}
+                         = \frac{1}{2\sqrt{x}}
+$$
+We veralgemenen dat met
+$$\left(x^n\right)'=nx^{n-1} \mbox{ met } n\in\mathbb{Q}$$
+en met de kettingregel wordt dit
+$$\left(f^n\right)'=nf^{n-1}\cdot f' \mbox{ met } n\in\mathbb{Q}$$
+
+\subsection{Oefeningen}
 
 \begin{oefening}
 Bereken
@@ -101,6 +285,47 @@ Bereken de afgeleide van $u$ naar $x$ indien $u=r^{3/2}$ en $r=\sqrt{4+x^2}$.
 
 \pagebreak
 \section{Afgeleide functie van een logaritmische functie}
+
+\subsection{Formules}
+
+\begin{align*}
+  (\log_a x)' &= \dfrac{1}{x\cdot \ln a}\\\\
+  (\log_a f(x))' &= \dfrac{f'(x)}{f(x)\cdot \ln a} 
+\end{align*}
+
+\subsection{Voorbeelden}
+
+%\begin{minipage}{0.5\textwidth}
+\begin{align*}
+\left(\log_2 x\right)' &= \dfrac{1}{x\ln 2}\\\\
+%\end{align*}
+%\end{minipage}
+%\begin{minipage}{0.5\textwidth}
+%\begin{align*}
+\left(\log(x^2+1)\right)' &= \dfrac{(x^2+1)'}{(x^2+1)\ln 10}\\
+                           &= \dfrac{2x}{(x^2+1)\ln 10}\\
+\end{align*}
+%\end{minipage}
+
+\subsection{Bijzondere gevallen}
+
+Rekening houdend met $\ln e = 1$ krijgen we
+
+\begin{align*}
+  (\ln x)' &= \dfrac{1}{x}\\\\
+  (\ln f(x))' &= \dfrac{f'(x)}{f(x)} 
+\end{align*}
+
+\subsection{Voorbeelden}
+
+%\begin{minipage}{0.5\textwidth}
+\begin{align*}
+\left(\ln(5x+1)\right)' &= \dfrac{(5x+1)'}{5x+1}\\
+                        &= \dfrac{5}{5x+1}\\
+\end{align*}
+%\end{minipage}
+
+\subsection{Oefeningen}
 
 \begin{oefening}
 Bepaal de afgeleide functie $f'$ van
@@ -157,6 +382,50 @@ Bepaal de stijgingssnelheid op tijdstip $t=3\min$.
 \pagebreak
 \section{Afgeleide functie van een exponentiële functie}
 
+\subsection{Opstellen van de formule}
+
+\begin{align*}
+       && f(x) &= a^x && \mbox{is een exponentiële functie met grondtal $a$}\\
+  \LRA && \log_a f(x) &= x && \mbox{links en rechts de logaritme met grondtal $a$ nemen}\\
+  \LRA && \dfrac{f'(x)}{f(x)\ln a} &= 1 && \mbox{links en rechts afleiden}\\
+  \LRA && f'(x) &= f(x)\ln a\\
+  \LRA && \left(a^x\right)' &= a^x \ln a && \mbox{vervangen van $f(x)$ door $a^x$}
+\end{align*}
+
+\subsection{Formules}
+
+\begin{align*}
+  \left(a^x\right)' &= a^x \ln a\\\\
+  \left(a^{f(x)}\right)' &= a^{f(x)} \ln a \cdot f'(x)\\
+\end{align*}
+
+\subsection{Voorbeelden}
+
+\begin{align*}
+\left(5^x\right)'      &= 5^x \ln 5\\\\
+\left(4^{2x-3}\right)' &= 4^{2x-3} \ln 4 \cdot (2x-3)'\\
+                       &= 2 \cdot 4^{2x-3} \ln 4\\
+                       &= 2 \cdot \left(2^2\right)^{2x-3} \ln 4\\
+                       &= 2 \cdot 2^{4x-6} \ln 4\\
+                       &= 2^{4x-5} \ln 4\\
+\end{align*}
+
+\subsection{Bijzondere gevallen}
+Opnieuw gebruik makend van $\ln e=1$ krijgen we
+\begin{align*}
+  \left(e^x\right)' &= e^x\\\\
+  \left(e^{f(x)}\right)' &= e^{f(x)} \cdot f'(x)\\
+\end{align*}
+
+\subsection{Voorbeelden}
+
+\begin{align*}
+\left(e^{x^2+1}\right)' &= e^{x^2+1} \cdot (x^2+1)'\\
+                        &= 2x e^{x^2+1}\\
+\end{align*}
+
+\subsection{Oefeningen}
+
 \begin{oefening}
 Bereken de afgeleide functie $Df(x)$
 \begin{multicols}{2}
@@ -177,7 +446,7 @@ Bereken de afgeleide functie $Df(x)$
 \end{oefening}
 
 \begin{oefening} 
-De lading van een condensator in een circuit met een condensator condensator $C$, een weerstand $R$ en een spanningsbron $V$ wordt gegeven door
+De lading van een condensator in een circuit met een condensator $C$, een weerstand $R$ en een spanningsbron $V$ wordt gegeven door
 $$q=CV(1-e^{-t/RC})$$
 Toon dat dit een oplossing is van de differentiaalvergelijking
 $$Rq'+q/C=V$$
@@ -212,6 +481,58 @@ Wat is de oppervlakte van de grootste rechthoek die kan worden uitgefreesd?\\
 
 \pagebreak
 \section{Afgeleide functie van een goniometrische functie}
+
+\subsection{Formules}
+
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+  \left(\sin x\right)' &= \cos x\\
+  \left(\sin f(x)\right)' &= f'(x) \cdot \cos f(x)
+\end{align*}
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+  \left(\cos x\right)' &= -\sin x\\
+  \left(\cos f(x)\right)' &= -f'(x) \cdot \sin f(x)
+\end{align*}
+\end{minipage}
+
+\subsection{Voorbeelden}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+\left(\sin 7x\right)' &= (7x)' \cos 7x\\
+                      &= 7 \cos 7x\\
+\left(\cos x^2\right)' &= -(x^2)' \sin x^2\\
+                      &= - 2x \sin x^2\\
+\end{align*}
+\vfill
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+\begin{align*}
+\left(\sin \sqrt{4x-7}\right)' &= \left(\sqrt{4x-7}\right)' \cos \sqrt{4x-7}\\
+                               &= \dfrac{\left(4x-7\right)'}{2\sqrt{4x-7}} \cos \sqrt{4x-7}\\
+                               &= \dfrac{4}{2\sqrt{4x-7}} \cos \sqrt{4x-7}\\
+                               &= \dfrac{2\cos \sqrt{4x-7}}{\sqrt{4x-7}}\\
+\end{align*}
+\end{minipage}
+
+
+\subsection{Formule voor de afgeleide van de tangens}
+
+We gebruiken de definitie $\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}$, de quotiëntregel en de grondformule van de goniometrie
+\begin{align*}
+  \left(\tan x\right)' &= \left(\dfrac{\sin x}{\cos x}\right)'\\
+                       &= \dfrac{\left(\sin x\right)'\cos x - \sin x \left(\cos x\right)'}{\cos^2 x}\\
+                       &= \dfrac{\cos x\cdot\cos x - \sin x \cdot(- \sin x)}{\cos^2 x}\\
+                       &= \dfrac{\cos^2 x + \sin^2 x}{\cos^2 x}\\
+                       &= \dfrac{1}{\cos^2 x}
+\end{align*}
+
+We vinden dus de volgende formule
+$$\left(\tan x\right)'=\dfrac{1}{\cos^2 x}$$
+\vspace*{1cm}
+
+\subsection{Oefeningen}
 
 \begin{oefening}
 In éénzelfde assenstelsel, telkens in een ander kleur:
@@ -267,7 +588,6 @@ langs de $x$-as maximaal, met $v_0$ de beginsnelheid en $g$ de valversnelling.
 
 %\newpage
 \end{document}
-
 
 
 
