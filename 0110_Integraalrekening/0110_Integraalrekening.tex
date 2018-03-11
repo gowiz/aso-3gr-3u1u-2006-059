@@ -3,8 +3,8 @@
 \input{../gowiz.tex}
 
 \usepackage{versions}
-%\includeversion{theorie}
-\excludeversion{theorie}
+\includeversion{theorie}
+%\excludeversion{theorie}
 
 \begin{document}
 
@@ -21,13 +21,38 @@
   \fontsize{40}{50}\selectfont Integraalrekening
   \end{mdframed}
   \vfill
+  \includegraphics[width=.5\textwidth]{double_integral_volume_under_surface_box}
   \vfill
 \end{center}
+
+{
+\small
+\singlespacing
 \subsection*{Doelstelling}
 Je \hfill  {\scriptsize(LP 2006-059, LI 1.10)}
 \begin{itemize}
+  \item kan het begrip differentiaal en de meetkundige betekenis ervan
+  \item kent het begrip bepaalde integraal
+  \item kan het verband uitleggen tussen de bepaalde integraal van een functie en de oppervlakte van een gebied bepaald door de functie en de X-as
+  \item kent het begrip primitieve functie
+  \item kent de onderstaande eigenschappen:
+  \begin{itemize}
+    \item de stelling in verband met de optelbaarheid van de bepaalde integraal,
+    \item de middelwaardenstelling,
+    \item de hoofdstelling van de integraalrekening,
+    \item de stelling in verband met de lineariteit van de bepaalde integraal,
+    \item de stelling in verband met de bepaalde integraal en ongelijkheden
+  \end{itemize}
+  \item kan het verband illustreren tussen het berekenen van de bepaalde integraal van een functie en de primitieve van de gegeven functie
+  \item kan bij het integreren van eenvoudige veeltermfuncties, rationale functies, irrationale functies, exponentiële functies, logaritmische functies en goniometrische functies gebruik maken van:
+  \begin{itemize}
+    \item de basisformules van de integraalrekening;
+    \item de substitutiemethode;
+    \item de methode van partiële integratie
+  \end{itemize}
+  \item kan vraagstukken/problemen oplossen (ook van buiten de wiskunde) die kunnen herleid worden tot het berekenen van een integraal
 \end{itemize}
-
+}
 
 \pagestyle{empty}
 \mbox{}
@@ -42,38 +67,251 @@ Je \hfill  {\scriptsize(LP 2006-059, LI 1.10)}
 
 \pagestyle{fancy}
 \lhead{}
-\rhead{Goniometrische formules}
+\rhead{Integraalrekening}
 
 \end{theorie}
 
 \onehalfspacing
 
-\section{Differentiaal van een functie}
+\section{Differentiaal}
+
+\subsection{Differentiaal van een willekeurige functie}
+
+In volgende figuur kennen we het verloop van de functie $f$ tot aan $x=a$. We willen een voorspelling doen over $f(b)$. Noem $\Delta x=b-a$. We willen dus weten wat $\Delta y=f(b)-f(a)$ is. We zijn tevreden met een benadering van $\Delta y$.
+
+\begin{center}
+\definecolor{wqwqwq}{rgb}{0.38,0.38,0.38}
+\definecolor{uququq}{rgb}{0.25,0.25,0.25}
+\begin{tikzpicture}[scale=1.3,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-3.3,0) -- (7.19,0);
+\foreach \x in {-2,2,4,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt);
+\draw[->,color=black] (0,-1.41) -- (0,4.84);
+\foreach \y in {,2,4}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt);
+\clip(-3.3,-1.41) rectangle (7.19,4.84);
+\draw(2.93,6.98) -- (5.18,6.98);
+\draw[line width=1.6pt, smooth,samples=100,domain=-3.302227053746148:7.191102772295233] plot(\x,{1/500*((\x)+2.5)*((\x)-6.5)*((\x)+0.5)*((\x)-3.5)*((\x)-9.5)+3});
+\draw(2.88,7.93) -- (5.14,7.93);
+\draw [line width=1.2pt,dotted,color=wqwqwq,domain=-3.3:7.19] plot(\x,{(--0.95--0.46*\x)/1});
+\draw (-2.78,3.55) node[anchor=north west] {f};
+\draw (2,1.86)-- (4,1.86);
+\draw (4,1.86)-- (4,3.4);
+\draw (2.81,1.86) node[anchor=north west] {$\Delta x$};
+\begin{scriptsize}
+\fill [color=black] (4.05,6.98) circle (1.5pt);
+\draw[color=black] (4.19,7.39) node {$b = 4$};
+\fill [color=black] (4.01,7.93) circle (1.5pt);
+\draw[color=black] (4.14,8.34) node {$a = 2$};
+\fill [color=uququq] (4,1.86) circle (1.5pt);
+\draw[color=uququq] (4.23,1.64) node {$C$};
+\draw[color=wqwqwq] (-2.67,-0.55) node {$t$};
+\fill [color=uququq] (2,1.86) circle (1.5pt);
+\draw[color=uququq] (1.68,2.31) node {$A$};
+\fill [color=uququq] (4,3.4) circle (1.5pt);
+\draw[color=uququq] (3.92,3.87) node {$B$};
+\fill [color=uququq] (4,2.77) circle (1.5pt);
+\draw[color=uququq] (4.33,2.65) node {$D$};
+\fill [color=uququq] (2,0) circle (1.5pt);
+\draw[color=uququq] (2.02,-0.35) node {a};
+\fill [color=uququq] (4,0) circle (1.5pt);
+\draw[color=uququq] (4.03,-0.35) node {b};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+
+Voor de eenvoud noemen we $(a,f(a))=A$, $(b,f(b))=B$ en $(b,f(a))=C$. We zoeken dus de afstand $\Delta y=|BC|$. Teken nu de raaklijn $t$ van $f$ in $A$ en noem het snijpunt $BC \cap t=D$.Als $A$ en $B$ voldoende dicht bij elkaar liggen wordt $\Delta y$ benaderd door $|CD|$.
+
+We berekenen nu de rico $m$ van $t$ op 2 manieren:
+\begin{itemize}
+  \item M.b.v. definitie rico waarbij $(x_1,y_1)$ en $(x_2, y_2)$ zelf te kiezen punten op $t$ zijn:
+  $$m=\dfrac{y_2-y_1}{x_2-x_1}=\dfrac{y_D-y_A}{x_D-x_A}=\dfrac{y_D-y_C}{b-a}=\dfrac{y_D-y_C}{\Delta x}$$
+  \item M.b.v. afgeleid getal waarbij we omdat $t$ een rechte is zelf mogen kiezen waar:
+  $$m = f'(a)$$
+\end{itemize}
+
+Onze rico elimineren we uit bovenstaande vergelijkingen:
+\begin{align*}
+     f'(a)     &= \dfrac{y_D-y_C}{\Delta x}\\
+\LRA \qquad y_D - y_C &= f'(a)\cdot \Delta x\\
+                      &= \mbox{differentiaal van $f$ in $a$}\\
+                      &= \mbox{benadering voor $\Delta y$}\\
+\end{align*}
+
+We noteren deze benadering als $df(a)$. Merk op dat we uit de notatie de afstand $\Delta x$ laten verdwijnen. Dit omdat we in de toekomst $\Delta x$ oneindig klein zullen veronderstellen. Zodoende wordt de benadering exact! We krijgen dus volgende definitie.
+
+\subsection{Definitie}
+Voor een functie $f$ die afleidbaar is in $x$ en voor een $\Delta x$ die een toename is die oneindig klein wordt noemen we de differentiaal van $f$ in $x$ het product
+$$df(x)=f'(x)\cdot\Delta x$$
+
+\begin{oefening}
+Bereken
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $\displaystyle d(x^4)$
+  \item $\displaystyle d(\ln x)$
+  \item $\displaystyle d(\sin x)$
+  \item $\displaystyle d(x^3-2x)$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\subsection{Elimineren van $\Delta x$}
+
+We berekenen de differentiaal van $f(x)=x$:
+\begin{align*}
+  df(x) &= f'(x)\Delta x\\
+        &= x' \Delta x\\
+        &= 1 \Delta x\\
+        &= \Delta x\\
+\end{align*}
+Maar $df(x) = dx$ en dus $\Delta x = dx$. We mogen onze definitie dus aanpassen tot
+$$df(x)=f'(x)\cdot dx$$
+
+\begin{oefening}
+Bereken
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $\displaystyle d\left(\dfrac{1}{x^2}\right)$
+  \item $\displaystyle d\left(\log_2 x\right)$
+  \item $\displaystyle d\left(\tan x\right)$
+  \item $\displaystyle d\left(\frac{1}{3}x^3+\frac{1}{2}x^2+x+1\right)$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\subsection{Rekenregels voor het differentiëren}
+
+\begin{mdframed}
+\begin{multicols}{2}
+  \begin{align*}
+    dc &= 0\\
+    dx^n &= nx^{n-1}dx\\
+    d\sqrt{x}&=\dfrac{1}{2\sqrt{x}}dx\\
+  \end{align*}
+  \begin{align*}
+    d(f+g) &= df + dg\\
+    d(f\cdot g) &= df\cdot g + f\cdot dg\\
+    d(c\cdot f) &= c\cdot f\\
+    d(\dfrac{f}{g}) &=\dfrac{df\cdot g - f\cdot dg}{g^2}
+  \end{align*}
+  \begin{align*}
+    de^x &= e^xdx\\
+    da^x &= a^x\ln(a) dx\\
+  \end{align*}
+  \begin{align*}
+    d\ln(x) &= \dfrac{1}{x}dx\\
+    d\log_a(x) &= \dfrac{1}{x\cdot\ln a}dx\\
+  \end{align*}
+  \begin{align*}
+    d\sin x &= \cos x \cdot dx\\
+    d\cos x &= -\sin x \cdot dx\\
+    d\tan x &= \dfrac{1}{\cos^2 x} \cdot dx\\
+  \end{align*}
+\end{multicols}
+\end{mdframed}
+
+Merk op dat we de kettingregel gratis krijgen! Zie volgende voorbeeld:
+
+\begin{align*}
+  d\sin\sqrt{x} &= \cos\sqrt{x} \cdot d\sqrt{x}\\
+                &= \cos\sqrt{x} \cdot \dfrac{1}{2\sqrt{x}} \cdot dx\\
+                &= \dfrac{\cos\sqrt{x}}{2\sqrt{x}} dx
+\end{align*}
+
 
 
 \begin{oefening}
 Bepaal de differentiaal van de volgende functies
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
-\itemsep.5em
-  \item $\displaystyle 5+3x^2+8x^4$
-  \item $\displaystyle (x^2+x^4+x^6)^4$
-  \item $\displaystyle \sqrt{x^2+2x}$
-  \item $\displaystyle \dfrac{x^3+3x^2+3x+1}{x+1}$
-  \item $\displaystyle e^{\sqrt[3]{3x}}$
-  \item $\displaystyle \dfrac{1}{\ln 10}\cdot 10^{x^2}$
-  \item $x\sin x + \cos x$
+  \itemsep.5em
+  \item $\displaystyle f(x)=x^3+x$
+  \item $\displaystyle f(x)=(x-2)(x+2)-x^2$
+  \item $\displaystyle f(x)=5+3x^2+8x^4$
+  \item $\displaystyle f(x)=\left(2x-4\right)^3$
+  \item $\displaystyle f(x)=\left(x^2+x^4+x^6\right)^4$
+  \item $\displaystyle f(x)=\sqrt{x^2+2x}$
+  \item $\displaystyle f(x)=\sqrt[5]{6x^5+5x}$
+  \item $\displaystyle f(x)=x^2\cdot\sqrt{x}$
+  \item $\displaystyle f(x)=x^2\cdot\sqrt{x+1}$
+  \item $\displaystyle f(x)=\dfrac{2x+1}{2x-1}$
+  \item $\displaystyle f(x)=\dfrac{x^2-1}{x-1}$
+  \item $\displaystyle f(x)=\dfrac{x^2-1}{x^2+1}$
+  \item $\displaystyle f(x)=\dfrac{x^3+3x^2+3x+1}{x+1}$
+  \item $\displaystyle f(x)=4^{x}$
+  \item $\displaystyle f(x)=e^{-2x}$
+  \item $\displaystyle f(x)=e^{\sqrt[3]{3x}}$
+  \item $\displaystyle f(x)=\log_2 x$
+  \item $\displaystyle f(x)=\log_2 (x^2-9)$
+  \item $\displaystyle f(x)=x\cdot \ln x$
+  \item $\displaystyle f(x)=x\cdot \ln x^2$
+  \item $\displaystyle f(x)=\dfrac{1}{\ln 10}\cdot 10^{x^2}$
+  \item $\displaystyle f(x)=x\sin x + \cos x$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
+
+\subsection{Toepassing}
+
+Benader de waarde van $\log_2 5$, veronderstel dat je rekentoestel geen logaritmen kan uitrekenen.
+
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-0.59,0) -- (7.27,0);
+\foreach \x in {,1,2,3,4,5,6,7}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-1.12) -- (0,3.24);
+\foreach \y in {-1,1,2,3}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.59,-1.12) rectangle (7.27,3.24);
+\draw[line width=1.6pt, smooth,samples=100,domain=0.1:7.2] plot(\x,{ln((\x))/ln(2)});
+\draw [dotted] (4,0)-- (4,2);
+\draw [dotted] (5,0)-- (5,2.32);
+\draw [dotted] (4,2)-- (0,2);
+\draw [dotted] (5,2.32)-- (0,2.32);
+\end{tikzpicture}
+\end{center}
+
+Stel $f(x)=\log_2(x)$ en neem een waarde $x=4$ dicht bij de waarde $5$ die we willen benaderen.
+
+We berekenen
+\begin{enumerate}
+  \item $\Delta x = 5-4 = 1$
+  \item $\Delta y = \log_2(5) - \log_2(4) = \log_2(5) - 2$
+  \item $df(x)=d\log_2(x)=\dfrac{1}{x\ln 2} dx$
+\end{enumerate}
+
+We maken nu gebruik van het feit dat $\Delta x=dx$ en $\Delta y \approx dy$ met $dy=df(9)$
+\begin{align*}
+  \Delta y &\approx df(4)\\
+\LRA\qquad  \log_2(5) - 2 &\approx \dfrac{1}{4\ln 2} \cdot 1\\        
+\LRA\qquad  \log_2(5) &\approx 2 + \dfrac{1}{4\ln 2} \cdot 1\\        
+\LRA\qquad  \log_2(5) &\approx 2 + \dfrac{1}{4\cdot 0.7}\\        
+\LRA\qquad  \log_2(5) &\approx 2.36\\        
+\end{align*}
+
+De werkelijke waarde afgerond op 2 decimalen is $\log_2 5 = 2.32$. We hebben dus een fout van 4 honderdsten.
 
 \begin{oefening}
 Benader
+\begin{multicols}{3}
 \begin{enumerate}[(a)]
-\itemsep.5em
+  \itemsep.5em
   \item $\displaystyle \sqrt[3]{9}$
   \item $\displaystyle \sqrt{24}$
   \item $\displaystyle e^{0.2}$
   \item $\displaystyle \sqrt{9.5}$
+  % next are from https://www.math24.net/approximation-differentials/
+  \item $\displaystyle \sqrt[3]{30}$
+  \item $\displaystyle \sqrt{50}$
+  \item $\displaystyle \sqrt[4]{0.025}$
+  \item $\displaystyle 8.2^\frac{2}{3}$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
 
 \begin{oefening} % bron http://info.math4all.nl/MathAdore/vb-bb43-ex2b.html
@@ -85,6 +323,79 @@ Bereken nu de hoogte en de snelheid waarmee $h(p)$ verandert als $p = 920 \hPa$ 
 
 \pagebreak
 \section{Bepaalde integraal}
+
+\subsection{Definitie}
+
+We beschouwen een willekeurige functie $y=f(x)$, positief tussen $a$ en $b$, en berekenen de oppervlakte $S$ begrepen tussen
+\begin{itemize}
+  \item de $x$-as: $y=0$,
+  \item de grafiek van $y=f(x)$,
+  \item de verticale $x=a$,
+  \item de verticale $x=b$.
+\end{itemize}
+
+\begin{center}
+\definecolor{dcrutc}{rgb}{0.8627,0.0784,0.2353}
+\definecolor{sqsqsq}{rgb}{0.1255,0.1255,0.1255}
+\begin{tikzpicture}[scale=1.5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-1.3618,0) -- (7.1769,0);
+\draw[color=black] (6.9069,0.0675) node [anchor=south west] { x};
+\draw[->,color=black] (0,-1.2111) -- (0,3.5477);
+\draw[color=black] (0.0844,3.2102) node [anchor=west] { y};
+\clip(-1.3618,-1.2111) rectangle (7.1769,3.5477);
+\draw[color=sqsqsq,fill=sqsqsq,fill opacity=0.1] {[smooth,samples=50,domain=1.0:6.0] plot(\x,{sin((2*\x-3)*180/pi)-(\x-3)^2/10+2})} -- (6,0) {[smooth,samples=50,domain=6.0:1.0] -- plot(\x,{0})} -- (1,0.7585) -- cycle;
+\draw[line width=1.6pt, smooth,samples=100,domain=0.5:6.5] plot(\x,{sin((2*(\x)-3)*180/pi)-((\x)-3)^2/10+2});
+\fill [color=black] (1,0) circle (2.0pt);
+\draw[color=black] (1,-0.2) node {a};
+\fill [color=black] (6,0) circle (2.0pt);
+\draw[color=black] (6,-0.2) node {b};
+\draw[color=black] (1.4,2.4) node {$f$};
+\draw[color=black] (3,1) node {$S$};
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}
+  \item Verdeel $[a,b]$ in $n$ gelijke deelintervallen, elk met lengte
+  $$\Delta x=\dfrac{b-a}{n}$$
+  We krijgen dus de $n$ gelijke deelintervallen
+  $$[x_0, x_1],[x_1, x_2],\ldots,[x_{n-1}, x_{n}]$$
+  \item Het $k$-de interval, namelijk $[x_{k-1},x_{k}]$, heeft een
+  \begin{itemize}
+    \item kleinste functiewaarde: $\min_k f$
+    \item grootste functiewaarde: $\max_k f$
+  \end{itemize}
+  \item We berekenen voor alle intervallen samen de
+  \begin{itemize}
+    \item ondersom (som van de oppervlakten rechthoekjes onder de functie),
+    \begin{align*}
+      s_n &= \min\nolimits_1 f\cdot \Delta x + \min\nolimits_2 f\cdot \Delta x + \ldots + \min\nolimits_n f\cdot \Delta x\\
+          &= \sum_{k=1}^n \min\nolimits_k f\cdot\Delta x
+    \end{align*}
+    \item bovensom (som van de oppervlakten rechthoekjes boven de functie),
+    \begin{align*}
+      S_n &= \max\nolimits_1 f\cdot \Delta x + \max\nolimits_2 f\cdot \Delta x + \ldots + \max\nolimits_n f\cdot \Delta x\\
+          &= \sum_{k=1}^n \max\nolimits_k f\cdot\Delta x
+    \end{align*}
+  \end{itemize}
+  \item De gevraagde oppervlakte $S$ ligt dan tussen deze 2 sommen:
+  $$s_n \leq S \leq S_n$$
+  \item Voor een oneindig aantal deelintervallen, $n\to+\infty$, krijgen we dus
+  $$\lim_{n\to+\infty}s_n = \lim_{n\to+\infty}S_n = S$$
+\end{itemize}
+
+We noemen deze limiet $S$ de {\bf bepaalde integraal} van $f$ tussen de grenzen $a$ en $b$ en noteren
+$$\int_a^b f(x)\;dx = \lim_{n\to+\infty}s_n = \lim_{n\to+\infty}S_n = S$$
+met
+\begin{itemize}
+  \item $\displaystyle\int$ het {\bf integraalteken}
+  \item $a$ de {\bf ondergrens} en $b$ de {\bf bovengrens}
+  \item $f(x)$ het {\bf integrand} naar $x$
+  \item $dx$ de {\bf differentiaal} naar $x$
+\end{itemize}
+
+Merk ook de elegantie van deze notatie op, de uitgetrokken $S$ staat voor sommatie, de differentiaal $dx$ staat voor een oneindig kleine $\Delta x$, bijvoorbeeld met de ondersommen:
+$$\int_a^b f(x)\;dx = \lim_{n\to+\infty}\sum_{k=1}^n \min\nolimits_k f\cdot\Delta x$$
+
 
 \begin{oefening}
 Bereken volgende bepaalde integralen
