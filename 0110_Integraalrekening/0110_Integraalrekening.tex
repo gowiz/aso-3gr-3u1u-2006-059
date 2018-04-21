@@ -75,6 +75,7 @@ Je \hfill  {\scriptsize(LP 2006-059, LI 1.10)}
 
 \section{Differentiaal}
 
+\begin{theorie}
 \subsection{Differentiaal van een willekeurige functie}
 
 In volgende figuur kennen we het verloop van de functie $f$ tot aan $x=a$. We willen een voorspelling doen over $f(b)$. Noem $\Delta x=b-a$. We willen dus weten wat $\Delta y=f(b)-f(a)$ is. We zijn tevreden met een benadering van $\Delta y$.
@@ -144,6 +145,8 @@ We noteren deze benadering als $df(a)$. Merk op dat we uit de notatie de afstand
 Voor een functie $f$ die afleidbaar is in $x$ en voor een $\Delta x$ die een toename is die oneindig klein wordt noemen we de differentiaal van $f$ in $x$ het product
 $$df(x)=f'(x)\cdot\Delta x$$
 
+\end{theorie}
+
 \begin{oefening}
 Bereken
 \begin{multicols}{2}
@@ -157,6 +160,8 @@ Bereken
 \end{multicols}
 \end{oefening}
 
+\begin{theorie}
+
 \subsection{Elimineren van $\Delta x$}
 
 We berekenen de differentiaal van $f(x)=x$:
@@ -168,6 +173,8 @@ We berekenen de differentiaal van $f(x)=x$:
 \end{align*}
 Maar $df(x) = dx$ en dus $\Delta x = dx$. We mogen onze definitie dus aanpassen tot
 $$df(x)=f'(x)\cdot dx$$
+
+\end{theorie}
 
 \begin{oefening}
 Bereken
@@ -181,6 +188,8 @@ Bereken
 \end{enumerate}
 \end{multicols}
 \end{oefening}
+
+\begin{theorie}
 
 \subsection{Rekenregels voor het differentiëren}
 
@@ -221,7 +230,7 @@ Merk op dat we de kettingregel gratis krijgen! Zie volgende voorbeeld:
                 &= \dfrac{\cos\sqrt{x}}{2\sqrt{x}} dx
 \end{align*}
 
-
+\end{theorie}
 
 \begin{oefening}
 Bepaal de differentiaal van de volgende functies
@@ -253,6 +262,8 @@ Bepaal de differentiaal van de volgende functies
 \end{enumerate}
 \end{multicols}
 \end{oefening}
+
+\begin{theorie}
 
 \subsection{Toepassing}
 
@@ -296,6 +307,8 @@ We maken nu gebruik van het feit dat $\Delta x=dx$ en $\Delta y \approx dy$ met 
 
 De werkelijke waarde afgerond op 2 decimalen is $\log_2 5 = 2.32$. We hebben dus een fout van 4 honderdsten.
 
+\end{theorie}
+
 \begin{oefening}
 Benader
 \begin{multicols}{3}
@@ -323,6 +336,8 @@ Bereken nu de hoogte en de snelheid waarmee $h(p)$ verandert als $p = 920 \hPa$ 
 
 \pagebreak
 \section{Bepaalde integraal}
+
+\begin{theorie}
 
 \subsection{Definitie}
 
@@ -396,15 +411,193 @@ met
 Merk ook de elegantie van deze notatie op, de uitgetrokken $S$ staat voor sommatie, de differentiaal $dx$ staat voor een oneindig kleine $\Delta x$, bijvoorbeeld met de ondersommen:
 $$\int_a^b f(x)\;dx = \lim_{n\to+\infty}\sum_{k=1}^n \min\nolimits_k f\cdot\Delta x$$
 
+\pagebreak
+\subsection{Voorbeeld}
+
+Beschouw de functie
+$$f(x)=x$$
+en laten we het oppervlakte berekenen tussen $y=0$, $y=f(x)$, $x=0$, $x=1$.
+
+\begin{center}
+\definecolor{zzttqq}{rgb}{0.6,0.2,0}
+\begin{tikzpicture}[scale=3.5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-0.58,0) -- (1.76,0);
+\foreach \x in {,1}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.57) -- (0,1.33);
+\foreach \y in {,1}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-0.58,-0.57) rectangle (1.76,1.33);
+\draw[color=zzttqq,fill=zzttqq,fill opacity=0.1, smooth,samples=50,domain=0.0:1.0] plot(\x,{\x}) -- (1,0) -- (0,0) -- cycle;
+\draw[line width=1.6pt, smooth,samples=100,domain=-0.5755180752138966:1.7618129400811133] plot(\x,{(\x)});
+\draw (0,-0.57) -- (0,1.33);
+\draw [dotted] (1,-0.57) -- (1,1.33);
+\draw (0.63,0.97) node[anchor=north west] {f};
+\end{tikzpicture}
+\end{center}
+
+\begin{itemize}
+  \item We delen $[0,1]$ op in $n$ deelintervallen van lengte $\Delta x=\dfrac{1}{n}$:
+  $$[0,\dfrac{1}{n}],\, [\dfrac{1}{n},\dfrac{2}{n}],\, [\dfrac{2}{n},\dfrac{3}{n}],\, \ldots,\, [\dfrac{n-2}{n},\dfrac{n-1}{n}],\, [\dfrac{n-1}{n},1]$$
+  \item Op een deelinterval $[\dfrac{k-1}{n},\dfrac{k}{n}]$:
+  \begin{itemize}
+    \item kleinste waarde: $\min_k f = \dfrac{k-1}{n}$
+    \item grootste waarde: $\max_k f = \dfrac{k}{n}$
+  \end{itemize}
+  \item Onder- en bovensom:
+  \begin{itemize}
+    \item ondersom: $s_n=\sum^n_{k=1}\min_k f \cdot \Delta x=\sum^n_{k=1}\dfrac{k-1}{n}\cdot\dfrac{1}{n}=\dfrac{n-1}{2n}$
+    \item bovensom: $S_n=\sum^n_{k=1}\max_k f \cdot \Delta x=\sum^n_{k=1}\dfrac{k}{n}\cdot\dfrac{1}{n}=\dfrac{n+1}{2n}$
+  \end{itemize}
+  \item Limieten berekenen:
+  $$\lim_{n\to+\infty}s_n=\lim_{n\to+\infty}\dfrac{n-1}{2n}=\dfrac{1}{2}$$
+  $$\lim_{n\to+\infty}S_n=\lim_{n\to+\infty}\dfrac{n+1}{2n}=\dfrac{1}{2}$$
+  \item Besluit:
+  $$\int_0^1 x\;dx=\dfrac{1}{2}$$
+\end{itemize}
+
+\subsection{Eigenschappen}
+
+\begin{itemize}
+  \item Gelijke grenzen: $a=b \Rightarrow \mbox{opp}=0$
+  $$\int_a^a f(x)\;dx = 0$$
+  \item Wisselen van de grenzen: $a\leftrightarrow b \Rightarrow \Delta x \mbox{ verandert van teken}$
+  $$\int_a^b f(x)\;dx = -\int_b^a f(x)\;dx$$
+  \item Opsplitsen van de integraal: $\forall c\in[a,b]:$
+  $$\int_a^b f(x)\;dx = \int_a^c f(x)\;dx + \int_c^b f(x)\;dx$$
+  \item Lineariteit van de integraal: $\alpha, \beta\in\mathbb{R}$
+  $$\int_a^b \alpha f(x) + \beta f(x)\;dx = \alpha \int_a^b f(x) \;dx+ \beta \int_a^b f(x)\;dx$$
+\end{itemize}
+
+\subsection{Primitieve functie}
+
+We voeren een nieuwe notatie in
+$$[F(x)]_a^b = F(b) - F(a)$$
+en lezen dit als we berekenen $F$ van $a$ naar $b$.
+
+\end{theorie}
+
+\begin{oefening}
+Bereken
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $\displaystyle\left[2x-3\right]_1^3$ 
+  \item $\displaystyle\left[x^2\right]_0^4$ 
+  \item $\displaystyle\left[\ln x\right]_1^e$ 
+  \item $\displaystyle\left[\ln x\right]_0^e$ 
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+\begin{enumerate}[(a)]
+  \item Beschouw de functies
+  $$f(x)=2 \mbox{ en } F(x)=2x$$
+  \begin{itemize}
+    \item Bereken de oppervlakte begrepen tussen $y=f(x),\;y=0,\;x=1,\;x=4$
+    \item Bereken $[F(x)]_1^4$
+    \item Wat is het verband tussen $f$ en $F$
+  \end{itemize}
+  \item Beschouw de functies
+  $$f(x)=x \mbox{ en } F(x)=\dfrac{x^2}{2}$$
+  \begin{itemize}
+    \item Bereken de oppervlakte begrepen tussen $y=f(x),\;y=0,\;x=0,\;x=4$
+    \item Bereken $[F(x)]_0^4$
+    \item Wat is het verband tussen $f$ en $F$
+  \end{itemize}
+  \item Beschouw de functies
+  $$f(x)=x \mbox{ en } F(x)=\dfrac{x^2}{2}$$
+  \begin{itemize}
+    \item Bereken de oppervlakte begrepen tussen $y=f(x),\;y=0,\;x=2,\;x=5$
+    \item Bereken $[F(x)]_2^5$
+    \item Wat is het verband tussen $f$ en $F$
+  \end{itemize}
+\end{enumerate}
+\end{oefening}
+
+\begin{theorie}
+
+We krijgen volgende definitie:
+
+T.o.v. een orthonormaal assenstelsel is de oppervlakte $S$ begrepen tussen $y=f(x),\;y=0,\;x=a,\;x=b$ gelijk aan
+$$S=\left[F(x)\right]_a^b \mbox{ met } F'(x)=f(x)\;.$$ We noemen $F$ {\em een} {\bf primitieve functie} van $f$.
+
+\end{theorie}
+
+\begin{oefening}
+Bepaal {\em alle} primitieve functies van
+\begin{enumerate}[(a)]
+  \item $f(x)=5$
+  \item $f(x)=7$
+  \item $f(x)=0$
+  \item $f(x)=2x$
+  \item $f(x)=x$
+  \item $f(x)=3x^2$
+  \item $f(x)=x^2$
+  \item $f(x)=x^n$ met $n\in\mathbb{R}\setminus\{-1\}$
+\end{enumerate}
+\end{oefening}
+
+\begin{theorie}
+
+Merk op dat elke functie $f$ oneindig veel primitieve functies $F$ heeft.
+
+\subsection{Een bepaalde integraal berekenen}
+
+\paragraph{Stelling}
+
+Is $f$ continu in $[a,b]$ en is $F$ een primitieve functie van $f$ in $[a,b]$ dan geldt
+$$\int_a^b f(x)\;dx = [F(x)]_a^b$$
+
+\paragraph*{Gevolg}
+$$\int_a^b x^n\;dx = \left[\dfrac{x^{n+1}}{n+1}\right]_a^b \mbox{ met } n\in\mathbb{R}\setminus\{-1\}$$
+
+\end{theorie}
+
+\begin{oefening}
+Bereken
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $\displaystyle \int_0^2 x^3 \;dx$
+  \item $\displaystyle \int_{-1}^{1} x^2 \;dx$
+  \item $\displaystyle \int_1^3 x^4 \;dx$
+  \item $\displaystyle \int_{-4}^4 \;dx$
+  \item $\displaystyle \int_{-1}^{1} x \;dx$
+  \item $\displaystyle \int_{-1}^{1} |x| \;dx$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{theorie}
+
+\paragraph*{Integraal van een veeltermfunctie}
+M.b.v. de lineariteit van een bepaalde integraal kunnen we de bepaalde integraal van een veeltermfunctie berekenen, bijvoorbeeld
+\begin{align*}
+  \int_1^3 2x^3-3x+1 \;dx &= \int_1^3 2x^3 \;dx + \int_1^3 -3x \;dx + \int_1^3 1 \;dx\\
+                          &= 2\int_1^3 x^3 \;dx - 3\int_1^3 x \;dx + \int_1^3 \;dx\\
+                          &= 2\cdot\left[\dfrac{x^4}{4}\right]_1^3 - 3\cdot\left[\dfrac{x^2}{2}\right]_1^3 +2\cdot\left[x\right]_1^3\\
+                          &= 2\cdot \left(\dfrac{81}{4}-\dfrac{1}{4}\right) - 3\cdot \left(\dfrac{9}{2}-\dfrac{1}{2}\right) + 2\cdot \left(3-1\right)\\
+                          &= 40 - 12 + 2\\
+                          &= 30
+\end{align*}
+of veel korter!
+\begin{align*}
+  \int_1^3 2x^3-3x+1 \;dx &= \cdot\left[2\cdot\dfrac{x^4}{4} - 3\cdot\dfrac{x^2}{2} +2\cdot x\right]_1^3\\
+                          &= (2\cdot \dfrac{81}{4} - 3\cdot \dfrac{9}{2} + 2\cdot 3) - (2\cdot \dfrac{1}{4} - 3\cdot \dfrac{1}{2} + 2\cdot 1)\\
+                          &= 30
+\end{align*}
+
+
+\end{theorie}
 
 \begin{oefening}
 Bereken volgende bepaalde integralen
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
 \itemsep1em
-  \item $\displaystyle \int_0^4 x \;dx$
-  \item $\displaystyle \int_1^3 x^4 \;dx$
-  \item $\displaystyle \int_{-4}^4 \;dx$
   \item $\displaystyle \int_{-1}^2 (3x^2+2x-1)\;dx$
   \item $\displaystyle \int_{-4}^3 (6x^8+12x^5-\dfrac{1}{2}x^2)\;dx$
   \item $\displaystyle \int_{0}^5 (3x+5)^2\;dx$
@@ -444,7 +637,36 @@ Bepaal
 $$\displaystyle \int_{10}^{22} f(x) \;dx \qquad\mbox{ en }\qquad \displaystyle \int_{-2}^{3} f(x) \;dx$$
 \end{oefening}
 
+\pagebreak
 \section{Oppervlakteberekeningen}
+
+\begin{theorie}
+
+\subsection{Verband bepaalde integraal en oppervlakte}
+
+We houden rekening met 4 gevallen om de oppervlakte van een functie $f$ in een interval $[a,b]$ te berekenen m.b.v. een integraal:
+\begin{itemize}
+  \item $a<b$ en $f(x)\geq0$ in $[a,b]$
+  \begin{align*}
+    \int_a^b f(x)\; dx \geq 0 &\Rightarrow S=\int_a^b f(x)\; dx
+  \end{align*}
+  \item $a<b$ en $f(x)\leq0$ in $[a,b]$
+  \begin{align*}
+    \int_a^b f(x)\; dx \leq 0 &\Rightarrow S=-\int_a^b f(x)\; dx\\
+                              &\Rightarrow S=|\int_a^b f(x)\; dx|\\
+  \end{align*}
+  \item $a>b$ en $f(x)\geq0$ in $[a,b]$
+  \begin{align*}
+    \int_a^b f(x)\; dx \leq 0 &\Rightarrow S=-\int_a^b f(x)\; dx\\
+                              &\Rightarrow S=|\int_a^b f(x)\; dx|\\
+  \end{align*}
+  \item $a>b$ en $f(x)\leq0$ in $[a,b]$
+  \begin{align*}
+    \int_a^b f(x)\; dx \geq 0 &\Rightarrow S=-\int_a^b f(x)\; dx
+  \end{align*}
+\end{itemize}
+
+\end{theorie}
 
 \begin{oefening}
 Bepaal de oppervlakte tussen
