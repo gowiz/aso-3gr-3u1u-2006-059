@@ -61,7 +61,9 @@
 Je \hfill  {\scriptsize(LP 2006-059, LI 1.4)}
 \begin{itemize}
 \item kent het begrip limiet en kan grafisch limieten bepalen
-\item kan met behulp van rekenregels limieten berekenen van veeltermfuncties en rationale functies.
+\item kan met behulp van rekenregels limieten berekenen van veeltermfuncties en rationale functies
+\item kan met behulp van limieten de horizontale en verticale asymptoten van rationale functies bepalen
+\item kan de schuine asymptoten van rationale functies bepalen (U)
 \end{itemize}
 
 \thispagestyle{empty}
@@ -568,8 +570,7 @@ Uitwerken van het rechterlid kan na vereenvoudigen.
   \end{enumerate}
 \end{oefening}
 
-\pagebreak
-\section{Extra oefeningen}
+\subsection{Extra oefeningen op limieten}
 
 \begin{oefening}
   Bepaal de volgende limieten
@@ -594,7 +595,7 @@ Uitwerken van het rechterlid kan na vereenvoudigen.
 
 \begin{oefening}
   Bepaal de volgende limieten
-  \begin{multicols}{4}
+  \begin{multicols}{2}
   \begin{enumerate}[(a)]
   \itemsep1em
   \item $\displaystyle\lim_{x\to 2}\dfrac{x^2-4}{x-2}$
@@ -668,6 +669,251 @@ $$\lim_{x\to3}\left(\dfrac{2}{\left(x-3\right)^4}-\dfrac{5}{\left(x-3\right)^3}\
   \item bestaat niet
   \item $-\infty$
   \end{enumerate}
+\end{oefening}
+
+\pagebreak
+\section{Asymptoten}
+
+Een {\bf asymptoot} van een functie $f$ is een rechte waarnaar de grafiek van die functie $f$ steeds dichter nadert. Daar rechten, verticaal, horizontaal of schuin kunnen zijn maken we volgende opdeling.
+
+\subsection{Verticale asymptoot}
+
+\subsubsection*{Definitie}
+
+\begin{minipage}{0.5\textwidth}
+Beschouw volgende schets:
+\begin{center}
+\begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-4.3,0) -- (6.5,0);
+\draw[->,color=black] (0,-3.3) -- (0,6.44);
+\clip(-4.3,-3.3) rectangle (6.5,6.44);
+\draw[line width=2.4pt, smooth,samples=100,domain=-4.3:1.9] plot(\x,{(3*(\x)-5)/((\x)-2)});
+\draw[line width=2.4pt, smooth,samples=100,domain=2.1:6.5] plot(\x,{(3*(\x)-5)/((\x)-2)});
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt] (2,-3.3) -- (2,6.44);
+\draw (2.24,-0.3) node[anchor=north west] {a};
+\draw (3.66,4.3) node[anchor=north west] {f};
+\end{tikzpicture}
+\end{center}  
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+We zien dat we een verticale asymptoot hebben:
+$$\mbox{V.A.: }x=a$$
+
+We bepalen m.b.v. limieten:
+$$\lim_{x\underset{<}{\to}a} f(x)=-\infty$$
+$$\lim_{x\underset{>}{\to}a} f(x)=+\infty$$
+\vfill
+\end{minipage}
+
+We krijgen:
+
+\begin{definitie}
+Als $f$ minstens een interval $]a-\delta,a[$ of $]a,a+\delta[$ omvat voor een willekeurige kleine $\delta>0$ en als $a\notin \dom f$ dan is $x=a$ een {\bf verticale asymptoot} van $f$ in $a$ als één van volgende limieten waar is:
+\begin{multicols}{3}
+  \begin{itemize}
+    \item $\lim_{x\to a} f(x)=+\infty$
+    \item $\lim_{x\to a} f(x)=-\infty$
+    \item $\lim_{x\underset{<}{\to}a} f(x)=-\infty$
+    \item $\lim_{x\underset{<}{\to}a} f(x)=+\infty$
+    \item $\lim_{x\underset{>}{\to}a} f(x)=-\infty$
+    \item $\lim_{x\underset{>}{\to}a} f(x)=+\infty$
+  \end{itemize}
+\end{multicols}
+\end{definitie}
+
+\subsubsection*{Opsporen van een verticale asymptoot}
+
+Er geldt dat een functie $f$ een verticale asymptoot heeft in elk nulpunt van de noemer die een hogere multipliciteit heeft dan een zelfde nulpunt van de teller. Men kan echter eenvoudig de limiet uitrekenen in elke nulwaarde van de noemer. Als de limiet $\pm \infty$ is, dan weet men dat er daar een verticale asymptoot is.
+
+\subsubsection*{Voorbeeld}
+$$f(x)=\dfrac{2x-4}{x-1}$$
+
+\subsubsection*{Tegenvoorbeeld}
+$$f(x)=\dfrac{2x-4}{x-2}$$
+
+\begin{oefening}
+Bepaal alle verticale asymptoten:
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $f(x)=\dfrac{1}{x^2}$
+  \item $f(x)=\dfrac{1}{x^2-2x+1}$
+  \item $f(x)=\dfrac{2x-6}{x^2-2x-3}$
+\end{enumerate}
+\end{oefening}
+
+\subsection{Horizontale asymptoot}
+
+\subsubsection*{Definitie}
+
+\begin{minipage}{0.5\textwidth}
+Beschouw volgende schets:
+\begin{center}
+\begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-4.3,0) -- (6.5,0);
+\draw[->,color=black] (0,-3.3) -- (0,6.44);
+\clip(-4.3,-3.3) rectangle (6.5,6.44);
+\draw[line width=2.4pt, smooth,samples=100,domain=-4.3:1.9] plot(\x,{(3*(\x)-5)/((\x)-2)});
+\draw[line width=2.4pt, smooth,samples=100,domain=2.1:6.5] plot(\x,{(3*(\x)-5)/((\x)-2)});
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt] (-4.3,3) -- (6.5,3);
+\draw (-0.2,3.3) node[anchor=south east] {b};
+\draw (3.66,4.3) node[anchor=north west] {f};
+\end{tikzpicture}
+\end{center}  
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+We zien dat we een horizontale asymptoot hebben:
+$$\mbox{H.A.: }y=b$$
+
+We bepalen m.b.v. limieten:
+$$\lim_{x\to -\infty} f(x)=b$$
+$$\lim_{x\to +\infty} f(x)=b$$
+\vfill
+\end{minipage}
+
+\begin{definitie}
+Een horizontale rechte met vergelijking $y=b$ is een {\bf horizontale asymptoot} van $f$ als één van de volgende limieten waar is:
+\begin{multicols}{2}
+\begin{itemize}
+  \item $\lim_{x\to+\infty} f(x)=b$
+  \item $\lim_{x\to-\infty} f(x)=b$
+\end{itemize}
+\end{multicols}
+\end{definitie}
+
+\subsubsection*{Opsporen van een horizontale asymptoot}
+
+Er geldt dat een rationale functie $f$ enkel horizontale asymptoten heeft als de graad van teller kleiner of gelijk is aan de graad van de noemer. In de praktijk kunnen we eenvoudig de limiet van de functie $f$ uitrekenen in $-\infty$ en in $+\infty$. Als één van de limieten gelijk is aan een getal $b\in\mathbb{R}$, dus verschillend van $\pm\infty$ dan is $y=b$ een horizontale asymptoot.
+
+\subsubsection*{Voorbeeld}
+$$f(x)=\dfrac{2x-4}{x-1}$$
+
+\subsubsection*{Tegenvoorbeeld}
+$$f(x)=\dfrac{x^2-4}{x+2}$$
+
+\begin{oefening}
+Bepaal alle horizontale asymptoten:
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $f(x)=\dfrac{1}{x^2}$
+  \item $f(x)=\dfrac{3x^2+2x-1}{x^2-2x+4}$
+  \item $f(x)=\dfrac{2x-6}{x^2-2x-3}$
+\end{enumerate}
+\end{oefening}
+
+
+\subsection{Schuine asymptoot}
+
+\subsubsection*{Definitie}
+
+\begin{minipage}{0.5\textwidth}
+Beschouw volgende schets:
+\begin{center}
+\begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-4.3,0) -- (6.5,0);
+\foreach \x in {-4,-2,2,4,6}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-3.3) -- (0,6.44);
+\foreach \y in {-2,2,4,6}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-4.3,-3.3) rectangle (6.5,6.44);
+\draw[line width=2.4pt, smooth,samples=100,domain=-4.3:1.9] plot(\x,{((\x)^2-2)/(2*(\x)-4)});
+\draw[line width=2.4pt, smooth,samples=100,domain=2.1:6.5] plot(\x,{((\x)^2-2)/(2*(\x)-4)});
+\draw (1.8,1.9) node[rotate=26,anchor=north west] {$y=mx+q$};
+\draw (3.66,4.4) node[anchor=north west] {$f$};
+\draw [line width=1.2pt,dash pattern=on 2pt off 2pt,domain=-4.3:6.5] plot(\x,{(--1--0.5*\x)/1});
+\end{tikzpicture}
+\end{center}  
+\end{minipage}
+\begin{minipage}{0.5\textwidth}
+We zien dat we een schuine asymptoot hebben:
+$$\mbox{S.A.: }y=mx+q$$
+\vfill
+\end{minipage}
+
+\paragraph*{Opmerking:} Om inzicht te krijgen in bovenstaande figuur teken je volgende functies, telkens in een ander kleur:
+\begin{itemize}
+  \item $f(x)=\dfrac{x^2-2}{2x-4}$
+  \item $g(x)=\dfrac{1}{2}x+1$
+  \item $h(x)=f(x)-g(x)$ 
+\end{itemize}
+
+\begin{definitie}
+Een schuine rechte met vergelijking $y=mx+q$ is een {\bf schuine asymptoot} van $f$ als één van de volgende limieten waar is:
+\begin{multicols}{2}
+\begin{itemize}
+  \item $\lim_{x\to+\infty} \left(f(x)-(mx+q)\right)=0$
+  \item $\lim_{x\to-\infty} \left(f(x)-(mx+q)\right)=0$
+\end{itemize}
+\end{multicols}
+\end{definitie}
+
+\subsubsection*{Opsporen van een horizontale asymptoot}
+
+Er geldt dat een rationale functie enkel schuine asymptoten heeft als de graad van de teller precies één meer is dan de graad van de noemer. We vinden
+\begin{align*}
+  m&=\lim_{x\to\pm\infty}\dfrac{f(x)}{x}\\
+  q&=\lim_{x\to\pm\infty}\left(f(x)-mx\right)
+\end{align*}
+
+\subsubsection*{Voorbeeld}
+$$f(x)=\dfrac{x^2-x-1}{x+1}$$
+
+\paragraph*{Opmerking:} Een horizontale asymptoot is een speciaal geval van de schuine asymptoot, maar dan met $m=0$. Het spreekt voor zich dat een functie geen horizontale en schuine asymptoot naar $+\infty$ of naar $-\infty$ kan hebben.
+
+\begin{oefening}
+Bepaal alle schuine asymptoten:
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $f(x)=\dfrac{x^2-2}{2x-4}$
+  \item $f(x)=\dfrac{3x^2+2x-1}{x^2-2x+4}$
+\end{enumerate}
+\end{oefening}
+
+\pagebreak
+\subsection{Extra oefeningen op asymptoten}
+
+\begin{oefening} % http://www.purplemath.com/modules/asymtote4.htm
+Bepaal alle asymptoten\\
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $\displaystyle y=\dfrac{2x^2}{x+1}$
+  \item $\displaystyle y=\dfrac{x^2+3x+1}{4x^2-9}$
+  \item $\displaystyle y=\dfrac{x+3}{x^2+9}$
+  \item $\displaystyle y=\dfrac{x^2-x-2}{x-2}$
+  \item $\displaystyle y=\dfrac{-3x^2+2}{x-1}$
+  \item $\displaystyle y=\dfrac{x^2+3x+2}{x-2}$
+  \item $\displaystyle y=\dfrac{2x^3+4x^2-9}{3-x^2}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening} % http://www.math-exercises.com/analysis-of-functions/asymptotes-of-a-function
+Bepaal alle asymptoten\\
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+  \itemsep1em
+  \item $\displaystyle f(x)=\dfrac{x}{x+4}$
+  \item $\displaystyle f(x)=\dfrac{1-x^2}{x-2}$
+  \item $\displaystyle f(x)=\dfrac{2x^2}{2x-1}$
+  \item $\displaystyle f(x)=\dfrac{x^2+1}{x}$
+  \item $\displaystyle f(x)=\dfrac{2x^2-1+3x^3}{3-2x^2}$
+  \item $\displaystyle f(x)=\dfrac{x^2-9}{1-x}$
+  \item $\displaystyle f(x)=\dfrac{x^2+6x}{x+2}$
+  \item $\displaystyle f(x)=\dfrac{2x}{x^2+1}$
+  \item $\displaystyle f(x)=3x+\dfrac{3}{x-2}$
+  \item $\displaystyle f(x)=\dfrac{2x^3-5x^2+x-4}{4-x^2}$
+  \item $\displaystyle f(x)=\dfrac{x^2-3}{x^3-1}$
+  \item $\displaystyle f(x)=\dfrac{x^3-3}{x^3-1}$
+  \item $\displaystyle f(x)=\dfrac{2x^2-5x}{x^2+1}$
+  \item $\displaystyle f(x)=\dfrac{2x}{1-3x}$
+  \item $\displaystyle f(x)=\dfrac{3x^2-2x^3+4}{4-4x+x^2}$
+  \item $\displaystyle f(x)=\dfrac{x-1}{x^3-1}$
+  \item $\displaystyle f(x)=\dfrac{2x^2+x+1}{8x}$
+  \item $\displaystyle f(x)=\dfrac{1+x-3x^3}{x^2+x-2}$
+\end{enumerate}
+\end{multicols}
 \end{oefening}
 
 
