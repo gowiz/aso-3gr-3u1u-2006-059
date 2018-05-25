@@ -176,6 +176,9 @@ Zijn de volgende kansvariabelen discreet of continu?
 \end{enumerate}
 \end{oefening}
 
+{\scriptsize Wij zullen ons beperken tot discrete kansvariabelen.}
+\vspace*{-1cm}
+
 \pagebreak
 \section{Kansfunctie van een discrete kansvariabele}
 
@@ -190,12 +193,11 @@ We willen nu van elk van de beelden van de kansvariabele $X$ weten hoe groot de 
 \begin{itemize}
   \item $P(X=2)=P(\{k\})=\dfrac{1}{2}$\\
   We lezen dit als volgt:
-  \begin{itemize}
-  \renewcommand{\labelitemii}{}
-    \item $P(X=2)$ is "Wat is de kans dat de kansvariabele als beeld $2$ heeft"
-    \item $=P(\{k\})$ is "Wat is de kans dat we kop gooien"
-    \item $=\dfrac{1}{2}$ deze is één gedeeld door twee.
-  \end{itemize}
+  \begin{align*}
+    P(X=2) &              && \mbox{Wat is de kans dat de kansvariabele als beeld 2 heeft}\\
+           &=P(\{k\})     && \mbox{Wat is de kans dat we kop gooien}\\
+           &=\dfrac{1}{2} && \mbox{deze is n gedeeld door twee.}
+  \end{align*}
   \item $P(X=1)=P(\{m\})=\dfrac{1}{2}$
 \end{itemize}
 
@@ -338,22 +340,22 @@ Tabuleer voorgaande gegevens:
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \draw[color=black] (5,0.9) node[right] {$F$};
 \clip(-0.82,-0.13) rectangle (6.58,1.07);
-\draw[line width=1.6pt, smooth,samples=100,domain=0:1] plot(\x,{0/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=0:0.9] plot(\x,{0/6});
 \draw (1,0) circle (2pt);
 \draw [fill] (1,1/6) circle (2pt);
-\draw[line width=1.6pt, smooth,samples=100,domain=1:2] plot(\x,{1/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=1:1.9] plot(\x,{1/6});
 \draw (2,1/6) circle (2pt);
 \draw [fill] (2,2/6) circle (2pt);
-\draw[line width=1.6pt, smooth,samples=100,domain=2:3] plot(\x,{2/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=2:2.9] plot(\x,{2/6});
 \draw (3,2/6) circle (2pt);
 \draw [fill] (3,3/6) circle (2pt);
-\draw[line width=1.6pt, smooth,samples=100,domain=3:4] plot(\x,{3/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=3:3.9] plot(\x,{3/6});
 \draw (4,3/6) circle (2pt);
 \draw [fill] (4,4/6) circle (2pt);
-\draw[line width=1.6pt, smooth,samples=100,domain=4:5] plot(\x,{4/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=4:4.9] plot(\x,{4/6});
 \draw (5,4/6) circle (2pt);
 \draw [fill] (5,5/6) circle (2pt);
-\draw[line width=1.6pt, smooth,samples=100,domain=5:6] plot(\x,{5/6});
+\draw[line width=1.6pt, smooth,samples=100,domain=5:5.9] plot(\x,{5/6});
 \draw (6,5/6) circle (2pt);
 \draw [fill] (6,6/6) circle (2pt);
 \end{tikzpicture}
@@ -637,7 +639,7 @@ $$X \sim B(n, p)$$
 \subsection{Kansfunctie en verdelingsfunctie}
 
 
-Voor een kansvariabele $X \sim B(n, p)$ gaan we uit dat $x$ de waarden $$0, 1, 2, \cdots, k, \cdots, n-1, n$$ kan aannemen.
+Voor een kansvariabele $X \sim B(n, p)$ gaan we uit dat $x$ de waarden $$0, 1, 2, \cdots, k, \cdots, n-1, n$$ kan aannemen.\\
 
 \begin{mdframed}
 De {\bf kansfunctie} $f$ van die kansvariabele $X \sim B(n, p)$ geeft de kans op $k$ successen en wordt gegeven door
