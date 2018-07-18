@@ -1427,12 +1427,10 @@ In het casino wordt een gokspel gespeeld waarbij je jetons op een speelbord met 
 \end{enumerate}
 \end{oefening}
 
-\begin{oefening}
-Er worden doosjes gevuld met pralines. Er is een voorraad pralines gemaakt in 4 soorten: pure chocolade, melkchocolade, witte chocolade en gemengd. Van elke soort zijn er 10 verschillende vormen en vullingen.
-\begin{enumerate}[(a)]
-  \item Hoeveel mogelijkheden zijn er als je van elke soort chocolade 5 pralines van verschillende vormen en vullingen in het doosje steekt?
-  \item Hoeveel mogelijkheden zijn er als je van elke soort chocolade 5 pralines in het doosje steekt zonder op de vorm en de vulling te letten?
-\end{enumerate}
+\begin{oefening} % bron: https://math2.uncc.edu/~ghetyei/courses/old/S13.3166/ bij het hoofdstuk Permutations, combinations end variaties
+Hoeveel oplossingen heeft de vergelijking
+$$x_1 + x_2 + x_3 + x_4 = 10$$
+waarbij elke $x_i\in\mathbb{N}$ is.
 \end{oefening}
 
 \pagebreak
@@ -1496,6 +1494,10 @@ met $n_1+n_2+n_3+\dots+n_k=n$. De bekomen resultaten noemen we {\bf anagrammen}.
 $$P^{n_1,n_2,n_3,\dots,n_k}_n = \dfrac{n!}{n_1!\cdot n_2!\cdot n_3!\cdot \cdots \cdot n_k!}$$
 \end{mdframed}
 
+\paragraph*{Opmerking*}
+Het product van meerdere factoren kunnen we kort schrijven met een vermenigvuldigingsteken $\Pi$, de hoofdletter pi uit het Griekse alfabet. Gecombineerd met ons reeds gekende sommatieteken $\Sigma$ kunnen we bovenstaande formule inkorten naar
+$$\displaystyle P_{n_1,\dots,n_k} = \dfrac{\left(\sum_{i=1}^k n_i\right)!}{\prod_{i=1}^k n_i!}$$
+
 \subsection{Oefeningen}
 
 \end{theorie}
@@ -1524,7 +1526,6 @@ Gegeven een normale pak kaarten zijn er $52!$ verschillende permutaties van de k
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
 
 
 
