@@ -3,8 +3,8 @@
 \input{../gowiz.tex}
 
 \usepackage{versions}
-\excludeversion{theorie}
-% \includeversion{theorie}
+%\excludeversion{theorie}
+\includeversion{theorie}
 
 \begin{document}
 
@@ -18,7 +18,7 @@
   \begin{center}
     \begin{mdframed}
       \centering
-      \fontsize{40}{60}\selectfont Goniometrische Getallen
+      \fontsize{40}{60}\selectfont Complexe Getallen
     \end{mdframed}
     \vfill
     \vfill
@@ -61,6 +61,73 @@
 
 \section{Definitie}
 
+We zijn bekend met de volgende getallenverzamelingen
+\begin{itemize}
+  \item Verzameling van de natuurlijke getallen
+  $$\mathbb{N}=\{0, 1, 2, \ldots\}$$
+  \item Verzameling van de gehele getallen
+  $$\mathbb{Z}=\{0, 1, -1, 2, -2, \ldots\}$$
+  \item Verzameling van de rationale getallen (ratio staat voor een verhouding, dus een verband in de vorm van een breuk tussen twee getalsmatige grootheden)
+  $$\mathbb{Q}=\{\frac{m}{n}\;|\;m\in\mathbb{Z}, n\in{Z}_0\}$$
+  \item Verzameling van de reële getallen
+  $$\mathbb{R}=\{\mbox{alle getallen die we op een getallenas kunnen voorstellen}\}$$
+\end{itemize}
+
+We kennen $\mathbb{R}$ nu dus als de verzameling waarbij we alle getallen kunnen voorstellen. Er bestaan echter vergelijkingen die in $\mathbb{R}$ geen oplossingen hebben, bijvoorbeeld
+$$x^2+4=0$$
+
+Lossen we dit toch op, dan vinden we
+\begin{align*}
+  x^2+4=0 \quad & \LRA\quad x^2 = -4\\
+                & \LRA\quad x = +\sqrt{-4} \quad\vee\quad x = -\sqrt{-4}
+\end{align*}
+
+We kunnen geen vierkantswortel van een negatief getal nemen, daarom voeren we een nieuwe verzameling in, namelijke de verzameling van de {\bf complexe getallen}
+\begin{itemize}
+  \item die de reële getallen uitbreid,
+  \item waarmee we kunnen rekenen zoals met de reële getallen,
+  \item waarin alle vergelijkingen van de tweede graad een oplossing hebben.
+\end{itemize}
+
+\pagebreak
+\paragraph*{Definitie}
+\begin{mdframed}
+We hebben het getal $i$, waarvoor geldt
+$$i^2=-1$$
+Een {\bf complex getal} is van de vorm
+$$a+b\cdot i$$
+met $a,b\in \mathbb{R}$.
+\end{mdframed}
+
+Merk op dat we een complex getal ook kunnen schrijven als een koppel $(a,b)$ van reële getallen.
+
+De {\bf verzameling van de complexe getallen} wordt dan
+$$\mathbb{C}=\{ a + bi \;|\; a\in\mathbb{R}, b\in\mathbb{R}\}$$
+
+\paragraph*{Notatie en afspraken}
+\begin{itemize}
+  \item $a$ is het {\bf reële deel}.
+  \item $b$ is het {\bf imaginaire deel}.
+  \item Een complex getal waarbij $b=0$ noemen we een {\bf reëel getal}.
+  \item Een complex getal waarbij $a=0$ noemen we een {\bf zuiver imaginair getal}.
+  \item Twee complexe getallen met tegengesteld reële deel en tegengesteld imaginaire deel noemen we {\bf tegengestelden}.
+  \item De vorm waarin we een complex getal als $a+bi$ schrijven wordt de {\bf Carthesische gedaante} genoemd, we zien later nog een andere manier om een complex getal op te schrijven.
+\end{itemize}
+
+\paragraph*{Voorbeelden}\mbox{}\\
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $(2,3)=2+3i$
+  \item $(5,-1)=5-i$
+  \item $(0,3)=3i$
+  \item $(2,0)=2$
+  \item $(\sqrt{2},1)=\sqrt{2}+i$
+  \item $(\pi, \frac{1}{2})=\pi+\frac{1}{2}i$
+\end{enumerate}
+\end{multicols}
+
+Met voorgaande definitie kunnen we nu $x^2+4=0$ oplossen. De oplossingen zijn namelijk $2i$ en $-2i$. We proberen eens de eerste oplossing in te vullen en krijgen inderdaad $(2i)^2+4 = 2^2\cdot i^2 + 4 = 4\cdot(-1) + 4 = -4 + 4 = 0$. We vinden nu dus in $\mathbb{C}$ oplossingen waar we er in $\mathbb{R}$ geen vonden!
+
 \begin{oefening}
   Maak gebruik van een venndiagram om de volgende getallen in de juiste getalverzameling te plaatsten:
   $$-3\qquad\pi\qquad\dfrac{3}{4}\qquad2+3i\qquad10^{10}\qquad-\sqrt{9}$$
@@ -78,21 +145,137 @@
 \pagebreak
 \section{Basisbewerkingen met complexe getallen}
 
+\subsection{Gelijkheid}
+
+\paragraph*{Definitie}
+\begin{mdframed}
+Twee complexe getallen zijn {\bf gelijk} als en slechts als hun reële delen en hun imaginaire delen gelijk zijn.
+\end{mdframed}
+
+\paragraph*{Notatie}
+$$a+bi = c+di \LRA \begin{cases}a=c \\ b=d\end{cases}$$
+
+\paragraph*{Merk op}
+Complexe getallen kunnen niet geordend worden, dus een ongelijkheid als bijvoorbeeld kleiner dan kan niet gedefinieerd worden.
+
+\subsection{Complex toegevoegde}
+
+\paragraph*{Definitie}
+\begin{mdframed}
+Twee complexe getallen met hetzelfde reële deel en een tegengesteld imaginaire deel noemen we {\bf complex toegevoegden}.
+\end{mdframed}
+
+\paragraph*{Notatie}
+$\bar{z}$ is het complex toegevoegde van $z$.
+$$z=a+bi \Rightarrow \overline{z}=a-bi$$
+
+\paragraph*{Voorbeeld}
+$$\overline{2+3i}=2-3i$$
+
 \begin{oefening}
-  Gegeven het complex getal $a+bi$, bepaal het neutraal element en het symmetrisch element in $\mathbb{C}, +$.
+Bepaal het complex toegevoegde van:
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $-2-3i$
+  \item $3$
+  \item $3i$
+  \item $0$
+  \item $i-3$
+  \item $(3-1)+(6+3)i$
+\end{enumerate}  
+\end{multicols}
 \end{oefening}
 
-\begin{oefening}*
-  Gegeven het complex getal $a+bi$, bepaal het neutraal element en het symmetrisch element in $\mathbb{C}_0, \cdot$.
+\begin{oefening}
+\begin{enumerate}[(a)]
+  \item Wat is het complex toegevoegde van het complex toegevoegde van een getal $z\in\mathbb{C}$.
+  \item Wat is het complex toegevoegde van een getal $x\in\mathbb{R}$.
+\end{enumerate}
+
 \end{oefening}
 
+\subsection{Optelling}
+
+\paragraph*{Definitie}
+\begin{mdframed}
+Twee complexe getallen kunnen we {\bf optellen} door afzonderlijk hun reële delen en hun imaginaire delen op te tellen.
+\end{mdframed}
+
+\paragraph*{Notatie}
+$$(a+bi) + (c+di) = (a+c) + (b+d)i$$
+
+\paragraph{Voorbeeld}
+\begin{align*}
+  (1 - 2i) + (-3 + i) &= (1 - 3) + (-2 + 1)i \\
+                      &= -2-i
+\end{align*}
+
+\paragraph*{Eigenschap}
+$\mathbb{C},+$ is een commutatieve groep.\\
+De bewerking optellen op de verzameling van complexe getallen
+\begin{itemize}
+  \item is inwendig en overal gedefinieerd,
+  \item is associatief,
+  \item heeft een neutraal element,
+  \item heeft een symmetrisch element,
+  \item en is commutatief.
+\end{itemize}
+
+\paragraph*{Bijzonder geval}
+$$(a+bi) + \overline{(a+bi)}=(a+bi) + (a-bi) = 2a+0i = 2a$$
+Dus, de som van 2 complex toegevoegden is reëel!
+
+\paragraph*{Verschil}
+Het verschil van een twee complexe getallen is hetzelfde als de som van het eerste complex getal met het tegengestelde van het tweede complexe getal.
+$$(a+bi)-(c+di)=(a+bi)+(-c-di)=(a-c)+(b-d)i$$
 
 \begin{oefening}
   Bereken
   \begin{enumerate}[(a)]
+  \itemsep1em
   \item $\displaystyle (2-i)+(3+4i)$
   \item $\displaystyle (4i-2)-(2+5i)$
   \item $\displaystyle (7+6i)+2(1+i)$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Gegeven het complex getal $a+bi$, bepaal het neutraal element en het symmetrisch element in $\mathbb{C}, +$.
+\end{oefening}
+
+\subsection{Vermenigvuldiging}
+
+\paragraph*{Definitie}
+\begin{mdframed}
+$$(a+bi)(c+di) = (ac - bd) + (ad + bc)i$$
+\end{mdframed}
+
+Vermenigvuldig zoals in $\mathbb{R}$, maar hou rekening met het feit dat $i\cdot i=i^2=-1$:
+\begin{align*}
+  (a+bi)(c+di) &= ac + adi + bci + bdi^2\\
+               &= (ac - bd) + (ad + bc)i
+\end{align*}
+
+\paragraph*{Voorbeeld}
+\begin{align*}
+  (1-2i)\cdot(-3+i) &= 
+\end{align*}
+
+\paragraph*{Bijzonder geval}
+\begin{align*}
+  (a+bi)\overline{(a+bi)} &= (a+bi)(a-bi) \\
+                          &= a^2 - abi + abi - b^2i^2 \\
+                          &= a^2 + b^2
+\end{align*}
+
+Dus het product van 2 complex toegevoegden is een reëel positief getal.
+
+
+\begin{oefening}
+  Bereken
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \itemsep1em
   \item $\displaystyle (2-3i)\cdot (1-i)$
   \item $\displaystyle 4i(8-2i)$
   \item $\displaystyle (2+i)(-2+i)$
@@ -100,12 +283,43 @@
   \item $\displaystyle (2+3i)^2$
   \item $\displaystyle (2+i)^3$
   \end{enumerate}
+  \end{multicols}
 \end{oefening}
+
+\subsection{Quotiënt}
+
+\paragraph*{Definitie}
+\begin{mdframed}
+$$\dfrac{a+bi}{c+di} = (a+bi)\cdot\underbrace{(c+di)^{-1}}_{\mbox{\scriptsize omgekeerde}}$$
+\end{mdframed}
+
+\paragraph*{Praktische regel}
+
+We maken de noemer reëel:
+
+\begin{align*}
+  \dfrac{a+bi}{c+di} &= \dfrac{(a+bi)(c-di)}{(c+di)(c-di)} \\
+                     &= \dfrac{ac-adi + bci - bdi^2}{c^2 - cdi + cdi -d^2i^2}\\
+                     &= \dfrac{(ac + bd) + (bc -ad)i}{c^2 + d^2}
+\end{align*}
+
+Dus, om te delen door een complex getal, vermenigvuldigen we teller en noemer met het complex toegevoegde van de noemer.
+
+\paragraph*{Voorbeeld}
+\begin{align*}
+  \dfrac{3+4i}{1+i} &= \dfrac{(3+4i)(1-i)}{(1+i)(1-i)} \\
+                    &= \dfrac{3-3i + 4i - 4i^2}{1^2 + 1^2}\\
+                    &= \dfrac{7 + i}{2}\\
+                    &= 3.5 + 0.5i \mbox{ of } \frac{7}{2} + \frac{1}{2}i
+\end{align*}
+
+De laatste stap is nodig, want we schrijven een complex getal altijd in zijn Carthesische vorm als antwoord.
 
 \begin{oefening}
   Bereken
+  \begin{multicols}{2}
   \begin{enumerate}[(a)]
-    \itemsep1em
+  \itemsep1em
   \item $\displaystyle \dfrac{2-4i}{1+i}$
   \item $\displaystyle \dfrac{7+4i}{i}$
   \item $\displaystyle \dfrac{3-2i}{3+2i}$
@@ -114,11 +328,27 @@
   \item $\displaystyle \dfrac{1-3i}{2+3i}$
   \item $\displaystyle \left(\dfrac{1+i\sqrt{2}}{1-i\sqrt{2}}\right)^2+\left(\dfrac{1-i\sqrt{2}}{1+i\sqrt{2}}\right)^2$
   \end{enumerate}
+  \end{multicols}
 \end{oefening}
 
 \begin{oefening}
   Geef het reëel deel en het imaginair deel van $z=\frac{i-4}{2i-3}$.
 \end{oefening}
+
+\begin{oefening}*
+  Gegeven het complex getal $a+bi$, bepaal het neutraal element en het symmetrisch element in $\mathbb{C}_0, \cdot$.
+\end{oefening}
+
+\subsection{*Veld van de complexe getallen}
+
+\begin{itemize}
+  \item $\mathbb{C},+$ is een commutatieve groep
+  \item $\mathbb{C}_0,\cdot$ is een commutatieve groep
+  \item $\cdot$ is distributief t.o.v. $+$
+\end{itemize}
+
+
+\pagebreak
 
 \section{Machtsverheffing}
 
@@ -432,5 +662,4 @@ Los op in $\mathbb{C}$
 
 
 \end{document}
-
 
