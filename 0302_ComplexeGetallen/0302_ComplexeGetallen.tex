@@ -512,10 +512,52 @@ Bepaal alle complexe getallen die een vierkantswortel zijn uit $3-4i$.
 
 We zoeken dus $x+yi \in \mathbb{C}$, met $x,y\in\mathbb{R}$ zodat
 \begin{align*}
-  && (x+yi)^2 &= 3-4i\\
-  &&\LRA \underbrace{x^2 - y^2}_{\text{\shortstack{reëel\\deel}}} + \underbrace{2xy}_{\text{\shortstack{imaginair\\deel}}}\hspace*{-0.3cm}i &= 3-4i
-  && \LRA 
+  &&(x+yi)^2 &= 3-4i\\
+  \LRA &&\underbrace{x^2 - y^2}_{\text{\shortstack{reëel\\deel}}} + \underbrace{2xy}_{\text{\shortstack{imaginair\\deel}}}\hspace*{-0.3cm}i &= 3-4i\\
+  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - y^2 = 3\\2xy =  -4 \mbox{ dus } x\neq 0 \wedge y\neq 0 \end{cases}\\
+  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - y^2 = 3\\y =  -\frac{2}{x}\end{cases}\\
+  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - \left(-\frac{2}{x}\right)^2 = 3\\y =  -\frac{2}{x}\end{cases}\\
+  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - \frac{4}{x^2} = 3\\y =  -\frac{2}{x}\end{cases}\\
+  \LRA && &\hspace*{-2cm}\begin{cases}x^4-3x^2-4=0\\y =  -\frac{2}{x}\end{cases}
 \end{align*}
+
+In bovenstaand stelsel is $x^4-3x^2-4=0$ een {\bf bikwadratische vergelijking}. We lossen deze op m.b.v. een eenvoudige substitutie:
+\begin{align*}
+  &&\mbox{stel } t=x^2
+  \Rightarrow t^2-3t-4&=0\\
+  \LRA && t^2-4t+t-4 &= 0\\
+  \LRA && (t-4)(t+1) &= 0\\
+  \LRA && t=4 \vee t=-1\\
+  \LRA && x^2=4 \vee \underbrace{\cancel{x^2=-1}}_{\text{want }x\in\mathbb{R}}
+\end{align*}
+Waardoor we nu ons stelsel verder kunnen oplossen:
+\begin{align*}
+ \LRA && &\hspace*{-2cm}\begin{cases}x^2=4\\y=-\frac{2}{x}\end{cases}\\
+ \LRA && &\hspace*{-2cm}\begin{cases}x=2\\y=-\frac{2}{x}\end{cases} \vee \begin{cases}x=-2\\y=-\frac{2}{x}\end{cases}\\
+ \LRA && &\hspace*{-2cm}\begin{cases}x=2\\y=-1\end{cases} \vee \begin{cases}x=-2\\y=1\end{cases}
+\end{align*}
+
+We vinden dus twee oplossingen $x+yi\in\mathbb{C}$, namelijk
+$$-2+i \mbox{ en } 2-i$$
+
+Dus $3-4i$ heeft 2 vierkantswortels die elkaars tegengestelde zijn.
+
+\paragraph*{Voorbeeld 2}
+Bepaal alle complexe getallen die een vierkantswortel zijn uit $-a$, met $a\in\mathbb{R}^+_0$.
+
+We zoeken dus $z \in \mathbb{C}$, zodat
+\begin{align*}
+              && z^2 &= -a\\
+         \LRA && z^2 &= ai^2\\
+         \LRA && z   &= \pm \sqrt{ai^2}\\
+         \LRA && z   &= \pm \sqrt{a}\cdot i
+\end{align*}
+
+We vinden dus twee oplossingen $z\in\mathbb{C}$, namelijk
+$$-\sqrt{a}i \mbox{ en } \sqrt{a}i$$
+
+Dus $-a\in\mathbb{R}^+_0$ heeft 2 zuiver imaginaire wortels.
+
 
 \begin{oefening}
   Bepaal alle vierkantswortels uit
