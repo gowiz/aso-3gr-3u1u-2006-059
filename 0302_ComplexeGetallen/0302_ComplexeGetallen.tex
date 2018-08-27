@@ -122,6 +122,7 @@ $$\mathbb{C}=\{ a + bi \;|\; a\in\mathbb{R}, b\in\mathbb{R}\}$$
   \item $b$ is het {\bf imaginaire deel}.
   \item Een complex getal waarbij $b=0$ noemen we een {\bf reëel getal}.
   \item Een complex getal waarbij $a=0$ noemen we een {\bf zuiver imaginair getal}.
+  \item Een complex getal waarbij $b\neq 0$ noemen we een {\bf imaginair getal}. Dus een imaginair getal is een complex getal dat geen reëel getal is.
   \item Twee complexe getallen met tegengesteld reële deel en tegengesteld imaginaire deel noemen we {\bf tegengestelden}.
   \item De vorm waarin we een complex getal als $a+bi$ schrijven wordt de {\bf Carthesische gedaante} genoemd, we zien later nog een andere manier om een complex getal op te schrijven.
 \end{itemize}
@@ -377,9 +378,6 @@ De laatste stap is nodig, want we schrijven een complex getal altijd in zijn Car
   \end{multicols}
 \end{oefening}
 
-
-
-
 \pagebreak
 
 \section{Machtsverheffing}
@@ -584,6 +582,74 @@ Dus $-a\in\mathbb{R}^+_0$ heeft 2 zuiver imaginaire wortels.
 \pagebreak
 \section{Vierkantsvergelijkingen in $\mathbb{C}$}
 
+\subsection{Eigenschap}
+
+\begin{mdframed}
+Elke vierkantsvergelijking
+$$az^2+bz+c=0 \text{ met } a\in\mathbb{C}_0, b,c\in\mathbb{C}$$
+heeft in $\mathbb{C}$ altijd twee (mogelijks samenvallende) oplossingen.
+\end{mdframed}
+
+\subsection{Voorbeelden}
+
+\paragraph*{Voorbeeld 1: Vierkantsvergelijking negatieve discriminant}\mbox{}\\
+Los op in $\mathbb{C}$
+$$z^2 + 2z + 5 = 0$$
+
+\begin{align*}
+  & a=1, b=2, c=5\\
+  & \Rightarrow  D = b^2 - 4ac = -16\\
+  & \Rightarrow  +\sqrt{D} = 4i \wedge -\sqrt{D}=-4i
+\end{align*}
+
+Dus we krijgen twee oplossingen:
+\begin{align*}
+  z_{1,2} &= \dfrac{-b \pm \sqrt{D}}{2a}\\
+  \LRA & \begin{cases}z_1 &= -1 - 2i\\z_2 &= -1 + 2i\end{cases}
+\end{align*}
+
+We noteren de oplossingenverzameling:
+$$V=\{ -1-2i, -1+2i \}$$
+
+\paragraph*{Voorbeeld 1: Vierkantsvergelijking met imaginaire discriminant}\mbox{}\\
+Los op in $\mathbb{C}$
+\begin{align*}
+       && (2-i)(z^2-6) &= 5(2i+1)\\
+  \LRA && \underbrace{(2-i)}_a z^2 + \underbrace{(-5-10i)}_b z + \underbrace{(-12+6i)}_c &= 0\\
+  \Rightarrow D = -3+4i
+\end{align*}
+
+We willen nu $\sqrt{D}$ bepalen, m.a.w. we zoeken de wortels van $-3+4i$:
+\begin{align*}
+  &&(x+yi)^2 &= -3+4i\\
+  \LRA &&x^2 - y^2 + 2xyi &= -3+4i\\
+  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - y^2 = -3\\2xy =  4 &\Rightarrow y=\frac{2}{x} \end{cases}\\
+  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - \frac{4}{x^2} = -3\\y =  \frac{2}{x}\end{cases}\\
+  \LRA && &\hspace*{-2cm}\begin{cases}x^4+3x^2-4=0\\y =  \frac{2}{x}\end{cases}\\
+  &&\mbox{stel } t=x^2
+  \Rightarrow t^2+3t-4&=0\\
+  \LRA && t^2+4t-t-4 &= 0\\
+  \LRA && (t+4)(t-1) &= 0\\
+  \LRA && t=-4 \vee t=1\\
+  \LRA && \cancel{x^2=-4}\vee x^2=1\\
+  \LRA && \begin{cases}x=-1\\y=-2\end{cases} \vee \begin{cases}x=1\\y=2\end{cases}
+\end{align*}
+
+Dus vinden we $\sqrt{D} = -1-2i \mbox{ en } -\sqrt{D}=1+2i$. De oplossingen van onze vierkantsvergelijking worden dus
+\begin{align*}
+  z_{1,2} &= \dfrac{5+10i \mp (1+2i)}{2(2-i)}\\
+  \LRA & \begin{cases}z_1 &= \dfrac{(4+8i){\color{gray}(4+2i)}}{(4-2i){\color{gray}(4+2i)}}=2i\\z_2 &= 3i\end{cases}
+\end{align*}
+
+En dus de oplossingenverzameling wordt $V=\{2i, 3i\}$.
+
+\subsection{Besluit}
+
+\begin{mdframed}
+De vierkantsvergelijking $az^2+bz+c=0$ met $a,b,c\in\mathbb{C}$ en $a\neq 0$ in $\mathbb{C}$ heeft als wortels
+$$ z_{1,2}=\dfrac{-b\pm\sqrt{D}}{2a}$$
+\end{mdframed}
+
 \begin{oefening}
   Los op in $\mathbb{C}$
   \begin{enumerate}[(a)]
@@ -651,7 +717,82 @@ $$z^2+\overline{z}^2=0\;.$$
 \end{oefening}
 
 \pagebreak
-\section{Meetkundige voorstelling van een complex getal}
+\section{Vlak van Gauss}
+
+\subsection{Meetkundige voorstelling van een complex getal}
+
+$z=a+bi\in\mathbb{C}$ met $a,b\in\mathbb{R}$
+\begin{itemize}
+  \renewcommand{\labelitemi}{$\Rightarrow$}
+  \item $z$ volledig bepaald door het koppel $(a,b)$
+  \item $z$ in een assenstelsel voor te stellen als een punt $P(a,b)$
+  \item met elke punt $P$ in dit vlak kan een complex getal $z$ voorgesteld worden
+\end{itemize}
+
+\begin{minipage}{.5\textwidth}
+\begin{center}
+\begin{tikzpicture}[scale=1.5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-1.14,0) -- (3.74,0);
+\foreach \x in {1}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-0.72) -- (0,2.2);
+\foreach \y in {1}
+\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (-8pt,-5pt) node[right] {\footnotesize $0$};
+\clip(-1.14,-0.72) rectangle (3.74,2.2);
+\draw[color=black,fill=black,fill opacity=0.1] (0.21,0) -- (0.21,0.21) -- (0,0.21) -- (0,0) -- cycle; 
+\draw [line width=1.6pt] (0,1.5)-- (2.5,1.5);
+\draw [line width=1.6pt] (2.5,0)-- (2.5,1.5);
+\draw (2.3,-0.05) node[anchor=north west] {$a$};
+\draw (-0.35,1.7) node[anchor=north west] {$b$};
+\draw (2.63,1.74) node[anchor=north west] {$P(a,b)$};
+\begin{scriptsize}
+\fill [color=black] (2.5,1.5) circle (1.5pt);
+\draw[color=black] (0.32,0.31) node {$90\degree$};
+\end{scriptsize}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\begin{minipage}{.5\textwidth}
+Werk in een positief georiënteerd orthonormaal assenstelsel. Positief georiënteerd wil zeggen dat we de assen in tegenwijzerzin plaatsen. Orthonormaal wil zeggen dat de assen loodrecht op elkaar staan en dat ijking van alle assen gelijk is.
+\end{minipage}
+
+\subsection{Definitie}
+
+\begin{mdframed}
+Het vlak voorzien van een positief georiënteerd orthonormaal assenstelsel en aarvan elk punt beschouwd wordt als het beeldpunt van een complex getal noemen we het {\bf vlak van Gauss} of het complexe vlak.
+\end{mdframed}
+
+\begin{itemize}
+  \item Op de $x$-as komen de reële getallen, we noemen dit dan ook de {\bf reële as} en noteren $Re$.
+  \item Op de $y$-as komen de zuiver imaginaire getallen, we noemen dit dan ook de {\bf imaginaire as} en noteren $Im$.
+\end{itemize}
+
+\subsection{Voorbeelden}
+
+Beschouw $z=a+bi\in\mathbb{C}$ en zijn beeldpunt $P(a,b)$
+
+\begin{itemize}
+  \item $z=0 \LRA z=0+0i \LRA P=$ oorsprong
+  \item $z=a \LRA P\in $ $x$-as = "reële as"
+  \item $z=bi \LRA P\in $ $y$-as = "imaginaire as"
+  \item $z=a+bi \text{ met } P(a,b)$ en $\overline{z}=a-bi \text{ met } P'(a,-b)$\\
+  $\Rightarrow$ $P$ en $P'$ zijn elkaars spiegelbeeld t.o.v. de $x$-as
+  \item $z=a+bi \text{ met } P(a,b)$ en $-z=-a-bi \text{ met } P'(-a,-b)$\\
+  $\Rightarrow$ $P$ en $P'$ zijn elkaars spiegelbeeld t.o.v. de oorsprong
+\end{itemize}
+
+\vspace*{1cm}
+\begin{mdframed}% bron: http://www.promath.nl/wiskav04html/het_vlak_van_gauss.htm
+{\em Wat http://www.promath.nl te zeggen heeft over het vlak van Gauss:}
+
+Na Bombelli hebben veel wiskundigen zich op de een of andere manier bezig gehouden met complexe getallen. Toch blijven deze merkwaardige getallen lange tijd omgeven door een waas van onwerkelijkheid. Hoewel men steeds meer het nut inziet van het rekenen ermee blijft het complexe getal iets dat in werkelijkheid niet bestaat.
+
+In het begin van de zeventiende eeuw, wanneer de negatieve getallen steeds nadrukkelijker geaccepteerd worden in de algebra, ontstaat het idee van een grafische weergave van getallen door middel van een getallenlijn. Reeds in het wiskundige werk van raadspensionaris Jan de Wit (1629-1672) treffen we het gebruik van twee onderling loodrechte getallenlijnen aan (coördinaat-assen) om getallenparen weer te geven.
+
+Nu kennen complexe getallen nog een extra complicatie, namelijk dat er feitelijk geen ordening van klein naar groot voor bestaat. Deze bestaat wel voor reële getallen en desnoods ook voor zuiver imaginaire getallen. Wallis komt als eerste met het idee om zuiver imaginaire getallen weer te geven op een getallenlijn die loodrecht op de reële getallenlijn staat. Het duurt echter nog ruim een eeuw tot de vrij onbekende Noor Caspar Wessel op het idee komt om het complexe getal als een soort getallenpaar in dit assenstelsel weer te geven. Zijn idee wordt gepubliceerd in een uitgave van 1798 van de Deense wiskundige academie. En pas als enige tientallen jaren later de grote wiskundige Carl Friedrich Gauss (1777-1855) dit idee in zijn werk gebruikt, wordt het algemeen overgenomen. De weergave van een complex getal in dit zogenaamde vlak van Gauss spreekt zo sterk tot de verbeelding, dat de resterende taboes rond de complexe getallen spoedig wegvallen. Nu er een grafische weergave bestaat, bestaat de complexe getallen zelf gewoon ook. 
+\end{mdframed}
+
 
 \begin{oefening}
 Stel volgende complexe getallen voor in het vlak van Gauss. Gebruik voor het complex getal $z_i$ het beeldpunt $P_i$.
