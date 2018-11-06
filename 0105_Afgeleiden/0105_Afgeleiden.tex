@@ -2,6 +2,10 @@
 
 \input{../gowiz.tex}
 
+\usepackage{versions}
+\excludeversion{theorie}
+%\includeversion{theorie}
+
 \newenvironment{definitie}
 {
   \begin{mdframed}[nobreak=true,frametitle={Definitie}]
@@ -40,6 +44,11 @@
 
 \begin{document}
 
+\pagestyle{fancy}
+\lhead{}
+\rhead{Oefeningen Afgeleiden}
+
+\begin{theorie}
 
 \thispagestyle{empty}
 \begin{center}
@@ -81,11 +90,15 @@ Je \hfill  {\scriptsize(LP 2006-059, LI 1.5)}
 \pagenumbering{arabic}
 
 \lhead{}
-\rhead{Herhaling afgeleiden}
+\rhead{afgeleiden}
 
 \onehalfspacing
 
+\end{theorie}
+
 \section{Differentiequotiënt}
+
+\begin{theorie}
 
 \begin{definitie}
   We noemen het quotiënt
@@ -128,11 +141,17 @@ Het differentiequotiënt geeft de helling van het lijnstuk dat door de punten $(
 
 Het quotiënt $\dfrac{f(a+h)-f(a)}{h}$ is dan analoog het differentiequotiënt in het interval $[a, a+h]$.
 
+\end{theorie}
+
 \begin{oefening}
   Maak zoals hierboven een grafiek van het differentiequotiënt in $[a, a+h]$.
 \end{oefening}
 
+\begin{theorie}
+
 Een differentiequotiënt in het interval $[a,b]$ kan symbolisch geschreven worden als $\dfrac{\Delta y}{\Delta x}_{[a,b]}$.
+
+\end{theorie}
 
 \begin{oefening}
   Gegeven de functie
@@ -143,6 +162,9 @@ Een differentiequotiënt in het interval $[a,b]$ kan symbolisch geschreven worde
 
 \pagebreak
 \section{Afgeleide waarde}
+
+\begin{theorie}
+
 \begin{definitie}
   We noemen de {\bf afgeleide waarde van $f$ in $a$}
   $$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}$$
@@ -153,6 +175,8 @@ In voorgaande definitie konden we ook de volgende limiet gebruiken om afgeleide 
 $$f'(a)=\lim_{x\to a}\dfrac{f(x)-f(a)}{x-a}$$
 
 De afgeleide waarde van $f$ in $a$ wordt ook nog genoteerd als $Df(a)$ of $\dfrac{\mbox{d}f}{\mbox{d}x}(a)$. Wij zullen de notatie $f'(a)$ gebruiken. We noemen de {\em afgeleide waarde} ook nog {\em afgeleid getal} of nog korter {\em afgeleide}.
+
+\end{theorie}
 
 \begin{oefening}
   Toon grafisch aan dat beide definities equivalent zijn.
@@ -188,6 +212,8 @@ De afgeleide waarde van $f$ in $a$ wordt ook nog genoteerd als $Df(a)$ of $\dfra
 \pagebreak
 \section{Afgeleide functie}
 
+\begin{theorie}
+
 \subsection{Definitie}
 
 \begin{definitie}
@@ -215,9 +241,13 @@ en dus
 \end{align*}
 Het getal $2a$ bestaat en is reëel aangezien $a$ reëel was. De limiet bestaat en is reëel, dus wegens de definitie is $f$ afleidbaar.
 
+\end{theorie}
+
 \begin{oefening}
   Maak gebruik van de andere definitie voor afgeleid getal, namelijk $$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}$$ om hetzelfde aan te tonen.
 \end{oefening}
+
+\begin{theorie}
 
 \subsubsection*{Voorbeeld 2}
 
@@ -263,6 +293,8 @@ Dit wordt wiskundig opgelost door uit het domein alle waarden te halen waar de f
   \end{multicols}
 \end{kader}
 
+\end{theorie}
+
 \begin{oefening}
   Voorbeeld 1 hierboven gaf ons de afleiding van $f(x)=x^2$. Toon op dezelfde manier aan dat als
   $$f(x)=x^3$$
@@ -288,6 +320,8 @@ Bepaal de afgeleide waarde van
   \item $f(x)=42$ in $x=-1$, $x=1$, $x=9$
 \end{enumerate}
 \end{oefening}
+
+\begin{theorie}
 
 \subsection{Eigenschappen van afgeleiden}
 
@@ -321,6 +355,8 @@ Uit de kettingregel volgt dan
                            & = 3(3x^2+x)^2(6x+1) &&\mbox{vervangen $f$}\\
                            & = 162x^5 + 135x^4 + 36x^3 + 3x^2 &&\mbox{uitwerken}
 \end{align*}
+
+\end{theorie}
 
 \begin{oefening}
   Toon aan dat we met behulp van de kettingregel ook nog volgende eigenschap krijgen:
@@ -361,12 +397,16 @@ Uit de kettingregel volgt dan
   \end{multicols}
 \end{oefening}
 
+\begin{theorie}
+
 \subsection{Hogere afgeleiden}
 
 Als de afgeleide functie van een functie $f$ opnieuw afleidbaar is, dan kan $f$ een tweede maal afgeleid worden. We noteren dan de {\bf tweede afgeleide} als
 $$f''(x), f^{(2)}(x), D^2f(x), \mbox{ of } \dfrac{d^2f}{dx^2}(x)$$
 
 Analoog kunnen we afgeleide van orde drie, vier, enz. definiëren.
+
+\end{theorie}
 
 \begin{oefening}
   Bereken:
@@ -389,8 +429,12 @@ $$f^{(n)} \mbox{ als } f(x)=x^n$$
 en maak hier gebruik van het feit dat we het product $n\cdot(n-1)\cdot(n-2)\cdot \cdots \cdot 3\cdot 2\cdot 1$ korter kunnen schrijven als $n!$ met behulp van faculteit. Volgend jaar zien we deze notatie in meer detail.
 \end{oefening}
 
+\begin{theorie}
+
 \pagebreak
 \subsection{Oefeningen}
+
+\end{theorie}
 
 \begin{oefening}
   Bereken:
@@ -498,6 +542,8 @@ Zij $\displaystyle f(x)=\dfrac{\sqrt{x}}{x^2+3x}$. Dan is $f'(x)$ gelijk aan
 \pagebreak
 \section{Functieonderzoek}
 
+\begin{theorie}
+
 Het bespreken van het verloop van een functie $f$ kan het best aan de hand van haar afgeleide functie $f'$ als deze bestaat.
 
 \subsection{Stijgen en dalen van een functie}
@@ -545,6 +591,8 @@ In de praktijk maken we het tekenverloop van de afgeleide functie $f'$, hierop d
   \end{tabular}
 \end{center}
 
+\end{theorie}
+
 \begin{oefening}
   Zoek een functie $f$, waarvoor geld $f'(x)=1\quad \forall x\in\mathbb{R}$. Maak de grafiek van $f$ en van $f'$ en maak ook het tekenverloop van $f'$ met het stijgen en dalen van $f$.
 \end{oefening}
@@ -552,6 +600,8 @@ In de praktijk maken we het tekenverloop van de afgeleide functie $f'$, hierop d
 % \begin{oefening}
 %   Zoek een functie $f$, waarvoor geld $f(x)=0\quad \forall x\in\mathbb{R}$. Maak de grafiek van $f$ en van $f'$ en maak ook het tekenverloop van $f'$ met het stijgen en dalen van $f$.
 % \end{oefening}
+
+\begin{theorie}
 
 \subsection{Extrema van een functie}
 
@@ -601,6 +651,8 @@ We gaan als volgt te werk voor een gegeven functie $f(x)=y$:
 \end{enumerate}
 
 \subsection{Oefeningen}
+
+\end{theorie}
 
 \begin{oefening}
   Bespreek volgende functies:
@@ -797,6 +849,8 @@ Bepaal het tekenverloop van de afgeleide functie $f'$ als de grafiek van de func
 \pagebreak
 \section{Toepassingen: extremumvraagstukken}
 
+\begin{theorie}
+
 De volgende problemen zijn extremumvraagstukken. Ze zijn één van de belangrijkste toepassingen van de eerste afgeleide. Veel studenten zijn geïntimideerd door deze problemen omdat ze de tekst eerst moeten omzetten naar een wiskundige functie. Daarnaast bestaat er geen éénduidige manier om alle extremumvraagstukken op te lossen. Echter, met een beetje geduld en de nodige oefening kan je je ongerustheid minimaliseren en je succes maximaliseren.
 
 Volgende tips kunnen alvast handig zijn:
@@ -806,6 +860,8 @@ Volgende tips kunnen alvast handig zijn:
 \item Probeer het aantal onbekenden te verminderen naar hoogstens één onbekende.
 \item Werk systematisch, hou het stramien van onbekenden/functie/afleiden/tekenverloop en stijgen\&dalen/antwoordzin aan.
 \end{itemize}
+
+\end{theorie}
 
 \begin{oefening}
   De som van twee positieve getallen is $2004$. Bepaal die getallen zodat hun product maximaal is.

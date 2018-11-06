@@ -3,9 +3,8 @@
 \input{../gowiz.tex}
 
 \usepackage{versions}
-
-%\includeversion{theorie}
-\excludeversion{theorie}
+\includeversion{theorie}
+%\excludeversion{theorie}
 
 \begin{document}
 
@@ -76,23 +75,75 @@
 \section{Irrationale vergelijkingen}
 
 \begin{theorie}
-  \subsection{Definitie}
+\subsection{Definitie}
 
-  \begin{mdframed}
-    Een {\bf irrationale vergelijking} is een vergelijking waarin de onbekende $x$ voorkomt onder het wortelteken.
-  \end{mdframed}
+\begin{mdframed}
+Een {\bf irrationale vergelijking} is een vergelijking waarin de onbekende $x$ voorkomt onder het wortelteken.
+\end{mdframed}
 
-  \subsection{Voorbeelden}
-  \begin{enumerate}[(a)]
+\subsection{Voorbeelden}
+\begin{enumerate}[(a)]
   \item $\sqrt{2x+3}=7$
   \item $\sqrt{x^2-2x+5}=13$
   \item $\sqrt{x^2-4}=\sqrt{x+2}$
-  \end{enumerate}
+\end{enumerate}
   
   
-  We zullen ons beperken tot irrationale vergelijkingen van de volgende simpele vorm:
-  $$\sqrt{ax^2+bx+c}=d\qquad\mbox{ met } d\in\mathbb{R}^+$$
+We zullen vooral irrationale vergelijkingen van de volgende simpele vorm oplossen:
+$$\sqrt{ax^2+bx+c}=d\qquad\mbox{ met } d\in\mathbb{R}^+$$
 
+\subsection{Algebraïsche oplossingsmethode}
+
+\paragraph*{Voorbeelden}
+\begin{enumerate}[(a)]
+  \item Los $\sqrt{2x+3}=7$ op in $\mathbb{R}$:\\
+  Voordat we de vergelijking effectief oplossen, zullen we controleren of de oplossing überhaupt kan bestaan. Omdat er in de vergelijking een vierkantswortel staat, moet alles onder de wortel positief zijn. We eisen dus als{\bf bestaansvoorwaarde (BV)}:
+  \begin{align*}
+         && 2x+3 &\geq 0 \\
+    \LRA && x &\geq -\dfrac{3}{2}
+  \end{align*}
+  \begin{align*}
+         && \sqrt{2x+3} &= 7 \\
+    \LRA && \left(\sqrt{2x+3}\right)^2 &= \left(7\right)^2\\
+    \LRA && 2x+3 &= 49\\
+    \LRA && x &= 23\\
+  \end{align*}
+  Merk op dat $23\geq -\dfrac{3}{2}$ en er dus voldaan is aan de BV. Dus 
+  $$V=\{23\}$$
+  \item Los $\sqrt{x^2-4x+8}=2$ op in $\mathbb{R}$:\\
+  Als BV eisen we $x^2-4x+8\geq 0$, we hebben gezien (Hoofdstuk Veeltermfuncties) dat we deze ongelijkheid best oplossen m.b.v. een tekenverloop.\\
+  {\bf Nulwaarden functie onder de wortel:}
+  \begin{align*}
+         && x^2-4x+8 &= 0\\
+         && D &= 16-4\cdot 1\cdot 8\\
+         &&   &= 16-32\\
+         &&   &= -16 < 0\\
+         && &\Rightarrow \text{geen nulwaarden}
+  \end{align*}
+  {\bf Tekenverloop functie onder de wortel:}
+  \begin{center}
+    \begin{tabular}{c|ccc}
+    $x$ & & & \\
+    \hline
+    $y$ & & + &  
+    \end{tabular}
+  \end{center}
+  {\bf Bestaansvoorwaarde (BV):}
+  $$x\in\mathbb{R}$$
+  {\bf Oplossen irrationale vergelijking:}
+  \begin{align*}
+         && \sqrt{x^2-4x+8} &= 2 \\
+    \LRA && \left(\sqrt{x^2-4x+8}\right)^2 &= \left(2\right)^2\\
+    \LRA && x^2-4x+8 &= 4\\
+    \LRA && x^2-4x+4 &= 0\\
+    \LRA && (x-2)^2 &= 0\\
+    \LRA && x &= 2\\
+  \end{align*}
+  {\bf Controleren oplossing m.b.v. bestaansvoorwaarde:}\\
+  $$2\in\mathbb{R}$$\\
+  {\bf Noteren van de oplossingenverzameling:}\\
+  $$V=\{2\}$$
+\end{enumerate}
 
 \end{theorie}
 
@@ -286,8 +337,6 @@ Een wegwerpbekertje heeft de vorm van een kegel. Het volume van de kegel is $V (
 \begin{minipage}[c]{0.6\textwidth}
   \dotlines{10}
 \end{minipage}
-
-
 
 
 
