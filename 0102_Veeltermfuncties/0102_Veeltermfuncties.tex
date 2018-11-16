@@ -1,27 +1,12 @@
-\documentclass[12pt,twoside]{article}
+\documentclass[12pt]{article}
 
 \input{../gowiz.tex}
 
-\usepackage{pgfplots}
-
-\usepackage{relsize}
-
+\usepackage{tabto}
 
 \usepackage{versions}
 \excludeversion{theorie}
 %\includeversion{theorie}
-
-\newtheorem{definition}{Definitie}
-\newtheorem{eigenschap}{Eigenschap}
-
-% vergelijkingen mooi uitlijnen:
-% \begin{alignat}{2}
-%   &&    a^2-b^2 &= 0\\
-%   \lra && (a-b)(a+b) &= 0\\
-% \end{alignat}
-\newcommand{\lra}{\ensuremath{\Leftrightarrow\qquad}}
-
-
 
 \begin{document}
 
@@ -30,33 +15,58 @@
 \rhead{Oefeningen Veeltermfuncties}
 
 \begin{theorie}
+
 \thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
-  \centering
-  \fontsize{40}{60}\selectfont Veeltermfuncties
+    \centering
+    \fontsize{35}{70}\selectfont Veeltermfuncties
   \end{mdframed}
   \vfill
+%  \includegraphics[width=0.8\textwidth]{veeltermen}
   \vfill
 \end{center}
+% \vfill
+\vspace*{-2cm}
 
 \subsection*{Doelstellingen}
-\vspace*{-0.8cm}
 {\singlespacing
-Je \hfill  {\scriptsize(LP2006-059, LI1.1, ET14)}
-\begin{itemize}
-\end{itemize}}
+  Je kan \hfill  {\scriptsize(LP 2005/069, LI 1.2, ET10,11,12,13)}
+  \begin{itemize}
+  \item vergelijkingen van de eerste, tweede en derde graad in één onbekende oplossen
+  \item aan de hand van het functievoorschrift
+    \begin{itemize}
+    \item een tabel,
+    \item het domein,
+    \item de nulwaarden,
+    \item het tekenverloop,
+    \end{itemize}
+  \item aan de hand van de grafiek
+    \begin{itemize}
+    \item domein,
+    \item bereik,
+    \item nulwaarden
+    \item tekenverloop,
+    \item stijgen\&dalen,
+    \item extrema
+    \end{itemize}
+    bepalen van veeltermfuncties van de derde graad;
+  \item met behulp van ICT de tabel en de grafiek lezen van veeltermfuncties van graad hoger dan drie
+  \item veeltermongelijkheden van de eerste, tweede en derde graad in 1 onbekende oplossen, eventueel met behulp van ICT
+  \item vraagstukken/problemen oplossen die aanleiding geven tot een veeltermvergelijking, veeltermongelijkheid of veeltermfunctie, eventueel met behulp van ICT
+  \end{itemize}
 
+}
 \thispagestyle{empty}
 \mbox{}
 \newpage
 \clearpage
 \thispagestyle{empty}
-%\mbox{}
 \tableofcontents
 \newpage
 \clearpage
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
+
 
 \fancyhead[RO,LE]{Veeltermfuncties}
 \fancyhead[RE,LO]{}
@@ -65,9 +75,92 @@ Je \hfill  {\scriptsize(LP2006-059, LI1.1, ET14)}
 
 \onehalfspacing
 
-\pagebreak
+\section{Veeltermvergelijkingen}
 
-\section{Veeltermvergelijking}
+\begin{theorie}
+
+\subsection{Definitie}
+
+\paragraph{Eenterm}
+\begin{mdframed}
+Een {\bf eenterm} is een product van een coëfficiënt met een macht van een variabele:
+$$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
+\end{mdframed}
+
+\paragraph{Veelterm}
+\begin{mdframed}
+  Een {\bf reële veelterm} in de variabele $x$ is een som van ééntermen:
+  $$ a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0 \;.$$
+  De reële getallen $a_n, a_{n-1}, \cdots, a_1, a_0$ noemen we de {\bf coëfficiënten} van de veelterm.
+  De hoogste exponent bij de variabele $x$ is de {\bf graad} van de veelterm.
+\end{mdframed}
+
+\paragraph{Veeltermvergelijking}
+\begin{mdframed}
+  Een {\bf veeltermvergelijking} in één onbekende $x$ is een vergelijking die in de vorm
+  $$a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0 = 0$$
+  gebracht kan worden.\\
+  De hoogste exponent bij de onbekende $x$ is de {\bf graad} van de veelterm.
+\end{mdframed}
+
+\end{theorie}
+
+\begin{oefening}
+  Zijn volgende vergelijkingen veeltermvergelijkingen en zo ja, van welke graad?
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+    \item $2x + 2 = 0$
+    \item $\sqrt{3x+1} = 0$
+    \item $x^2-3x+8=0$
+    \item $x^4=-16$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{theorie}
+
+\paragraph{Oplossen van een veeltermvergelijking}
+\begin{mdframed}
+  Een veeltermvergelijking {\bf oplossen} is het zoeken naar alle onbekenden $x$ zodat de vergelijking waar wordt.
+\end{mdframed}
+
+\end{theorie}
+
+\begin{oefening}
+  Beschouw de vergelijking
+  $$x^3-6x^2+5x+12=0\;.$$
+  \begin{enumerate}[(a)]
+  \item Onderzoek of de gehele getallen van -3 tot 3 aan deze vergelijking voldoen.
+  \item Zijn er nog andere getallen die aan deze vergelijking voldoen?
+  \end{enumerate}
+\end{oefening}
+
+\begin{theorie}
+
+\pagebreak
+\subsection{Veeltermvergelijkingen van de eerste graad}
+
+\begin{itemize}
+\item Synoniem: eerstegraadsvergelijking, lineaire vergelijking
+\item Standaardvorm:
+  $$ax + b = 0$$
+  met $a, b \in \mathbb{R}$ en $a\neq 0$
+\item Oplossing:
+  $$V=\{-\dfrac{b}{a}\}$$
+\end{itemize}
+
+\paragraph{Werkwijze om een eerstegraadsvergelijking op te lossen}
+\begin{enumerate}
+\item Haakjes wegwerken
+\item Noemers wegwerken
+\item Onbekenden links, bekenden rechts
+\item Vereenvoudigen
+\item Onbekende afzonderen
+\item Oplossingenverzameling opschrijven en proef maken
+\end{enumerate}
+
+\end{theorie}
+
 
 \begin{oefening}
   Los de volgende vergelijkingen van de eerste graad op in $\mathbb{R}$
@@ -90,6 +183,85 @@ Je \hfill  {\scriptsize(LP2006-059, LI1.1, ET14)}
     \end{enumerate}
   \end{multicols}
 \end{oefening}
+
+\begin{theorie}
+\pagebreak
+\subsubsection*{Toepassingen}
+
+Volgende oefeningen geven toepassingen waarbij we vergelijkingen van de eerste graad oplossen. Ga steeds als volgt te werk:
+
+\begin{description}
+  \item[Onbekende(n)] Wat wordt gevraagd. Hoe kan je dat zo eenvoudig mogelijk uitdrukken.
+  \item[Vergelijking(en)] Lees de toepassing heel aandachtig. Probeer de zinnen te vinden waaruit we vergelijking kunnen halen. Vervang geleidelijk aan de zin door een wiskundige uitdrukking. Het is normaal dat je bij deze stap de vraag verschillende keren opnieuw moet lezen.
+  \item[Oplossen] Als de vergelijkingen meerdere onbekenden bevatten, probeer dan de vergelijkingen te herschrijven zodat ze maar één onbekende meer bevatten. Los de vergelijking dan op met de geziene methode.
+  \item[Antwoord] Kijk naar je oplossingenverzameling en lees de vraag opnieuw. Beantwoord nu specifiek op het gevraagde.
+\end{description}
+
+\end{theorie}
+
+\begin{oefening}
+Twee getallen hebben als som 60. De som van de helft van het eerste getal en een derde van het tweede getal is 20. Bepaal die getallen.
+\end{oefening}
+
+\begin{oefening}
+We gaan naar de bakker en geven in totaal 12.60 euro uit voor chocoladekoeken en croissants. We weten dat een chocoladekoek 0.65 euro en een croissant 0.60 euro kost. Hoeveel chocoladekoeken hebben we mee?
+\end{oefening}
+
+\begin{oefening}
+De energieprijs voor elektriciteit is 0.25 euro per kWh tijdens de dag en 0.15 euro per kWh tijdens de nacht. De maandelijkse distributiekost is 22.50 euro.
+\begin{enumerate}[(a)]
+  \item Wat betaal je als je enkel tijdens de dag stroom verbruikt en in het totaal voor één maand 350 kWh stroom hebt gebruikt?
+  \item Stel, je factuur is 124.30 euro en je hebt deze maand 548 kWh aan stroom verbruikt. Hoeveel verbruikte je tijdens de dag en tijdens de nacht?
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+Aron gaat om de twee dagen trainen met zijn koersfiets. Hij begint de maandag en traint een ganse week. In het totaal fietst hij $280 \km$. Elke volgende trainingsdag fietst hij $20 \km$ meer dan de vorige. Hoeveel kilometer zal hij de zondag fietsen?
+\end{oefening}
+
+\vfill
+\hfill
+\begin{tikzpicture}[remember picture, overlay]
+    \hspace*{-2cm}
+        \includegraphics[width=4cm]{fietser}
+\end{tikzpicture}
+
+\begin{theorie}
+
+\pagebreak
+\subsection{Veeltermvergelijkingen van de tweede graad}
+
+\begin{itemize}
+\item Synoniem: tweedegraadsvergelijking, vierkantsvergelijking, kwadratische vergelijking
+\item Standaardvorm:
+  $$ax^2 + bx + c = 0$$
+  met $a, b, c \in \mathbb{R}$ en $a\neq 0$
+\item Volledige tweedegraadsvergelijking:\\
+  We noemen een tweedegraadsvergelijking {\bf volledig} als alle coëfficiënten verschillend van nul zijn, d.w.z. als
+  $$ a\neq 0 \qquad b\neq 0 \qquad c\neq 0$$
+\item Oplossen m.b.v. de discriminantmethode:
+  \begin{itemize}
+  \item Bereken de discriminant $D=b^2-4ac$
+  \item Drie gevallen:
+    \begin{itemize}
+    \item als $D<0$, dan zijn er geen oplossingen
+      $$V=\emptyset$$
+    \item als $D>0$, dan zijn er twee verschillende oplossingen: $x_{1,2}=\dfrac{-b\pm\sqrt{D}}{2a}$
+      $$V=\{x_1, x_2\}$$
+    \item als $D=0$, dan heeft de vergelijking één oplossing (eigenlijk twee samenvallende oplossingen)
+      $$V=\{\dfrac{-b}{2a}\}$$
+    \end{itemize}
+  \end{itemize}
+\item Onvolledige tweedegraadsvergelijking:\\
+  Een tweedegraadsvergelijking is {\bf onvolledig} als $b=0$ of $c=0$ is. Onvolledige tweedegraadsvergelijkingen kunnen als volgt eenvoudig opgelost worden:
+  \begin{itemize}
+    \item $b=0$ en $c=0$, dus $ax^2=0$, dan kan $x$ enkel de waarde nul hebben, dus $V=\{0\}$
+    \item $b=0$, dus $ax^2+c=0\LRA x^2=\dfrac{-c}{a}$, dus er zijn twee oplossingen als $\dfrac{-c}{a}$ positief is, dus $V=\{-\sqrt{\dfrac{-c}{a}}, +\sqrt{\dfrac{-c}{a}}\}$
+    \item $c=0$, dus $ax^2+bx=0\LRA x(ax+b)=0$, dus er zijn altijd twee oplossingen namelijk $x=0$ en de oplossing van de eerstegraadsvergelijking $ax+b=0$, dus $V=\{0, -\dfrac{b}{a}\}$
+  \end{itemize}
+\end{itemize}
+
+\end{theorie}
 
 \begin{oefening}
   Los de volgende vergelijkingen van de tweede graad op in $\mathbb{R}$
@@ -128,14 +300,32 @@ Je \hfill  {\scriptsize(LP2006-059, LI1.1, ET14)}
   Los op in $\mathbb{R}$
   \begin{enumerate}[(a)]
       \itemsep1em
-    \item $x^2+x-8=(x-6)^2$% \tabto{6cm} {\color{gray}$V=\{\dfrac{44}{13}\}$}
-    \item $x^2+\dfrac{15}{2}=\dfrac{11x}{2}$% \tabto{6cm} {\color{gray}$V=\{\dfrac{5}{2}, 3\}$}
-    \item $(2x-4)(2x+4)=(x+2)^2$% \tabto{6cm} {\color{gray}$V=\{-2,\dfrac{10}{3}\}$}
-    \item $9x^2-36=(6+3x)^2$% \tabto{6cm} {\color{gray}$V=\{-2\}$}
-    \item $19-x+x^2=18-2x-x^2$% \tabto{6cm} {\color{gray}$V=\{\}$}
-    \item $25x^2+20x=-9$% \tabto{6cm} {\color{gray}$V=\{-\dfrac{3}{5}\}$}
-    \item $6x^2=x+1$% \tabto{6cm} {\color{gray}$V=\{-\dfrac{1}{3},\dfrac{1}{2}\}$}
+    \item $x^2+x-8=(x-6)^2$ \tabto{6cm} {\color{gray}$V=\{\dfrac{44}{13}\}$}
+    \item $x^2+\dfrac{15}{2}=\dfrac{11x}{2}$ \tabto{6cm} {\color{gray}$V=\{\dfrac{5}{2}, 3\}$}
+    \item $(2x-4)(2x+4)=(x+2)^2$ \tabto{6cm} {\color{gray}$V=\{-2,\dfrac{10}{3}\}$}
+    \item $9x^2-36=(6+3x)^2$ \tabto{6cm} {\color{gray}$V=\{-2\}$}
+    \item $19-x+x^2=18-2x-x^2$ \tabto{6cm} {\color{gray}$V=\{\}$}
+    \item $25x^2+20x=-9$ \tabto{6cm} {\color{gray}$V=\{-\dfrac{3}{5}\}$}
+    \item $6x^2=x+1$ \tabto{6cm} {\color{gray}$V=\{-\dfrac{1}{3},\dfrac{1}{2}\}$}
   \end{enumerate}
+\end{oefening}
+
+\begin{theorie}
+
+\pagebreak
+\subsection*{Toepassingen}
+
+\end{theorie}
+
+\begin{oefening}
+We gooien een bal recht omhoog. De begin hoogte is dan $1.75 \m$. We doen dit met een snelheid van $17 \mpers$. Na hoeveel seconden zal de bal op de grond terecht komen?
+
+Als we de luchtweerstand negeren kunnen we de hoogte op elk tijdstip bepalen door volgende informatie op te tellen:
+\begin{itemize}
+  \item De starthoogte
+  \item De startsnelheid vermenigvuldigd met de tijd
+  \item De kracht van de gravitatie, deze is steeds $-5t^2\approx -\frac{at^2}{2}$ met $a=9.811\mpers^2$.
+\end{itemize}
 \end{oefening}
 
 \begin{oefening}
@@ -160,6 +350,53 @@ De ring links en de cirkel rechts hebben dezelfde oppervlakte. Bepaal $x$.
 \end{tikzpicture}
 \end{center}
 \end{oefening}
+
+\begin{theorie}
+
+\pagebreak
+\subsection{Veeltermvergelijkingen van graad $\geq 3$}
+
+Veeltermvergelijkingen van hogere graad kunnen we oplossen door handmatig (m.b.v. een ZRM) één oplossing $x=a$ te zoeken waardoor we van de veelterm een deler $x-a$ kunnen afsplitsen. De restveelterm kan gevonden worden m.b.v. het {\bf algoritme van Horner}.
+
+\paragraph{Voorbeeld}
+
+We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
+
+\begin{itemize}
+\item Zoek een $x$ zodat de vergelijking waar wordt:
+  \begin{description}
+  \item[$x=1$] $\rightarrow 1^3-4\cdot 1^2+1+6 = 4 \neq 0$
+  \item[$x=0$] $\rightarrow 0^3-4\cdot 0^2+0+6 = 6 \neq 0$
+  \item[$x=-1$] $\rightarrow (-1)^3-4\cdot (-1)^2+(-1)+6 = 0$
+  \end{description}
+\item Dus $x=-1$ is een oplossing. Dit wil zeggen dat $x-(-1)$ of korter $x+1$ een deler is van de de veelterm. We herschrijven de vergelijking:
+  \begin{eqnarray*}
+    x^3-4x^2+x+6&=&0\\
+    \LRA (x+1)\underbrace{(\qquad ? \qquad)}_{\mbox{restveelterm}}&=&0\\
+  \end{eqnarray*}
+\item De restveelterm vinden we m.b.v. het algoritme van Horner:
+  \begin{center}
+    \begin{tabular}{c|cccc}
+      & 1 & -4 & 1 & 6\\
+      -1 & $\downarrow$ & -1 & 5 & -6\\
+      \hline
+      & 1 & -5 & 6 & 0
+    \end{tabular}
+  \end{center}
+\item We krijgen dus:
+  \begin{eqnarray*}
+    x^3-4x^2+x+6&=&0\\
+    \LRA (x+1)(x^2-5x+6)&=&0\\
+  \end{eqnarray*}
+\item Voor de factor $(x+1)$ hebben we reeds de oplossing $x_0=-1$ gevonden. Ook de factor $(x^2-5x+6)$ heeft oplossingen. Deze vinden we m.b.v. de discriminantmethode:
+  $$x^2-5x+6=0$$
+  $$D=25-4\cdot 1\cdot 6=1$$
+  $$x_{1,2}=\dfrac{5\pm 1}{2}=3\mbox{ en }2$$
+\item Dus $x^3-4x^2+x+6=0$ heeft als oplossingenverzameling
+  $$V=\{-1, 2, 3\}$$
+\end{itemize}
+
+\end{theorie}
 
 \begin{oefening}
   Los op in $\mathbb{R}$
@@ -230,8 +467,506 @@ Los op in $\mathbb{R}$:
 \end{enumerate}
 \end{oefening}
 
+\begin{theorie}
+\pagebreak
+\subsection{Veeltermvergelijkingen oplossen m.b.v. Geogebra}
+
+\subsection*{Eerste methode}
+
+\paragraph*{Voorbeeld:} Los op in $\mathbb{R}$
+$$x^3-2x^2-1=x^2+x-4$$
+
+Beschouw het linkerlid en het rechterlid als functies:
+$$f(x)=x^3-2x^3-1$$
+$$g(x)=x^2+x-4$$
+
+Voor alle $x$ die een oplossing zijn van de originele vergelijk geldt dus dat
+$$f(x)=g(x)$$
+
+Construeer nu de grafieken van $f(x)$ en van $g(x)$ met Geogebra. Download het programma op \url{https://www.geogebra.org/} als dit nog niet geïnstalleerd is. Hiervoor moet je onderaan in het commandovenster het commando \verb#f(x)=x^3-2*x^3-1# en \verb#g(x)=x^2+x-4# invoeren.
+
+Voor de snijpunten van de grafieken geldt nu dus dat $f(x)=g(x)$. En we zoeken de $x$-waarden om de originele vergelijking waar te maken. In het menu van Geogebra moeten we dus op zoek naar het icoon om het snijpunt van de twee grafieken te bepalen. Eenmaal dat we alle snijpunten hebben moeten we maar enkel de verschillende $x$-waarden van deze punten aflezen om de oplossingenverzameling te bepalen:
+
+$$V=\{-1, 1, 3\}$$
+
+\subsection*{Tweede methode}
+
+\paragraph*{Voorbeeld:} Los op in $\mathbb{R}$
+$$x^3-2x^2-1=x^2+x-4$$
+
+We herschrijven deze vergelijking eerst in zijn standaardvorm:
+$$\LRA x^3-3x^2-x + 3=0$$
+
+We hoeven nu enkel het linkerlid als de functie
+$$f(x)=x^3-3x^2-x + 3$$
+te plotten. Want als we naar de vergelijking in standaardvorm kijken zoeken we eigenlijk de nulwaarden van deze functie.
+
+Construeer de grafiek van deze functie $f$ in Geogebra en lees de nulwaarde af via het menu snijpunten van 2 objecten. Je zou dezelfde oplossingenverzameling
+
+$$V=\{-1, 1, 3\}$$
+
+moeten vinden.
+
+\end{theorie}
+
+\begin{oefening}
+  Los op in $\mathbb{R}$\\
+  \begin{enumerate}[(a)]
+    \itemsep2em
+  \item $\displaystyle\frac{{x}^{6}}{2}+\frac{21\,{x}^{5}}{4}+\frac{81\,{x}^{4}}{4}+\frac{67\,{x}^{3}}{2}+18\,{x}^{2}=\frac{27\,x}{4}+\frac{27}{4}$
+  \item $\displaystyle{x}^{3}+\frac{7\,{x}^{2}}{2}+x=\frac{3}{2}$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Los volgende vergelijkingen op in $\mathbb{R}$ door gebruik te maken van Horner, controleer daarna je antwoord m.b.v. ICT.\\
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item $\displaystyle{x}^{3}+{x}^{2}=2\,x$
+  \item $\displaystyle{x}^{6}-{x}^{5}-13\,{x}^{4}=-13\,{x}^{3}-36\,{x}^{2}+36\,x$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Maak gebruik van Geogebra om de volgende vergelijkingen op te lossen in $\mathbb{R}$
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep0.7em
+    \item $-5x+4=0$
+    \item $2(x+6)=4-(x+7)$
+    \item $2x^2-4x-6=0$
+    \item $5x(x-2)=x(3x-4)-5$
+    \item $3x^3+x^2-8x+4=0$
+    \item $x^3+6x^2-x-30=0$
+    \item $x^3-3x^2+4=0$
+    \item $-4(x-5)=3(2x+1)$
+    \item $(x+\sqrt{5})(x^2+2x-8)=0$
+    \item $5x^2+3x-4=0$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+
 \pagebreak
 \section{Veeltermfuncties}
+
+\begin{theorie}
+
+\subsection{Definities}
+
+\paragraph*{Veeltermfunctie}
+\begin{mdframed}
+  Een {\bf veeltermfunctie} is een reële functie waarvan het functievoorschrift gegeven wordt door een veelterm:
+  $$f(x)= a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$$
+\end{mdframed}
+
+De {\bf graad van de veeltermfunctie} is gelijk aan de graad van de veelterm. In de definitie is de veeltermfunctie dus van de $n$-de graad.
+
+\end{theorie}
+
+\begin{oefening}
+  Welke van de volgende functies zijn veeltermfuncties. Als het veeltermfuncties zijn, wat is dan hun graad?
+\begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \itemsep1em
+  \item $f(x)=\dfrac{2}{3}x+2$
+  \item $f(x)=0.5x^2-x-1.5$
+  \item $f(x)=\sqrt{3x^2+2x-6}$
+  \item $f(x)=-\dfrac{3}{4}x^2+3x$
+  \item $f(x)=\dfrac{3}{x^2}+\dfrac{2}{x}+1$
+  \item $f(x)=42$
+  \item $f(x)=3x^2-0.5x^3$
+  \item $f(x)=2^x+2$
+  \end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Schrijf volgende veeltermfuncties in hun standaardvorm.
+\begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \itemsep1em
+  \item $f(x)=2+x^3-x^2$
+  \item $f(x)=-(x^2-2x+3)$
+  \item $f(x)=3x(x^2-2x+3)$
+  \item $f(x)=(x-2)(x+3)$
+  \item $f(x)=(x-2)^2$
+  \item $f(x)=(2x-3)^2$
+  \item $f(x)=(x^2+2x)^2$
+  \item $f(x)=(2x-4)^3$
+  \item $f(x)=\dfrac{1}{7}(x-2)^2$
+  \item $f(x)=\dfrac{x+2}{3}\cdot\dfrac{x-2}{2}$
+  \end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{theorie}
+\pagebreak
+\subsection{Veeltermfuncties van graad 0}
+
+\begin{itemize}
+\item Synoniemen voor deze functies zijn nulveeltermfuncties of {\bf constante functies}. Wij zullen vanaf nu de benaming constante functie gebruiken.
+\item Deze functies hebben de vorm
+  $$f(x) = a$$
+  met $a$ een reëel getal.
+\item De grafiek van deze functie is een horizontale rechte evenwijdig met de $x$-as.
+\item Het domein is dus $\mathbb{R}$
+\item De grafiek van deze functie snijdt de $y$-as in het punt $(0, a)$.
+\item Als $a\neq 0$ dan heeft deze functie geen nulwaarden.
+\item Als $a=0$ dan heeft deze functie alle reële getallen als nulwaarden.
+\end{itemize}
+
+\end{theorie}
+
+\begin{oefening}
+  Beschouw de functie
+  $$f(x)=-2\;.$$
+  \begin{enumerate}[(a)]
+  \item Dit is een veeltermfunctie van de hoeveelste graad?
+  \item Hoe noemen we zulk een functie?
+  \item Hoe ziet deze functie eruit?
+  \item Wat zijn de nulwaarden?
+  \item Teken de grafiek zonder een functiewaardentabel te maken.
+  \end{enumerate}
+\end{oefening}
+
+\begin{theorie}
+
+\paragraph*{Constante functie bespreken}
+\begin{mdframed}
+  \begin{itemize}
+  \item Functievoorschrift: $f(x)=a$
+  \item $\dom f = \mathbb{R}$ en $\ber f = \{a\}$
+  \item Nulwaarden:
+    \begin{itemize}
+    \item Als $a\neq 0$ dan geen nulwaarden.
+    \item Als $a=0$ dan zijn de nulwaarden $\mathbb{R}$.
+    \end{itemize}
+  \item Tekenverloop:
+    \begin{center}
+      \begin{tabular}{c|lcr}
+        $x$ & $-\infty$ & & $+\infty$\\
+        \hline
+        $f(x)$ & & teken van $a$ &
+      \end{tabular}
+    \end{center}
+  \item Functiewaardentabel en grafiek: /
+  \end{itemize}
+\end{mdframed}
+
+\end{theorie}
+
+\begin{oefening}
+  Beschrijf volgende constante functies:
+  \begin{enumerate}[(a)]
+  \item $f(x)=42$
+  \item $f(x)=0$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Geef het functievoorschrift van de rechte die door de punten $(-2,1.5)$ en $(3,1.5)$ gaat.
+\end{oefening}
+
+\begin{oefening}
+  Geef het functievoorschrift van de volgende grafiek:
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=2.0cm,ystep=2.0cm] (-4.62,-4.36) grid (8.32,4.42);
+      \draw[->,color=black] (-4.62,0) -- (8.32,0);
+      \foreach \x in {-4,-2,2,4,6,8}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+      \draw[->,color=black] (0,-4.36) -- (0,4.42);
+      \foreach \y in {-4,-2,2,4}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+      \clip(-4.62,-4.36) rectangle (8.32,4.42);
+      \draw[line width=2pt, smooth,samples=100,domain=-4.620000000000001:8.320000000000006] plot(\x,{0-3});
+      \draw (4.74,-2.35) node[anchor=north west] {$f(x)$};
+    \end{tikzpicture}
+  \end{center}
+\end{oefening}
+
+\begin{theorie}
+
+\pagebreak
+\subsection{Veeltermfuncties van graad 1}
+
+\begin{itemize}
+\item Synoniemen voor deze functies zijn {\bf eerstegraadsfuncties} of lineaire functies. Wij zullen vanaf nu de benaming eerstegraadsfunctie gebruiken.
+\item Deze functies hebben de vorm
+  $$f(x) = ax+b $$
+  met $a$ en $b$ een reëel getallen en $a$ verschillend van $0$.
+\item De grafiek van deze functie is een schuine rechte die stijgt indien $a > 0$ en daalt indien $a<0$.
+\item De coëfficiënt $a$ wordt de richtingscoëfficiënt genoemd, het is een maat voor de helling van de rechte ten opzichte van de $x$-as.
+\item Het domein is dus $\mathbb{R}$.
+\item De grafiek van deze functie snijdt de $x$-as in het punt $(-\dfrac{b}{a}, 0)$ en $x_0=-\dfrac{b}{a}$ is de enige nulwaarde van de functie.
+\item De grafiek van deze functie snijdt de $y$-as in het punt $(0, b)$. De constante term $b$ bepaalt dus waar de grafiek de $y$-as snijdt.
+\item De grafiek van deze functie heeft geen extrema.
+\end{itemize}
+
+\end{theorie}
+
+\begin{oefening}
+  Beschouw de functie
+  $$f(x)=-\dfrac{1}{2}x+2\;.$$
+  \begin{enumerate}[(a)]
+  \item Dit is een veeltermfunctie van de hoeveelste graad?
+  \item Hoe noemen we zulk een functie?
+  \item Hoe ziet deze functie eruit?
+  \item Wat zijn de nulwaarden?
+  \item Waar snijdt deze functie de assen?
+  \item Teken de grafiek zonder een functiewaardentabel te maken.
+  \end{enumerate}
+\end{oefening}
+
+\begin{theorie}
+
+\paragraph*{Eerstegraadsfunctie bespreken}
+\begin{mdframed}
+  \begin{itemize}
+  \item Functievoorschrift: $f(x)=ax + b$
+  \item $\dom f = \mathbb{R}$ en $\ber f = \mathbb{R}$
+  \item Nulwaarde: $x_0=-\dfrac{b}{a}$
+  \item Tekenverloop:
+    \begin{center}
+      \begin{tabular}{c|lp{2.5cm}cp{1.5cm}r}
+        $x$ & $-\infty$ & & $x_0$ & & $+\infty$\\
+        \hline
+        $f(x)$ & & tegengesteld teken van $a$ & 0 & teken van $a$ &
+      \end{tabular}
+    \end{center}
+  \item Functiewaardentabel: twee, hoogstens drie koppels is voldoende
+  \item Grafiek maken
+  \item Stijgen\&dalen:\\
+    \begin{minipage}{0.45\textwidth}
+      \centering $a>0$\\
+      \begin{tabular}{c|lcr}
+        $x$ & $-\infty$ & & $+\infty$\\
+        \hline
+        $f(x)$ & & $\nearrow$ &
+      \end{tabular}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+      \centering $a<0$\\
+      \begin{tabular}{c|lcr}
+        $x$ & $-\infty$ & & $+\infty$\\
+        \hline
+        $f(x)$ & & $\searrow$ &
+      \end{tabular}
+    \end{minipage}
+  \end{itemize}
+\end{mdframed}
+
+\end{theorie}
+
+\begin{oefening}
+  Beschrijf volgende eerstegraadsfuncties:
+  \begin{enumerate}[(a)]
+  \item $f(x)=2x-3$
+  \item $f(x)=-x+4$
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Bepaal het functievoorschrift van
+  \begin{enumerate}[(a)]
+  \item de rechte door $(-2, 3)$ en $(1, 0)$.
+  \item de rechte door $(-2, 0)$ en $(1, 3)$.
+  \item de rechte door $(1, -1)$ en $(3, -1)$.
+  \item de rechte door $(3, -1)$ en $(3, 6)$.
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Teken de grafiek van de eerstegraadsfunctie die als nulwaarde $x=3$ heeft en die de $y$-as snijdt in het punt $(0,-6)$. Kan je het functievoorschrift vinden voor deze functie?
+\end{oefening}
+
+\begin{oefening}
+  Geef het functievoorschrift van de volgende grafiek:
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+    \begin{tikzpicture}[scale=0.75, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=2.0cm,ystep=2.0cm] (-4.54,-2.74) grid (8.56,4.62);
+      \draw[->,color=black] (-4.54,0) -- (8.56,0);
+      \foreach \x in {-4,-2,2,4,6,8}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+      \draw[->,color=black] (0,-2.74) -- (0,4.62);
+      \foreach \y in {-2,2,4}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+      \clip(-4.54,-2.74) rectangle (8.56,4.62);
+      \draw[line width=2pt, smooth,samples=100,domain=-4.540000000000001:8.560000000000006] plot(\x,{0-0.5*(\x)+3});
+      \draw (0.68,3.22) node[anchor=north west] {$f$};
+    \end{tikzpicture}
+  \end{center}
+\end{oefening}
+
+\begin{theorie}
+
+\pagebreak
+\subsection{Veeltermfuncties van graad 2}
+
+\begin{itemize}
+\item Synoniemen voor deze functies zijn {\bf tweedegraadsfuncties} of kwadratische functies. Wij zullen vanaf nu de benaming tweedegraadsfunctie gebruiken.
+\item Deze functies hebben de vorm
+  $$f(x) = ax^2+bx+c $$
+  met $a$, $b$ en $c$ een reëel getallen en $a$ verschillend van $0$.
+\item We kunnen voor elke reële waarde de functiewaarde bereken, dus het domein is $\mathbb{R}$.
+\item De grafiek van deze functie is een parabool met symmetrieas evenwijdig met de $y$-as.
+\item Als $a>0$ dan opent de parabool zich naar boven en dat noemen we een {\bf dalparabool}.
+\item Als $a<0$ dan opent de parabool zich naar beneden en dat noemen we een {\bf bergparabool}.
+\item De top van de parabool bevindt zich in het punt $(-\dfrac{b}{2a}, f(-\dfrac{b}{2a}))$. Dit punt kan ook berekend worden met $(-\dfrac{b}{2a}, -\dfrac{D}{4a})$, waarbij we $D=b^2-4ac$ de discriminant noemen.
+\item De top is het extrema van de functie, een maximum als $a<0$ en een minimum als $a>0$.
+\item Een tweedegraadsfunctie kan $0, 1$ of $2$ nulwaarden hebben, afhankelijk van de discriminant.
+\end{itemize}
+
+\end{theorie}
+
+\begin{oefening}
+  Beschouw de functie
+  $$f(x)=x^2-x-6\;.$$
+  \begin{enumerate}[(a)]
+  \item Dit is een veeltermfunctie van de hoeveelste graad?
+  \item Hoe noemen we zulk een functie?
+  \item Hoe ziet deze functie eruit?
+  \item Wat zijn de nulwaarden?
+  \item Waar snijdt deze functie de assen?
+  \item Heeft deze functie een extremum, waar ligt dit extremum en hoe noemen we dit extremum in deze context?
+  \item Teken de grafiek zonder een functiewaardentabel te maken.
+  \end{enumerate}
+\end{oefening}
+
+\begin{theorie}
+
+\pagebreak
+\paragraph*{Tweedegraadsfuncties bespreken}
+\begin{mdframed}
+  \begin{itemize}
+  \item Functievoorschrift: $f(x)=ax^2 + bx + c$
+  \item $a>0$ dan een dalparabool, $a<0$ dan een bergparabool
+  \item $\dom f = \mathbb{R}$
+  \item $a>0$ dan $\ber f = [f(-\dfrac{b}{2a}), +\infty]$, $a<0$ dan $\ber f = [-\infty, f(-\dfrac{b}{2a})]$
+  \item Nulwaarden: $ax^2+bx+c=0$
+    \renewcommand{\labelitemii}{$\bullet$}
+    \begin{itemize}
+    \item $D=b^2-4ac$
+    \item $D>0$ dan twee verschillende nulwaarden $x_1=\dfrac{-b-\sqrt{D}}{2a}$ en $x_0=\dfrac{-b+\sqrt{D}}{2a}$
+    \item $D=0$ dan één nulwaarde $x_0=-\dfrac{b}{2a}$
+    \item $D<0$ dan geen nulwaarden
+    \end{itemize}
+  \item Tekenverloop:
+    \begin{itemize}
+    \item $D>0$
+      \begin{tabular}{c|p{1.5cm}cp{2.5cm}cp{1.5cm}}
+        $x$ & & $x_1$ & & $x_2$ &\\
+        \hline
+        $f(x)$ & teken van $a$ & 0 & tegengesteld teken van $a$ & 0 & teken van $a$
+      \end{tabular}
+    \item $D=0$
+      \begin{tabular}{c|lp{1.5cm}cp{1.5cm}r}
+        $x$ & $-\infty$ & & $x_0$ & & $+\infty$\\
+        \hline
+        $f(x)$ & & teken van $a$ & 0 & teken van $a$ &
+      \end{tabular}
+    \item $D<0$
+      \begin{tabular}{c|lcr}
+        $x$ & $-\infty$ &  & $+\infty$\\
+        \hline
+        $f(x)$ & & teken van $a$ &
+      \end{tabular}
+    \end{itemize}
+  \item Functiewaardentabel: kies de nulwaarden en nog een aantal $x$-waarden daarrond
+  \item Grafiek maken
+  \item Stijgen\&dalen:\\
+    \begin{minipage}{0.45\textwidth}
+      \centering $a>0$\\
+      \begin{tabular}{c|lcr}
+        $x$ &  & $-\dfrac{b}{2a}$ & \\[0.1cm]
+        \hline
+        $f(x)$ & $\searrow$ & $\underset{=f(-\frac{b}{2a})}{\mbox{min}}$ & $\nearrow$
+      \end{tabular}
+    \end{minipage}
+    \begin{minipage}{0.45\textwidth}
+      \centering $a<0$\\
+      \begin{tabular}{c|lcr}
+        $x$ &  & $-\dfrac{b}{2a}$ & \\[0.1cm]
+        \hline
+        $f(x)$ & $\nearrow$ & $\underset{=f(-\frac{b}{2a})}{\mbox{max}}$ & $\searrow$
+      \end{tabular}
+    \end{minipage}
+  \end{itemize}
+\end{mdframed}
+
+\end{theorie}
+
+\begin{oefening}
+  Bespreek de volgende functies:
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \item $f(x)=x^2+x-6$
+  \item $f(x)=x^2+2x+1$
+  \item $f(x)=x^2+4$
+  \item $f(x)=3x-2$
+  \item $f(x)=-2x^2-3x+1$
+  \item $f(x)=4x^2-4x-15$
+  \item $f(x)=(x+2)^2-4$
+  \item $f(x)=4x+(x-2)^2$
+  \item $f(x)=(x-2)(x+2)$
+  \item $f(x)=(x+3)^2+(x-3)^2$
+  \item $f(x)=-(x-1)(x+1)$
+  \item $f(x)=-2x^2+29x-102$
+  \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Zoek het functievoorschrift van de functie $f$ die door de punten $(-1,0)$, $(0,3)$, $(1,4)$ en $(3,0)$ gaat, zie onderstaande grafiek.
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+    \begin{tikzpicture}[scale=0.9, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-2.55,-2.69) grid (5.45,5.36);
+      \draw[->,color=black] (-2.55,0) -- (5.45,0);
+      \foreach \x in {-2,-1,1,2,3,4,5}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+      \draw[->,color=black] (0,-2.69) -- (0,5.36);
+      \foreach \y in {-2,-1,1,2,3,4,5}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+      \clip(-2.55,-2.69) rectangle (5.45,5.36);
+      \draw[line width=2pt, smooth,samples=100,domain=-2.545454545454543:5.4545454545454595] plot(\x,{0-(\x)^2+2*(\x)+3});
+      \draw (2.45,2.89) node[anchor=north west] {$f$};
+      \begin{scriptsize}
+        \fill [color=black] (1,4) circle (2.0pt);
+        \draw[color=black] (1.29,4.4) node {$(1, 4)$};
+        \fill [color=black] (0,3) circle (2.0pt);
+        \draw[color=black] (0.45,2.96) node {$(0, 3)$};
+        \fill [color=black] (-1,0) circle (2.0pt);
+        \draw[color=black] (-1.42,0.42) node {$(-1, 0)$};
+        \fill [color=black] (3,0) circle (2.0pt);
+        \draw[color=black] (3.38,0.42) node {$(3, 0)$};
+      \end{scriptsize}
+    \end{tikzpicture}
+  \end{center}
+\end{oefening}
+
+
+\begin{oefening}
+  Teken de grafiek van de tweedegraadsfunctie die de nulwaarden $x_1=-2$ en $x_2=1$ heeft en die als top het punt $(-0.5,-2.25)$ heeft. Je weet verder nog dat de grafiek de $y$-as snijdt in het punt $(0,-2)$. Kan je het functievoorschrift vinden voor deze functie?
+\end{oefening}
+
+\begin{oefening}
+Een landbouwer beschikt over $800 \m$ prikkeldraad. Hij wil daarmee een zo groot mogelijk rechthoekig stuk land afspannen. Aan één zijde is geen prikkeldraad nodig want daar loopt een rivier.
+\begin{enumerate}[(a)]
+  \item Maak een schets van het probleem. Noem de lengte van het stuk land $l$ en de breedte $b$.
+  \item Welk verband is er tussen de lengte $l$, de breedte $b$ en het getal $800$?
+  \item Welke formule gebruik je om de oppervlakte van het stuk land te berekenen?
+  \item Neem $l$ of $b$ als onbekende $x$ en druk de andere uit in functie van $x$.
+  \item Voor het oppervlakte krijg je nu een functie $f$ met maar één onbekende $x$. Bepaal daar het maximum van.
+  \item Welke lengte en breedte moet de landbouwer dus kiezen?
+\end{enumerate}
+\end{oefening}
 
 \begin{oefening}
 Bespreek volgende functies:
@@ -274,6 +1009,36 @@ Bepaal het functievoorschrift van
 \end{enumerate}
 \end{oefening}
 
+\begin{theorie}
+
+\pagebreak
+\subsection{Veeltermfuncties van graad 3 of hoger}
+
+\begin{itemize}
+\item We noemen zulk een functie wel nog eens een {\bf hogeregraadsveeltermfunctie}.
+\item Deze functies hebben de algemene vorm van een veeltermfunctie
+  $$f(x)= a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\;.$$
+\item We kunnen voor elke reële waarde de functiewaarde bereken, dus het domein is $\mathbb{R}$.
+\item Een veeltermfunctie van graad $n$ heeft hoogstens $n$ nulwaarden.
+\item Veelal vinden we de nulwaarden m.b.v. Horner.
+\end{itemize}
+
+\paragraph*{Hogeregraadsveeltermfuncties bespreken}
+\begin{mdframed}
+  \begin{itemize}
+  \item Functievoorschrift: $f(x)= a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\;.$
+  \item $\dom f = \mathbb{R}$
+  \item Nulwaarden bepalen, bijvoorbeeld m.b.v. Horner.
+  \item Functiewaardentabel maken, zorg dat de nulwaarden en voldoende waarden rond de nulwaarde in de tabel staan.
+  \item Grafiek maken.
+  \item Bereik: a.d.h.v. de grafiek
+  \item Tekenverloop: a.d.h.v. de grafiek
+  \item Stijgen\&dalen: a.d.h.v. de grafiek
+  \end{itemize}
+\end{mdframed}
+
+\end{theorie}
+
 \begin{oefening}
 Bespreek (domein, bereik, nulwaarden, tekenverloop, schets, stijgen\&dalen):\\
 \begin{enumerate}[(a)]
@@ -295,7 +1060,11 @@ Bespreek (domein, bereik, nulwaarden, tekenverloop, schets, stijgen\&dalen):\\
   \itemsep.5em
   \item $f(x)=\dfrac{1}{10}(-2x^3-11x^2+21x+90)$
   \item $f(x)=3x^2-0.5x^3$
+  \item $f(x)=2x^4+7x^3-51x^2-7x+49$
+  \item $f(x)=-21x^4-143x^3+197x^2-25x-8$
+  \item $f(x)=x^5-5x^3+4x$
   \item $f(x)=x^3+3x^2-x-3$
+  \item $f(x)=x^4-x^3-10.25x^2+5.25x+22.5$
   \end{enumerate}
 \end{oefening}
 
@@ -316,6 +1085,36 @@ $$f(x)=(x-3)(x+1)(2x-1)$$
 \end{oefening}
 
 
+
+\begin{theorie}
+
+%\pagebreak
+\subsection{Hogeregraadsveeltermfuncties bespreken m.b.v. Geogebra}
+Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra} gebruiken om hogeregraadsveeltermfuncties te bespreken. We plotten eerst de grafiek en bespreken daarna alle karakteristieken.
+
+\end{theorie}
+
+\begin{oefening}
+  Met Geogebra werd de grafiek van de functie met functievoorschrift
+  $$f(x)=x^5-5x^3+4x$$ gegenereerd. Lees aan de hand van de grafiek het domein, de nulwaarden en de extrema af. Bepaal het tekenverloop, het stijgen en dalen en de symmetrieën van de functie.
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+    \begin{tikzpicture}[scale=0.7, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \draw [color=cqcqcq,dash pattern=on 2pt off 2pt, xstep=1.0cm,ystep=1.0cm] (-7.22,-6.82) grid (8.13,6.66);
+      \draw[->,color=black] (-7.22,0) -- (8.13,0);
+      \foreach \x in {-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+      \draw[color=black] (7.87,0.07) node [anchor=south west] { x};
+      \draw[->,color=black] (0,-6.82) -- (0,6.66);
+      \foreach \y in {-6,-5,-4,-3,-2,-1,1,2,3,4,5,6}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+      \draw[color=black] (0.08,6.33) node [anchor=west] { y};
+      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+      \clip(-7.22,-6.82) rectangle (8.13,6.66);
+      \draw[line width=1.6pt, smooth,samples=100,domain=-2.2:2.2] plot(\x,{(\x)^5-5*(\x)^3+4*(\x)});
+    \end{tikzpicture}
+  \end{center}
+\end{oefening}
 
 \begin{oefening}
 Bespreek zo exact mogelijk, maak gebruik van de bijhorende grafiek (domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen):
@@ -440,8 +1239,13 @@ Construeer een veeltermfunctie van de vierde graad met nulwaarden $x_0=-4$, $x_1
 \end{oefening}
 
 
-\pagebreak
+
+\newpage
 \section{Veeltermongelijkheden}
+
+\begin{theorie}
+\subsection{Eerstegraadsveeltermongelijkheden}
+\end{theorie}
 
 \begin{oefening}
 Los op in $\mathbb{R}$:
@@ -455,6 +1259,10 @@ Los op in $\mathbb{R}$:
 \end{enumerate}
 \end{multicols}
 \end{oefening}
+
+\begin{theorie}
+\subsection{Tweedegraadsveeltermongelijkheden}
+\end{theorie}
 
 \begin{oefening}
 Los op in $\mathbb{R}$:
@@ -472,44 +1280,58 @@ Los op in $\mathbb{R}$:
 \end{oefening}
 
 
+\begin{theorie}
+\subsection{Veeltermongelijkheden van hogere graad oplossen}
+\end{theorie}
 
 \begin{oefening}
-Los op in $\mathbb{R}$:
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-  \itemsep0.6em
-  \item $x^2(2-x)\leq6-5x$
-  \item $2x^3-x^2-13x<6$
-  \item $x(x+2)^2\leq9+x-x^2$
-  \item $x(x^2+12)>2(3x^2+4)$
-  \item $x(x^2-3)<2$
-  \item $x^4+27x^2+4x<36+12x^3$
-  \item $12+x^3\geq13x$
-  \item $x^4-71x^2-66x-4x^3>0$
-  \item $2x(x+1)-\frac{1}{2}x<2(x+1)^2$
-  \item $(1+2x)^2\leq(x-2)(x+2)$
-  \item $x(x+1)-\frac{x+3}{10}$
-  \item $-x^3+2x^2\leq6-5x$
-  \item $\frac{x(x^2-3)}{2}<1$
-  \item $x^3\geq8$
-\end{enumerate}
-\end{multicols}
+  Los op in $\mathbb{R}$:
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep0.6em
+    \item $x^2(2-x)\leq6-5x$
+    \item $2x^3-x^2-13x<6$
+    \item $x(x+2)^2\leq9+x-x^2$
+    \item $x(x^2+12)>2(3x^2+4)$
+    \item $x(x^2-3)<2$
+    \item $x^4+27x^2+4x<36+12x^3$
+    \item $12+x^3\geq13x$
+    \item $x^4-71x^2-66x-4x^3>0$
+    \item $2x(x+1)-\frac{1}{2}x<2(x+1)^2$
+    \item $(1+2x)^2\leq(x-2)(x+2)$
+    \item $x(x+1)-\frac{x+3}{10}$
+    \item $-x^3+2x^2\leq6-5x$
+    \item $\frac{x(x^2-3)}{2}<1$
+    \item $x^3\geq8$
+    \end{enumerate}
+  \end{multicols}
 \end{oefening}
 
 \begin{oefening}
-Welke reële getallen zijn groter dan hun derdemacht?
+  Welke reële getallen zijn groter dan hun derdemacht?
 \end{oefening}
 
 \begin{oefening}
-Voor welke reële getallen is het kwadraat groter dan de derdemacht
+  Voor welke reële getallen is het kwadraat groter dan de derdemacht
 \end{oefening}
+
+\begin{theorie}
+\subsection{Veeltermongelijkheden oplossen m.b.v. Geogebra}
+\end{theorie}
 
 \begin{oefening}
-Heeft elke veeltermongelijkheid oplossingen? Indien je nee antwoord, geef een voorbeeld van een veeltermongelijkheid die geen oplossingen heeft.
+  \begin{enumerate}[(a)]
+  \item Bestaan er veeltermongelijkheden van de tweede graad die geen
+    oplossingen hebben? Zo ja, geef een voorbeeld. Verklaar dit
+    grafisch.
+  \item Bestaan er veeltermongelijkheden van de derde graad die geen
+    oplossingen hebben? Zo ja, geef een voorbeeld. Verklaar dit
+    grafisch.
+  \end{enumerate}
 \end{oefening}
 
 
-\pagebreak
+\newpage
 \section{Toepassingen}
 
 \begin{oefening}
@@ -631,25 +1453,4 @@ Een ecologische verbindingsbrug moet worden ontworpen over een belangrijke snelw
 
 
 
-
 \end{document}
-
-
-
-
-\begin{minipage}[c]{0.4\textwidth}
-\end{minipage}
-\begin{minipage}[c]{0.6\textwidth}
-\dotlines{10}
-\end{minipage}
-
-
-
-
-
-
-
-
-
-
-
