@@ -12,6 +12,7 @@
 *.pdf
 *.dvi
 *.aux
+_region_.tex
 *~
 *.~*#
 .hidden
