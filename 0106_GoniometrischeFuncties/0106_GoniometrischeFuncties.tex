@@ -2,7 +2,13 @@
 
 \input{../gowiz.tex}
 
+\usepackage{versions}
+\excludeversion{theorie}
+%\includeversion{theorie}
+
 \begin{document}
+
+\begin{theorie}
 
 \thispagestyle{empty}
 \begin{center}
@@ -21,7 +27,7 @@ Je \hfill  {\scriptsize(LP 2006-059, LI 1.6)}
   \item kan de goniometrische getallen van verwante hoeken berekenen
   \item kan de grafiek van de functies $f(x)=\sin x$ , $f(x)=\cos x$ en $f(x)=\tan x$ construeren vanuit de goniometrische cirkel
   \item kan van de functies $f(x)=\sin x$ , $f(x)=\cos x$ en $f(x)=\tan x$ de tabel, het domein, enkele bijzondere waarden, de periodiciteit, het stijgen/dalen en de eventuele extrema bepalen
-  \item kan aan de hand van de grafiek het domein, het bereik, de nulwaarden, het tekenverloop, de periodiciteit, het stijgen\&dalen en de extrema bepalen van goniometrische functies  
+  \item kan aan de hand van de grafiek het domein, het bereik, de nulwaarden, het tekenverloop, de periodiciteit, het stijgen\&dalen en de extrema bepalen van goniometrische functies
   \item kan de grafiek opbouwen van de functie $f(x) = a \sin(bx+c)+d$ en kunnen op deze grafiek de betekenis van $a$, $b$, $c$ en $d$ interpreteren
   \item kan goniometrische vergelijkingen van de vorm $\sin x = k$ , $\cos x = k$ en $\tan x = k$ grafisch oplossen
   \item kan vraagstukken/problemen oplossen die aanleiding geven tot een goniometrische vergelijking of functie
@@ -36,16 +42,21 @@ Je \hfill  {\scriptsize(LP 2006-059, LI 1.6)}
 {\small \singlespacing \tableofcontents}
 \newpage
 \clearpage
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
 
 \pagestyle{fancy}
 \lhead{}
 \rhead{Goniometrische functies}
 
+\end{theorie}
+
 \onehalfspacing
 
 
 \section{Hoekeenheden}
+
+\begin{theorie}
+
 Op onze rekenmachine vinden we in \zrm{MODE} 3 soorten hoekeenheden:\\
 
 \textbf{RAD} = radialen
@@ -109,7 +120,6 @@ Het getal $\pi$ wordt gedefinieerd als het getal dat we krijgen wanneer we de om
 $$360\degree = 2\pi \rad$$
 \end{mdframed}
 
-
 Een rechte hoek meet dus $\frac{\pi}{2}$ en een gestrekte hoek meet dus $\pi \rad$. Omdat de omtrek van de goniometrische cirkel $2\pi$ is, is de maat van de nulhoek niet ondubbelzinnig bepaald. De nulhoek meet zowel $0 \rad$ als $2\pi \rad$. We moeten dus de maatgetallen in radialen slechts op een geheel veelvoud van $2\pi$ na bepalen:
 
 \begin{mdframed}
@@ -125,6 +135,8 @@ We kunnen nu de omzetting berekenen met behulp van het volgende verband:
 \LRA &&  x\degree &= x\cdot\frac{\pi}{180\degree} \rad
 \end{alignat*}
 
+\end{theorie}
+
 \begin{oefening}
 Vul de tabel aan met radialen.
 \begin{center}
@@ -135,6 +147,8 @@ Vul de tabel aan met radialen.
   \end{tabular}
 \end{center}
 \end{oefening}
+
+\begin{theorie}
 
 \subsubsection{Van graden, minuten en seconden naar radialen}
 
@@ -153,6 +167,8 @@ We kunnen de omzetting berekenen met behulp van het volgende verband:
 
 \paragraph{Voorbeeld:}
 $$5.4 \rad=5.4\cdot\dfrac{180\degree}{\pi}=309\degree 23' 50''$$
+
+\end{theorie}
 
 \begin{oefening} Zet om in radialen
 \begin{multicols}{2}
@@ -182,16 +198,23 @@ $$5.4 \rad=5.4\cdot\dfrac{180\degree}{\pi}=309\degree 23' 50''$$
   \item $2.86 \rad=$\arulefill
   \item $6 \rad=$\arulefill
   \item $0.456 \rad=$\arulefill
-  \item $-0.75 \rad=$\arulefill 
+  \item $-0.75 \rad=$\arulefill
 \end{enumerate}
 \end{multicols}
 \end{oefening}
 
+\begin{theorie}
+
 \subsubsection{Opmerking}
 In het vervolg zullen we de eenheid '$\rad$' niet meer vermelden. Wanneer we bv. spreken over een hoek  $\dfrac{2\pi}{3}$, bedoelen we dus steeds  $\dfrac{2\pi}{3} \rad$. Vanaf nu stappen we ook af van de zestigdelige graden en zullen we alles meten in radialen.
 
+\end{theorie}
+
 \newpage
 \section{De goniometrische functies}
+
+\begin{theorie}
+
 \subsection{De sinusfunctie}
 \subsubsection{Tabel}
 Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 decimalen.
@@ -206,7 +229,7 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 \end{center}
 \end{adjustwidth}
 
-\subsubsection{Grafiek} 
+\subsubsection{Grafiek}
 \begin{center}
 \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
 \definecolor{lightgray}{rgb}{0.95,0.95,0.95}
@@ -225,6 +248,9 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 \end{center}
 
 \subsubsection{Kenmerken van de sinusfunctie}
+
+\end{theorie}
+
 \begin{oefening}
 Vul de kenmerken aan van de sinusfunctie.
 \begin{enumerate}[(a)]
@@ -232,7 +258,7 @@ Vul de kenmerken aan van de sinusfunctie.
 %  \item Periode\\ We merken op dat de sinusfunctie zichzelf steeds herhaalt. We zeggen dat de sinusfunctie periodiek is. De periode van de sinusfunctie is de kleinste afstand waarbij de functie zichzelf herhaalt. Duid deze afstand aan op de grafiek. Voor de sinusfunctie is dit $P=$....................
   \item Nulwaarden:
   \arules{3}
-  \item Tekenverloop: 
+  \item Tekenverloop:
   \begin{center}
     \visgraad{10cm}
   \end{center}
@@ -242,6 +268,8 @@ Vul de kenmerken aan van de sinusfunctie.
   \end{center}
 \end{enumerate}
 \end{oefening}
+
+\begin{theorie}
 
 \subsection{De cosinusfunctie}
 \subsubsection{Tabel}
@@ -274,6 +302,8 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 \end{tikzpicture}
 \end{center}
 
+\end{theorie}
+
 \begin{oefening}
 Vul de kenmerken aan van de cosinusfunctie.
 \begin{enumerate}[(a)]
@@ -281,7 +311,7 @@ Vul de kenmerken aan van de cosinusfunctie.
 %  \item Periode\\ We merken op dat de sinusfunctie zichzelf steeds herhaalt. We zeggen dat de sinusfunctie periodiek is. De periode van de sinusfunctie is de kleinste afstand waarbij de functie zichzelf herhaalt. Duid deze afstand aan op de grafiek. Voor de sinusfunctie is dit $P=$....................
   \item Nulwaarden:
   \arules{3}
-  \item Tekenverloop: 
+  \item Tekenverloop:
   \begin{center}
     \visgraad{10cm}
   \end{center}
@@ -292,6 +322,8 @@ Vul de kenmerken aan van de cosinusfunctie.
 \end{enumerate}
 \end{oefening}
 
+\begin{theorie}
+
 \pagebreak
 \subsection{Verband tussen sinus- en cosinusfunctie}
 
@@ -300,19 +332,24 @@ $$\sin(x+\dfrac{\pi}{2})=\cos x$$
 
 \subsection{Periode van sinus- en cosinusfunctie}
 
-We merken op dat de sinusfunctie zichzelf steeds herhaalt. We zeggen dat de sinusfunctie periodiek is. De periode van de sinusfunctie is de kleinste afstand waarbij de functie zichzelf herhaalt. Voor de sinusfunctie is dit 
+We merken op dat de sinusfunctie zichzelf steeds herhaalt. We zeggen dat de sinusfunctie periodiek is. De periode van de sinusfunctie is de kleinste afstand waarbij de functie zichzelf herhaalt. Voor de sinusfunctie is dit
 $$p=2\pi\;.$$
 We merken op dat er voor de sinusfunctie geldt dat
-$$ \sin x = \sin (x+k\cdot 2\pi)\qquad k\in\mathbb{Z}\;.$$
+$$\sin x = \sin (x+k\cdot 2\pi)\qquad k\in\mathbb{Z}\;.$$
 
 Waarom dit zo is, kan je zien in de volgende figuur:\\
 \includegraphics[width=\textwidth]{goniometriccircle_sine}
 Breng ook eens een bezoekje aan \verb#http://www.geogebratube.org/student/m8028#, en wijzig daar $\theta$.
 
+\end{theorie}
+
+
 \begin{oefening}
 Is ook de cosinusfunctie periodiek? Zo ja, bepaal dan de periode:
 \arules{3}
 \end{oefening}
+
+\begin{theorie}
 
 \paragraph{Definitie}
 \begin{mdframed}
@@ -324,6 +361,8 @@ noemen {\bf periodiek}. De kleinste positieve $p\in\mathbb{R}_0$ noemen we de {\
 \subsection{Amplitude van sinus- en cosinusfunctie}
 Bij de sinus- en cosinusfunctie kunnen we de $x$-as als evenwichtsstand nemen. We merken dan op dat de functie steeds uitwijkt van de evenwichtsstand. We zullen de maximale uitwijking vanuit de evenwichtsstand de {\bf amplitude} A noemen.
 
+\end{theorie}
+
 \begin{oefening}
 Bepaal de amplitude
 \begin{enumerate}[(a)]
@@ -332,7 +371,11 @@ Bepaal de amplitude
 \end{enumerate}
 \end{oefening}
 
+\begin{theorie}
+
 De amplitude kan van elke periodieke functie genomen worden die steeds uitwijkt ten opzichte van een evenwichtsstand.
+
+\end{theorie}
 
 \begin{oefening}
 Bepaal voor volgende functie
@@ -440,6 +483,8 @@ Bepaal voor volgende functie
 \end{enumerate}
 \end{oefening}
 
+\begin{theorie}
+
 \pagebreak
 \subsection{De tangensfunctie}
 \subsubsection{Tabel}
@@ -448,7 +493,7 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 \begin{adjustwidth}{-2.5cm}{-2.5cm}
 \begin{center}
   \begin{tabular}{c|c|c|c|c|c|c|c|c|c|c}
-    x & $\frac{-\pi}{2}$ &-1 & 0 & 1 &  $\frac{\pi}{2}$ & 2 & 3 & $\pi$ & 4 & $\frac{3\pi}{2}$ 
+    x & $\frac{-\pi}{2}$ &-1 & 0 & 1 &  $\frac{\pi}{2}$ & 2 & 3 & $\pi$ & 4 & $\frac{3\pi}{2}$
     \\
     \hline
    $\tan x$ &\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{1cm}&\hspace*{0.5cm}&\hspace*{0.5cm}&\hspace*{0.5cm}
@@ -456,8 +501,7 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 \end{center}
 \end{adjustwidth}
 
-
-\subsubsection{Grafiek} 
+\subsubsection{Grafiek}
 
 \begin{center}
 \definecolor{uququq}{rgb}{0.25,0.25,0.25}
@@ -481,13 +525,16 @@ Vul onderstaande tabel aan. De hoek $x$ is uitgedrukt in radialen. Rond af op 2 
 \end{center}
 
 \subsubsection{Kenmerken van de tangensfunctie}
+
+\end{theorie}
+
 \begin{oefening}
 Vul de kenmerken aan van de cosinusfunctie.
 \begin{enumerate}[(a)]
   \item $\dom \tan=\arule{3cm}$ en $\ber \tan=\arule{3cm}$
   \item Nulwaarden:
   \arules{3}
-  \item Tekenverloop: 
+  \item Tekenverloop:
   \begin{center}
     \visgraad{10cm}
   \end{center}
@@ -501,6 +548,8 @@ Vul de kenmerken aan van de cosinusfunctie.
 
 \newpage
 \section{De algemene sinusfunctie}
+
+\begin{theorie}
 
 \subsection{$\boldsymbol{f(x)=a\cdot\sin x}$ met $\boldsymbol{a\in \mathbb{R}^+_{0}}$}
 
@@ -560,6 +609,8 @@ Voor $\boldsymbol{y=a\cdot\sin x}$ geldt:
   \end{center}
   }
 
+\end{theorie}
+
 \begin{oefening}
 Geef telkens amplitude en periode van volgende functies.
 \begin{center}
@@ -573,6 +624,8 @@ Geef telkens amplitude en periode van volgende functies.
   \end{tabular}
 \end{center}
 \end{oefening}
+
+\begin{theorie}
 
 \subsection{$\boldsymbol{f(x)=\sin (b\cdot x)}$ met $\boldsymbol{b\in \mathbb{R}^+_{0}}$}
 \subsubsection{Voorbeeld: $\boldsymbol{y=\sin (2x)}$}
@@ -615,7 +668,7 @@ Geef telkens amplitude en periode van volgende functies.
 
 \subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin (2x)}$}
 De grafiek van $y=\sin (2x)$ bekom je door deze van $y=\sin x$ horizontaal samen te duwen. We spreken van een verschaling  evenwijdig met de $x$-as met factor $\frac{1}{2}$.\\
-Hierdoor wordt de periode $P$ door $2$ gedeeld, terwijl de amplitude $A$ gelijk blijft:  
+Hierdoor wordt de periode $P$ door $2$ gedeeld, terwijl de amplitude $A$ gelijk blijft:
 \begin{eqnarray*}
   \mbox{amplitude} &=& A = 1\\
   \mbox{periode} &=& P = \pi
@@ -631,7 +684,9 @@ Voor $\boldsymbol{y=\sin (bx)}$ geldt:
     Amplitude $\boldsymbol{A = 1}$\\
     Periode $\boldsymbol{P = \frac{2\pi}{b}}$
   \end{center}
-  }
+}
+
+\end{theorie}
 
 \begin{oefening}
 Geef telkens amplitude en periode van volgende functies.
@@ -646,6 +701,8 @@ Geef telkens amplitude en periode van volgende functies.
   \end{tabular}
 \end{center}
 \end{oefening}
+
+\begin{theorie}
 
 \subsection{$\boldsymbol{f(x)=\sin (x+c)}$ met $\boldsymbol{c\in \mathbb{R}}$}
 \subsubsection{Voorbeeld: $\boldsymbol{y=\sin (x-1)}$}
@@ -688,7 +745,7 @@ Geef telkens amplitude en periode van volgende functies.
 
 \subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin (x-1)}$}
 De grafiek van $y=\sin (x-1)$ bekom je door deze van $y=\sin x$ horizontaal naar rechts te verschuiven met $1$ eenheid. We spreken van een verschuiving evenwijdig met de $x$-as, bepaald door het koppel $(1, 0)$.\\
-Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.  
+Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.
 \begin{eqnarray*}
   \mbox{amplitude} &=& A = 1\\
   \mbox{periode} &=& P = 2\pi
@@ -704,7 +761,9 @@ Voor $\boldsymbol{y=\sin (x+c)}$ geldt:
     Amplitude $\boldsymbol{A = 1}$\\
     Periode $\boldsymbol{P = 2\pi}$
   \end{center}
-  }
+}
+
+\end{theorie}
 
 \begin{oefening}
 Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=\sin x$.
@@ -731,7 +790,9 @@ Hoe kan je de grafiek van volgende functies bekomen uit deze van de sinusfunctie
 \end{enumerate}
 \end{oefening}
 
-\subsection{$\boldsymbol{f(x)=\sin x + d}$ met $\boldsymbol{d\in \mathbb{R}}$} 
+\begin{theorie}
+
+\subsection{$\boldsymbol{f(x)=\sin x + d}$ met $\boldsymbol{d\in \mathbb{R}}$}
 \subsubsection{Voorbeeld: $\boldsymbol{y=\sin x-1}$}
 \begin{adjustwidth}{-2.5cm}{-2.5cm}
 \begin{center}
@@ -771,7 +832,7 @@ Hoe kan je de grafiek van volgende functies bekomen uit deze van de sinusfunctie
 
 \subsubsection{Verband tussen $\boldsymbol{y=\sin x}$ en $\boldsymbol{y=\sin x-1}$}
 De grafiek van $y=\sin x-1$ bekom je door deze van $y=\sin x$ verticaal naar beneden te verschuiven met 1 eenheid. We spreken van een verschuiving evenwijdig met de $y$-as, bepaald door het koppel $(0, -1)$.\\
-Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.  
+Hierdoor blijven de periode $P$ en de amplitude $A$ gelijk.
 \begin{eqnarray*}
   \mbox{amplitude} &=& A = 1\\
   \mbox{periode} &=& P = 2\pi
@@ -787,7 +848,9 @@ Voor $\boldsymbol{y=\sin x+d}$ geldt:
     Amplitude $\boldsymbol{A = 1}$\\
     Periode $\boldsymbol{P = 2\pi}$
   \end{center}
-  }
+}
+
+\end{theorie}
 
 \begin{oefening}
 Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=\sin x$.
@@ -804,6 +867,8 @@ Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=
 \end{center}
 \end{oefening}
 
+\begin{theorie}
+
 \subsection{De veralgemeende sinusfunctie $\boldsymbol{y=a\cdot \sin[b\cdot (x+c)]+d}$}
 
 \begin{center}
@@ -813,7 +878,7 @@ Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=
       \begin{itemize}
         \item Amplitude $\boldsymbol{A = a}$\\
         \item Periode $\boldsymbol{P=\dfrac{2\pi}{b}}$\\
-      \end{itemize}  
+      \end{itemize}
       Je kan de grafiek ervan bekomen uit deze van $\boldsymbol{y=\sin x}$ door
       \begin{itemize}
         \item Een verschaling evenwijdig met de $y$-as met factor a\\
@@ -829,9 +894,11 @@ Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=
           $\boldsymbol{d>0 \Rightarrow}$ d eenheden naar boven\\
           $\boldsymbol{d<0 \Rightarrow}$ d eenheden naar beneden \\
       \end{itemize}}
-    }}   
+    }}
 \end{center}
-  
+
+\end{theorie}
+
 \begin{oefening}Bepaal amplitude A en periode P van volgende functies. Zeg telkens in woorden hoe je de grafiek kan bekomen uit deze van $y=\sin x$.\\
 \begin{enumerate}[(a)]
   \item $y=\dfrac{1}{2}\cdot\sin [5\cdot(x+\dfrac{\pi}{8})]-3$
@@ -868,7 +935,7 @@ Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=
       \item te verschuiven evenwijdig met de $y$-as met 4 eenheden naar boven
     \end{enumerate}
     \arules{4}
-    \item 
+    \item
     \begin{enumerate}[$\rightarrow$]
       \itemsep0.8em
       \item te verschalen evenwijdig met de $y$-as met factor $\dfrac{1}{4}$
@@ -882,6 +949,8 @@ Zeg telkens hoe je de grafiek van volgende functies kan bekomen uit deze van $y=
 
 \pagebreak
 \section{Goniometrische vergelijkingen}
+
+\begin{theorie}
 
 \subsection{De goniometrische vergelijking $\sin x=r$}
 Goniometrische vergelijkingen kunnen op twee manieren opgelost worden, aan de hand van de grafiek van de sinusfunctie of m.b.v. de rekenmachine. We illustreren beide manieren met een voorbeeld.
@@ -924,12 +993,12 @@ Hiertoe voer je volgende stappen uit.
   \item Zet je ZRM in de radialen-modus.
   \item Typ $0.85$ en vervolgens \zrm{SHIFT} \zrm{$\sin^{-1}$}.\\
   Dit geeft ons als resultaat \arulefill
-  De ZRM geeft dus één oplossing, nl. $x_{1}=1.016$. 
+  De ZRM geeft dus één oplossing, nl. $x_{1}=1.016$.
   \item De eerste reeks vind je met een analoge redenering als bij de grafische methode: telkens je een geheel veelvoud van $2\pi$ bij de gevonden $x$-waarde optelt, krijg je een nieuwe oplossing:
   $$x_{1,k}=1.016+k\cdot2\pi \mbox{ met } k \in \mathbb{Z}$$
   \item De tweede reeks oplossingen vind je door gebruik te maken van verwante hoeken.\\
   {\bf Supplementaire hoeken}, hoeken met som $\pi$, hebben namelijk gelijke sinussen.\\
-  Als $x_{1}=1,016$ een oplossing is, dan is de supplementaire hoek 
+  Als $x_{1}=1,016$ een oplossing is, dan is de supplementaire hoek
   \begin{eqnarray*}
   x_2 &=& \pi -x_{1}\\
       &=& \pi - 1.016\\
@@ -940,6 +1009,7 @@ Hiertoe voer je volgende stappen uit.
   \item De oplossingenverzameling $$V = \{\arule{10cm}\}$$
 \end{itemize}
 
+\end{theorie}
 
 \begin{oefening}
 Los op in $\mathbb{R}$ met een methode naar keuze.
@@ -954,6 +1024,8 @@ Los op in $\mathbb{R}$ met een methode naar keuze.
   \arules{6}
 \end{enumerate}
 \end{oefening}
+
+\begin{theorie}
 
 \pagebreak
 \subsection{De goniometrische vergelijking $\cos x=r$}
@@ -997,16 +1069,18 @@ $$\cos x = 0.85$$
   \item Zet je ZRM in de radialen-modus.
   \item Typ $0.85$ en vervolgens \zrm{SHIFT} \zrm{$\cos^{-1}$}.\\
   Dit geeft ons als resultaat \arulefill
-  De ZRM geeft dus één oplossing, nl. $x_{1}=0.5548$. 
+  De ZRM geeft dus één oplossing, nl. $x_{1}=0.5548$.
   \item De eerste reeks vind je met een analoge redenering als bij de grafische methode: telkens je een geheel veelvoud van $2\pi$ bij de gevonden $x$-waarde optelt, krijg je een nieuwe oplossing
   $$x_{1,k}=0.5548+k\cdot2\pi \mbox{ met } k \in \mathbb{Z}$$
   \item De tweede reeks oplossingen vind je door gebruik te maken van verwante hoeken.\\
   \textbf{Tegengestelde hoeken}, hoeken met een gelijke absolute waarde maar met een tegengesteld teken, hebben namelijk gelijke cosinussen.\\
   Als $x_{1}=0.5548$ een oplossing is, dan is de tegengestelde hoek $x_2=-x_1=-0.5548$ ook een oplossing. En wegens de peiodiciteit van de cosinusfunctie krijgen we ook hier een tweede reeks oplossingen:\\
   $$x_{2,k}=-0.5548+k\cdot 2\pi \mbox{ met } k \in \mathbb{Z}$$
-  \item De oplossingenverzameling 
+  \item De oplossingenverzameling
   $$V = \{\arule{10cm}\}$$
 \end{itemize}
+
+\end{theorie}
 
 \begin{oefening}
 Los op in $\mathbb{R}$ met een methode naar keuze.
@@ -1021,6 +1095,8 @@ Los op in $\mathbb{R}$ met een methode naar keuze.
   \arules{6}
 \end{enumerate}
 \end{oefening}
+
+\begin{theorie}
 
 \subsection{De goniometrische vergelijking $\tan x=r$}
 
@@ -1067,12 +1143,14 @@ Hiertoe voer je volgende stappen uit.
   \item Zet je ZRM in de radialen-modus.
   \item Typ -3 en vervolgens \zrm{SHIFT} \zrm{$\tan ^{-1}$}.\\
   Dit geeft ons als resultaat \arulefill
-  De ZRM geeft dus één oplossing, nl. $x_{0}=-1.25$. 
+  De ZRM geeft dus één oplossing, nl. $x_{0}=-1.25$.
   \item Telkens je een geheel veelvoud van $\pi$ bij de gevonden $x$-waarde optelt, krijg je een nieuwe oplossing
   $$x_k=-1.25+k\cdot\pi \mbox{ met } k \in \mathbb{Z}$$
   \item De oplossingenverzameling
   $$V = \{\arule{8cm}\}$$
 \end{itemize}
+
+\end{theorie}
 
 \begin{oefening}
 Los op in $\mathbb{R}$ met een methode naar keuze.
@@ -1127,7 +1205,7 @@ $$W=4-4\cos\left(\dfrac{\pi}{26}t\right) \mbox{ met } t\in \{1,2,3,\ldots,51,52\
   \item Bereken de winst $W$ voor $t=13$.
     \arules{2}
   \item Bereken de winst $W$ voor $t=26$.
-    \arules{2}  
+    \arules{2}
   \item Bereken de winst $W$ voor $t=50$.
     \arules{2}
 \end{enumerate}
@@ -1140,7 +1218,7 @@ $$I=5-4\cos\left(\dfrac{\pi}{6}t\right) \mbox{ met } t\in \{1,2,3,...,11,12\}$$
   \item Bereken de inkomsten voor $t=2$.
     \arules{2}
   \item Bereken de inkomsten voor $t=3$.
-    \arules{2}  
+    \arules{2}
   \item Bereken de inkomsten voor $t=6$.
     \arules{2}
 \end{enumerate}
@@ -1152,9 +1230,9 @@ Sommige mensen geloven dat het leven van een mens verloopt in cycli van goede en
   \item fysiek bioritme (vitaliteit, sterkte, energie), voorgesteld door een sinusfunctie met een periode van 23 dagen:\\
     $y=\sin\left(\dfrac{2\pi}{23}t\right)$
    \item emotioneel bioritme (creativiteit, stemming, welbehagen), voorgesteld door een sinusfunctie met een periode van 28 dagen:\\
-    $y=\sin\left(\dfrac{2\pi}{28}t\right)$ 
+    $y=\sin\left(\dfrac{2\pi}{28}t\right)$
    \item intellectueel bioritme (hersenarbeid, inzicht, studiebereidheid, geheugen), voorgesteld door een sinusfunctie met een periode van 33 dagen:\\
-    $y=\sin\left(\dfrac{2\pi}{33}t\right)$ 
+    $y=\sin\left(\dfrac{2\pi}{33}t\right)$
 \end{itemize}
 Voor $y=1$ is het betreffende bioritme uiterst gunstig; voor $y=-1$ uiterst ongunstig.\\
 \begin{enumerate}[(a)]
@@ -1166,6 +1244,7 @@ Voor $y=1$ is het betreffende bioritme uiterst gunstig; voor $y=-1$ uiterst ongu
 \end{oefening}
 
 
+\end{document}
 
 %Vanaf hier voor 5ELME en 5MT +2u
 
@@ -1178,7 +1257,7 @@ Voor $y=1$ is het betreffende bioritme uiterst gunstig; voor $y=-1$ uiterst ongu
     \hline
     $\cos x$&&&&&&&&&\\
     \hline
-    $\tan x$&&&&&&&&&\\ 
+    $\tan x$&&&&&&&&&\\
   \end{tabular}
   \vfill
   \includegraphics[width=0.8\textwidth]{unit-circle} %% SOURCE: http://etc.usf.edu
@@ -1289,7 +1368,7 @@ Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tus
 \section{Optellingsformules}
 
 \subsection{Inleiding}
-We willen een formule afleiden om de sinus, cosinus of tangens van een som van twee hoeken te berekenen: 
+We willen een formule afleiden om de sinus, cosinus of tangens van een som van twee hoeken te berekenen:
 \[\sin(\alpha + \beta)
 \]
 \[\cos(\alpha + \beta)
@@ -1348,7 +1427,7 @@ Vul hiertoe de volgende uitdrukkingen aan en verbind wat aan elkaar gelijk is.
       \newline $=\frac{\sqrt{2}}{2}\cdot \frac{\sqrt{3}}{2}\frac{\sqrt{2}}{2}\frac{\sqrt{1}}{2}$\newline
       $=\frac{\sqrt{6}+\sqrt{2}}{4}$
     \item $\cos(\frac{\pi}{12})$\newline = \dotfill
-      \newline = \dotfill \newline = \dotfill \newline = \dotfill \newline = \dotfill 
+      \newline = \dotfill \newline = \dotfill \newline = \dotfill \newline = \dotfill
       \newline = \dotfill \newline = \dotfill
   \end{enumerate}
 \item \underline{Vervang door 1 goniometrisch getal}
