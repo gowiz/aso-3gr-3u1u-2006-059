@@ -4,6 +4,7 @@
 *.exc.tex
 *.fls
 *.sol.tex
+*-exercise-body.tex
 *.fdb_latexmk
 *.log
 *.out
