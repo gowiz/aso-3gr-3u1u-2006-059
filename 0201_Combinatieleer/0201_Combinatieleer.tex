@@ -6,6 +6,7 @@
 \usepackage{xsim}
 \usepackage{venndiagram}
 \usepackage{makebox}
+\usepackage{listings}
 
 \xsimsetup{
   exercise/pre-hook = {\begin{minipage}{\textwidth}\vspace{0.5cm}},
@@ -16,9 +17,40 @@
 \fancyhead[RO,LE]{Combinatieleer}
 \fancyhead[RE,LO]{}
 
-\newcommand\ub[1][\phantom{0}]{
-  \underbracket{#1}
+\makeatletter
+\newcommand\binomialCoefficient[2]{%
+    % Store values
+    \c@pgf@counta=#1% n
+    \c@pgf@countb=#2% k
+    %
+    % Take advantage of symmetry if k > n - k
+    \c@pgf@countc=\c@pgf@counta%
+    \advance\c@pgf@countc by-\c@pgf@countb%
+    \ifnum\c@pgf@countb>\c@pgf@countc%
+        \c@pgf@countb=\c@pgf@countc%
+    \fi%
+    %
+    % Recursively compute the coefficients
+    \c@pgf@countc=1% will hold the result
+    \c@pgf@countd=0% counter
+    \pgfmathloop% c -> c*(n-i)/(i+1) for i=0,...,k-1
+        \ifnum\c@pgf@countd<\c@pgf@countb%
+        \multiply\c@pgf@countc by\c@pgf@counta%
+        \advance\c@pgf@counta by-1%
+        \advance\c@pgf@countd by1%
+        \divide\c@pgf@countc by\c@pgf@countd%
+    \repeatpgfmathloop%
+    \the\c@pgf@countc%
 }
+\makeatother
+
+\newcommand\ub[1][]{
+  \underbracket{\makebox*{$HV$}{$#1$}}
+}
+\newcommand\ubx[1][]{
+  \underbracket{\makebox*{$\oplus\ominus\otimes\oslash\odot$}{$#1$}}
+}
+
 \newcommand\Overset[2]{
   \overset{\textstyle #1\mathstrut}{#2}
 }
@@ -36,7 +68,7 @@
 
 \section*{Doelstellingen}
 {\singlespacing
-Je kan \hfill  {\scriptsize(LP 2006-059, LI 2.1)}
+Je kan \hfill  {\scriptsize(LP 2006/059, LI 2.1)}
 \begin{itemize}
   \itemsep0em
 \item telproblemen oplossen waarbij volgorde en herhaling al dan niet van belang zijn.
@@ -56,7 +88,7 @@ Je \hfill {\scriptsize(LP 2006/059, ET1, ET9, ET11)}
 \end{itemize}
 }
 
-{\singlespacing\small\tableofcontents\thispagestyle{empty}}
+{\singlespacing\footnotesize\tableofcontents\thispagestyle{empty}}
 
 \pagebreak
 \pagenumbering{arabic}
@@ -350,7 +382,8 @@ We merken dat de getallen die we zoeken steeds eindigen op $0$ of op $5$. We geb
 
 \begin{center}
   \begin{venndiagram2sets}
-    [labelOnlyA={$\ub\ub\ub\ub[0]$}, labelOnlyB={$\ub\ub\ub\ub[5]$}]
+    [labelOnlyA={\scalebox{0.5}{$\ub\ub\ub\ub[0]$}},
+    labelOnlyB={\scalebox{0.5}{$\ub\ub\ub\ub[5]$}}]
     \fillACapB
   \end{venndiagram2sets}
 \end{center}
@@ -504,13 +537,14 @@ $$V^k_n=n \cdot (n-1) \cdot (n-2) \cdots (n-k+1)$$
 
 \paragraph*{Bewijs}
 Er worden $k$ elementen gekozen. We nemen dus $k$ deelbeslissingen:
-\begin{description}
-\item[$1$-ste beslissing:] We kunnen kiezen uit $n$ verschillende elementen
-\item[$2$-de beslissing: ] We kunnen maar niet meer kiezen uit $n-1$ verschilende elementen meer want bij een variatie is herhaling niet toegestaan.
-\item[$\vdots$] 
-\item[$k$-de beslissing: ] Er zijn nog $n-(k-1)=n-k+1$ elementen over om uit te kiezen.
-\end{description}
-
+\begin{center}
+\begin{tabular}{lp{12cm}}
+$1$-ste beslissing: & We kunnen kiezen uit $n$ verschillende elementen\\
+$2$-de beslissing: & We kunnen maar niet meer kiezen uit $n-1$ verschilende elementen meer want bij een variatie is herhaling niet toegestaan.\\
+$\vdots$ & \\
+$k$-de beslissing: & Er zijn nog $n-(k-1)=n-k+1$ elementen over om uit te kiezen.
+\end{tabular}
+\end{center}
 Daar elke beslissing moet worden genomen, kunnen we elke beslissing verbinden met een '{\bf en}'. Met de productregel volgt dus de stelling.
 
 
@@ -663,10 +697,6 @@ Op hoeveel manieren kunnen vijf, verschillend gekleurde bollen in 3 vakjes gepla
 
 We definieren de verzameling van bollen en verzameling vakjes voor het probleem:
 
-\newcommand\ubx[1][]{
-  \underbracket{\makebox*{$\oplus\ominus\otimes\oslash\odot$}{$#1$}}
-}
-
 \begin{itemize}
 \item bollen = $\{ \oplus, \ominus, \otimes, \oslash, \odot \}$
 \item vakjes = $\{ \ubx_a, \ubx_b, \ubx_c \} = \{ a, b, c\}$
@@ -792,7 +822,7 @@ Iedereen weet dat een trol 12 tanden heeft, 6 in elke kaak. Ooit was er eens een
 \end{exercise}
 
 \pagebreak
-\section{n-faculteit}
+\section{Faculteiten}
 
 \subsection{Definitie}
 
@@ -887,19 +917,30 @@ Als je weet dat het getal $99!$ uit 156 cijfers bestaat, uit hoeveel cijfers bes
   \item Men schat dat er ongeveer tussen de $10^{78}$ en $10^{82}$ atomen in het universum zijn. Kort kunnen we dus zeggen dat er ongeveer $60!$ atomen zijn.
 \end{itemize}
 
-\pagebreak
 \subsection{Formule voor $V^k_n$ met behulp van faculteiten}
 
-Bereken $V^3_7$ door gebruik te maken van faculteiten.
-\arules{5}
+We bereken $V^3_7$ door gebruik te maken van faculteiten:
+\begin{align*}
+  V^3_7 &= 7 \cdot 6 \cdot 5\\
+        &= \dfrac{7 \cdot 6 \cdot 5 \, \color{gray}{ \cdot \, 4 \cdot 3 \cdot 2 \cdot 1}}{\color{gray}{4 \cdot 3 \cdot 2 \cdot 1}}\\
+        &= \dfrac{7!}{4!}\\
+        &= \dfrac{7!}{(7-3)!}\\
+\end{align*}
 
-Stel algemeen de formule op van $V^k_n$ door gebruik te maken van faculteiten.
-\arules{5}
+We krijgen algemeen dan volgende formule
 
-\paragraph*{Variaties} (formule m.b.v. faculteiten)
+\paragraph*{Stelling}
 \begin{mdframed}
 $$V^k_n=\dfrac{n!}{(n-k)!}$$
 \end{mdframed}
+
+\paragraph*{Bewijs}
+\begin{align*}
+  V^k_n &= n \cdot (n-1) \cdot \ldots \cdot (n-k+1)\\
+        &= \dfrac{n \cdot (n-1) \cdot \ldots \cdot (n-k+1) \, \color{gray}{ \cdot \, (n-k) \cdot (n-k-1) \cdot \ldots \cdot 1}}{\color{gray}{(n-k) \cdot (n-k-1) \cdot \ldots \cdot 1}}\\
+        &= \dfrac{n!}{(n-k)!}\\
+\end{align*}
+
 
 \begin{exercise}
 Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we twee formules:\\
@@ -915,6 +956,58 @@ Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we
 \end{enumerate}
 \end{exercise}
 
+\subsection{*Recursive definitie voor faculteiten}
+
+We verkrijgen een recursieve definitie als we {\em iets} gaan definiëren door in de definitie gebruik te maken van dat {\em iets}. Daar voorgaande eigenschap telkens een grotere faculteit kan geven door gebruik te maken van een lagere faculteit kunnen we onze definitie wijzigen. Het enige dat we nu nog nodig hebben is een randvoorwaarde, een voorwaarde waardoor de recursie kan stoppen. Hiervoor kunnen we gewoon onze kleinste mogelijke waarde apart definiëren. We krijgen dus volgende nieuwe definitie:
+
+\paragraph*{Definitie}
+\begin{mdframed}
+  \[\forall n \in \mathbb{N} : n!=
+    \begin{cases}
+      1        &\mbox{ als } n=0\\
+      n \cdot (n-1)! &\mbox{ als } n>0
+    \end{cases}
+  \]
+\end{mdframed}
+
+Deze definitie wordt dan graag gebruikt om recursie uit te leggen bij het programmeren. Zo zal het volgende c/c++ programma faculteiten kunnen berekenen voor lage waarden van $n$:
+
+\lstset{
+  captionpos=b,
+  backgroundcolor=\color{codegray},
+  basicstyle=\footnotesize,
+  numberstyle=\tiny\color{gray},
+  numbers=left,
+  numbersep=5pt
+}
+
+\definecolor{codegray}{rgb}{0.9,0.9,0.9}
+\lstinputlisting[language=c]{
+  factorial.c
+}
+
+Het voorbeeld kan gecompileerd worden met
+\begin{lstlisting}[language=bash]
+  gcc -std=gnu99 -Wall -ggdb3 -o factorial.o factorial.c
+\end{lstlisting}
+
+\begin{exercise}
+Herschrijf het recursieve programma {\em factorial} in een andere programmeertaal, bijvoorbeeld in Python of Pascal.
+\end{exercise}
+
+\begin{exercise}
+Vaak is het mogelijk om de recursie weg te werken, dan moeten we een lus-structuur gaan gebruiken. We noemen dit een iteratieve implementatie i.p.v. een recursieve implementatie. Herschrijf het programma {\em factorial} op een iteratieve manier.
+\end{exercise}
+
+\begin{exercise}
+\begin{enumerate}[(a)]
+\item Ga op het internet op zoek naar het {\bf droste-effect}.
+\item Ga op het internet op zoek naar {\bf Escher's {\em Print Gallery}}.
+\item Ga op het internet op zoek naar de wiskundige {\bf Henrik Lenstra} en zoek zijn link met Escher's {\em Print Gallery}.
+\end{enumerate}
+\end{exercise}
+
+
 \pagebreak
 \section{Driehoek van Pascal}
 
@@ -922,32 +1015,118 @@ Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we
 
 Beschouw het stratenplan van New York:
 \begin{center}
-\includegraphics[width=0.8\textwidth]{NY_grid}
+\includegraphics[width=1\textwidth]{NY_grid}
 \end{center}
 
-We wensen de kortste weg te nemen van $A$ naar $B$. Als we dit plan goed bestuderen merken we dat er meer dan één kortste weg van $A$ naar $B$ is. Hoeveel kortste wegen zijn er?
+We wensen de kortste weg te nemen van $A$ naar $B$. Als we dit plan goed bestuderen merken we dat er meer dan één kortste weg van $A$ naar $B$ is. We vragen ons nu natuurlijk af hoeveel kortste wegen er zijn.
 
-\begin{enumerate}[(a)]
-  \item Stel het stukje stratenplan waarin we geïnteresseerd zijn schematisch voor en gebruik voor een stukje horizontale weg de letter $H$ en voor een stukje verticale weg de letter $V$.
-\ruitjes{4cm}
-  \item Neem een kleur en duid de weg $HVHHV$ aan.
-  \item Geef gecodeerd nog twee andere mogelijke kortste wegen van $A$ naar $B$.
-  \arules{1}
-  \item Beschrijf het uiterlijk van een code die aan de kortste weg voldoet.
-  \arules{2}
-\end{enumerate}
+\begin{itemize}
+\item We stellen het stukje stratenplan waarin we geïnteresseerd zijn schematisch voor en gebruik voor een stukje horizontale weg de letter $H$ en voor een stukje verticale weg de letter $V$.
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=gray] (0,0) -- (6,0);
+\draw [color=gray] (0,1) -- (6,1);
+\draw [color=gray] (0,2) -- (6,2);
+\draw [color=gray] (0,0) -- (0,2);
+\draw [color=gray] (2,0) -- (2,2);
+\draw [color=gray] (4,0) -- (4,2);
+\draw [color=gray] (6,0) -- (6,2);
+\fill (0,2) circle (1.6pt);
+\draw (-0.3,2.1) node {$A$};
+\fill  (6,0) circle (1.6pt);
+\draw (6.3,0.1) node {$B$};
+\draw (5,2.2) node {\scriptsize H};
+\draw (6.2,1.5) node {\scriptsize V};
+\end{tikzpicture}
+\end{center}
+\item We nemen een kleur en duid de weg $HVHHV$ aan.
+\begin{center}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=gray] (0,0) -- (6,0);
+\draw [color=gray] (0,1) -- (6,1);
+\draw [color=gray] (0,2) -- (6,2);
+\draw [color=gray] (0,0) -- (0,2);
+\draw [color=gray] (2,0) -- (2,2);
+\draw [color=gray] (4,0) -- (4,2);
+\draw [color=gray] (6,0) -- (6,2);
+\fill (0,2) circle (1.6pt);
+\draw (-0.3,2.1) node {$A$};
+\fill  (6,0) circle (1.6pt);
+\draw (6.3,0.1) node {$B$};
+\draw [line width=1.6pt] (0,2) -- (2,2) -- (2,1) -- (4,1) -- (6,1) -- (6,0);
+\end{tikzpicture}
+\end{center}
+\item We merken dat we eigenlijk het wegenrooster niet hoeven te tekenen, want we kunnen elke mogelijke kortste weg coderen, hier is nog een ander voorbeeld:
+  \[HHVHV\]
+\item Elke kortste weg heeft dus de vorm van een code:
+  \begin{itemize}
+  \item De code bevat steeds vijf vakjes.
+    \[\ub\ub\ub\ub\ub\]
+  \item In 3 van de vakjes moet steeds een $H$ symbool komen.
+    \[\ub[H]\ub\ub[H]\ub\ub\]
+  \item In 2 van de vakjes moet steeds een $V$ symbool komen.
+    \[\ub\ub[V]\ub\ub[V]\ub[V]\]
+\end{itemize}
+\end{itemize}
 
 Als we dus het aantal codes vinden, dan vinden we ook het aantal mogelijke kortste wegen. In de wiskunde zullen we vaak een moeilijk probleem oplossen door voor het probleem een equivalent probleem te vinden dat eenvoudiger te beschrijven is.
 
+\begin{exercise}
+De korste weg-code hebben we beschreven met 3 voorwaarden. Er zijn eigenlijk maar twee voorwaarden nodig. Eén voorwaarde is m.a.w. redundant. Welke en waarom?
+\end{exercise}
+
 \subsubsection{Tellen met behulp van een boomdiagram}
 
-Tel het aantal mogelijke codes (en dus ook het aantal mogelijke kortste wegen) met behulp van een boomdiagram.\\
+We herrinneren ons dat we met een boomdiagram alle teproblemen kunnen oplossen. Daarom tellen we het aantal mogelijke codes (en dus ook het aantal mogelijke kortste wegen) nu met behulp van een boomdiagram. Straks zoeken we wel naar efficiëntere methoden.
 
-\vspace*{5cm}
-start
-\vspace*{5cm}
+\begin{dot2tex}[tikz, options=-tmath --tikzedgelabel]
+  digraph G {
+    node [shape=none,label=""];
+    edge [arrowhead=none,lblstyle="above, sloped"];
+    rankdir=LR;
+    ranksep=0.1;
+    a0 -> b0 [label=H];
+    a0 -> b1 [label=V];
+    b0 -> c0 [label=H];
+    b0 -> c1 [label=V];
+    b1 -> c2 [label=H];
+    b1 -> c3 [label=V];
+    c0 -> d0 [label=H];
+    c0 -> d1 [label=V];
+    c1 -> d2 [label=H];
+    c1 -> d3 [label=V];
+    c2 -> d4 [label=H];
+    c2 -> d5 [label=V];
+    c3 -> d6 [label=H];
+    d0 -> e0 [label=V];
+    d1 -> e1 [label=H];
+    d1 -> e2 [label=V];
+    d2 -> e3 [label=H];
+    d2 -> e4 [label=V];
+    d3 -> e5 [label=H];
+    d4 -> e6 [label=H];
+    d4 -> e7 [label=V];
+    d5 -> e8 [label=H];
+    d6 -> e9 [label=H];
+    e0 -> f0 [label=V];
+    e1 -> f1 [label=V];
+    e2 -> f2 [label=H];
+    e3 -> f3 [label=V];
+    e4 -> f4 [label=H];
+    e5 -> f5 [label=H];
+    e6 -> f6 [label=V];
+    e7 -> f7 [label=H];
+    e8 -> f8 [label=H];
+    e9 -> f9 [label=H];
+    aa -> bb [style=dashed, label="\ub_1"];
+    bb -> cc [style=dashed, label="\ub_2"];
+    cc -> dd [style=dashed, label="\ub_3"];
+    dd -> ee [style=dashed, label="\ub_4"];
+    ee -> ff [style=dashed, label="\ub_5"];
+  }
+\end{dot2tex}
 
-Er zijn dus \arule{3cm} mogelijke codes met 3$H$'s en 2$V$'s. We weten nu dus dat er \arule{3cm} wegen zijn van $A$ naar $B$.
+Er zijn dus $10$ mogelijke codes met 3$H$'s en 2$V$'s. We weten nu dus dat er $10$ kortste wegen zijn van $A$ naar $B$.
 
 Indien $A$ en $B$ verder van elkaar verwijderd zijn, dan wordt dit snel veel ingewikkelder. We zoeken dus een andere manier.
 
@@ -956,36 +1135,59 @@ Indien $A$ en $B$ verder van elkaar verwijderd zijn, dan wordt dit snel veel ing
 
 \begin{multicols}{2}
 \begin{center}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw (0,0) -- (6,0);
-\draw (0,1) -- (6,1);
-\draw (0,2) -- (6,2);
-\draw (0,0) -- (0,2);
-\draw (2,0) -- (2,2);
-\draw (4,0) -- (4,2);
-\draw (6,0) -- (6,2);
-\fill (0,2) circle (1.8pt);
-\draw (-0.3,2.3) node {$A$};
-\fill  (6,0) circle (1.8pt);
-\draw (6.3,0.3) node {$B$};
-\end{tikzpicture}
+  \begin{tikzpicture}
+    [line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,
+    every node/.style={anchor=north west}]
+    \draw [color=gray] (0,0) -- (6,0);
+    \draw [color=gray] (0,1) -- (6,1);
+    \draw [color=gray] (0,2) -- (6,2);
+    \draw [color=gray] (0,0) -- (0,2);
+    \draw [color=gray] (2,0) -- (2,2);
+    \draw [color=gray] (4,0) -- (4,2);
+    \draw [color=gray] (6,0) -- (6,2);
+    \begin{scriptsize}
+      \draw (0,2) node {1};
+      \draw (2,2) node {1};
+      \draw (4,2) node {1};
+      \draw (6,2) node {1};
+      \draw (0,1) node {1};
+      \draw (2,1) node {2};
+      \draw (4,1) node {3};
+      \draw (6,1) node {4};
+      \draw (0,0) node {1};
+      \draw (2,0) node {3};
+      \draw (4,0) node {6};
+      \draw (6,0) node {10};
+    \end{scriptsize}
+  \end{tikzpicture}
 \end{center}
-
-Duid hiernaast in elke knoop het aantal kortste wegen van $A$ naar die knoop aan. Je moet hiervoor slim gebruik maken van reeds berekende resultaten.
+We duiden hiernaast in elke knoop het aantal kortste wegen van $A$ naar die knoop aan. Je moet hiervoor slim gebruik maken van reeds berekende resultaten.
 \end{multicols}
-Dit wordt tellen via een wegenrooster genoemd. Hoeveel kortste wegen zijn er van $A$ naar $B$?
-\arules{1}
+
+Dit wordt tellen via een wegenrooster genoemd. Zo vinden we toch al sneller dan met een boomdiagram het aantal kortste wegen, namelijk 10.
 
 \subsubsection{Tellen met behulp van een formule}
 
-We moeten een code van 5 plaatsten vullen. Op twee van die vijf plaatsen komt de letter $V$. Je weet dan onmiddellijk waar de $H$'s moeten komen, dit kan je dus negeren. Zoek een formule om die twee $V$'s op vijf posities te plaatsen.
-\arules{4}
+We moeten een code van 5 plaatsten vullen. Op twee van die vijf plaatsen komt de letter $V$. Je weet dan onmiddellijk waar de $H$'s moeten komen, dit kan je dus negeren. We zoeken een formule om die twee $V$'s op vijf posities te plaatsen.
 
-We moeten een code van 5 plaatsten vullen. Op drie van die vijf plaatsen komt de letter $H$. Je weet dan onmiddellijk waar de $V$'s moeten komen, dit kan je dus negeren. Zoek een formule om die drie $H$'s op vijf posities te plaatsen.
-\arules{4}
+Beschouwen we één voorbeeld
+\[\ub\ub[V]\ub[V]\ub\ub\]
+Dan merken we dat we een probleem hebben waarbij de volgorde niet van belang is. Want achteraf kunnen we niet meer zien of we eerst de $V$ in het tweede vakje hebben geplaatst of in het derde vakje. We kunnen tot nu toe echter alleen problemen oplossen waarbij de volgorde wel van belang is. Laten we dan even veronderstellen dat de volgorde wel van belang is (?!? we lossen dus eerst het probleem foutief op ?!?). Achteraf zullen we dan wel zien wat de fout is.
 
-Geef zelf een algemene formule om te bepalen hoeveel codes met $n$ plaatsen, waarvan er $k$ worden ingenomen door een eerste symbool en waarbij er $n-k$ worden ingenomen door een tweede symbool, er zijn.
-\arules{4}
+Bovenstaand voorbeeld zou dan dus volgende twee verschillende mogelijkheiden hebben
+\[\ub\ub[V_1]\ub[V_2]\ub\ub \qquad \ub\ub[V_2]\ub[V_1]\ub\ub\]
+En in het totaal zouden er
+\[V^2_5=\dfrac{5!}{2!(5-2)!}=20\]
+mogelijkheiden zijn. Door even te veronderstellen dat de volgorde van belang is, komen we dubbel zoveel oplossing uit. Maar even terugdenken aan ons voorbeeld is dat ook logisch dat we dubbel zoveel oplossingen hebben. De juiste berekening is dus
+\[\dfrac{20}{2} = 10\]
+
+\begin{exercise}
+Zoek de formule die het aantal mogelijkheden als je in een code met vijf plaatsen, drie van die plaatsen moet vullen met een symbool $H$. Eén voorbeeld van een mogelijkheid is
+\[\ub[H]\ub\ub\ub[H]\ub[H]\]
+\end{exercise}
+
+Algemeen krijgen we volgende formule om te bepalen hoeveel codes er zijn met $n$ plaatsen, waarvan er $k$ worden ingenomen door een eerste symbool en waarbij er $n-k$ worden ingenomen door een tweede symbool:
+\[\dfrac{V^k_n}{P_k}=\dfrac{n!}{k! \cdot (n-k)!}\]
 
 \begin{exercise}
 Beschouw het volgende wegenrooster met de locatie van Marieke en Jan en daarbinnen ook een moeras.
@@ -1054,13 +1256,22 @@ Beschouw het volgende wegenrooster met de locaties $S$, $V$ en $T$.
 \pagebreak
 \subsection{Driehoek van Pascal}
 
-Teken een oneindig doorlopend wegenrooster met beginpunt $P$ en waarbij er bij elk kruispunt het aantal mogelijke kortste wegen wordt genoteerd. Ga ervan uit dat er van $P$ naar $P$ één mogelijke kortste weg is, ter plaatse blijven staan, zet dus bij $P$ het getal 1.
+We teken nu een oneindig doorlopend wegenrooster waarbij er bij elk kruispunt het aantal mogelijke kortste wegen wordt genoteerd van aan het beginpunt. Merk op dat er van het beginpunt juist één korste weg is naar dat beginpunt, namelijk blijven staan.
+
+\vspace*{1cm}
 \begin{center}
-  $P$
+  \begin{tikzpicture}
+    \foreach \n in {0,...,15} {
+      \foreach \k in {0,...,\n} {
+        \node at (\k-\n/2,-\n) {$\binomialCoefficient{\n}{\k}$};
+      }
+    }
+  \end{tikzpicture}
 \end{center}
-\ruitjes{16cm}
+\vspace*{1cm}
+
 \begin{mdframed}
-De bekomen oneindige naar beneden doorlopende driehoek wordt de {\bf driehoek van Pascal} genoemd.
+De bekomen oneindige naar beneden doorlopende driehoek wordt de {\bf driehoek van Pascal} genoemd. Het beginpunt, de top m.a.w., staat op {\bf rij} 0.
 \end{mdframed}
 
 \begin{exercise}
@@ -1079,29 +1290,35 @@ Op de titelpagina van dit hoofdstuk werd de driehoek van Pascal getekend. Een be
 
 \subsection{Binomium van Newton}
 
-Vul de tabel aan:\\
-\hspace*{-1.5cm}
+Beschouw de volgende tabel, die ons links de machten van een som geeft en rechts de coëfficiënten van de bekomen veeltermen geeft.
+
+\begin{small}
 \begin{tabular}{l|l}
 machten van $(x+y)$ & coëfficiënten\\
 \hline
 $(x+y)^0 = 1$ & 1\\
-$(x+y)^1 = x+y$ & 1\qquad 1\\
-$(x+y)^2 = $\arule{3cm} & \arule{3cm}\\
-$(x+y)^3 = $\arule{4cm} & \arule{4cm}\\
-$(x+y)^4 = $\arule{5cm} & \arule{5cm}\\
-$(x+y)^5 = $\arule{6cm} & \arule{6cm}\\
+$(x+y)^1 = x+y$ & 1 \qquad 1\\
+$(x+y)^2 = x^2 + 2xy + y^2$ & 1 \qquad 2 \qquad 1\\
+$(x+y)^3 = x^3 + 3x^2y + 3xy^2 + y^3$ & 1 \qquad 3 \qquad 3 \qquad 1\\
+$(x+y)^4 = y^4 + 4xy^3 + 6x^2y^2 + 4x^3y + x^4$ & 1 \qquad 4 \qquad 6 \qquad 4 \qquad 1\\
+$(x+y)^5 = y^5 + 5xy^4 + 10x^2y^3 + 10 x^3y^2 + 5x^4y + x^5$ & 1 \qquad 5 \qquad 10 \qquad 10 \qquad 5 \qquad 1\\
 \vdots & \vdots\\
-$(x+y)^8 = $\arule{8cm} & \arule{8cm}\\
 \end{tabular}
+\end{small}
 
-Bereken de coëfficiënten van $(x+y)^4$:
-\arules{3}
+Het is duidelijk dat de coëfficiënten van machten van een som bepaald kunnen worden m.b.v. de driehoek van Pascal. Onze merkwaardige producten zullen niet langer merkwaardig zijn!
 
-Deze formule is dusdanig handig dat we deze coëfficiënten een naam geven, algemeen noemen we dit de {\bf binomiaalcoëfficiënt} van $k$ uit $n$ en noteren
+De coëfficiënten van $(x+y)^4$ zijn te vinden in rij $4$ van de driehoek van Pascal. Deze waarden kunnen we evenwel ook berekenen met onze formule om het aantal korste wegen te vinden in een wegenrooster, want de driehoek van Pascal is een oneindig doorlopend wegenrooster. We doen dit eens:
+\newcommand\calcC[2]{
+  \dfrac{#2!}{#1! \cdot (#2-#1)!}
+}
+\[\scalebox{0.6}{$\dfrac{V^0_4}{P_0}=\calcC{0}{4} = 1 \qquad \dfrac{V^1_4}{P_1}=\calcC{1}{4} = 4 \qquad \dfrac{V^2_4}{P_2}=\calcC{2}{4} = 6 \qquad \dfrac{V^3_4}{P_3}=\calcC{3}{4} = 4 \qquad \dfrac{V^4_4}{P_4}=\calcC{4}{4} = 1$}\]
+
+Deze formule is dusdanig handig dat we deze coëfficiënten een naam geven, algemeen noemen we dit de {\bf binomiaalcoëfficiënt van $n$ over $k$} en we noteren
 
 \paragraph*{Binomiaalcoëfficiënten}
 \begin{mdframed}
-$${n \choose k} = \dfrac{n!}{k!\cdot\left(n-k!\right)}$$
+\[{n \choose k} = \dfrac{n!}{k!\cdot\left(n-k!\right)}\]
 \end{mdframed}
 
 Beschouw opnieuw de vierde macht van $x+y$:
@@ -1110,17 +1327,24 @@ Beschouw opnieuw de vierde macht van $x+y$:
           &= 1x^4y^0 + 4x^3y^1+6x^2y^2+4x^1y^3+1x^0y^4\\
           &= {4 \choose 0}x^4y^0 + {4 \choose 1}x^3y^1+{4 \choose 2}x^2y^2+{4 \choose 3}x^1y^3+{4 \choose 4}x^0y^4\\
 \end{align*}
-\begin{enumerate}[(a)]
-  \item Bespreek de vorm van elke term:
-  \arules{4}
-  \item Hoe is de $k$-de term dan te schrijven:
-  \arules{3}
-  \item Schrijf dan de vierde macht van $x+y$ kort door gebruik te maken van het sommatiesymbool $\displaystyle\Sigma$:
-  \arules{3}
-\end{enumerate}
 
-Schrijf de zevende macht van $x+y$:
-\arules{3}
+We merken dat er een zekere structuur in deze som zit, elk van de termen heeft dezelfde vorm, namelijk
+\[{4 \choose \mbox{\tiny{optellend nummer}}}x^{\mbox{{\tiny aftellend nummer}}}y^{\mbox{{\tiny optellend nummer}}}\]
+Als we dan de $k$-de term nemen uit de vijf termen, dan kunnen we deze schrijven als
+\[{4 \choose k}x^{4-k}y^{k}\]
+Nu kunnen we uiteindelijk gebruik maken van het somatiesymbool $\sum$ om de oorspronkelijke macht van een som te herschrijven als
+\[\left(x+y\right)^4 = \sum^4_{k=0}{4 \choose k}x^{4-k}y^{k}\]
+
+\begin{exercise}
+\begin{enumerate}[(a)]
+\item Schrijf de zevende macht van $x+y$ m.b.v. het somatiesymbool
+  $\sum$.
+\item Herschrijf $1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9 + 10$ m.b.v. het somatiesymbool.
+\item Herschrijf $0 + 1 + 2 + 3 + 4 + 5 + 6 + 7 + 8 + 9$ m.b.v. het somatiesymbool.
+\item Herschrijf $0 + 2 + 4 + 6 + 8$ m.b.v. het somatiesymbool.
+\item Herschrijf $1 + 2 + 4 + 8 + \cdots + 262144$ m.b.v. het somatiesymbool.
+\end{enumerate}
+\end{exercise}
 
 We krijgen algemeen
 \paragraph{Binomium van Newton}
@@ -1168,8 +1392,8 @@ Zoek:
 Bereken zonder \zrm{ZRM} $$\left(\sqrt{2}+1\right)^5+\left(\sqrt{2}-1\right)^5$$
 \end{exercise}
 
-\pagebreak
 \subsection{Oefeningen}  % bron: mathcentre
+
 
 \begin{exercise}
 Beschouw het volgende wegenrooster met de locatie van Aline en Birgit en daarbinnen ook een moeras.
@@ -1254,26 +1478,23 @@ We definiëren:
 
 We moeten twee gelijke bollen in vijf vakjes leggen. Dit is hetzelfde als: we moeten de twee bollen tegelijkertijd in de bakjes leggen. Vermits de 2 bollen identiek zijn heeft alléén het vakje belang waarin een bol ligt. De bol zelf speelt geen rol.
 
-Teken een mogelijke plaatsing van de bollen:
-\arules{2}
+Een mogelijke plaatsing voor de bollen is dan
+\[\ub[B]\ub\ub[B]\ub\ub\]
 
-Elke plaatsing zouden we als een tweetal $(a, c)$ kunnen noteren. Maar elk tweetal, waarin dezelfde vakjes voorkomen zoals $(a, c)$ en $(c, a)$ stelt eenzelfde plaatsing voor.
+Deze plaatsing zouden we als een tweetal $(a, c)$ kunnen noteren. Maar elk tweetal, waarin dezelfde vakjes voorkomen zoals $(a, c)$ en $(c, a)$ stelt eenzelfde plaatsing voor.
 
 De volgorde waarin de vakjes opgesomd worden heeft geen belang. We spreken nu af om de plaatsing te noteren als een verzameling waarin de elementen in alfabetische volgorde worden geschreven. De hierboven voorgestelde plaatsing wordt dan : $\{a, c\}$ en is een deelverzameling van de gegeven verzameling vakjes $\{a, b, c, d, e\}$.
 
 Daar er bovendien in elk vakje hoogstens één bol ligt wordt geen enkel vakje herhaald. In een verzameling wordt óók geen element herhaald. Wel, de deelverzameling $\{a, c\}$, noemt men nu een combinatie zonder herhaling, kortweg combinatie, van 2 elementen gekozen uit 5 elementen.
 Het aantal van zulke combinaties stellen we nu voor door het symbool $C^2_5$ en kunnen we als volgt bepalen:
 
-Codeer het gegeven probleem als volgt: We kiezen 5 plaatsen, 2 ervan moeten gevuld worden met de letter $B$ van bol plaatsen, de overige drie moeten gevuld worden met de letter $L$ van leeg laten. Los dit probleem nu op met behulp van een wegenrooster.\\
-\ruitjes{4cm}
+Codeer het gegeven probleem als volgt: We kiezen 5 plaatsen, 2 ervan moeten gevuld worden met de letter $B$ van bol plaatsen, de overige drie moeten gevuld worden met de letter $L$ van leeg laten. Een voorbeeld is dan
+\[\ub[B]\ub[L]\ub[B]\ub[L]\ub[L]\]
 
-Eenvoudiger is om onmiddellijk de formule te gebruiken:
-$$C^2_5=\dfrac{5!}{2!\cdot (5-2)!}$$
+Dit is net hetzelfde probleem als we tevoor opgelost hebben met een wegenrooster! Eenvoudiger is om onmiddellijk de ondertussen gekende formule te gebruiken:
+$$C^2_5 = \dfrac{5!}{2!\cdot (5-2)!} = 10$$
 
-Maak voorgaande berekening. Met andere woorden, op hoeveel manieren kunnen twee identieke bollen in vijf verschillende vakjes geplaatst worden als in één vakje hoogstens één bol mag voorkomen?
-\arules{2}
-
-Let op de notatie : De $C$ is het symbool voor het aantal combinaties zonder herhaling. Het aantal vakjes (elementen) waarover je beschikt wordt als index genoteerd. Het aantal te vullen vakjes wordt bovenaan genoteerd.
+Let op de notatie : De $C$ is het symbool voor het aantal combinaties zonder herhaling. Het aantal beslissingen wordt als superscript (bovenaan) genoteerd. Het aantal vakjes (elementen) waar je keuze uit hebt wordt als subscript (onderaan) genoteerd.
 
 \subsection{Formule}
 
@@ -1289,7 +1510,6 @@ $$C^k_n=\dfrac{n!}{k!\cdot(n-k)!}$$
   \item Elk element kunnen we maar éénmaal kiezen, {\bf herhaling niet toegestaan}.
 \end{itemize}
 
-\pagebreak
 \subsection{Oefeningen}
 
 \begin{exercise}
@@ -1382,11 +1602,9 @@ Joni gooit 13 keer met een geldstuk. Telkens noteert hij K(op) en M(unt). Zo ont
 \pagebreak
 \section{Herhalingscombinaties}
 
-
-
 \subsection{Voorbeeld}
 
-Marieke wordt 5 jaar. Voor haar verjaardagsfeestje hangt de vader 5 ballonnen aan de voordeur. Hij heeft ballonnen in 4 kleuren: blauwe (B), gele (G), rode (R) en witte (W). Marieke mag de kleuren kiezen, een mengeling van kleuren of zelfs allemaal in één kleur. Op hoeveel manieren kan ze dit doen?
+Charlotte wordt 5 jaar. Voor haar verjaardagsfeestje hangt de vader 5 ballonnen aan de voordeur. Hij heeft ballonnen in 4 kleuren: blauwe (B), gele (G), rode (R) en witte (W). Charlotte mag de kleuren kiezen, een mengeling van kleuren of zelfs allemaal in één kleur. Op hoeveel manieren kan ze dit doen?
 
 \paragraph*{Belangrijk}
 \begin{itemize}
@@ -1394,29 +1612,26 @@ Marieke wordt 5 jaar. Voor haar verjaardagsfeestje hangt de vader 5 ballonnen aa
   \item Ze kan een kleur van ballon opnieuw kiezen, {\bf herhaling toegestaan}.
 \end{itemize}
 
-We tellen het aantal mogelijkheden.
+We tellen het aantal mogelijkheden. Volgende figuur geeft ons een goede voorstelling van het probleem.
 
-Hou voor elk kleur voldoende ruimte:
+\[ \ubx_B | \ubx_G | \ubx_R | \ubx_W \]
 
-\verb# B | G | R | W #
+Op deze manier worden de kleuren van elkaar gescheiden door een eerste symbool \texttt| We nemen een tweede symbool \verb#*# om de gekozen kleur voor te stellen.
 
-Op deze manier worden de kleuren van elkaar gescheiden door een eerste symbool \verb#|#
-
-We nemen een tweede symbool \verb#*# om de gekozen kleur voor te stellen.
-
-Stel de volgende keuzes voor:
-\begin{enumerate}[(a)]
-  \item drie blauwe ballonnen, één groene, één rode: \arulefill
-  \item Marieke kiest allemaal witte ballonnen: \arulefill
-  \item twee blauwe, één witte en de rest ook blauw: \arulefill
-\end{enumerate}
-
-Merk nu op dat elke code bestaat uit 8 plaatsen, waaruit we er 5 moeten kiezen om een \verb#*# te zetten. We vinden dus het aantal mogelijkheden met een combinatie: $C^5_8=\dfrac{8!}{5!3!}=56$
+We proberen bijvoorbeeld eens volgende keuzes:
+\begin{center}
+\begin{tabular}{p{6cm}c}
+drie blauwe ballonnen, één groene, één rode & $\ubx[***]_B | \ubx[*]_G | \ubx[*]_R | \ubx_W $\\
+Charlotte kiest allemaal witte ballonnen & $\ubx_B | \ubx_G | \ubx_R | \ubx[*****]_W $\\
+twee blauwe, één witte en de rest ook blauw & $\ubx[**\color{gray}{*\,*}]_B | \ubx_G | \ubx_R | \ubx[*]_W $\\
+\end{tabular}
+\end{center}
+Merk nu op dat elke code bestaat uit 8 plaatsen, waaruit we er 5 moeten kiezen om een \texttt* te zetten. We vinden dus het aantal mogelijkheden met een combinatie
+\[C^5_8=\dfrac{8!}{5!3!}=56\]
 
 We noemen het aantal keuzemogelijkheden het aantal {\bf herhalingscombinaties van 5 uit 4}, ja want we kiezen 5 ballonnen en voor elke ballon hebben we vier kleuren om uit te kiezen. We nemen dus 5 beslissingen en voor elke beslissing hebben we vier keuzes. We noteren dit kort als
-$$\bar{C}^5_4=C^5_8=56$$
+\[\bar{C}^5_4=C^5_8=56\]
 
-\pagebreak
 \subsection{Algemeen}
 
 \paragraph*{Herhalingscombinaties}
