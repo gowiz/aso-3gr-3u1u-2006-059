@@ -2,26 +2,19 @@
 
 \input{../gowiz.tex}
 
-\usepackage{versions}
-%\excludeversion{theorie}
-\includeversion{theorie}
+\pagestyle{fancy}
+\fancyhead[RO,LE]{Complexe Getallen}
+\fancyhead[RE,LO]{}
 
 \begin{document}
 
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Complexe Getallen}
-
-\begin{theorie}
-
-  \thispagestyle{empty}
+\begin{center}
+  \begin{mdframed}
+    \centering
+    \fontsize{40}{60}\selectfont Complexe Getallen
+  \end{mdframed}
+  \vspace*{2.5cm}
   \begin{center}
-    \begin{mdframed}
-      \centering
-      \fontsize{40}{60}\selectfont Complexe Getallen
-    \end{mdframed}
-    \vspace*{2.5cm}
-    \begin{center}
     \begin{tikzpicture}[transform canvas={scale=2},->,shorten >=1pt,auto,node distance=2.5cm,thick]
       \node (i) {$i$};
       \node (-1) [below left of=i] {$-1$};
@@ -33,43 +26,42 @@
       (-i) edge node [right] {$\cdot i$} (1)
       (1) edge node [right] {$\cdot i$} (i);
     \end{tikzpicture}
-    \end{center}
   \end{center}
-    \vfill
-  \subsection*{Doelstellingen}
-  \vspace*{-0.8cm}
-  {\singlespacing
-    Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
-    \begin{itemize}
-      \itemsep-0.2em
-    \item kent het begrip complex getal
-    \item kan complexe getallen optellen, aftrekken, vermenigvuldigen en delen
-    \item kan de $k$-de macht van een complex getal berekenen
-    \item kan algebraïsch vierkantswortels uit een complex getal berekenen
-    \item kan vergelijkingen van de tweede graad met reële coëfficiënten oplossen in $\mathbb{C}$
-    \item kan complexe getallen voorstellen in het vlak van Gauss
-    \item kent de goniometrische gedaante van een complex getal
-    \item kan product, quotiënt en macht berekenen van complexe
-      getallen in goniometrische gedaante
-    \item kent de formule van de Moivre
-    \item kan goniometrisch de $n$-de wortels berekenen uit een complex getal in goniometrische gedaante
-    \end{itemize}}
+\end{center}
+\vfill
 
-  \thispagestyle{empty}
-  \mbox{}
-  \newpage
-  \clearpage
-  \thispagestyle{empty}
-  % \mbox{}
-  \tableofcontents
-  \newpage
-  \clearpage
-  \pagenumbering{arabic}
+\subsection*{Doelstellingen}
+\vspace*{-0.8cm}
 
-  \fancyhead[RO,LE]{Complexe Getallen}
-  \fancyhead[RE,LO]{}
+\begin{singlespacing}
+  Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
+  \begin{itemize}
+    \itemsep-0.2em
+  \item kent het begrip complex getal
+  \item kan complexe getallen optellen, aftrekken, vermenigvuldigen en delen
+  \item kan de $k$-de macht van een complex getal berekenen
+  \item kan algebraïsch vierkantswortels uit een complex getal berekenen
+  \item kan vergelijkingen van de tweede graad met reële coëfficiënten oplossen in $\mathbb{C}$
+  \item kan complexe getallen voorstellen in het vlak van Gauss
+  \item kent de goniometrische gedaante van een complex getal
+  \item kan product, quotiënt en macht berekenen van complexe
+    getallen in goniometrische gedaante
+  \item kent de formule van de Moivre
+  \item kan goniometrisch de $n$-de wortels berekenen uit een complex getal in goniometrische gedaante
+  \end{itemize}
+\end{singlespacing}
+\thispagestyle{empty}
+\pagebreak
 
-\end{theorie}
+%% Inhoudsopgave
+
+\begin{singlespacing}
+\tableofcontents
+\end{singlespacing}
+\thispagestyle{empty}
+\pagebreak
+
+\pagenumbering{arabic}
 
 \section{Definitie}
 
@@ -91,7 +83,7 @@ $$x^2+4=0$$
 Lossen we dit toch op, dan vinden we
 \begin{align*}
   x^2+4=0 \quad & \LRA\quad x^2 = -4\\
-                & \LRA\quad x = +\sqrt{-4} \quad\vee\quad x = -\sqrt{-4}
+             & \LRA\quad x = +\sqrt{-4} \quad\vee\quad x = -\sqrt{-4}
 \end{align*}
 
 We kunnen geen vierkantswortel van een negatief getal nemen, daarom voeren we een nieuwe verzameling in, namelijke de verzameling van de {\bf complexe getallen}
@@ -127,7 +119,8 @@ $$\mathbb{C}=\{ a + bi \;|\; a\in\mathbb{R}, b\in\mathbb{R}\}$$
   \item De vorm waarin we een complex getal als $a+bi$ schrijven wordt de {\bf Carthesische gedaante} genoemd, we zien later nog een andere manier om een complex getal op te schrijven.
 \end{itemize}
 
-\paragraph*{Voorbeelden}\mbox{}\\
+\subsubsection*{Voorbeelden}
+
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
   \item $(2,3)=2+3i$
@@ -160,29 +153,29 @@ Met voorgaande definitie kunnen we nu $x^2+4=0$ oplossen. De oplossingen zijn na
 
 \subsection{Gelijkheid}
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 \begin{mdframed}
 Twee complexe getallen zijn {\bf gelijk} als en slechts als hun reële delen en hun imaginaire delen gelijk zijn.
 \end{mdframed}
 
-\paragraph*{Notatie}
+\subsubsection*{Notatie}
 $$a+bi = c+di \LRA \begin{cases}a=c \\ b=d\end{cases}$$
 
-\paragraph*{Merk op}
+\subsubsection*{Merk op}
 Complexe getallen kunnen niet geordend worden, dus een ongelijkheid als bijvoorbeeld kleiner dan kan niet gedefinieerd worden.
 
 \subsection{Complex toegevoegde}
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 \begin{mdframed}
 Twee complexe getallen met hetzelfde reële deel en een tegengesteld imaginaire deel noemen we {\bf complex toegevoegden}.
 \end{mdframed}
 
-\paragraph*{Notatie}
+\subsubsection*{Notatie}
 $\bar{z}$ is het complex toegevoegde van $z$.
 $$z=a+bi \Rightarrow \overline{z}=a-bi$$
 
-\paragraph*{Voorbeeld}
+\subsubsection*{Voorbeeld}
 $$\overline{2+3i}=2-3i$$
 
 \begin{oefening}
@@ -209,12 +202,12 @@ Bepaal het complex toegevoegde van:
 
 \subsection{Optelling}
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 \begin{mdframed}
 Twee complexe getallen kunnen we {\bf optellen} door afzonderlijk hun reële delen en hun imaginaire delen op te tellen.
 \end{mdframed}
 
-\paragraph*{Notatie}
+\subsubsection*{Notatie}
 $$(a+bi) + (c+di) = (a+c) + (b+d)i$$
 
 \paragraph{Voorbeeld}
@@ -223,7 +216,7 @@ $$(a+bi) + (c+di) = (a+c) + (b+d)i$$
                       &= -2-i
 \end{align*}
 
-\paragraph*{Eigenschap}
+\subsubsection*{Eigenschap}
 $\mathbb{C},+$ is een commutatieve groep.\\
 De bewerking optellen op de verzameling van complexe getallen
 \begin{itemize}
@@ -234,11 +227,11 @@ De bewerking optellen op de verzameling van complexe getallen
   \item en is commutatief.
 \end{itemize}
 
-\paragraph*{Bijzonder geval}
+\subsubsection*{Bijzonder geval}
 $$(a+bi) + \overline{(a+bi)}=(a+bi) + (a-bi) = 2a+0i = 2a$$
 Dus, de som van 2 complex toegevoegden is reëel!
 
-\paragraph*{Verschil}
+\subsubsection*{Verschil}
 Het verschil van een twee complexe getallen is hetzelfde als de som van het eerste complex getal met het tegengestelde van het tweede complexe getal.
 $$(a+bi)-(c+di)=(a+bi)+(-c-di)=(a-c)+(b-d)i$$
 
@@ -258,7 +251,7 @@ $$(a+bi)-(c+di)=(a+bi)+(-c-di)=(a-c)+(b-d)i$$
 
 \subsection{Vermenigvuldiging}
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 \begin{mdframed}
 $$(a+bi)(c+di) = (ac - bd) + (ad + bc)i$$
 \end{mdframed}
@@ -269,12 +262,13 @@ Vermenigvuldig zoals in $\mathbb{R}$, maar hou rekening met het feit dat $i\cdot
                &= (ac - bd) + (ad + bc)i
 \end{align*}
 
-\paragraph*{Voorbeeld}
+\subsubsection*{Voorbeeld}
 \begin{align*}
-  (1-2i)\cdot(-3+i) &= 
+  (1-2i)\cdot(-3+i) &= (-3 - (-2)) + (1 + 6)i\\
+               &= -1 + 7i
 \end{align*}
 
-\paragraph*{Bijzonder geval}
+\subsubsection*{Bijzonder geval}
 \begin{align*}
   (a+bi)\overline{(a+bi)} &= (a+bi)(a-bi) \\
                           &= a^2 - abi + abi - b^2i^2 \\
@@ -301,12 +295,12 @@ Dus het product van 2 complex toegevoegden is een reëel positief getal.
 
 \subsection{Quotiënt}
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 \begin{mdframed}
 $$\dfrac{a+bi}{c+di} = (a+bi)\cdot\underbrace{(c+di)^{-1}}_{\mbox{\scriptsize omgekeerde}}$$
 \end{mdframed}
 
-\paragraph*{Praktische regel}
+\subsubsection*{Praktische regel}
 
 We maken de noemer reëel:
 
@@ -318,7 +312,7 @@ We maken de noemer reëel:
 
 Dus, om te delen door een complex getal, vermenigvuldigen we teller en noemer met het complex toegevoegde van de noemer.
 
-\paragraph*{Voorbeeld}
+\subsubsection*{Voorbeeld}
 \begin{align*}
   \dfrac{3+4i}{1+i} &= \dfrac{(3+4i)(1-i)}{(1+i)(1-i)} \\
                     &= \dfrac{3-3i + 4i - 4i^2}{1^2 + 1^2}\\
@@ -382,12 +376,12 @@ De laatste stap is nodig, want we schrijven een complex getal altijd in zijn Car
 
 \section{Machtsverheffing}
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 \begin{mdframed}
 $$(a+bi)^n = \underbrace{(a+bi)\cdot(a+bi)\cdot\cdots\cdot(a+bi)}_{n\mbox{ \scriptsize factoren}}$$
 \end{mdframed}
 
-\paragraph*{Voorbeelden}
+\subsubsection*{Voorbeelden}
 \begin{enumerate}[(a)]
   \item $(2+3i)^2=(2+3i)(2+3i)=4+6i+6i+9i^2=-5+12i$
   \item $(2+3i)^4=(2+3i)^2(2+3i)^2=(-5+12i)(-5+12i)=-119-120i$
@@ -395,7 +389,7 @@ $$(a+bi)^n = \underbrace{(a+bi)\cdot(a+bi)\cdot\cdots\cdot(a+bi)}_{n\mbox{ \scri
   \item $(2i-1)^1=-1+2i$
 \end{enumerate}
 
-\paragraph*{Machten van $i$}
+\subsubsection*{Machten van $i$}
 $$i^0=1 \qquad i^1=i \qquad i^2=-1 \qquad i^3=-i$$
 $$i^4=1 \qquad i^5=i \qquad i^6=-1 \qquad i^7=-i$$
 $$\cdots\hspace*{6.7cm}$$
@@ -416,7 +410,7 @@ $$\cdots\hspace*{6.7cm}$$
 
 $$i^{4n}=1 \qquad i^{4n+1}=i \qquad i^{4n+2}=-1 \qquad i^{4n+3}=-i$$
 
-\paragraph*{Bijzondere machten}
+\subsubsection*{Bijzondere machten}
 \begin{align*}
   (a+bi)^0 &= 1\\
   (a+bi)^1 &= a+bi\\
@@ -505,7 +499,8 @@ $$(x+yi)^2 = a+bi$$
 
 \subsection{Oplossingsmethode}
 
-\paragraph*{Voorbeeld 1}
+\subsubsection*{Voorbeeld 1}
+
 Bepaal alle complexe getallen die een vierkantswortel zijn uit $3-4i$.
 
 We zoeken dus $x+yi \in \mathbb{C}$, met $x,y\in\mathbb{R}$ zodat
@@ -530,9 +525,9 @@ In bovenstaand stelsel is $x^4-3x^2-4=0$ een {\bf bikwadratische vergelijking}. 
 \end{align*}
 Waardoor we nu ons stelsel verder kunnen oplossen:
 \begin{align*}
- \LRA && &\hspace*{-2cm}\begin{cases}x^2=4\\y=-\frac{2}{x}\end{cases}\\
- \LRA && &\hspace*{-2cm}\begin{cases}x=2\\y=-\frac{2}{x}\end{cases} \vee \begin{cases}x=-2\\y=-\frac{2}{x}\end{cases}\\
- \LRA && &\hspace*{-2cm}\begin{cases}x=2\\y=-1\end{cases} \vee \begin{cases}x=-2\\y=1\end{cases}
+  \LRA && \begin{cases}x^2=4\\y=-\frac{2}{x}\end{cases}\\
+  \LRA && \begin{cases}x=2\\y=-\frac{2}{x}\end{cases} &&\vee&& \begin{cases}x=-2\\y=-\frac{2}{x}\end{cases}\\
+  \LRA && \begin{cases}x=2\\y=-1\end{cases} &&\vee&& \begin{cases}x=-2\\y=1\end{cases}
 \end{align*}
 
 We vinden dus twee oplossingen $x+yi\in\mathbb{C}$, namelijk
@@ -540,7 +535,8 @@ $$-2+i \mbox{ en } 2-i$$
 
 Dus $3-4i$ heeft 2 vierkantswortels die elkaars tegengestelde zijn.
 
-\paragraph*{Voorbeeld 2}
+\subsubsection*{Voorbeeld 2}
+
 Bepaal alle complexe getallen die een vierkantswortel zijn uit $-a$, met $a\in\mathbb{R}^+_0$.
 
 We zoeken dus $z \in \mathbb{C}$, zodat
@@ -559,6 +555,7 @@ Dus $-a\in\mathbb{R}^+_0$ heeft 2 zuiver imaginaire wortels.
 
 \begin{oefening}
   Bepaal alle vierkantswortels uit
+  \begin{multicols}{2}
   \begin{enumerate}[(a)]
     \itemsep 1em
   \item $-9$
@@ -566,10 +563,12 @@ Dus $-a\in\mathbb{R}^+_0$ heeft 2 zuiver imaginaire wortels.
   \item $-3-4i$
   \item $-i$
   \end{enumerate}
+\end{multicols}
 \end{oefening}
 
 \begin{oefening}
   Bepaal alle vierkantswortels uit
+  \begin{multicols}{2}
   \begin{enumerate}[(a)]
     \itemsep 1em
   \item $(2i-3)(3-2i)$
@@ -577,6 +576,7 @@ Dus $-a\in\mathbb{R}^+_0$ heeft 2 zuiver imaginaire wortels.
   \item $\sqrt{2}-\sqrt{3}i$
   \item $i^5$
   \end{enumerate}
+\end{multicols}
 \end{oefening}
 
 \pagebreak
@@ -592,7 +592,8 @@ heeft in $\mathbb{C}$ altijd twee (mogelijks samenvallende) oplossingen.
 
 \subsection{Voorbeelden}
 
-\paragraph*{Voorbeeld 1: Vierkantsvergelijking negatieve discriminant}\mbox{}\\
+\subsubsection*{Voorbeeld: Vierkantsvergelijking negatieve discriminant}
+
 Los op in $\mathbb{C}$
 $$z^2 + 2z + 5 = 0$$
 
@@ -611,7 +612,8 @@ Dus we krijgen twee oplossingen:
 We noteren de oplossingenverzameling:
 $$V=\{ -1-2i, -1+2i \}$$
 
-\paragraph*{Voorbeeld 1: Vierkantsvergelijking met imaginaire discriminant}\mbox{}\\
+\subsubsection*{Voorbeeld: Vierkantsvergelijking met imaginaire discriminant}
+
 Los op in $\mathbb{C}$
 \begin{align*}
        && (2-i)(z^2-6) &= 5(2i+1)\\
@@ -652,23 +654,25 @@ $$ z_{1,2}=\dfrac{-b\pm\sqrt{D}}{2a}$$
 
 \begin{oefening}
   Los op in $\mathbb{C}$
-  \begin{enumerate}[(a)]
-    \itemsep 1em
-  \item $z^2-6z+10=0$
-  \item $z^2+(i-5)z=7i-26$
-  \item $z^2-4z+13=0$
-  \item $iz^2+2z-13i-16=0$
-  \item $z^2-4z+7+4i=0$
-  \item $z^2+(i-4)z+5(1-i)=0$
-  \item $z^2-(6+i)z+7+9i=0$
-  \item $z^2-(1+i)z+(1+i)=0$
-  \item $z^2-(4+2i)z+3+4i=0$
-  \item $z^3-2z^2+(16+8i)z=0$
-  \item $z^4+(1-4i)z^2=12+16i$
-  \item $z^4+z^2+1=0$
-  \item $z^4+(1-i)z^2-i=0$
-  \item $z^4=(1+2i\sqrt{3})z^2+2+2i\sqrt{3}$
-  \end{enumerate}
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep 1em
+    \item $z^2-6z+10=0$
+    \item $z^2+(i-5)z=7i-26$
+    \item $z^2-4z+13=0$
+    \item $iz^2+2z-13i-16=0$
+    \item $z^2-4z+7+4i=0$
+    \item $z^2+(i-4)z+5(1-i)=0$
+    \item $z^2-(6+i)z+7+9i=0$
+    \item $z^2-(1+i)z+(1+i)=0$
+    \item $z^2-(4+2i)z+3+4i=0$
+    \item $z^3-2z^2+(16+8i)z=0$
+    \item $z^4+(1-4i)z^2=12+16i$
+    \item $z^4+z^2+1=0$
+    \item $z^4+(1-i)z^2-i=0$
+    \item $z^4=(1+2i\sqrt{3})z^2+2+2i\sqrt{3}$
+    \end{enumerate}
+  \end{multicols}
 \end{oefening}
 
 \begin{oefening}
@@ -837,7 +841,7 @@ Bepaal de complexe getallen $z_i$ waarvan we in het vlak van Gauss de beeldpunte
 
 \subsection{Modulus en argument van een complex getal}
 
-\paragraph*{Grafisch}\mbox{}
+\subsubsection*{Grafisch}
 
 We stellen nu het beeldpunt $P(a,b)$ van een complex getal $z=a+bi \in \mathbb{C}$ anders voor:
 \begin{itemize}
@@ -871,7 +875,7 @@ We stellen nu het beeldpunt $P(a,b)$ van een complex getal $z=a+bi \in \mathbb{C
 \end{tikzpicture}
 \end{center}
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 \begin{mdframed}
 \begin{itemize}
   \item de afstand $r=|z|$ noemen we de {\bf modulus} van het complex getal $z$
@@ -882,7 +886,7 @@ We stellen nu het beeldpunt $P(a,b)$ van een complex getal $z=a+bi \in \mathbb{C
 \end{itemize}
 \end{mdframed}
 
-\paragraph*{Eigenschappen}
+\subsubsection*{Eigenschappen}
 \begin{itemize}
   \item Het punt $P$ is ondubbelzinnig bepaald door $r$ en $\phi$ van $z$:
   $$z_1=z_2 \LRA r_1=r_2 \wedge \phi_1=\phi_2$$
@@ -892,7 +896,7 @@ We stellen nu het beeldpunt $P(a,b)$ van een complex getal $z=a+bi \in \mathbb{C
   \item $z$ en $-z$: gelijke moduli en argumenten verschillen $180\degree$
 \end{itemize}
 
-\paragraph*{Bijzondere gevallen}\mbox{}
+\subsubsection*{Bijzondere gevallen}\mbox{}
 
 \begin{minipage}{0.5\textwidth}
 \begin{center}
@@ -927,11 +931,11 @@ We stellen nu het beeldpunt $P(a,b)$ van een complex getal $z=a+bi \in \mathbb{C
 
 \subsection{Berekening van modulus en argument}
 
-\paragraph*{Gegeven:} $z=a+bi$
+\subsubsection*{Gegeven:} $z=a+bi$
 
-\paragraph*{Gevraagd:} $r?\qquad \phi?$
+\subsubsection*{Gevraagd:} $r?\qquad \phi?$
 
-\paragraph*{Oplossing:}\mbox{}\\
+\subsubsection*{Oplossing:}\mbox{}\\
 \begin{minipage}{0.5\textwidth}
 \begin{center}
 \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
@@ -969,7 +973,7 @@ In de rechthoekige driehoek $OPQ$ geldt:
 \end{itemize}
 \end{minipage}
 
-\paragraph*{Opmerkingen}
+\subsubsection*{Opmerkingen}
 \begin{itemize}
   \item Dit geeft ons twee resultaten, we zullen moeten kijken in welk kwadrant $P(a,b)$ ligt om te weten welke oplossing de juiste is.
   \item Dit is niet geldig voor zuiver imaginaire getallen ($a=0$), maar in dat geval is $\phi=90\degree$ ($b>0$) of $\phi=-90\degree$ ($b<0$).
@@ -978,11 +982,11 @@ In de rechthoekige driehoek $OPQ$ geldt:
 \pagebreak
 \subsection{Omgekeerde berekening}
 
-\paragraph*{Gegeven: } $r, \phi$
+\subsubsection*{Gegeven: } $r, \phi$
 
-\paragraph*{Gevraagd: } $z=a+bi$
+\subsubsection*{Gevraagd: } $z=a+bi$
 
-\paragraph*{Oplossing: }
+\subsubsection*{Oplossing: }
 \begin{itemize}
   \item $\cos \phi = \dfrac{a}{r}$ \; \framebox{ $\Rightarrow a=r\cos\phi$}
   \item $\sin \phi = \dfrac{b}{r}$ \; \framebox{ $\Rightarrow b=r\sin\phi$}
@@ -1030,6 +1034,52 @@ Bepaal de Carthesische vorm, dus de vorm $z=a+bi$
 \pagebreak
 \section{Bewerkingen met complexe getallen in hun goniometrische gedaante}
 
+\subsection{Product}
+
+Stel
+\begin{align*}
+  z_1 &= r_1 ( \cos \phi_1 + i \sin \phi_1 )\\
+  z_2 &= r_2 ( \cos \phi_2 + i \sin \phi_2 )\\
+\end{align*}
+
+Dan berekenen we het product
+\begin{align*}
+  z_1 \cdot z_2 &= r_1 ( \cos \phi_1 + i \sin \phi_1 ) \cdot r_2 ( \cos \phi_2 + i \sin \phi_2 )\\
+            &= r_1 r_2 (\cos \phi_1 \cos \phi_2 - \sin \phi_1 \sin \phi_2 + i ( \cos \phi_1 \sin \phi_2 + \sin \phi_1 \cos \phi_2))\\
+            &= r_1 r_2 (\cos (\phi_1 + \phi_2) + i \sin (\phi_1 + \phi_2))
+\end{align*}
+
+We besluiten dat als we twee complexe getallen vermenigvuldigen in hun goniometrische gedaante, dat we dan de moduli mogen vermenigvuldigen en de argumenten mogen optellen.\\
+
+\begin{mdframed}
+  \[
+    z_1 \cdot z_2 = r_1 r_2 \left(\cos (\phi_1 + \phi_2) + i \sin (\phi_1 + \phi_2)\right)
+  \]
+\end{mdframed}
+
+\subsubsection*{Voorbeelden}
+
+\begin{enumerate}[(a)]
+\item Vermenigvuldig $\sqrt{3} + i$ met $-1+\sqrt{3}i$:
+  \begin{align*}
+      &&       z_1 &= \sqrt{3} + i = 2(\cos 30\degree + i\sin 30\degree)\\
+      &&       z_2 &= -1 + \sqrt{3}i = 2(\cos 120\degree + i\sin 120\degree)\\\\
+    \Rightarrow && z_1 \cdot z_2 &= 2 \cdot 2 \cdot ( \cos( 30\degree + 120\degree ) + i\sin( 30\degree + 120\degree ) )\\
+      &&           &= 4 (\cos 150\degree + i\sin 150\degree)\\
+      &&           &= 4 \left( -\dfrac{\sqrt{3}}{2} + i \dfrac{1}{2} \right)\\
+      &&           &= -2\sqrt{3} + 2i
+  \end{align*}
+\item
+  \begin{align*}
+    \left[3(\cos 20\degree + i\sin 20\degree)\right] \cdot \left[4(\cos 70\degree + i\sin 70\degree)\right]  &= 12 (\cos 90\degree + i\sin 90\degree)\\
+                       &= 12i
+  \end{align*}
+\end{enumerate}
+
+\subsubsection*{Opmerking}
+
+Indien we reeds over de goniometrische vorm beschikken gaat deze methode snel.
+
 \begin{oefening}
 Bereken:
 \begin{enumerate}[(a)]
@@ -1041,6 +1091,43 @@ Bereken:
   \item Vermenigvuldig $z_1=10\left(\cos(135\degree)+i\sin(135\degree)\right)$ met $z_2=5\left(\cos(45\degree)+i\sin(45\degree)\right)$
 \end{enumerate}
 \end{oefening}
+
+\subsection{Quotiënt}
+
+Stel
+\begin{align*}
+  z_1 &= r_1 ( \cos \phi_1 + i \sin \phi_1 )\\
+  z_2 &= r_2 ( \cos \phi_2 + i \sin \phi_2 )\\
+\end{align*}
+
+We zoeken het quotiënt
+\[z=\dfrac{z_1}{z_2} \mbox{ met } z=r(\cos \phi + i\sin \phi)\]
+Dit is echter equivalent met
+\begin{align*}
+  &\Leftrightarrow& z \cdot z_2 &= z_1\\
+  &\Leftrightarrow& z_1 &= z \cdot z_2\\
+  &\Leftrightarrow& r_1 &= r \cdot r_2          &\wedge&&  \phi_1 &= \phi + \phi_2 \qquad \mbox{\scriptsize(product in goniometrische vorm)}\\
+  &\Leftrightarrow&   r &= \dfrac{r_1}{r_2} &\wedge&&  \phi &= \phi_1 - \phi_2\\
+\end{align*}
+
+We besluiten dat als we twee complexe getallen delen in hun goniometrische gedaante, dat we dan de moduli mogen delen en de argumenten mogen aftrekken.\\
+
+\begin{mdframed}
+  \[
+    \dfrac{z_1}{z_2} = \dfrac{r_1}{r_2} \left(\cos (\phi_1 - \phi_2) + i \sin (\phi_1 - \phi_2)\right)
+  \]
+\end{mdframed}
+
+\subsubsection*{Voorbeeld}
+
+Deel $\sqrt{3} + i$ met $-1+\sqrt{3}i$:
+  \begin{align*}
+      &&       z_1 &= \sqrt{3} + i = 2(\cos 30\degree + i\sin 30\degree)\\
+      &&       z_2 &= -1 + \sqrt{3}i = 2(\cos 120\degree + i\sin 120\degree)\\\\
+    \Rightarrow && \dfrac{z_1}{z_2} &= \dfrac{2}{2} ( \cos( 30\degree - 120\degree ) + i\sin( 30\degree - 120\degree ) )\\
+      &&           &= \cos(-90\degree) + i\sin(-90\degree)\\
+      &&           &= -i
+  \end{align*}
 
 \begin{oefening}
 Bereken:
@@ -1054,8 +1141,53 @@ Bereken:
 \end{enumerate}
 \end{oefening}
 
+\subsection{Macht}
+
+Stel
+\[z = r (\cos \phi + i \sin \phi )\]
+
+Berekenen nu de $n$-de macht van $z$ met $n\in\mathbb{N}$
+\begin{align*}
+  z^n &= z \cdot z \cdot \ldots \cdot z\\
+      &= r (\cos \phi + i \sin \phi ) \cdot r (\cos \phi + i \sin \phi ) \cdot \ldots \cdot r (\cos \phi + i \sin \phi )\\
+      &= r \cdot r \cdot \ldots \cdot r (\cos( \phi + \phi + \ldots + \phi ) + i \sin( \phi + \phi + \ldots + \phi ))\\
+      &= r^n \left(\cos(n\phi) + i\sin(n\phi)\right)
+\end{align*}
+
+We besluiten dat we voor de $n$-de macht van een complex getal de $n$-de macht van de modulus van het grondtal en het $n$-voud van het argument van het grondtal mogen nemen.
+
+\begin{mdframed}
+  \[
+    z^n = r^n \left(\cos(n\phi) + i\sin(n\phi)\right)
+  \]
+\end{mdframed}
+
+\subsubsection*{Voorbeeld}
+
+Bereken $z^{15}$ als $z=\sqrt{3} + i$.
+
+We bepalen eerst de goniometrische vorm van $z$:
+\begin{align*}
+  z &= \sqrt{3} + i\\
+    &= 2(\cos30\degree + i\sin30\degree)
+\end{align*}
+
+We bepalen nu op goniometrische manier de macht en vormen het antwoord om in Carthesiche vorm.
+\begin{align*}
+  z^{15} &= 2^{15}(\cos(15 \cdot 30\degree) + i\sin(15 \cdot 30\degree))\\
+         &= 32768(\cos(450\degree) + i\sin(450\degree))\\
+         &= 32768(\cos(90\degree) + i\sin(90\degree))\\
+         &= 32768i
+\end{align*}
+
+\subsubsection*{Opmerking}
+We merken dat deze methode merkelijk sneller gaat dan de macht via distributiviteit te willen uitrekenen, ook al moeten we eerst van Carthesische naar goniometrische vorm omvormen.
+
+
+
 \begin{oefening}
 Bereken:
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep.5em
   \item $\displaystyle \left(1+i\sqrt{3}\right)^4$
@@ -1064,7 +1196,122 @@ Bereken:
   \item $\displaystyle \left(\dfrac{\sqrt{2}}{2}-\dfrac{\sqrt{2}}{2}i\right)^4$
   \item $\displaystyle \dfrac{\left(1+i\sqrt{3}\right)^{13}}{\left(\sqrt{3}-i\right)^8}$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
+
+\pagebreak
+
+\section{Formule van de Moivre}
+
+\subsubsection*{Stelling}
+De {\bf formule van de Moivre} stelt dat er voor elk complex getal
+\[z=r \cdot (\cos \phi + i\sin \phi)\]
+en elke $n\in\mathbb{Z}$ geldt dat
+\begin{mdframed}
+  \[ \left( \cos \phi + i\sin \phi \right)^n = \cos( n\phi ) + i\sin( n\phi ) \]
+\end{mdframed}
+
+\subsubsection*{Bewijs}
+\begin{align*}
+     &&                        z^n &= z^n\\
+  \Leftrightarrow && r^n \cdot (\cos \phi + i \sin \phi)^n &= r^n \cdot (\cos( n\phi ) + i\sin( n\phi ))\\
+  \Leftrightarrow && (\cos \phi + i \sin \phi)^n &= \cos( n\phi ) + i\sin( n\phi )\\
+\end{align*}
+
+\subsubsection*{* Alternatief bewijs}
+Als we mogen gebruik maken van de {\bf formule van Euler}, namelijk dat er geldt dat
+\[e^{i\phi} = \cos\phi + i\sin\phi \]
+dan volgt {\em de Moivre} uit macht van een macht want
+\begin{align*}
+     && \left(e^{i\phi}\right)^n &= e^{in\phi}\\
+  \Leftrightarrow && (\cos \phi + i \sin \phi)^n &= \cos( n\phi ) + i\sin( n\phi )\\
+\end{align*}
+
+Deze stelling legt een verbinding tussen de complexe getallen en de goniometrie!
+
+\subsubsection*{Voorbeeld}
+
+Bepaal de verdubbelingsformules.
+
+\begin{align*}
+  \cos 2\phi + i \sin 2\phi &= (\cos \phi + i \sin \phi)^2\\
+                      &= \cos^2 \phi + 2i\cos\phi\sin\phi + i^2\sin^2\phi\\
+                      &= \cos^2\phi - \sin^2\phi + 2i\cos\phi\sin\phi
+\end{align*}
+
+Er geldt dus
+\[ \underbrace{\cos 2\phi}_{\text{reëel deel}} \;+ \;i \cdot \underbrace{\sin 2\phi}_{\text{imaginair deel}}
+  = \underbrace{\cos^2\phi - \sin^2\phi}_{\text{reëel deel}} \; + \; i \cdot \underbrace{2\cos\phi\sin\phi}_{\text{imaginair deel}} \]
+
+Reële delen en imagianaire delen gelijk stellen geeft ons
+\[
+  \begin{cases}
+    \cos 2\phi &= \cos^2\phi - \sin^2\phi \\
+    \sin 2\phi &= 2 \cos\phi \sin\phi
+  \end{cases}
+\]
+
+\begin{oefening}
+  Toon volgende goniometrische indentiteiten aan:
+  \begin{itemize}
+  \item $\cos(4\phi) = \cos^4\phi - 6 \cos^2\phi \sin^2\phi + \sin^4\phi $
+  \item $\sin(4\phi) = 4\cos^3\phi \sin\phi - 4 \cos\phi \sin^3\phi $
+  \end{itemize}
+\end{oefening}
+
+\pagebreak
+
+\section{Machtswortels zoeken m.b.v. de goniometrische gedaante}
+
+\subsection{Definitie}
+
+We noemen een complex getal $\omega$ een $n$-de machtswortel uit een complex getal $z$ als er geldt
+\[\omega^n = z\]
+
+\subsection{Methode}
+
+\subsubsection*{Gegeven}
+\[z=a+bi\]
+of in goniometrische vorm
+\[z=r(\cos\phi + i\sin\phi)\]
+
+\subsubsection*{Gevraagd}
+Alle $n$-de machtswortels uit $z$.
+
+\subsubsection*{Oplossing}
+Neem een willekeurige $n$-de wortel
+\[\omega = \psi ( \cos \varphi + i \sin \varphi ) \]
+We vinden dus $\omega$ als we de waarden voor $\psi\in\mathbb{R}$ en $\varphi\in[0\degree,360\degree[$ vinden.
+
+Omdat $\omega$ een $n$-de machtswortel van $z$ is geldt er
+\begin{align*}
+       & \quad \omega^n = z\\
+  \Leftrightarrow \qquad & \begin{cases} \psi^n = r\\ n\varphi = \phi + k \cdot 360\degree \qquad k\in\mathbb{Z} \end{cases}
+\end{align*}
+
+Er geldt dus
+\begin{mdframed}
+  \begin{align*}
+    \psi &= \sqrt[n]{r}\\
+    \varphi &= \dfrac{\phi + k \cdot 360\degree}{n} \qquad k\in\mathbb{Z}
+  \end{align*}
+\end{mdframed}
+
+\subsection{Algemeen}
+
+Als een complex getal $z$ de goniometrische vorm
+\[ z = r ( \cos \phi + i \sin \phi )\]
+heeft, dan heeft $z$ precies $n\in\mathbb{N}_0$ verschillende $n$-de machtswortels, namelijk
+\[ \omega_k = \sqrt[n]{r}\left( \cos\left( \dfrac{\phi + k \cdot 360\degree}{n} \right) + i \cdot \cos\left( \dfrac{\phi + k \cdot 360\degree}{n} \right) \right)\]
+met $k = 0, 1, 2, \cdots , n-1$.
+
+\subsubsection*{Opmerking}
+\begin{itemize}
+\item Een complex getal $>0$ bezit $n$ $n$-de wortels.
+\item Deze $n$-de machtswortels kunnen worden voorgesteld in het vlak van Gauss, we bekomen dan de hoekpunten van een regelmatige $n$-hoek.
+\end{itemize}
+
+\subsection{Voorbeeld}
 
 \begin{oefening}
 Bepaal alle
@@ -1074,6 +1321,8 @@ Bepaal alle
   \item 3-de machtswortels uit $2-2i$
 \end{enumerate}
 \end{oefening}
+
+\subsection{Binomiale vergelijkingen}
 
 \begin{oefening}
 Los op in $\mathbb{C}$
@@ -1088,6 +1337,45 @@ Los op in $\mathbb{C}$
   \item $\displaystyle z^8=1$
 \end{enumerate}
 \end{oefening}
+
+
+\pagebreak
+\appendix
+
+\section{Grieks alfabet}
+
+\begin{center}
+  \begin{tabular}{lcc}
+    \hline
+    \bf uitspraak & \bf klein & \bf groot \\
+    \hline
+    alfa & $\alpha$ & A\\
+    b\`eta & $\beta$ & B\\
+    gamma & $\gamma$ & $\Gamma$ \\
+    delta & $\delta$ & $\Delta$ \\
+    e-psilon & $\epsilon$ & E\\
+    z\`eta & $\zeta$ & Z\\
+    \`eta & $\eta$ & H\\
+    th\`eta & $\theta$ of $\vartheta$ & $\Theta$\\
+    jota & $\iota$ & I\\
+    kappa & $\kappa$ & K\\
+    lambda & $\lambda$ & $\Lambda$\\
+    mu & $\mu$ & M\\
+    nu & $\nu$ & N\\
+    ksi & $\xi$ & $\Xi$\\
+    o-mikron & $o$ & O\\
+    pi & $\pi$ of $\varpi$ & $\Pi$\\
+    ro & $\rho$ of $\varrho$ & P\\
+    sigma & $\sigma$ of $\varsigma$ & $\Sigma$\\
+    tau & $\tau$ & T\\
+    u-psilon & $\upsilon$ & $\Upsilon$\\
+    fi & $\phi$ of $\varphi$ & $\Phi$\\
+    chi & $\chi$ & X\\
+    psi & $\psi$ & $\Psi$\\
+    o-mega & $\omega$ & $\Omega$\\
+    \hline
+  \end{tabular}
+\end{center}
 
 
 \end{document}
