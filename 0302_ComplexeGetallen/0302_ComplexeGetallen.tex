@@ -188,7 +188,7 @@ Bepaal het complex toegevoegde van:
   \item $0$
   \item $i-3$
   \item $(3-1)+(6+3)i$
-\end{enumerate}  
+\end{enumerate}
 \end{multicols}
 \end{oefening}
 
@@ -744,7 +744,7 @@ $z=a+bi\in\mathbb{C}$ met $a,b\in\mathbb{R}$
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \draw[color=black] (-8pt,-5pt) node[right] {\footnotesize $0$};
 \clip(-1.14,-0.72) rectangle (3.74,2.2);
-\draw[color=black,fill=black,fill opacity=0.1] (0.21,0) -- (0.21,0.21) -- (0,0.21) -- (0,0) -- cycle; 
+\draw[color=black,fill=black,fill opacity=0.1] (0.21,0) -- (0.21,0.21) -- (0,0.21) -- (0,0) -- cycle;
 \draw [line width=1.6pt] (0,1.5)-- (2.5,1.5);
 \draw [line width=1.6pt] (2.5,0)-- (2.5,1.5);
 \draw (2.3,-0.05) node[anchor=north west] {$a$};
@@ -794,7 +794,7 @@ Na Bombelli hebben veel wiskundigen zich op de een of andere manier bezig gehoud
 
 In het begin van de zeventiende eeuw, wanneer de negatieve getallen steeds nadrukkelijker geaccepteerd worden in de algebra, ontstaat het idee van een grafische weergave van getallen door middel van een getallenlijn. Reeds in het wiskundige werk van raadspensionaris Jan de Wit (1629-1672) treffen we het gebruik van twee onderling loodrechte getallenlijnen aan (coördinaat-assen) om getallenparen weer te geven.
 
-Nu kennen complexe getallen nog een extra complicatie, namelijk dat er feitelijk geen ordening van klein naar groot voor bestaat. Deze bestaat wel voor reële getallen en desnoods ook voor zuiver imaginaire getallen. Wallis komt als eerste met het idee om zuiver imaginaire getallen weer te geven op een getallenlijn die loodrecht op de reële getallenlijn staat. Het duurt echter nog ruim een eeuw tot de vrij onbekende Noor Caspar Wessel op het idee komt om het complexe getal als een soort getallenpaar in dit assenstelsel weer te geven. Zijn idee wordt gepubliceerd in een uitgave van 1798 van de Deense wiskundige academie. En pas als enige tientallen jaren later de grote wiskundige Carl Friedrich Gauss (1777-1855) dit idee in zijn werk gebruikt, wordt het algemeen overgenomen. De weergave van een complex getal in dit zogenaamde vlak van Gauss spreekt zo sterk tot de verbeelding, dat de resterende taboes rond de complexe getallen spoedig wegvallen. Nu er een grafische weergave bestaat, bestaat de complexe getallen zelf gewoon ook. 
+Nu kennen complexe getallen nog een extra complicatie, namelijk dat er feitelijk geen ordening van klein naar groot voor bestaat. Deze bestaat wel voor reële getallen en desnoods ook voor zuiver imaginaire getallen. Wallis komt als eerste met het idee om zuiver imaginaire getallen weer te geven op een getallenlijn die loodrecht op de reële getallenlijn staat. Het duurt echter nog ruim een eeuw tot de vrij onbekende Noor Caspar Wessel op het idee komt om het complexe getal als een soort getallenpaar in dit assenstelsel weer te geven. Zijn idee wordt gepubliceerd in een uitgave van 1798 van de Deense wiskundige academie. En pas als enige tientallen jaren later de grote wiskundige Carl Friedrich Gauss (1777-1855) dit idee in zijn werk gebruikt, wordt het algemeen overgenomen. De weergave van een complex getal in dit zogenaamde vlak van Gauss spreekt zo sterk tot de verbeelding, dat de resterende taboes rond de complexe getallen spoedig wegvallen. Nu er een grafische weergave bestaat, bestaat de complexe getallen zelf gewoon ook.
 \end{mdframed}
 
 
@@ -1280,20 +1280,20 @@ Alle $n$-de machtswortels uit $z$.
 
 \subsubsection*{Oplossing}
 Neem een willekeurige $n$-de wortel
-\[\omega = \psi ( \cos \varphi + i \sin \varphi ) \]
-We vinden dus $\omega$ als we de waarden voor $\psi\in\mathbb{R}$ en $\varphi\in[0\degree,360\degree[$ vinden.
+\[\omega = \chi ( \cos \psi + i \sin \psi ) \]
+We vinden dus $\omega$ als we de waarden voor $\chi\in\mathbb{R}$ en $\psi\in[0\degree,360\degree[$ vinden.
 
 Omdat $\omega$ een $n$-de machtswortel van $z$ is geldt er
 \begin{align*}
        & \quad \omega^n = z\\
-  \Leftrightarrow \qquad & \begin{cases} \psi^n = r\\ n\varphi = \phi + k \cdot 360\degree \qquad k\in\mathbb{Z} \end{cases}
+  \Leftrightarrow \qquad & \begin{cases} \chi^n = r\\ n\psi = \phi + k \cdot 360\degree \qquad k\in\mathbb{Z} \end{cases}
 \end{align*}
 
 Er geldt dus
 \begin{mdframed}
   \begin{align*}
-    \psi &= \sqrt[n]{r}\\
-    \varphi &= \dfrac{\phi + k \cdot 360\degree}{n} \qquad k\in\mathbb{Z}
+    \chi &= \sqrt[n]{r}\\
+    \psi &= \dfrac{\phi + k \cdot 360\degree}{n} \qquad k\in\mathbb{Z}
   \end{align*}
 \end{mdframed}
 
@@ -1313,6 +1313,68 @@ met $k = 0, 1, 2, \cdots , n-1$.
 
 \subsection{Voorbeeld}
 
+Bepaal alle $3$-de machtswortels uit 1 en stel ze grafisch voor in het vlak van Gauss.
+
+\begin{align*}
+  n &= 3\\
+  z &= 1 \Rightarrow r = 1, \quad \phi = 0\degree\\
+  \chi &= \sqrt[3]{1} = 1\\
+  \psi &= \dfrac{0\degree + k \cdot 360\degree}{3} = k \cdot 120\degree \qquad k\in\mathbb{Z}
+\end{align*}
+
+Voor elke $k=0, 1, 2$ bepalen we nu de oplossing:
+\begin{align*}
+  k=0 \qquad \psi_0 &= 0\degree   &\Rightarrow \omega_0 &= 1 \cdot (\cos 0\degree + i \cdot \sin 0\degree)\\
+            &             &       &= 1\\
+  k=1 \qquad \psi_1 &= 120\degree &\Rightarrow \omega_1 &= 1 \cdot (\cos 120\degree + i \cdot \sin 120\degree)\\
+            &             &       &= -\dfrac{1}{2} + i \cdot \dfrac{\sqrt{3}}{2}\\
+  k=2 \qquad \psi_2 &= 240\degree &\Rightarrow \omega_2 &= 1 \cdot (\cos 240\degree + i \cdot \sin 240\degree)\\
+            &             &       &= -\dfrac{1}{2} - i \cdot \dfrac{\sqrt{3}}{2}\\
+\end{align*}
+
+Het getal $1$ bezit dus $3$ verschillende $3$-de machtswortels:
+\[1 \qquad -\dfrac{1}{2} + i \cdot \dfrac{\sqrt{3}}{2} \qquad -\dfrac{1}{2} - i \cdot \dfrac{\sqrt{3}}{2}\]
+
+We stellen ze nu nog grafisch voor:
+
+\begin{minipage}{.6\linewidth}
+\begin{center}
+\definecolor{wqwqwq}{rgb}{0.3764705882352941,0.3764705882352941,0.3764705882352941}
+\definecolor{sqsqsq}{rgb}{0.12549019607843137,0.12549019607843137,0.12549019607843137}
+\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45]
+\begin{axis}[scale=2.5,
+x=1.0cm,y=1.0cm,
+axis lines=middle,
+xmin=-1.2,
+xmax=1.3,
+ymin=-1.2,
+ymax=1.3,
+xtick={-1,0,1},
+ytick={-1,1}]
+\clip(-1.2,-1.2) rectangle (1.6,1.6);
+\fill[line width=1.6pt,color=gray,fill=gray,fill opacity=0.05] (1.,0.) -- (-0.5,0.8660254037844386) -- (-0.5,-0.8660254037844386) -- cycle;
+\draw [line width=2.pt,color=sqsqsq] (1.,0.)-- (-0.5,0.8660254037844386);
+\draw [line width=2.pt,color=sqsqsq] (-0.5,0.8660254037844386)-- (-0.5,-0.8660254037844386);
+\draw [line width=2.pt,color=sqsqsq] (-0.5,-0.8660254037844386)-- (1.,0.);
+\draw [line width=2.pt,color=lightgray] (0,0) circle (1);
+\begin{scriptsize}
+\draw (0.05,1.35) node[anchor=north west] {$Im$};
+\draw (1.05,-0.05) node[anchor=north west] {$Re$};
+\draw [fill=black] (1.,0.) circle (1.5pt);
+\draw[color=black] (1.1,0.1) node {$\omega_0$};
+\draw [fill=black] (-0.5,0.8660254037844386) circle (1.5pt);
+\draw[color=black] (-0.555,0.95) node {$\omega_1$};
+\draw [fill=black] (-0.5,-0.8660254037844386) circle (1.5pt);
+\draw[color=black] (-0.6,-0.9) node {$\omega_2$};
+\end{scriptsize}
+\end{axis}
+\end{tikzpicture}
+\end{center}
+\end{minipage}
+\begin{minipage}{.4\linewidth}
+  De beeldpunten van de 3 wortels in het vlak van Gauss vormen de hoekpunten van een gelijkzijdige driehoek.
+\end{minipage}
+
 \begin{oefening}
 Bepaal alle
 \begin{enumerate}[(a)]
@@ -1324,8 +1386,67 @@ Bepaal alle
 
 \subsection{Binomiale vergelijkingen}
 
+% bron: LEERBOEK DER ALGEBRA VOOR H.B.S., GYMNASIUM EN LYCEUM, W.E.J.TJEENK WILLINK, ZWOLLE, 1937
+Onder een binomiaalvergelijking verstaat men een vergelijking van de $n$-de de graad ($n \geq 1$), waarvan het op nul herleide lid uit twee termen bestaat.
+
+De algemene gedaante van een binomiaal vergelijking is
+\[az^n + bz^m=0\]
+
+In onze context kunnen we veronderstellen dat de vorm herleidbaar is tot
+\begin{align*}
+     && az^n+b &= 0 \text{ met } a\in\mathbb{C}_0, b\in\mathbb{C}\\
+  \Leftrightarrow &&    z^n  &= -\dfrac{b}{a}
+\end{align*}
+
+Als we nu $z$ en $-\dfrac{b}{a}$ uitdrukken in hun goniometrische vorm
+\[z=r\cdot(cos\phi + i\sin\phi) \text{ en } -\dfrac{b}{a}=\chi \cdot ( \cos\psi + i\sin\psi )\]
+dan is $z^n=-\dfrac{b}{a}$ oplossen equivalent met de $n$-de machtswortels bepalen m.b.v. de methode daarnet.
+
+\subsubsection*{Voorbeeld}
+
+Los de volgende vergelijking op in $\mathbb{C}$
+\[2z^8-6z^3=0\]
+
+\begin{align*}
+     && 2z^8-6z^3 &= 0\\
+  \Leftrightarrow && 2z^3 \cdot (z^5 - 3) &= 0\\
+  \Leftrightarrow && 2z^3 = 0 \qquad &\vee \qquad z^5 - 3 = 0\\
+\end{align*}
+
+In $2z^3 = 0$ vinden we alvast drie oplossingen:
+\[z_0 = 0 \quad z_1 = 0 \quad z_2 = 0\]
+of kort
+\[z_0 = z_1 = z_2 = 0\]
+
+We bepalen nu nog de oplossingen van $z^5 - 3 = 0 \Leftrightarrow z^5 = 3$:
+\begin{align*}
+  z &= r(\cos\phi + i\sin\phi)\\
+  3 &= 3(\cos0\degree + i\sin0\degree)\\
+    &\Rightarrow \chi = \sqrt[5]{3}\\
+    &\Rightarrow \psi = \dfrac{ 0\degree +  k360\degree }{ 5 } = k\cdot72\degree \qquad k\in{0, 1, 2, 3, 4}
+\end{align*}
+We vinden dus nog 5 oplossingen
+\begin{align*}
+  k=0 \qquad \psi_0 &= 0\degree   &\Rightarrow z_3=\omega_0 &= \sqrt[5]{3} \cdot (\cos 0\degree + i \cdot \sin 0\degree)\\
+            &             &           &\approx 1.26\\
+  k=1 \qquad \psi_1 &= 72\degree  &\Rightarrow z_4=\omega_1 &= \sqrt[5]{3} \cdot (\cos 72\degree + i \cdot \sin 72\degree)\\
+            &             &           &\approx 0.38 + 1.18i\\
+  k=2 \qquad \psi_2 &= 144\degree &\Rightarrow z_5=\omega_2 &= \sqrt[5]{3} \cdot (\cos 144\degree + i \cdot \sin 144\degree)\\
+            &             &           &\approx -1.01 + 0.73i\\
+  k=3 \qquad \psi_3 &= 216\degree &\Rightarrow z_6=\omega_3 &= \sqrt[5]{3} \cdot (\cos 216\degree + i \cdot \sin 216\degree)\\
+            &             &           &\approx -1.01 - 0.73i\\
+  k=4 \qquad \psi_4 &= 288\degree &\Rightarrow z_7=\omega_41 &= \sqrt[5]{3} \cdot (\cos 288\degree + i \cdot \sin 288\degree)\\
+            &             &           &\approx 0.38 - 1.18i\\
+\end{align*}
+
+We vinden dus uiteindelijk de oplossingenverzameling
+\[V=\{0, 1.26, 0.38 + 1.18i, -1.01 + 0.73i, -1.01 - 0.73i, 0.38 - 1.18i\}\]
+
+
+
 \begin{oefening}
-Los op in $\mathbb{C}$
+Los op in $\mathbb{C}$ en geef de oplossing grafisch weer in het vlak van Gauss.
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep.5em
   \item $\displaystyle z^2=1+i\sqrt{3}$
@@ -1336,6 +1457,8 @@ Los op in $\mathbb{C}$
   \item $\displaystyle z^6=64$
   \item $\displaystyle z^8=1$
 \end{enumerate}
+\end{multicols}
+
 \end{oefening}
 
 
