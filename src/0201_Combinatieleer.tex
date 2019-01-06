@@ -3,16 +3,9 @@
 \input{../gowiz.tex}
 
 \usepackage{dot2texi}
-\usepackage{xsim}
 \usepackage{venndiagram}
 \usepackage{makebox}
 \usepackage{listings}
-
-\xsimsetup{
-  exercise/pre-hook = {\begin{minipage}{\textwidth}\vspace{0.5cm}},
-  exercise/post-hook = {\vspace{0.5cm}\end{minipage}}
-}
-\DeclareExerciseTranslation{dutch}{exercise}{oefening}
 
 \fancyhead[RO,LE]{Combinatieleer}
 \fancyhead[RE,LO]{}
@@ -185,9 +178,9 @@ In een wiskundige boom worden de lijntjes de {\bf takken} genoemd. De takken kom
 
 In de bladen worden de mogelijke menu's opgeschreven. Zo hebben we bijvoorbeeld {\em ga,la,ta} voor garnaalkroketten als voorgerecht, lasagne als hoofdgerecht en appeltaart als dessert. We besluiten dat we eenvoudigweg het aantal mogelijke menu's kunnen bepalen door het aantal bladen te tellen.
 
-\begin{exercise}
+\begin{oefening}
 Neem eens de beslissingen in een andere volgorde, namelijk kies eerst een dessert, dan een voorgerecht en dan pas het hoofdgerecht. Teken de boom. Krijg je dezelfde boom? Krijg hetzelfde aantal mogelijkheden?
-\end{exercise}
+\end{oefening}
 
 \subsection{Wegendiagram}
 
@@ -281,25 +274,25 @@ Als een telprobleem bestaat uit $r$ onafhankelijke deelbeslissingen waarbij er v
 mogelijkheden.
 \end{mdframed}
 
-\begin{exercise}
+\begin{oefening}
 In een sportclub stelt men T-shirts, shorts en kousen ter beschikking voor de spelers. Er zijn oranje, witte, blauwe, rode en groene T-shirts. De shorts zijn zwart, blauw of wit. De kousen zijn wit met een blauwe boord ofwel effen wit. Er zijn dus heel wat outfits voor de spelers mogelijk.
 
 \begin{enumerate}[(a)]
 \item Teken het boomdiagram en het wegendiagram dat met de gegevens correspondeert.
 \item Hoeveel mogelijke outfits zijn er voor de spelers?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 In de kantine van een fabriek staat een machine voor warme dranken. De leverancier wil gewone koffie, espresso en thee aanbieden, met of zonder melk, zonder, met weinig of met veel suiker. Hij heeft voor elke mogelijkheid een knop voorzien.
 \begin{enumerate}[(a)]
 \item Teken het wegendiagram.
 \item Bepaal het aantal knoppen op de machine.
 \end{enumerate}
 Merk op dat de machine overzichtelijker zou zijn moest er per beslissing een reeks knoppen zijn i.p.v. een knop voor elke mogelijkheid.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Vanaf de ingang van de zoo zijn er drie paden naar het dolfinarium. Van het dolfinarium naar de apen zijn er 4 paden. Van de apen naar de pinguïns zijn er twee paden. En van de pinguïns naar de tijgers zijn er drie paden.
 
 Ik wil naar de show van de dolfijnen gaan kijken. Als ik van de ingang naar de dolfijnen wandel zie ik de uren van de shows geafficheerd staan en merk ik dat ik nog ruim voldoende tijd heb om eerst een bezoekje te brengen aan de apen, de pinguïns en de tijgers.
@@ -311,9 +304,9 @@ Ik wil naar de show van de dolfijnen gaan kijken. Als ik van de ingang naar de d
 \begin{center}
   \includegraphics[width=\textwidth]{zoodieren}
 \end{center}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Los volgende problemen op met behulp van een boomdiagram.
 \begin{enumerate}[(a)]
   \item Hoeveel natuurlijke getallen zijn er met drie cijfers, te kiezen uit 2, 3, 5 en 7?
@@ -321,7 +314,7 @@ Los volgende problemen op met behulp van een boomdiagram.
   \item Hoeveel natuurlijke getallen van drie verschillende cijfers, te kiezen uit 2, 3, 5 en 7, beginnen met een 5?
   \item Hoeveel natuurlijke getallen van drie verschillende cijfers, te kiezen uit 2, 3, 5 en 7, eindigen op een 5?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
 \pagebreak
 \section{Somregel}
@@ -358,9 +351,9 @@ waarin
 \end{itemize}
 \end{mdframed}
 
-\begin{exercise}
+\begin{oefening}
 Bepaal met behulp van de somregel het aantal kaarten in een set van 52 kaarten die harten of koning zijn. Gebruik een set kaarten om dit te controleren. Maak ook een het bijhorende venndiagram.
-\end{exercise}
+\end{oefening}
 
 \subsection{Somregel van elkaar uitsluitende mogelijkheden}
 
@@ -405,17 +398,17 @@ Zijn de twee verzamelingen $A$ en $B$ elkaar uitsluitende mogelijkheden omdat ze
 \[\#(A\cup B) = \#A + \#B\]
 \end{mdframed}
 
-\begin{exercise}
+\begin{oefening}
 Een club bestaat uit 30 mannelijke en 50 vrouwelijke leden.
 \begin{enumerate}[(a)]
   \item Op hoeveel manieren kan men 1 lid kiezen als voorzitter?
   \item Op hoeveel manieren kan men 1 mannelijk en 1 vrouwelijk lid kiezen als bestuurslid?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 In een bibliotheek zijn 50 wetenschappelijke verhandelingen, 100 detectiveverhalen en 180 romans beschikbaar. Op hoeveel manieren kan men hieruit 1 boek kiezen? Op hoeveel manieren kan iemand een lijstje opstellen met 1 boek van elke soort?
-\end{exercise}
+\end{oefening}
 
 \subsection{Praktisch}
 
@@ -429,7 +422,7 @@ Bij het oplossen van telproblemen tel je als volgt:
 \end{itemize}
 \end{mdframed}
 
-\begin{exercise}
+\begin{oefening}
 \begin{minipage}[]{0.7\textwidth}
 We moeten de afloop van 10 voetbalwedstrijden voorspellen. Voor elke match zijn er 3 mogelijkheden: winnen, verliezen en gelijkspel. Hoeveel lijstjes met voorspellingen zijn er mogelijk? Hoe groot is het aantal als we zeker weten dat in de eerste wedstrijd de thuisploeg niet verliest?
 \end{minipage}
@@ -437,37 +430,37 @@ We moeten de afloop van 10 voetbalwedstrijden voorspellen. Voor elke match zijn 
   \centering
   \includegraphics[width=0.5\textwidth]{voetbal}
 \end{minipage}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Voor de samenstelling van je lessenrooster moet je twee keuzevakken kiezen, elk uit een verschillend vakgebied. Er is keuze uit 3 talen, 4 wetenschappelijke vakken en 2 sporten. Hoeveel keuzemogelijkheden heb je?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Het letterslot van een kluis bestaat uit een eerste ring met 10 letters, een tweede ring met 8 letters en een derde ring met 6 letters. Om een kluis te openen moet elke ring zo geplaatst worden dat een bepaalde stand inneemt.
 \begin{enumerate}[(a)]
   \item Hoeveel lettergroepen moet een inbreker ten hoogste proberen?
   \item Hoeveel zijn er mogelijk als hij weet dat de letter van de eerste ring een E is?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Bij een schoolwedstrijd met 2 ploegen, die elk uit 6 deelnemers bestaan, moet elke deelnemer van de ene ploeg tegen elke deelnemer van de andere ploeg 2 partijen spelen. Hoeveel partijen zijn er in totaal?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Bij de aankoop van een wagen moeten we kiezen tussen modellen met 2, 3, 4 of 5 deuren. De wagens met 2 of 3 deuren worden afgeleverd met een motor van 1200, 1400, 1600 of 1800 cc en de wagens met 4 of 5 deuren worden afgeleverd met een motor van 1600, 1800 of 2000 cc. Elke wagen is beschikbaar in 8 kleuren, maar voor de versies 1800 en 2000 cc zijn er bovendien nog 4 gemetalliseerde kleuren mogelijk. Voor wagens met een motor van 1200 cc bestaat er maar 1 type banden, wagens met een grotere motor kunnen naar keuze met één van 2 types banden worden uitgerust. Alle versies zijn verkrijgbaar met of zonder radio. Hoeveel mogelijkheden hebben we bij deze aankoop?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Je hebt gewonnen op de foor. Je mag twee prijzen kiezen. Je mag kiezen uit drie verschillende tonnen. Je mag geen twee prijzen kiezen uit dezelfde ton. De eerste ton bevat 3 verschillende mp3-spelers. De tweede ton bevat 4 verschillende sleutelhangers. De laatste ton bevat 2 verschillende horloges. Hoeveel mogelijkheden om te kiezen heb je?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Konijnenrassen bestaan in drie soorten: dwergkonijnen, gewone konijnen of reuze konijnen. Alle rassen komen voor als zwart, bruin of wit. Het gewone konijn komt ook nog voor in een zwart-bruin-wit gevlekte variant. Naast de rechtopstaande oren die we gewoon zijn van de konijnen komen dwerg en reuze konijnen ook voor met hangoren. Hoeveel mogelijke soorten konijnen bestaan er dan?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Met de cijfers $1, 2, 3, \ldots , 8, 9$ worden getallen van 6 verschillende cijfers gevormd:
 \begin{enumerate}[(a)]
   \item Hoeveel zulke getallen zijn er?
@@ -478,23 +471,23 @@ Met de cijfers $1, 2, 3, \ldots , 8, 9$ worden getallen van 6 verschillende cijf
   \item Hoeveel van deze getallen bevatten een 3 en een 8?
   \item Hoeveel van deze getallen bevatten geen 3 en geen 8?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Ik ben de pincode van mijn GSM vergeten. Ik weet enkel nog dat er geen 5 in komt, maar wel een 4, en dat het allemaal verschillende cijfers waren. Hoeveel keer moet ik ten hoogste proberen om mijn code terug te vinden (in de veronderstelling dat je zoveel mag proberen als je wilt, zonder dat je sim-kaart geblokkeerd wordt)?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Stel een boomdiagram op voor de natuurlijke getallen, bestaande uit drie verschillende cijfers, die je met 0, 1, 2, 3 en 4 kan vormen. Hoeveel mogelijke getallen zijn er?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Hoeveel getallen, gevormd met de cijfers 0, 5, 6 en 8, liggen tussen 5000 en 6000 (deze twee uitersten inbegrepen) als een cijfer geen tweede maal mag gebruikt worden? Verduidelijk je antwoord met een boomdiagram.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Je moet een menu opstellen. Hierbij moet er keuze zijn tussen 2 voorgerechten en 3 hoofdgerechten voor de {\em vegetariërs} en 3 voorgerechten en 4 hoofdgerechten voor de {\em alleseters}. Voor {\em iedereen} is er keuze uit 2 desserts. Hoeveel mogelijke menu's kan je samenstellen?
-\end{exercise}
+\end{oefening}
 
 \pagebreak
 \section{Variaties}
@@ -556,7 +549,7 @@ Daar elke beslissing moet worden genomen, kunnen we elke beslissing verbinden me
   \item De elementen kunnen maar éénmaal worden gebruikt, {\bf herhaling is niet mogelijk}.
 \end{itemize}
 
-\begin{exercise}
+\begin{oefening}
 Bereken:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
@@ -565,15 +558,15 @@ Bereken:
   \item $V^4_4$
 \end{enumerate}
 \end{multicols}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 \begin{enumerate}[(a)]
   \item Hoeveel variaties zijn er van $5$ elementen gekozen uit $8$ elementen?
   \item Hoeveel variaties zijn er als we $7$ keuzes hebben en we moeten $2$ elementen kiezen?
   \item Waarom kunnen we de $V^4_2$ niet uitrekenen?
   \end{enumerate}
-\end{exercise}
+\end{oefening}
 
 \subsection{Bijzonder geval}
 
@@ -586,23 +579,23 @@ Omdat dit vaak voorkomt zullen we hier een naam aan geven, we spreken van {\bf d
 
 \paragraph*{Notatie:} $P_n = n! = n \cdot (n-1) \cdot (n-2) \cdots 3 \cdot 2 \cdot 1$
 
-\begin{exercise}
+\begin{oefening}
 \begin{enumerate}[(a)]
   \item Wat is het aantal variaties van 5 elementen gekozen uit 5 elementen?
   \item Hoeveel permutaties van 7 elementen zijn er?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
 \subsection{Oefeningen}
 
 \begin{minipage}{0.7\textwidth}
-\begin{exercise}
+\begin{oefening}
 Hiernaast zie je een vlag die ontworpen is voor een sportclub. Aan de jongste leden wordt gevraagd elk van de drie gebieden met een andere kleur te vullen.
 \begin{enumerate}[(a)]
   \item Bert neemt een doos met 12 kleurpotloden. Hoeveel verschillende vlaggen kan hij produceren?
   \item Sara kiest voor de kleuren geel, oranje en blauw. Hoeveel verschillende vlaggen kan zij maken?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 \end{minipage}
 \begin{minipage}{0.25\textwidth}
 \begin{tikzpicture}[scale=0.3,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -617,28 +610,28 @@ Hiernaast zie je een vlag die ontworpen is voor een sportclub. Aan de jongste le
 \end{tikzpicture}
 \end{minipage}
 
-\begin{exercise}
+\begin{oefening}
 Op het {\em todo}-lijstje van Jef staan zeven dringende taken en vier niet dringende.
 \begin{enumerate}[(a)]
   \item Hij neemt zijn agenda en noteert op elke dag van van volgende week één van de dringende taken. Op hoeveel manieren kan hij zijn agenda voor die week invullen?
   \item Als hij geen rekening houdt met de dringendheid van de taken, op hoeveel manieren kan hij dan zijn werk verdelen over de volgende week? Hij wil nog steeds maar één taak per dag uitvoeren.
   \item Eén van de dringende zaken wil hij per se op zaterdag uitvoeren en één van de niet dringende op zondag. Op hoeveel manieren kan hij nu zijn agenda invullen als hij weer uit de volledige lijst kiest?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Aan een paardenkoers nemen 8 paarden deel. Er wordt gevraagd de eerste 4 paarden in de juiste volgorde te geven. Hoeveel van dergelijke voorspellingen zijn er mogelijk?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Een jeugdgroep telt 10 leden en wil een bestuur kiezen bestaande uit een voorzitter, een ondervoorzitter, een secretaris en een penningmeester. Hoeveel verschillende bestuurslichamen kunnen er verkozen worden?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Op een boekenrek moeten 3 werken over wiskunde en 4 romans gerangschikt worden. We beschikken daartoe over 5 wiskundeboeken en over 6 romans. Op hoeveel manieren kunnen we de boeken rangschikken als ons opgelegd wordt de wiskundeboeken vooraan te plaatsen?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Met de cijfers $1, 2, 3, \ldots, 9$ vormen we getallen van $6$ verschillende cijfers.
 \begin{enumerate}[(a)]
   \item Hoeveel dergelijke getallen zijn er?
@@ -651,42 +644,42 @@ Met de cijfers $1, 2, 3, \ldots, 9$ vormen we getallen van $6$ verschillende cij
   \item Hoeveel ervan bevatten noch 8, noch 9?
   \item Hoeveel ervan bevatten de cijfers 4 en 5?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Op hoeveel manieren kan ik 10 boeken op een plank rangschikken als een bepaald boek op de eerste plaats moet staan?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Op hoeveel manieren kunnen we 4 jongens en 3 meisjes op een rij zetten als in geen geval 2 jongens naast elkaar mogen staan?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 \begin{enumerate}[(a)]
   \item Schrijf alle permutaties van de elementen $a,b,c,d$ op.
   \item Schrijf alle permutaties van de elementen $a,b,c,c$ op.
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 We moeten vijf verschillende prijzen verloten onder de nummers 1 tot en met 100.
 Het eerste getrokken nummer krijgt de mooiste prijs, enz. Na het trekken wordt het
 nummer verwijderd (We spreken van trekken zonder terugleggen.)
 Geef het aantal mogelijke trekkingen.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Een vlag moet bestaan uit 2 verticale banen van verschillend gekleurde stof.
 Men beschikt over 8 kleuren. Hoeveel vlaggen zijn hiermee samen te stellen?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Met de cijfers $3, 4, 5, 6, 7, 8$ worden getallen van $3$ verschillende cijfers gevormd.
 \begin{enumerate}[(a)]
   \item Hoeveel dergelijke getallen bestaan er?
   \item Hoeveel van deze getallen eindigen op $5$?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
 \pagebreak
 \section{Herhalingsvariaties}
@@ -738,16 +731,16 @@ $$\bar{V}^k_n=n^k$$
 
 \subsection{Oefeningen}
 
-\begin{exercise}
+\begin{oefening}
 Aline, Birgit, Celine en Delphine zijn leerlingen uit eenzelfde klas die alle vier in de maand april verjaren.
 \begin{enumerate}[(a)]
   \item Hoeveel mogelijkheden zijn er voor hun vier verjaardagen?
   \item Hoeveel mogelijkheden zijn er als je weet dat het vier verschillende data zijn?
   \item Als je weet dat Celine op 10 april jarig is, hoeveel mogelijkheden zijn er dan voor de vier verjaardagen als ze niet noodzakelijk op een verschillende dag moeten verjaren?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Met de cijfers 1, 2 en 3 worden getallen van 5 cijfers gevormd.
 \begin{enumerate}[(a)]
   \item Hoeveel getallen zijn er?
@@ -757,69 +750,69 @@ Met de cijfers 1, 2 en 3 worden getallen van 5 cijfers gevormd.
   \item Welk getal staat op de vijfde plaats als je alle getallen van klein naar groot rangschikt?
   \item Bereken de som van alle getallen.
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Bij een gezelschapsspel moeten we 4 gekleurde staafjes in een zekere volgorde naast elkaar zetten. Hoeveel mogelijkheden zijn er als we over 6 kleuren beschikken? Je mag er van uit gaan dat elk kleur voldoende voorradig is.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Een leraar moet zijn leerlingen evalueren door achter hun naam één van de vermeldingen uitstekend (U), zeer goed (ZG), goed (G), voldoende (V), niet voldoende (NV) of slecht (S) te schrijven. Op hoeveel manieren kan hij een lijst van 12 leerlingen invullen?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Van 1962 tot 1971 hadden kentekenplaten twee aaneengeschakelde letters en daarna 3 cijfers in willekeurige volgorde. Hoeveel mogelijke nummerplaten konden ze toen maken?
 \begin{center}
 \includegraphics[width=0.5\textwidth]{YY536}
 \end{center}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 We moeten 5 verschillende prijzen verloten onder de nummers 1 tot en met 100.
 Na de trekking wordt elk nummer teruggelegd. Geef het aantal mogelijke
 trekkingen.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Op hoeveel manieren kunnen in een gezin met acht kinderen, de jongens en de
 meisjes elkaar opvolgen ?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Hoeveel getallen van 4 cijfers kan men vormen met de oneven cijfers ?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Schrijf alle herhalingsvariaties op van de elementen a, b en c, twee aan twee
 genomen.
 Controleer het aantal.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Op hoeveel manieren kunnen we een voetbalpronostiek invullen als er 13
 wedstrijden worden gespeeld ?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Hoeveel “woorden” kunnen we vormen met de letters \texttt{a, b, ..., k}. Elk woord
 bestaat uit drie letters.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Belgische nummerplaten bestaan uit 3 letters en 3 cijfers, bijvoorbeeld \texttt{ABA 123}. De letters \texttt{I} en de \texttt{O} worden niet gebruikt, wegens overeenkomsten met de 1 en de 0. Hoeveel mogelijkheden zijn er om nummerplaten samen te stellen.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise} % opmerking, geen herhalingsvariatie!
+\begin{oefening} % opmerking, geen herhalingsvariatie!
 De fanfare kiest een nieuw bestuur. Uit de 20 leden wordt één directeur, één onderdirecteur en één secretaris gekozen. Op hoeveel manieren kan dit?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise} % moeilijk
+\begin{oefening} % moeilijk
 Hoeveel getallen bestaande uit 3 cijfers kunnen gemaakt worden met 3 vieren, 4 tweeën en 2 drieën.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Iedereen weet dat een trol 12 tanden heeft, 6 in elke kaak. Ooit was er eens een leger van 5000 trollen die een draak aanviel. Na het gevecht merkten de overlevende trollen dat geen twee van hun nog de zelfde verzameling tanden had (geen één trol had nog tanden op dezelfde plaats als een andere trol). Hoeveel trollen zijn er tijdens het gevecht tegen de draak op zijn minst gestorven?
-\end{exercise}
+\end{oefening}
 
 \pagebreak
 \section{Faculteiten}
@@ -862,13 +855,13 @@ Dan zien we snel dat er een manier is om faculteiten uit re rekenen als we reeds
 \end{align*}
 \end{mdframed}
 
-\begin{exercise}
+\begin{oefening}
 Als je weet dat
 $$9!=362880\;.$$
 Aan wat is dan $10!$ gelijk? Gebruik geen \zrm{ZRM}.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Bereken zonder \zrm{ZRM}:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
@@ -881,9 +874,9 @@ Bereken zonder \zrm{ZRM}:
   \item $\dfrac{12!-10!}{9!}$
 \end{enumerate}
 \end{multicols}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Vereenvoudig:
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
@@ -904,11 +897,11 @@ Vereenvoudig:
   \item $\dfrac{(2n)!}{(2n-2)!\cdot 2!}$
 \end{enumerate}
 \end{multicols}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Als je weet dat het getal $99!$ uit 156 cijfers bestaat, uit hoeveel cijfers bestaat dan het getal $100!$
-\end{exercise}
+\end{oefening}
 
 \subsection*{Weetjes}
 \begin{itemize}
@@ -942,7 +935,7 @@ $$V^k_n=\dfrac{n!}{(n-k)!}$$
 \end{align*}
 
 
-\begin{exercise}
+\begin{oefening}
 Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we twee formules:\\
 \begin{itemize}
   \itemsep1em
@@ -954,7 +947,7 @@ Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we
   \item Doe hetzelfde voor het aantal variaties van 3 elementen uit 10 elementen. Welke methode verkies je in dit geval?
   \item Welke methode zou je kiezen als je het aantal variaties van 100 elementen uit 1000 elementen zou moeten berekenen? Het is niet nodig om dit te proberen, hiervoor is speciale software nodig want onze rekenmachines kunnen niet met zulke grote getallen overweg.
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
 \subsection{*Recursive definitie voor faculteiten}
 
@@ -991,21 +984,21 @@ Het voorbeeld kan gecompileerd worden met
   gcc -std=gnu99 -Wall -ggdb3 -o factorial.o factorial.c
 \end{lstlisting}
 
-\begin{exercise}
+\begin{oefening}
 Herschrijf het recursieve programma {\em factorial} in een andere programmeertaal, bijvoorbeeld in Python of Pascal.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Vaak is het mogelijk om de recursie weg te werken, dan moeten we een lus-structuur gaan gebruiken. We noemen dit een iteratieve implementatie i.p.v. een recursieve implementatie. Herschrijf het programma {\em factorial} op een iteratieve manier.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 \begin{enumerate}[(a)]
 \item Ga op het internet op zoek naar het {\bf droste-effect}.
 \item Ga op het internet op zoek naar {\bf Escher's {\em Print Gallery}}.
 \item Ga op het internet op zoek naar de wiskundige {\bf Henrik Lenstra} en zoek zijn link met Escher's {\em Print Gallery}.
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
 
 \pagebreak
@@ -1071,9 +1064,9 @@ We wensen de kortste weg te nemen van $A$ naar $B$. Als we dit plan goed bestude
 
 Als we dus het aantal codes vinden, dan vinden we ook het aantal mogelijke kortste wegen. In de wiskunde zullen we vaak een moeilijk probleem oplossen door voor het probleem een equivalent probleem te vinden dat eenvoudiger te beschrijven is.
 
-\begin{exercise}
+\begin{oefening}
 De korste weg-code hebben we beschreven met 3 voorwaarden. Er zijn eigenlijk maar twee voorwaarden nodig. Eén voorwaarde is m.a.w. redundant. Welke en waarom?
-\end{exercise}
+\end{oefening}
 
 \subsubsection{Tellen met behulp van een boomdiagram}
 
@@ -1181,15 +1174,15 @@ En in het totaal zouden er
 mogelijkheiden zijn. Door even te veronderstellen dat de volgorde van belang is, komen we dubbel zoveel oplossing uit. Maar even terugdenken aan ons voorbeeld is dat ook logisch dat we dubbel zoveel oplossingen hebben. De juiste berekening is dus
 \[\dfrac{20}{2} = 10\]
 
-\begin{exercise}
+\begin{oefening}
 Zoek de formule die het aantal mogelijkheden als je in een code met vijf plaatsen, drie van die plaatsen moet vullen met een symbool $H$. Eén voorbeeld van een mogelijkheid is
 \[\ub[H]\ub\ub\ub[H]\ub[H]\]
-\end{exercise}
+\end{oefening}
 
 Algemeen krijgen we volgende formule om te bepalen hoeveel codes er zijn met $n$ plaatsen, waarvan er $k$ worden ingenomen door een eerste symbool en waarbij er $n-k$ worden ingenomen door een tweede symbool:
 \[\dfrac{V^k_n}{P_k}=\dfrac{n!}{k! \cdot (n-k)!}\]
 
-\begin{exercise}
+\begin{oefening}
 Beschouw het volgende wegenrooster met de locatie van Marieke en Jan en daarbinnen ook een moeras.
 \begin{center}
   \definecolor{uququq}{rgb}{0.25,0.25,0.25}
@@ -1220,9 +1213,9 @@ Beschouw het volgende wegenrooster met de locatie van Marieke en Jan en daarbinn
 \item Hoeveel wegen zijn er van Marieke naar Jan?
 \item Hoeveel zijn er als ze niet langs het moeras kan wandelen?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Beschouw het volgende wegenrooster met de locaties $S$, $V$ en $T$.
 \begin{center}
   \definecolor{uququq}{rgb}{0.25,0.25,0.25}
@@ -1251,7 +1244,7 @@ Beschouw het volgende wegenrooster met de locaties $S$, $V$ en $T$.
 \item Hoeveel wegen zijn er van $S$ naar $T$?
 \item Hoeveel wegen zijn er van $S$ naar $T$ als je via $V$ wilt gaan?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
 \pagebreak
 \subsection{Driehoek van Pascal}
@@ -1274,7 +1267,7 @@ We teken nu een oneindig doorlopend wegenrooster waarbij er bij elk kruispunt he
 De bekomen oneindige naar beneden doorlopende driehoek wordt de {\bf driehoek van Pascal} genoemd. Het beginpunt, de top m.a.w., staat op {\bf rij} 0.
 \end{mdframed}
 
-\begin{exercise}
+\begin{oefening}
 Beschouw de driehoek van Pascal.
 \begin{enumerate}[(a)]
   \item Welke getallen staan er op rij 9?
@@ -1282,11 +1275,11 @@ Beschouw de driehoek van Pascal.
   \item Hoeveel getallen staan er op rij $0$, rij $1$, rij $2$, $\ldots$, rij $n$?
   \item Maak de som van de getallen op de opeenvolgende rijen.
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Op de titelpagina van dit hoofdstuk werd de driehoek van Pascal getekend. Een bepaald soort getallen werd gemarkeerd. Welke? Als we dit doen wordt een nieuw soort wiskundige driehoek geconstrueerd, namelijk de driehoek van Sierpiński. Beschrijf nog één andere manier om deze driehoek te construeren.
-\end{exercise}
+\end{oefening}
 
 \subsection{Binomium van Newton}
 
@@ -1335,7 +1328,7 @@ Als we dan de $k$-de term nemen uit de vijf termen, dan kunnen we deze schrijven
 Nu kunnen we uiteindelijk gebruik maken van het somatiesymbool $\sum$ om de oorspronkelijke macht van een som te herschrijven als
 \[\left(x+y\right)^4 = \sum^4_{k=0}{4 \choose k}x^{4-k}y^{k}\]
 
-\begin{exercise}
+\begin{oefening}
 \begin{enumerate}[(a)]
 \item Schrijf de zevende macht van $x+y$ m.b.v. het somatiesymbool
   $\sum$.
@@ -1344,7 +1337,7 @@ Nu kunnen we uiteindelijk gebruik maken van het somatiesymbool $\sum$ om de oors
 \item Herschrijf $0 + 2 + 4 + 6 + 8$ m.b.v. het somatiesymbool.
 \item Herschrijf $1 + 2 + 4 + 8 + \cdots + 262144$ m.b.v. het somatiesymbool.
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
 We krijgen algemeen
 \paragraph{Binomium van Newton}
@@ -1360,7 +1353,7 @@ Bijvoorbeeld:
           &=x^4-4x^3+6x^2-4x+1
 \end{align*}
 
-\begin{exercise}
+\begin{oefening}
 Werk uit:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
@@ -1374,9 +1367,9 @@ Werk uit:
   \item $\left(4+\sqrt{2}\right)^6$
 \end{enumerate}
 \end{multicols}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Zoek:
 \begin{enumerate}[(a)]
   \itemsep.5em
@@ -1386,16 +1379,16 @@ Zoek:
   \item de term in $x^{21}$ van $\left(x^2-\dfrac{a}{x}\right)^{21}$
   \item coëfficiënt horende bij de term van de 5-de graad in $\left(ax^{-2}+bx^4\right)^{6}$
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Bereken zonder \zrm{ZRM} $$\left(\sqrt{2}+1\right)^5+\left(\sqrt{2}-1\right)^5$$
-\end{exercise}
+\end{oefening}
 
 \subsection{Oefeningen}  % bron: mathcentre
 
 
-\begin{exercise}
+\begin{oefening}
 Beschouw het volgende wegenrooster met de locatie van Aline en Birgit en daarbinnen ook een moeras.
 \begin{center}
   \definecolor{uququq}{rgb}{0.25,0.25,0.25}
@@ -1426,9 +1419,9 @@ Beschouw het volgende wegenrooster met de locatie van Aline en Birgit en daarbin
 \item Hoeveel kortste wegen zijn er van Aline en Birgit? Maak gebruik van een {\bf formule}.
 \item Hoeveel zijn er als ze niet langs het moeras kan wandelen? Maak zoveel mogelijk gebruik van {\bf formules}.
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Werk uit m.b.v. binomium van Newton:
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
@@ -1442,13 +1435,13 @@ Werk uit m.b.v. binomium van Newton:
   \item $\left(x-\dfrac{1}{x}\right)^6$
 \end{enumerate}
 \end{multicols}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Gebruik het binomium van Newton om de eerste drie termen in dalende macht van $x$ te vinden voor $\left(1-\dfrac{x}{2}\right)^8$.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Zoek de coëfficiënt horende bij de term met de gegeven graad in de ontwikkeling:
 \begin{enumerate}[(a)]
   \item in de ontwikkeling van $\left(1-x\right)^8$ de coëfficiënt die hoort bij $x^7$.
@@ -1457,11 +1450,11 @@ Zoek de coëfficiënt horende bij de term met de gegeven graad in de ontwikkelin
   \item coëfficiënt van $x^2$ in de ontwikkeling van $\left(x-\dfrac{1}{x}\right)^6$.
   \item coëfficiënt van $x^8$ in de ontwikkeling van $\left(2x^2-\dfrac{1}{x}\right)^{12}$.
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Zoek de eerste vier termen in de ontwikkeling van $\left(2+\dfrac{x}{3}\right)^{12}$.
-\end{exercise}
+\end{oefening}
 
 \pagebreak
 \section{Combinaties}
@@ -1512,43 +1505,43 @@ $$C^k_n=\dfrac{n!}{k!\cdot(n-k)!}$$
 
 \subsection{Oefeningen}
 
-\begin{exercise}
+\begin{oefening}
 Voor het voetbalteam van de school stellen zich 19 jongens kandidaat.
 \begin{enumerate}[(a)]
   \item Hoeveel elftallen kan de coach hiermee vormen?
   \item Bij het samenstellen van de ploeg voor een belangrijke wedstrijd wil de coach zijn vijf beste spelers zeker opstellen en zijn drie zwakste niet. Hoeveel ploegen kan hij nu vormen?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Een Belgische delegatie bestaat uit 7 Vlamingen en 5 Walen.
 \begin{enumerate}[(a)]
   \item Hoeveel groepjes van 6 personen kan je hiermee vormen?
   \item Hoeveel groepjes bestaan uit 3 Vlamingen en 3 Walen?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Een firma heeft twee bedienden nodig (die hetzelfde werk moeten verrichten). Er zijn acht sollicitanten. Op hoeveel manieren kan de directie haar keuze bepalen?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 In een firma werken 15 arbeiders en 10 bedienden. Op hoeveel verschillende manieren kunnen we een comité samenstellen dat uit 3 arbeiders en 2 bedienden bestaat?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Herinner je nog deze oefening uit het hoofdstuk van variaties:
 
 {\em Op een boekenrek moeten 3 werken over wiskunde en 4 romans gerangschikt worden. We beschikken daartoe over 5 wiskundeboeken en over 6 romans. Op hoeveel manieren kunnen we de boeken rangschikken als ons opgelegd wordt de wiskundeboeken vooraan te plaatsen?}
 
 Los deze nu opnieuw op, maar het is nu wel niet meer nodig om de wiskundeboeken vooraan te plaatsen.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 De bibliotheek bezit 15 verschillende werken van een schrijver die net de Nobelprijs voor literatuur heeft gekregen. Naar aanleiding daarvan worden 10 werken op een speciale tafel tentoongesteld. Hoeveel keuzemogelijkheden heeft de bibliothecaris?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Bij vele spelletjes met een stel van 52 kaarten krijg je 13 kaarten.
 \begin{enumerate}[(a)]
   \item Hoeveel mogelijkheden zijn er om uit 52 kaarten er 13 te trekken (zonder kaarten terug te leggen)?
@@ -1559,9 +1552,9 @@ Bij vele spelletjes met een stel van 52 kaarten krijg je 13 kaarten.
   \item In hoeveel van die mogelijkheden heb je alle harten?
   \item Hoeveel mogelijkheden zijn er met 9 harten en 4 klaveren?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Bepaal voor de volgende problemen of het een combinatie of een variatie is.
 \begin{enumerate}[(a)]
   \item Uit een klas worden zes leerlingen gekozen om een volleybalteam te vormen.
@@ -1572,32 +1565,32 @@ Bepaal voor de volgende problemen of het een combinatie of een variatie is.
   \item Een vereniging kiest een voorzitter, een secretaris en een penningmeester.
   \item Een bondscoach kiest 24 spelers voor de selectie die hij meeneemt naar het WK.
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Uit een selectie van 19 personen wordt een spelersraad van 6 spelers samengesteld. Hoeveel spelersraden zijn er mogelijk?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Uit de spelersraad van 6 personen wordt een bestuur gekozen dat bestaat uit een voorzitter, een secretaris en een penningmeester. Hoeveel besturen zijn er mogelijk?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Uit de selectie van 19 personen wordt een feestcommissie gekozen die uit 5 personen bestaat. Hoeveel feestcommissies zijn er mogelijk?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 In de mediatheek staat 14 CD's met klassieke muziek en 12 CD's met popmuziek. Margo kiest 5 CD's met klassieke muziek. Hoeveel mogelijkheden zijn er?
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Joni gooit 13 keer met een geldstuk. Telkens noteert hij K(op) en M(unt). Zo ontstaat een serie met 13 letters K en M.
 \begin{enumerate}[(a)]
   \item Hoeveel series zijn er met 11 keer K?
   \item Hoeveel series zijn er met 9 keer een M?
   \item Hoeveel series zijn er die met K beginnen en met M eindigen?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
 \pagebreak
 \section{Herhalingscombinaties}
@@ -1654,28 +1647,28 @@ In de formule kan $k$, het aantal elementen dat wordt gekozen, groter zijn dan $
 
 
 
-\begin{exercise}
+\begin{oefening}
 Een bloemist maakt bloemstukjes waarin hij telkens 11 voorjaarsbloemen verwerkt. Hij beschikt over tulpen (witte, gele en oranje), narcissen (witte en gele) en anemonen (witte en paarse).
 \begin{enumerate}[(a)]
   \item Hoeveel verschillende composities kan hij maken?
   \item Hoeveel composities bevatten geen witte bloemen?
   \item Hoeveel composities bevatten enkel tulpen?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 In het casino wordt een gokspel gespeeld waarbij je jetons op een speelbord met zes velden mag plaatsen. Je mag de jetons verdelen zoals je wilt.
 \begin{enumerate}[(a)]
   \item Hoeveel verdelingen van de jetons zijn er mogelijk als je er 5 inzet?
   \item Hoeveel verdelingen van de jetons zijn er mogelijk als je er 10 inzet?
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise} % bron: https://math2.uncc.edu/~ghetyei/courses/old/S13.3166/ bij het hoofdstuk Permutations, combinations end variaties
+\begin{oefening} % bron: https://math2.uncc.edu/~ghetyei/courses/old/S13.3166/ bij het hoofdstuk Permutations, combinations end variaties
 Hoeveel oplossingen heeft de vergelijking
 $$x_1 + x_2 + x_3 + x_4 = 10$$
 waarbij elke $x_i\in\mathbb{N}$ is.
-\end{exercise}
+\end{oefening}
 
 \pagebreak
 \section{Anagrammen}
@@ -1719,9 +1712,9 @@ We moeten dus zes letters rangschikken, waarvan
 
 
 
-\begin{exercise}
+\begin{oefening}
 Bepaal het aantal anagrammen van je eigen naam.
-\end{exercise}
+\end{oefening}
 
 
 
@@ -1749,25 +1742,25 @@ Het product van meerdere factoren kunnen we kort schrijven met een vermenigvuldi
 \subsection{Oefeningen}
 
 \vspace*{-0.5cm}
-\begin{exercise}
+\begin{oefening}
 Noteer alle anagrammen van het woord \texttt{EEFJE}. Bereken vervolgens het aantal anagrammen met de formule.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Noem $V$ de verzameling van alle natuurlijke getallen van 5 cijfers die tweemaal het cijfer 1 en driemaal het cijfer 2 bevatten.
 \begin{enumerate}[(a)]
   \item Noteer het aantal elementen van $V$ van klein naar groot.
   \item Bereken het aantal elementen van $V$.
   \item Bereken het aantal getallen van $V$ die even zijn.
 \end{enumerate}
-\end{exercise}
+\end{oefening}
 
-\begin{exercise}
+\begin{oefening}
 Bereken het aantal anagrammen van \texttt{MISSISSIPPI}.
-\end{exercise}
+\end{oefening}
 
-\begin{exercise} % bron: https://brilliant.org/wiki/permutations-with-repetition/
+\begin{oefening} % bron: https://brilliant.org/wiki/permutations-with-repetition/
 Gegeven een normale pak kaarten zijn er $52!$ verschillende permutaties van de kaarten. Gegeven twee dezelfde pakken kaarten, hoeveel permutaties zijn er?
-\end{exercise}
+\end{oefening}
 
 \end{document}

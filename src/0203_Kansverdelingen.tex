@@ -2,8 +2,6 @@
 
 \input{../gowiz.tex}
 
-\usepackage{pgfplots}
-
 %\renewcommand{\rmdefault}{phv} % Arial
 %\renewcommand{\sfdefault}{phv} % Arial
 
@@ -955,10 +953,6 @@ In de vorige paragraaf werden grafieken van de normale verdeling verschoven (met
 Een normale verdelingen met gemiddelde 0 en standaardafwijking 1 of kort $N(0,1)$ noemen we {\bf standaardnormaal verdeeld}. Om aan te duiden dat we met de standaardnormale verdeling werken, gebruiken we de letter $Z$ i.p.v. $X$ om de kansvariabele aan te duiden.
 
 Een normale verdeling herken je aan de grafiek van de kansfunctie. De grafiek is namelijk steeds een symmetrische, ééntoppige, klokvormige kromme. Op de volgende figuur zie je de grafiek horend bij N(0, 1).
-
-\pgfmathdeclarefunction{gauss}{2}{%
-  \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
-}
 
 \begin{center}
 \begin{tikzpicture}
