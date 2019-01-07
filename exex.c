@@ -13,6 +13,7 @@
 #define IN_BEGIN_DOCUMENT 7
 #define IN_END_DOCUMENT 8
 #define IN_FANCYHEAD 9
+#define IN_USEPACKAGE 10
 
 void write_header() {
   printf("\\documentclass[12pt,twoside]{article}\n");
@@ -59,6 +60,10 @@ int main() {
       state = IN_FANCYHEAD;
     }
 
+    if (strstr(line, "\\usepackage") == line) {
+      state = IN_USEPACKAGE;
+    }
+
     switch (state) {
     case IN_TEXT:
       break;
@@ -87,6 +92,10 @@ int main() {
       break;
     case IN_END_DOCUMENT:
       printf("%s", line);
+      break;
+    case IN_USEPACKAGE:
+      printf("%s", line);
+      state = IN_TEXT;
       break;
     case IN_FANCYHEAD:
       printf("\\pagestyle{fancy}\n");
