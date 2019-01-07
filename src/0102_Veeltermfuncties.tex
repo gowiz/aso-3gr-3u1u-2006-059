@@ -51,7 +51,6 @@
   \item veeltermongelijkheden van de eerste, tweede en derde graad in 1 onbekende oplossen, eventueel met behulp van ICT
   \item vraagstukken/problemen oplossen die aanleiding geven tot een veeltermvergelijking, veeltermongelijkheid of veeltermfunctie, eventueel met behulp van ICT
   \end{itemize}
-
 }
 \thispagestyle{empty}
 \mbox{}
@@ -650,8 +649,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{itemize}
 \end{mdframed}
 
-
-
 \begin{oefening}
   Beschrijf volgende constante functies:
   \begin{enumerate}[(a)]
@@ -668,7 +665,7 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   Geef het functievoorschrift van de volgende grafiek:
   \begin{center}
     \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
       \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=2.0cm,ystep=2.0cm] (-4.62,-4.36) grid (8.32,4.42);
       \draw[->,color=black] (-4.62,0) -- (8.32,0);
       \foreach \x in {-4,-2,2,4,6,8}
@@ -679,12 +676,10 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
       \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
       \clip(-4.62,-4.36) rectangle (8.32,4.42);
       \draw[line width=2pt, smooth,samples=100,domain=-4.620000000000001:8.320000000000006] plot(\x,{0-3});
-      \draw (4.74,-2.35) node[anchor=north west] {$f(x)$};
+      \draw (4.74,-3.0) node[anchor=south] {$f(x)$};
     \end{tikzpicture}
   \end{center}
 \end{oefening}
-
-
 
 \pagebreak
 \subsection{Veeltermfuncties van graad 1}
@@ -758,7 +753,7 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
 
 
 \begin{oefening}
-  Beschrijf volgende eerstegraadsfuncties:
+  Bespreek volgende eerstegraadsfuncties:
   \begin{enumerate}[(a)]
   \item $f(x)=2x-3$
   \item $f(x)=-x+4$
@@ -798,8 +793,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
     \end{tikzpicture}
   \end{center}
 \end{oefening}
-
-
 
 \pagebreak
 \subsection{Veeltermfuncties van graad 2}
@@ -1036,7 +1029,8 @@ Bepaal het functievoorschrift van
 
 
 \begin{oefening}
-Bespreek (domein, bereik, nulwaarden, tekenverloop, schets, stijgen\&dalen):\\
+Bespreek (domein, bereik, nulwaarden, tekenverloop, schets, stijgen\&dalen):
+\begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep1em
   \item $f:y=\dfrac{1}{8}(x^3-12x)$
@@ -1048,20 +1042,24 @@ Bespreek (domein, bereik, nulwaarden, tekenverloop, schets, stijgen\&dalen):\\
   \item $f:y=4x^3-8.84x^2-20.752x+25.856$
   \item $f:y=(x^2-1)(1+x^2)-x^4+2x^3-3x+19-7x^2$
 \end{enumerate}
+\end{multicols}
 \end{oefening}
 
 \begin{oefening}
   Bespreek volgende functies:
-  \begin{enumerate}[(a)]
-  \itemsep.5em
-  \item $f(x)=\dfrac{1}{10}(-2x^3-11x^2+21x+90)$
-  \item $f(x)=3x^2-0.5x^3$
-  \item $f(x)=2x^4+7x^3-51x^2-7x+49$
-  \item $f(x)=-21x^4-143x^3+197x^2-25x-8$
-  \item $f(x)=x^5-5x^3+4x$
-  \item $f(x)=x^3+3x^2-x-3$
-  \item $f(x)=x^4-x^3-10.25x^2+5.25x+22.5$
-  \end{enumerate}
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep.5em
+    \item $f(x)=\dfrac{1}{10}(-2x^3-11x^2+21x+90)$
+    \item $f(x)=3x^2-0.5x^3$
+    \item $f(x)=2x^4+7x^3-51x^2-7x+49$
+    \item $f(x)=-21x^4-143x^3+197x^2-25x-8$
+    \item $f(x)=x^5-5x^3+4x$
+    \item $f(x)=x^3+3x^2-x-3$
+    \item $f(x)=x^4-x^3-10.25x^2+5.25x+22.5$
+    \item $f(x)=x^{10}-1$
+    \end{enumerate}
+  \end{multicols}
 \end{oefening}
 
 \begin{oefening}
@@ -1080,11 +1078,7 @@ $$f(x)=(x-3)(x+1)(2x-1)$$
 \end{enumerate}
 \end{oefening}
 
-
-
-
-
-%\pagebreak
+\pagebreak
 \subsection{Hogeregraadsveeltermfuncties bespreken m.b.v. Geogebra}
 Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra} gebruiken om hogeregraadsveeltermfuncties te bespreken. We plotten eerst de grafiek en bespreken daarna alle karakteristieken.
 
@@ -1095,7 +1089,7 @@ Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra
   $$f(x)=x^5-5x^3+4x$$ gegenereerd. Lees aan de hand van de grafiek het domein, de nulwaarden en de extrema af. Bepaal het tekenverloop, het stijgen en dalen en de symmetrieën van de functie.
   \begin{center}
     \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-    \begin{tikzpicture}[scale=0.7, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \begin{tikzpicture}[scale=1.1, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
       \draw [color=cqcqcq,dash pattern=on 2pt off 2pt, xstep=1.0cm,ystep=1.0cm] (-7.22,-6.82) grid (8.13,6.66);
       \draw[->,color=black] (-7.22,0) -- (8.13,0);
       \foreach \x in {-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}
