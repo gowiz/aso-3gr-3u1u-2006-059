@@ -2,7 +2,7 @@
 
 \input{../gowiz.tex}
 
-\usepackage{dot2texi}
+\usepackage[outputdir=./build/]{dot2texi}
 \usepackage{venndiagram}
 \usepackage{makebox}
 \usepackage{listings}
@@ -36,17 +36,6 @@
     \the\c@pgf@countc%
 }
 \makeatother
-
-\newcommand\ub[1][]{
-  \underbracket{\makebox*{$HV$}{$#1$}}
-}
-\newcommand\ubx[1][]{
-  \underbracket{\makebox*{$\oplus\ominus\otimes\oslash\odot$}{$#1$}}
-}
-
-\newcommand\Overset[2]{
-  \overset{\textstyle #1\mathstrut}{#2}
-}
 
 \begin{document}
 
@@ -422,7 +411,7 @@ Bij het oplossen van telproblemen tel je als volgt:
 \end{itemize}
 \end{mdframed}
 
-\begin{oefening}
+\begin{oefening}\\
 \begin{minipage}[]{0.7\textwidth}
 We moeten de afloop van 10 voetbalwedstrijden voorspellen. Voor elke match zijn er 3 mogelijkheden: winnen, verliezen en gelijkspel. Hoeveel lijstjes met voorspellingen zijn er mogelijk? Hoe groot is het aantal als we zeker weten dat in de eerste wedstrijd de thuisploeg niet verliest?
 \end{minipage}

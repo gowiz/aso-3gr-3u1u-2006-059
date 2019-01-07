@@ -11,6 +11,7 @@ PDFLATEXOPTS = "pdflatex -interaction=nonstopmode -shell-escape"
 all: $(PDFOUT) $(OEFPDF)
 
 %.pdf: %.tex
+	mkdir -p build
 	latexmk -pdf -silent -pdflatex=$(PDFLATEXOPTS) -use-make $<
 
 %_Oefeningen.pdf: %_Oefeningen.tex
@@ -28,9 +29,11 @@ clean:
 	$(RM) *.fls
 	$(RM) *.log
 	$(RM) *.aux
+	$(RM) build/*
 
 .PHONY: cleanall
 cleanall: clean
 	latexmk -C
+	$(RM) *_Oefeningen.pdf
 
 

@@ -185,6 +185,17 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
 \end{tabular}
 }
 
+\newcommand\ub[1][]{
+  \underbracket{\makebox*{$HV$}{$#1$}}
+}
+\newcommand\ubx[1][]{
+  \underbracket{\makebox*{$\oplus\ominus\otimes\oslash\odot$}{$#1$}}
+}
+
+\newcommand\Overset[2]{
+  \overset{\textstyle #1\mathstrut}{#2}
+}
+
 \newcommand{\oefeningen}[1]{
 
 \fancyhead[LE, RO]{\vspace{0.5cm} #1}
