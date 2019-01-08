@@ -1,16 +1,10 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
 
 \usepackage{tabto}
 
 \begin{document}
-
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Veeltermfuncties}
-
-
 
 \thispagestyle{empty}
 \begin{center}
@@ -19,11 +13,22 @@
     \fontsize{35}{70}\selectfont Veeltermfuncties
   \end{mdframed}
   \vfill
-%  \includegraphics[width=0.8\textwidth]{veeltermen}
+  % \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+  %   \begin{axis}[
+  %     scale=1.8,
+  %     x=1.0cm,y=1.0cm,
+  %     axis lines=middle,
+  %     xmin=-2.5,
+  %     xmax=2.5,
+  %     ymin=-1.5,
+  %     ymax=1.5,]
+  %     \clip(-2.5,-1.5) rectangle (2.5,1.5);
+  %     \foreach \n in {0,1,2,3,4,5,6}
+  %       \draw[line width=1.8pt,opacity=\n,smooth,samples=100,domain=-2.5:2.5]plot(\x,{(\x)^(\n)});
+  %   \end{axis}
+  % \end{tikzpicture}
   \vfill
 \end{center}
-% \vfill
-\vspace*{-2cm}
 
 \subsection*{Doelstellingen}
 {\singlespacing
@@ -53,16 +58,13 @@
   \end{itemize}
 }
 \thispagestyle{empty}
-\mbox{}
+
 \newpage
-\clearpage
-\thispagestyle{empty}
 \tableofcontents
+\thispagestyle{empty}
 \newpage
-\clearpage
+
 \pagenumbering{arabic}
-
-
 \fancyhead[RO,LE]{Veeltermfuncties}
 \fancyhead[RE,LO]{}
 
