@@ -12,24 +12,31 @@
     \centering
     \fontsize{35}{70}\selectfont Veeltermfuncties
   \end{mdframed}
-  \vfill
-  % \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-  %   \begin{axis}[
-  %     scale=1.8,
-  %     x=1.0cm,y=1.0cm,
-  %     axis lines=middle,
-  %     xmin=-2.5,
-  %     xmax=2.5,
-  %     ymin=-1.5,
-  %     ymax=1.5,]
-  %     \clip(-2.5,-1.5) rectangle (2.5,1.5);
-  %     \foreach \n in {0,1,2,3,4,5,6}
-  %       \draw[line width=1.8pt,opacity=\n,smooth,samples=100,domain=-2.5:2.5]plot(\x,{(\x)^(\n)});
-  %   \end{axis}
-  % \end{tikzpicture}
-  \vfill
+  \begin{tikzpicture}
+    \begin{axis}[
+      scale=2.0,
+      x=1.0cm,y=1.0cm,
+      axis lines=middle,
+      xmin=-2.4,
+      xmax=2.9,
+      ymin=-1.4,
+      ymax=1.9,
+      xlabel={x},
+      ylabel={y},
+      xticklabels={,,},
+      yticklabels={,,},
+      samples=100]
+      \clip(-2.4,-1.4) rectangle (2.9,1.9);
+      \addplot[line width=1.8pt,opacity=0.4,smooth,domain=-2.5:3.4] (x,1);
+      \foreach \n in {1,2,3,4,5} {
+        \addplot[line width=1.8pt,opacity=0.4,smooth,domain=-2.0:2.0] (x,x^\n);
+      }
+      \draw (0.2,-.5) node[anchor=west] {\texttt foreach $n$ in $\{0,1,2,3,4,5\}$};
+      \draw (0.6,-.8) node[anchor=west] {\texttt plot $f(x)=x^n$ };
+    \end{axis}
+  \end{tikzpicture}
 \end{center}
-
+\vspace{-1cm}
 \subsection*{Doelstellingen}
 {\singlespacing
   Je kan \hfill  {\scriptsize(LP 2005/069, LI 1.2, ET10,11,12,13)}
