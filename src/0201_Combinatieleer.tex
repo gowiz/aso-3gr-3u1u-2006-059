@@ -1005,37 +1005,21 @@ We wensen de kortste weg te nemen van $A$ naar $B$. Als we dit plan goed bestude
 \begin{itemize}
 \item We stellen het stukje stratenplan waarin we geïnteresseerd zijn schematisch voor en gebruik voor een stukje horizontale weg de letter $H$ en voor een stukje verticale weg de letter $V$.
 \begin{center}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=gray] (0,0) -- (6,0);
-\draw [color=gray] (0,1) -- (6,1);
-\draw [color=gray] (0,2) -- (6,2);
-\draw [color=gray] (0,0) -- (0,2);
-\draw [color=gray] (2,0) -- (2,2);
-\draw [color=gray] (4,0) -- (4,2);
-\draw [color=gray] (6,0) -- (6,2);
-\fill (0,2) circle (1.6pt);
-\draw (-0.3,2.1) node {$A$};
-\fill  (6,0) circle (1.6pt);
-\draw (6.3,0.1) node {$B$};
-\draw (5,2.2) node {\scriptsize H};
-\draw (6.2,1.5) node {\scriptsize V};
-\end{tikzpicture}
+  \begin{tikzpicture}
+    \draw[xstep=2, ystep=1, color=gray] (0,0) grid (6,2);
+    \fill (0,2) circle (1.6pt) node[anchor=east] {$A$};
+    \fill (6,0) circle (1.6pt) node[anchor=west] {$B$};
+    \draw (5,2) node[anchor=south] {\scriptsize H};
+    \draw (6,1.5) node[anchor=west] {\scriptsize V};
+  \end{tikzpicture}
 \end{center}
 \item We nemen een kleur en duid de weg $HVHHV$ aan.
 \begin{center}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=gray] (0,0) -- (6,0);
-\draw [color=gray] (0,1) -- (6,1);
-\draw [color=gray] (0,2) -- (6,2);
-\draw [color=gray] (0,0) -- (0,2);
-\draw [color=gray] (2,0) -- (2,2);
-\draw [color=gray] (4,0) -- (4,2);
-\draw [color=gray] (6,0) -- (6,2);
-\fill (0,2) circle (1.6pt);
-\draw (-0.3,2.1) node {$A$};
-\fill  (6,0) circle (1.6pt);
-\draw (6.3,0.1) node {$B$};
-\draw [line width=1.6pt] (0,2) -- (2,2) -- (2,1) -- (4,1) -- (6,1) -- (6,0);
+\begin{tikzpicture}
+  \draw[xstep=2, ystep=1, color=gray] (0,0) grid (6,2);
+  \fill (0,2) circle (1.6pt) node[anchor=east] {$A$};
+  \fill  (6,0) circle (1.6pt) node[anchor=west] {$B$};
+  \draw [line width=1.6pt] (0,2) -- (2,2) -- (2,1) -- (4,1) -- (6,1) -- (6,0);
 \end{tikzpicture}
 \end{center}
 \item We merken dat we eigenlijk het wegenrooster niet hoeven te tekenen, want we kunnen elke mogelijke kortste weg coderen, hier is nog een ander voorbeeld:
@@ -1117,16 +1101,8 @@ Indien $A$ en $B$ verder van elkaar verwijderd zijn, dan wordt dit snel veel ing
 
 \begin{multicols}{2}
 \begin{center}
-  \begin{tikzpicture}
-    [line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm,
-    every node/.style={anchor=north west}]
-    \draw [color=gray] (0,0) -- (6,0);
-    \draw [color=gray] (0,1) -- (6,1);
-    \draw [color=gray] (0,2) -- (6,2);
-    \draw [color=gray] (0,0) -- (0,2);
-    \draw [color=gray] (2,0) -- (2,2);
-    \draw [color=gray] (4,0) -- (4,2);
-    \draw [color=gray] (6,0) -- (6,2);
+  \begin{tikzpicture}[every node/.style={anchor=north west}]
+    \draw[xstep=2, ystep=1, color=gray] (0,0) grid (6,2);
     \begin{scriptsize}
       \draw (0,2) node {1};
       \draw (2,2) node {1};
@@ -1175,27 +1151,11 @@ Algemeen krijgen we volgende formule om te bepalen hoeveel codes er zijn met $n$
 Beschouw het volgende wegenrooster met de locatie van Marieke en Jan en daarbinnen ook een moeras.
 \begin{center}
   \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \clip(1.45,1.41) rectangle (10.52,6.62);
-    \fill[line width=0.4pt,fill=black,fill opacity=0.29] (7.5,2.5) -- (5.5,2.5) -- (5.5,4.5) -- (7.5,4.5) -- cycle;
-    \draw [domain=2:10] plot(\x,{(--2-0*\x)/1});
-    \draw [domain=2:10] plot(\x,{(--6-0*\x)/2});
-    \draw [domain=2:10] plot(\x,{(--8-0*\x)/2});
-    \draw [domain=2:10] plot(\x,{(--10-0*\x)/2});
-    \draw [domain=2:10] plot(\x,{(--12-0*\x)/2});
-    \draw (2,2) -- (2,6);
-    \draw (3,2) -- (3,6);
-    \draw (4,2) -- (4,6);
-    \draw (5,2) -- (5,6);
-    \draw (6,2) -- (6,6);
-    \draw (7,2) -- (7,6);
-    \draw (8,2) -- (8,6);
-    \draw (9,2) -- (9,6);
-    \draw (10,2) -- (10,6);
-    \fill (2,6) circle (1.8pt);
-    \draw (1.69,6.34) node {$M$};
-    \fill  (10,2) circle (1.8pt);
-    \draw (10.22,1.81) node {$J$};
+  \begin{tikzpicture}
+    \draw (0,0) grid (8,4);
+    \fill[opacity=0.2] (3.5,0.5) rectangle (5.5,2.5);
+    \fill (0,0) circle (1.6pt) node[anchor=east] {$M$};
+    \fill  (8,4) circle (1.6pt) node[anchor=west] {$J$};
   \end{tikzpicture}
 \end{center}
 \begin{enumerate}[(a)]
@@ -1207,26 +1167,11 @@ Beschouw het volgende wegenrooster met de locatie van Marieke en Jan en daarbinn
 \begin{oefening}
 Beschouw het volgende wegenrooster met de locaties $S$, $V$ en $T$.
 \begin{center}
-  \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \clip(-0.5,-0.5) rectangle (6.5,3.5);
-    \draw (0,0) -- (6,0);
-    \draw (0,1) -- (6,1);
-    \draw (0,2) -- (6,2);
-    \draw (0,3) -- (6,3);
-    \draw (0,0) -- (0,3);
-    \draw (1,0) -- (1,3);
-    \draw (2,0) -- (2,3);
-    \draw (3,0) -- (3,3);
-    \draw (4,0) -- (4,3);
-    \draw (5,0) -- (5,3);
-    \draw (6,0) -- (6,3);
-    \fill (0,3) circle (1.8pt);
-    \draw (-0.3,3.3) node {$S$};
-    \fill  (4,1) circle (1.8pt);
-    \draw (3.7,1.3) node {$V$};
-    \fill  (6,0) circle (1.8pt);
-    \draw (6.3,0.3) node {$T$};
+  \begin{tikzpicture}
+    \draw (0,0) grid (6,3);
+    \fill (0,0) circle (1.6pt) node[anchor=east] {$S$};
+    \fill (6,3) circle (1.6pt) node[anchor=west] {$T$};
+    \fill (4,1) circle (1.6pt) node[anchor=south west] {$V$};
   \end{tikzpicture}
 \end{center}
 \begin{enumerate}[(a)]
@@ -1376,32 +1321,14 @@ Bereken zonder \zrm{ZRM} $$\left(\sqrt{2}+1\right)^5+\left(\sqrt{2}-1\right)^5$$
 
 \subsection{Oefeningen}  % bron: mathcentre
 
-
 \begin{oefening}
 Beschouw het volgende wegenrooster met de locatie van Aline en Birgit en daarbinnen ook een moeras.
 \begin{center}
-  \definecolor{uququq}{rgb}{0.25,0.25,0.25}
-  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \clip(1.45,1.41) rectangle (10.52,6.62);
-    \fill[line width=0.4pt,fill=black,fill opacity=0.29]
-    (0,1) -- (5.5,1) -- (5.5,5.5) -- (0,5.5) -- cycle;
-    \draw [domain=2:9] plot(\x,{(--2-0*\x)/1});
-    \draw [domain=2:9] plot(\x,{(--6-0*\x)/2});
-    \draw [domain=2:9] plot(\x,{(--8-0*\x)/2});
-    \draw [domain=2:9] plot(\x,{(--10-0*\x)/2});
-    \draw [domain=2:9] plot(\x,{(--12-0*\x)/2});
-    \draw (2,2) -- (2,6);
-    \draw (3,2) -- (3,6);
-    \draw (4,2) -- (4,6);
-    \draw (5,2) -- (5,6);
-    \draw (6,2) -- (6,6);
-    \draw (7,2) -- (7,6);
-    \draw (8,2) -- (8,6);
-    \draw (9,2) -- (9,6);
-    \fill (2,6) circle (1.8pt);
-    \draw (1.69,6.34) node {$A$};
-    \fill  (9,2) circle (1.8pt);
-    \draw (9.22,1.81) node {$B$};
+  \begin{tikzpicture}
+    \draw (0,0) grid (7,4);
+    \fill[fill opacity=0.2] (-.5,-.5) rectangle (3.5,3.5);
+    \fill (0,4) circle (1.6pt) node[anchor=east] {$A$};
+    \fill (7,0) circle (1.6pt) node[anchor=west] {$B$};
   \end{tikzpicture}
 \end{center}
 \begin{enumerate}[(a)]
