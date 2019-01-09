@@ -1,8 +1,10 @@
 \documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
+\usepgfplotslibrary{fillbetween}
 
 \usepackage{tabto}
+\usepackage{tabu}
 
 \begin{document}
 
@@ -1237,14 +1239,88 @@ Bespreek (domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen).
 Construeer een veeltermfunctie van de vierde graad met nulwaarden $x_0=-4$, $x_1=2$ en $x_2=3$. De nulwaarde $x_1$ komt tweemaal voor (we zeggen dat deze multipliciteit 2 heeft). De functie moet negatief zijn voor $x\in]-\infty,-4[$.
 \end{oefening}
 
-
-
 \newpage
 \section{Veeltermongelijkheden}
 
+\subsection{Definities}
 
-\subsection{Eerstegraadsveeltermongelijkheden}
+Als we in een vergelijking het gelijkaanteken vervangen door een ongelijkheidsteken $<, \leq, >, \geq$ dan krijgen we een {\bf ongelijkheid}.
 
+Een {\bf veeltermongelijkheid} is dus een ongelijkheid van de vorm
+\[a_nx^n+a_{n-1}x^{n-1}+ \ldots + a_1x+a_0 \lessgtr 0 \]
+waarbij $\lessgtr$ één van de ongelijkheidstekens $<, \leq, >, \geq$ is.
+
+Als de veelterm in het linker lid van de $n$-de graad is, dan noemen we de ongelijkheid ook van de $n$-de graad, dus een {\bf $n$-de graadsongelijkheid}.
+
+Een veeltermongelijkheid {\bf oplossen} is de verzameling van alle waarden voor de onbekende $x$ bepalen zodat de ongelijkheid waar wordt als we $x$ invullen.
+
+\subsection{Eerstegraadsongelijkheden}
+
+De standaardvorm van een eerstegraadsongelijkheid is
+\[ax + b \lessgtr 0\]
+
+\subsubsection*{Voorbeeld}
+
+Los $2x-3 \geq 0$ op in $\mathbb{R}$:
+
+\subsubsection*{Grafisch}
+
+\begin{minipage}{0.5\linewidth}
+  We maken van de veelterm in het linkerlid een functie f:
+  \[f(x)=2x-3\]
+  en tekenen daar de grafiek van. Het ongelijkheidsteken zegt ons nu dat we alle $x$-waarden zoeken waarvoor $f(x)$ groter of gelijk is aan nul. Met andere woorden alle beelden die op of boven de $x$-as liggen.
+  \[V=[1.5, +\infty[\]
+\end{minipage}
+\begin{minipage}{0.5\linewidth}
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[
+      scale=0.5,
+      x=1.0cm,y=1.0cm,
+      axis lines=middle,
+      ymajorgrids=true,
+      xmajorgrids=true,
+      xmin=-5.4,
+      xmax=10.4,
+      ymin=-5.4,
+      ymax=6.4,
+      xtick={-4.0,-2.0,...,10.0},
+      ytick={-4.0,-2.0,...,8.0},]
+      \plot[name path=f, line width=1.8pt, domain=-4:10.5] {2*x-3};
+      \fill (1.5,0) circle (2pt);
+      \plot[name path=int, line width=1.6pt, domain=1.5:10.5] {0};
+      \addplot[gray, opacity=.2] fill between[of = f and int];
+      \begin{scriptsize}
+        \draw (3.5,5) node {$f$};
+      \end{scriptsize}
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+\end{minipage}
+
+\subsubsection*{Algebraïsch}
+
+\begin{align*}
+  &&  2x-3 &\geq 0\\
+  \LRA && 2x &\geq 3\\
+  \LRA && x &\geq \dfrac{3}{2}
+\end{align*}
+
+\[V=[\dfrac{3}{2}, +\infty]\]
+
+\subsubsection*{M.b.v. tekenverloop}
+
+Van de functie $f(x)=2x-3$ kunnen we het tekenverloop bepalen:
+\begin{center}
+\begin{tabu} spread 2em{X[$c$]|X[$c$]X[$c$]X[$c$]X[$c$]X[$c$]}
+    x&-\infty& &\dfrac{3}{2}& &+\infty\\[.2em]
+    \hline
+    y&       &-&     0      &+&
+  \end{tabu}
+\end{center}
+En dus rekening houdend met de ongelijkheid vinden we opnieuw
+
+\[V=[\dfrac{3}{2}, +\infty]\]
 
 \begin{oefening}
 Los op in $\mathbb{R}$:
@@ -1260,8 +1336,52 @@ Los op in $\mathbb{R}$:
 \end{oefening}
 
 
-\subsection{Tweedegraadsveeltermongelijkheden}
+\subsection{Tweedegraadsongelijkheden}
 
+De standaardvorm van een eerstegraadsongelijkheid is
+\[ax^2 + bx + c \lessgtr 0\]
+
+\subsubsection*{Voorbeeld}
+
+Los $-6x^2 + 5x + 6 \leq 0$ op in $\mathbb{R}$:
+
+\subsubsection*{Grafisch}
+
+We definiëren
+\[\underbrace{-6x^2 + 5x + 6}_{f(x)}\leq \underbrace{0}_{x\text{-as}}\]
+en tekenen dan $f$.
+
+\begin{minipage}{0.5\linewidth}
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[
+      scale=0.5,
+      x=1.0cm,y=1.0cm,
+      axis lines=middle,
+      ymajorgrids=true,
+      xmajorgrids=true,
+      xmin=-5.4,
+      xmax=6.4,
+      ymin=-5.4,
+      ymax=8.4,
+      xtick={-4.0,-2.0,...,6.0},
+      ytick={-4.0,-2.0,...,8.0},]
+      \addplot[name path=f, smooth, line width=1.8pt, domain=-5.5:6.5] {-6*x^2+5*x+6};
+      \fill (-0.66,0) circle (2pt);
+      \addplot[name path=int1, line width=1.6pt, domain=-5.5:-0.66] {0};
+      \fill (1.5,0) circle (2pt);
+      \addplot[name path=int2, line width=1.6pt, domain=1.5:6.5] {0};
+      \addplot[gray, opacity=.2]
+      fill between[of = f and int1, soft clip={domain=-5.5:-0.66}];
+      \addplot[gray, opacity=.2]
+      fill between[of = f and int2, soft clip={domain=1.5:6.5}];
+      \begin{scriptsize}
+        \draw (1.5,7) node {$f$};
+      \end{scriptsize}
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+\end{minipage}
 
 \begin{oefening}
 Los op in $\mathbb{R}$:
