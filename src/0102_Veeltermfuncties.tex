@@ -5,6 +5,7 @@
 
 \usepackage{tabto}
 \usepackage{tabu}
+\usepackage[shortlabels]{enumitem}
 
 \begin{document}
 
@@ -29,11 +30,23 @@
       yticklabels={,,},
       samples=100]
       \clip(-2.4,-1.4) rectangle (2.9,1.9);
-      \addplot[line width=1.8pt,opacity=0.4,smooth,domain=-2.5:3.4] (x,1);
-      \foreach \n in {1,2,3,4,5} {
-        \addplot[line width=1.8pt,opacity=0.4,smooth,domain=-2.0:2.0] (x,x^\n);
+      \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-2.5:3.4] (x,1);
+      \foreach \n in {1,2,3,4} {
+        \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-2.0:2.0] (x,x^\n);
       }
-      \draw (0.2,-.5) node[anchor=west] {\texttt foreach $n$ in $\{0,1,2,3,4,5\}$};
+      \foreach \n in {5,6,...,9} {
+        \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-1.4:1.4] (x,x^\n);
+      }
+      \foreach \n in {10,11,...,24} {
+        \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-1.2:1.2] (x,x^\n);
+      }
+      \foreach \n in {25,26,...,50} {
+        \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-1.01:1.01] (x,x^\n);
+      }
+      \foreach \n in {50,51,...,100} {
+        \addplot[line width=1.6pt,opacity=0.4,smooth,domain=-1.01:1.01] (x,x^\n);
+      }
+      \draw (0.2,-.5) node[anchor=west] {\texttt foreach $n$ in $\{0,1,2,\ldots\}$};
       \draw (0.6,-.8) node[anchor=west] {\texttt plot $f(x)=x^n$ };
     \end{axis}
   \end{tikzpicture}
@@ -77,13 +90,9 @@
 \fancyhead[RO,LE]{Veeltermfuncties}
 \fancyhead[RE,LO]{}
 
-
-
 \onehalfspacing
 
 \section{Veeltermvergelijkingen}
-
-
 
 \subsection{Definitie}
 
@@ -109,12 +118,11 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
   De hoogste exponent bij de onbekende $x$ is de {\bf graad} van de veelterm.
 \end{mdframed}
 
-
-
 \begin{oefening}
   Zijn volgende vergelijkingen veeltermvergelijkingen en zo ja, van welke graad?
   \begin{multicols}{2}
     \begin{enumerate}[(a)]
+      \itemsep.5em
     \item $2x + 2 = 0$
     \item $\sqrt{3x+1} = 0$
     \item $x^2-3x+8=0$
@@ -123,14 +131,10 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
   \end{multicols}
 \end{oefening}
 
-
-
 \paragraph{Oplossen van een veeltermvergelijking}
 \begin{mdframed}
   Een veeltermvergelijking {\bf oplossen} is het zoeken naar alle onbekenden $x$ zodat de vergelijking waar wordt.
 \end{mdframed}
-
-
 
 \begin{oefening}
   Beschouw de vergelijking
@@ -140,8 +144,6 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
   \item Zijn er nog andere getallen die aan deze vergelijking voldoen?
   \end{enumerate}
 \end{oefening}
-
-
 
 \pagebreak
 \subsection{Veeltermvergelijkingen van de eerste graad}
@@ -165,9 +167,6 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
 \item Oplossingenverzameling opschrijven en proef maken
 \end{enumerate}
 
-
-
-
 \begin{oefening}
   Los de volgende vergelijkingen van de eerste graad op in $\mathbb{R}$
   \begin{multicols}{2}
@@ -190,20 +189,16 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
   \end{multicols}
 \end{oefening}
 
-
 \pagebreak
 \subsubsection*{Toepassingen}
 
 Volgende oefeningen geven toepassingen waarbij we vergelijkingen van de eerste graad oplossen. Ga steeds als volgt te werk:
-
 \begin{description}
   \item[Onbekende(n)] Wat wordt gevraagd. Hoe kan je dat zo eenvoudig mogelijk uitdrukken.
   \item[Vergelijking(en)] Lees de toepassing heel aandachtig. Probeer de zinnen te vinden waaruit we vergelijking kunnen halen. Vervang geleidelijk aan de zin door een wiskundige uitdrukking. Het is normaal dat je bij deze stap de vraag verschillende keren opnieuw moet lezen.
   \item[Oplossen] Als de vergelijkingen meerdere onbekenden bevatten, probeer dan de vergelijkingen te herschrijven zodat ze maar één onbekende meer bevatten. Los de vergelijking dan op met de geziene methode.
   \item[Antwoord] Kijk naar je oplossingenverzameling en lees de vraag opnieuw. Beantwoord nu specifiek op het gevraagde.
 \end{description}
-
-
 
 \begin{oefening}
 Twee getallen hebben als som 60. De som van de helft van het eerste getal en een derde van het tweede getal is 20. Bepaal die getallen.
@@ -225,14 +220,7 @@ De energieprijs voor elektriciteit is 0.25 euro per kWh tijdens de dag en 0.15 e
 Aron gaat om de twee dagen trainen met zijn koersfiets. Hij begint de maandag en traint een ganse week. In het totaal fietst hij $280 \km$. Elke volgende trainingsdag fietst hij $20 \km$ meer dan de vorige. Hoeveel kilometer zal hij de zondag fietsen?
 \end{oefening}
 
-\vfill
-\hfill
-\begin{tikzpicture}[remember picture, overlay]
-    \hspace*{-2cm}
-        \includegraphics[width=4cm]{fietser}
-\end{tikzpicture}
-
-
+\vfill\hfill\includegraphics[width=4cm]{fietser}
 
 \pagebreak
 \subsection{Veeltermvergelijkingen van de tweede graad}
@@ -267,13 +255,11 @@ Aron gaat om de twee dagen trainen met zijn koersfiets. Hij begint de maandag en
   \end{itemize}
 \end{itemize}
 
-
-
 \begin{oefening}
   Los de volgende vergelijkingen van de tweede graad op in $\mathbb{R}$
   \begin{multicols}{2}
     \begin{enumerate}[(a)]
-      \itemsep0.7em
+      \itemsep0.8em
     \item $2x^2-4x-6=0$
     \item $5x(x-2)=x(3x-4)-5$
     \item $\frac{2}{3}x^2+5x+1=0$
@@ -316,32 +302,28 @@ Aron gaat om de twee dagen trainen met zijn koersfiets. Hij begint de maandag en
   \end{enumerate}
 \end{oefening}
 
-
-
 \pagebreak
 \subsection*{Toepassingen}
-
-
 
 \begin{oefening}
 We gooien een bal recht omhoog. De begin hoogte is dan $1.75 \m$. We doen dit met een snelheid van $17 \mpers$. Na hoeveel seconden zal de bal op de grond terecht komen?
 
 Als we de luchtweerstand negeren kunnen we de hoogte op elk tijdstip bepalen door volgende informatie op te tellen:
 \begin{itemize}
-  \item De starthoogte
-  \item De startsnelheid vermenigvuldigd met de tijd
-  \item De kracht van de gravitatie, deze is steeds $-5t^2\approx -\frac{at^2}{2}$ met $a=9.811\mpers^2$.
+  \item starthoogte
+  \item startsnelheid vermenigvuldigd met de tijd
+  \item kracht van de gravitatie, deze is steeds $-5t^2\approx -\frac{at^2}{2}$ met $a=9.811\mpers^2$.
 \end{itemize}
 \end{oefening}
 
 \begin{oefening}
 De ring links en de cirkel rechts hebben dezelfde oppervlakte. Bepaal $x$.
 \begin{center}
-\begin{tikzpicture}[scale=0.6, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[scale=0.7, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \clip(-2.05,-0.62) rectangle (18.68,10.69);
-\draw [line width=1.2pt,fill=gray!60] (4,5) circle (5cm);
+\draw [line width=1.2pt,fill=gray!40] (4,5) circle (5cm);
 \draw [line width=1.2pt,fill=white] (4,5) circle (3cm);
-\draw [line width=1.2pt,fill=gray!60] (14,5) circle (4cm);
+\draw [line width=1.2pt,fill=gray!40] (14,5) circle (4cm);
 \draw [line width=1.2pt] (14,5)-- (16.51,8.12);
 \draw [line width=1.2pt] (4,5)-- (5.94,7.29);
 \draw [line width=1.2pt,dash pattern=on 2pt off 2pt] (5.94,7.29)-- (7.23,8.82);
@@ -356,8 +338,6 @@ De ring links en de cirkel rechts hebben dezelfde oppervlakte. Bepaal $x$.
 \end{tikzpicture}
 \end{center}
 \end{oefening}
-
-
 
 \pagebreak
 \subsection{Veeltermvergelijkingen van graad $\geq 3$}
@@ -402,8 +382,6 @@ We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
   $$V=\{-1, 2, 3\}$$
 \end{itemize}
 
-
-
 \begin{oefening}
   Los op in $\mathbb{R}$
   \begin{multicols}{2}
@@ -441,7 +419,7 @@ We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
 \begin{oefening}
 Los op in $\mathbb{R}$:
 \begin{enumerate}[(a)]
-  \itemsep0.6em
+  \itemsep0.8em
   \begin{multicols}{2}
   \item $2x^3+3x^2-17x+12=0$
   \item $3x^3+13x^2-18x-40=0$
@@ -472,7 +450,6 @@ Los op in $\mathbb{R}$:
   \end{multicols}
 \end{enumerate}
 \end{oefening}
-
 
 \pagebreak
 \subsection{Veeltermvergelijkingen oplossen m.b.v. Geogebra}
@@ -513,13 +490,11 @@ $$V=\{-1, 1, 3\}$$
 
 moeten vinden.
 
-
-
 \begin{oefening}
   Los op in $\mathbb{R}$\\
   \begin{enumerate}[(a)]
-    \itemsep2em
-  \item $\displaystyle\frac{{x}^{6}}{2}+\frac{21\,{x}^{5}}{4}+\frac{81\,{x}^{4}}{4}+\frac{67\,{x}^{3}}{2}+18\,{x}^{2}=\frac{27\,x}{4}+\frac{27}{4}$
+    \itemsep.8em
+  \item $\displaystyle \frac{{x}^{6}}{2}+\frac{21\,{x}^{5}}{4}+\frac{81\,{x}^{4}}{4}+\frac{67\,{x}^{3}}{2}+18\,{x}^{2} = \frac{27\,x}{4}+\frac{27}{4}$
   \item $\displaystyle{x}^{3}+\frac{7\,{x}^{2}}{2}+x=\frac{3}{2}$
   \end{enumerate}
 \end{oefening}
@@ -527,7 +502,7 @@ moeten vinden.
 \begin{oefening}
   Los volgende vergelijkingen op in $\mathbb{R}$ door gebruik te maken van Horner, controleer daarna je antwoord m.b.v. ICT.\\
   \begin{enumerate}[(a)]
-    \itemsep1em
+    \itemsep.8em
   \item $\displaystyle{x}^{3}+{x}^{2}=2\,x$
   \item $\displaystyle{x}^{6}-{x}^{5}-13\,{x}^{4}=-13\,{x}^{3}-36\,{x}^{2}+36\,x$
   \end{enumerate}
@@ -537,7 +512,7 @@ moeten vinden.
   Maak gebruik van Geogebra om de volgende vergelijkingen op te lossen in $\mathbb{R}$
   \begin{multicols}{2}
     \begin{enumerate}[(a)]
-      \itemsep0.7em
+      \itemsep0.8em
     \item $-5x+4=0$
     \item $2(x+6)=4-(x+7)$
     \item $2x^2-4x-6=0$
@@ -556,8 +531,6 @@ moeten vinden.
 \pagebreak
 \section{Veeltermfuncties}
 
-
-
 \subsection{Definities}
 
 \paragraph*{Veeltermfunctie}
@@ -568,13 +541,11 @@ moeten vinden.
 
 De {\bf graad van de veeltermfunctie} is gelijk aan de graad van de veelterm. In de definitie is de veeltermfunctie dus van de $n$-de graad.
 
-
-
 \begin{oefening}
   Welke van de volgende functies zijn veeltermfuncties. Als het veeltermfuncties zijn, wat is dan hun graad?
 \begin{multicols}{2}
   \begin{enumerate}[(a)]
-  \itemsep1em
+  \itemsep.8em
   \item $f(x)=\dfrac{2}{3}x+2$
   \item $f(x)=0.5x^2-x-1.5$
   \item $f(x)=\sqrt{3x^2+2x-6}$
@@ -591,7 +562,7 @@ De {\bf graad van de veeltermfunctie} is gelijk aan de graad van de veelterm. In
 Schrijf volgende veeltermfuncties in hun standaardvorm.
 \begin{multicols}{2}
   \begin{enumerate}[(a)]
-  \itemsep1em
+  \itemsep.8em
   \item $f(x)=2+x^3-x^2$
   \item $f(x)=-(x^2-2x+3)$
   \item $f(x)=3x(x^2-2x+3)$
@@ -605,7 +576,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{enumerate}
 \end{multicols}
 \end{oefening}
-
 
 \pagebreak
 \subsection{Veeltermfuncties van graad 0}
@@ -622,8 +592,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
 \item Als $a=0$ dan heeft deze functie alle reële getallen als nulwaarden.
 \end{itemize}
 
-
-
 \begin{oefening}
   Beschouw de functie
   $$f(x)=-2\;.$$
@@ -635,8 +603,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \item Teken de grafiek zonder een functiewaardentabel te maken.
   \end{enumerate}
 \end{oefening}
-
-
 
 \paragraph*{Constante functie bespreken}
 \begin{mdframed}
@@ -663,6 +629,7 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
 \begin{oefening}
   Beschrijf volgende constante functies:
   \begin{enumerate}[(a)]
+    \itemsep.8em
   \item $f(x)=42$
   \item $f(x)=0$
   \end{enumerate}
@@ -708,8 +675,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
 \item De grafiek van deze functie heeft geen extrema.
 \end{itemize}
 
-
-
 \begin{oefening}
   Beschouw de functie
   $$f(x)=-\dfrac{1}{2}x+2\;.$$
@@ -722,8 +687,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \item Teken de grafiek zonder een functiewaardentabel te maken.
   \end{enumerate}
 \end{oefening}
-
-
 
 \paragraph*{Eerstegraadsfunctie bespreken}
 \begin{mdframed}
@@ -760,8 +723,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
     \end{minipage}
   \end{itemize}
 \end{mdframed}
-
-
 
 \begin{oefening}
   Bespreek volgende eerstegraadsfuncties:
@@ -822,8 +783,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
 \item Een tweedegraadsfunctie kan $0, 1$ of $2$ nulwaarden hebben, afhankelijk van de discriminant.
 \end{itemize}
 
-
-
 \begin{oefening}
   Beschouw de functie
   $$f(x)=x^2-x-6\;.$$
@@ -837,8 +796,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \item Teken de grafiek zonder een functiewaardentabel te maken.
   \end{enumerate}
 \end{oefening}
-
-
 
 \pagebreak
 \paragraph*{Tweedegraadsfuncties bespreken}
@@ -899,25 +856,24 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{itemize}
 \end{mdframed}
 
-
-
 \begin{oefening}
   Bespreek de volgende functies:
   \begin{multicols}{2}
-  \begin{enumerate}[(a)]
-  \item $f(x)=x^2+x-6$
-  \item $f(x)=x^2+2x+1$
-  \item $f(x)=x^2+4$
-  \item $f(x)=3x-2$
-  \item $f(x)=-2x^2-3x+1$
-  \item $f(x)=4x^2-4x-15$
-  \item $f(x)=(x+2)^2-4$
-  \item $f(x)=4x+(x-2)^2$
-  \item $f(x)=(x-2)(x+2)$
-  \item $f(x)=(x+3)^2+(x-3)^2$
-  \item $f(x)=-(x-1)(x+1)$
-  \item $f(x)=-2x^2+29x-102$
-  \end{enumerate}
+    \begin{enumerate}[(a)]
+      \itemsep.8em
+    \item $f(x)=x^2+x-6$
+    \item $f(x)=x^2+2x+1$
+    \item $f(x)=x^2+4$
+    \item $f(x)=3x-2$
+    \item $f(x)=-2x^2-3x+1$
+    \item $f(x)=4x^2-4x-15$
+    \item $f(x)=(x+2)^2-4$
+    \item $f(x)=4x+(x-2)^2$
+    \item $f(x)=(x-2)(x+2)$
+    \item $f(x)=(x+3)^2+(x-3)^2$
+    \item $f(x)=-(x-1)(x+1)$
+    \item $f(x)=-2x^2+29x-102$
+    \end{enumerate}
   \end{multicols}
 \end{oefening}
 
@@ -951,7 +907,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{center}
 \end{oefening}
 
-
 \begin{oefening}
   Teken de grafiek van de tweedegraadsfunctie die de nulwaarden $x_1=-2$ en $x_2=1$ heeft en die als top het punt $(-0.5,-2.25)$ heeft. Je weet verder nog dat de grafiek de $y$-as snijdt in het punt $(0,-2)$. Kan je het functievoorschrift vinden voor deze functie?
 \end{oefening}
@@ -972,7 +927,7 @@ Een landbouwer beschikt over $800 \m$ prikkeldraad. Hij wil daarmee een zo groot
 Bespreek volgende functies:
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
-  \itemsep.5em
+  \itemsep.8em
   \item $\displaystyle f(x)=42$
   \item $\displaystyle f(x)=0$
   \item $\displaystyle f(x)=-2x+3$
@@ -992,7 +947,7 @@ Bespreek volgende functies:
 \begin{oefening}
 Bepaal het functievoorschrift van
 \begin{enumerate}[(a)]
-  \itemsep.5em
+  \itemsep.8em
   \item de rechte door $(-2, 3)$ en $(1, 0)$.
   \item de rechte door $(-2, 0)$ en $(1, 3)$.
   \item de rechte door $(1, -1)$ en $(3, -1)$.
@@ -1008,8 +963,6 @@ Bepaal het functievoorschrift van
   \end{center}
 \end{enumerate}
 \end{oefening}
-
-
 
 \pagebreak
 \subsection{Veeltermfuncties van graad 3 of hoger}
@@ -1037,13 +990,11 @@ Bepaal het functievoorschrift van
   \end{itemize}
 \end{mdframed}
 
-
-
 \begin{oefening}
 Bespreek (domein, bereik, nulwaarden, tekenverloop, schets, stijgen\&dalen):
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
-  \itemsep1em
+  \itemsep.8em
   \item $f:y=\dfrac{1}{8}(x^3-12x)$
   \item $f:y=x^3-6x^2+32$
   \item $f:y=\dfrac{1}{36}(x^3+3x^2-24x+20)$
@@ -1060,7 +1011,7 @@ Bespreek (domein, bereik, nulwaarden, tekenverloop, schets, stijgen\&dalen):
   Bespreek volgende functies:
   \begin{multicols}{2}
     \begin{enumerate}[(a)]
-      \itemsep.5em
+      \itemsep.8em
     \item $f(x)=\dfrac{1}{10}(-2x^3-11x^2+21x+90)$
     \item $f(x)=3x^2-0.5x^3$
     \item $f(x)=2x^4+7x^3-51x^2-7x+49$
@@ -1093,8 +1044,6 @@ $$f(x)=(x-3)(x+1)(2x-1)$$
 \subsection{Hogeregraadsveeltermfuncties bespreken m.b.v. Geogebra}
 Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra} gebruiken om hogeregraadsveeltermfuncties te bespreken. We plotten eerst de grafiek en bespreken daarna alle karakteristieken.
 
-
-
 \begin{oefening}
   Met Geogebra werd de grafiek van de functie met functievoorschrift
   $$f(x)=x^5-5x^3+4x$$ gegenereerd. Lees aan de hand van de grafiek het domein, de nulwaarden en de extrema af. Bepaal het tekenverloop, het stijgen en dalen en de symmetrieën van de functie.
@@ -1120,119 +1069,121 @@ Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra
 \begin{oefening}
 Bespreek zo exact mogelijk, maak gebruik van de bijhorende grafiek (domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen):
 \begin{multicols}{2}
-\begin{enumerate}[(a)]
-  \itemsep0.5em
+  \begin{enumerate}[(a)]
+    \itemsep0.5em
   \item $f(x)=x^4-3x^3+6x-4$
-  \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \draw[->,color=black] (-2.77,0) -- (3.78,0);
-    \foreach \x in {-2,-1,1,2,3}
-    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-    \draw[->,color=black] (0,-7.44) -- (0,2.26);
-    \foreach \y in {-7,-6,-5,-4,-3,-2,-1,1,2}
-    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-    \clip(-2.77,-7.44) rectangle (3.78,2.26);
-    \draw[line width=1.6pt, smooth,samples=100,domain=-2.7709659189295555:3.7776369933097222] plot(\x,{(\x)^4-3*(\x)^3+6*(\x)-4});
-    \draw (2.5,1.46) node[anchor=north west] {f};
-    \end{tikzpicture}
-  \end{center}
+    \begin{center}
+      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \draw[->,color=black] (-2.77,0) -- (3.78,0);
+        \foreach \x in {-2,-1,1,2,3}
+        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+        \draw[->,color=black] (0,-7.44) -- (0,2.26);
+        \foreach \y in {-7,-6,-5,-4,-3,-2,-1,1,2}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+        \clip(-2.77,-7.44) rectangle (3.78,2.26);
+        \draw[line width=1.6pt, smooth,samples=100,domain=-2.7709659189295555:3.7776369933097222] plot(\x,{(\x)^4-3*(\x)^3+6*(\x)-4});
+        \draw (2.5,1.46) node[anchor=north west] {f};
+      \end{tikzpicture}
+    \end{center}
   \item $f(x)=x^5-x^4-13x^3+13x^2+36x-36$
-  \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-\begin{tikzpicture}[xscale=.9, yscale=.12, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw[->,color=black] (-4.24,0) -- (4.2,0);
-\foreach \x in {-4,-3,-2,-1,1,2,3,4}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-53.86) -- (0,26.88);
-\foreach \y in {-50,-40,-30,-20,-10,10,20}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-4.24,-53.86) rectangle (4.2,26.88);
-\draw[line width=1.6pt, smooth,samples=100,domain=-4:4] plot(\x,{(\x)^5-(\x)^4-13*(\x)^3+13*(\x)^2+36*(\x)-36});
-\draw (2.39,-11.21) node[anchor=north west] {f};
-\end{tikzpicture}
-  \end{center}
+    \begin{center}
+      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[xscale=.9, yscale=.12, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \draw[->,color=black] (-4.24,0) -- (4.2,0);
+        \foreach \x in {-4,-3,-2,-1,1,2,3,4}
+        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+        \draw[->,color=black] (0,-53.86) -- (0,26.88);
+        \foreach \y in {-50,-40,-30,-20,-10,10,20}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+        \clip(-4.24,-53.86) rectangle (4.2,26.88);
+        \draw[line width=1.6pt, smooth,samples=100,domain=-4:4] plot(\x,{(\x)^5-(\x)^4-13*(\x)^3+13*(\x)^2+36*(\x)-36});
+        \draw (2.39,-11.21) node[anchor=north west] {f};
+      \end{tikzpicture}
+    \end{center}
   \item $f(x)=x^4-\dfrac{23}{12}x^3+\dfrac{29}{24}x^2-\dfrac{1}{4}x$
-  \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-\begin{tikzpicture}[xscale=5, yscale=40,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw[->,color=black] (-0.22,0) -- (1.04,0);
-\foreach \x in {-0.2,0.5,1}
-\draw[shift={(\x,0)},color=black] (0pt,.1pt) -- (0pt,-.1pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-0.02) -- (0,0.04);
-\foreach \y in {}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\clip(-0.22,-0.02) rectangle (1.04,0.04);
-\draw[line width=1.6pt, smooth,samples=100,domain=-0.1:1] plot(\x,{(\x)^4-23/12*(\x)^3+29/24*(\x)^2-1/4*(\x)});
-\draw (2.39,-12.67) node[anchor=north west] {f};
-\end{tikzpicture}
-  \end{center}
+    \begin{center}
+      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[xscale=5, yscale=40,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \draw[->,color=black] (-0.22,0) -- (1.04,0);
+        \foreach \x in {-0.2,0.5,1}
+        \draw[shift={(\x,0)},color=black] (0pt,.1pt) -- (0pt,-.1pt) node[below] {\footnotesize $\x$};
+        \draw[->,color=black] (0,-0.02) -- (0,0.04);
+        \foreach \y in {}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \clip(-0.22,-0.02) rectangle (1.04,0.04);
+        \draw[line width=1.6pt, smooth,samples=100,domain=-0.1:1] plot(\x,{(\x)^4-23/12*(\x)^3+29/24*(\x)^2-1/4*(\x)});
+        \draw (2.39,-12.67) node[anchor=north west] {f};
+      \end{tikzpicture}
+    \end{center}
   \item $f(x)=x^5-15x^3+10x^2+60x-72$
-  \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-\begin{tikzpicture}[xscale=.7, yscale=.035,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw[->,color=black] (-4.76,0) -- (4.19,0);
-\foreach \x in {-4,-2,2,4}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-148.05) -- (0,85.82);
-\foreach \y in {-140,-120,-100,-80,-60,-40,-20,20,40,60,80}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\clip(-4.76,-148.05) rectangle (4.19,85.82);
-\draw[line width=1.6pt, smooth,samples=100,domain=-4:4] plot(\x,{(\x)^5-15*(\x)^3+10*(\x)^2+60*(\x)-72});
-\draw (3.51,39.24) node[anchor=north west] {f};
-\end{tikzpicture}
-  \end{center}
+    \begin{center}
+      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[xscale=.7, yscale=.035,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \draw[->,color=black] (-4.76,0) -- (4.19,0);
+        \foreach \x in {-4,-2,2,4}
+        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+        \draw[->,color=black] (0,-148.05) -- (0,85.82);
+        \foreach \y in {-140,-120,-100,-80,-60,-40,-20,20,40,60,80}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \clip(-4.76,-148.05) rectangle (4.19,85.82);
+        \draw[line width=1.6pt, smooth,samples=100,domain=-4:4] plot(\x,{(\x)^5-15*(\x)^3+10*(\x)^2+60*(\x)-72});
+        \draw (3.51,39.24) node[anchor=north west] {f};
+      \end{tikzpicture}
+    \end{center}
   \item $f(x)=x^6+2x^5-11x^4-12x^3+36x^2$
-  \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-    \begin{tikzpicture}[xscale=.7, yscale=.1, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \draw[->,color=black] (-4.43,0) -- (3.29,0);
-    \foreach \x in {-4,-2,2}
-    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-    \draw[->,color=black] (0,-10) -- (0,60);
-    \foreach \y in {,50}
-    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-    \clip(-4.43,-10) rectangle (3.29,70);
-    \draw[line width=1.6pt, smooth,samples=100,domain=-3.6:2.7] plot(\x,{(\x)^6+2*(\x)^5-11*(\x)^4-12*(\x)^3+36*(\x)^2});
-    \draw (-1.44,82.3) node[anchor=north west] {f};
-    \end{tikzpicture}
-  \end{center}
-\end{enumerate}
+    \begin{center}
+      \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+      \begin{tikzpicture}[xscale=.7, yscale=.1, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+        \draw[->,color=black] (-4.43,0) -- (3.29,0);
+        \foreach \x in {-4,-2,2}
+        \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+        \draw[->,color=black] (0,-10) -- (0,60);
+        \foreach \y in {,50}
+        \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+        \clip(-4.43,-10) rectangle (3.29,70);
+        \draw[line width=1.6pt, smooth,samples=100,domain=-3.6:2.7] plot(\x,{(\x)^6+2*(\x)^5-11*(\x)^4-12*(\x)^3+36*(\x)^2});
+        \draw (-1.44,82.3) node[anchor=north west] {f};
+      \end{tikzpicture}
+    \end{center}
+  \end{enumerate}
 \end{multicols}
 \end{oefening}
 
 \begin{oefening}
 Bespreek door gebruik te maken van ICT (domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen):
 \begin{enumerate}[(a)]
-  \itemsep0.5em
-  \item $f(x)=(x-2)^2(x+4)^2$
-  \item $f(x)=(x-16)^2-x^2-8x^4-64$
-  \item $f(x)=x(x-1)(x-2)(x-3)(x-4)$
-  \item $f(x)=-\dfrac{1}{8}(x^4+x^3-14x^2-8x+48)$
+  \itemsep0.8em
+  \item $\displaystyle f(x)=\left(x-2\right)^2\left(x+4\right)^2$
+  \item $\displaystyle f(x)=\left(x-16\right)^2-x^2-8x^4-64$
+  \item $\displaystyle f(x)=x(x-1)(x-2)(x-3)(x-4)$
+  \item $\displaystyle f(x)=-\dfrac{1}{8}(x^4+x^3-14x^2-8x+48)$
 \end{enumerate}
 \end{oefening}
 
 \begin{oefening}
-Beschouw de functie $f(x)=-\dfrac{1}{4}(x^4+3x^3-3x^2-9x)$, met als grafiek:
-\begin{center}
-\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-4.31,-1.55) grid (3.31,2.64);
-\draw[->,color=black] (-4.31,0) -- (3.31,0);
-\foreach \x in {-4,-3,-2,-1,1,2,3}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-1.55) -- (0,2.64);
-\foreach \y in {-1,1,2}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-4.31,-1.55) rectangle (3.31,2.64);
-\draw[line width=1.6pt, smooth,samples=100,domain=-4.306720586404644:3.3067938031642226] plot(\x,{(-1)/4*((\x)^4+3*(\x)^3-3*(\x)^2-9*(\x))});
-\draw (1.54,2.02) node[anchor=north west] {f};
-\end{tikzpicture}
-\end{center}
-Bespreek (domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen).
+  Beschouw de functie
+  \[ f(x)=-\dfrac{1}{4}(x^4+3x^3-3x^2-9x) \]
+  met als grafiek:
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-4.31,-1.55) grid (3.31,2.64);
+      \draw[->,color=black] (-4.31,0) -- (3.31,0);
+      \foreach \x in {-4,-3,-2,-1,1,2,3}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+      \draw[->,color=black] (0,-1.55) -- (0,2.64);
+      \foreach \y in {-1,1,2}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+      \clip(-4.31,-1.55) rectangle (3.31,2.64);
+      \draw[line width=1.6pt, smooth,samples=100,domain=-4.306720586404644:3.3067938031642226] plot(\x,{(-1)/4*((\x)^4+3*(\x)^3-3*(\x)^2-9*(\x))});
+      \draw (1.54,2.02) node[anchor=north west] {f};
+    \end{tikzpicture}
+  \end{center}
+  Bespreek (domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen).
 \end{oefening}
 
 \begin{oefening}
@@ -1335,7 +1286,6 @@ Los op in $\mathbb{R}$:
 \end{multicols}
 \end{oefening}
 
-
 \subsection{Tweedegraadsongelijkheden}
 
 De standaardvorm van een eerstegraadsongelijkheid is
@@ -1343,7 +1293,7 @@ De standaardvorm van een eerstegraadsongelijkheid is
 
 \subsubsection*{Voorbeeld}
 
-Los $-6x^2 + 5x + 6 \leq 0$ op in $\mathbb{R}$:
+Los  op in $\mathbb{R}$: \[ -6x^2 + 5x + 6 \leq 0 \]
 
 \subsubsection*{Grafisch}
 
@@ -1389,10 +1339,10 @@ en tekenen dan $f$. We lezen nu alle $x$-waarden af die een beeld hebben onder d
 
 Van de functie in het linkerlid van de ongelijkheid, $f(x)=-6x^2+5x+6$, bepalen we het tekenverloop:
 \begin{center}
-\begin{tabu} spread 1.5em{X[$c$]|X[$c$]X[$c$]X[$c$]X[$c$]X[$c$]X[$c$]X[$c$]}
+\begin{tabu} spread 1.5em{X[$c$]|*7{X[$c$]}}
     x&-\infty& &-\dfrac{2}{3}& &\dfrac{3}{2} &  &+\infty\\[.2em]
     \hline
-    y&       &-&     0      &+& 0 & -
+    y&       &-&     0       &+&       0     & -
   \end{tabu}
 \end{center}
 En dus rekening houdend met de ongelijkheid vinden we opnieuw
@@ -1403,7 +1353,7 @@ En dus rekening houdend met de ongelijkheid vinden we opnieuw
 Los op in $\mathbb{R}$:
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
-  \itemsep0.6em
+  \itemsep0.8em
   \item $-6x^2+13x-6\leq 0$
   \item $80x^2-20x-10\geq 0$
   \item $-15x^2+30x+45\geq 45$
@@ -1414,16 +1364,56 @@ Los op in $\mathbb{R}$:
 \end{multicols}
 \end{oefening}
 
-
-
 \subsection{Veeltermongelijkheden van hogere graad oplossen}
+
+\subsubsection*{M.b.v. tekenverloop}
+
+Los  op in $\mathbb{R}$: \[ 3(x^2-5) \geq 13x - x^3 \]
+
+We doorlopen volgende stappen:
+\begin{enumerate}[label=Stap \arabic*:]
+\item We brengen de vergelijking eerst in {\bf standaardvorm}:
+  \begin{align*}
+    && 3(x^2-5) &\geq 13x - x^3\\
+    \Leftrightarrow && \color{gray}{\underbrace{\color{black}{x^3 + 3x^2 -13x - 15}}_{f(x)}} &\geq 0
+  \end{align*}
+\item Het linkerlid kunnen we nu {\bf ontbinden in factoren} (bijvoorbeeld m.b.v. Horner, Discriminantmethode, gemeenschappelijke factor voorop plaatsen of merkwaardige producten)
+  \begin{center}
+    \begin{tabular}{c|cccc}
+      & 1 & 3 & -13 & -15\\
+      -1 & $\downarrow$ & -1 & -2 & -15\\
+      \hline
+      & 1 & 2 & -15 & 0
+    \end{tabular}
+  \end{center}
+  \begin{align*}
+    \Leftrightarrow && (x+1)(x^2+2x-15) &\geq 0\\
+                    && &\qquad D=64\\
+                    && &\qquad x_1=3 \vee x_2=-5\\
+    \Leftrightarrow && \color{gray}{\underbrace{\color{black}{(x+1)(x-3)(x+5)}}_{f(x)}} &\geq 0
+  \end{align*}
+\item We kunnen nu het {\bf tekenschema} bepalen. Vaak kunnen we hier onze ontbinding kiezen met allemaal factoren van de eerste graad, $f(x)=(x+1)(x-3)(x+5)$, of met nog factoren van de tweede graad in, $f(x)=(x+1)(x^2+2x-15)$. Het belangrijkste is dat ontbinding gelijk is aan de oorspronkelijke functie. We mogen dus zeker geen constante factoren vergeten, zeker niet als deze negatief zouden zijn.
+  \begin{center}
+    \begin{tabu} to\linewidth {X[2$c$]|*9{X[$c$]}}
+      x & -\infty &   & -5 &   & -1 &   & 3 &   & +\infty\\
+      \hline
+      x+1 &       & - &    & - &  0 & + &   & + &   \\
+      x-3 &       & - &    & - &    & - & 0 & + &   \\
+      x+5 &       & - & 0  & + &    & + &   & + &   \\
+      \hline
+      f(x)&       & - & 0  & + &  0 & - & 0 & + &
+    \end{tabu}
+  \end{center}
+\item En, rekening houdend met de gevonden tekens en met de ongelijkheid $f(x) \geq 0$ vinden we dus onze {\bf oplossingenverzameling}:
+  \[ V = [-5,-1] \cup [3,+\infty[ \]
+\end{enumerate}
 
 
 \begin{oefening}
   Los op in $\mathbb{R}$:
   \begin{multicols}{2}
     \begin{enumerate}[(a)]
-      \itemsep0.6em
+      \itemsep0.8em
     \item $x^2(2-x)\leq6-5x$
     \item $2x^3-x^2-13x<6$
     \item $x(x+2)^2\leq9+x-x^2$
@@ -1443,15 +1433,20 @@ Los op in $\mathbb{R}$:
 \end{oefening}
 
 \begin{oefening}
-  Welke reële getallen zijn groter dan hun derdemacht?
+  \begin{enumerate}[(a)]
+    \itemsep.8em
+  \item Welke reële getallen zijn groter dan hun derdemacht?
+  \item Voor welke reële getallen is het kwadraat groter dan de derdemacht
+  \end{enumerate}
 \end{oefening}
-
-\begin{oefening}
-  Voor welke reële getallen is het kwadraat groter dan de derdemacht
-\end{oefening}
-
 
 \subsection{Veeltermongelijkheden oplossen m.b.v. Geogebra}
+
+% TODO
+
+\begin{oefening}
+Gebruik geogebra om voorgaande oefeningen op te lossen.
+\end{oefening}
 
 \begin{oefening}
   \begin{enumerate}[(a)]
@@ -1463,7 +1458,6 @@ Los op in $\mathbb{R}$:
     grafisch.
   \end{enumerate}
 \end{oefening}
-
 
 \newpage
 \section{Toepassingen}
@@ -1570,7 +1564,7 @@ Hoe hoog is de vensterbank van het raam waaruit Stef de ballon laat vliegen? Dui
   \begin{tabular}{|ccccc|}
   \hline
   4 meter & 6 meter & 8 meter & 12 meter & 18 meter\\[0.2cm]
-  \hline    
+  \hline
   \end{tabular}
 \end{center}
 \end{oefening}
@@ -1584,7 +1578,5 @@ Een ecologische verbindingsbrug moet worden ontworpen over een belangrijke snelw
   \item Bepaal de maximale hoogte van de boog over de snelweg.
 \end{enumerate}
 \end{oefening}
-
-
 
 \end{document}
