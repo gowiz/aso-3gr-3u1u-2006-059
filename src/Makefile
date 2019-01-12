@@ -20,6 +20,11 @@ all: $(PDFOUT) $(OEFPDF)
 %_Oefeningen.tex:  %.tex
 	cat $< | ../exex.o > $@
 
+.PHONY: release
+release: all
+	mkdir -p ../release
+	cp *.pdf ../release
+
 .PHONY: clean
 clean:
 	latexmk -c
