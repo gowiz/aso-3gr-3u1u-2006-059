@@ -1,4 +1,4 @@
-\documentclass[12pt,twoside,a4]{article}
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
 
@@ -53,10 +53,10 @@
 \thispagestyle{empty}
 \pagebreak
 
-%% Inhoudsopgave
-
 \begin{singlespacing}
-\tableofcontents
+  \begin{small}
+    \tableofcontents
+  \end{small}
 \end{singlespacing}
 \thispagestyle{empty}
 \pagebreak
@@ -64,6 +64,8 @@
 \pagenumbering{arabic}
 
 \section{Definitie}
+
+\subsection{Getalverzamelingen}
 
 We zijn bekend met de volgende verzamelingen
 \begin{itemize}
@@ -93,7 +95,6 @@ We kunnen geen vierkantswortel van een negatief getal nemen, daarom voeren we ee
   \item waarin alle vergelijkingen van de tweede graad een oplossing hebben.
 \end{itemize}
 
-\pagebreak
 \paragraph*{Definitie}
 \begin{mdframed}
 We hebben het getal $i$, waarvoor geldt
@@ -115,7 +116,6 @@ $$\mathbb{C}=\{ a + bi \;|\; a\in\mathbb{R}, b\in\mathbb{R}\}$$
   \item Een complex getal waarbij $b=0$ noemen we een {\bf reëel getal}.
   \item Een complex getal waarbij $a=0$ noemen we een {\bf zuiver imaginair getal}.
   \item Een complex getal waarbij $b\neq 0$ noemen we een {\bf imaginair getal}. Dus een imaginair getal is een complex getal dat geen reëel getal is.
-  \item Twee complexe getallen met tegengesteld reële deel en tegengesteld imaginaire deel noemen we {\bf tegengestelden}.
   \item De vorm waarin we een complex getal als $a+bi$ schrijven wordt de {\bf Carthesische gedaante} genoemd, we zien later nog een andere manier om een complex getal op te schrijven.
 \end{itemize}
 
@@ -148,9 +148,6 @@ Met voorgaande definitie kunnen we nu $x^2+4=0$ oplossen. De oplossingen zijn na
   $$2+3i\qquad -i+1\qquad 0 \qquad 2i$$
 \end{oefening}
 
-\pagebreak
-\section{Basisbewerkingen met complexe getallen}
-
 \subsection{Gelijkheid}
 
 \subsubsection*{Definitie}
@@ -159,10 +156,25 @@ Twee complexe getallen zijn {\bf gelijk} als en slechts als hun reële delen en 
 \end{mdframed}
 
 \subsubsection*{Notatie}
+We schrijven $z_1=z_2$ als $z_1$ en $z_2$ gelijk zijn.
 $$a+bi = c+di \LRA \begin{cases}a=c \\ b=d\end{cases}$$
 
 \subsubsection*{Merk op}
 Complexe getallen kunnen niet geordend worden, dus een ongelijkheid als bijvoorbeeld kleiner dan kan niet gedefinieerd worden.
+
+\subsection{Tegengestelden}
+
+\subsubsection*{Definitie}
+\begin{mdframed}
+Twee complexe getallen met tegengesteld reële deel en tegengesteld imaginaire deel noemen we {\bf tegengestelden}.
+\end{mdframed}
+
+\subsubsection*{Notatie}
+$-z$ is het tegengestelde van $z$.
+\[z=a+bi \Rightarrow -z=-a-bi\]
+
+\subsubsection*{Voorbeeld}
+$$-(2+3i)=-2-3i$$
 
 \subsection{Complex toegevoegde}
 
@@ -197,8 +209,10 @@ Bepaal het complex toegevoegde van:
   \item Wat is het complex toegevoegde van het complex toegevoegde van een getal $z\in\mathbb{C}$.
   \item Wat is het complex toegevoegde van een getal $x\in\mathbb{R}$.
 \end{enumerate}
-
 \end{oefening}
+
+\pagebreak
+\section{Basisbewerkingen met complexe getallen}
 
 \subsection{Optelling}
 
@@ -1260,7 +1274,7 @@ Reële delen en imaginaire delen gelijk stellen geeft ons
 
 \pagebreak
 
-\section{Machtswortels zoeken m.b.v. de goniometrische gedaante}
+\section{Machtswortels zoeken m.b.v. de goniometrische ge-daante}
 
 \subsection{Definitie}
 
