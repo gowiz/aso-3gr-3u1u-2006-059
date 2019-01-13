@@ -1,21 +1,10 @@
-\documentclass[12pt,twoside]{article}
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
 
-\usepackage{pgfplots}
 \usepackage{relsize}
 
-\usepackage{versions}
-%\includeversion{theorie}
-\excludeversion{theorie}
-
 \begin{document}
-
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Logaritmen}
-
-\begin{theorie}
 
 \thispagestyle{empty}
 \begin{center}
@@ -24,7 +13,7 @@
   \fontsize{40}{60}\selectfont Logaritmische functies
   \end{mdframed}
   \vfill
-  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+  \begin{tikzpicture}
   \draw[->,color=black] (-2.52,0) -- (6.4,0);
   \foreach \x in {-2,2,4,6}
   \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
@@ -77,11 +66,11 @@ Je \hfill  {\scriptsize(LP2006-059, LI1.8, ET23,14,32,25,31,24)}
 \fancyhead[RO,LE]{Logaritmische functies}
 \fancyhead[RE,LO]{}
 
-\end{theorie}
+
 
 \section{Definitie}
 
-\begin{theorie}
+
 
 \paragraph{Logaritme}
 \begin{mdframed}
@@ -106,12 +95,9 @@ Een logaritme zoeken is dus een exponent zoeken!
   Dus $\log_5\sqrt{125} = \dfrac{3}{2}$
 \end{enumerate}
 
-\end{theorie}
-
 \begin{oefening} % from mathcentre logarithms 2009
 Herschrijf met behulp van logaritmen i.p.v. met machten.
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
+\begin{exlist}{2}
   \item $8^2=64$
   \item $10^6=1000000$
   \item $5^{-1}=\dfrac{1}{5}$
@@ -124,27 +110,21 @@ Herschrijf met behulp van logaritmen i.p.v. met machten.
   \item $5^3=125$
   \item $6^0=1$
   \item $32^{-2/5}=\dfrac{1}{4}$
-\end{enumerate}
-\end{multicols}
+\end{exlist}
 \end{oefening}
 
 \begin{oefening}
 Zoek de logaritme met grondtal $a$ van de volgende getallen:
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-  \itemsep0.7em
+\begin{exlist}{2}
   \item $\log_2 16$
   \item $\log_3 81$
   \item $\log_2 8$
   \item $\log_{10} 10000$
   \item $\log_3 \dfrac{1}{9}$
   \item $\log_e \sqrt{e}$
-\end{enumerate}
-\end{multicols}
+\end{exlist}
 \end{oefening}
 
-\begin{theorie}
-\pagebreak
 \paragraph{Gevolgen}
 \begin{itemize}
   \item Nul en strikt negatieve getallen hebben geen logaritme
@@ -164,12 +144,9 @@ Zoek de logaritme met grondtal $a$ van de volgende getallen:
   \end{mdframed}
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening} % from mathcentre logarithms 2009
 Bepaal de waarde van de volgende logaritmen.
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
+\begin{exlist}{2}
   \item $\log_3 9$
   \item $\log_4 64$
   \item $\log_3 \dfrac{1}{27}$
@@ -186,8 +163,7 @@ Bepaal de waarde van de volgende logaritmen.
   \item $\log_{81} 8$
   \item $\log_4 8$
   \item $\log_e \dfrac{1}{e^3}$
-\end{enumerate}
-\end{multicols}
+\end{exlist}
 \end{oefening}
 
 \begin{oefening}
@@ -204,8 +180,6 @@ Bereken:
 
 \pagebreak
 \section{Bijzondere logaritmen}
-
-\begin{theorie}
 
 \subsection{Briggse logaritmen}
 
@@ -242,26 +216,20 @@ Is het grondtal $a$ gelijk aan $e$ dan spreken we van {\bf natuurlijke logaritme
 \paragraph{Rekenmachine} Natuurlijke logaritmen kunnen op de zakrekenmachine met de \zrm{ln} toets worden berekend.
 Zo is $\ln 3459 = 8.1487348$
 
-\end{theorie}
-
 \begin{oefening}
 Bereken met je \zrm{ZRM}, noteer je resultaat met 3 decimalen nauwkeurig.
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
+\begin{exlist}{2}
   \item $\log 12345$
   \item $\log 98.76$
   \item $\log 1.111$
   \item $\ln 12345$
   \item $\ln 98.76$
   \item $\ln 1.111$
-\end{enumerate}
-\end{multicols}
+\end{exlist}
 \end{oefening}
 
 \pagebreak
 \section{Rekenregels}
-
-\begin{theorie}
 
 \subsection{Rekenregels van logaritmen met grondtal $a$}
 
@@ -283,7 +251,7 @@ $\forall x,y \in \mathbb{R}_0^+, \forall p\in \mathbb{R}:$
                    &=& \log_a x + \log_a y
 \end{eqnarray*}
 
-\end{theorie}
+
 
 \begin{oefening}
 Bewijs de rekenregels voor logaritmen.
@@ -346,6 +314,7 @@ Elk van de volgende uitdrukkingen kan herschreven worden als $\log N$. Bepaal de
 Zoek $x$.
 \begin{exlist}{2}
   \item $\log x + \log 4x = 2$
+  \item $\log_3(5x) - \log_3(2x) = 1$
   \item $2\log_2 x + \log_2 8x = -3$
 \end{exlist}
 \end{oefening}
@@ -360,7 +329,6 @@ Bepaal het grondtal $a$.
 \end{exlist}
 \end{oefening}
 
-
 \begin{oefening}{\scriptsize Bron: Examencomissie Toelatingsexamen Arts en Tandarts, Augustus 2016, 12203}\\
 Als $\displaystyle f(x)=e^{4x-3}$, wat is dan $\displaystyle f\left(1-\ln\left(\dfrac{1}{x}\right)\right)$?
 \begin{enumerate}[(A)]
@@ -372,9 +340,6 @@ Als $\displaystyle f(x)=e^{4x-3}$, wat is dan $\displaystyle f\left(1-\ln\left(\
 \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsection{Veranderen van grondtal}
 
 \begin{mdframed}
@@ -403,8 +368,6 @@ $\forall a,b,c \in \mathbb{R}_0^+\backslash\{1\}:$
                &= \dfrac{1}{4}
   \end{align*}
 \end{itemize}
-
-\end{theorie}
 
 \begin{oefening} % argument
 Bereken zonder \zrm{ZRM}
@@ -444,8 +407,6 @@ Gebruik logaritmen om de volgende vergelijkingen op te lossen. Geef de oplossing
 
 \pagebreak
 \section{Logaritmische functie}
-
-\begin{theorie}
 
 \subsection{Definitie}
 De reële functie die elk reëel getal afbeeldt op zijn logaritme met grondtal $a$ noemen we de {\bf logaritmische functie met grondtal $a$}:
@@ -523,8 +484,6 @@ De logaritmische functie met grondtal $a$ en de exponentiële functie met grondt
   \item De $y$-as met vergelijking $x=0$ is een verticale asymptoot.
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
 Teken op éénzelfde assenstelsel de functies
 $$f(x)=e^x\qquad g(x)=\ln(x)$$
@@ -551,37 +510,37 @@ Maak de grafiek van de logaritmische functie met voorschrift:
 \begin{oefening}
 Hieronder vind je de grafiek van een logaritmische functie met voorschrift $f(x)=\log_a x$. Lees $a$ op de figuur af.
 \begin{exlist}{2}
-  \item
+\item
   \begin{center}
-\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.5cm,ystep=0.5cm] (-0.5,-0.5) grid (5.5,5.5);
-\draw[->,color=black] (-0.5,0) -- (5.5,0);
-\foreach \x in {1,2,3,4,5}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-0.5) -- (0,5.5);
-\foreach \y in {1,2,3,4,5}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-0.5,-0.5) rectangle (5.5,5.5);
-\draw[line width=1.6,smooth,samples=100,domain=0.01:5.5] plot(\x,{ln((\x))/ln(1.5)});
-\end{tikzpicture}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.5cm,ystep=0.5cm] (-0.5,-0.5) grid (5.5,5.5);
+      \draw[->,color=black] (-0.5,0) -- (5.5,0);
+      \foreach \x in {1,2,3,4,5}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+      \draw[->,color=black] (0,-0.5) -- (0,5.5);
+      \foreach \y in {1,2,3,4,5}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+      \clip(-0.5,-0.5) rectangle (5.5,5.5);
+      \draw[line width=1.6,smooth,samples=100,domain=0.01:5.5] plot(\x,{ln((\x))/ln(1.5)});
+    \end{tikzpicture}
   \end{center}
-  \item
+\item
   \begin{center}
-\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.5cm,ystep=0.5cm] (-0.5,-0.5) grid (5.5,5.5);
-\draw[->,color=black] (-0.5,0) -- (5.5,0);
-\foreach \x in {1,2,3,4,5}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-0.5) -- (0,5.5);
-\foreach \y in {1,2,3,4,5}
-\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-0.5,-0.5) rectangle (5.5,5.5);
-\draw[line width=1.6,smooth,samples=100,domain=0.01:5.5] plot(\x,{ln((\x))/ln(0.75)});
-\end{tikzpicture}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=0.5cm,ystep=0.5cm] (-0.5,-0.5) grid (5.5,5.5);
+      \draw[->,color=black] (-0.5,0) -- (5.5,0);
+      \foreach \x in {1,2,3,4,5}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+      \draw[->,color=black] (0,-0.5) -- (0,5.5);
+      \foreach \y in {1,2,3,4,5}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+      \clip(-0.5,-0.5) rectangle (5.5,5.5);
+      \draw[line width=1.6,smooth,samples=100,domain=0.01:5.5] plot(\x,{ln((\x))/ln(0.75)});
+    \end{tikzpicture}
   \end{center}
 \end{exlist}
 \end{oefening}
@@ -621,8 +580,6 @@ $$S_t=S_0e^{-0.35\cdot t}$$
 \end{enumerate}
 \end{oefening}
 
-\vspace*{-0.5cm}
-
 \begin{oefening}
 Op het tijdstip $t=0$ bevat een bacteriën kolonie 400 bacteriën. Elk uur groeit het aantal aan met $5 \%$. We vonden de formule voor het aantal $N$ na $t$ uur:
 $$N=400\cdot 1.05^t\;.$$
@@ -652,8 +609,7 @@ Als je geld belegt, dan is de {\em verdubbelingstijd} de tijd nodig om je geld t
 \end{enumerate}
 \end{oefening}
 
-
-\newpage
+\pagebreak
 \section*{Extra Oefeningen}
 
 \begin{oefening}
@@ -736,38 +692,5 @@ $$Q=Q_0e^{0.195t}\;.$$
 Als er initieel 500 bacteriën zijn en $t$ wordt gegeven in uren, bepaal dan hoeveel bacteriën $Q$ er zullen zijn na een halve dag. Hoe lang zal het duren tegen dat er 10000 bacteriën in de kolonie zullen zijn?
 \end{oefening}
 
-\vspace*{-1cm}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
-
-
-
-
-\begin{minipage}[c]{0.4\textwidth}
-\end{minipage}
-\begin{minipage}[c]{0.6\textwidth}
-\dotlines{10}
-\end{minipage}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
