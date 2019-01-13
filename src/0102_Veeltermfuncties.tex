@@ -90,8 +90,7 @@
 \fancyhead[RO,LE]{Veeltermfuncties}
 \fancyhead[RE,LO]{}
 
-\onehalfspacing
-
+\cleardoublepage
 \section{Veeltermvergelijkingen}
 
 \subsection{Definitie}
@@ -145,7 +144,6 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
   \end{enumerate}
 \end{oefening}
 
-\pagebreak
 \subsection{Veeltermvergelijkingen van de eerste graad}
 
 \begin{itemize}
@@ -189,7 +187,6 @@ $$ax^n\qquad\qquad\mbox{ met }a\in\mathbb{R}, n\in\mathbb{N}$$
   \end{multicols}
 \end{oefening}
 
-\pagebreak
 \subsubsection*{Toepassingen}
 
 Volgende oefeningen geven toepassingen waarbij we vergelijkingen van de eerste graad oplossen. Ga steeds als volgt te werk:
@@ -222,7 +219,6 @@ Aron gaat om de twee dagen trainen met zijn koersfiets. Hij begint de maandag en
 
 \vfill\hfill\includegraphics[width=4cm]{fietser}
 
-\pagebreak
 \subsection{Veeltermvergelijkingen van de tweede graad}
 
 \begin{itemize}
@@ -339,7 +335,6 @@ De ring links en de cirkel rechts hebben dezelfde oppervlakte. Bepaal $x$.
 \end{center}
 \end{oefening}
 
-\pagebreak
 \subsection{Veeltermvergelijkingen van graad $\geq 3$}
 
 Veeltermvergelijkingen van hogere graad kunnen we oplossen door handmatig (m.b.v. een ZRM) één oplossing $x=a$ te zoeken waardoor we van de veelterm een deler $x-a$ kunnen afsplitsen. De restveelterm kan gevonden worden m.b.v. het {\bf algoritme van Horner}.
@@ -451,7 +446,6 @@ Los op in $\mathbb{R}$:
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
 \subsection{Veeltermvergelijkingen oplossen m.b.v. Geogebra}
 
 \subsection*{Eerste methode}
@@ -528,7 +522,7 @@ moeten vinden.
 \end{oefening}
 
 
-\pagebreak
+\cleardoublepage
 \section{Veeltermfuncties}
 
 \subsection{Definities}
@@ -577,7 +571,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
 \end{multicols}
 \end{oefening}
 
-\pagebreak
 \subsection{Veeltermfuncties van graad 0}
 
 \begin{itemize}
@@ -659,7 +652,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{center}
 \end{oefening}
 
-\pagebreak
 \subsection{Veeltermfuncties van graad 1}
 
 \begin{itemize}
@@ -766,7 +758,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{center}
 \end{oefening}
 
-\pagebreak
 \subsection{Veeltermfuncties van graad 2}
 
 \begin{itemize}
@@ -797,7 +788,6 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \end{enumerate}
 \end{oefening}
 
-\pagebreak
 \paragraph*{Tweedegraadsfuncties bespreken}
 \begin{mdframed}
   \begin{itemize}
@@ -964,7 +954,6 @@ Bepaal het functievoorschrift van
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
 \subsection{Veeltermfuncties van graad 3 of hoger}
 
 \begin{itemize}
@@ -1040,7 +1029,6 @@ $$f(x)=(x-3)(x+1)(2x-1)$$
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
 \subsection{Hogeregraadsveeltermfuncties bespreken m.b.v. Geogebra}
 Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra} gebruiken om hogeregraadsveeltermfuncties te bespreken. We plotten eerst de grafiek en bespreken daarna alle karakteristieken.
 
@@ -1049,7 +1037,7 @@ Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra
   $$f(x)=x^5-5x^3+4x$$ gegenereerd. Lees aan de hand van de grafiek het domein, de nulwaarden en de extrema af. Bepaal het tekenverloop, het stijgen en dalen en de symmetrieën van de functie.
   \begin{center}
     \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-    \begin{tikzpicture}[scale=1.1, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \begin{tikzpicture}[scale=0.95, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
       \draw [color=cqcqcq,dash pattern=on 2pt off 2pt, xstep=1.0cm,ystep=1.0cm] (-7.22,-6.82) grid (8.13,6.66);
       \draw[->,color=black] (-7.22,0) -- (8.13,0);
       \foreach \x in {-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7,8}
@@ -1062,6 +1050,7 @@ Alternatief kunnen we ook I.C.T., zoals bijvoorbeeld het programma {\em Geogebra
       \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
       \clip(-7.22,-6.82) rectangle (8.13,6.66);
       \draw[line width=1.6pt, smooth,samples=100,domain=-2.2:2.2] plot(\x,{(\x)^5-5*(\x)^3+4*(\x)});
+      \draw (2.2,4.5) node [anchor=west] {$f$};
     \end{tikzpicture}
   \end{center}
 \end{oefening}
@@ -1190,7 +1179,7 @@ Bespreek door gebruik te maken van ICT (domein, bereik, nulwaarden, tekenverloop
 Construeer een veeltermfunctie van de vierde graad met nulwaarden $x_0=-4$, $x_1=2$ en $x_2=3$. De nulwaarde $x_1$ komt tweemaal voor (we zeggen dat deze multipliciteit 2 heeft). De functie moet negatief zijn voor $x\in]-\infty,-4[$.
 \end{oefening}
 
-\newpage
+\cleardoublepage
 \section{Veeltermongelijkheden}
 
 \subsection{Definities}
@@ -1459,7 +1448,7 @@ Gebruik geogebra om voorgaande oefeningen op te lossen.
   \end{enumerate}
 \end{oefening}
 
-\newpage
+\cleardoublepage
 \section{Toepassingen}
 
 \begin{oefening}
