@@ -2,16 +2,7 @@
 
 \input{../gowiz.tex}
 
-\usepackage{versions}
-\excludeversion{theorie}
-
 \begin{document}
-
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Rationale functies}
-
-\begin{theorie}
 
 \thispagestyle{empty}
 \begin{center}
@@ -19,39 +10,99 @@
   \centering
   \fontsize{40}{50}\selectfont Rationale functies
   \end{mdframed}
-  \vfill
-  \vfill
+%  \vfill
+  \includegraphics[width=8cm]{youshallnotpass}
+%  \vfill
 \end{center}
+\vspace*{-3.5cm}
+\begin{singlespace}
 \subsection*{Doelstelling}
-Je kan de afgeleiden functie bepalen van\hfill  {\scriptsize(LP 2006-059, LI 1.6.13, 1.7.8, 1.8.6, 1.9.6)}
+Je kan \hfill  {\scriptsize(LP 2006-059, LI 1.3, ET 14, 31, 32)}
 \begin{itemize}
-  \item goniometrische functies
-  \item exponentiële functies
-  \item logaritmische functies
-  \item irrationale functies
+  \item rationale vergelijkingen oplossen, waarbij de graad van teller en noemer hoogstens gelijk is aan twee
+  \item aan de hand van het functievoorschrift:
+    \begin{itemize}
+    \item een tabel,
+    \item het domein,
+    \item de nulwaarden,
+    \item het tekenverloop
+    \end{itemize}
+    bepalen van rationale functies waarbij de graad van teller en noemer hoogstens gelijk is aan twee
+  \item kunnen aan de hand van de grafiek:
+    \begin{itemize}
+    \item domein,
+    \item bereik,
+    \item nulwaarden,
+    \item tekenverloop,
+    \item stijgen/dalen,
+    \item extrema
+    \end{itemize}
+    bepalen van rationale functies waarbij de graad van teller en noemer hoogstens gelijk is aan twee
+  \item rationale ongelijkheden oplossen (eventueel met behulp van ICT), waarbij de graad van teller en noemer hoogstens gelijk is aan twee
+  \item het asymptotische gedrag van een grafiek aflezen
+  \item vraagstukken/problemen oplossen die aanleiding geven tot een rationale vergelijking, ongelijkheid of functie
 \end{itemize}
+\end{singlespace}
 
 
-\pagestyle{empty}
-\mbox{}
-\newpage
-\clearpage
 \thispagestyle{empty}
-%\mbox{}
+\newpage
+
+
+\thispagestyle{empty}
 \tableofcontents
 \newpage
-\clearpage
+
+
 \pagenumbering{arabic}
 
 \pagestyle{fancy}
-\lhead{}
-\rhead{Afgeleiden van bijzondere functies}
-
-\end{theorie}
-
-\onehalfspacing
+\fancyhead[RO,LE]{Rationale functies}
+\fancyhead[RE,LO]{}
 
 \section{Rationale vergelijkingen}
+
+\subsection{Definitie}
+
+\begin{mdframed}
+Een {\bf rationale vergelijking} is een vergelijking van de vorm
+$$\dfrac{t(x)}{n(x)}=0$$
+met $t(x)$ en $n(x)$ veeltermen.
+\end{mdframed}
+
+Het randgeval waarbij $q(x)=c$ met $c$ een constante $\in \mathbb{R}$ is dan ook een veeltermvergelijking. Veeltermvergelijkingen werden reeds in een vorig hoofdstuk besproken.
+
+\paragraph{Voorbeeld}
+
+We lossen de vergelijking
+$$\dfrac{x^2-4}{x^2+2x}=0$$
+op. Hierbij is de teller $t(x)=x^2-4$ en de noemer $n(x)=x^2+2x$.
+
+\begin{align*}
+  && \dfrac{x^2-4}{x^2+2x} &= 0\\
+  \Leftrightarrow &&              x^2-4 &= 0 \cdot (x^2+2x) \\
+  \Leftrightarrow &&              x^2-4 &= 0\\
+  \Leftrightarrow &&              x = 2 &\vee x = -2
+\end{align*}
+
+Dat gaat vlot. Voordat we onze oplossingen in een oplossingenverzameling plaatsen, maken we nog eerst de proef en merken we dat het fout gaat voor $x=-2$ in de noemer! De enige geldige oplossing is dus
+$$V=\{2\}$$
+
+\subsection{Bestaansvoorwaarde}
+Als we vergelijkingen oplossen, dan eisen we dat de gevonden oplossingen wel degelijk in de vergelijking ingevuld kunnen worden. Bij rationale vergelijkingen zullen we daarom eisen dat de noemer geen nul wordt. Deze eis is de {\bf bestaansvoorwaarde} of kort {\bf BV}.
+
+We krijgen dus de eis:
+$$ \text{BV: } n(x) \neq 0 $$
+
+\subsection{Werkwijze: algebraïsch oplossen van rationale vergelijkingen}
+\begin{enumerate}[(1)]
+\item Je herleidt de gegeven vergelijking op nul.
+\item Je stelt de bestaansvoorwaarde op.
+\item Je stelt de teller gelijk aan nul en lost deze op.
+\item Je schrijft de oplossingsverzameling $V$, hier komen alle oplossingen in als ze voldoen aan de bestaansvoorwaarde.
+\end{enumerate}
+
+\subsection{Oefeningen}
 
 \begin{oefening} % voorbeeld oefeningen
 Los op in $\mathbb{R}$:\\
@@ -150,6 +201,21 @@ Een knutselaar kocht voor 1200 euro verf. Als elke pot 20 euro meer zou kosten, 
 
 \pagebreak
 \section{Rationale functies}
+
+\subsection{Definities}
+
+Wanneer we een functie $f(x)$ hebben waarbij er een breuk is met in de noemer een onbepaalde $x$, zullen we van een rationale functie spreken.
+
+\paragraph*{Definitie}
+\begin{mdframed}
+Een {\bf rationale functie} is een reële functie met een voorschrift van de vorm
+
+$$f(x)=\dfrac{t(x)}{n(x)}$$
+
+waarbij $t(x)$ en $n(x)$ veeltermen zijn, en waarbij uiteraard de noemer niet de nulveelterm is.
+\end{mdframed}
+
+Wij bestuderen rationale functies waarbij de graad van teller en noemer $\leq 0$ is.
 
 \begin{oefening}
 Bespreek volgende rationale functies waarbij teller en noemer van de eerste graad zijn (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):\\
@@ -294,8 +360,6 @@ Bepaal de oplossingsverzameling van $\dfrac{1}{x} - 4 \geq 1$\\
 \end{enumerate}
 \end{oefening}
 
-
-
 \begin{oefening}
 De grootte van een konijnenpopulatie wordt gegeven door
 $$f(x)=\dfrac{150x+90}{x+3}\;.$$
@@ -350,7 +414,6 @@ Hierbij is
 Als de temperatuur lager wordt dan 1 $^\circ$C is er gevaar voor schade aan het voedsel. Hoe lang bevond de temperatuur zich onder 1 $^\circ$C? Van wanneer tot wanneer?
 \end{oefening}
 
-%\newpage
 \end{document}
 
 
