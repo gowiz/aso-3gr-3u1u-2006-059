@@ -215,10 +215,93 @@ $$f(x)=\dfrac{t(x)}{n(x)}$$
 waarbij $t(x)$ en $n(x)$ veeltermen zijn, en waarbij uiteraard de noemer niet de nulveelterm is.
 \end{mdframed}
 
-Wij bestuderen rationale functies waarbij de graad van teller en noemer $\leq 0$ is.
+Wij bestuderen rationale functies waarbij de graad van teller en noemer $\leq 2$ is. In wat volgt zullen we vaak rekening moeten houden met de nulwaarden uit de noemer. Daarom geven we daar een naam aan.
+
+\paragraph*{Definitie}
+\begin{mdframed}
+Een nulwaarde van de noemer, dus een $x$ zodat $n(x)=0$, noemen we een {\bf pool van de functie}, kortweg pool.
+\end{mdframed}
+
+
+In dit hoofdstuk zal steeds naar voor komen dat rationale functies een bepaalde waarde kunnen naderen. We definiëren daarom ook nog.
+
+\paragraph*{Definitie}
+\begin{mdframed}
+Een rechte waarnaar een functie blijft naderen zonder deze ooit te snijden noemen we een {\bf asymptoot van de functie}, kortweg asymptoot.
+\end{mdframed}
+
+We spreken expliciet van naderen. Dit wordt soms verward met niet mogen snijden. Maar het is niet omdat een functie de asymptoot snijdt, dat de asymptoot de asymptoot niet meer is! De grafiek mag enkel de asymptoot niet snijden terwijl die ernaar nadert. Zo heeft onderstaande functie bijvoorbeeld een horizontale asymptoot $y=1$, terwijl de asymptoot de functie snijdt in $(5,1)$.
+
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[
+      scale=.7,
+      x=1.0cm,y=1.0cm,
+      axis lines=middle,
+      xmin=-1.4,
+      xmax=10.4,
+      ymin=-1.1,
+      ymax=2.4,
+      xlabel={x},
+      ylabel={y},
+      samples=100]
+      \addplot[line width=1.6pt,smooth,domain=-5.4:10.4] {-2*x*exp(-(x-5)^2)+10*exp(-(x-5)^2) + 1};
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+We zullen nu al grafisch asymptoten leren opsporen. Het correct wiskundig definiëren en algebraïsch bepalen van asymptoten zullen we pas in het hoofdstuk over {\em limieten} leren, zie later.
+
+\subsection{Basisfunctie $y=\frac{1}{x}$}
+
+De meest eenvoudige rationale functie is
+$$f(x) = \dfrac{1}{x}$$
+
+\paragraph{Grafiek:}\vspace*{-1cm}
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[
+      scale=.7,
+      x=1.0cm,y=1.0cm,
+      axis lines=middle,
+      xmin=-9.4,
+      xmax=12.4,
+      ymin=-5.4,
+      ymax=6.4,
+      xlabel={x},
+      ylabel={y},
+%      xticklabels={-6,-5},
+%      yticklabels={-1,0,1},
+      samples=100]
+      \addplot[line width=1.6pt,smooth,domain=-12.4:-0.1] (x,1/x);
+      \addplot[line width=1.6pt,smooth,domain=0.1:12.4] (x,1/x);
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+Deze grafiek noemen we een {\bf hyperbool}.
+
+\paragraph{Domein:}
+0 heeft geen beeld, dus
+$$\dom f = \mathbb{R}_0$$
+
+\paragraph{Bereik:}
+We merken dat $y=0$ ontbreekt als we de grafiek samendrukken op de $y$-as, dus
+$$\ber f = \mathbb{R}_0$$
+\paragraph{Nulwaarden:}
+De $x$-as heeft geen snijpunten met de grafiek, dus
+$$\mbox{nulp } f: \diagup$$
+
+\paragraph{Asymptoten:}
+De grafiek nadert zowel de $x$-as als de $y$-as. Dit zijn dus allebei asymptoten. De $x$-as noemen we dan een horizontale asymptoot (HA). De $y$-as noemen we dan een verticale asymptoot (VA). Dus
+$$\text{HA}: y=0$$
+$$\text{VA}: x=0$$
+
+\subsection{Homografische functies $y=\frac{ax+b}{cx+d}$}
+
 
 \begin{oefening}
-Bespreek volgende rationale functies waarbij teller en noemer van de eerste graad zijn (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):\\
+Bespreek volgende rationale functies waarbij teller en noemer van de eerste graad zijn (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep0.6em
@@ -234,7 +317,7 @@ Bespreek volgende rationale functies waarbij teller en noemer van de eerste graa
 \end{oefening}
 
 \begin{oefening}
-Bespreek volgende rationale functies waarbij teller en noemer van de tweede graad zijn (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):\\
+Bespreek volgende rationale functies waarbij teller en noemer van de tweede graad zijn (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):
 \begin{multicols}{2}
 \begin{enumerate}[(a)]
   \itemsep0.6em
