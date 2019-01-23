@@ -22,3 +22,4 @@ _region_.tex
 .predictive
 auto
 *.o
+.#*
