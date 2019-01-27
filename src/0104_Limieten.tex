@@ -1,10 +1,6 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
-
-\usepackage{versions}
-\excludeversion{theorie}
-%\includeversion{theorie}
 
 \newenvironment{definitie}
 {
@@ -40,13 +36,6 @@
 
 \begin{document}
 
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Limieten}
-
-\begin{theorie}
-
-\thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
     \centering
@@ -67,37 +56,32 @@ Je \hfill  {\scriptsize(LP 2006-059, LI 1.4)}
 \end{itemize}
 
 \thispagestyle{empty}
-\mbox{}
 \newpage
-\clearpage
-\thispagestyle{empty}
+
 \tableofcontents
+\thispagestyle{empty}
 \newpage
-\clearpage
+
 \pagenumbering{arabic}
 
-\lhead{}
-\rhead{Limieten}
+\pagestyle{fancy}
+\fancyhead[RO,LE]{Limieten}
+\fancyhead[RE,LO]{}
 
-\onehalfspacing
+\cleardoublepage
+\section{Begrip limiet}
 
-\end{theorie}
-
-\section{Limieten in een reëel getal}
-
-\begin{theorie}
+\subsection{Limieten in een reëel getal}
 
 \subsubsection*{Eindige limieten in een reëel getal}
 \begin{definitie}
-  We zeggen dat een reëel getal $b$ de {\bf limiet is van $f$ voor $x$ gaande naar $a$} als de functiewaarden $f(x)$ willekeurig dicht bij $b$ komen voor $x$-waarden in de buurt van $a$. We noteren dit als
+We zeggen dat een reëel getal $b$ de {\bf limiet is van $f$ voor $x$ gaande naar $a$} als de functiewaarden $f(x)$ willekeurig dicht bij $b$ komen voor $x$-waarden in de buurt van $a$. We noteren dit als
   $$\lim_{x\to a} f(x)=b$$
 \end{definitie}
 
 In andere gevallen spreken we af dat de limiet in $a$ niet bestaat.
 
 {\em Maak de oefeningen op aparte bladen.}
-
-\end{theorie}
 
 \begin{oefening}
   Beschouw de functie
@@ -139,21 +123,16 @@ In andere gevallen spreken we af dat de limiet in $a$ niet bestaat.
   \item $\displaystyle\lim_{x\to-1} f(x)$
   \item $\displaystyle\lim_{x\to0} f(x)$
   \end{enumerate}
-
 \end{oefening}
 
-\begin{theorie}
-\newpage
+\needspace{3cm}
 \subsubsection*{Oneindige limieten in een reëel getal}
 
 \begin{definitie}
   We zeggen de {\bf limiet van $f$ voor $x$ gaande naar $a$ is $+\infty$} als de functiewaarden $f(x)$ willekeurig groot worden voor $x$-waarden in de buurt van $a$. We noteren dit als
   $$\lim_{x\to a}f(x)=+\infty$$
-
   Op analoge wijze definiëren en noteren we $\displaystyle\lim_{x\to a}f(x)=-\infty$
 \end{definitie}
-
-\end{theorie}
 
 \begin{oefening}
   Beschouw hieronder de grafiek van $f:\mathbb{R}_0\to\mathbb{R}:x\mapsto\dfrac{1}{x^2}$.
@@ -184,10 +163,7 @@ In andere gevallen spreken we af dat de limiet in $a$ niet bestaat.
   \end{multicols}
 \end{oefening}
 
-\pagebreak
-\section{Linker- en rechterlimieten in een reëel getal}
-
-\begin{theorie}
+\subsection{Linker- en rechterlimieten in een reëel getal}
 
 Limieten van functies in een reëel getal $a$ (zowel eindige limieten als limieten $\pm\infty$) worden ook gedefinieerd in gevallen waar de functiewaarden een bepaald gedrag vertonen alleen voor $x$-waarden links of rechts van $a$. We spreken dan van linkerlimiet en rechterlimiet.
 
@@ -200,8 +176,6 @@ Limieten van functies in een reëel getal $a$ (zowel eindige limieten als limiet
   We zeggen dat een reëel getal b de {\bf rechterlimiet is van $f$ voor $x$ gaande naar $a$} als de functiewaarden $f(x)$ willekeurig dicht bij $b$ komen voor $x$-waarden in de buurt van $a$ en rechts van $a$ genomen. We noteren dit als
   $$\lim_{x\underset{>}{\to}a}f(x)=b$$
 \end{definitie}
-
-\end{theorie}
 
 \begin{oefening}
   Beschouw de functie
@@ -221,16 +195,12 @@ Limieten van functies in een reëel getal $a$ (zowel eindige limieten als limiet
   Bepaal nogmaals de limiet $\displaystyle\lim_{x\to-1} f(x)$ van de functie in oefening 2. Gebruik nu linker- en rechterlimieten.
 \end{oefening}
 
-\begin{theorie}
-
 Ook oneindige linker- en rechterlimieten in een getal worden gedefinieerd. Bijvoorbeeld voor linkerlimieten wordt dit:
 
 \begin{definitie}
   We zeggen de {\bf linkerlimiet is van $f$ voor $x$ gaande naar $a$ is $+\infty$} als de functiewaarden $f(x)$ willekeurig groot worden voor $x$-waarden in de buurt van $a$ en links van $a$ genomen. We noteren dit als
   $$\lim_{x\underset{<}{\to}a}f(x)=+\infty$$
 \end{definitie}
-
-\end{theorie}
 
 \begin{oefening}
   Definieer zelf de oneindige rechterlimiet in een getal.
@@ -260,10 +230,8 @@ Bepaal grafische de volgende limieten:
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
-\section{Limieten op oneindig}
+\subsection{Limieten op oneindig}
 
-\begin{theorie}
 Limieten op oneindig karakteriseren een bepaald gedrag van de functiewaarden als de $x$-waarde steeds groter wordt.
 
 \subsubsection*{Eindige limieten op oneindig}
@@ -272,8 +240,6 @@ Limieten op oneindig karakteriseren een bepaald gedrag van de functiewaarden als
   We zeggen dat een reëel getal $b$ de {\bf limiet is van $f$ voor $x$ gaande naar $+\infty$} als de functiewaarden $f(x)$ willekeurig dicht bij $b$ komen voor willekeurig grote $x$-waarden. We noteren dit als
   $$\lim_{x\to +\infty} f(x)=b$$
 \end{definitie}
-
-\end{theorie}
 
 \begin{oefening}
   Definieer zelf de limiet van een functie $f$ voor $x$ gaande naar $-\infty$.
@@ -288,16 +254,12 @@ Limieten op oneindig karakteriseren een bepaald gedrag van de functiewaarden als
   \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 \subsubsection*{Oneindige limieten op oneindig}
 
 \begin{definitie}
   We zeggen dat een functie  {\bf $f$ limiet $+\infty$ heeft voor $x$ gaande naar $+\infty$} als de functiewaarden $f(x)$ willekeurig groot worden voor willekeurig grote $x$-waarden. We noteren dit als
   $$\lim_{x\to +\infty} f(x)=+\infty$$
 \end{definitie}
-
-\end{theorie}
 
 \begin{oefening}
   Definieer op analoge wijze
@@ -334,34 +296,18 @@ Limieten op oneindig karakteriseren een bepaald gedrag van de functiewaarden als
   Welk van de vorige limieten is een oneindige limiet op oneindig?
 \end{oefening}
 
-\pagebreak
-\section{Rekenregels voor limieten}
+\cleardoublepage
+\section{Berekenen van limieten}
 
-\begin{oefening}
-Bereken:
-%\begin{multicols}{2}
-\begin{enumerate}[(a)]
-  \itemsep.5em
-  \item $-\infty*3+10^{100}$\hfill {\small Zoek op internet de naam op van \verb#10^100#}
-  \item $\dfrac{100}{0}$
-  \item $-\dfrac{99}{0}$
-  \item $\dfrac{0}{0}$
-  \item $(-\infty)^4$
-  \item $(-\infty)^5$
-  \item $-(-\infty)^3$
-\end{enumerate}
-%\end{multicols}
-\end{oefening}
-
-\begin{theorie}
+\subsection{Rekenregels voor limieten}
 
 Voor eindige limieten hebben we de volgende rekenregels:
 \begin{align*}
-  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c &\Rightarrow&&\lim_{x\to a}\left(f(x)\pm g(x)\right)=b\pm c\\
-  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad k\in\mathbb{R} &\Rightarrow&&\lim_{x\to a} kf(x)=kb\\
-  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c &\Rightarrow&&\lim_{x\to a}\left(f(x)\cdot g(x)\right)=b\cdot c\\
-  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c \neq 0 &\Rightarrow&&\lim_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac{b}{c}\\
-  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad n\in\mathbb{N}_0 &\Rightarrow&&\lim_{x\to a} [f(x)]^n=b^n\\
+  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c &\Rightarrow \lim_{x\to a}\left(f(x)\pm g(x)\right)=b\pm c\\
+  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad k\in\mathbb{R} &\Rightarrow \lim_{x\to a} kf(x)=kb\\
+  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c &\Rightarrow \lim_{x\to a}\left(f(x)\cdot g(x)\right)=b\cdot c\\
+  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c \neq 0 &\Rightarrow \lim_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac{b}{c}\\
+  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad n\in\mathbb{N}_0 &\Rightarrow \lim_{x\to a} [f(x)]^n=b^n\\
 \end{align*}
 
 Voor oneindige limieten gelden vorige rekenregels enkel als ze welbepaald zijn, dit wil zeggen dat één van de volgende rekenregels toepasbaar is ($k\in\mathbb{R}$):
@@ -388,15 +334,26 @@ Voor oneindige limieten gelden vorige rekenregels enkel als ze welbepaald zijn, 
 
 De volgende uitdrukkingen hebben geen rekenregels:
 $$(+\infty)-(+\infty)\;,\quad(+\infty)+(-\infty)\;,\quad\dfrac{\pm\infty}{\pm\infty}\;,\quad\dfrac{0}{0}\;,\quad 0\cdot(\pm\infty)\;,\quad 1^{\pm\infty}$$
-We noemen ze {\bf onbepaalde vormen}, deze kunnen in sommige gevallen toch berekend worden. We noemen dit de onbepaaldheid opheffen, zie verder.
+We noemen ze {\bf onbepaalde vormen}, deze kunnen in sommige gevallen
+toch berekend worden. We noemen dit de onbepaaldheid opheffen, zie
+verder.
 
-\pagebreak
+\begin{oefening}
+Bereken:
+\begin{exlist}{2}
+  \itemsep.5em
+  \item $-\infty*3+10^{100}$ \hfill Zie ook voetnoot\footnote{Zoek op internet de naam op van
+      \texttt{10\textasciicircum 100}}
+  \item $\dfrac{100}{0}$
+  \item $-\dfrac{99}{0}$
+  \item $\dfrac{0}{0}$
+  \item $(-\infty)^4$
+  \item $(-\infty)^5$
+  \item $-(-\infty)^3$
+\end{exlist}
+\end{oefening}
 
-\end{theorie}
-
-\section{Basislimieten}
-
-\begin{theorie}
+\subsection{Basislimieten}
 
 \begin{itemize}
 \item $\displaystyle\lim_{x\to a}c=c\;,\qquad\lim_{x\to \pm\infty}c=c\qquad (\mbox{met } c\in\mathbb{R}\mbox{ een constant getal})$
@@ -406,12 +363,9 @@ We noemen ze {\bf onbepaalde vormen}, deze kunnen in sommige gevallen toch berek
 \item $\displaystyle\lim_{x\to\pm\infty}\left(a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\right) = \lim_{x\to\pm\infty}a_nx^n$
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
   Bereken volgende basislimieten:
-  \begin{enumerate}[(a)]
-  \itemsep.5em
+  \begin{exlist}{2}
   \item $\displaystyle \lim_{x\to 3}42$
   \item $\displaystyle \lim_{x\to -\infty}24$
   \item $\displaystyle \lim_{x\to 3}x$
@@ -420,14 +374,10 @@ We noemen ze {\bf onbepaalde vormen}, deze kunnen in sommige gevallen toch berek
   \item $\displaystyle \lim_{x\to 0}\dfrac{1}{x}$
   \item $\displaystyle \lim_{x\to -\infty}2x^3-3x^2+4x-6$
   \item $\displaystyle \lim_{x\to -\infty}7x^4-8x^2-9$
-  \end{enumerate}
+  \end{exlist}
 \end{oefening}
 
-\pagebreak
-\section{Berekenen van limieten}
-
-\begin{theorie}
-
+\needspace{4cm}
 \subsection{Limiet van een veeltermfunctie}
 
 We kunnen twee gevallen onderscheiden.
@@ -440,8 +390,6 @@ De limiet van een veeltermfunctie in een reëel getal is zeer eenvoudig, daar va
   $$\lim_{x\to a}f(x)=f(a) \qquad \mbox{ met $f(x)$ een veeltermfunctie en $a\in\mathbb{R}$}$$
 \end{eigenschap}
 
-\end{theorie}
-
 \begin{oefening}
   Bereken
   \begin{enumerate}[(a)]
@@ -452,8 +400,6 @@ De limiet van een veeltermfunctie in een reëel getal is zeer eenvoudig, daar va
   \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 \subsubsection*{Geval 2: limiet naar oneindig}
 
 Voor de limiet op oneindig van een veeltermfunctie kan gebruik worden gemaakt van de laatste basislimiet:
@@ -461,8 +407,6 @@ Voor de limiet op oneindig van een veeltermfunctie kan gebruik worden gemaakt va
 \begin{eigenschap}
   $$\lim_{x\to\pm\infty}\left(a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\right) = \lim_{x\to\pm\infty}a_nx^n$$
 \end{eigenschap}
-
-\end{theorie}
 
 \begin{oefening}
   Geef de vorige eigenschap met woorden. Volgende woorden moeten hierin zeker voorkomen:\\
@@ -479,8 +423,6 @@ Voor de limiet op oneindig van een veeltermfunctie kan gebruik worden gemaakt va
   \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Limiet van een rationale functie}
 
 Er zijn vier gevallen voor het berekenen van de limiet van een rationale functie $\displaystyle\lim_{x\to a}\dfrac{f(x)}{g(x)}$.
@@ -493,8 +435,6 @@ Heel eenvoudig, in dit geval valt de limiet voor $x$ naar $a$ samen met de funct
   $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac{f(a)}{g(a)} \qquad \mbox{als $g(a)\neq 0$}$$
 \end{eigenschap}
 
-\end{theorie}
-
 \begin{oefening}
   Bereken
   \begin{enumerate}[(a)]
@@ -504,8 +444,6 @@ Heel eenvoudig, in dit geval valt de limiet voor $x$ naar $a$ samen met de funct
   \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 \subsubsection*{Geval 2: $a$ is een nulwaarde van de noemer en geen nulwaarde van de teller}
 
 In dit geval krijgen we na uitrekenen van de limiet dat deze gelijk is aan $\dfrac{k}{0}$, met $k\neq 0$. Bij limieten is deze uitdrukking wel degelijk bepaald. Dit kan gelijk zijn aan $+\infty$ of $-\infty$, een tekenonderzoek moet uitwijzen aan wat.
@@ -513,8 +451,6 @@ In dit geval krijgen we na uitrekenen van de limiet dat deze gelijk is aan $\dfr
 \begin{eigenschap}
   $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac{k}{0}=\underbrace{+\infty \mbox{ of } -\infty}_{\mbox{tekenonderzoek}} \qquad \mbox{als $f(a)\neq0$ en $g(a)=0$}$$
 \end{eigenschap}
-
-\end{theorie}
 
 \begin{oefening}
   Bereken
@@ -525,8 +461,6 @@ In dit geval krijgen we na uitrekenen van de limiet dat deze gelijk is aan $\dfr
   \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 \subsubsection*{Geval 3: $a$ is een nulwaarde van de teller en van de noemer}
 
 Hier zullen we de onbepaaldheid $\dfrac{0}{0}$ krijgen die we kunnen opheffen. Hiervoor moet teller en noemer ontbonden worden in factoren, bijvoorbeeld door gebruik te maken van Horner. In de limiet mogen we in teller en noemer gelijke factoren dan wegdelen en krijgen we zo een nieuwe limiet die hopelijk dan welbepaald is. Het kan echter wel gebeuren dat we de methode verschillende keren moeten herhalen.
@@ -534,8 +468,6 @@ Hier zullen we de onbepaaldheid $\dfrac{0}{0}$ krijgen die we kunnen opheffen. H
 \begin{eigenschap}
   $$\lim_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac{"0"}{0}=\lim_{x\to a}\dfrac{(x-a)\;\;f_r(x)}{(x-a)\underbrace{g_r(x)}_{\mbox{Horner}}}=\lim_{x\to a}\dfrac{f_r(x)}{g_r(x)}$$
 \end{eigenschap}
-
-\end{theorie}
 
 \begin{oefening}
   Bereken
@@ -545,8 +477,6 @@ Hier zullen we de onbepaaldheid $\dfrac{0}{0}$ krijgen die we kunnen opheffen. H
   \item $\displaystyle\lim_{x\to2}\dfrac{5x^2-20x+20}{x^3-4x^2+4x}$
   \end{enumerate}
 \end{oefening}
-
-\begin{theorie}
 
 \subsubsection*{Geval 4: limiet naar oneindig van een rationale functie}
 
@@ -558,8 +488,6 @@ Deze limiet zal gelijk zijn aan de limiet van het quotiën van de termen met de 
 
 Uitwerken van het rechterlid kan na vereenvoudigen.
 
-\end{theorie}
-
 \begin{oefening}
   Bereken
   \begin{enumerate}[(a)]
@@ -570,11 +498,7 @@ Uitwerken van het rechterlid kan na vereenvoudigen.
   \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Extra oefeningen op limieten}
-
-\end{theorie}
 
 \begin{oefening}
   Bepaal de volgende limieten
@@ -675,10 +599,8 @@ $$\lim_{x\to3}\left(\dfrac{2}{\left(x-3\right)^4}-\dfrac{5}{\left(x-3\right)^3}\
   \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Asymptoten}
-
-\begin{theorie}
 
 Een {\bf asymptoot} van een functie $f$ is een rechte waarnaar de grafiek van die functie $f$ steeds dichter nadert. Daar rechten, verticaal, horizontaal of schuin kunnen zijn maken we volgende opdeling.
 
@@ -699,7 +621,7 @@ Beschouw volgende schets:
 \draw (2.24,-0.3) node[anchor=north west] {a};
 \draw (3.66,4.3) node[anchor=north west] {f};
 \end{tikzpicture}
-\end{center}  
+\end{center}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 We zien dat we een verticale asymptoot hebben:
@@ -737,8 +659,6 @@ $$f(x)=\dfrac{2x-4}{x-1}$$
 \subsubsection*{Tegenvoorbeeld}
 $$f(x)=\dfrac{2x-4}{x-2}$$
 
-\end{theorie}
-
 \begin{oefening}
 Bepaal alle verticale asymptoten:
 \begin{enumerate}[(a)]
@@ -748,8 +668,6 @@ Bepaal alle verticale asymptoten:
   \item $f(x)=\dfrac{2x-6}{x^2-2x-3}$
 \end{enumerate}
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Horizontale asymptoot}
 
@@ -768,7 +686,7 @@ Beschouw volgende schets:
 \draw (-0.2,3.3) node[anchor=south east] {b};
 \draw (3.66,4.3) node[anchor=north west] {f};
 \end{tikzpicture}
-\end{center}  
+\end{center}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 We zien dat we een horizontale asymptoot hebben:
@@ -800,7 +718,7 @@ $$f(x)=\dfrac{2x-4}{x-1}$$
 \subsubsection*{Tegenvoorbeeld}
 $$f(x)=\dfrac{x^2-4}{x+2}$$
 
-\end{theorie}
+
 
 \begin{oefening}
 Bepaal alle horizontale asymptoten:
@@ -811,8 +729,6 @@ Bepaal alle horizontale asymptoten:
   \item $f(x)=\dfrac{2x-6}{x^2-2x-3}$
 \end{enumerate}
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Schuine asymptoot}
 
@@ -836,7 +752,7 @@ Beschouw volgende schets:
 \draw (3.66,4.4) node[anchor=north west] {$f$};
 \draw [line width=1.2pt,dash pattern=on 2pt off 2pt,domain=-4.3:6.5] plot(\x,{(--1--0.5*\x)/1});
 \end{tikzpicture}
-\end{center}  
+\end{center}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 We zien dat we een schuine asymptoot hebben:
@@ -848,7 +764,7 @@ $$\mbox{S.A.: }y=mx+q$$
 \begin{itemize}
   \item $f(x)=\dfrac{x^2-2}{2x-4}$
   \item $g(x)=\dfrac{1}{2}x+1$
-  \item $h(x)=f(x)-g(x)$ 
+  \item $h(x)=f(x)-g(x)$
 \end{itemize}
 
 \begin{definitie}
@@ -874,7 +790,7 @@ $$f(x)=\dfrac{x^2-x-1}{x+1}$$
 
 \paragraph*{Opmerking:} Een horizontale asymptoot is een speciaal geval van de schuine asymptoot, maar dan met $m=0$. Het spreekt voor zich dat een functie geen horizontale en schuine asymptoot naar $+\infty$ of naar $-\infty$ kan hebben.
 
-\end{theorie}
+
 
 \begin{oefening}
 Bepaal alle schuine asymptoten:
@@ -885,12 +801,8 @@ Bepaal alle schuine asymptoten:
 \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
+\needspace{3cm}
 \subsection{Extra oefeningen op asymptoten}
-
-\end{theorie}
 
 \begin{oefening} % http://www.purplemath.com/modules/asymtote4.htm
 Bepaal alle asymptoten\\
@@ -935,13 +847,6 @@ Bepaal alle asymptoten\\
 \end{multicols}
 \end{oefening}
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \end{document}
 
 
-\begin{minipage}[c]{0.4\textwidth}
-\end{minipage}
-\begin{minipage}[c]{0.6\textwidth}
-  \dotlines{10}
-\end{minipage}
