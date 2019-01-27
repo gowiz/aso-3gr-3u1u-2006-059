@@ -2,6 +2,21 @@
 
 \input{../gowiz.tex}
 
+\usepackage{tabu}
+
+\pgfplotsset{vasymptote/.style={
+    before end axis/.append code={
+        \draw[densely dashed] ({rel axis cs:0,0} -| {axis cs:#1,0})
+        -- ({rel axis cs:0,1} -| {axis cs:#1,0});
+    }
+}}
+\pgfplotsset{hasymptote/.style={
+    before end axis/.append code={
+        \addplot[densely dashed,domain=-15:15] {#1};
+    }
+}}
+
+
 \begin{document}
 
 \thispagestyle{empty}
@@ -163,6 +178,8 @@ Maak hier gebruik van een \zrm{ZRM}.
 \end{enumerate}
 \end{oefening}
 
+\subsection{Toepassingen}
+
 \begin{oefening}
 Een getal en zijn omgekeerde zijn samen $\frac{10}{3}$. Bepaal dit getal.
 \end{oefening}
@@ -299,12 +316,150 @@ $$\text{VA}: x=0$$
 
 \subsection{Homografische functies $y=\frac{ax+b}{cx+d}$}
 
+\paragraph*{Definitie}
+\begin{mdframed}
+Een {\bf homografische functie} is een functie van de vorm
+$$f(x)=\dfrac{ax+b}{cx+d}$$
+met $c\neq 0$ en $a\cdot d\neq b\cdot c$.
+\end{mdframed}
+
+\begin{oefening}
+Zijn volgende functies homografisch?
+\begin{exlist}{2}
+  \item $f(x)=\dfrac{5x-3}{x-2}$
+  \item $f(x)=\dfrac{4x-4}{x-1}$
+  \item $f(x)=\dfrac{5}{x-3}$
+  \item $f(x)=\dfrac{2x-4}{x-2}$
+  \item $f(x)=\dfrac{x^2-4}{x+4}$
+  \item $f(x)=\dfrac{4x^2-8}{2}$
+  \item $f(x)=\dfrac{x^2-4}{x-4}$
+  \item $f(x)=\dfrac{1+4x}{x}+\dfrac{3x-6}{x}$
+  \item $f(x)=\dfrac{1+x^2}{\sqrt{x}+3}$
+  \item $f(x)=\dfrac{3x^3-x^2-2}{x^4+x^3-x^2-1}$
+\end{exlist}
+\end{oefening}
+
+\begin{oefening}
+\begin{enumerate}[(a)]
+  \item Zijn alle rationale functies homografische functies?
+  \item Zijn alle homografische functies rationale functies?
+\end{enumerate}
+\end{oefening}
+
+\subsubsection*{Bespreken van een homografische functie}
+
+\paragraph{Voorbeeld} Beschouw de functie
+$$f(x)=\dfrac{2x-4}{x+3}$$
+
+\paragraph{Nulwaarden} We bepalen eerst van teller en noemer apart de
+nulwaarden:
+$$\text{nulw T: } x=2$$
+$$\text{nulw N: } x=-3$$
+We vinden dus alvast dat de functie één pool heeft, namelijk
+$$\text{polen f: } -3$$
+De nulwaarde van de functie is dan de nulwaarde van de teller, want de
+nulwaarde van de teller komt er niet mee overeen. Dit zal bij de
+``brave'' homografische functies steeds zo zijn. We krijgen dus
+$$\text{nulw f: } x=2$$
+
+\paragraph{Domein} Onze functie mag geen nul zijn in de noemer, we
+moeten dus alle polen uit het domein halen, we krijgen
+$$\dom f = \mathbb{R} \setminus \{-3\}$$
+
+\paragraph{Asymptoten} Daar onze functie steeds dichter zal naderen
+naar de pool, zonder deze echter te bereiken, bevind zich daar alvast
+een verticale asymptoot, dus
+$$\text{V.A.: } x=-3$$
+Bij de ``brave'' homografische functies vinden we ook nog een
+horizontale asymptoot, we kunnen daarvoor de coëfficiënt bij $x$ in de
+teller delen door de coëfficiënt bij $x$ in de noemer, dus
+$$\text{H.A.: } y=\dfrac{2\color{gray}x}{1\color{gray}x} \Rightarrow y=2$$
+
+\paragraph{Bereik} Bij onze ``brave'' homografische functies zal de
+functie nooit de horizontale asymptoot bereiken. We krijgen dus
+$$\ber f = \mathbb{R} \setminus \{2\}$$
+
+\paragraph{Tekenverloop} Een rationale functie kunnen we opsplitsen in
+teller en noemer. We gebruik nu terug deze opsplitsing om het
+tekenverloop te bepalen. Merk op dat we nu wel rekening moeten houden
+met het niet mogen delen door nul. We krijgen volgend tekenschema
+
+\begin{center}
+  \begin{tabu} to\linewidth {X[3$c$]|*7{X[$c$]}}
+    x                     & -\infty &   & -3 &   & 2 &   & +\infty\\
+    \hline
+    2x-4                  &    & - &    & - & 0 & + &   \\
+    x+3                   &    & - &  0 & + &   & + &   \\
+    \hline
+    f(x)=\frac{2x-4}{x+3} &    & + &  | & - & 0 & + &
+  \end{tabu}
+\end{center}
+
+\paragraph{Snijpunten} De snijpunten met de assen zijn eenvoudig te
+bepalen, we hebben
+$$\text{snijpt $x$-as: } (2,0)$$
+$$\text{snijpt $y$-as: } (0,-\dfrac{4}{3})$$
+
+\paragraph{Grafiek}
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[
+      scale=0.6,
+      x=1.0cm,y=1.0cm,
+      axis lines=middle,
+      xmin=-14.3,
+      xmax=12.3,
+      ymin=-8.3,
+      ymax=10.3,
+      xtick={-14.0,-12.0,...,12.0},
+      ytick={-8.0,-6.0,...,10.0},
+      vasymptote=-3,
+      hasymptote=2,
+      ]
+      \addplot[line width=1.8pt,smooth,samples=300,domain=-14.3:12.3, restrict y
+      to domain=-10:11]
+      {(2*x-4)/(x+3)};
+      \begin{scriptsize}
+        \draw (-10.,4.) node {$f$};
+      \end{scriptsize}
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+\paragraph{Stijgen\&dalen en de extrema}
+We zien op de grafiek dat onze functie enkel stijgt. Er zijn geen
+extrema. Rekening houdend met de verticale asymptoot krijgen we
+volgend schema
+
+\begin{center}
+  \begin{tabu} to\linewidth {X[3$c$]|*5{X[$c$]}}
+    x                     & -\infty &   & -3 &   & +\infty\\
+    \hline
+    f(x)=\frac{2x-4}{x+3} &    & \nearrow &  | & \nearrow &
+  \end{tabu}
+\end{center}
+
+\paragraph*{Homografische functies bespreken}
+\begin{mdframed}
+  \begin{itemize}
+  \item Functievoorschrift: $f(x)=\dfrac{ax+b}{cx+d} \;.$
+  \item polen f: $-\dfrac{d}{c}$
+  \item $\dom f = \mathbb{R} \setminus \{\text{polen}\}$
+  \item nulw f: $x_0=-\dfrac{b}{a}$
+  \item V.A.: $x=$polen
+  \item H.A.: $y=\dfrac{\text{coëff }x}{\text{coëff }x}$
+  \item $\ber f = \mathbb{R} \setminus \{\text{H.A.}\}$
+  \item t.v.: door splitsen in teller en noemer
+  \item snijpunten bepalen
+  \item Grafiek schetsen
+  \item Stijgen\&dalen: a.d.h.v. de grafiek
+  \end{itemize}
+\end{mdframed}
+
 
 \begin{oefening}
 Bespreek volgende rationale functies waarbij teller en noemer van de eerste graad zijn (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-  \itemsep0.6em
+\begin{exlist}{2}
   \item $f:y=\dfrac{2x+4}{x-1}$
   \item $f:y=\dfrac{2x+12}{x-4}$
   \item $f:y=\dfrac{4x+20}{4-x}$
@@ -312,9 +467,10 @@ Bespreek volgende rationale functies waarbij teller en noemer van de eerste graa
   \item $f:y=\dfrac{10x+20}{5x-5}$
   \item $f:y=\dfrac{5x+30}{6-x}$
   \item $f:y=\dfrac{3x-27}{3x+9}$
-\end{enumerate}
-\end{multicols}
+\end{exlist}
 \end{oefening}
+
+\subsection{Rationale funties $y=\frac{t(x)}{n(x)}$}
 
 \begin{oefening}
 Bespreek volgende rationale functies waarbij teller en noemer van de tweede graad zijn (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):
@@ -343,6 +499,9 @@ Bespreek volgende rationale functies (polen, domein, asymptoten, bereik, nulwaar
 \end{enumerate}
 \end{oefening}
 
+\subsection{Toepassingen}
+
+
 \begin{oefening}
 De grootte van een konijnenpopulatie wordt gegeven door
 $$f(x)=\dfrac{150x+90}{x+3}\;.$$
@@ -365,11 +524,11 @@ geeft het aantal dagen nodig voor de opknapbeurt, in functie van het aantal vrij
 \end{oefening}
 
 \begin{oefening}
-Een schoonmaakbedrijf hanteert de formule $k(x)=9+\dfrac{40}{x}$ voor het schoonmaken van gebouwen. Hierin is $k(x)$ het bedrag in euro dat per jaar per m$^2$ moet worden betaald en $x$ de oppervlakte in 100 m$^2$.
+Een schoonmaakbedrijf hanteert de formule $k(x)=9+\dfrac{40}{x}$ voor het schoonmaken van gebouwen. Hierin is $k(x)$ het bedrag in euro dat per jaar per $\m^2$ moet worden betaald en $x$ de oppervlakte in $100 \m^2$.
 \begin{enumerate}[(a)]
-  \item Een vloeroppervlak is 2000 m$^2$. Hoeveel moet er per jaar voor het schoonmaken betaald worden?
+  \item Een vloeroppervlak is $2000 \m^2$. Hoeveel moet er per jaar voor het schoonmaken betaald worden?
   \item Kasper zou zijn studentenkot van 8 bij 6 meter door het bedrijf willen laten onderhouden. Hoeveel kost hem dat per jaar?
-  \item Firma Xanders betaalt jaarlijks 9.16 euro per m$^2$ voor het schoonmaken van zijn gebouw. Hoe groot is de oppervlakte van dit gebouw?
+  \item Firma Xanders betaalt jaarlijks 9.16 euro per $\m^2$ voor het schoonmaken van zijn gebouw. Hoe groot is de oppervlakte van dit gebouw?
 \end{enumerate}
 \end{oefening}
 
@@ -443,6 +602,9 @@ Bepaal de oplossingsverzameling van $\dfrac{1}{x} - 4 \geq 1$\\
 \end{enumerate}
 \end{oefening}
 
+\needspace{3cm}
+\subsection{Toepassingen}
+
 \begin{oefening}
 De grootte van een konijnenpopulatie wordt gegeven door
 $$f(x)=\dfrac{150x+90}{x+3}\;.$$
@@ -478,11 +640,11 @@ De populatie vossen in een bepaald gebied was nagenoeg constant. Doch door een t
 $$v(t)=\dfrac{3t^2-12t+13}{t^2-4t+5}\;.$$
 Hierbij is
 \begin{itemize}
-  \item v = aantal vossen, uitgedrukt in duizendtallen
-  \item t = tijd in jaren
-  \item t = 0 komt overeen met januari 2010
+  \item $v$ = aantal vossen, uitgedrukt in duizendtallen
+  \item $t$ = tijd in jaren
+  \item $t = 0$ komt overeen met januari $2010$
 \end{itemize}
-Van wanneer tot wanneer waren er minder dan 2000 vossen in het gebied?
+Van wanneer tot wanneer waren er minder dan $2000$ vossen in het gebied?
 \end{oefening}
 
 \begin{oefening}
@@ -490,11 +652,11 @@ De temperatuur in een koele berging wordt gegeven door de volgende functie:
 $$T(t)=\dfrac{3t^2-6t+3}{t^2-2t+2}\;.$$
 Hierbij is
 \begin{itemize}
-  \item T = de temperatuur in graden Celsius
-  \item t = tijd in uren
-  \item t = 0 komt overeen met 3 uur 's nachts.
+  \item $T$ = de temperatuur in graden Celsius ($\grC$)
+  \item $t$ = tijd in uren
+  \item $t = 0$ komt overeen met 3 uur 's nachts.
 \end{itemize}
-Als de temperatuur lager wordt dan 1 $^\circ$C is er gevaar voor schade aan het voedsel. Hoe lang bevond de temperatuur zich onder 1 $^\circ$C? Van wanneer tot wanneer?
+Als de temperatuur lager wordt dan $1 \grC$ is er gevaar voor schade aan het voedsel. Hoe lang bevond de temperatuur zich onder $1 \grC$? Van wanneer tot wanneer?
 \end{oefening}
 
 \end{document}
