@@ -422,9 +422,7 @@ $$\text{snijpt $y$-as: } (0,-\dfrac{4}{3})$$
 \end{center}
 
 \paragraph{Stijgen\&dalen en de extrema}
-We zien op de grafiek dat onze functie enkel stijgt. Er zijn geen
-extrema. Rekening houdend met de verticale asymptoot krijgen we
-volgend schema
+We zien op de grafiek dat onze functie enkel stijgt. Er zijn geen extrema. Rekening houdend met de verticale asymptoot krijgen we volgend schema
 
 \begin{center}
   \begin{tabu} to\linewidth {X[3$c$]|*5{X[$c$]}}
@@ -444,8 +442,8 @@ volgend schema
   \item V.A.: $x=$polen
   \item H.A.: $y=\dfrac{\text{coëff }x}{\text{coëff }x}$
   \item $\ber f = \mathbb{R} \setminus \{\text{H.A.}\}$
-  \item t.v.: door splitsen in teller en noemer
-  \item snijpunten bepalen
+  \item Tekenverloop: door splitsen in teller en noemer
+  \item Snijpunten bepalen
   \item Grafiek schetsen
   \item Stijgen\&dalen: a.d.h.v. de grafiek
   \end{itemize}
@@ -467,11 +465,131 @@ Bespreek volgende rationale functies waarbij teller en noemer van de eerste graa
 
 \subsection{Rationale funties $y=\frac{t(x)}{n(x)}$}
 
+\subsubsection*{Voorbeeld}
+Beschouw de functie
+$$f(x)=\dfrac{2x^2-2}{x^2-9}$$
+
+\begin{center}
+  \begin{tikzpicture}
+    \begin{axis}[
+      scale=0.6,
+      x=1.0cm,y=1.0cm,
+      axis lines=middle,
+      xmin=-12.3,
+      xmax=14.3,
+      ymin=-6.3,
+      ymax=8.3,
+      xtick={-14.0,-12.0,...,12.0},
+      ytick={-8.0,-6.0,...,10.0},
+      vasymptote=-3,
+      vasymptote=3,
+      hasymptote=2,
+      ]
+      \addplot[line width=1.8pt,smooth,samples=300,domain=-12.3:14.3, restrict y
+      to domain=-10:11]
+      {(2*x^2-2)/(x^2-9)};
+      \begin{scriptsize}
+        \draw (6.,3.2) node {$f$};
+      \end{scriptsize}
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
+
+\paragraph{Grafiek: }
+We zullen deze functie bespreken en dat zal ons dan inzicht geven in het verloop van de grafiek. Laten we om te controleren of we goed bezig zijn al eens eerst de grafiek tekenen, bijvoorbeeld met Geogebra.\footnote{Zie \url{https://www.geogebra.org/}}
+
+\paragraph{Nulwaarden: }
+We bepalen terug apart van teller en noemer de nulwaarden:
+\begin{align*}
+  \text{nulw T:}\qquad && 2x^2-2      &= 0\\
+  \Leftrightarrow               && 2(x^2 -1)   &= 0\\
+  \Leftrightarrow               && 2(x-1)(x+1) &= 0\\
+  \Leftrightarrow               && x-1 = 0 &\wedge x+1 = 0\\
+  \Leftrightarrow               && x = 1   &\wedge x = -1
+\end{align*}
+\begin{align*}
+  \text{nulw N:}\qquad && x^2-9      &= 0\\
+  \Leftrightarrow               && (x-3)(x+3) &= 0\\
+  \Leftrightarrow               && x-3 = 0 &\wedge x+3 = 0\\
+  \Leftrightarrow               && x = 3   &\wedge x = -3
+\end{align*}
+
+De functie heeft dus twee polen:
+$$\text{polen $f$: } -3, 3$$
+
+Daar de nulwaarden van de teller geen nulwaarden van de noemer zijn, zijn deze ook de nulwaarden van de functie:
+$$\text{nulw $f$: } -1, 1$$
+
+\paragraph{Domein: }
+We houden terug rekening met onze polen om het domein te bepalen, we krijgen:
+$$\dom f = \mathbb{R} \setminus \{-3, 3\}$$
+
+\paragraph{Asymptoten}
+De functie nadert naar elk van de polen, we vinden dus twee verticale asymptoten:
+$$\text{V.A. } f: x=-1 \wedge x=1$$
+
+Teller en noemer zijn van dezelfde graad, hierdoor kunnen we opnieuw eenvoudig de horizontale asymptoot bepalen. We delen hiervoor de hoogstegraadsterm van teller door de hoogstegraadsterm van noemer op voorwaarde dat ze van dezelfde graad zijn.
+$$\text{H.A. } f: y=\dfrac{2\color{gray}x^2}{1\color{gray}x^2} \Rightarrow y=2 $$
+
+\paragraph{Bereik}
+We zijn geneigd om uit ons bereik enkel de horizontale asymptoot eruit te halen. Kijken we echter eens grondig naar de grafiek en projecteren we deze op de $y$-as, dan zien we dat we een groter stuk uit $\mathbb{R}$ moeten weghalen, we houden nog volgend bereik over
+$$\ber f = ]-\infty, \dfrac{2}{9}] \cup ]1, +\infty]$$
+Alhoewel dit bij deze functie gelukt is om het bereik exact te bepalen, wegens de symmetrie en het feit dat er overduidelijk een relatief maximum is bij $x=0$, zal dit voorlopig nog niet altijd lukken. In het hoofdstuk afgeleiden zullen we pas exact de positie van eventuele extra leren bepalen.
+
+\paragraph{Tekenverloop}
+We gebruiken terug onze nu reeds welbekende methode om het tekenverloop te bepalen:
+
+\begin{center}
+  \begin{tabu} to\linewidth {X[3$c$]|*{11}{X[$c$]}}
+    x              & -\infty &   & -3 &   & -1 &   & 1 &   & 3 &   & +\infty \\
+    \hline
+    \small{2x^2-2} &    & + &    & + & 0  & - & 0 & + &   & + &    \\
+    \small{x^2-9}  &    & + & 0  & - &    & - &   & - & 0 & + &    \\
+    \hline
+    f(x)           &    & + & |  & - & 0  & + & 0 & - & | & +
+  \end{tabu}
+\end{center}
+
+Merk op dat dit inderdaad mooi overeenkomt met hetgeen we op de grafiek zien.
+
+\paragraph{Snijpunten}
+\begin{align*}
+\text{snijpt $x$-as: }& (-1,0); (1, 0)\\
+\text{snijpt $y$-as: }& (0,\dfrac{2}{9})
+\end{align*}
+
+\paragraph{Stijgen\&dalen en de extrema}
+
+\begin{center}
+  \begin{tabu} to\linewidth {X[2$c$]|*9{X[$c$]}}
+    x    & -\infty &   & -3 &   & 0                                    &   & 3 &  & +\infty \\
+    \hline
+    f(x) &    & \nearrow & |  & \nearrow & \underset{=\dfrac{2}{9}}{\text{max}} & \searrow & | & \searrow
+  \end{tabu}
+\end{center}
+
+Volgende stappenplan werkt goed, op voorwaarde dat de nulwaarden van teller en noemer verschillend zijn.
+
+\paragraph*{Rationale functies bespreken}
+\begin{mdframed}
+  \begin{itemize}
+  \item Functievoorschrift: $f(x)=\dfrac{ax^2+bx+c}{dx^2+ex+f} \;.$
+  \item polen f: nulwaarden van de noemer
+  \item $\dom f = \mathbb{R} \setminus \{\text{polen}\}$
+  \item nulw f: nulwaarden van de teller (op voorwaarde dat ze geen nulwaarde van de noemer zijn)
+  \item V.A.: $x=$polen
+  \item H.A.: $y=\dfrac{\text{coëff }x^2}{\text{coëff }x^2}$ (Om de graad gelijk te maken kan je altijd in de teller $0x^2$ bijschrijven)
+  \item Tekenverloop: door splitsen in teller en noemer
+  \item Snijpunten bepalen
+  \item Grafiek schetsen
+  \item $\ber f = $ aflezen op de grafiek
+  \item Stijgen\&dalen: a.d.h.v. de grafiek
+  \end{itemize}
+\end{mdframed}
+
 \begin{oefening}
-Bespreek volgende rationale functies waarbij teller en noemer van de tweede graad zijn (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-  \itemsep0.6em
+Bespreek volgende rationale functies (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):
+\begin{exlist}{2}
   \item $f:y=\dfrac{x^2-1}{x^2-4}$
   \item $f:y=\dfrac{x^2-2x-24}{x^2-9}$
   \item $f:y=\dfrac{x^2+2x-15}{x^2-4}$
@@ -481,13 +599,11 @@ Bespreek volgende rationale functies waarbij teller en noemer van de tweede graa
   \item $f:y=\dfrac{x^2}{(x+1)^2}$
   \item $f:y=\dfrac{x-1}{x^2}$
   \item $f:y=\dfrac{x^2-4}{x^2-1}$
-  \item $f:y=\dfrac{x^2-1}{x+1}$
-\end{enumerate}
-\end{multicols}
+\end{exlist}
 \end{oefening}
 
 \begin{oefening}*
-Bespreek volgende rationale functies (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):\\
+Bespreek volgende rationale functies (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):
 \begin{enumerate}[(a)]
   \itemsep0.6em
   \item $f:y=\dfrac{x^2-1}{x+1}$
