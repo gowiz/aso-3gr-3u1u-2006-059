@@ -1,21 +1,11 @@
-\documentclass[12pt]{article}
+\documentclass[12pt,twoside,a4paper]{article}
 
 \input{../gowiz.tex}
 
 \usetikzlibrary{arrows,shapes}
 \usepackage[outputdir=./build/]{dot2texi}
 
-\usepackage{versions}
-%\excludeversion{theorie}
-\includeversion{theorie}
-
 \begin{document}
-
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Afgeleiden van bijzondere functies}
-
-\begin{theorie}
 
 \thispagestyle{empty}
 \begin{center}
@@ -39,7 +29,6 @@ Je kan\hfill  {\scriptsize(LP 2006-059, LI 1.5.8)}
 \begin{itemize}
   \item de kettingregel voor het afleiden van samengestelde functies toepassen
 \end{itemize}
-
 Je kan de afgeleiden functie bepalen van\hfill  {\scriptsize(LP 2006-059, LI 1.6.13, 1.7.8, 1.8.6, 1.9.6)}
 \begin{itemize}
   \item goniometrische functies
@@ -48,29 +37,21 @@ Je kan de afgeleiden functie bepalen van\hfill  {\scriptsize(LP 2006-059, LI 1.6
   \item irrationale functies
 \end{itemize}
 
-
-\pagestyle{empty}
-\mbox{}
-\newpage
-\clearpage
 \thispagestyle{empty}
-%\mbox{}
+\newpage
+
+\thispagestyle{empty}
 \tableofcontents
 \newpage
-\clearpage
+
 \pagenumbering{arabic}
 
 \pagestyle{fancy}
-\lhead{}
-\rhead{Afgeleiden van bijzondere functies}
+\fancyhead[RO,LE]{Afgeleiden van bijzondere functies}
+\fancyhead[RE,LO]{}
 
-\end{theorie}
-
-\onehalfspacing
-
+\cleardoublepage
 \section{Soorten functies}
-
-\begin{theorie}
 
 \subsection{Definities}
 We komen nu op een punt waarbij we veel verschillende soorten {\bf reële functies} hebben besproken. We zijn begonnen met de {\bf veeltermfuncties} die we onderverdeeld hebben in de {\bf constante functies}, {\bf lineaire functies}, {\bf kwadratische functies}, enz. Daarna hebben we de {\bf rationale}, {\bf irrationale}, {\bf exponentiële}, {\bf logaritmische} en {\bf goniometrische functies} nog gezien.
@@ -127,7 +108,7 @@ Onze verschillende soorten geziene functies kunnen we als volgt classificeren
        hogeregraads[texlbl="\parbox{3.4cm}{\centering Hogeregraadsveelterm functie}"]
        exponentieel[texlbl="\parbox{2cm}{\centering Exponentiële functie}"]
        logaritmisch[texlbl="\parbox{2cm}{\centering Logaritmisch functie}"]
-       goniometrisch[texlbl="\parbox{2.5cm}{\centering Goniometrisch functie}"] 
+       goniometrisch[texlbl="\parbox{2.5cm}{\centering Goniometrisch functie}"]
        reeel -> algebraisch
        algebraisch -> rationaal
        algebraisch -> irrationaal
@@ -155,8 +136,6 @@ $$f(x)=\dfrac{t(x)}{n(x)}\quad\mbox{ met in teller en noemer veeltermen }\quad t
 en het is een algebraïsche functie want ze is opgebouwd uit een verschil van een kwadraat en een getal en uiteindelijk is het een reële functie want reële getallen $x$ worden afgebeeld op hoogstens één reëel getal $x$.\\[1cm]
 
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
 Classificeer volgende reële functies zo specifiek mogelijk
@@ -194,11 +173,8 @@ Classificeer volgende reële functies zo specifiek mogelijk
 Geef een transcendente functie die geen exponentiële, logaritmische- of goniometrische functie is.
 \end{oefening}
 
-
-\pagebreak
+\cleardoublepage
 \section{Afgeleide functie van een irrationale functie}
-
-\begin{theorie}
 
 \subsection{De functie $f(x)=\sqrt{x}$}
 
@@ -242,8 +218,6 @@ en met de kettingregel wordt dit
 $$\left(f^n\right)'=nf^{n-1}\cdot f' \mbox{ met } n\in\mathbb{Q}$$
 
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
 Bereken
@@ -291,53 +265,41 @@ Bereken de afgeleide van $u$ naar $x$ indien $u=r^{3/2}$ en $r=\sqrt{4+x^2}$.
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Afgeleide functie van een logaritmische functie}
-
-\begin{theorie}
 
 \subsection{Formules}
 
 \begin{align*}
-  (\log_a x)' &= \dfrac{1}{x\cdot \ln a}\\\\
-  (\log_a f(x))' &= \dfrac{f'(x)}{f(x)\cdot \ln a} 
+  (\log_a x)'    & = \dfrac{1}{x\cdot \ln a} \\\\
+  (\log_a f(x))' & = \dfrac{f'(x)}{f(x) \cdot \ln a}
 \end{align*}
 
 \subsection{Voorbeelden}
 
-%\begin{minipage}{0.5\textwidth}
 \begin{align*}
-\left(\log_2 x\right)' &= \dfrac{1}{x\ln 2}\\\\
-%\end{align*}
-%\end{minipage}
-%\begin{minipage}{0.5\textwidth}
-%\begin{align*}
-\left(\log(x^2+1)\right)' &= \dfrac{(x^2+1)'}{(x^2+1)\ln 10}\\
-                           &= \dfrac{2x}{(x^2+1)\ln 10}\\
+  \left(\log_2 x\right)'    & = \dfrac{1}{x\ln 2}               \\\\
+  \left(\log(x^2+1)\right)' & = \dfrac{(x^2+1)'}{(x^2+1)\ln 10} \\
+                            & = \dfrac{2x}{(x^2+1)\ln 10}       \\
 \end{align*}
-%\end{minipage}
 
 \subsection{Bijzondere gevallen}
 
 Rekening houdend met $\ln e = 1$ krijgen we
 
 \begin{align*}
-  (\ln x)' &= \dfrac{1}{x}\\\\
-  (\ln f(x))' &= \dfrac{f'(x)}{f(x)} 
+  (\ln x)'    & = \dfrac{1}{x} \\\\
+  (\ln f(x))' & = \dfrac{f'(x)}{f(x)}
 \end{align*}
 
 \subsection{Voorbeelden}
 
-%\begin{minipage}{0.5\textwidth}
 \begin{align*}
 \left(\ln(5x+1)\right)' &= \dfrac{(5x+1)'}{5x+1}\\
                         &= \dfrac{5}{5x+1}\\
 \end{align*}
-%\end{minipage}
 
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
 Bepaal de afgeleide functie $f'$ van
@@ -362,13 +324,12 @@ Bepaal de afgeleide functie $f'$ van
 
 \begin{oefening}
 Bereken
-\begin{enumerate}[(a)]
-  \itemsep.7em
+\begin{exlist}{2}
   \item $\displaystyle \left[\log_3 x^3\right]'$
   \item $\displaystyle \left[\log_3 3^x\right]'$
   \item $\displaystyle \left[\log \left(x^2+2x+1\right)\right]'$
   \item $\displaystyle \left[\ln \sqrt[3]{7x^3+3}\right]'$
-\end{enumerate}
+\end{exlist}
 \end{oefening}
 
 \begin{oefening}
@@ -391,19 +352,17 @@ Bepaal de stijgingssnelheid op tijdstip $t=3\min$.
 \end{oefening}
 \vspace*{-1cm}
 
-\pagebreak
+\cleardoublepage
 \section{Afgeleide functie van een exponentiële functie}
-
-\begin{theorie}
 
 \subsection{Opstellen van de formule}
 
 \begin{align*}
-       && f(x) &= a^x && \mbox{is een exponentiële functie met grondtal $a$}\\
-  \LRA && \log_a f(x) &= x && \mbox{links en rechts de logaritme met grondtal $a$ nemen}\\
-  \LRA && \dfrac{f'(x)}{f(x)\ln a} &= 1 && \mbox{links en rechts afleiden}\\
-  \LRA && f'(x) &= f(x)\ln a\\
-  \LRA && \left(a^x\right)' &= a^x \ln a && \mbox{vervangen van $f(x)$ door $a^x$}
+       &  & f(x)                     & = a^x       &  & \mbox{is een exponentiële functie met grondtal $a$}        \\
+  \LRA &  & \log_a f(x)              & = x         &  & \mbox{links en rechts de logaritme met grondtal $a$ nemen} \\
+  \LRA &  & \dfrac{f'(x)}{f(x)\ln a} & = 1         &  & \mbox{links en rechts afleiden}                            \\
+  \LRA &  & f'(x)                    & = f(x)\ln a                                                                 \\
+  \LRA &  & \left(a^x\right)'        & = a^x \ln a &  & \mbox{vervangen van $f(x)$ door $a^x$}
 \end{align*}
 
 \subsection{Formules}
@@ -427,20 +386,18 @@ Bepaal de stijgingssnelheid op tijdstip $t=3\min$.
 \subsection{Bijzondere gevallen}
 Opnieuw gebruik makend van $\ln e=1$ krijgen we
 \begin{align*}
-  \left(e^x\right)' &= e^x\\\\
-  \left(e^{f(x)}\right)' &= e^{f(x)} \cdot f'(x)\\
+  \left(e^x\right)'      & = e^x              \\\\
+  \left(e^{f(x)}\right)' & = e^{f(x)} \cdot f'(x) \\
 \end{align*}
 
 \subsection{Voorbeelden}
 
 \begin{align*}
-\left(e^{x^2+1}\right)' &= e^{x^2+1} \cdot (x^2+1)'\\
-                        &= 2x e^{x^2+1}\\
+\left(e^{x^2+1}\right)' & = e^{x^2+1} \cdot (x^2+1)' \\
+                        & = 2x e^{x^2+1}         \\
 \end{align*}
 
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
 Bereken de afgeleide functie $Df(x)$
@@ -461,7 +418,7 @@ Bereken de afgeleide functie $Df(x)$
 \end{multicols}
 \end{oefening}
 
-\begin{oefening} 
+\begin{oefening}
 De lading van een condensator in een circuit met een condensator $C$, een weerstand $R$ en een spanningsbron $V$ wordt gegeven door
 $$q=CV(1-e^{-t/RC})$$
 Toon dat dit een oplossing is van de differentiaalvergelijking
@@ -494,11 +451,8 @@ Wat is de oppervlakte van de grootste rechthoek die kan worden uitgefreesd?\\
 \end{center}
 \end{oefening}
 
-
-\pagebreak
+\cleardoublepage
 \section{Afgeleide functie van een goniometrische functie}
-
-\begin{theorie}
 
 \subsection{Formules}
 
@@ -534,7 +488,6 @@ Wat is de oppervlakte van de grootste rechthoek die kan worden uitgefreesd?\\
 \end{align*}
 \end{minipage}
 
-
 \subsection{Formule voor de afgeleide van de tangens}
 
 We gebruiken de definitie $\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}$, de quotiëntregel en de grondformule van de goniometrie
@@ -552,12 +505,10 @@ $$\left(\tan x\right)'=\dfrac{1}{\cos^2 x}$$
 
 \subsection{Oefeningen}
 
-\end{theorie}
-
 \begin{oefening}
 In éénzelfde assenstelsel, telkens in een ander kleur:
 \begin{enumerate}[(a)]
-  \item Teken de grafiek van de sinusfunctie. 
+  \item Teken de grafiek van de sinusfunctie.
   \item Begin in de oorsprong en teken elke $(k\frac{\pi}{2}, f(k\frac{\pi}{2}))$ met $k\in\mathbb{Z}$ de raaklijn aan de sinusfunctie.
   \item Teken telkens een punt met als $x$-waarde de $x$-waarde van de raaklijn en als $y$-waarde de helling (rico) van deze raaklijn, teken dus $(k\frac{\pi}{2}, f'(k\frac{\pi}{2}))$.
   \item Verbind de net getekende punten met een vloeiende lijn.
@@ -606,7 +557,5 @@ langs de $x$-as maximaal, met $v_0$ de beginsnelheid en $g$ de valversnelling.
 \end{enumerate}
 \end{oefening}
 
-%\newpage
 \end{document}
-
 
