@@ -16,7 +16,7 @@
 #define IN_USEPACKAGE 10
 
 void write_header() {
-  printf("\\documentclass[12pt,twoside]{article}\n");
+  printf("\\documentclass[12pt,twoside,a4paper]{article}\n");
   printf("\\input{../gowiz.tex}\n\n");
 }
 
