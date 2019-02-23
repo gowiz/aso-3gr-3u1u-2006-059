@@ -1,4 +1,4 @@
-\documentclass[12pt,twoside]{article}
+\documentclass[12pt,a4paper,twoside]{article}
 
 \input{../gowiz.tex}
 
@@ -22,6 +22,10 @@
 \fi
 \end{tikzpicture}
 }
+
+\pagestyle{fancy}
+\fancyhead[RO,LE]{Elementaire kansrekening}
+\fancyhead[RE,LO]{}
 
 \begin{document}
 
@@ -62,12 +66,9 @@ Je \hfill {\scriptsize(LP 2006/059, ET1, ET9, ET11)}
 
 \thispagestyle{empty}
 \tableofcontents
-\newpage
 
+\newpage
 \pagenumbering{arabic}
-\pagestyle{fancy}
-\fancyhead[RO,LE]{Elementaire kansrekening}
-\fancyhead[RE,LO]{}
 
 \cleardoublepage
 \section*{Inleiding}
@@ -80,24 +81,37 @@ Ga voor volgende problemen na of je de kans zou kunnen berekenen of je ze enkel 
   \item Hoe groot is de kans om met 2 dobbelstenen ten minste 7 ogen te gooien?
   \begin{center}
     \begin{tabular}{c|c|c|c|c|c|c}
-    &\dice{1}&\dice{2}&\dice{3}&\dice{4}&\dice{5}&\dice{6}\\
+             & \dice{1} & \dice{2} & \dice{3} & \dice{4} & \dice{5} & \dice{6} \\
     \hline
-    \dice{1}&&&&&&\\
+    \dice{1} &          &          &          &          &          &          \\
     \hline
-    \dice{2}&&&&&&\\
+    \dice{2} &          &          &          &          &          &          \\
     \hline
-    \dice{3}&&&&&&\\
+    \dice{3} &          &          &          &          &          &          \\
     \hline
-    \dice{4}&&&&&&\\
+    \dice{4} &          &          &          &          &          &          \\
     \hline
-    \dice{5}&&&&&&\\
+    \dice{5} &          &          &          &          &          &          \\
     \hline
-    \dice{6}&&&&&&\\
+    \dice{6} &          &          &          &          &          &          \\
     \end{tabular}
   \end{center}
 \end{enumerate}
 
 In dit hoofdstuk zullen we kansen leren berekenen!
+\vfill\hfill
+\rotatebox[origin=c]{180}{
+\begin{minipage}{0.5\linewidth}
+  \paragraph{Antwoorden:}
+  \small
+  \begin{enumerate}[(a)]
+  \item We moeten dit schatten. Bijvoorbeeld door naar de voorbije 100 jaar te kijken.
+  \item We moeten dit schatten. Bijvoorbeeld door dit eerst aan 50 16-jarigen uit onze school te vragen.
+  \item 1 kans op 6.
+  \item $\dfrac{7}{12}$
+  \end{enumerate}
+\end{minipage}
+}
 
 \cleardoublepage
 \section{Begrippen}
@@ -581,11 +595,7 @@ Bereken de kans om met een zuivere dobbelsteen
 \end{oefening}
 
 \begin{oefening}
-Bij het opgooien van een muntstuk zijn er twee even waarschijnlijke uitkomsten: Kop en Munt. Een zuiver muntstuk wordt driemaal opgegooid.
-\begin{enumerate}[(a)]
-  \item Teken het boomdiagram dat hierbij hoort.
-  \item Lees eruit af hoe groot de kans is om precies tweemaal kop te krijgen.
-\end{enumerate}
+Bij het opgooien van een muntstuk zijn er twee even waarschijnlijke uitkomsten: Kop en Munt. Een zuiver muntstuk wordt 17-maal na elkaar opgegooid. Wat is de kans dat we precies 9-maal kop krijgen.
 \end{oefening}
 
 \begin{oefening}
@@ -695,11 +705,11 @@ Beschouw het volgende voorbeeld:
 
 {\em Een medisch team heeft een onderzoek gedaan over het optreden van kleurenblindheid in een bepaalde bevolkingsgroep van 1000 mensen. Hierbij heeft men twee zaken geregistreerd: het geslacht en het al of niet kleurenblind zijn.}
 
-We krijgen de volgende data terug (mannen ($M$), vrouwen ($V$), kleurenblind ($K$), niet kleurenblind ($NK$)):
+We krijgen de volgende data terug (mannen ($M$), vrouwen ($V$), kleurenblind ($K$), niet kleurenblind ($\bar{K}$)):
 
 \begin{center}
   \begin{tabular}{c|c|c|c}
-         &  $K$ &  $NK$ & Totaal\\
+         &  $K$ &  $\bar{K}$ & Totaal\\
   \hline
   $M$      & 32 & 368 & 400\\
   $V$      &  6 & 594 & 600\\
@@ -708,16 +718,17 @@ We krijgen de volgende data terug (mannen ($M$), vrouwen ($V$), kleurenblind ($K
   \end{tabular}
 \end{center}
 
-\begin{oefening}
-Bepaal volgende kansen:
+We bepalen volgende kansen:
 \begin{enumerate}[(a)]
-  \item $V$: De gekozen persoon is een vrouw\\$\Rightarrow$ $P(V)=\arule{4cm}=\arule{4cm}$
-  \item $K$: De gekozen persoon is kleurenblind\\$\Rightarrow$ $P(K)=\arule{4cm}=\arule{4cm}$
-  \item $V\cap K$: De gekozen persoon is een vrouw en is kleurenblind\\$\Rightarrow$ $P(V\cap K)=\arule{4cm}=\arule{4cm}$
+\item $V$: De gekozen persoon is een vrouw
+  $$\Rightarrow\quad P(V)=\dfrac{600}{1000}=\dfrac{3}{5}$$
+\item $K$: De gekozen persoon is kleurenblind
+  $$\Rightarrow\quad P(K)=\dfrac{38}{1000}=\dfrac{19}{500}$$
+\item $V \cap K$: De gekozen persoon is een vrouw en is kleurenblind
+  $$\Rightarrow\quad P(V \cap K)=\dfrac{6}{1000}=\dfrac{3}{500}$$
 \end{enumerate}
-\end{oefening}
 
-\paragraph*{Opmerking} In de vorige oefening zijn telkens alle uitkomsten betrokken!
+\paragraph*{Opmerking} Bij vorige kansen zijn telkens alle uitkomsten betrokken!
 
 Veronderstel nu dat we zeker weten dat de proefpersoon een vrouw is. We moeten dan enkel nog kijken naar de relevante data, dus enkel bij de rij van de vrouwen. Wat is dan de kans dat ze kleurenblind is? Hiervoor voeren we een nieuwe notatie in:
 $$K|V:\mbox{De gekozen persoon is kleurenblind, op voorwaarde dat het een vrouw is}$$
@@ -725,19 +736,20 @@ $$\Rightarrow\quad P(K|V)=\dfrac{6}{600}=\dfrac{1}{100}$$
 
 \paragraph*{Opmerking} Bij een voorwaardelijke kans is slechts een deel van de uitkomsten betrokken!
 
-\begin{oefening}
-Bereken het product $P(V)\cdot P(K|V)=\arule{3cm}$\\
-Wat kan je besluiten?
-\arules{3}
-\end{oefening}
 
-\begin{oefening}
-Bereken $P(K\cap M)$; $P(K|M)$; $P(M)$ en ga na of het product $P(K\cap M)=P(M)\cdot P(K|M)$ ook klopt.
-\end{oefening}
+We bereken het product $P(V) \cdot P(K|V)$
+\begin{align*}
+  P(V) \cdot P(K|V) &= \dfrac{600}{1000} \cdot \dfrac{6}{600} \\
+                &= \dfrac{6}{1000}\\
+                &= P(V \cap K)
+\end{align*}
 
-\begin{oefening}
-Bereken $P(NK\cap M)$; $P(NK|M)$; $P(M)$ en ga na of het product $P(NK\cap M)=P(M)\cdot P(NK|M)$ ook klopt.
-\end{oefening}
+We besluiten dat er geldt
+$$ P(K|V) = \dfrac{P(V \cap K)}{P(V)} $$
+
+
+Bereken zelf $P(K\cap M)$; $P(K|M)$; $P(M)$ en ga na of het product $P(K\cap M)=P(M)\cdot P(K|M)$ ook klopt.
+Bereken zelf $P(\bar{K}\cap M)$; $P(\bar{K}|M)$; $P(M)$ en ga na of het product $P(\bar{K}\cap M)=P(M)\cdot P(\bar{K}|M)$ ook klopt.
 
 \subsection{Definitie}
 
@@ -755,14 +767,24 @@ en we spreken dan van de {\bf productregel}.
 \paragraph*{Definitie} Een kans waarop geen voorwaarde wordt gesteld zullen we een {\bf gewone kans} noemen.
 
 \begin{oefening}
-Zeg telkens om welke kans het gaat en bereken de kans:
+Gegeven de data over kleurenblindheid (mannen ($M$), vrouwen ($V$), kleurenblind ($K$), niet kleurenblind ($\bar{K}$)):
+
+\begin{center}
+  \begin{tabular}{c|c|c|c}
+         &  $K$ &  $\bar{K}$ & Totaal\\
+  \hline
+  $M$      & 32 & 368 & 400\\
+  $V$      &  6 & 594 & 600\\
+  \hline
+  Totaal & 38 & 962 & 1000
+  \end{tabular}
+\end{center}
+
+Zeg telkens om welke kans (gewone of voorwaardelijke) het gaat en bereken de kans:
 \begin{enumerate}[(a)]
-  \item $P(M\cap K)=$\arulefill
-  \arules{1}
-  \item $P(M|K)=$\arulefill
-  \arules{1}
-  \item $P(K|M)=$\arulefill
-  \arules{1}
+  \item $P(M\cap K)$
+  \item $P(M|K)$
+  \item $P(K|M)$
 \end{enumerate}
 \end{oefening}
 
@@ -842,7 +864,7 @@ ELISA-tests worden gebruikt om donor-bloed te onderzoeken op aanwezigheid van he
   \item Bereken de kans dat ELISA voor een aselect gekozen persoon uit deze populatie een positief resultaat laat zien.
   \item Bereken de kans dat iemand de antilichamen heeft, gegeven dat ELISA positief was.
 \end{enumerate}
-{\em (Deze opgave illustreert een feit dat belangrijk wordt wanneer men overweegt voorstellen te doen voor grootschalig testen op AIDS of illegale drugs: als het verschijnsel waarop getest wordt in de populatie ongewoon is, zullen de meeste positieve uitkomsten foutief zijn, zelfs als de test een zeer grote kans heeft om per geval een corrcet resultaat te geven.)}
+{\em (Deze opgave illustreert een feit dat belangrijk wordt wanneer men overweegt voorstellen te doen voor grootschalig testen op AIDS of illegale drugs: als het verschijnsel waarop getest wordt in de populatie ongewoon is, zullen de meeste positieve uitkomsten foutief zijn, zelfs als de test een zeer grote kans heeft om per geval een correct resultaat te geven.)}
 \end{oefening}
 
 \begin{oefening}
@@ -893,11 +915,14 @@ $$A \mbox{ {\bf onafhankelijk} van } B \Leftrightarrow P(A)=P(A|B)$$
 
 \paragraph*{Eigenschap 1} $A$ onafhankelijk van $B \Leftrightarrow B$ onafhankelijk van $A$
 
-\paragraph*{Eigenschap 2} $A$ onafhankelijk van $B \Leftrightarrow P(A\cap B)=P(A)\cdot P(B)$
+\paragraph*{Eigenschap 2} $A$ onafhankelijk van $B \Leftrightarrow P(A\cap B)=P(A) \cdot P(B)$
 
 \begin{oefening}
-Bewijs eigenschap 2.
-\arules{6}
+Bewijs eigenschap 2 met betrekking tot onafhankelijke gebeurtenissen. M.a.w. bewijs dat
+\begin{center}
+$A$ onafhankelijk van $B \Leftrightarrow P(A\cap B)=P(A) \cdot P(B)$
+\end{center}
+
 \end{oefening}
 
 Voorgaande eigenschap kan men nu ook gaan beschouwen als een nieuwe definitie voor twee onafhankelijke gebeurtenissen. M.a.w.:
@@ -916,16 +941,17 @@ $$A \mbox{ {\bf onafhankelijk} van } B \Leftrightarrow P(A\cap B)=P(A)\cdot P(B)
 $$A \mbox{ {\bf afhankelijk} van } B \Leftrightarrow P(A\cap B)\neq P(A)\cdot P(B)$$
 \end{mdframed}
 
-\begin{oefening} We kiezen willekeurig een getal van $1$ tot $12$. Daarbij beschouwen we de volgende gebeurtenissen: $A$, het getal is even en $B$, het getal is een drievoud. Onderzoek de (on)afhankelijkheid van $A$ en $B$.\\
-$U=\{\arule{8cm}\}$ met $\#U=\arule{2cm}$\\
-$A=\{\arule{8cm}\}$ met $\#A=\arule{2cm}$\\
-$B=\{\arule{8cm}\}$ met $\#B=\arule{2cm}$\\
+\begin{oefening} We kiezen willekeurig een getal van $1$ tot $12$. Daarbij beschouwen we de volgende gebeurtenissen: $A$, het getal is even en $B$, het getal is een drievoud. Onderzoek de (on)afhankelijkheid van $A$ en $B$.
+% \\
+% $U=\{\arule{8cm}\}$ met $\#U=\arule{2cm}$\\
+% $A=\{\arule{8cm}\}$ met $\#A=\arule{2cm}$\\
+% $B=\{\arule{8cm}\}$ met $\#B=\arule{2cm}$\\
 
-$A\cap B=\{\arule{4cm}\}$ met $\#(A\cap B)=\arule{2cm}$\\
+% $A\cap B=\{\arule{4cm}\}$ met $\#(A\cap B)=\arule{2cm}$\\
 
-$\Rightarrow P(A)=\arule{2cm}, P(B)=\arule{2cm}, P(A\cap B)=\arule{2cm}$\\
+% $\Rightarrow P(A)=\arule{2cm}, P(B)=\arule{2cm}, P(A\cap B)=\arule{2cm}$\\
 
-En dus $A$ en $B$ zijn \arule{4cm} want \arule{4cm}
+% En dus $A$ en $B$ zijn \arule{4cm} want \arule{4cm}
 \end{oefening}
 
 \begin{oefening}
@@ -951,44 +977,13 @@ Dit wordt meestal gebruikt als we besluiten moeten trekken over de kanswaarde va
 \begin{oefening}
 In een vaas zitten 3 gele, 5 rode en 10 groene bollen. Jan trekt eerst een bol, legt deze terug en daarna trekt Karel een bol. Bereken de kans op: Jan trekt een rode bol en Karel trekt een groene bol.
 
-Definieer de gebeurtenissen:
-\begin{itemize}
-  \itemsep0.1em
-  \item $J_{rood}$: Jan trekt een rode bol.
-  \item $K_{groen}$: \arulefill
-\end{itemize}
-\vspace*{0.5cm}
-We wensen dus de kans $P(J_{rood}\cap K_{groen})$ te berekenen:\\
-$J_{rood}$ en $K_{groen}$ zijn \verb#afhankelijk#/\verb#onafhankelijk#.\\
-We gebruiken dus de formule:
-$\arule{10cm}$\\
-We berekenen:
-$$P(J_{rood})=\arule{4cm}$$
-en
-$$P(K_{groen})=\arule{4cm}$$
-Besluit:
-$$\arule{10cm}$$
+{\em \small Hint:\\
+Definieer eerst twee gebeurtenissen, $J_{rood}$ en $K_{groen}$. Je wenst dus de kans $P(J_{rood}\cap K_{groen})$ te berekenen. Kijk eerst of de twee gebeurtenissen $J_{rood}$ en $K_{groen}$  afhankelijk of onafhankelijk zijn. Gebruik nu de juiste formule.
+}
 \end{oefening}
 
 \begin{oefening}
 In een vaas zitten 3 gele, 5 rode en 10 groene bollen. Jan trekt eerst een bol, legt deze {\em niet} terug en daarna trekt Karel een bol. Bereken de kans op: Jan trekt een rode bol en Karel trekt een groene bol.
-
-Definieer de gebeurtenissen:
-\begin{itemize}
-  \itemsep0.1em
-  \item $J_{rood}$: Jan trekt een rode bol.
-  \item $K_{groen}$: \arulefill
-\end{itemize}
-\vspace*{0.5cm}
-We wensen dus de kans $P(J_{rood}\cap K_{groen})$ te berekenen:\\
-$J_{rood}$ en $K_{groen}$ zijn \verb#afhankelijk#/\verb#onafhankelijk#.\\
-We gebruiken dus de formule:
-$$\arule{10cm}$$
-Als we dus mogen veronderstellen dat Jan een rode bol heeft getrokken, hoeveel groene bollen kan Karel dan nog trekken? \arule{2cm}
-Dus:
-$$P(K_{groen}|J_{rood})=\arule{4cm}$$
-Besluit:
-$$\arule{10cm}$$
 \end{oefening}
 
 \paragraph*{Opmerking}
@@ -997,7 +992,7 @@ Aangezien $P(A\cap B\cap C)=P(A)\cdot P(B|A) \cdot P(C|(A\cap B))$, ligt de uitb
 
 \begin{oefening}
 Maak deze veralgemening:\\
-$A$, $B$ en $C$ zijn paarsgewijze onafhankelijk, dan geldt $$P(A\cap B\cap C)=\arule{6cm}$$
+$A$, $B$ en $C$ zijn paarsgewijze onafhankelijk, dan geldt $$P(A\cap B\cap C)=?$$
 \end{oefening}
 
 \subsection{Herhaalde experimenten}
@@ -1043,15 +1038,15 @@ met $A_1, B_2, \ldots$ onafhankelijk.
 \begin{oefening}
 In een vaas zitten 3 rode, 5 gele en 10 groene bollen. Je trekt drie keer na elkaar een bol en legt hem telkens terug. Bereken de kans dat je eerst een rode dan een groene en tenslotte opnieuw een rode bol trekt.
 
+{\em \small Hint:\\
 Veronderstel de volgende gebeurtenissen:
 \begin{itemize}
   \itemsep0.2em
   \item $R_1$: De eerste bol is rood.
-  \item $G_2$: \arulefill
-  \item $R_3$: \arulefill
+  \item $G_2$: De tweede bol is groen.
+  \item $R_3$: De derde bol is rood.
 \end{itemize}
-\vspace*{0.1cm}
-\arules{4}
+}
 \end{oefening}
 
 \begin{oefening}*
