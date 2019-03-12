@@ -2,10 +2,6 @@
 
 \input{../gowiz.tex}
 
-\pagestyle{fancy}
-\fancyhead[RO,LE]{Integraalrekening}
-\fancyhead[RE,LO]{}
-
 \begin{document}
 
 \begin{center}
@@ -48,13 +44,17 @@ Je \hfill  {\scriptsize(LP 2006-059, LI 1.10)}
 }
 
 \thispagestyle{empty}
-
 \newpage
+
 \tableofcontents
 \thispagestyle{empty}
-
 \newpage
+
 \pagenumbering{arabic}
+
+\pagestyle{fancy}
+\fancyhead[RO,LE]{Integraalrekening}
+\fancyhead[RE,LO]{}
 
 \cleardoublepage
 \section{Differentiaal}
@@ -108,18 +108,18 @@ Voor de eenvoud noemen we $(a,f(a))=A$, $(b,f(b))=B$ en $(b,f(a))=C$. We zoeken 
 
 We berekenen nu de rico $m$ van $t$ op 2 manieren:
 \begin{itemize}
-  \item M.b.v. definitie rico waarbij $(x_1,y_1)$ en $(x_2, y_2)$ zelf te kiezen punten op $t$ zijn:
+\item M.b.v. definitie rico waarbij $(x_1,y_1)$ en $(x_2, y_2)$ zelf te kiezen punten op $t$ zijn:
   $$m=\dfrac{y_2-y_1}{x_2-x_1}=\dfrac{y_D-y_A}{x_D-x_A}=\dfrac{y_D-y_C}{b-a}=\dfrac{y_D-y_C}{\Delta x}$$
-  \item M.b.v. afgeleid getal waarbij we omdat $t$ een rechte is zelf mogen kiezen waar:
+\item M.b.v. afgeleid getal waarbij we omdat $t$ een rechte is zelf mogen kiezen waar:
   $$m = f'(a)$$
 \end{itemize}
 
 Onze rico elimineren we uit bovenstaande vergelijkingen:
 \begin{align*}
-     f'(a)     &= \dfrac{y_D-y_C}{\Delta x}\\
-\LRA \qquad y_D - y_C &= f'(a)\cdot \Delta x\\
-                      &= \mbox{differentiaal van $f$ in $a$}\\
-                      &= \mbox{benadering voor $\Delta y$}\\
+     f'(a)       & = \dfrac{y_D-y_C}{\Delta x}                \\
+\LRA \qquad y_D - y_C & = f'(a)\cdot \Delta x                          \\
+                 & = \mbox{differentiaal van $f$ in $a$} \\
+                 & = \mbox{benadering voor $\Delta y$}        \\
 \end{align*}
 
 We noteren deze benadering als $df(a)$. Merk op dat we uit de notatie de afstand $\Delta x$ laten verdwijnen. Dit omdat we in de toekomst $\Delta x$ oneindig klein zullen veronderstellen. Zodoende wordt de benadering exact! We krijgen dus volgende definitie.
@@ -127,8 +127,6 @@ We noteren deze benadering als $df(a)$. Merk op dat we uit de notatie de afstand
 \subsection{Definitie}
 Voor een functie $f$ die afleidbaar is in $x$ en voor een $\Delta x$ die een toename is die oneindig klein wordt noemen we de differentiaal van $f$ in $x$ het product
 $$df(x)=f'(x)\cdot\Delta x$$
-
-
 
 \begin{oefening}
 Bereken
@@ -143,8 +141,6 @@ Bereken
 \end{multicols}
 \end{oefening}
 
-
-
 \subsection{Elimineren van $\Delta x$}
 
 We berekenen de differentiaal van $f(x)=x$:
@@ -156,8 +152,6 @@ We berekenen de differentiaal van $f(x)=x$:
 \end{align*}
 Maar $df(x) = dx$ en dus $\Delta x = dx$. We mogen onze definitie dus aanpassen tot
 $$df(x)=f'(x)\cdot dx$$
-
-
 
 \begin{oefening}
 Bereken
@@ -171,7 +165,6 @@ Bereken
 \end{enumerate}
 \end{multicols}
 \end{oefening}
-
 
 \needspace{4cm}
 \subsection{Rekenregels voor het differentiëren}
@@ -213,8 +206,6 @@ Merk op dat we de kettingregel gratis krijgen! Zie volgende voorbeeld:
                 &= \dfrac{\cos\sqrt{x}}{2\sqrt{x}} dx
 \end{align*}
 
-
-
 \begin{oefening}
 Bepaal de differentiaal van de volgende functies
 \begin{multicols}{2}
@@ -245,8 +236,6 @@ Bepaal de differentiaal van de volgende functies
 \end{enumerate}
 \end{multicols}
 \end{oefening}
-
-
 
 \subsection{Toepassing}
 
@@ -289,8 +278,6 @@ We maken nu gebruik van het feit dat $\Delta x=dx$ en $\Delta y \approx dy$ met 
 \end{align*}
 
 De werkelijke waarde afgerond op 2 decimalen is $\log_2 5 = 2.32$. We hebben dus een fout van 4 honderdsten.
-
-
 
 \begin{oefening}
 Benader
@@ -392,7 +379,6 @@ met
 Merk ook de elegantie van deze notatie op, de uitgetrokken $S$ staat voor sommatie, de differentiaal $dx$ staat voor een oneindig kleine $\Delta x$, bijvoorbeeld met de ondersommen:
 $$\int_a^b f(x)\;dx = \lim_{n\to+\infty}\sum_{k=1}^n \min\nolimits_k f\cdot\Delta x$$
 
-\pagebreak
 \subsection{Voorbeeld}
 
 Beschouw de functie
@@ -456,8 +442,6 @@ We voeren een nieuwe notatie in
 $$[F(x)]_a^b = F(b) - F(a)$$
 en lezen dit als we berekenen $F$ van $a$ naar $b$.
 
-
-
 \begin{oefening}
 Bereken
 \begin{multicols}{2}
@@ -497,14 +481,10 @@ Bereken
 \end{enumerate}
 \end{oefening}
 
-
-
 We krijgen volgende definitie:
 
 T.o.v. een orthonormaal assenstelsel is de oppervlakte $S$ begrepen tussen $y=f(x),\;y=0,\;x=a,\;x=b$ gelijk aan
 $$S=\left[F(x)\right]_a^b \mbox{ met } F'(x)=f(x)\;.$$ We noemen $F$ {\em een} {\bf primitieve functie} van $f$.
-
-
 
 \begin{oefening}
 Bepaal {\em alle} primitieve functies van
@@ -520,8 +500,6 @@ Bepaal {\em alle} primitieve functies van
 \end{exlist}
 \end{oefening}
 
-
-
 Merk op dat elke functie $f$ oneindig veel primitieve functies $F$ heeft.
 
 \subsection{Een bepaalde integraal berekenen}
@@ -533,8 +511,6 @@ $$\int_a^b f(x)\;dx = [F(x)]_a^b$$
 
 \paragraph*{Gevolg}
 $$\int_a^b x^n\;dx = \left[\dfrac{x^{n+1}}{n+1}\right]_a^b \mbox{ met } n\in\mathbb{R}\setminus\{-1\}$$
-
-
 
 \begin{oefening}
 Bereken
@@ -551,27 +527,27 @@ Bereken
 \end{multicols}
 \end{oefening}
 
-
-
 \paragraph*{Integraal van een veeltermfunctie}
 M.b.v. de lineariteit van een bepaalde integraal kunnen we de bepaalde integraal van een veeltermfunctie berekenen, bijvoorbeeld
 \begin{align*}
   \int_1^3 2x^3-3x+1 \;dx &= \int_1^3 2x^3 \;dx + \int_1^3 -3x \;dx + \int_1^3 1 \;dx\\
-                          &= 2\int_1^3 x^3 \;dx - 3\int_1^3 x \;dx + \int_1^3 \;dx\\
-                          &= 2\cdot\left[\dfrac{x^4}{4}\right]_1^3 - 3\cdot\left[\dfrac{x^2}{2}\right]_1^3 +2\cdot\left[x\right]_1^3\\
-                          &= 2\cdot \left(\dfrac{81}{4}-\dfrac{1}{4}\right) - 3\cdot \left(\dfrac{9}{2}-\dfrac{1}{2}\right) + 2\cdot \left(3-1\right)\\
-                          &= 40 - 12 + 2\\
-                          &= 30
+                       &= 2\int_1^3 x^3 \;dx - 3\int_1^3 x \;dx + \int_1^3 \;dx\\
+                       &= 2\cdot\left[\dfrac{x^4}{4}\right]_1^3
+                         - 3\cdot\left[\dfrac{x^2}{2}\right]_1^3
+                         + 2\cdot\left[x\right]_1^3\\
+                       &= 2\cdot \left(\dfrac{81}{4}-\dfrac{1}{4}\right)
+                         - 3\cdot \left(\dfrac{9}{2}-\dfrac{1}{2}\right)
+                         + 2\cdot \left(3-1\right)\\
+                       &= 40 - 12 + 2\\
+                       &= 30
 \end{align*}
 of veel korter!
 \begin{align*}
   \int_1^3 2x^3-3x+1 \;dx &= \cdot\left[2\cdot\dfrac{x^4}{4} - 3\cdot\dfrac{x^2}{2} +2\cdot x\right]_1^3\\
-                          &= (2\cdot \dfrac{81}{4} - 3\cdot \dfrac{9}{2} + 2\cdot 3) - (2\cdot \dfrac{1}{4} - 3\cdot \dfrac{1}{2} + 2\cdot 1)\\
-                          &= 30
+                       &= (2\cdot \dfrac{81}{4} - 3\cdot \dfrac{9}{2} + 2\cdot 3)
+                         - (2\cdot \dfrac{1}{4} - 3\cdot \dfrac{1}{2} + 2\cdot 1)\\
+                       &= 30
 \end{align*}
-
-
-
 
 \begin{oefening}
 Bereken volgende bepaalde integralen
@@ -644,8 +620,6 @@ We houden rekening met 4 gevallen om de oppervlakte van een functie $f$ in een i
   \end{align*}
 \end{itemize}
 
-
-
 \begin{oefening}
 Bepaal de oppervlakte tussen
 \begin{enumerate}[(a)]
@@ -667,7 +641,6 @@ Bepaal de oppervlakte tussen
   \item $\displaystyle y=\sqrt{x},\quad y=\sqrt{x+1},\quad x=0, \quad x=4$
 \end{enumerate}
 \end{oefening}
-
 
 \begin{oefening}
 Bepaal de oppervlakte tussen de gegeven kromme en de $x$-as
