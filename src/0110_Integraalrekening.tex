@@ -566,8 +566,8 @@ Bereken volgende bepaalde integralen
   \item $\displaystyle \int_3^{16/3} \dfrac{x}{\sqrt{3x}} \;dx$
   \item $\displaystyle \int_{0}^3 (x+1)^3\;dx$
   \item $\displaystyle \int_{0}^2 (x+2)^6\;dx$
-  \item $\displaystyle \int_{-1}^3 \dfrac{x+1}{x}\;dx$
-  \item $\displaystyle \int_{-4}^4 \dfrac{x^2+2x+2}{4x^2}\;dx$
+  \item $\displaystyle \int_{-1}^3 \dfrac{x^2+x}{x}\;dx$
+  \item $\displaystyle \int_{-4}^4 \dfrac{x^3+2x^2+2}{4x^2}\;dx$
   \item $\displaystyle \int_{4}^0 \sqrt{x}(x-2)\;dx$
 \end{enumerate}
 \end{multicols}
@@ -580,7 +580,7 @@ Bereken
 \itemsep1em
   \item $\displaystyle \int_1^2 y^2+y^{-2} \;dy$
   \item $\displaystyle \int_{-1}^2 y^2+y^{-2} \;dy$
-  \item $\displaystyle \int_1^2 \dfrac{2\omega^5 - \omega + 3}{\omega^2} \;d\omega$
+  \item $\displaystyle \int_1^2 \dfrac{2\omega^5-\omega^2+3}{\omega^2} \;d\omega$
   \item $\displaystyle \int_{25}^{-10} \;dR$
 \end{enumerate}
 \end{multicols}
@@ -616,9 +616,21 @@ We houden rekening met 4 gevallen om de oppervlakte van een functie $f$ in een i
   \end{align*}
   \item $a>b$ en $f(x)\leq0$ in $[a,b]$
   \begin{align*}
-    \int_a^b f(x)\; dx \geq 0 &\Rightarrow S=-\int_a^b f(x)\; dx
+    \int_a^b f(x)\; dx \geq 0 &\Rightarrow S=\int_a^b f(x)\; dx
   \end{align*}
 \end{itemize}
+
+\subsubsection*{Besluit}
+
+Ten opzichte van een orthonormaal assenstelsel geldt dat we het oppervlakte van het deel va het vlak begrensd door $y=f(x)$, $y=0$, $x=a$, $x=b$ kunnen berekenen met
+$$S = |\int_a^b f(x)\;dx|$$
+als $f$ geen nulwaarden heeft tussen $a$ en $b$.
+
+\subsubsection*{Opmerking}
+
+Heeft $f$ wel nulwaarden tussen $a$ en $b$ dan kunnen we theoretisch gezien de berekening maken met behulp van
+$$S = \int_a^b |f(x)|\;dx$$
+wat we in de praktijk zullen doen door $f$ te spliten bij de nulwaarden, en de berekening apart zullen doen.
 
 \begin{oefening}
 Bepaal de oppervlakte tussen
@@ -654,6 +666,21 @@ Bepaal de oppervlakte tussen de gegeven kromme en de $x$-as
 \end{enumerate}
 \end{multicols}
 \end{oefening}
+
+\subsection{Berekenen van de oppervlakte tussen twee krommen}
+
+Veronderstel dat we de oppervlakte $S$ berekenen tussen de krommen die voorgesteld worden met de functies
+$$y=f(x) \text{ en } y=g(x)$$
+\begin{itemize}
+\item We maken een schets van de twee functies $f$ en $g$ in éénzelfde assenstelsel.
+\item We zoeken de snijpunten van de twee krommen, we lossen dus
+  $$f(x)-g(x)=0$$
+  op naar $x$. Dit worden de integratiegrenzen $a$ en $b$.
+\item De gezochte oppervlakte is dan
+  $$S = \int_a^b (f(x)-g(x))\; dx$$
+  op voorwaarde dat $f(x) \geq g(x)$ is in $[a,b]$.
+\end{itemize}
+
 
 \begin{oefening}
 Bepaal de oppervlakte tussen $f$ en $g$
