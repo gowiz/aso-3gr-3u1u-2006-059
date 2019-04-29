@@ -1,9 +1,6 @@
-\documentclass[12pt,twoside]{article}
+\documentclass[a4paper,12pt, twoside]{article}
 
 \input{../gowiz.tex}
-
-%\renewcommand{\rmdefault}{phv} % Arial
-%\renewcommand{\sfdefault}{phv} % Arial
 
 \newcommand{\dice}[1]{
 \begin{tikzpicture}[x=1em,y=1em,radius=0.1]
@@ -88,13 +85,10 @@ tussen twee gegeven grenzen, met waarden groter dan een gegeven grens of met waa
 
 \section{Discrete kansvariabelen}
 
-\vspace*{-0.5cm}
 We kunnen aan elk element van de uitkomstenverzameling $U$ een (reëel) getal toekennen. Op deze manier krijgen we dus een functie $X$ van $U$ naar $\mathbb{R}$, we noemen zo'n functie een {\bf kansvariabele} $X$.
 
-\vspace*{-0.5cm}
 \subsection{Voorbeelden}
 
-\vspace*{-0.5cm}
 \paragraph*{Voorbeeld 1} Een zuiver muntstuk opgooien
 
 {\em Een speler gooit een zuiver muntstuk op. Er wordt afgesproken dat hij 2 euro krijgt als hij kop werpt en 1 euro als hij munt werpt.}
@@ -184,9 +178,9 @@ We willen nu van elk van de beelden van de kansvariabele $X$ weten hoe groot de 
 
 \subsection{Voorbeelden}
 
-\paragraph*{Voorbeeld 1} Een zuiver muntstuk opgooien
+\paragraph*{Voorbeeld 1} {\em Een zuiver muntstuk opgooien}
 
-{\em Een speler gooit een zuiver muntstuk op. Er wordt afgesproken dat hij 2 euro krijgt als hij kop werpt en 1 euro als hij munt werpt. Wat is de kans dat hij 2 euro krijgt? Wat is de kans dat hij 1 euro krijgt?}
+Een speler gooit een zuiver muntstuk op. Er wordt afgesproken dat hij 2 euro krijgt als hij kop werpt en 1 euro als hij munt werpt. Wat is de kans dat hij 2 euro krijgt? Wat is de kans dat hij 1 euro krijgt?
 
 \begin{itemize}
   \item $P(X=2)=P(\{k\})=\dfrac{1}{2}$\\
@@ -220,25 +214,39 @@ Deze functie $f$ noemen we de kansfunctie van de kansvariabele $X$ en kan geplot
 \end{center}
 
 
-\begin{oefening} Controle van geleverde onderdelen
+\begin{oefening} {\em Controle van geleverde onderdelen}
 
-{\em Van de onderdelen geleverd door een onbetrouwbare leverancier is 25\% defect. Bij een controle onderzoeken we twee onderdelen en tellen we het aantal defecte stukken. Wat is de kans dat Y respectievelijk de getalwaarden 0 , 1 , 2 aanneemt? Ga ervan uit dat een lukraak getrokken onderdeel een kans 0.25 heeft om defect te zijn en een kans 0.75 heeft om in orde te zijn.}\\
+  Van de onderdelen geleverd door een onbetrouwbare leverancier is 25\% defect. Bij een controle onderzoeken we twee onderdelen en tellen we het aantal defecte stukken.  Ga ervan uit dat een lukraak getrokken onderdeel een kans $0.25$ heeft om defect te zijn en een kans $0.75$ heeft om in orde te zijn.
 
-\begin{itemize}
-  \itemsep1em
-  \item $P(Y=0)=$\arulefill
-  \item $P(Y=1)=$\arulefill
-  \item $P(Y=2)=$\arulefill
-\end{itemize}
-
-$$f(0)=\arule{1cm} \qquad\qquad f(1)=\arule{1cm} \qquad\qquad f(2)=\arule{1cm}$$
-
-We krijgen dus een kansfunctie $f$ van de kansvariabele $Y$ van $\mathbb{R}$ naar $[0,1]$ en deze kan geplot worden:
-
-\begin{center}
-  \assenstelsel{-1}{7}{-1}{10}
-\end{center}
-
+  \begin{enumerate}[(a)]
+  \item Wat is de kans dat de kansvariable $Y$ respectievelijk de getalwaarden $0$ , $1$ , $2$ aanneemt?
+    \begin{itemize}
+      \itemsep1em
+    \item $P(Y=0)=$\arulefill
+    \item $P(Y=1)=$\arulefill
+    \item $P(Y=2)=$\arulefill
+    \end{itemize}
+  \item Geef de bijhorende kansfunctie $f$ van de kansvariabele $Y$ van $\mathbb{R}$ naar $[0,1]$:
+    $$f(0)=\arule{1cm} \qquad\qquad f(1)=\arule{1cm} \qquad\qquad f(2)=\arule{1cm}$$
+  \item Maak een tabel waar alle vorige gegevens in voorkomen,
+  \item en stel de kansfunctie $f$ grafisch voor:\\
+    \begin{minipage}{0.5\linewidth}
+      \begin{center}
+        \begin{tabular}{c|c|c}
+          $Y$ & $P(Y=y_i)$ & $f(y_i)$\\
+          \hline
+          &\\
+          &\\
+          &\\
+        \end{tabular}
+      \end{center}
+    \end{minipage}
+    \begin{minipage}{0.5\linewidth}
+      \begin{center}
+        \assenstelsel{-1}{7}{-1}{10}
+      \end{center}
+    \end{minipage}
+  \end{enumerate}
 \end{oefening}
 
 \pagebreak
@@ -249,7 +257,7 @@ Bij het uitvoeren van een experiment met uitomstenverzameling $U$ en kansvariabe
 \end{mdframed}
 
 \paragraph*{Notatie}
-$$f(x_i)=P(x=x_i)$$
+$$f(x_i)=P(X=x_i)$$
 waarbij $f(x_i)$ de kans is dat de getalwaarde $x_i$ door de kansvariabele $X$ wordt aangenomen.
 
 \begin{oefening}
@@ -324,7 +332,7 @@ Tabuleer voorgaande gegevens:
 \draw [fill] (5,1/6) circle (2pt);
 \draw [fill] (6,1/6) circle (2pt);
 \end{tikzpicture}
-\end{center}  
+\end{center}
 \end{minipage}
 \begin{minipage}{0.5\textwidth}
 \begin{center}
@@ -360,10 +368,9 @@ Tabuleer voorgaande gegevens:
 \end{center}
 \end{minipage}
 
-\begin{oefening}
-Een zuiver muntstuk opgooien
+\begin{oefening} {\em Een zuiver muntstuk opgooien}
 
-{\em Een speler gooit een zuiver muntstuk op. Er wordt afgesproken dat hij 2 euro krijgt als hij kop werpt en 1 euro als hij munt werpt.}
+Een speler gooit een zuiver muntstuk op. Er wordt afgesproken dat hij 2 euro krijgt als hij kop werpt en 1 euro als hij munt werpt.
 
 \begin{enumerate}[(a)]
   \itemsep1em
@@ -383,23 +390,23 @@ Een zuiver muntstuk opgooien
 \end{enumerate}
 \end{oefening}
 
-\begin{oefening} Controle van geleverde onderdelen
+\begin{oefening} {\em Controle van geleverde onderdelen}
 
-{\em Van de onderdelen geleverd door een onbetrouwbare leverancier is 25\% defect. Bij een controle onderzoeken we twee onderdelen en tellen we het aantal defecte stukken. Wat is de kans dat Y respectievelijk de getalwaarden 0 , 1 , 2 aanneemt? Ga ervan uit dat een lukraak getrokken onderdeel een kans 0.25 heeft om defect te zijn en een kans 0.75 heeft om in orde te zijn.}
+Van de onderdelen geleverd door een onbetrouwbare leverancier is $25\%$ defect. Bij een controle onderzoeken we twee onderdelen en tellen we het aantal defecte stukken. Wat is de kans dat de kansvariabele $Y$ respectievelijk de getalwaarden $0$, $1$, $2$ aanneemt? Ga ervan uit dat een lukraak getrokken onderdeel een kans $0.25$ heeft om defect te zijn en een kans $0.75$ heeft om in orde te zijn.
 
 \begin{enumerate}[(a)]
   \itemsep1em
   \item Bereid de tabel van de kansfunctie uit met een kolom voor de verdelingsfunctie:
   \begin{center}
     \begin{tabular}{c|c|c}
-      $x_i$ & $f(x_i)$ & $F(x_i)$\\
+      $y_i$ & $f(y_i)$ & $F(y_i)$\\
       \hline
       $0$ & $\dfrac{9}{16}$ &\\
       $1$ & $\dfrac{6}{16}$ &\\
       $2$ & $\dfrac{1}{16}$ &\\
     \end{tabular}
   \end{center}
-  \item Maak de grafiek van de verdelingsfunctie:
+  \item Maak de grafiek van de verdelingsfunctie $F(y_i)$:
   \begin{center}
     \assenstelsel{-1}{8}{-1}{8}
   \end{center}
@@ -494,7 +501,7 @@ We beschouwen opnieuw het farmaceutisch bedrijf waar tabletten van een geneesmid
     $x_i$ & $f(x_i)$\\
     \hline
     0.30 & 0.96\\
-    -2.20 & 0.04\\      
+    -2.20 & 0.04\\
     \end{tabular}
   \end{center}
   en met verwachtingswaarde
@@ -507,8 +514,7 @@ We beschouwen opnieuw het farmaceutisch bedrijf waar tabletten van een geneesmid
     \arule{2cm} & \arule{2cm}\\
     \arule{2cm} & \arule{2cm}\\
     \end{tabular}
-  \end{center}
-  
+  \end{center}\mbox{}\\
   $$E(Y) = \arule{2cm}$$
 \end{enumerate}
 Om te weten over welke kansvariabele deze verwachtingswaarde het meest zegt, berekenen we de standaardafwijking (zie statistiek van het vierde jaar):
@@ -535,7 +541,7 @@ $$\sigma=\sqrt{\Var(X)}$$
 
 \begin{oefening}
 Speler A gooit met een zuivere dobbelsteen. Als hij één of twee ogen gooit, dan betaalt hij 1 euro aan speler B; als hij 3, 4 of 5 ogen gooit, dan krijgt hij 0.50 euro van speler B; als hij 6 ogen gooit, dan krijgt hij 2 euro van speler B.\\
-Onderzoek de kansvariabele X die als getalwaarden de opbrengst van het spel voor speler A heeft.
+Onderzoek de kansvariabele X die als getalwaarden de opbrengst van het spel voor speler A heeft. Is dit spel voordelig voor speler A?
 \end{oefening}
 
 \begin{oefening}
@@ -602,19 +608,6 @@ Uit een spel van 52 kaarten wordt lukraak een kaart getrokken. Eén speler houdt
     \item Kans op mislukking: $q$
     %\item Verband: \arule{3cm}
   \end{itemize}
-  \begin{oefening}
-  Als we de kans op succes $p$ noemen en de kans op mislukking $q$, wat is dan het verband tussen $p$ en $q$?\\
-  \arules{1}
-  \end{oefening}
-  \begin{oefening}
-  Geef bij het opgooien van een eerlijk muntstuk de kans op kop en de kans op munt.
-  \arules{1}
-  \end{oefening}
-  \begin{oefening}
-  Geef bij het willekeurig beantwoorden van een meerkeuzevraag met vier mogelijkheden, waarbij er precies één juist antwoord is, de kans op fout en de kans op juist.
-  \arules{1}
-  \end{oefening}
-
   \item Vaak worden de experimenten {\bf herhaald}:
   \begin{itemize}
     \item 10 keer een muntstuk opgooien
@@ -623,7 +616,17 @@ Uit een spel van 52 kaarten wordt lukraak een kaart getrokken. Eén speler houdt
   We spreken in dit geval van deelexperimenten. Als er bijvoorbeeld $n$ deelexperimenten zijn, dan kan een uitkomst voorgesteld worden met behulp van een $n$-tal (een $2$-tal noemen we kort een koppel).
 \end{itemize}
 
-De kansvariabele X die als getalwaarde het aantal mogelijke successen aanneemt, noemen we {\bf binomiaal verdeeld}.
+De kansvariabele $X$ die als getalwaarde het aantal mogelijke successen aanneemt, noemen we {\bf binomiaal verdeeld}.
+
+\begin{oefening}
+  Als we de kans op succes $p$ noemen en de kans op mislukking $q$, wat is dan het verband tussen $p$ en $q$?
+\end{oefening}
+\begin{oefening}
+  Geef bij het opgooien van een eerlijk muntstuk de kans op kop en de kans op munt.
+\end{oefening}
+\begin{oefening}
+  Geef bij het willekeurig beantwoorden van een meerkeuzevraag met vier mogelijkheden, waarbij er precies één juist antwoord is, de kans op fout en de kans op juist.
+\end{oefening}
 
 \subsection{Definitie}
 
@@ -655,14 +658,13 @@ $$ F(k)=f(0) + f(1) + \cdots + f(k)$$
 We gooien 20 maal een muntstuk op en we nemen de uitslag kop als succes.
 \begin{enumerate}[(a)]
   \item Geef de verdelingsfunctie.
-  \arules{2}
   \item Bereken de kans dat er 11 maal kop gegooid wordt.
-  \arules{3}
   \item Bereken de kans dat er hoogstens 11 maal kop gegooid wordt.
-  \arules{2}
 \end{enumerate}
 \end{oefening}
-\vspace*{-0.5cm}
+
+\needspace{5cm}
+
 \subsection{Eigenschappen van de binomiale verdeling}
 
 \begin{mdframed}
@@ -816,12 +818,11 @@ We merken dat de grafieken van al deze normale verdelingen met constante $\sigma
 
 \begin{oefening}
 Voor welke $x$-waarde vinden we steeds de top van de klokvormige kromme?
-\arules{1}
 \end{oefening}
 
 \subsection*{Grafische betekenis van $\sigma$}
 
-We laten nu in het functievoorschrift 
+We laten nu in het functievoorschrift
 $$f(x)=\dfrac{1}{\sigma{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}$$
 de standaardafwijking $\sigma$ variëren, terwijl we het gemiddelde $\mu$ constant houden op $\mu=0$.
 
@@ -1209,7 +1210,7 @@ Omdat er geen tabellen bestaan voor de niet-standaard normaal verdeelde populati
 \paragraph*{Opmerking: } De $z$-score mag afgerond worden op $2$ cijfers na de komma want de tabel achteraan is maar correct op 2 cijfers na de komma.
 
 \begin{oefening}
-Het gewicht van een bepaalde soort peer is bij benadering normaal verdeeld met gemiddelde 150g en standaardafwijking 30g. 
+Het gewicht van een bepaalde soort peer is bij benadering normaal verdeeld met gemiddelde 150g en standaardafwijking 30g.
 Welke percentage peren weegt minder dan 125g?
 \begin{enumerate}[(a)]
   \item Bereken eerst de $z$-score van $x=125$.
@@ -1341,15 +1342,15 @@ Van een groot aantal schapen in een bepaald gebied is één op de twintig bruin.
 \begin{oefening}
 Ongeveer 1 op elke 20 mannen heeft last van "rood-groen" kleurenblindheid.
 \begin{enumerate}[(a)]
-  \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen juist 750 rood-groen-kleurenblinden voorkomen? 
-  \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen minstens 750 rood-groen-kleurenblinden voorkomen? 
-  \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen meer dan 750 rood-groen-kleurenblinden voorkomen? 
+  \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen juist 750 rood-groen-kleurenblinden voorkomen?
+  \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen minstens 750 rood-groen-kleurenblinden voorkomen?
+  \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen meer dan 750 rood-groen-kleurenblinden voorkomen?
 \end{enumerate}
 \end{oefening}
 
 \begin{oefening}
 De kans op kleurenblindheid is bij vrouwen veel kleiner, maar ongeveer 0.4\% van de Westerse vrouwen is kleurenblind.
-Hoe groot is de kans dat in een representatieve steekproef van 250 vrouwen inderdaad 1 kleurenblinde voorkomt? 
+Hoe groot is de kans dat in een representatieve steekproef van 250 vrouwen inderdaad 1 kleurenblinde voorkomt?
 \end{oefening}
 
 \begin{oefening}
@@ -1362,7 +1363,7 @@ Je gooit 15 keer met een eerlijk geldstuk. Het gaat je om de kans dat je hoogste
 \end{oefening}
 
 \begin{oefening}
-Ongeveer 6\% van de koffers die door een bepaalde machine geproduceerd worden, vertoont defecten. 
+Ongeveer 6\% van de koffers die door een bepaalde machine geproduceerd worden, vertoont defecten.
 \begin{enumerate}[(a)]
   \item Geef een normale benadering van de kans dat van de 100 koffers die op een morgen worden gemaakt er hooguit 3 zijn die defecten vertonen.
   \item Hoe groot is de kans dat dit er precies 11 zijn?
@@ -1393,21 +1394,22 @@ In een restaurant met een capaciteit van 350 tafels zijn voor de komende feestda
 \begin{center}
 
 \begin{tikzpicture}
-\begin{axis}[
-  no markers, domain=0:10, samples=100,
-  axis lines*=left,
-  height=3cm, width=12cm,
-  xtick={0}, ytick={0},
-  yticklabels={}, xticklabels={},
-  enlargelimits=false, clip=false, axis on top,
-  grid = none
-  ]
-  \addplot [fill=gray!40, draw=none, domain=-4:1.5] {gauss(0,1)} \closedcycle;
-  \addplot [very thick,black!50!black, domain=-4:4] {gauss(0,1)};
-  \draw [yshift=-0.1cm] (axis cs:1.5,0) node[anchor=north] {$z$};
-  \draw [yshift=-0.1cm] (axis cs:0,0) node[anchor=north] {\small 0};
-  \draw (axis cs:0,0.2) node[anchor=north] {$\Phi(z)=P(Z\leq z)$};
-\end{axis}
+  \begin{axis}[
+    yscale=1.3,
+    no markers, domain=0:10, samples=100,
+    axis lines*=left,
+    height=3cm, width=12cm,
+    xtick={0}, ytick={0},
+    yticklabels={}, xticklabels={},
+    enlargelimits=false, clip=false, axis on top,
+    grid = none
+    ]
+    \addplot [fill=gray!40, draw=none, domain=-4:1.5] {gauss(0,1)} \closedcycle;
+    \addplot [very thick,black!50!black, domain=-4:4] {gauss(0,1)};
+    \draw [yshift=-0.1cm] (axis cs:1.5,0) node[anchor=north] {$z$};
+    \draw [yshift=-0.1cm] (axis cs:0,0) node[anchor=north] {\small 0};
+    \draw (axis cs:0,0.2) node[anchor=north] {$\Phi(z)=P(Z\leq z)$};
+  \end{axis}
 \end{tikzpicture}
 
 \renewcommand{\arraystretch}{0.8}
