@@ -707,7 +707,59 @@ Bepaal de oppervlakte tussen
 \end{oefening}
 
 \cleardoublepage
-\section{Onbepaalde integraal}
+\section{Berekenen van integralen}
+
+\subsection{Onbepaalde integraal}
+
+\subsubsection*{Definities}
+
+We kunnen het integreren, naast het berekenen van een oppervlakte, ook zien als een bewerking (operator) die we toepassen op een functie $f$ om een andere fuctie $F$ te vinden, namelijk een primitieve van die functie.
+
+We herhalen de definitie van primitieve:
+\begin{mdframed}
+  De functie $F$ is een {\bf primitieve functie} van $f$ als
+  $$F' = f$$
+\end{mdframed}
+
+En definiëren nu de operator die op zoek gaat naar die primitieve:
+\begin{mdframed}
+  De {\bf onbepaalde integraal} van een functie $f$ is de verzameling van alle primitieve functies $F$ van $f$:
+  $$\int f(x)\;dx = F(x) + c$$
+  met $c \in \mathbb{R}$.
+\end{mdframed}
+
+\subsubsection*{Voorbeelden}
+
+\begin{enumerate}[(a)]
+\item $\displaystyle \int x^4\;dx = \dfrac{x^5}{5} + c$ want $\displaystyle \left(\dfrac{x^5}{5} + c \right)' = x^4$
+\item $\displaystyle \int \cos x\;dx = \sin x + c$ want $\displaystyle \left(\sin x + c \right)' = \cos x$
+\item $\displaystyle \int \dfrac{1}{x} \;dx = \ln|x| + c$ want $\displaystyle \left(\ln|x| + c \right)' = \dfrac{1}{x}$
+\end{enumerate}
+
+\subsubsection*{Eigenschappen}
+
+\begin{itemize}
+\item Integreren en differentiëren zijn inverse operaties:\\
+  Stelling: $\displaystyle \left(\int f(x) \;dx \right)'=f(x)$\\
+  Bewijs:
+  \begin{align*}
+    LL &= \left(\int f(x) \;dx \right)'\\
+       &= \left(F(x) + c \right)'\\
+       &= F'(x)\\
+       &= f(x)\\
+       &= RL
+  \end{align*}
+  Stelling: $\displaystyle \int dF(x) \;dx = F(x) + c$\\
+  Bewijs:
+  \begin{align*}
+    LL &= \int dF(x) \;dx\\
+       &= \int F'(x) \;dx\\
+       &= \int f(x) \;dx\\
+       &= F(x) + c\\
+       &= RL
+  \end{align*}
+\item 
+\end{itemize}
 
 \begin{oefening} {\scriptsize \em IJkingsproef industrieel ingenieur}\\
 Bereken
