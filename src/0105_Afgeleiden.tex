@@ -1,54 +1,38 @@
-\documentclass[12pt]{article}
+\documentclass[a4paper,12pt, twoside]{article}
 
 \input{../gowiz.tex}
 
-\usepackage{versions}
-\excludeversion{theorie}
-%\includeversion{theorie}
-
-\newenvironment{definitie}
-{
+\newenvironment{definitie}{
   \begin{mdframed}[nobreak=true,frametitle={Definitie}]
   }{%
   \end{mdframed}
 }
 
-\newenvironment{eigenschap}
-{
+\newenvironment{eigenschap}{
   \begin{mdframed}[nobreak=true,frametitle={Eigenschap}]
   }{%
   \end{mdframed}
 }
 
-\newenvironment{onthoud}
-{
+\newenvironment{onthoud}{
   \begin{mdframed}[nobreak=true,frametitle={Te onthouden}]
   }{%
   \end{mdframed}
 }
 
-\newenvironment{kader}
-{
+\newenvironment{kader}{
   \begin{mdframed}[nobreak=true]
   }{%
   \end{mdframed}
 }
 
-\newenvironment{tip}
-{
+\newenvironment{tip}{
   \begin{mdframed}[nobreak=true,frametitle={Tip!}]
   }{%
   \end{mdframed}
 }
 
-
 \begin{document}
-
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Afgeleiden}
-
-\begin{theorie}
 
 \thispagestyle{empty}
 \begin{center}
@@ -57,11 +41,12 @@
     \fontsize{50}{60}\selectfont Afgeleiden
   \end{mdframed}
   \vfill
-  \includegraphics[width=0.6\textwidth]{afgeleide}
+  \includegraphics[width=0.8\textwidth]{afgeleide}
   \vfill
 \end{center}
 \vfill
 \subsection*{Doelstelling}
+{\singlespacing
 Je \hfill  {\scriptsize(LP 2006-059, LI 1.5)}
 \begin{itemize}
 \item kent de definitie van afgeleid getal
@@ -78,27 +63,21 @@ Je \hfill  {\scriptsize(LP 2006-059, LI 1.5)}
 \item kan het verband tussen het tekenverloop van de eerste afgeleide en het opsporen van extrema en kan het verloop van een veeltermfunctie van de derde graad uitleggen
 \item kan extremumvraagstukken (ook van buiten de wiskunde) die aanleiding geven tot veeltermfuncties en rationale functies, oplossen
 \end{itemize}
+}
 
 \thispagestyle{empty}
-\mbox{}
 \newpage
-\clearpage
-\thispagestyle{empty}
 \tableofcontents
+\thispagestyle{empty}
 \newpage
+
 \clearpage
 \pagenumbering{arabic}
 
-\lhead{}
-\rhead{afgeleiden}
-
-\onehalfspacing
-
-\end{theorie}
+\fancyhead[RO,LE]{Afgeleiden}
+\fancyhead[RE,LO]{}
 
 \section{Differentiequotiënt}
-
-\begin{theorie}
 
 \begin{definitie}
   We noemen het quotiënt
@@ -141,29 +120,20 @@ Het differentiequotiënt geeft de helling van het lijnstuk dat door de punten $(
 
 Het quotiënt $\dfrac{f(a+h)-f(a)}{h}$ is dan analoog het differentiequotiënt in het interval $[a, a+h]$.
 
-\end{theorie}
-
 \begin{oefening}
   Maak zoals hierboven een grafiek van het differentiequotiënt in $[a, a+h]$.
 \end{oefening}
 
-\begin{theorie}
-
 Een differentiequotiënt in het interval $[a,b]$ kan symbolisch geschreven worden als $\dfrac{\Delta y}{\Delta x}_{[a,b]}$.
-
-\end{theorie}
 
 \begin{oefening}
   Gegeven de functie
   $$f(x)=x^3-9x^2+26x-22$$
   bereken het differentiequotiënt in de intervallen $[2,2.5]$, $[2.5,3]$ en $[2,3]$. Verklaar je resultaten aan de hand van een grafiek.
-
 \end{oefening}
 
 \pagebreak
 \section{Afgeleide waarde}
-
-\begin{theorie}
 
 \begin{definitie}
   We noemen de {\bf afgeleide waarde van $f$ in $a$}
@@ -176,8 +146,6 @@ $$f'(a)=\lim_{x\to a}\dfrac{f(x)-f(a)}{x-a}$$
 
 De afgeleide waarde van $f$ in $a$ wordt ook nog genoteerd als $Df(a)$ of $\dfrac{\mbox{d}f}{\mbox{d}x}(a)$. Wij zullen de notatie $f'(a)$ gebruiken. We noemen de {\em afgeleide waarde} ook nog {\em afgeleid getal} of nog korter {\em afgeleide}.
 
-\end{theorie}
-
 \begin{oefening}
   Toon grafisch aan dat beide definities equivalent zijn.
 \end{oefening}
@@ -185,8 +153,11 @@ De afgeleide waarde van $f$ in $a$ wordt ook nog genoteerd als $Df(a)$ of $\dfra
 \begin{oefening}
   Bereken het afgeleid getal:
   \begin{enumerate}[(a)]
+    \itemsep.5em
   \item $f(x)=x^2$ in $x=3$
-  \item $f(x)=x-1$ in $x=1$
+  \item $f(x)=x^2$ in $x=-1$
+  \item $f(x)=x^2+3$ in $x=-1$
+  \item $f(x)=x-1$ in $x=-1.5$
     % \item $f(x)=x^2-x$ in $x=3$
   \item $f(x)=23$ in $x=-2$
   \item $f(x)=\dfrac{1}{x^2}$ in $x=0$
@@ -211,8 +182,6 @@ De afgeleide waarde van $f$ in $a$ wordt ook nog genoteerd als $Df(a)$ of $\dfra
 
 \pagebreak
 \section{Afgeleide functie}
-
-\begin{theorie}
 
 \subsection{Definitie}
 
@@ -241,13 +210,9 @@ en dus
 \end{align*}
 Het getal $2a$ bestaat en is reëel aangezien $a$ reëel was. De limiet bestaat en is reëel, dus wegens de definitie is $f$ afleidbaar.
 
-\end{theorie}
-
 \begin{oefening}
   Maak gebruik van de andere definitie voor afgeleid getal, namelijk $$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}$$ om hetzelfde aan te tonen.
 \end{oefening}
-
-\begin{theorie}
 
 \subsubsection*{Voorbeeld 2}
 
@@ -293,18 +258,21 @@ Dit wordt wiskundig opgelost door uit het domein alle waarden te halen waar de f
   \end{multicols}
 \end{kader}
 
-\end{theorie}
-
 \begin{oefening}
-  Voorbeeld 1 hierboven gaf ons de afleiding van $f(x)=x^2$. Toon op dezelfde manier aan dat als
-  $$f(x)=x^3$$
-  dat dan
-  $$f'(x)=3x^2\;.$$
+  Voorbeeld 1 hierboven gaf ons de afleiding van $f(x)=x^2$. Toon op dezelfde manier aan dat
+  \begin{enumerate}[(a)]
+    \itemsep.5em
+  \item als $f(x)=c$ met $c \in \mathbb{R}$ dat dan $f'(x)=0$
+  \item als $f(x)=x$ dat dan $f'(x)=1$
+  \item als $f(x)=x^3$ dat dan $f'(x)=3x^2$
+  \item* als $f(x)=x^n$ met $n\in \mathbb{R}$ dat dan $f'(x)=nx^{n-1}$
+\end{enumerate}
 \end{oefening}
 
 \begin{oefening}
 Gebruik de lijst met basisafgeleiden om volgende functies af te leiden:
 \begin{enumerate}[(a)]
+  \itemsep.5em
   \item $f(x)=x$
   \item $f(x)=x^5$
   \item $f(x)=\sqrt{x}$
@@ -315,13 +283,12 @@ Gebruik de lijst met basisafgeleiden om volgende functies af te leiden:
 \begin{oefening}
 Bepaal de afgeleide waarde van
 \begin{enumerate}[(a)]
-  \item $f(x)=x^4$ in $x=-1$, $x=1$, $x=9$
-  \item $f(x)=\sqrt{x}$ in $x=-1$, $x=1$, $x=9$
-  \item $f(x)=42$ in $x=-1$, $x=1$, $x=9$
+  \itemsep.5em
+  \item $f(x)=x^4$ in $x=-1$, $x=1$ en $x=9$
+  \item $f(x)=\sqrt{x}$ in $x=-9$, $x=0$, $x=1$ en $x=4$
+  \item $f(x)=42$ in $x=10^{100}$, $x=\pi$ en $x=\sqrt{3}$
 \end{enumerate}
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Eigenschappen van afgeleiden}
 
@@ -356,8 +323,6 @@ Uit de kettingregel volgt dan
                            & = 162x^5 + 135x^4 + 36x^3 + 3x^2 &&\mbox{uitwerken}
 \end{align*}
 
-\end{theorie}
-
 \begin{oefening}
   Toon aan dat we met behulp van de kettingregel ook nog volgende eigenschap krijgen:
   \begin{mdframed}
@@ -372,12 +337,33 @@ Uit de kettingregel volgt dan
   Bereken volgende afgeleiden:
   \begin{multicols}{2}
     \begin{enumerate}[(a)]
+      \itemsep1em
     \item $\left(21\right)'$
     \item $\left(4x\right)'$
     \item $\left(\dfrac{1}{3}x^3\right)'$
     \item $\left(2\sqrt{x}\right)'$
+    \item $\left(\dfrac{x}{\sqrt{x}}\right)'$
+    \item $\left(x^2-x\right)'$
+    \item $\left(x-13\right)'$
+    \item $\left(3x^3+2x^2+x+1\right)'$
+    \item $\left(\frac{1}{3}x^3+\dfrac{1}{2}x^2+x+1\right)'$
     \item $\left(x^4-x^3+x^2-x+1\right)'$
     \item $\left(34+23-x^{43}\right)'$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Bereken $f'(x)$
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep.5em
+    \item $f(x)=x^3-\dfrac{1}{2}x^2-x+1$
+    \item $f(x)=\left(x-3\right)^2$
+    \item $f(x)=\left(2x^3-3x^2\right)^2$
+    \item $f(x)=\left(2-x\right)^3$
+    \item $f(x)=\left(x-2\right)\left(x+2\right)$
+    \item $f(x)=\left(x-\sqrt{a}\right)\left(x+\sqrt{a}\right)$ met $a\in\mathbb{R}^+$
     \end{enumerate}
   \end{multicols}
 \end{oefening}
@@ -397,16 +383,12 @@ Uit de kettingregel volgt dan
   \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Hogere afgeleiden}
 
 Als de afgeleide functie van een functie $f$ opnieuw afleidbaar is, dan kan $f$ een tweede maal afgeleid worden. We noteren dan de {\bf tweede afgeleide} als
 $$f''(x), f^{(2)}(x), D^2f(x), \mbox{ of } \dfrac{d^2f}{dx^2}(x)$$
 
 Analoog kunnen we afgeleide van orde drie, vier, enz. definiëren.
-
-\end{theorie}
 
 \begin{oefening}
   Bereken:
@@ -429,12 +411,7 @@ $$f^{(n)} \mbox{ als } f(x)=x^n$$
 en maak hier gebruik van het feit dat we het product $n\cdot(n-1)\cdot(n-2)\cdot \cdots \cdot 3\cdot 2\cdot 1$ korter kunnen schrijven als $n!$ met behulp van faculteit. Volgend jaar zien we deze notatie in meer detail.
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
   Bereken:
@@ -520,11 +497,12 @@ De afgeleide functie van de functie
 $$f:\mathbb{R}\to\mathbb{R^+}:x\mapsto |x|$$
 wordt gegeven door
 \begin{enumerate}[(A)]
-  \item $f':\mathbb{R}\to\mathbb{R}:x\mapsto 1$.
-  \item $f':\mathbb{R}_0\to\mathbb{R}:x\mapsto 1$.
-  \item $f':\mathbb{R}\to\mathbb{R}:x\mapsto \begin{cases}1  & x\geq0,\\-1 & x<0\end{cases}$.
-  \item $f':\mathbb{R}_0\to\mathbb{R}:x\mapsto \dfrac{x}{|x|}$.
-  \item $f':\mathbb{R}\to\mathbb{R}:x\mapsto \begin{cases}1  & x>0,\\0  & x=0,\\-1 & x<0\end{cases}$.
+  \itemsep.5em
+\item $f':\mathbb{R}\to\mathbb{R}:x\mapsto 1$.
+\item $f':\mathbb{R}_0\to\mathbb{R}:x\mapsto 1$.
+\item $f':\mathbb{R}\to\mathbb{R}:x\mapsto \begin{cases}1  & x\geq0,\\-1 & x<0\end{cases}$.
+\item $f':\mathbb{R}_0\to\mathbb{R}:x\mapsto \dfrac{x}{|x|}$.
+\item $f':\mathbb{R}\to\mathbb{R}:x\mapsto \begin{cases}1  & x>0,\\0  & x=0,\\-1 & x<0\end{cases}$.
 \end{enumerate}
 \end{oefening}
 
@@ -542,7 +520,7 @@ Zij $\displaystyle f(x)=\dfrac{\sqrt{x}}{x^2+3x}$. Dan is $f'(x)$ gelijk aan
 \pagebreak
 \section{Functieonderzoek}
 
-\begin{theorie}
+
 
 Het bespreken van het verloop van een functie $f$ kan het best aan de hand van haar afgeleide functie $f'$ als deze bestaat.
 
@@ -591,7 +569,7 @@ In de praktijk maken we het tekenverloop van de afgeleide functie $f'$, hierop d
   \end{tabular}
 \end{center}
 
-\end{theorie}
+
 
 \begin{oefening}
   Zoek een functie $f$, waarvoor geld $f'(x)=1\quad \forall x\in\mathbb{R}$. Maak de grafiek van $f$ en van $f'$ en maak ook het tekenverloop van $f'$ met het stijgen en dalen van $f$.
@@ -601,7 +579,7 @@ In de praktijk maken we het tekenverloop van de afgeleide functie $f'$, hierop d
 %   Zoek een functie $f$, waarvoor geld $f(x)=0\quad \forall x\in\mathbb{R}$. Maak de grafiek van $f$ en van $f'$ en maak ook het tekenverloop van $f'$ met het stijgen en dalen van $f$.
 % \end{oefening}
 
-\begin{theorie}
+
 
 \subsection{Extrema van een functie}
 
@@ -652,20 +630,20 @@ We gaan als volgt te werk voor een gegeven functie $f(x)=y$:
 
 \subsection{Oefeningen}
 
-\end{theorie}
-
 \begin{oefening}
   Bespreek volgende functies:
-  \begin{multicols}{2}
+  \begin{multicols}{3}
   \begin{enumerate}[(a)]
-  \itemsep.75em
+  \itemsep1em
   \item $f(x)=x^3-6x^2+11x-6$
-  \item $f(x)=-x^3+6x^2-13x+42$
-  \item $f(x)=-8x^4+14x^3+165x^2+77x+490$
+  \item $f(x)=x^2-8x+15$
+  \item $f(x)=3x^4-16x^3+24x^2$
   \item $f(x)=\dfrac{3x^2-6}{x^2+x-6}$
   \item $f(x)=\dfrac{-2x^2+7x-3}{x^2-9}$
   \item $f(x)=\dfrac{x^2-3}{2x-4}$
   \item $f(x)=\dfrac{x^3-1}{x^2}$
+  \item $f(x)=\dfrac{4+3x}{x-4}-1$
+  \item $f(x)=\dfrac{-3x^2-2x-4}{x^2-1}$
   \item $f(x)=\dfrac{9x^2-25}{x^3-x}$
   \end{enumerate}
   \end{multicols}
@@ -716,7 +694,7 @@ Gegeven de grafiek van de afgeleide functie $f'$
 bepaal de grafiek van de functie $f$:
 \begin{multicols}{2}
   \begin{enumerate}[(A)]
-    \item 
+    \item
     \begin{center}
     \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
     \begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -736,7 +714,7 @@ bepaal de grafiek van de functie $f$:
     \end{scriptsize}
     \end{tikzpicture}
     \end{center}
-    \item 
+    \item
     \begin{center}
     \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
     \begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -756,7 +734,7 @@ bepaal de grafiek van de functie $f$:
     \end{scriptsize}
     \end{tikzpicture}
     \end{center}
-    \item 
+    \item
     \begin{center}
     \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
     \begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -776,7 +754,7 @@ bepaal de grafiek van de functie $f$:
     \end{scriptsize}
     \end{tikzpicture}
     \end{center}
-    \item 
+    \item
     \begin{center}
     \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
     \begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -823,7 +801,7 @@ Bepaal het tekenverloop van de afgeleide functie $f'$ als de grafiek van de func
 \end{scriptsize}
 \end{tikzpicture}
   \end{center}
-  \item 
+  \item
   \begin{center}
     \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
 \begin{tikzpicture}[scale=0.9,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -849,8 +827,6 @@ Bepaal het tekenverloop van de afgeleide functie $f'$ als de grafiek van de func
 \pagebreak
 \section{Toepassingen: extremumvraagstukken}
 
-\begin{theorie}
-
 De volgende problemen zijn extremumvraagstukken. Ze zijn één van de belangrijkste toepassingen van de eerste afgeleide. Veel studenten zijn geïntimideerd door deze problemen omdat ze de tekst eerst moeten omzetten naar een wiskundige functie. Daarnaast bestaat er geen éénduidige manier om alle extremumvraagstukken op te lossen. Echter, met een beetje geduld en de nodige oefening kan je je ongerustheid minimaliseren en je succes maximaliseren.
 
 Volgende tips kunnen alvast handig zijn:
@@ -860,8 +836,6 @@ Volgende tips kunnen alvast handig zijn:
 \item Probeer het aantal onbekenden te verminderen naar hoogstens één onbekende.
 \item Werk systematisch, hou het stramien van onbekenden/functie/afleiden/tekenverloop en stijgen\&dalen/antwoordzin aan.
 \end{itemize}
-
-\end{theorie}
 
 \begin{oefening}
   De som van twee positieve getallen is $2004$. Bepaal die getallen zodat hun product maximaal is.
@@ -916,10 +890,7 @@ Volgende tips kunnen alvast handig zijn:
 \end{oefening}
 
 \begin{oefening}
-  Aan de vier hoeken van een vierkantig stuk karton met zijden van 20 cm knipt men
-  gelijke vierkanten weg. Onderzoek het verloop van de inhoud van de doos zonder
-  deksel die men hiermee kan vormen. Wanneer is die inhoud maximaal? Bepaal ook
-  het maximaal volume.
+  Aan de vier hoeken van een vierkantig stuk karton met zijden van 20 cm knipt men gelijke vierkanten weg. Onderzoek het verloop van de inhoud van de doos zonder deksel die men hiermee kan vormen. Wanneer is die inhoud maximaal? Bepaal ook het maximaal volume.
 \end{oefening}
 
 \begin{oefening}\\
@@ -949,8 +920,7 @@ Volgende tips kunnen alvast handig zijn:
 \end{oefening}
 
 \begin{oefening}
-  Een frisdrankenblik heeft een inhoud van 33 cl. De oppervlakte van het stuk blik dat
-  nodig is om het te maken hangt af van de hoogte $h$ en van de straal $r$ van het grond- en
+  Een frisdrankenblik heeft een inhoud van 33 cl. De oppervlakte van het stuk blik dat nodig is om het te maken hangt af van de hoogte $h$ en van de straal $r$ van het grond- en
   bovenvlak.
   \begin{enumerate}
   \item Toon aan dat $h=\dfrac{330}{\pi r^2}$
@@ -960,39 +930,28 @@ Volgende tips kunnen alvast handig zijn:
 \end{oefening}
 
 \begin{oefening}
-  Een goudsmid vervaardigt een rechthoekig kadertje waarvan de twee overstaande
-  zijden gouden staafjes zijn van 100 euro per cm lengte en de twee andere zilveren staafjes
-  van 75 euro per cm lengte. Wat is de grootst mogelijke oppervlakte die hij kan bekomen
-  als de totale kostprijs 1 500 euro mag zijn?
+  Een goudsmid vervaardigt een rechthoekig kadertje waarvan de twee overstaande zijden gouden staafjes zijn van 100 euro per cm lengte en de twee andere zilveren staafjes van 75 euro per cm lengte. Wat is de grootst mogelijke oppervlakte die hij kan bekomen als de totale kostprijs 1 500 euro mag zijn?
 \end{oefening}
 
 \begin{oefening}
-  Verdeel het getal 120 in twee positieve getallen,
-  zo dat het product van het kwadraat van het eerste getal met het tweede getal maximaal is.
+  Verdeel het getal 120 in twee positieve getallen, zo dat het product van het kwadraat van het eerste getal met het tweede getal maximaal is.
 \end{oefening}
 
 \begin{oefening}
-  Verdeel het getal 60 in twee positieve getallen,
-  zo dat som van de kwadraten van de twee getallen minimaal is.
+  Verdeel het getal 60 in twee positieve getallen, zo dat som van de kwadraten van de twee getallen minimaal is.
 \end{oefening}
 
 \begin{oefening}
-  Een plaat van 1m breed plooi je, zo dat ze een goot vormt.
-  Bij welke afmetingen kan door de goot een maximale hoeveelheid water stromen?
+  Een plaat van 1m breed plooi je, zo dat ze een goot vormt. Bij welke afmetingen kan door de goot een maximale hoeveelheid water stromen?
 \end{oefening}
 
 \begin{oefening}
-  Uit een vierkant van 40x40cm knip je vierkantjes. Zo kan je het geheel plooien tot een doos.
-  Hoeveel knip je weg om een zo groot mogelijke doos te bekomen?
+  Uit een vierkant van 40x40cm knip je vierkantjes. Zo kan je het geheel plooien tot een doos. Hoeveel knip je weg om een zo groot mogelijke doos te bekomen?
 \end{oefening}
 
 \begin{oefening}\\
   \begin{minipage}{0.6\textwidth}
-    Een ondernemer wil een rechthoekig terrein aankopen en het omheinen. Het terrein
-    moet een oppervlakte van 1 200 m$^2$ hebben en het paalt aan een gebouw dat dus aan
-    één zijde als afsluiting dient. De afsluiting parallel met het gebouw kost 15 euro per meter
-    en aan de twee andere zijden 10 euro per meter. Voor welke afmetingen is de kostprijs
-    minimaal?
+    Een ondernemer wil een rechthoekig terrein aankopen en het omheinen. Het terrein moet een oppervlakte van 1 200 m$^2$ hebben en het paalt aan een gebouw dat dus aan één zijde als afsluiting dient. De afsluiting parallel met het gebouw kost 15 euro per meter en aan de twee andere zijden 10 euro per meter. Voor welke afmetingen is de kostprijs minimaal?
   \end{minipage}
   \begin{minipage}{0.4\textwidth}
     \centering
@@ -1001,10 +960,7 @@ Volgende tips kunnen alvast handig zijn:
 \end{oefening}
 
 \begin{oefening}
-  Uit een boomstam met een diameter van 30 cm wordt een rechthoekige balk gezaagd.
-  Het draagvermogen van zo'n balk hangt natuurlijk af van de hoogte en de breedte van de balk
-  en is evenredig met het product $b\cdot h^2$.
-  Bepaal de afmetingen van de balk zo dat het draagvermogen zo groot mogelijk wordt.
+  Uit een boomstam met een diameter van 30 cm wordt een rechthoekige balk gezaagd. Het draagvermogen van zo'n balk hangt natuurlijk af van de hoogte en de breedte van de balk en is evenredig met het product $b\cdot h^2$. Bepaal de afmetingen van de balk zo dat het draagvermogen zo groot mogelijk wordt.
 \end{oefening}
 
 \begin{oefening}
@@ -1033,13 +989,6 @@ Volgende tips kunnen alvast handig zijn:
 %   samen met de coördinaatassen een driehoek met minimale oppervlakte.
 % \end{oefening}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \end{document}
 
-
-
-\begin{minipage}[c]{0.4\textwidth}
-\end{minipage}
-\begin{minipage}[c]{0.6\textwidth}
-  \dotlines{10}
-\end{minipage}
