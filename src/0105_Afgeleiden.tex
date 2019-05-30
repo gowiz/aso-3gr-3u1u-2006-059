@@ -135,6 +135,8 @@ Een differentiequotiënt in het interval $[a,b]$ kan symbolisch geschreven worde
 \pagebreak
 \section{Afgeleide waarde}
 
+\subsection{Definitie}
+
 \begin{definitie}
   We noemen de {\bf afgeleide waarde van $f$ in $a$}
   $$f'(a)=\lim_{h\to 0}\dfrac{f(a+h)-f(a)}{h}$$
@@ -179,6 +181,71 @@ De afgeleide waarde van $f$ in $a$ wordt ook nog genoteerd als $Df(a)$ of $\dfra
   \item Geef het verband tussen de raaklijnen aan $f$ en de afgeleide waarden.
   \end{enumerate}
 \end{oefening}
+
+\subsection{* Raaklijn aan een functie}
+
+Daar de afgeleide waarde de helling van de raaklijn van een functie in een punt geeft kunnen we dit gaan gebruiken om de vergelijking van de raaklijn te vinden.
+
+\subsubsection*{Werkwijze}
+Stel dat we een functie $f$ kennen en de $x$-waarde van een punt $P(a,f(a))$ op $f$. We zoeken de vergelijking van de raaklijn
+$$t: y=mx+q$$
+\begin{enumerate}
+\item We zoeken eerst $m$, dit is de helling van de raaklijn, dus we berekenen de afgeleide waarde van $f$ in $a$.
+\item De raaklijn $t$ en de functie $f$ hebben een snijpunt in $P$. We kennen reeds de $x$-waarde, $a$, we moeten nu dus ook nog de $y$-waarde $f(a)$ uitrekenen.
+\item We vinden nu nog $q$ door $(a,f(a))$ in te vullen in $t$ en de vergelijking op te lossen naar $q$.
+\end{enumerate}
+
+\subsubsection*{Voorbeeld}
+
+Bepaal de raaklijn aan
+$$f(x)=x^2-2 x-3$$
+in $x=2$.
+
+We zoeken de raaklijn
+$$t : y=mx+q$$
+
+We berekenen eerst de helling van de raaklijn door in $x=2$ de afgeleide waarde uit te rekenen
+\begin{align*}
+  f'(2) &= \lim_{x \to 2}\dfrac{f(x)-f(2)}{x-2}\\
+        &= \cdots \\
+        &= 2
+\end{align*}
+
+Daar $t$ de raaklijn aan $f$ in $x=2$ is, ligt $(2,f(2))$ niet alleen op $f$, maar ook op $t$. We hebben dus ook $f(2)$ nodig
+\begin{align*}
+  f(2) &= 2^2 - 2 \cdot 2 - 3\\
+       &= -3
+\end{align*}
+
+Daar we nu een punt $(2,-3)$ op $t$ kennen, kunnen we nu in $t: y=2x+q$ onze $x$ en $y$ invullen en oplossen naar $q$
+\begin{align*}
+        -3     & = 2 \cdot 2 + q \\
+  \LRA \qquad  -3 - 4 & = q         \\
+  \LRA \qquad \qquad q      & = -7
+\end{align*}
+
+We vinden dat de raaklijn $t$ de vergelijking $y=2x-7$ heeft.
+
+\begin{center}
+  \begin{tikzpicture}[yscale=0.9,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \begin{axis}[
+      x=1.0cm,y=1.0cm,
+      axis lines=middle,
+      xmin=-3.0, xmax=5.0, ymin=-9.0,  ymax=2.0,
+      xtick={-3.0,-2.0,...,5.0},
+      ytick={-9.0,-8.0,...,2.0},]
+      \clip(-3.,-9.) rectangle (5.,2.);
+      \draw
+      [line width=2.pt,color=black,smooth,samples=100,domain=-3.0:5.0]
+      plot(\x,{(\x)^(2.0)-2.0*(\x)-3.0});
+      \draw [line width=2.pt,color=gray,domain=-3.:5.] plot(\x,{(-7.--2.*\x)/1.});
+      \begin{scriptsize}
+        \draw[color=black] (-1.54,3.59) node {$f$};
+        \draw[color=gray] (5.84,3.63) node {$t$};
+      \end{scriptsize}
+    \end{axis}
+  \end{tikzpicture}
+\end{center}
 
 \pagebreak
 \section{Afgeleide functie}
