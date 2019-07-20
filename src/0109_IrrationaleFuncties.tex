@@ -2,79 +2,65 @@
 
 \input{../gowiz.tex}
 
-\usepackage{versions}
-\includeversion{theorie}
-%\excludeversion{theorie}
-
 \begin{document}
 
+\begin{center}
+  \begin{mdframed}
+    \centering
+    \fontsize{40}{60}\selectfont Irrationale Functies
+  \end{mdframed}
+  \vfill
+  \definecolor{aqaqaq}{rgb}{0.63,0.63,0.63}
+  \definecolor{wqwqwq}{rgb}{0.38,0.38,0.38}
+  \begin{tikzpicture}[scale=1.5, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \draw[->,color=black] (-3.43,0) -- (3.78,0);
+    \foreach \x in {-3,-2,-1,1,2,3}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[->,color=black] (0,-3.46) -- (0,3.9);
+    \foreach \y in {-3,-2,-1,1,2,3}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-3.43,-3.46) rectangle (3.78,3.9);
+    \draw[line width=1.6pt,color=wqwqwq, smooth,samples=200,domain=-2:2] plot(\x,{sqrt(4-(\x)^2)});
+    \draw[line width=1.6pt,color=aqaqaq, smooth,samples=200,domain=-2:2] plot(\x,{0-sqrt(4-(\x)^2)});
+    \draw (0.58,2.43) node[anchor=north west] {$f: y=\sqrt{4-x^2}$};
+    \draw (1.46,-1.5) node[anchor=north west] {$g: y=-\sqrt{4-x^2}$};
+  \end{tikzpicture}
+  \vfill
+\end{center}
+
+\subsection*{Doelstellingen}
+\vspace*{-0.8cm}
+\begin{singlespacing}
+  Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
+  \begin{itemize}
+    \itemsep-0.2em
+  \item kan irrationale vergelijkingen oplossen
+  \item kan aan de hand van het functievoorschrift een tabel, het domein, de nulwaarden en het tekenverloop bepalen van irrationale functies
+  \item kan aan de hand van de grafiek domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen, extrema en asymptotisch gedrag bepalen van irrationale functies
+  \item kan vraagstukken/problemen oplossen die aanleiding ge-
+    ven tot een irrationale vergelijking, ongelijkheid of func-
+    tie, eventueel met behulp van ICT
+  \item kan extremumvraagstukken (ook van buiten de wiskunde)
+    die aanleiding geven tot irrationale functies, oplossen
+  \end{itemize}
+\end{singlespacing}
+
+\thispagestyle{empty}
+\newpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
+\pagenumbering{arabic}
+
 \pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Irrationale Functies}
-
-\begin{theorie}
-
-  \thispagestyle{empty}
-  \begin{center}
-    \begin{mdframed}
-      \centering
-      \fontsize{40}{60}\selectfont Irrationale Functies
-    \end{mdframed}
-    \vfill
-    \definecolor{aqaqaq}{rgb}{0.63,0.63,0.63}
-    \definecolor{wqwqwq}{rgb}{0.38,0.38,0.38}
-    \begin{tikzpicture}[scale=1.5, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-      \draw[->,color=black] (-3.43,0) -- (3.78,0);
-      \foreach \x in {-3,-2,-1,1,2,3}
-      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-      \draw[->,color=black] (0,-3.46) -- (0,3.9);
-      \foreach \y in {-3,-2,-1,1,2,3}
-      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-      \clip(-3.43,-3.46) rectangle (3.78,3.9);
-      \draw[line width=1.6pt,color=wqwqwq, smooth,samples=100,domain=-1.9999995090909108:1.999994949917767] plot(\x,{sqrt(4-(\x)^2)});
-      \draw[line width=1.6pt,color=aqaqaq, smooth,samples=100,domain=-1.9999995090909108:1.999994949917767] plot(\x,{0-sqrt(4-(\x)^2)});
-      \draw (0.58,2.43) node[anchor=north west] {$f: y=\sqrt{4-x^2}$};
-      \draw (1.46,-1.5) node[anchor=north west] {$g: y=-\sqrt{4-x^2}$};
-    \end{tikzpicture}
-    \vfill
-  \end{center}
-
-  \subsection*{Doelstellingen}
-  \vspace*{-0.8cm}
-  {\singlespacing
-    Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
-    \begin{itemize}
-      \itemsep-0.2em
-    \item kan irrationale vergelijkingen oplossen
-    \item kan aan de hand van het functievoorschrift een tabel, het domein, de nulwaarden en het tekenverloop bepalen van irrationale functies
-    \item kan aan de hand van de grafiek domein, bereik, nulwaarden, tekenverloop, stijgen\&dalen, extrema en asymptotisch gedrag bepalen van irrationale functies
-    \item kan vraagstukken/problemen oplossen die aanleiding ge-
-      ven tot een irrationale vergelijking, ongelijkheid of func-
-      tie, eventueel met behulp van ICT
-    \item kan extremumvraagstukken (ook van buiten de wiskunde)
-      die aanleiding geven tot irrationale functies, oplossen
-    \end{itemize}}
-
-  \thispagestyle{empty}
-  \mbox{}
-  \newpage
-  \clearpage
-  \thispagestyle{empty}
-  % \mbox{}
-  \tableofcontents
-  \newpage
-  \clearpage
-  \pagenumbering{arabic} 
-
-  \fancyhead[RO,LE]{Irrationale functies}
-  \fancyhead[RE,LO]{}
-
-\end{theorie}
+\fancyhead[RO,LE]{Irrationale functies}
+\fancyhead[RE,LO]{}
 
 \section{Irrationale vergelijkingen}
 
-\begin{theorie}
 \subsection{Definitie}
 
 \begin{mdframed}
@@ -87,8 +73,7 @@ Een {\bf irrationale vergelijking} is een vergelijking waarin de onbekende $x$ v
   \item $\sqrt{x^2-2x+5}=13$
   \item $\sqrt{x^2-4}=\sqrt{x+2}$
 \end{enumerate}
-  
-  
+
 We zullen vooral irrationale vergelijkingen van de volgende simpele vorm oplossen:
 $$\sqrt{ax^2+bx+c}=d\qquad\mbox{ met } d\in\mathbb{R}^+$$
 
@@ -100,15 +85,15 @@ $$\sqrt{ax^2+bx+c}=d\qquad\mbox{ met } d\in\mathbb{R}^+$$
   Voordat we de vergelijking effectief oplossen, zullen we controleren of de oplossing überhaupt kan bestaan. Omdat er in de vergelijking een vierkantswortel staat, moet alles onder de wortel positief zijn. We eisen dus als{\bf bestaansvoorwaarde (BV)}:
   \begin{align*}
          && 2x+3 &\geq 0 \\
-    \LRA && x &\geq -\dfrac{3}{2}
+    \lra && x &\geq -\dfrac{3}{2}
   \end{align*}
   \begin{align*}
          && \sqrt{2x+3} &= 7 \\
-    \LRA && \left(\sqrt{2x+3}\right)^2 &= \left(7\right)^2\\
-    \LRA && 2x+3 &= 49\\
-    \LRA && x &= 23\\
+    \lra && \left(\sqrt{2x+3}\right)^2 &= \left(7\right)^2\\
+    \lra && 2x+3 &= 49\\
+    \lra && x &= 23\\
   \end{align*}
-  Merk op dat $23\geq -\dfrac{3}{2}$ en er dus voldaan is aan de BV. Dus 
+  Merk op dat $23\geq -\dfrac{3}{2}$ en er dus voldaan is aan de BV. Dus
   $$V=\{23\}$$
   \item Los $\sqrt{x^2-4x+8}=2$ op in $\mathbb{R}$:\\
   Als BV eisen we $x^2-4x+8\geq 0$, we hebben gezien (Hoofdstuk Veeltermfuncties) dat we deze ongelijkheid best oplossen m.b.v. een tekenverloop.\\
@@ -125,7 +110,7 @@ $$\sqrt{ax^2+bx+c}=d\qquad\mbox{ met } d\in\mathbb{R}^+$$
     \begin{tabular}{c|ccc}
     $x$ & & & \\
     \hline
-    $y$ & & + &  
+    $y$ & & + &
     \end{tabular}
   \end{center}
   {\bf Bestaansvoorwaarde (BV):}
@@ -133,19 +118,17 @@ $$\sqrt{ax^2+bx+c}=d\qquad\mbox{ met } d\in\mathbb{R}^+$$
   {\bf Oplossen irrationale vergelijking:}
   \begin{align*}
          && \sqrt{x^2-4x+8} &= 2 \\
-    \LRA && \left(\sqrt{x^2-4x+8}\right)^2 &= \left(2\right)^2\\
-    \LRA && x^2-4x+8 &= 4\\
-    \LRA && x^2-4x+4 &= 0\\
-    \LRA && (x-2)^2 &= 0\\
-    \LRA && x &= 2\\
+    \lra && \left(\sqrt{x^2-4x+8}\right)^2 &= \left(2\right)^2\\
+    \lra && x^2-4x+8 &= 4\\
+    \lra && x^2-4x+4 &= 0\\
+    \lra && (x-2)^2 &= 0\\
+    \lra && x &= 2\\
   \end{align*}
   {\bf Controleren oplossing m.b.v. bestaansvoorwaarde:}\\
   $$2\in\mathbb{R}$$\\
   {\bf Noteren van de oplossingenverzameling:}\\
   $$V=\{2\}$$
 \end{enumerate}
-
-\end{theorie}
 
 \begin{oefening}
 Los de volgende irrationale vergelijkingen op in $\mathbb{R}$:
@@ -169,7 +152,6 @@ Los de volgende irrationale vergelijkingen op in $\mathbb{R}$:
 
 \begin{oefening}* Toon aan dat de oplossingen van een irrationale vergelijking van de vorm $\sqrt{ax+b}=c>0$ altijd voldoen aan de bestaansvoorwaarde $ax+b\geq0$.
 \end{oefening}
-
 
 \begin{oefening}*
 De volgende irrationale vergelijking
@@ -324,32 +306,5 @@ We laten een bal van $h$ meter hoog vallen. Het duurt $t=\sqrt{\dfrac{h}{4.9}}\s
 Een wegwerpbekertje heeft de vorm van een kegel. Het volume van de kegel is $V (\cm^3)$, de radius is $r (\cm)$, de hoogte is $h (\cm)$ en de schuine hoogte is $5 \cm$. Geef de functie $V(r)$ die het volume van het bekertje geeft in functie van $r$. Merk op dat het volume van een kegel gegeven wordt door $V=\dfrac{1}{3}\pi r^2 h$.
 \end{oefening}
 
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
 \end{document}
-
-
-
-
-\begin{minipage}[c]{0.4\textwidth}
-\end{minipage}
-\begin{minipage}[c]{0.6\textwidth}
-  \dotlines{10}
-\end{minipage}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 

@@ -23,13 +23,8 @@
 \end{tikzpicture}
 }
 
-\pagestyle{fancy}
-\fancyhead[RO,LE]{Elementaire kansrekening}
-\fancyhead[RE,LO]{}
-
 \begin{document}
 
-\thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
   \centering
@@ -39,6 +34,7 @@
   \includegraphics[width=0.8\textwidth]{dice}
   \vfill
 \end{center}
+
 \subsection*{Doelstellingen}
 {\singlespacing
 Je kan \hfill  {\scriptsize(LP 2006-059, LI 2.2)}
@@ -66,9 +62,13 @@ Je \hfill {\scriptsize(LP 2006/059, ET1, ET9, ET11)}
 
 \thispagestyle{empty}
 \tableofcontents
-
 \newpage
+
 \pagenumbering{arabic}
+
+\pagestyle{fancy}
+\fancyhead[RO,LE]{Elementaire kansrekening}
+\fancyhead[RE,LO]{}
 
 \cleardoublepage
 \section*{Inleiding}
@@ -530,7 +530,6 @@ $$A\mbox{ en }B\mbox{ disjunct }\Leftrightarrow A\cap B = \emptyset$$
 \paragraph*{Voorbeeld}
 Beschouw experiment $E$, het kiezen van een leerling uit de klas. Dan is de gebeurtenis $A$ een jongen kiezen disjunct met de gebeurtenis $B$ een meisje kiezen.
 
-\begin{samepage}
 \subsubsection{De kans op de vereniging van twee gebeurtenissen}
 
 \paragraph*{Stelling }Voor de vereniging van twee willekeurige gebeurtenissen A en B, geldt:\\
@@ -540,7 +539,7 @@ $$P(A \cup B) = P(A) + P(B) - P(A \cap B)$$
 
 \paragraph*{Bewijs}
 \begin{center}
-\begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\begin{tikzpicture}[scale=0.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \clip(1.96,0.6) rectangle (9.52,4.75);
 \draw [rotate around={-1.89:(5.8,2.72)}] (5.8,2.72) ellipse (3.48cm and 2.0cm);
 \draw [rotate around={-4.59:(4.9,2.59)}] (4.9,2.59) ellipse (1.65cm and 1.2cm);
@@ -557,7 +556,6 @@ Neem $\#U = n$. Op het Venndiagram stel je vast dat: $\#(A\cup B)=\#A + \#B - \#
               &=& \dfrac{\#A}{n} + \dfrac{\#B}{n} - \dfrac{\#(A\cap B)}{n}\\
               &=& P(A) + P(B) - P(A\cap B)
 \end{eqnarray*}
-\end{samepage}
 
 \begin{oefening}
 We gooien lukraak met een zuivere dobbelsteen. Bereken de kans op gebeurtenis C:
@@ -699,9 +697,7 @@ In een schroevenfabriek fabriceren de machines A, B en C resp. 25, 35 en 40 \% v
 \cleardoublepage
 \section{Voorwaardelijke kansen}
 
-\subsection{Inleiding}
-
-Beschouw het volgende voorbeeld:
+\subsection{Voorbeeld}
 
 {\em Een medisch team heeft een onderzoek gedaan over het optreden van kleurenblindheid in een bepaalde bevolkingsgroep van 1000 mensen. Hierbij heeft men twee zaken geregistreerd: het geslacht en het al of niet kleurenblind zijn.}
 
@@ -1112,9 +1108,7 @@ In een bepaalde stad zijn er twee taxibedrijven. Het ene heeft groene taxi's, en
 
 \cleardoublepage
 \appendix
-\section*{Bijlagen}
-
-\subsection*{Het kaartspel}
+\section{Het kaartspel}
 Het kaartspel bestaat uit 4 soorten: klaveren (k), ruiten (r), harten (h) en schoppen (s). De soorten worden verder onderverdeeld in 13 kaarten: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, boer (b), dame (d) en koning (k). De 1 wordt ook de aas genoemd. Er zijn ook twee soorten kleuren, de klaveren en de schoppen zijn zwart, de ruiten en harten zijn rood. De jokers negeren wij. Als we over een kaart spreken, dan schrijven we eerst de soort en dan als index de volgorde. Zo wordt de harten dame $h_q$ en de schoppen zeven $s_7$.
 
 \includegraphics[width=\textwidth, angle=0]{kaartspel}

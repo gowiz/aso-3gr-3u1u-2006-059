@@ -2,60 +2,47 @@
 
 \input{../gowiz.tex}
 
-\usepackage{versions}
-\excludeversion{theorie}
-% \includeversion{theorie}
-
 \begin{document}
 
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Matrices en Stelsels}
+\thispagestyle{empty}
+\begin{center}
+  \begin{mdframed}
+    \centering
+    \fontsize{40}{60}\selectfont Matrices en Stelsels
+  \end{mdframed}
+  \includegraphics[width=7cm]{magicsquare}
+  %\vfill
+\end{center}
 
-\begin{theorie}
-
-  \thispagestyle{empty}
-  \begin{center}
-    \begin{mdframed}
-      \centering
-      \fontsize{40}{60}\selectfont Matrices en Stelsels
-    \end{mdframed}
-    \vfill
-    \vfill
-  \end{center}
-
-  \subsection*{Doelstellingen}
-  \vspace*{-0.8cm}
-  {\singlespacing
-    Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
-    \begin{itemize}
+\subsection*{Doelstellingen}
+\begin{singlespacing}
+  Je \hfill  {\scriptsize(LP2006-059, LI1.9, ET32,14,31)}
+  \begin{itemize}
     \itemsep-0.2em
-    \item kent de definitie van een matrix
-    \item kent een rijmatrix, een kolommatrix, een vierkante matrix, een driehoeksmatrix, een diagonaalmatrix, de eenheidsmatrix, de nulmatrix
-    \item kan matrices optellen, vermenigvuldigen met een reëel getal en vermenigvuldigen
-    \item kan matrices transponeren
-    \item kan met behulp van ICT vraagstukken oplossen die aanleiding geven tot een migratiematrix of een Lesliematrix
-    \item kan van een gegeven stelsel van vergelijkingen van de eerste graad de bijhorende coëfficiëntenmatrix en verhoogde matrix bepalen
-    \item kan elementaire rijoperaties toepassen die de gelijkwaardigheid van de overeenstemmende stelsels van vergelijkingen van de eerste graad bewaren
-    \item kan de oplossingsmethode van Gauss-Jordan toepassen
-    \item kan vraagstukken oplossen die aanleiding geven tot een stelsel van vergelijkingen van de eerste graad
-    \end{itemize}}
+  \item kent de definitie van een matrix
+  \item kent een rijmatrix, een kolommatrix, een vierkante matrix, een driehoeksmatrix, een diagonaalmatrix, de eenheidsmatrix, de nulmatrix
+  \item kan matrices optellen, vermenigvuldigen met een reëel getal en vermenigvuldigen
+  \item kan matrices transponeren
+  \item kan met behulp van ICT vraagstukken oplossen die aanleiding geven tot een migratiematrix of een Lesliematrix
+  \item kan van een gegeven stelsel van vergelijkingen van de eerste graad de bijhorende coëfficiëntenmatrix en verhoogde matrix bepalen
+  \item kan elementaire rijoperaties toepassen die de gelijkwaardigheid van de overeenstemmende stelsels van vergelijkingen van de eerste graad bewaren
+  \item kan de oplossingsmethode van Gauss-Jordan toepassen
+  \item kan vraagstukken oplossen die aanleiding geven tot een stelsel van vergelijkingen van de eerste graad
+  \end{itemize}
+\end{singlespacing}
 
-  \thispagestyle{empty}
-  \mbox{}
-  \newpage
-  \clearpage
-  \thispagestyle{empty}
-  % \mbox{}
-  \tableofcontents
-  \newpage
-  \clearpage
-  \pagenumbering{arabic}
+\thispagestyle{empty}
+\clearpage
 
-  \fancyhead[RO,LE]{Matrices en Stelsels}
-  \fancyhead[RE,LO]{}
+\tableofcontents
+\thispagestyle{empty}
+\clearpage
 
-\end{theorie}
+\pagenumbering{arabic}
+
+\pagestyle{fancy}
+\fancyhead[RO,LE]{Matrices en Stelsels}
+\fancyhead[RE,LO]{}
 
 \section{Definitie}
 
@@ -85,6 +72,23 @@ Bepaal
   \item $a_{13} \qquad a_{31} \qquad a_{43}$
   \item waar staat $13$ in de matrix $A$
 \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Een {\bf magisch vierkant} is een $n \times n$ rooster gevuld met allemaal verschillende natuurlijke getallen in het interval $[1,n^2]$, zodat de som van elke rij, elke kolom en elke diagonaal gelijk is. De som wordt de {\bf magische som} genoemd. De grootte $n$ wordt de {\bf orde} genoemd. Een voorbeeld van een magisch vierkant is
+  $$
+  \begin{pmatrix}
+    2 & 7 & 6\\
+    9 & 5 & 1\\
+    4 & 3 & 8
+  \end{pmatrix}
+  $$
+  \begin{enumerate}[(a)]
+  \item Wat is de magische som in bovenstaand magisch vierkant?
+  \item Bepaal de orde van bovenstaand magisch vierkant?
+  \item Is een 'rotatie' van bovenstaand magisch vierkant nog steeds een magisch vierkant?
+  \item Zoek zelf een ander magisch vierkant, het mag gerust een andere orde hebben.
+  \end{enumerate}
 \end{oefening}
 
 \begin{oefening}
@@ -144,9 +148,7 @@ Bepaal $x$ en $y$ als je weet dat $a_{ij}=i\cdot j$.
 
 
 \pagebreak
-
 \section{Bijzondere matrices}
-
 
 \begin{oefening}
 Bepaal $x$ en $y$
@@ -213,7 +215,7 @@ $$\begin{pmatrix}
   \item
 $$\begin{pmatrix}
   \sqrt{2}x+\sqrt{3}y  & -\sqrt{2}x+\sqrt{3}y \\
-  -\sqrt{2}x-\sqrt{3}y  & \sqrt{2}x-\sqrt{3}y 
+  -\sqrt{2}x-\sqrt{3}y  & \sqrt{2}x-\sqrt{3}y
 \end{pmatrix}
 =
 \begin{pmatrix}
@@ -254,15 +256,15 @@ Zeg telkens welke matrix het is en duid aan tot welke groep van bijzondere matri
 \begin{tabular}{l|c|c|c|c}
  & A & B & C & D\\
 \hline
-Grootte $m\times n$ & \arule{2cm} & \arule{2cm} & \arule{2cm} & \arule{2cm} \\  
-Nulmatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\  
-Rijmatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\  
-Kolommatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\  
-Vierkante matrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\  
-Diagonaalmatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\  
-Scalaire matrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\  
-Eenheidsmatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\  
-Driehoeksmatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\  
+Grootte $m \times n$ & \arule{2cm} & \arule{2cm} & \arule{2cm} & \arule{2cm} \\
+Nulmatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\
+Rijmatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\
+Kolommatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\
+Vierkante matrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\
+Diagonaalmatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\
+Scalaire matrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\
+Eenheidsmatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\
+Driehoeksmatrix & \arule{1cm} & \arule{1cm} & \arule{1cm} & \arule{1cm} \\
 \end{tabular}
 \end{center}
 \end{oefening}
@@ -379,7 +381,6 @@ Bereken:
 \pagebreak
 \section{Migratie- en Lesliematrices}
 
-
 \begin{oefening}
 In een ontwikkelingsland is er een wekelijks mededelingsprogramma voor landbouwers waarin een technologische evolutie wordt uiteengezet. Deze landbouwers hebben onderling geen contact. De kans dat een landbouwer luistert is $20$ \%. We gaan ervan uit dat in het ontwikkelingsland met 250 duizend landbouwers er initieel geen enkele landbouwer iets van de innovaties weet.
 
@@ -396,11 +397,13 @@ In een ontwikkelingsland is er een wekelijks mededelingsprogramma voor landbouwe
 De migratie tussen de steden Antwerpen, Mechelen en Brussel  voor een periode van 3 jaar
 is gegeven door
 
-$$M = \begin{pmatrix}
+$$
+M = \begin{pmatrix}
   3/5 & 1/10 & 1/10\\
   1/5 & 4/5  & 3/10\\
   1/5 & 1/10 & 3/5
-\end{pmatrix}$$
+\end{pmatrix}
+$$
 
 De bevolking in deze steden is nu Antwerpen – 55, Mechelen – 98, Brussel – 112.
 
@@ -573,11 +576,10 @@ Los op in $\mathbb{R}^3$:
 \end{oefening}
 
 \pagebreak
-
 \section{Vraagstukken op stelsels}
 
 \begin{oefening}
-In een winkeltje in het dorp kost 200 gram nougat, 300 gram chocolaatjes en 100 gram marsepein 
+In een winkeltje in het dorp kost 200 gram nougat, 300 gram chocolaatjes en 100 gram marsepein
 9 EUR.  Voor 300 gram nougat, 100 gram chocolaatjes en 400 gram marsepein betaal je 12,7 EUR.
 Hoeveel kost 200 gram nougat, 200 gram chocolaatjes en 200 gram marsepein als je weet dat
 1 kg chocolaatjes 5 euro minder kost dan 1 kg nougat?
@@ -585,7 +587,7 @@ Hoeveel kost 200 gram nougat, 200 gram chocolaatjes en 200 gram marsepein als je
 
 \begin{oefening}
 Boer Moors kweekt geiten, schapen en struisvogels.  Toen ik hem vroeg hoeveel stuks hij van elke soort had, kreeg ik het volgende antwoord.\\
-“Wanneer één derde van mijn geiten schapen zou zijn, had ik evenveel geiten als schapen en struisvogels samen.  
+“Wanneer één derde van mijn geiten schapen zou zijn, had ik evenveel geiten als schapen en struisvogels samen.
 Wanneer één derde van mijn schapen struisvogels zou zijn, had ik vijfmaal zoveel geiten als struisvogels.
 Wanneer één derde van mijn struisvogels geiten zou zijn, had ik 470 geiten.”\\
 Kan jij achterhalen hoeveel geiten, schapen en struisvogels boer Moors heeft?
@@ -655,6 +657,5 @@ Een diëtist in een ziekenhuis moet een speciaal dieet samenstellen bestaande ui
   \item Hoe wordt het dieet beïnvloed als we niet langer moeten voldoen aan de vitamine A vereiste?
 \end{enumerate}
 \end{oefening}
-
 
 \end{document}

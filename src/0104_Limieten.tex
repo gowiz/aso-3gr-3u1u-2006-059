@@ -18,22 +18,6 @@
   \end{mdframed}
 }
 
-\newenvironment{onthoud}
-{
-  \vspace{0.4cm}
-  \begin{mdframed}[nobreak=true,frametitle={Te onthouden}]
-  }{%
-  \end{mdframed}
-}
-
-\newenvironment{tip}
-{
-  \vspace{0.4cm}
-  \begin{mdframed}[nobreak=true,frametitle={Tip!}]
-  }{%
-  \end{mdframed}
-}
-
 \begin{document}
 
 \begin{center}
@@ -353,8 +337,7 @@ verder.
 Bereken:
 \begin{exlist}{2}
   \itemsep.5em
-  \item $-\infty*3+10^{100}$ \hfill Zie ook voetnoot\footnote{Zoek op internet de naam op van
-      \texttt{10\textasciicircum 100}}
+  \item $-\infty*3+10^{100}$
   \item $\dfrac{100}{0}$
   \item $-\dfrac{99}{0}$
   \item $\dfrac{0}{0}$
@@ -363,6 +346,8 @@ Bereken:
   \item $-(-\infty)^3$
 \end{exlist}
 \end{oefening}
+
+Zoek op internet de naam op van $10^{100}$. Machten kunnen textueel weergegeven worden m.b.v. een \textasciicircum, dus voorgaande getal wordt \texttt{10\textasciicircum 100}.
 
 \subsection{Basislimieten}
 
@@ -509,6 +494,7 @@ Uitwerken van het rechterlid kan na vereenvoudigen.
   \end{enumerate}
 \end{oefening}
 
+\needspace{3cm}
 \subsection{Extra oefeningen op limieten}
 
 \begin{oefening}
@@ -617,8 +603,6 @@ Een {\bf asymptoot} van een functie $f$ is een rechte waarnaar de grafiek van di
 
 \subsection{Verticale asymptoot}
 
-\subsubsection*{Definitie}
-
 \begin{minipage}{0.5\textwidth}
 Beschouw volgende schets:
 \begin{center}
@@ -682,8 +666,6 @@ Bepaal alle verticale asymptoten:
 
 \subsection{Horizontale asymptoot}
 
-\subsubsection*{Definitie}
-
 \begin{minipage}{0.5\textwidth}
 Beschouw volgende schets:
 \begin{center}
@@ -729,8 +711,6 @@ $$f(x)=\dfrac{2x-4}{x-1}$$
 \subsubsection*{Tegenvoorbeeld}
 $$f(x)=\dfrac{x^2-4}{x+2}$$
 
-
-
 \begin{oefening}
 Bepaal alle horizontale asymptoten:
 \begin{enumerate}[(a)]
@@ -742,8 +722,6 @@ Bepaal alle horizontale asymptoten:
 \end{oefening}
 
 \subsection{Schuine asymptoot}
-
-\subsubsection*{Definitie}
 
 \begin{minipage}{0.5\textwidth}
 Beschouw volgende schets:
@@ -800,8 +778,6 @@ Er geldt dat een rationale functie enkel schuine asymptoten heeft als de graad v
 $$f(x)=\dfrac{x^2-x-1}{x+1}$$
 
 \paragraph*{Opmerking:} Een horizontale asymptoot is een speciaal geval van de schuine asymptoot, maar dan met $m=0$. Het spreekt voor zich dat een functie geen horizontale en schuine asymptoot naar $+\infty$ of naar $-\infty$ kan hebben.
-
-
 
 \begin{oefening}
 Bepaal alle schuine asymptoten:

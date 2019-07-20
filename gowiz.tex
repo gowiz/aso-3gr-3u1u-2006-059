@@ -1,37 +1,32 @@
-\textwidth 17cm \textheight 25cm \evensidemargin 0cm
-\oddsidemargin 0cm \topmargin -2cm
-\parindent 0pt
-%\parskip \bigskipamount
 
+\usepackage[pdftex,top=3cm,bottom=1.5cm,left=2.5cm,right=2.5cm]{geometry}
 \usepackage{graphicx}
 \usepackage[dutch]{babel}
 \usepackage{amssymb,amsthm,amsmath}
-%\usepackage{dot2texi}
 \usepackage[utf8]{inputenc}
-\usepackage{nopageno}
 \usepackage{pdfpages}
 \usepackage{enumerate}
 \usepackage{caption}
 \usepackage{wrapfig}
-\usepackage{pgf,tikz,pgfplots}
+\usepackage{pgf}
+\usepackage{tikz}
+\usetikzlibrary{arrows,shapes,patterns}
+\usepackage{pgfplots}
 \pgfplotsset{compat=1.15}
 \usepackage{color}
-\usetikzlibrary{arrows}
-\usetikzlibrary{patterns}
 \usepackage{fancyhdr}
-\pagestyle{fancy}
-\usepackage[version=3]{mhchem}
 \usepackage{multicol}
 \usepackage{fix-cm}
 \usepackage{setspace}
-\usepackage{mhchem}
 \usepackage{xhfill}
 \usepackage{parskip}
 \usepackage{cancel}
 \usepackage{mdframed}
 \usepackage{url}
+\usepackage{hyperref}
 \usepackage{mathtools}
 \usepackage{changepage}
+\usepackage{calc}
 
 \newcommand{\todo}[1]{{\color{red} TODO: #1}}
 
@@ -44,8 +39,7 @@
   \pgfmathparse{1/(#2*sqrt(2*pi))*exp(-((x-#1)^2)/(2*#2^2))}%
 }
 
-\def\LRA{\Leftrightarrow}
-
+\newcommand{\lra}{\ensuremath{\Leftrightarrow}}
 \newcommand{\zrmbox}{\framebox{\phantom{EXE}}\phantom{X}}
 \newcommand{\zrm}[1]{\framebox{#1}}
 
@@ -62,8 +56,6 @@
 }{%
   \end{minipage}
 }
-
-\usepackage{calc}
 
 % vraag
 \reversemarginpar
@@ -115,7 +107,6 @@
 \draw [color=cqcqcq, xstep=0.5cm, ystep=0.5cm] (0,-#1) grid (20.5,0);
 \end{tikzpicture}
 }
-
 
 \newcommand{\assenstelsel}[5][1]{
 \definecolor{cqcqcq}{rgb}{0.65,0.65,0.65}

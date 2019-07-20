@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt, twoside]{article}
+\documentclass[a4paper,12pt,twoside]{article}
 
 \input{../gowiz.tex}
 
@@ -67,13 +67,15 @@ Je \hfill  {\scriptsize(LP 2006-059, LI 1.5)}
 
 \thispagestyle{empty}
 \newpage
+
 \tableofcontents
 \thispagestyle{empty}
 \newpage
 
-\clearpage
+
 \pagenumbering{arabic}
 
+\pagestyle{fancy}
 \fancyhead[RO,LE]{Afgeleiden}
 \fancyhead[RE,LO]{}
 
@@ -132,7 +134,7 @@ Een differentiequotiënt in het interval $[a,b]$ kan symbolisch geschreven worde
   bereken het differentiequotiënt in de intervallen $[2,2.5]$, $[2.5,3]$ en $[2,3]$. Verklaar je resultaten aan de hand van een grafiek.
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Afgeleide waarde}
 
 \subsection{Definitie}
@@ -220,8 +222,8 @@ Daar $t$ de raaklijn aan $f$ in $x=2$ is, ligt $(2,f(2))$ niet alleen op $f$, ma
 Daar we nu een punt $(2,-3)$ op $t$ kennen, kunnen we nu in $t: y=2x+q$ onze $x$ en $y$ invullen en oplossen naar $q$
 \begin{align*}
         -3     & = 2 \cdot 2 + q \\
-  \LRA \qquad  -3 - 4 & = q         \\
-  \LRA \qquad \qquad q      & = -7
+  \lra \qquad  -3 - 4 & = q         \\
+  \lra \qquad \qquad q      & = -7
 \end{align*}
 
 We vinden dat de raaklijn $t$ de vergelijking $y=2x-7$ heeft.
@@ -478,6 +480,7 @@ $$f^{(n)} \mbox{ als } f(x)=x^n$$
 en maak hier gebruik van het feit dat we het product $n\cdot(n-1)\cdot(n-2)\cdot \cdots \cdot 3\cdot 2\cdot 1$ korter kunnen schrijven als $n!$ met behulp van faculteit. Volgend jaar zien we deze notatie in meer detail.
 \end{oefening}
 
+\needspace{3cm}
 \subsection{Oefeningen}
 
 \begin{oefening}
@@ -584,7 +587,7 @@ Zij $\displaystyle f(x)=\dfrac{\sqrt{x}}{x^2+3x}$. Dan is $f'(x)$ gelijk aan
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Functieonderzoek}
 
 
@@ -619,8 +622,8 @@ Beschouw de grafiek van de functie $f$ (volle lijn) en van haar afgeleide $f'$ (
     \clip(-3.57,-17.26) rectangle (4.28,18.13);
     \draw[line width=1.6pt, smooth,samples=100,domain=-3.5716478839065284:4.279097160875563] plot(\x,{2*(\x)^3-3*(\x)^2-12*(\x)+6});
     \draw[line width=1.2pt,dash pattern=on 7pt off 7pt, smooth,samples=100,domain=-3.5716478839065284:4.279097160875563] plot(\x,{6*(\x)^2-6*(\x)-12});
-    \draw (3.4,8.48) node[anchor=north west] {f};
-    \draw (2,11.87) node[anchor=north west] {f'};
+    \draw (3.3,8.5) node[anchor=north west] {$f$};
+    \draw (1.9,11.9) node[anchor=north west] {$f'$};
   \end{tikzpicture}
 \end{center}
 De afgeleide functie $f'$ is positief in het interval $]-\infty, -1[$. We zien aan de grafiek dat de functie $f$ in dit interval inderdaad aan het stijgen is (conform de eigenschap). In het interval $]-1, 2[$ is de afgeleide functie $f'$ negatief en de functie $f$ is daalt daar. Bepaal zelf verder het verloop van $f$ aan de hand van $f'$.

@@ -2,10 +2,6 @@
 
 \input{../gowiz.tex}
 
-\pagestyle{fancy}
-\fancyhead[RO,LE]{Complexe Getallen}
-\fancyhead[RE,LO]{}
-
 \begin{document}
 
 \begin{center}
@@ -63,6 +59,10 @@
 
 \pagenumbering{arabic}
 
+\pagestyle{fancy}
+\fancyhead[RO,LE]{Complexe Getallen}
+\fancyhead[RE,LO]{}
+
 \section{Definitie}
 
 \subsection{Getalverzamelingen}
@@ -84,8 +84,8 @@ $$x^2+4=0$$
 
 Lossen we dit toch op, dan vinden we
 \begin{align*}
-  x^2+4=0 \quad & \LRA\quad x^2 = -4\\
-             & \LRA\quad x = +\sqrt{-4} \quad\vee\quad x = -\sqrt{-4}
+  x^2+4=0 \quad & \lra\quad x^2 = -4\\
+             & \lra\quad x = +\sqrt{-4} \quad\vee\quad x = -\sqrt{-4}
 \end{align*}
 
 We kunnen geen vierkantswortel van een negatief getal nemen, daarom voeren we een nieuwe verzameling in, namelijke de verzameling van de {\bf complexe getallen}
@@ -157,11 +157,12 @@ Twee complexe getallen zijn {\bf gelijk} als en slechts als hun reële delen en 
 
 \subsubsection*{Notatie}
 We schrijven $z_1=z_2$ als $z_1$ en $z_2$ gelijk zijn.
-$$a+bi = c+di \LRA \begin{cases}a=c \\ b=d\end{cases}$$
+$$a+bi = c+di \lra \begin{cases}a=c \\ b=d\end{cases}$$
 
 \subsubsection*{Merk op}
 Complexe getallen kunnen niet geordend worden, dus een ongelijkheid als bijvoorbeeld kleiner dan kan niet gedefinieerd worden.
 
+\needspace{6cm}
 \subsection{Tegengestelden}
 
 \subsubsection*{Definitie}
@@ -520,28 +521,28 @@ Bepaal alle complexe getallen die een vierkantswortel zijn uit $3-4i$.
 We zoeken dus $x+yi \in \mathbb{C}$, met $x,y\in\mathbb{R}$ zodat
 \begin{align*}
   &&(x+yi)^2 &= 3-4i\\
-  \LRA &&\underbrace{x^2 - y^2}_{\text{\shortstack{reëel\\deel}}} + \underbrace{2xy}_{\text{\shortstack{imaginair\\deel}}}\hspace*{-0.3cm}i &= 3-4i\\
-  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - y^2 = 3\\2xy =  -4 \mbox{ dus } x\neq 0 \wedge y\neq 0 \end{cases}\\
-  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - y^2 = 3\\y =  -\frac{2}{x}\end{cases}\\
-  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - \left(-\frac{2}{x}\right)^2 = 3\\y =  -\frac{2}{x}\end{cases}\\
-  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - \frac{4}{x^2} = 3\\y =  -\frac{2}{x}\end{cases}\\
-  \LRA && &\hspace*{-2cm}\begin{cases}x^4-3x^2-4=0\\y =  -\frac{2}{x}\end{cases}
+  \lra &&\underbrace{x^2 - y^2}_{\text{\shortstack{reëel\\deel}}} + \underbrace{2xy}_{\text{\shortstack{imaginair\\deel}}}\hspace*{-0.3cm}i &= 3-4i\\
+  \lra && &\hspace*{-2cm}\begin{cases}x^2 - y^2 = 3\\2xy =  -4 \mbox{ dus } x\neq 0 \wedge y\neq 0 \end{cases}\\
+  \lra && &\hspace*{-2cm}\begin{cases}x^2 - y^2 = 3\\y =  -\frac{2}{x}\end{cases}\\
+  \lra && &\hspace*{-2cm}\begin{cases}x^2 - \left(-\frac{2}{x}\right)^2 = 3\\y =  -\frac{2}{x}\end{cases}\\
+  \lra && &\hspace*{-2cm}\begin{cases}x^2 - \frac{4}{x^2} = 3\\y =  -\frac{2}{x}\end{cases}\\
+  \lra && &\hspace*{-2cm}\begin{cases}x^4-3x^2-4=0\\y =  -\frac{2}{x}\end{cases}
 \end{align*}
 
 In bovenstaand stelsel is $x^4-3x^2-4=0$ een {\bf bikwadratische vergelijking}. We lossen deze op m.b.v. een eenvoudige substitutie:
 \begin{align*}
   &&\mbox{stel } t=x^2
   \Rightarrow t^2-3t-4&=0\\
-  \LRA && t^2-4t+t-4 &= 0\\
-  \LRA && (t-4)(t+1) &= 0\\
-  \LRA && t=4 \vee t=-1\\
-  \LRA && x^2=4 \vee \underbrace{\cancel{x^2=-1}}_{\text{want }x\in\mathbb{R}}
+  \lra && t^2-4t+t-4 &= 0\\
+  \lra && (t-4)(t+1) &= 0\\
+  \lra && t=4 \vee t=-1\\
+  \lra && x^2=4 \vee \underbrace{\cancel{x^2=-1}}_{\text{want }x\in\mathbb{R}}
 \end{align*}
 Waardoor we nu ons stelsel verder kunnen oplossen:
 \begin{align*}
-  \LRA && \begin{cases}x^2=4\\y=-\frac{2}{x}\end{cases}\\
-  \LRA && \begin{cases}x=2\\y=-\frac{2}{x}\end{cases} &&\vee&& \begin{cases}x=-2\\y=-\frac{2}{x}\end{cases}\\
-  \LRA && \begin{cases}x=2\\y=-1\end{cases} &&\vee&& \begin{cases}x=-2\\y=1\end{cases}
+  \lra && \begin{cases}x^2=4\\y=-\frac{2}{x}\end{cases}\\
+  \lra && \begin{cases}x=2\\y=-\frac{2}{x}\end{cases} &&\vee&& \begin{cases}x=-2\\y=-\frac{2}{x}\end{cases}\\
+  \lra && \begin{cases}x=2\\y=-1\end{cases} &&\vee&& \begin{cases}x=-2\\y=1\end{cases}
 \end{align*}
 
 We vinden dus twee oplossingen $x+yi\in\mathbb{C}$, namelijk
@@ -556,9 +557,9 @@ Bepaal alle complexe getallen die een vierkantswortel zijn uit $-a$, met $a\in\m
 We zoeken dus $z \in \mathbb{C}$, zodat
 \begin{align*}
               && z^2 &= -a\\
-         \LRA && z^2 &= ai^2\\
-         \LRA && z   &= \pm \sqrt{ai^2}\\
-         \LRA && z   &= \pm \sqrt{a}\cdot i
+         \lra && z^2 &= ai^2\\
+         \lra && z   &= \pm \sqrt{ai^2}\\
+         \lra && z   &= \pm \sqrt{a}\cdot i
 \end{align*}
 
 We vinden dus twee oplossingen $z\in\mathbb{C}$, namelijk
@@ -620,7 +621,7 @@ $$z^2 + 2z + 5 = 0$$
 Dus we krijgen twee oplossingen:
 \begin{align*}
   z_{1,2} &= \dfrac{-b \pm \sqrt{D}}{2a}\\
-  \LRA & \begin{cases}z_1 &= -1 - 2i\\z_2 &= -1 + 2i\end{cases}
+  \lra & \begin{cases}z_1 &= -1 - 2i\\z_2 &= -1 + 2i\end{cases}
 \end{align*}
 
 We noteren de oplossingenverzameling:
@@ -631,30 +632,30 @@ $$V=\{ -1-2i, -1+2i \}$$
 Los op in $\mathbb{C}$
 \begin{align*}
        && (2-i)(z^2-6) &= 5(2i+1)\\
-  \LRA && \underbrace{(2-i)}_a z^2 + \underbrace{(-5-10i)}_b z + \underbrace{(-12+6i)}_c &= 0\\
+  \lra && \underbrace{(2-i)}_a z^2 + \underbrace{(-5-10i)}_b z + \underbrace{(-12+6i)}_c &= 0\\
   \Rightarrow D = -3+4i
 \end{align*}
 
 We willen nu $\sqrt{D}$ bepalen, m.a.w. we zoeken de wortels van $-3+4i$:
 \begin{align*}
   &&(x+yi)^2 &= -3+4i\\
-  \LRA &&x^2 - y^2 + 2xyi &= -3+4i\\
-  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - y^2 = -3\\2xy =  4 &\Rightarrow y=\frac{2}{x} \end{cases}\\
-  \LRA && &\hspace*{-2cm}\begin{cases}x^2 - \frac{4}{x^2} = -3\\y =  \frac{2}{x}\end{cases}\\
-  \LRA && &\hspace*{-2cm}\begin{cases}x^4+3x^2-4=0\\y =  \frac{2}{x}\end{cases}\\
+  \lra &&x^2 - y^2 + 2xyi &= -3+4i\\
+  \lra && &\hspace*{-2cm}\begin{cases}x^2 - y^2 = -3\\2xy =  4 &\Rightarrow y=\frac{2}{x} \end{cases}\\
+  \lra && &\hspace*{-2cm}\begin{cases}x^2 - \frac{4}{x^2} = -3\\y =  \frac{2}{x}\end{cases}\\
+  \lra && &\hspace*{-2cm}\begin{cases}x^4+3x^2-4=0\\y =  \frac{2}{x}\end{cases}\\
   &&\mbox{stel } t=x^2
   \Rightarrow t^2+3t-4&=0\\
-  \LRA && t^2+4t-t-4 &= 0\\
-  \LRA && (t+4)(t-1) &= 0\\
-  \LRA && t=-4 \vee t=1\\
-  \LRA && \cancel{x^2=-4}\vee x^2=1\\
-  \LRA && \begin{cases}x=-1\\y=-2\end{cases} \vee \begin{cases}x=1\\y=2\end{cases}
+  \lra && t^2+4t-t-4 &= 0\\
+  \lra && (t+4)(t-1) &= 0\\
+  \lra && t=-4 \vee t=1\\
+  \lra && \cancel{x^2=-4}\vee x^2=1\\
+  \lra && \begin{cases}x=-1\\y=-2\end{cases} \vee \begin{cases}x=1\\y=2\end{cases}
 \end{align*}
 
 Dus vinden we $\sqrt{D} = -1-2i \mbox{ en } -\sqrt{D}=1+2i$. De oplossingen van onze vierkantsvergelijking worden dus
 \begin{align*}
   z_{1,2} &= \dfrac{5+10i \mp (1+2i)}{2(2-i)}\\
-  \LRA & \begin{cases}z_1 &= \dfrac{(4+8i){\color{gray}(4+2i)}}{(4-2i){\color{gray}(4+2i)}}=2i\\z_2 &= 3i\end{cases}
+  \lra & \begin{cases}z_1 &= \dfrac{(4+8i){\color{gray}(4+2i)}}{(4-2i){\color{gray}(4+2i)}}=2i\\z_2 &= 3i\end{cases}
 \end{align*}
 
 En dus de oplossingenverzameling wordt $V=\{2i, 3i\}$.
@@ -791,9 +792,9 @@ Het vlak voorzien van een positief georiënteerd orthonormaal assenstelsel en aa
 Beschouw $z=a+bi\in\mathbb{C}$ en zijn beeldpunt $P(a,b)$
 
 \begin{itemize}
-  \item $z=0 \LRA z=0+0i \LRA P=$ oorsprong
-  \item $z=a \LRA P\in $ $x$-as = "reële as"
-  \item $z=bi \LRA P\in $ $y$-as = "imaginaire as"
+  \item $z=0 \lra z=0+0i \lra P=$ oorsprong
+  \item $z=a \lra P\in $ $x$-as = "reële as"
+  \item $z=bi \lra P\in $ $y$-as = "imaginaire as"
   \item $z=a+bi \text{ met } P(a,b)$ en $\overline{z}=a-bi \text{ met } P'(a,-b)$\\
   $\Rightarrow$ $P$ en $P'$ zijn elkaars spiegelbeeld t.o.v. de $x$-as
   \item $z=a+bi \text{ met } P(a,b)$ en $-z=-a-bi \text{ met } P'(-a,-b)$\\
@@ -903,7 +904,7 @@ We stellen nu het beeldpunt $P(a,b)$ van een complex getal $z=a+bi \in \mathbb{C
 \subsubsection*{Eigenschappen}
 \begin{itemize}
   \item Het punt $P$ is ondubbelzinnig bepaald door $r$ en $\phi$ van $z$:
-  $$z_1=z_2 \LRA r_1=r_2 \wedge \phi_1=\phi_2$$
+  $$z_1=z_2 \lra r_1=r_2 \wedge \phi_1=\phi_2$$
   \item $r\in\mathbb{R}^+$
   \item $z=0 \Rightarrow r=0 $ en $\phi$ is onbepaald
   \item $z$ en $\overline{z}$: gelijke moduli en tegengestelde argumenten
@@ -1046,7 +1047,7 @@ Bepaal de Carthesische vorm, dus de vorm $z=a+bi$
 \end{oefening}
 
 \pagebreak
-\section{Bewerkingen met complexe getallen in hun goniometrische gedaante}
+\section{Bewerkingen m.b.v de goniometrische gedaante}
 
 \subsection{Product}
 

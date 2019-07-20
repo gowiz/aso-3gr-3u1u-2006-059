@@ -6,10 +6,6 @@
 \usepackage{venndiagram}
 \usepackage{makebox}
 \usepackage{listings}
-\usepackage{hyperref}
-
-\fancyhead[RO,LE]{Combinatieleer}
-\fancyhead[RE,LO]{}
 
 \makeatletter
 \newcommand\binomialCoefficient[2]{%
@@ -61,7 +57,7 @@ Je kan \hfill  {\scriptsize(LP 2006/059, LI 2.1)}
 \end{itemize}}
 
 \section*{Algemene vaardigheden en attitudes}
-{\singlespacing
+\begin{singlespacing}
 Je \hfill {\scriptsize(LP 2006/059, ET1, ET9, ET11)}
 \begin{itemize}
   \itemsep0em
@@ -69,12 +65,21 @@ Je \hfill {\scriptsize(LP 2006/059, ET1, ET9, ET11)}
   \item gebruikt kennis, inzicht en vaardigheden die je verwerft in de wiskunde bij het verkennen, vertolken en verklaren van problemen uit de realiteit.
   \item ontwikkelt zelfregulatie met betrekking tot het verwerven en verwerken van wiskundige informatie en het oplossen van problemen
 \end{itemize}
-}
+\end{singlespacing}
 
-{\singlespacing\footnotesize\tableofcontents\thispagestyle{empty}}
+
+\begin{singlespacing}
+  \footnotesize
+  \tableofcontents
+\end{singlespacing}
+\thispagestyle{empty}
 
 \pagebreak
 \pagenumbering{arabic}
+
+\pagestyle{fancy}
+\fancyhead[RO,LE]{Combinatieleer}
+\fancyhead[RE,LO]{}
 
 We beginnen aan een hoofdstuk dat vaak {\bf combinatoriek} of {\bf combinatieleer} wordt genoemd. Wij zullen voornamelijk problemen bespreken waarbij we het aantal mogelijkheden of het aantal objecten van een verzameling moeten tellen. We spreken dan ook van {\bf telproblemen}.
 
@@ -120,6 +125,7 @@ Om zeker te zijn dat we de telling juist doen zullen we het probleem grafisch ga
 
 \subsection{Boomdiagram}
 
+\begin{adjustwidth}{-1.5cm}{-1.5cm}
 \begin{dot2tex}[tikz, options=--tikzedgelabel]
   digraph G {
     node [shape=none,label=""];
@@ -163,6 +169,7 @@ Om zeker te zijn dat we de telling juist doen zullen we het probleem grafisch ga
     cc -> dd [style=dashed, label="Nagerecht"];
   }
 \end{dot2tex}
+\end{adjustwidth}
 
 In een wiskundige boom worden de lijntjes de {\bf takken} genoemd. De takken komen steeds samen in de {\bf knopen}. De knoop waar begonnen wordt noemen we de {\bf wortel} en het eindpunten van de boom worden de {\bf bladen} genoemd.
 
@@ -176,6 +183,7 @@ Neem eens de beslissingen in een andere volgorde, namelijk kies eerst een desser
 
 Een boomdiagram heeft als voornaamste nadeel dat deze heel snel heel groot wordt. Als je nu eens kijkt naar de boom, dan merk je dat er per beslissing evenveel takken vertrekken uit een knoop. Laat je de vertrekkende takken dus toekomen in eenzelfde knoop dan wordt de figuur veel compacter:
 
+\begin{adjustwidth}{-1.5cm}{-1.5cm}
 \begin{dot2tex}[tikz]
   digraph G {
     node [shape=none,label=""];
@@ -194,7 +202,7 @@ Een boomdiagram heeft als voornaamste nadeel dat deze heel snel heel groot wordt
     cc -> dd [style=dashed, label="Nagerecht"];
   }
 \end{dot2tex}
-
+\end{adjustwidth}
 
 Het tellen wordt nu moeilijker, we bekijken de verschillende deelbeslissingen apart.
 \begin{itemize}
@@ -1046,6 +1054,7 @@ De korste weg-code hebben we beschreven met 3 voorwaarden. Er zijn eigenlijk maa
 
 We herrinneren ons dat we met een boomdiagram alle teproblemen kunnen oplossen. Daarom tellen we het aantal mogelijke codes (en dus ook het aantal mogelijke kortste wegen) nu met behulp van een boomdiagram. Straks zoeken we wel naar efficiëntere methoden.
 
+\begin{adjustwidth}{-1.5cm}{-1.5cm}
 \begin{dot2tex}[tikz, options=-tmath --tikzedgelabel]
   digraph G {
     node [shape=none,label=""];
@@ -1092,6 +1101,7 @@ We herrinneren ons dat we met een boomdiagram alle teproblemen kunnen oplossen. 
     ee -> ff [style=dashed, label="\ub_5"];
   }
 \end{dot2tex}
+\end{adjustwidth}
 
 Er zijn dus $10$ mogelijke codes met 3$H$'s en 2$V$'s. We weten nu dus dat er $10$ kortste wegen zijn van $A$ naar $B$.
 

@@ -31,14 +31,11 @@
   \centering
   \fontsize{40}{60}\selectfont Kansverdelingen
   \end{mdframed}
-  %\vfill
   \includegraphics[width=0.8\textwidth]{normal}
-  %\vfill
 \end{center}
-%\vfill
 \vspace*{-2cm}
 \subsection*{Doelstellingen}
-{\singlespacing
+\begin{singlespacing}
 Je kan \hfill  {\scriptsize(LP 2006-059, LI 2.3, ET 33 34 35 36)}
 \begin{itemize}
   \itemsep0em
@@ -53,8 +50,9 @@ klokvormige frequentieverdeling en het gemiddelde en de standaardafwijking van d
   \item bij een normale verdeling de relatieve frequentie interpreteren van een verzameling gegevens met waarden
 tussen twee gegeven grenzen, met waarden groter dan een gegeven grens of met waarden kleiner dan een gegeven grens als de oppervlakte van een gepast gebied
   \item de normale verdeling bij gepaste gevallen gebruiken als benadering voor de binomiale verdeling
-\end{itemize}}
-%\subsection*{Algemene vaardigheden en attitudes}
+\end{itemize}
+\end{singlespacing}
+% \subsection*{Algemene vaardigheden en attitudes}
 %{\singlespacing
 %Je \hfill {\scriptsize(LP 2006/059, ET1, ET9, ET11)}
 %\begin{itemize}
@@ -64,25 +62,24 @@ tussen twee gegeven grenzen, met waarden groter dan een gegeven grens of met waa
 %  \item ontwikkelt zelfregulatie met betrekking tot het verwerven en verwerken van wiskundige informatie en het oplossen van problemen
 %\end{itemize}
 %}
-\vspace*{-2cm}
 
 \thispagestyle{empty}
 \newpage
+
+\begin{singlespacing}
+  \small
+  \tableofcontents
+\end{singlespacing}
 \thispagestyle{empty}
-{
-\small
-\singlespacing
-\tableofcontents
-}
 \newpage
-\clearpage
+
 \pagenumbering{arabic}
-\pagestyle{fancy}
-\lhead{}
 
+\pagestyle{fancy}
 \fancyhead[RO,LE]{Kansverdelingen}
 \fancyhead[RE,LO]{}
 
+\cleardoublepage
 \section{Discrete kansvariabelen}
 
 We kunnen aan elk element van de uitkomstenverzameling $U$ een (reëel) getal toekennen. Op deze manier krijgen we dus een functie $X$ van $U$ naar $\mathbb{R}$, we noemen zo'n functie een {\bf kansvariabele} $X$.
@@ -115,6 +112,7 @@ We associëren opnieuw met elk element van U een reëel getal, nl. het aantal de
 \end{itemize}
 We krijgen opnieuw een functie $Y$ van $U$ naar $\mathbb{R}$, de kansvariable $Y:U\to\mathbb{R}$.
 
+\needspace{4cm}
 \subsection{Definitie}
 
 \begin{mdframed}
@@ -171,7 +169,7 @@ Zijn de volgende kansvariabelen discreet of continu?
 {\scriptsize Wij zullen ons beperken tot discrete kansvariabelen.}
 \vspace*{-1cm}
 
-\pagebreak
+\cleardoublepage
 \section{Kansfunctie van een discrete kansvariabele}
 
 We willen nu van elk van de beelden van de kansvariabele $X$ weten hoe groot de kans is dat we deze bereiken. De beelden van de kansvariabele liggen in $\mathbb{R}$ en de kansen liggen altijd in $[0,1]$. We zullen dus een nieuwe functie $f:\mathbb{R}\to[0,1]$ krijgen die we de {\bf kansfunctie} van de kansvariabele $X$ zullen noemen.
@@ -268,8 +266,7 @@ We gooien twee dobbelstenen na elkaar. Bepaal de kansfunctie die hoort bij de ka
 Bepaal voor de kansvariabele dat het aantal fietsbellen dat getest wordt door ze telkens weg te leggen, waarbij we weten dat er 6 goede en 4 slechte fietsbellen zijn, de kansfunctie en geef deze grafisch weer.
 \end{oefening}
 
-\pagebreak
-
+\cleardoublepage
 \section{Verdelingsfunctie van een kansvariabele}
 
 \subsection{Definitie}
@@ -432,8 +429,7 @@ Geef de verdelingsfunctie en stel deze grafisch voor van de volgende kansvariabe
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
-
+\cleardoublepage
 \section{Verwachtingswaarde van een discrete kansvariabele}
 
 \subsection{Voorbeeld}
@@ -484,8 +480,7 @@ Bereken de verwachtingswaarde van het aantal beurten dat de fietsenmaker nodig h
 Bereken de verwachtingswaarde van de som van het aantal ogen bij het na elkaar werpen met twee dobbelstenen.
 \end{oefening}
 
-\pagebreak
-
+\cleardoublepage
 \section{Variantie en standaardafwijking}
 
 \subsection{Voorbeeld}
@@ -584,7 +579,7 @@ Uit een spel van 52 kaarten wordt lukraak een kaart getrokken. Eén speler houdt
 
 
 
-\pagebreak
+\cleardoublepage
 \section{Binomiale kansverdeling}
 
 \subsection{Kenmerken}
@@ -725,7 +720,7 @@ In 30\% van de gevallen leidt het in contact komen met zekere ziekteverwekkende 
 %Ann en Pieter spelen een spel waarbij twee eerlijke dobbelstenen gegooid worden. Ann krijgt 20 euro van Pieter als de som van de ogen kleiner is dan 7. Is de som 7 of meer, dan betaalt Ann 15 euro aan Pieter. Voer een gepaste kansvariabele in en bepaal in wiens voordeel dit spel is. Bereken ook $\Var(X)$ en $\sigma_X$.
 %\end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Normale kansverdeling}
 
 \subsection{Inleiding}
@@ -942,7 +937,7 @@ $$\mu=\arule{1cm} \sigma=\arule{1cm}$$
 \end{multicols}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Standaardnormale kansverdeling}
 
 In de vorige paragraaf werden grafieken van de normale verdeling verschoven (met behulp van $\mu$) en herschaald (met behulp van $\sigma$). Het is dus mogelijk om de normale verdeling te
@@ -1156,7 +1151,7 @@ Bepaal volgende kansen, {\bf zonder} gebruik te maken van de tabel van de standa
 \end{oefening}
 
 
-\pagebreak
+\cleardoublepage
 \section{Kansen berekenen bij de normale verdeling}
 
 \subsection{Standaardisering}
@@ -1273,7 +1268,7 @@ Punten van verschillende leerlingen in eenzelfde klas zouden normaal verdeeld mo
 Je kan dit bijvoorbeeld gebruiken wanneer je absoluut gezien een lager cijfer hebt bij DW3, maar relatief gezien een hoger cijfer bij DW3 om je ouders gerust te stellen.
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Binomiale verdeling benaderen door een normale verdeling}
 
 \begin{oefening}
@@ -1382,20 +1377,15 @@ In een restaurant met een capaciteit van 350 tafels zijn voor de komende feestda
 \end{enumerate}
 \end{oefening}
 
-%\newpage\mbox{}
-%\newpage
-
-\pagebreak
+\cleardoublepage
 \appendix
-%\section*{Bijlagen}
-
-\section*{Tabel standaardnormale verdeling}
+\section{Tabel standaardnormale verdeling}
 
 \begin{center}
-
 \begin{tikzpicture}
   \begin{axis}[
-    yscale=1.3,
+    yscale=1.7,
+    xscale=1.3,
     no markers, domain=0:10, samples=100,
     axis lines*=left,
     height=3cm, width=12cm,
@@ -1415,8 +1405,8 @@ In een restaurant met een capaciteit van 350 tafels zijn voor de komende feestda
 \renewcommand{\arraystretch}{0.8}
 \small
 \begin{tabular}{rr@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r@{\ }r}
-$z$&0.00&0.01&0.02&0.03&0.04&0.05&0.06&0.07&0.08&0.09\\
-\ \\
+  $z$&0.00&0.01&0.02&0.03&0.04&0.05&0.06&0.07&0.08&0.09\\[0.2cm]
+
 0.0&0.5000&0.5040&0.5080&0.5120&0.5160&0.5199&0.5239&0.5279&0.5319&0.5359\\
 0.1&0.5398&0.5438&0.5478&0.5517&0.5557&0.5596&0.5636&0.5675&0.5714&0.5753\\
 0.2&0.5793&0.5832&0.5871&0.5910&0.5948&0.5987&0.6026&0.6064&0.6103&0.6141\\
@@ -1426,8 +1416,8 @@ $z$&0.00&0.01&0.02&0.03&0.04&0.05&0.06&0.07&0.08&0.09\\
 0.6&0.7257&0.7291&0.7324&0.7357&0.7389&0.7422&0.7454&0.7486&0.7517&0.7549\\
 0.7&0.7580&0.7611&0.7642&0.7673&0.7703&0.7734&0.7764&0.7794&0.7823&0.7852\\
 0.8&0.7881&0.7910&0.7939&0.7967&0.7995&0.8023&0.8051&0.8078&0.8106&0.8133\\
-0.9&0.8159&0.8186&0.8212&0.8238&0.8264&0.8289&0.8315&0.8340&0.8365&0.8389\\
-\\
+0.9&0.8159&0.8186&0.8212&0.8238&0.8264&0.8289&0.8315&0.8340&0.8365&0.8389\\[0.2cm]
+
 1.0&0.8413&0.8438&0.8461&0.8485&0.8508&0.8531&0.8554&0.8577&0.8599&0.8621\\
 1.1&0.8643&0.8665&0.8686&0.8708&0.8729&0.8749&0.8770&0.8790&0.8810&0.8830\\
 1.2&0.8849&0.8869&0.8888&0.8907&0.8925&0.8944&0.8962&0.8980&0.8997&0.9015\\
@@ -1437,8 +1427,8 @@ $z$&0.00&0.01&0.02&0.03&0.04&0.05&0.06&0.07&0.08&0.09\\
 1.6&0.9452&0.9463&0.9474&0.9484&0.9495&0.9505&0.9515&0.9525&0.9535&0.9545\\
 1.7&0.9554&0.9564&0.9573&0.9582&0.9591&0.9599&0.9608&0.9616&0.9625&0.9633\\
 1.8&0.9641&0.9649&0.9656&0.9664&0.9671&0.9678&0.9686&0.9693&0.9699&0.9706\\
-1.9&0.9713&0.9719&0.9726&0.9732&0.9738&0.9744&0.9750&0.9756&0.9761&0.9767\\
-\\
+1.9&0.9713&0.9719&0.9726&0.9732&0.9738&0.9744&0.9750&0.9756&0.9761&0.9767\\[0.2cm]
+
 2.0&0.9772&0.9778&0.9783&0.9788&0.9793&0.9798&0.9803&0.9808&0.9812&0.9817\\
 2.1&0.9821&0.9826&0.9830&0.9834&0.9838&0.9842&0.9846&0.9850&0.9854&0.9857\\
 2.2&0.9861&0.9864&0.9868&0.9871&0.9875&0.9878&0.9881&0.9884&0.9887&0.9890\\
@@ -1448,8 +1438,8 @@ $z$&0.00&0.01&0.02&0.03&0.04&0.05&0.06&0.07&0.08&0.09\\
 2.6&0.9953&0.9955&0.9956&0.9957&0.9959&0.9960&0.9961&0.9962&0.9963&0.9964\\
 2.7&0.9965&0.9966&0.9967&0.9968&0.9969&0.9970&0.9971&0.9972&0.9973&0.9974\\
 2.8&0.9974&0.9975&0.9976&0.9977&0.9977&0.9978&0.9979&0.9979&0.9980&0.9981\\
-2.9&0.9981&0.9982&0.9982&0.9983&0.9984&0.9984&0.9985&0.9985&0.9986&0.9986\\
-\\
+2.9&0.9981&0.9982&0.9982&0.9983&0.9984&0.9984&0.9985&0.9985&0.9986&0.9986\\[0.2cm]
+
 3.0&0.9987&0.9987&0.9987&0.9988&0.9988&0.9989&0.9989&0.9989&0.9990&0.9990\\
 3.1&0.9990&0.9991&0.9991&0.9991&0.9992&0.9992&0.9992&0.9992&0.9993&0.9993\\
 3.2&0.9993&0.9993&0.9994&0.9994&0.9994&0.9994&0.9994&0.9995&0.9995&0.9995\\
@@ -1459,7 +1449,7 @@ $z$&0.00&0.01&0.02&0.03&0.04&0.05&0.06&0.07&0.08&0.09\\
 3.6&0.9998&0.9998&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999\\
 3.7&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999\\
 3.8&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999&0.9999\\
-3.9&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000\\
+3.9&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000&1.0000
 \end{tabular}
 \end{center}
 

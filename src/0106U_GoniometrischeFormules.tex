@@ -1,20 +1,9 @@
-\documentclass[a4paper,12pt]{article}
+\documentclass[twoside,a4paper,12pt]{article}
 
 \input{../gowiz.tex}
 
-\usepackage{versions}
-\includeversion{theorie}
-%\excludeversion{theorie}
-
 \begin{document}
 
-\pagestyle{fancy}
-\lhead{}
-\rhead{Oefeningen Goniometrische formules}
-
-\begin{theorie}
-
-\thispagestyle{empty}
 \begin{center}
   \begin{mdframed}
   \centering
@@ -35,7 +24,6 @@
         \draw[dashed] (0,{sin(30)}) -- ({cos(30)},{sin(30)});
 
         \draw (0.25,0.01) node[above=1pt] {$\alpha$};
-
     \end{tikzpicture}
   \vfill
 \end{center}
@@ -48,31 +36,23 @@ Je \hfill  {\scriptsize(LP 2006-059, LI 1.6.3)}
   \item de formules van Simpson opstellen en toepassen
 \end{itemize}
 
-\pagestyle{empty}
-\mbox{}
-\newpage
-\clearpage
 \thispagestyle{empty}
-%\mbox{}
-{\small \tableofcontents}
 \newpage
-\clearpage
+
+\tableofcontents
+\thispagestyle{empty}
+\newpage
+
 \pagenumbering{arabic}
 
 \pagestyle{fancy}
-\lhead{}
-\rhead{Goniometrische formules}
+\fancyhead[RO,LE]{Goniometrische formules}
+\fancyhead[RE,LO]{}
 
-\end{theorie}
-
-\onehalfspacing
-
+\cleardoublepage
 \section{Goniometrische getallen}
 
-\begin{theorie}
-
 \subsection{Definities}
-
 Voor een hoek met maatgetal $\alpha$ en beeldpunt $\vec{p}=(p_x,p_y)$ op de goniometrische cirkel definiëren we de goniometrische getallen als volgt:
 
 \begin{itemize}
@@ -102,8 +82,6 @@ Verder worden nog volgende afgeleide goniometrische getallen gedefinieerd:
   $$\csc\alpha=\dfrac{1}{\sin\alpha}$$
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
 Duid op de goniometrische cirkel de goniometrische getallen, cosinus, sinus, tangens en cotangens aan.
 \end{oefening}
@@ -112,9 +90,6 @@ Duid op de goniometrische cirkel de goniometrische getallen, cosinus, sinus, tan
 Bewijs de grondformule van de goniometrie.
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsection{Goniometrische getallen van enkele bijzondere hoeken}
 
 \begin{center}
@@ -174,15 +149,10 @@ Bewijs de grondformule van de goniometrie.
   \vspace*{0.5cm}
 \end{center}
 
-\end{theorie}
-
 \begin{oefening}
 Bepaal ook van de andere afgeleide goniometrische getallen, namelijk van cotangens, secans en cosecans ook de waarde van de bijzondere hoeken.
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsection{Goniometrische getallen van verwante hoeken}
 
 \subsubsection{Gelijke hoeken}
@@ -201,8 +171,6 @@ Aangezien het maatgetal van een hoek slechts bepaald is op een geheel veelvoud v
 \cot(\alpha+k\cdot 360\degree)&=\cot(\alpha)\\
 \end{align*}
 
-\end{theorie}
-
 \begin{oefening}
 Bereken:
 \begin{multicols}{3}
@@ -214,9 +182,6 @@ Bereken:
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsubsection{Tegengestelde hoeken}
 \subsubsection*{Definitie}
 We noemen twee hoeken $\alpha$ en $\beta$ \textbf{tegengesteld} als $\alpha=-\beta$.
@@ -231,8 +196,6 @@ Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tus
   \cot(-\alpha)&=-\cot(\alpha)
 \end{align*}
 
-\end{theorie}
-
 \begin{oefening}
 Bereken
 \begin{multicols}{3}
@@ -244,9 +207,6 @@ Bereken
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsubsection{Complementaire hoeken}
 
 \subsubsection*{Definitie}
@@ -264,15 +224,10 @@ Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tus
   \cot(90\degree-\alpha)&=\tan(\alpha)
 \end{align*}
 
-\end{theorie}
-
 \begin{oefening}
 Je weet dat de sinus van $20\degree$ ongeveer $0.34$ is, wat is dan de cosinus van $-70\degree$?
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsubsection{Supplementaire hoeken}
 
 \subsubsection*{Definitie}
@@ -289,8 +244,6 @@ Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tus
   \cot(180\degree-\alpha)&=-\cot(\alpha)
 \end{align*}
 
-\end{theorie}
-
 \begin{oefening}
 Bereken
 \begin{multicols}{3}
@@ -302,9 +255,6 @@ Bereken
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsubsection{Anti-supplementaire hoeken}
 
 \subsubsection*{Definitie}
@@ -322,8 +272,6 @@ Teken hieronder een goniometrische cirkel en lees erop af wat het verband is tus
 \cot(180\degree+\alpha)&=\cot(\alpha)
 \end{align*}
 
-\end{theorie}
-
 \begin{oefening}
 Bereken
 \begin{multicols}{3}
@@ -335,12 +283,7 @@ Bereken
 \end{multicols}
 \end{oefening}
 
-\begin{theorie}
-
-\pagebreak
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
 Voor de hoek $\alpha$ van $135\degree$
@@ -379,8 +322,6 @@ Gegeven is dat de volgende vormen zinvol zijn. Schrijf ze zo eenvoudig mogelijk.
 
 \pagebreak
 \section{Optellingsformules}
-
-\begin{theorie}
 
 \subsection{Inleiding}
 We willen een formule afleiden om de sinus, cosinus of tangens van een som van twee hoeken te berekenen:
@@ -424,8 +365,6 @@ Vul hiertoe de volgende uitdrukkingen aan en verbind wat aan elkaar gelijk is.
   $$\cos(90\degree)\cdot\cos(30\degree)-\sin(90\degree)\cdot\sin(30\degree)=\arule{1cm}$$
 \end{minipage}
 
-
-
 \subsection{Optellingsformules voor sinus en cosinus}
 
 % TODO: bewijs toevoegen, zie mooi bewijs op
@@ -438,7 +377,6 @@ Vul hiertoe de volgende uitdrukkingen aan en verbind wat aan elkaar gelijk is.
   \cos(\alpha + \beta)&=\cos(\alpha)\cdot \cos(\beta)-\sin(\alpha)\cdot \sin(\beta)\\
   \cos(\alpha - \beta)&=\cos(\alpha)\cdot \cos(\beta)+\sin(\alpha)\cdot \sin(\beta)
 \end{align*}
-
 
 \subsubsection*{Voorbeelden}
 
@@ -474,7 +412,6 @@ Vul hiertoe de volgende uitdrukkingen aan en verbind wat aan elkaar gelijk is.
   \end{align*}
 \end{enumerate}
 
-\pagebreak
 \subsection{Optellingsformules voor tangens}
 Uitgaande van deze formules leiden we nu een formule af voor de tangens van een som van 2 hoeken.
 
@@ -501,7 +438,6 @@ We spreken af om enkel hoeken te gebruiken waarvoor de gegeven vormen zinvol zij
   \tan(\alpha - \beta)&=\frac{\tan(\alpha)-\tan(\beta)}{1+\tan(\alpha)\cdot\tan(\beta)}
 \end{align*}
 
-\pagebreak
 \subsubsection*{Voorbeelden}
 Bereken
 \begin{enumerate}[(a)]
@@ -524,10 +460,7 @@ Bereken
   \end{align*}
 \end{enumerate}
 
-
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
 Bereken
@@ -573,10 +506,8 @@ Bewijs
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Verdubbelingsformules}
-
-\begin{theorie}
 
 \subsection{Inleiding}
 Is $\sin(2\alpha)$ gelijk aan $2\sin\alpha$?
@@ -605,13 +536,13 @@ Als we een hoek verdubbelen betekent dit niet dat de sinus, cosinus of tangens v
 Stellen we $\beta=\alpha$ in de optellingsformule $\sin(\alpha+\beta)=\sin\alpha\cdot\cos\beta + \cos\alpha\cdot\sin\beta$ dan krijgen we
 \begin{align*}
        && \sin 2\alpha &= \sin\alpha\cdot\cos\alpha+\cos\alpha\cdot\sin\alpha\\
-  \LRA && \sin 2\alpha &= 2\cdot\sin\alpha\cdot\cos\alpha
+  \lra && \sin 2\alpha &= 2\cdot\sin\alpha\cdot\cos\alpha
 \end{align*}
 
 Stellen we $\beta=\alpha$ in de optellingsformule $\cos(\alpha+\beta)=\cos\alpha\cdot\cos\beta + \sin\alpha\cdot\sin\beta$ dan krijgen we
 \begin{align*}
        && \cos 2\alpha &= \cos\alpha\cdot\cos\alpha+\sin\alpha\cdot\sin\alpha\\
-  \LRA && \cos 2\alpha &= \cos^2\alpha -\sin^2\alpha
+  \lra && \cos 2\alpha &= \cos^2\alpha -\sin^2\alpha
 \end{align*}
 
 Het blijkt dus dat voor het berekenen van $\sin 2\alpha$ of $\cos 2\alpha$ zowel $\sin\alpha$ als $\cos\alpha$
@@ -647,8 +578,8 @@ En ook
     $$\cos 2\alpha = 2\cos^2\alpha - 1 = 2\cdot \dfrac{1}{9}-1=-\dfrac{7}{9}$$
     \begin{align*}
            && \cos^2 2\alpha + \sin^2 2\alpha &= 1\\
-      \LRA &&                  \sin^2 2\alpha &= 1 - \cos^2 2\alpha\\
-      \LRA &&                  \sin 2\alpha   &= \sqrt{1 - \cos^2 2\alpha}\\
+      \lra &&                  \sin^2 2\alpha &= 1 - \cos^2 2\alpha\\
+      \lra &&                  \sin 2\alpha   &= \sqrt{1 - \cos^2 2\alpha}\\
            &&                                 &= + \sqrt{1 - \dfrac{49}{81}}\\
            &&                                 &= \dfrac{4}{9}\cdot\sqrt{2}
     \end{align*}
@@ -661,8 +592,6 @@ En ook
                 &= \sin 2\alpha = \mbox{RL}
     \end{align*}
 \end{enumerate}
-
-\end{theorie}
 
 \begin{oefening}
 Bepaal $\sin 2\alpha$ en $\cos 2\alpha$ als je weet dat $\alpha$ in het derde kwadrant ligt en als er geldt dat $\sin\alpha=-\dfrac{1}{4}$ is.
@@ -684,8 +613,6 @@ Bewijs:
 \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Formule voor $\tan 2\alpha$}
 
 Stellen we $\beta=\alpha$ in $\tan(\alpha + \beta)=\dfrac{\tan\alpha + \tan\beta}{1-\tan\alpha\cdot\tan\beta}$ dan krijgen we
@@ -704,8 +631,6 @@ Bewijs:
             &= \dfrac{\sin\alpha}{\cos\alpha} = \mbox{LL}\\
 \end{align*}
 
-\end{theorie}
-
 \begin{oefening} % list from Iris, source unknown
 Bewijs:
 \begin{enumerate}[(a)]
@@ -715,8 +640,6 @@ Bewijs:
   \item $\displaystyle \tan 2x + \dfrac{1}{\cos 2x} = \dfrac{\cos x + \sin x}{\cos x - \sin x}$
 \end{enumerate}
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Vervangen van $2\alpha$ door $\alpha$}
 
@@ -731,14 +654,10 @@ $\alpha$ door $\dfrac{\alpha}{2}$ wordt vervangen.
   \item $\cos\alpha = \cos^2\dfrac{\alpha}{2}-\sin^2\dfrac{\alpha}{2}$
 \end{itemize}
 
-\end{theorie}
-
 \begin{oefening}
 Bewijs:
 $$\dfrac{\cos\dfrac{\alpha}{2}-\sin\dfrac{\alpha}{2}}{\sin\dfrac{\alpha}{2}+\cos\dfrac{\alpha}{2}}=\dfrac{1-\sin\alpha}{\cos\alpha}$$
 \end{oefening}
-
-\begin{theorie}
 
 \subsection{Formules voor $3\alpha$}
 
@@ -749,12 +668,8 @@ Doordat $3\alpha=2\alpha + \alpha$ kan men volgende formules mits enig werk ook 
   \tan 3\alpha &= \dfrac{3\tan\alpha -\tan^3\alpha}{1-3\tan^2\alpha}
 \end{align*}
 
-\end{theorie}
-
-\pagebreak
+\cleardoublepage
 \section{Formules van Carnot}
-
-\begin{theorie}
 
 We hernemen de verdubbelingsformules uit het vorige hoofdstuk geschreven als
 \begin{align*}
@@ -767,8 +682,6 @@ We kunnen deze formules gebruiken als we de macht van een goniometrisch getal wi
   \sin^2\alpha &= \dfrac{1 - \cos 2\alpha}{2}\\
   \cos^2\alpha &= \dfrac{1 + \cos 2\alpha}{2}
 \end{align*}
-
-\end{theorie}
 
 \begin{oefening} % list from Iris, source unknown
 Bewijs:
@@ -787,10 +700,8 @@ Bewijs:
 \end{enumerate}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Halveringsformules en $t$-formules}
-
-\begin{theorie}
 
 \vspace*{-0.5cm}
 \subsection{Inleiding}
@@ -813,13 +724,13 @@ en vervangen $2\alpha$ door $\alpha$ en $\alpha$ door $\dfrac{\alpha}{2}$ en kri
 Uit de eerste formule leiden we $\sin\dfrac{\alpha}{2}$ af uitgedrukt in $\cos\alpha$:
 \begin{align*}
           && \sin^2\dfrac{\alpha}{2} &= \dfrac{1-\cos\alpha}{2}\\
-     \LRA &&   \sin\dfrac{\alpha}{2} &= +\sqrt{\dfrac{1-\cos\alpha}{2}} \mbox{ of } \sin\dfrac{\alpha}{2}= -\sqrt{\dfrac{1-\cos\alpha}{2}}
+     \lra &&   \sin\dfrac{\alpha}{2} &= +\sqrt{\dfrac{1-\cos\alpha}{2}} \mbox{ of } \sin\dfrac{\alpha}{2}= -\sqrt{\dfrac{1-\cos\alpha}{2}}
 \end{align*}
 
 Uit de tweede formule leiden we $\cos\dfrac{\alpha}{2}$ af uitgedrukt in $\cos\alpha$:
 \begin{align*}
           && \cos^2\dfrac{\alpha}{2} &= \dfrac{1+\cos\alpha}{2}\\
-     \LRA &&   \cos\dfrac{\alpha}{2} &= +\sqrt{\dfrac{1+\cos\alpha}{2}} \mbox{ of } \sin\dfrac{\alpha}{2}= -\sqrt{\dfrac{1+\cos\alpha}{2}}
+     \lra &&   \cos\dfrac{\alpha}{2} &= +\sqrt{\dfrac{1+\cos\alpha}{2}} \mbox{ of } \sin\dfrac{\alpha}{2}= -\sqrt{\dfrac{1+\cos\alpha}{2}}
 \end{align*}
 Het teken vóór de vierkantswortel wordt bepaald door het kwadrant waarin het
 beeldpunt van de georiënteerde hoek met maatgetal $\dfrac{\alpha}{2}$ valt.
@@ -836,9 +747,9 @@ We leiden de $t$-formule voor sinus af:
 
 \begin{align*}
   \left\{\begin{aligned}\sin 2\alpha = 2\sin\alpha\cos\alpha\\\sin^2\alpha + \cos^2\alpha = 1\end{aligned}\right. \quad
-  &\LRA\quad \sin 2\alpha = \dfrac{2\sin\alpha\cos\alpha}{\sin^2\alpha + \cos^2\alpha}\\
-  &\LRA\quad \sin 2\alpha = \dfrac{2\dfrac{\sin\alpha}{\cos\alpha}}{\dfrac{\sin^2\alpha}{\cos^2\alpha}+1}\\
-  &\LRA\quad \sin 2\alpha = \dfrac{2\tan\alpha}{1+\tan^2\alpha}
+  &\lra\quad \sin 2\alpha = \dfrac{2\sin\alpha\cos\alpha}{\sin^2\alpha + \cos^2\alpha}\\
+  &\lra\quad \sin 2\alpha = \dfrac{2\dfrac{\sin\alpha}{\cos\alpha}}{\dfrac{\sin^2\alpha}{\cos^2\alpha}+1}\\
+  &\lra\quad \sin 2\alpha = \dfrac{2\tan\alpha}{1+\tan^2\alpha}
 \end{align*}
 
 We vervangen terug $2\alpha$ door $\alpha$ en dus ook $\alpha$ door $\dfrac{\alpha}{2}$ en krijgen dan
@@ -857,17 +768,11 @@ Analoog voor cosinus en tangens.
 \end{align*}
 met $t=\tan \dfrac{\alpha}{2}$.
 
-\end{theorie}
-
 \begin{oefening}
 Bewijs zelf de $t$-formules voor cosinus en tangens.
 \end{oefening}
 
-\begin{theorie}
-
 \subsection{Oefeningen}
-
-\end{theorie}
 
 \begin{oefening}
 Bepaal $\sin\alpha$, $\cos\alpha$ en $\tan\alpha$ als gegeven is dat $\tan\dfrac{\alpha}{2}=2+\sqrt{3}$.
@@ -886,11 +791,8 @@ $$\cos\alpha=\dfrac{1}{1+\tan\alpha\cdot\tan\dfrac{\alpha}{2}}\;.$$
 Bepaal $\tan\dfrac{\alpha}{2}$ als $\cos\beta\cdot\sin\alpha+\tan\gamma\cdot\alpha=\tan\gamma\cdot\sin\beta$.
 \end{oefening}
 
-
-\newpage
+\cleardoublepage
 \section{Formules van Simpson}
-
-\begin{theorie}
 
 \subsection{Inleiding}
 
@@ -930,13 +832,11 @@ $$\cos(\alpha+\beta) + \cos(\alpha - \beta) = 2\cdot\cos\alpha\cdot\cos\beta$$
 Lid aan lid aftrekken geeft
 $$\cos(\alpha+\beta) - \cos(\alpha - \beta) = -2\cdot\sin\alpha\cdot\sin\beta$$
 
-
 \subsubsection*{Opmerkingen}
 \begin{itemize}
   \item Deze formules worden meestal van rechts naar links toegepast, we zullen ze in ons besluit dan ook zo noteren.
   \item De eerste twee formules die we gevonden hebben zijn in wezen dezelfde. Het volstaat immers om $\alpha$ en $\beta$ van plaatst te wisselen en gebruik te maken van het feit dat $\sin(-\alpha)=-\sin(\alpha)$.
 \end{itemize}
-
 
 \subsubsection*{Besluit}
 \begin{align*}
@@ -969,10 +869,7 @@ Onthoud dat een dubbelproduct van goniometrische getallen overgaat in een som va
   \ldots
 \end{enumerate}
 
-\pagebreak
 \subsection{Oefeningen op eerste vorm}
-
-\end{theorie}
 
 \begin{oefening}
 Schrijf als som
@@ -1011,9 +908,6 @@ Schrijf als een algebraïsche som
 \end{enumerate}
 \end{oefening}
 
-\begin{theorie}
-
-\newpage
 \subsection{Tweede vorm van de formules van Simpson: som omzetten naar product}
 
 \subsubsection*{Opstellen formules}
@@ -1049,7 +943,6 @@ optelformules & $\sin(\alpha + \beta)$ & sinus van een som\\
               & \ldots\\
 Simpson & $\sin\alpha + \sin\beta$ & som van sinussen\\
               & \ldots\\
-
 \end{tabular}
 \end{itemize}
 
@@ -1072,10 +965,7 @@ Simpson & $\sin\alpha + \sin\beta$ & som van sinussen\\
   \end{align*}
 \end{enumerate}
 
-\pagebreak
 \subsection{Oefeningen op tweede vorm}
-
-\end{theorie}
 
 \begin{oefening}
 Schrijf als product
@@ -1124,7 +1014,7 @@ Vereenvoudig\\
  $$\sin\alpha + \sin\beta + \sin\gamma = 4 \cos\dfrac{\alpha}{2}\cdot\cos\dfrac{\beta}{2}\cos\dfrac{\gamma}{2}$$
  \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Extra oefeningen}
 
 \begin{oefening}
@@ -1139,5 +1029,4 @@ Bewijs
 \end{enumerate}
 \end{oefening}
 
-%\newpage
 \end{document}

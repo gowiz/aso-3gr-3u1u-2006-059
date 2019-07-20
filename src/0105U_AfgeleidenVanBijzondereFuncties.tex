@@ -2,7 +2,6 @@
 
 \input{../gowiz.tex}
 
-\usetikzlibrary{arrows,shapes}
 \usepackage[outputdir=./build/]{dot2texi}
 
 \begin{document}
@@ -92,49 +91,52 @@ Voorbeelden zijn:
 
 \subsection{Classificatie van de functies}
 Onze verschillende soorten geziene functies kunnen we als volgt classificeren
-\begin{center}
-  \begin{dot2tex}[scale=0.6,dot,tikz,options=-tmath]
+\begin{adjustwidth}{-2.5cm}{-2.5cm}
+  \begin{center}
+    \begin{dot2tex}[scale=0.55,dot,tikz,options=-tmath]
       digraph RepGraph {
-       reeel[texlbl="\parbox{2cm}{\centering Reële functie}"]
-       algebraisch[texlbl="\parbox{2cm}{\centering Algebraïsche functie}"]
-       transcendent[texlbl="\parbox{2.5cm}{\centering Transcendente functie}"]
-       rationaal[texlbl="\parbox{2cm}{\centering Rationale functie}"]
-       irrationaal[texlbl="\parbox{2cm}{\centering Irrationale functie}"]
-       veelterm[texlbl="\parbox{2cm}{\centering Veelterm- functie}"]
-       homografisch[texlbl="\parbox{2.3cm}{\centering Homografische functie}"]
-       constante[texlbl="\parbox{2cm}{\centering Constante functie}"]
-       lineair[texlbl="\parbox{2cm}{\centering Lineaire functie}"]
-       kwadratisch[texlbl="\parbox{2.3cm}{\centering Kwadratische functie}"]
-       hogeregraads[texlbl="\parbox{3.4cm}{\centering Hogeregraadsveelterm functie}"]
-       exponentieel[texlbl="\parbox{2cm}{\centering Exponentiële functie}"]
-       logaritmisch[texlbl="\parbox{2cm}{\centering Logaritmisch functie}"]
-       goniometrisch[texlbl="\parbox{2.5cm}{\centering Goniometrisch functie}"]
-       reeel -> algebraisch
-       algebraisch -> rationaal
-       algebraisch -> irrationaal
-       rationaal -> veelterm
-       rationaal -> homografisch
-       veelterm -> constante
-       veelterm -> lineair
-       veelterm -> kwadratisch
-       veelterm -> hogeregraads
-       reeel -> transcendent
-       transcendent -> exponentieel
-       transcendent -> logaritmisch
-       transcendent -> goniometrisch
+        reeel[texlbl="\parbox{2cm}{\centering Reële functie}"]
+        algebraisch[texlbl="\parbox{2cm}{\centering Algebraïsche functie}"]
+        transcendent[texlbl="\parbox{2.5cm}{\centering Transcendente functie}"]
+        rationaal[texlbl="\parbox{2cm}{\centering Rationale functie}"]
+        irrationaal[texlbl="\parbox{2cm}{\centering Irrationale functie}"]
+        veelterm[texlbl="\parbox{2cm}{\centering Veelterm- functie}"]
+        homografisch[texlbl="\parbox{2.3cm}{\centering Homografische functie}"]
+        constante[texlbl="\parbox{2cm}{\centering Constante functie}"]
+        lineair[texlbl="\parbox{2cm}{\centering Lineaire functie}"]
+        kwadratisch[texlbl="\parbox{2.3cm}{\centering Kwadratische functie}"]
+        hogeregraads[texlbl="\parbox{3.4cm}{\centering Hogeregraadsveelterm functie}"]
+        exponentieel[texlbl="\parbox{2cm}{\centering Exponentiële functie}"]
+        logaritmisch[texlbl="\parbox{2cm}{\centering Logaritmisch functie}"]
+        goniometrisch[texlbl="\parbox{2.5cm}{\centering Goniometrisch functie}"]
+        reeel -> algebraisch
+        algebraisch -> rationaal
+        algebraisch -> irrationaal
+        rationaal -> veelterm
+        rationaal -> homografisch
+        veelterm -> constante
+        veelterm -> lineair
+        veelterm -> kwadratisch
+        veelterm -> hogeregraads
+        reeel -> transcendent
+        transcendent -> exponentieel
+        transcendent -> logaritmisch
+        transcendent -> goniometrisch
       }
-  \end{dot2tex}
-\end{center}
+    \end{dot2tex}
+  \end{center}
+\end{adjustwidth}
 Hierbij gaan we van algemeen naar meer specifiek. Zo is bijvoorbeeld de functie
 $$f(x)=x^2-4$$
 een kwadratische functie want deze functie kan geschreven worden in de vorm
 $$f(x)=ax^2+bx+c\qquad\mbox{ met } a=1, b=0, c=-4$$
 en deze functie is ook een veeltermfunctie, want deze functie kan geschreven worden in de vorm
-$$f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots +a_1x+a_0\mbox{ met } a_n=a_{n-1}=\ldots=a_{3}=0, a_2=1, a_1=0, a_0=-4$$
-en het is ook een rationale functie, want deze functie kan geschreven worden als een breuk met in teller en in noemer een veelterm (de noemer is wel de heel eenvoudige veelterm, namelijk de constante 1)
+$$f(x)=a_nx^n+a_{n-1}x^{n-1}+\ldots +a_1x+a_0$$
+met $a_n=a_{n-1}=\ldots=a_{3}=0, a_2=1, a_1=0, a_0=-4$ en het is ook een rationale functie, want deze functie kan geschreven worden als een breuk met in teller en in noemer een veelterm (de noemer is wel de heel eenvoudige veelterm, namelijk de constante 1)
 $$f(x)=\dfrac{t(x)}{n(x)}\quad\mbox{ met in teller en noemer veeltermen }\quad t(x)=x^2-4, n(x)=1$$
 en het is een algebraïsche functie want ze is opgebouwd uit een verschil van een kwadraat en een getal en uiteindelijk is het een reële functie want reële getallen $x$ worden afgebeeld op hoogstens één reëel getal $x$.\\[1cm]
 
+\needspace{3cm}
 \subsection{Oefeningen}
 
 \begin{oefening}
@@ -359,10 +361,10 @@ Bepaal de stijgingssnelheid op tijdstip $t=3\min$.
 
 \begin{align*}
        &  & f(x)                     & = a^x       &  & \mbox{is een exponentiële functie met grondtal $a$}        \\
-  \LRA &  & \log_a f(x)              & = x         &  & \mbox{links en rechts de logaritme met grondtal $a$ nemen} \\
-  \LRA &  & \dfrac{f'(x)}{f(x)\ln a} & = 1         &  & \mbox{links en rechts afleiden}                            \\
-  \LRA &  & f'(x)                    & = f(x)\ln a                                                                 \\
-  \LRA &  & \left(a^x\right)'        & = a^x \ln a &  & \mbox{vervangen van $f(x)$ door $a^x$}
+  \lra &  & \log_a f(x)              & = x         &  & \mbox{links en rechts de logaritme met grondtal $a$ nemen} \\
+  \lra &  & \dfrac{f'(x)}{f(x)\ln a} & = 1         &  & \mbox{links en rechts afleiden}                            \\
+  \lra &  & f'(x)                    & = f(x)\ln a                                                                 \\
+  \lra &  & \left(a^x\right)'        & = a^x \ln a &  & \mbox{vervangen van $f(x)$ door $a^x$}
 \end{align*}
 
 \subsection{Formules}
@@ -501,8 +503,8 @@ We gebruiken de definitie $\tan\alpha = \dfrac{\sin\alpha}{\cos\alpha}$, de quot
 
 We vinden dus de volgende formule
 $$\left(\tan x\right)'=\dfrac{1}{\cos^2 x}$$
-\vspace*{1cm}
 
+\needspace{3cm}
 \subsection{Oefeningen}
 
 \begin{oefening}
