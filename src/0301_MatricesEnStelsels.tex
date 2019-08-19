@@ -46,6 +46,45 @@
 
 \section{Definitie}
 
+\subsection{Voorbeeld}
+
+De tabel
+$$\begin{pmatrix}3 & \sqrt{2} & -5\\ \pi & 0 & \dfrac{1}{2}\end{pmatrix}$$
+noemen we een matrix met 2 rijen en 3 kolommen. De getallen, die elementen uit de reële getallen mogen zijn, in de matrix noemen we de elementen van de matrix.
+
+\subsection{Algemeen}
+
+De rechthoekige tabel reële getallen
+$$
+\begin{pmatrix}
+  a_{11} & a_{12} & \cdots & a_{1n} \\
+  a_{21} & a_{22} & \cdots & a_{2n} \\
+  \vdots      & \vdots      & \ddots & \vdots      \\
+  a_{m1} & a_{m2} & \cdots & a_{mn} \\
+\end{pmatrix}
+$$
+noemen we een {\bf matrix} met $m$ {\bf rijen} en $n$ {\bf kolommen}, kortweg een $m \times n$-matrix.
+
+\subsection{Notaties}
+\begin{itemize}
+\item $m \times n$ is de {\bf orde} van de matrix.
+\item $a_{ij}$ is het {\bf element} in de matrix in de $i$-de rij en in de $j$-de kolom.
+\item We gebruiken een hoofdletter om een matrix te benoemen, bijvoorbeeld $A$, $B$, \ldots
+\item We kunnen ook een de verkorte notatie $A=(a_{ij})_{1 \leq i \leq m , 1 \leq j \leq n}$ gebruiken.
+\item $\mathbb{R}^{m \times n}$ is de verzameling van alle $m \times n$-matrices.
+\item Matrices mogen ook met rechte haken genoteerd worden, bijvoorbeeld
+$$
+\begin{bmatrix}
+  a_{11} & a_{12} & \cdots & a_{1n} \\
+  a_{21} & a_{22} & \cdots & a_{2n} \\
+  \vdots      & \vdots      & \ddots & \vdots      \\
+  a_{m1} & a_{m2} & \cdots & a_{mn} \\
+\end{bmatrix}
+$$
+\end{itemize}
+
+\subsection{Oefeningen}
+
 \begin{oefening}
 Gegeven
 $$A=\begin{pmatrix}
@@ -149,6 +188,181 @@ Bepaal $x$ en $y$ als je weet dat $a_{ij}=i\cdot j$.
 
 \pagebreak
 \section{Bijzondere matrices}
+
+\subsection{Nulmatrix}
+
+\paragraph*{Definitie:}
+
+Een {\bf nulmatrix} van orde $m \times n$ is een $m \times n$-matrix waarvan alle elementen gelijk zijn aan nul.
+
+\paragraph*{Notatie:}
+
+$O_{m,n}$
+
+\paragraph*{Voorbeeld:}
+
+$O_{3,2}=
+\begin{pmatrix}
+  0 & 0 \\ 0 & 0 \\ 0 & 0
+\end{pmatrix}
+$ is een nulmatrix van orde $3 \times 2$.
+
+\subsection{Rijmatrix}
+
+\paragraph*{Definitie:}
+
+Een {\bf rijmatrix} is een matrix met precies één rij.
+\paragraph*{Voorbeeld:}
+
+$A=
+\begin{pmatrix}
+  1 & 2 & 3
+\end{pmatrix}
+$ is een rijmatrix.
+
+\subsection{Kolommatrix}
+
+\paragraph*{Definitie:}
+
+Een {\bf kolommatrix} is een matrix met precies één kolom.
+\paragraph*{Voorbeeld:}
+
+$B=
+\begin{pmatrix}
+  4 \\ 5 \\ 6
+\end{pmatrix}
+$ is een kolommatrix.
+
+\needspace{4cm}
+\subsection{Vierkante matrix}
+
+\paragraph*{Definities:}\mbox{}
+
+Een {\bf vierkante matrix} van orde $n$ is een matrix met $n$ rijen en $n$ kolommen. M.a.w. het aantal rijen is gelijk aan het aantal kolommen van een $m \times n$-matrix en dus $m=n$.
+
+De {\bf hoofddiagonaal} van een vierkante $n \times n$-matrix $(a_{ij})_{1 \leq i \leq n , 1 \leq j \leq n}$ is de rij van elementen $a_{11}$, $a_{22}$, \ldots , $a_{nn}$. M.a.w. de rij elementen op de diagonaal die van linksboven schuin naar beneden loopt.
+
+De {\bf nevendiagonaal} van een vierkante $n \times n$-matrix $(a_{ij})_{1 \leq i \leq n , 1 \leq j \leq n}$ is de rij van elementen $a_{n\,1}$, $a_{n-1\,2}$, \ldots , $a_{1\,n}$.
+
+\paragraph*{Voorbeeld:}
+
+De $3 \times 3$-matrix
+$$D=
+\begin{pmatrix}
+  2 & 7 & 6\\
+  9 & 5 & 1\\
+  4 & 3 & 8\\
+\end{pmatrix}
+$$
+is een vierkante matrix van orde $3$ waarbij de elementen op de hoofddiagonaal
+$\begin{pmatrix}2 & 5 & 8\end{pmatrix}$
+en de elementen op de nevendiagonaal
+$\begin{pmatrix}6 & 5 & 4\end{pmatrix}$
+en de elementen in elke rij en de elementen in elke kolom allemaal dezelfde som hebben.
+
+\subsection{Diagonaalmatrix}
+
+\paragraph*{Definitie:}
+
+Een {\bf diagonaalmatrix} is een vierkante matrix waarbij alle elementen die niet op de hoofddiagonaal staan nul zijn
+
+\paragraph*{Voorbeeld:}
+
+$E=
+\begin{pmatrix}
+  4 & 0 & 0 & 0\\ 0 & 3 & 0 & 0\\ 0 & 0 & 2 & 0\\ 0 & 0 & 0 & 1
+\end{pmatrix}
+$ is een diagonaalmatrix.
+
+\begin{oefening}
+  \begin{enumerate}[(a)]
+  \item Is de nulmatrix $O_{22}=\begin{pmatrix}0 & 0\\ 0 & 0\end{pmatrix}$ een diagonaalmatrix?
+  \item Is de nulmatrix $O_{23}$ een diagonaalmatrix?
+\end{enumerate}
+\end{oefening}
+
+\subsection{Scalaire matrix}
+
+\paragraph*{Definitie:}
+
+Een {\bf scalaire matrix} is een diagonaalmatrix $(a_{ij})_{1 \leq i \leq n , 1 \leq j \leq n}$ waarvoor geldt dat $a_{11} = a_{22} = \cdots a_{nn}$. M.a.w. alle elementen op de hoofddiagonaal zijn aan elkaar gelijk.
+
+\paragraph*{Voorbeeld:}
+
+$F=
+\begin{pmatrix}
+  -5 & 0 \\ 0 & -5
+\end{pmatrix}
+$ is een scalaire $2 \times 2$-matrix.
+
+\begin{oefening}
+  Geef de orde $m \times n$ waarbij een matrix altijd een scalaire matrix zal zijn.
+\end{oefening}
+
+\subsection{Driehoeksmatrix}
+
+\paragraph*{Definities:}\mbox{}
+
+Een {\bf bovendriehoeksmatrix} is een vierkante matrix $(a_{ij})_{1 \leq i \leq n , 1 \leq j \leq n}$ waarvoor geldt dat $a_{ij}=0$ met $i > j$. M.a.w. alle elementen onder de hoofddiagonaal zijn nul.
+
+Een {\bf onderdriehoeksmatrix} is een vierkante matrix $(a_{ij})_{1 \leq i \leq n , 1 \leq j \leq n}$ waarvoor geldt dat $a_{ij}=0$ met $i < j$. M.a.w. alle elementen boven de hoofddiagonaal zijn nul.
+
+\paragraph*{Voorbeeld:}
+
+$G=
+\begin{pmatrix}
+  \dfrac{1}{2} & \dfrac{1}{3} & \dfrac{1}{4} \\
+  0            & \dfrac{1}{5} & \dfrac{1}{6} \\
+  0            & 0            & \dfrac{1}{7}
+\end{pmatrix}
+$ is een vierkante matrix en een bovendriehoeksmatrix van de orde $3 \times 3$.
+
+
+\begin{oefening}
+Welke soort matrices zijn zowel boven- als onderdriehoeksmatrices?
+\end{oefening}
+
+\subsection{Eenheidsmatrix}
+
+\paragraph*{Definitie:}
+
+Een {\bf eenheidsmatrix} van orde $n$ is een scalaire matrix $(a_{ij})_{1 \leq i \leq n , 1 \leq j \leq n}$ waarvoor geldt dat $a_{ii}=1$. M.a.w. de elementen op de hoofddiagonaal zijn allemaal 1, alle andere elementen zijn 0:
+
+$$
+\begin{pmatrix}
+  1 & 0 & \cdots & 0 \\
+  0 & 1 & \cdots & 0 \\
+  \vdots & \vdots & \ddots & \vdots \\
+  0 & 0 & \cdots & 1 \\
+\end{pmatrix}
+$$
+
+\paragraph*{Notatie:} $I_n$ is de eenheidsmatrix van orde $n$.
+
+\paragraph*{Voorbeeld:}
+
+$I_2=
+\begin{pmatrix}
+  1 & 0 \\ 0 & 1
+\end{pmatrix}
+$
+
+\subsection{Gelijke matrices}
+
+\paragraph*{Definitie: } We noemen twee matrices $(a_{ij})_{1 \leq i \leq m , 1 \leq j \leq n}$ en $(b_{ij})_{1 \leq i \leq m' , 1 \leq j \leq n'}$ gelijk als $m=m'$ en $n=n'$ en als $a_{ij}=b_{ij}$. M.a.w. als ze beide hetzelfde aantal rijen en kolommen hebben en als elke twee overeenkomstige elementen gelijk zijn.
+
+\paragraph*{Notatie:} $A=B$
+
+\paragraph*{Voorbeeld:}
+$
+\begin{pmatrix}a^0 & a^1\\ a^2 & a^3\end{pmatrix}
+=
+\begin{pmatrix}1 & 2\\ 4 & 8\end{pmatrix}
+\lra
+a = 2$
+
+\needspace{3cm}
+\subsection{Oefeningen}
 
 \begin{oefening}
 Bepaal $x$ en $y$
