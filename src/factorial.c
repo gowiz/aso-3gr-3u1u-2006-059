@@ -9,7 +9,7 @@ int factorial(int n) {
 
 int main()
 {
-  char input[128];
+  char input[80];
   while (1) {
     fgets(input, 128, stdin);
     int n = atoi(input);
