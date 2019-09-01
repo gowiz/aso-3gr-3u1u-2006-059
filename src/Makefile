@@ -39,6 +39,7 @@ clean:
 .PHONY: cleanall
 cleanall: clean
 	latexmk -C
+	$(RM) *.pdf
 	$(RM) *_Oefeningen.pdf
 
 
