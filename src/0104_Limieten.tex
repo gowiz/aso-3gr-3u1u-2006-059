@@ -305,6 +305,8 @@ Voor eindige limieten hebben we de volgende rekenregels:
   \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad n\in\mathbb{N}_0 &\Rightarrow \lim_{x\to a} [f(x)]^n=b^n\\
 \end{align*}
 
+\subsection{Rekenregels voor rekenen met oneindig}
+
 Voor oneindige limieten gelden vorige rekenregels enkel als ze welbepaald zijn, dit wil zeggen dat één van de volgende rekenregels toepasbaar is ($k\in\mathbb{R}$):
 
 \begin{multicols}{2}
@@ -356,7 +358,7 @@ Zoek op internet de naam op van $10^{100}$. Machten kunnen textueel weergegeven 
 \item $\displaystyle\lim_{x\to a}x=a\;,\qquad\lim_{x\to \pm\infty}x=\pm\infty$
 \item $\displaystyle\lim_{x\to+\infty}x^k = +\infty\qquad(k\in\mathbb{N}_0)\;,\qquad \displaystyle\lim_{x\to-\infty}x^k = \begin{cases}+\infty &\mbox{ als $k$ even is}\\-\infty &\mbox{ als $k$ oneven is} \end{cases}$
 \item $\displaystyle\lim_{x\to\pm\infty}\dfrac{1}{x}=0\;,\qquad\lim_{x\underset{<}{\to}0}\dfrac{1}{x}=-\infty\;,\qquad \displaystyle\lim_{x\underset{>}{\to}0}\dfrac{1}{x}=+\infty$
-\item $\displaystyle\lim_{x\to\pm\infty}\left(a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\right) = \lim_{x\to\pm\infty}a_nx^n$
+%\item $\displaystyle\lim_{x\to\pm\infty}\left(a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\right) = \lim_{x\to\pm\infty}a_nx^n$
 \end{itemize}
 
 \begin{oefening}
@@ -398,7 +400,7 @@ De limiet van een veeltermfunctie in een reëel getal is zeer eenvoudig, daar va
 
 \subsubsection*{Geval 2: limiet naar oneindig}
 
-Voor de limiet op oneindig van een veeltermfunctie kan gebruik worden gemaakt van de laatste basislimiet:
+Voor de limiet op oneindig van een veeltermfunctie kan gebruik worden gemaakt van:
 
 \begin{eigenschap}
   $$\lim_{x\to\pm\infty}\left(a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\right) = \lim_{x\to\pm\infty}a_nx^n$$
@@ -408,6 +410,45 @@ Voor de limiet op oneindig van een veeltermfunctie kan gebruik worden gemaakt va
   Geef de vorige eigenschap met woorden. Volgende woorden moeten hierin zeker voorkomen:\\
   {\em veeltermfunctie, limiet, oneindig, graad, term}.
 \end{oefening}
+
+Dat deze definitie klopt kunnen we bijvoorbeeld zien m.b.v. volgende voorbeeld.
+
+\paragraph*{Voorbeeld:}
+
+Beschouw de functie
+\[f(x)=-0.5x^6+2x^4+9x^2+6x\]
+
+Tekenen we de grafiek van deze functie in het interval $[-1.5,1]$
+
+\begin{center}
+  \begin{tikzpicture}[xscale=3, yscale=0.5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \draw[->,color=black] (-1.41,0) -- (1.26,0);
+    \foreach \x in {-1.4,-1.2,-1,-0.8,-0.6,-0.4,-0.2,0.2,0.4,0.6,0.8,1,1.2}
+    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+    \draw[->,color=black] (0,-1.5) -- (0,9.78);
+    \foreach \y in {-1,1,2,3,4,5,6,7,8,9}
+    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+    \clip(-1.41,-1.5) rectangle (1.26,9.78);
+    \draw[line width=2pt, smooth,samples=100,domain=-1.40625:1.2589285714285714] plot(\x,{0-0.5*(\x)^6+2*(\x)^4+9*(\x)^2+6*(\x)});
+  \end{tikzpicture}
+\end{center}
+
+Dan lijkt het in eerste instantie dat de term $9x^2$ de overhand heeft, dit omdat deze de hoogste graad heeft. Bekijken we nu echter dezelfde functie in het interval $[-3,3]$ dan krijgen we een gans ander beeld. Geleidelijk aan krijgt de hoogste term $-0.5x^6$ de overhand.
+
+\begin{center}
+  \begin{tikzpicture}[xscale=2,yscale=0.1,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw[->,color=black] (-3.13,0) -- (3.14,0);
+\foreach \x in {-3,-2.5,-2,-1.5,-1,-0.5,0.5,1,1.5,2,2.5,3}
+\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+\draw[->,color=black] (0,-15.96) -- (0,49.33);
+\foreach \y in {-15,-10,-5,5,10,15,20,25,30,35,40,45}
+\draw[shift={(0,\y)},color=black] (-2pt,0pt) node[left] {\footnotesize $\y$};
+\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+\clip(-3.13,-15.96) rectangle (3.14,49.33);
+\draw[line width=2pt, smooth,samples=100,domain=-3.125:3.142857142857143] plot(\x,{0-0.5*(\x)^6+2*(\x)^4+9*(\x)^2+6*(\x)});
+\end{tikzpicture}
+\end{center}
 
 \begin{oefening}
   Bereken
@@ -603,6 +644,8 @@ Een {\bf asymptoot} van een functie $f$ is een rechte waarnaar de grafiek van di
 
 \subsection{Verticale asymptoot}
 
+\subsubsection*{Voorbeeld}
+
 \begin{minipage}{0.5\textwidth}
 Beschouw volgende schets:
 \begin{center}
@@ -627,6 +670,8 @@ $$\lim_{x\underset{<}{\to}a} f(x)=-\infty$$
 $$\lim_{x\underset{>}{\to}a} f(x)=+\infty$$
 \vfill
 \end{minipage}
+
+\subsubsection*{Definitie}
 
 We krijgen:
 
@@ -666,6 +711,8 @@ Bepaal alle verticale asymptoten:
 
 \subsection{Horizontale asymptoot}
 
+\subsubsection*{Voorbeeld}
+
 \begin{minipage}{0.5\textwidth}
 Beschouw volgende schets:
 \begin{center}
@@ -690,6 +737,9 @@ $$\lim_{x\to -\infty} f(x)=b$$
 $$\lim_{x\to +\infty} f(x)=b$$
 \vfill
 \end{minipage}
+
+\needspace{3cm}
+\subsubsection*{Definitie}
 
 \begin{definitie}
 Een horizontale rechte met vergelijking $y=b$ is een {\bf horizontale asymptoot} van $f$ als één van de volgende limieten waar is:
@@ -723,6 +773,8 @@ Bepaal alle horizontale asymptoten:
 
 \subsection{Schuine asymptoot}
 
+\subsubsection*{Voorbeeld}
+
 \begin{minipage}{0.5\textwidth}
 Beschouw volgende schets:
 \begin{center}
@@ -755,6 +807,8 @@ $$\mbox{S.A.: }y=mx+q$$
   \item $g(x)=\dfrac{1}{2}x+1$
   \item $h(x)=f(x)-g(x)$
 \end{itemize}
+
+\subsubsection*{Definitie}
 
 \begin{definitie}
 Een schuine rechte met vergelijking $y=mx+q$ is een {\bf schuine asymptoot} van $f$ als één van de volgende limieten waar is:
