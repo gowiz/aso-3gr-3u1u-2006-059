@@ -829,6 +829,39 @@ Bereken de volgende matrices, indien mogelijk:
 \item Matrices vermenigvuldigen is {\em niet} commutatief!
 \end{itemize}
 
+\subsection{Macht van een vierkante matrix}
+
+\paragraph*{Definitie:}
+
+\begin{align*}
+  \forall A \in \mathbb{R}^{n \times n} , \forall p \in \mathbb{N} \setminus \{0, 1\} :
+ &  & A^p & = \underbrace{A \cdot A \cdot \cdots \cdot A}_{p-\text{factoren}} \\
+ &  & A^1 & = A                         \\
+ &  & A^0 & = I
+\end{align*}
+
+\paragraph*{Voorbeeld:}
+
+\begin{align*}
+  A &= \begin{pmatrix}1 & 1\\ 1 & 0\end{pmatrix}\\
+  A^2 &= A \cdot A\\
+    &= \begin{pmatrix}1 & 1\\ 1 & 0\end{pmatrix} \cdot \begin{pmatrix}1 & 1\\ 1 & 0\end{pmatrix}\\
+    &= \begin{pmatrix}2 & 1\\ 1 & 1\end{pmatrix}\\
+  A^3 &= A^2 \cdot A\\
+    &= \begin{pmatrix}2 & 1\\ 1 & 1\end{pmatrix} \cdot \begin{pmatrix}1 & 1\\ 1 & 0\end{pmatrix}\\
+    &= \begin{pmatrix}3 & 2\\ 2 & 1\end{pmatrix}\\
+\end{align*}
+
+\todo{OEFENING} Beschouw $A=\begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix}$ en bereken
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+\item $A^2$
+\item $A^3$
+\item $A^4$
+\end{enumerate}
+\end{multicols}
+
+
 \subsection{Getransponeerde van een matrix}
 
 \paragraph*{Definitie:} De {\bf getransponeerde matrix} van een matrix $A$ is de matrix die we bekomen door de rijen te vervangen door de overeenkomstige kolommen.
