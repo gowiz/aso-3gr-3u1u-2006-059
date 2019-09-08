@@ -5,7 +5,7 @@ BASE = $(basename $(TEXIN))
 OEFTEX = $(addsuffix _Oefeningen.tex, $(BASE))
 OEFPDF = $(addsuffix _Oefeningen.pdf, $(BASE))
 
-PDFLATEXOPTS = "pdflatex -interaction=nonstopmode -shell-escape"
+PDFLATEXOPTS = "pdflatex --synctex=1 -interaction=nonstopmode -shell-escape"
 
 #.PHONY: $(PDFOUT) $(OEFPDF)
 all: $(PDFOUT) $(OEFPDF)
