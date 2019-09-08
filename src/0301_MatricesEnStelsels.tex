@@ -2,6 +2,9 @@
 
 \input{../gowiz.tex}
 
+\usepackage[outputdir=./build/]{dot2texi}
+\usepackage{multirow}
+
 \begin{document}
 
 \thispagestyle{empty}
@@ -24,7 +27,7 @@
   \item kan matrices optellen, vermenigvuldigen met een reëel getal en vermenigvuldigen
   \item kan matrices transponeren
   \item kan met behulp van ICT vraagstukken oplossen die aanleiding geven tot een migratiematrix of een Lesliematrix
-  \item kan van een gegeven stelsel van vergelijkingen van de eerste graad de bijhorende coëfficiëntenmatrix en verhoogde matrix bepalen
+  \item kan van een gegeven stelsel van vergelijkingen van de eerste graad de bijhorende coëf\-ficiëntenmatrix en verhoogde matrix bepalen
   \item kan elementaire rijoperaties toepassen die de gelijkwaardigheid van de overeenstemmende stelsels van vergelijkingen van de eerste graad bewaren
   \item kan de oplossingsmethode van Gauss-Jordan toepassen
   \item kan vraagstukken oplossen die aanleiding geven tot een stelsel van vergelijkingen van de eerste graad
@@ -34,7 +37,10 @@
 \thispagestyle{empty}
 \clearpage
 
-\tableofcontents
+{
+  \singlespacing
+  \tableofcontents
+}
 \thispagestyle{empty}
 \clearpage
 
@@ -1046,7 +1052,95 @@ Bereken:
 \end{oefening}
 
 \pagebreak
-\section{Migratie- en Lesliematrices}
+\section{Migratiematrix}
+
+\subsection{Voorbeeld}
+
+Beschouw twee steden, Antwerpen en Brussel. We ontdekken dat er tussen die twee steden vaak mensen verhuizen. Zo verhuizen jaarlijks 10\% van de mensen uit Antwerpen naar Brussel, maar er zijn ook 6\% van de mensen uit Brussel die naar Antwerpen verhuizen. In Antwerpen wonen momenteel een half miljoen mensen en in Brussel wonen er momenteel een miljoen mensen. Kunnen we met deze cijfers voorspellen wat de bevolking zal zijn na 20 jaar?
+
+Het verhuizen van de mensen kunnen we voorstellen m.b.v. een graaf:
+
+\begin{center}
+  \begin{dot2tex}[tikz]
+  digraph G {
+    node [shape=none];
+    rankdir=LR;
+    ranksep=1.5;
+    A -> B [label="10\%"];
+    B -> A [label="6\%"];
+    A -> A [label="90\%",arrowhead="none"];
+    B -> B [label="94\%",arrowhead="none"];
+  }
+\end{dot2tex}
+\end{center}
+
+Of als we nu alles voorstellen in tabellen, dan krijgen we:
+
+\begin{center}
+\begin{tabular}{ccccccr}
+                       &   & \multicolumn{2}{c}{van} &  &   &            \\
+                       &   & A                & B    &  &   & aantal \\
+ \multirow{2}{*}{naar} & A & 90\%             & 6\%  &  & A & 500000 \\
+                       & B & 10\%             & 94\% &  & B & 1000000
+\end{tabular}
+\end{center}
+
+Met deze gegevens kunnen we alvast voorspellen hoeveel mensen er na één jaar zullen wonen in Antwerpen en Brussel:
+
+\begin{align*}
+  \mbox{Aantal mensen in Antwerpen na 1 jaar} &= 90\% \mbox{ Antwerpenaren nu} + 6\% \mbox{ Brusselaars nu}\\
+  &= 510000\\
+  \mbox{Aantal mensen in Brussel na 1 jaar} &= 10\% \mbox{ Antwerpenaren nu} + 94\% \mbox{ Brusselaars nu}\\
+  &= 990000\\
+\end{align*}
+
+Of met een matrix kunnen we bovenstaande gegevens voorstellen als:
+
+\[
+  M=\begin{pmatrix}0.9 & 0.06\\ 0.1 & 0.94\end{pmatrix}\qquad
+  P=\begin{pmatrix}500000\\1000000\end{pmatrix}
+\]
+
+Waarbij we bovenstaand de $M$ gebruiken voor de matrix die de migratie voorstelt en de $P$ gebruiken voor de matrix die de populatie voorstelt.
+
+Als we de populatie na één jaar $P_1$ noemen, dan worden voorgaande berekeningen met deze matrices:
+
+\begin{align*}
+  P_1 &= \begin{pmatrix}0.9 & 0.06\\ 0.1 & 0.94\end{pmatrix} \cdot \begin{pmatrix}500000\\1000000\end{pmatrix}\\
+  &= \begin{pmatrix}510000\\990000\end{pmatrix}\\
+\end{align*}
+
+Of kort geschreven wordt dit $P_1=M \cdot P$.
+
+De populatie van Antwerpen en Brussel vinden we door de bevolking nog eens te laten migreren:
+
+\begin{align*}
+  P_2 &= \begin{pmatrix}0.9 & 0.06\\ 0.1 & 0.94\end{pmatrix} \cdot \begin{pmatrix}510000\\990000\end{pmatrix}\\
+      &= M \cdot P_1\\
+      &= M \cdot (M \cdot P)\\
+      &= M^2 \cdot P
+\end{align*}
+
+Dit resultaat kan veralgemeent worden en we krijgen dan volgende formule waarbij de we populatie $P_k$ berekenen na $k \in \mathbb{N}$ jaar.
+
+$$ P_k = M^k \cdot P $$
+
+Voor ons voorbeeld berekenen we
+
+\[P_{20} = M^{20} \cdot P = \begin{pmatrix}560588\\939412\end{pmatrix}\]
+
+Als je deze populatie verder gaat onderzoeken, bijvoorbeeld na 100 jaar of 1000 jaar, dan zul je merken dat de populatie naar een zekere stabiele toestand zal evolueren.
+
+\subsection{Definitie}
+
+Een {\bf migratiematrix} geeft weer hoe een populatie evolueert.
+
+\subsection{Eigenschap}
+
+Bij een migratiematrix zal er na verloop van tijd {\em meestal} één stabiele toestand populatie zijn.
+
+\subsection{Oefeningen}
+
 
 \begin{oefening}
 In een ontwikkelingsland is er een wekelijks mededelingsprogramma voor landbouwers waarin een technologische evolutie wordt uiteengezet. Deze landbouwers hebben onderling geen contact. De kans dat een landbouwer luistert is $20$ \%. We gaan ervan uit dat in het ontwikkelingsland met 250 duizend landbouwers er initieel geen enkele landbouwer iets van de innovaties weet.
@@ -1097,6 +1191,9 @@ We nemen aan dat deze wijziging zich elk jaar opnieuw voordoet.
   \item Hoe evolueert de Belgische markt?
 \end{enumerate}
 \end{oefening}
+
+\pagebreak
+\section{Lesliematrices}
 
 \begin{oefening}
 Eva en Kasper, twee ornithologen, hebben een nieuwe vogelsoort ontdekt in het tropische Amazonegebied.  Het gaat over een kleine vogelsoort die heel wat weg heeft van een kolibrie.  Na jaren observatie komen ze tot de volgende conclusies :
