@@ -1150,7 +1150,7 @@ In een ontwikkelingsland is er een wekelijks mededelingsprogramma voor landbouwe
   \item Stel een migratie matrix op.
   \item Hoeveel landbouwers zullen na één maand op de hoogte zijn van de technologische vooruitgang?
   \item Hoeveel landbouwers zullen er na een jaar op de hoogte zijn?
-  \item * Dit probleem kan ook opgelost worden m.b.v. {\em exponentiële functies}. Kom op deze oefening terug wanneer je dit in het zesde jaar gezien hebt. Geef een functievoorschrift die het aantal onwetende landbouwers uitdrukt in functie van het aantal maanden dat de radiouitzendingen al spelen. Los dan bovenstaande twee vragen terug op.
+  \item * Dit probleem kan ook opgelost worden m.b.v. {\em exponentiële functies}. Kom op deze oefening terug wanneer je dit in het zesde jaar gezien hebt. Geef een functievoorschrift die het aantal onwetende landbouwers uitdrukt in functie van het aantal maanden dat de radio uitzendingen al spelen. Los dan bovenstaande twee vragen terug op.
 \end{enumerate}
 \end{oefening}
 
@@ -1172,7 +1172,7 @@ De bevolking in deze steden is nu Antwerpen – 55, Mechelen – 98, Brussel –
   \item Geef bijhorende graaf.
   \item Geef populatiematrix nu.
   \item Bereken de bevolkingsaantallen na 1, 2 en 3 jaar en voorspel wat er zal gebeuren.
-  \item Controleer nu je voorspelling en bereken mbv ICT de bevolkingsaantallen naar een veel jaar.
+  \item Controleer nu je voorspelling en bereken m.b.v. ICT de bevolkingsaantallen naar een veel jaar.
 \end{enumerate}
 \end{oefening}
 
@@ -1195,6 +1195,101 @@ We nemen aan dat deze wijziging zich elk jaar opnieuw voordoet.
 \pagebreak
 \section{Lesliematrices}
 
+\subsection{Voorbeeld}
+
+Beschouw een vlindersoort, die net als andere vlindersoorten een volledige gedaanteverwisseling doormaakt. In het eerste stadium is de vlinder een eitje. Doordat de eitjes betrekkelijk goed gecamoufleerd zijn komen ongeveer 30\% van de eitjes uit. Daarna wordt de vlinder een rups. Dit is het gevaarlijkste stadium als vlinder, 95\% van de rupsen zullen geen pop worden! Ook de poppen zijn goed gecamoufleerd en ongeveer 25\% van de poppen wordt dan een mooie vlinder. De vlinders paren dan gemiddeld 950 eitjes. Waarna deze cyclus opnieuw begint. Voor de eenvoud gaan we ervan uit dat de stadia even lang duren, ongeveer een maand.
+
+Na een grondig onderzoek in het biotoop van deze vlindersoort kunnen we er van uitgaan dat er nog ongeveer 100000 eitjes, 5000 rupsen, 500 poppen en 100 volwassen vlinders aanwezig zijn.
+
+Weergegeven in een graaf wordt dit:
+
+\begin{center}
+  \begin{dot2tex}[tikz]
+    digraph G {
+      node [shape=none];
+      rankdir=LR;
+      ei -> rups [label="30\%"];
+      rups -> pop [label="5\%"];
+      pop -> volwassen [label="25\%"];
+      volwassen -> ei [label="950 eitjes"]
+    }
+  \end{dot2tex}
+\end{center}
+
+Of voorgesteld in tabellen:
+
+\begin{center}
+\begin{tabular}{ccccccccr}
+                       &      & \multicolumn{4}{c}{van}   & &      &        \\
+                       &      & ei   & rups & pop  & volw & &      & aantal \\
+ \multirow{4}{*}{naar} & ei   &      &      &      & 950  & & ei   & 100000 \\
+                       & rups & 30\% & 0\%  & 0\%  &      & & rups &   5000 \\
+                       & pop  & 0\%  & 5\%  & 0\%  &      & & pop  &    500 \\
+                       & volw & 0\%  & 0\%  & 25\% &      & & volw &    100 \\
+\end{tabular}
+\end{center}
+
+We kunnen nu twee matrices invoeren:
+
+\[
+  L=\begin{pmatrix}
+    0 & 0 & 0 & 950 \\
+    0.3 & 0 & 0 & 0 \\
+    0 & 0.05 & 0 & 0 \\
+    0 & 0 & 0.25 & 0
+  \end{pmatrix}\qquad
+  P=\begin{pmatrix}100000\\5000\\500\\100\end{pmatrix}
+\]
+
+De matrix $L$ noemen we de Lesliematrix, de matrix $P$ is terug de populatiematrix.
+
+We berekenen nu eens de populatie na een aantal maanden en jaren:
+
+\todo{In octave, use \texttt{output\_precision(0)}}
+
+\begin{itemize}
+\item Na één maand:
+  \[P_1 = L \cdot P =
+    \begin{pmatrix}
+      0 & 0 & 0 & 950 \\
+      0.3 & 0 & 0 & 0 \\
+      0 & 0.05 & 0 & 0 \\
+      0 & 0 & 0.25 & 0
+    \end{pmatrix}
+    \cdot
+    \begin{pmatrix}100000\\5000\\500\\100\end{pmatrix}
+    =
+    \begin{pmatrix}95000\\30000\\250\\125\end{pmatrix}\]
+\item Na twee maanden:
+  \[P_2 = L^2 \cdot P = \begin{pmatrix}118750\\28500\\1500\\62\end{pmatrix}\]
+\item Na één jaar:
+  \[P_{12} = L^{12} \cdot P = \begin{pmatrix}451313\\226066\\22607\\4521\end{pmatrix}\]
+\end{itemize}
+
+Verder rekenen m.b.v. ICT zal ons doen inzien dat de populatie onbeperkt toeneemt.
+
+\subsection{Definitie}
+
+Een {\bf Lesliematrix} is een matrix die de evolutie van een populatie beschrijft. De populatie wordt onderverdeeld in $n$ generaties, waarbij generatie $1$ de nieuw geborenen zijn en generatie $n$ de laatste generatie is. Het is een vierkante matrix met:
+\begin{itemize}
+\item Op de eerste rij de vruchtbaarheidscijfers, met $F_i$ het vruchtbaarheidscijfer in generatie $i$, dus hoeveel nakomelingen een element in deze generatie gemiddeld heeft.
+\item Linksonder een diagonaalmatrix met de overlevingskansen, met $S_i$ de kans van een individu in generatie $i$ om in generatie $i+1$ te raken.
+\item De laatste kolom wordt aangevuld met nullen, eventueel met rechtsonder nog $S_n$ die ons de kans geeft dat een element in de laatste generatie deze overleeft en terug in de laatste generatie komt.
+\end{itemize}
+\[
+  L =
+  \begin{pmatrix}
+    F_1 & F_2 & F_3 & \cdots       & F_n \\
+    S_1 & 0   &     & \cdots       & 0   \\
+    0   & S_2 &     & \cdots       & 0   \\
+    \vdots   & \vdots   & \ddots   &         & \vdots   \\
+    0   & 0   & \cdots   & S_{n-1} & S_n \\
+  \end{pmatrix}
+\]
+
+\needspace{5cm}
+\subsection{Oefeningen}
+
 \begin{oefening}
 Eva en Kasper, twee ornithologen, hebben een nieuwe vogelsoort ontdekt in het tropische Amazonegebied.  Het gaat over een kleine vogelsoort die heel wat weg heeft van een kolibrie.  Na jaren observatie komen ze tot de volgende conclusies :
 \begin{itemize}
@@ -1215,7 +1310,7 @@ Men telde in het broedseizoen (in mei dus) van 2016 de volgende populatie :
 \end{oefening}
 
 \begin{oefening}
-Veronderstel dat we een bepaalde vissoort hebben die enkel tijdens het derde levensjaar reproduceert en dan sterft. Veronderstel dat we initieel 1000 jonge visjes hebben van deze soort en geen andere vissen. Veronderstel dat 25\% van de eenjarigen overleeft en dat dan 50\% van de visjes het maken tot de vruchtbare leeftijd.
+Veronderstel dat we een bepaalde vissoort hebben die enkel tijdens het derde levensjaar reproduceert en dan sterft. Veronderstel dat we initieel 1000 jonge visjes hebben van deze soort en geen andere vissen. Veronderstel dat 25\% van de eenjarige overleeft en dat dan 50\% van de visjes het maken tot de vruchtbare leeftijd.
 \begin{enumerate}[(a)]
   \item Onderzoek hoe de populatie evolueert als het reproductiecijfer 8 is, m.a.w. als een vruchtbaar visje 8 nakomelingen heeft.
   \item Doe nu hetzelfde onderzoek, maar dan met een hoger en/of lager reproductiecijfer. {\em Het is toegelaten om verbaast te zijn!}
