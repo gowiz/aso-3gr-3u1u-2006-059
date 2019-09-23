@@ -30,7 +30,7 @@
     \end{itemize}
   \item kent de definitie van een exponentiële functie $f(x)=a^x$
   \item kan het onderscheid tussen een lineair en een exponentieel groeiproces
-  \item kunt van een exponentiële functie de de tabel, de grafiek, het domein, enkele bijzondere waarden, het stijgen/dalen en het asymptotisch gedrag bepalen, eventueel met behulp van ICT
+  \item kunt van een exponentiële functie de tabel, de grafiek, het domein, enkele bijzondere waarden, het stijgen/dalen en het asymptotisch gedrag bepalen, eventueel met behulp van ICT
   \item kunt aan de hand van de grafiek het domein, het bereik, de bijzondere waarden, het tekenverloop, het stijgen/dalen en het asymptotisch gedrag bepalen van exponentiële functies
   \end{itemize}
 \end{singlespacing}
@@ -42,10 +42,10 @@
 \thispagestyle{empty}
 \newpage
 
-\pagenumbering{arabic} 
+\pagenumbering{arabic}
 
 \pagestyle{fancy}
-\fancyhead[RO,LE]{Irrationale functies}
+\fancyhead[RO,LE]{Exponentiële functies}
 \fancyhead[RE,LO]{}
 
 \section{Machten met gehele exponenten}
@@ -528,6 +528,84 @@ $$\sqrt{\left(8a\right)^{-4}\left(3b\right)^{-2}\sqrt{\left(4a\right)^{-4}\left(
 \end{oefening}
 
 \pagebreak
+\section{Exponentiële vergelijkingen}
+
+\begin{oefening}
+Los op in $\mathbb{R}$.
+\begin{exlist}{3}
+  \item $5^{3x}=5^{7x-2}$
+  \item $4^{t^2}=4^{6-t}$
+  \item $3^z=9^{z+5}$
+  \item $4^{5-9x}=\dfrac{1}{8^{x-2}}$
+  \item $2^{4x}=8^{x+1}$
+  \item $2^{4x}=16^{x+1}$
+\end{exlist}
+\end{oefening}
+
+
+\begin{oefening}
+Los op in $\mathbb{R}$, geef telkens de oplossingenverzameling en maak de proef.
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $7^x=49$
+  \item $4^x=1$
+  \item $6^{3x}=36$
+  \item $8^{3x}=-7$
+  \item $8^x=2^{x-1}$
+  \item $0.5^{4x}=\dfrac{1}{2}$
+  \item $36^{x-1}=\sqrt{6}$
+  \item $5^{3x-2}=25^x$
+  \item $2^{5x}=16^{x+1}$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+Los op in $\mathbb{R}$, geef telkens de oplossingenverzameling en maak de proef.
+\begin{multicols}{3}
+\begin{enumerate}[(a)]
+  \itemsep.5em
+  \item $\left(2^{x+1}\right)^2=1024$
+  \item $2^{x+1}+2^{x-2}=72$
+  \item $9^{x+1}-28\cdot 3^x=-3$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}*
+Los op in $\mathbb{R}$ door telkens een gepaste substitutie te maken, geef telkens de oplossingenverzameling en maak de proef.
+\begin{multicols}{2}
+\begin{enumerate}[(a)]
+  \item $3^{2x}+3^x-12=0$
+  \item $2^{2x}-2^x-12=0$
+  \item $4^{2x}-17\cdot 4^x + 16=0$
+  \item $4^x+3\cdot 2^x+2=0$
+  \item $5^{2x}-30\cdot 5^x+125=0$
+  \item $4^x-5\cdot 2^{x+1}+16=0$
+\end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\begin{oefening}
+We kunnen exponentiële vergelijkingen ook grafisch oplossen. We doen dit bijvoorbeeld voor de vergelijking
+$$2^{x-2}=0.5^{x-2}\;.$$
+\begin{enumerate}[(a)]
+  \item Los deze eerst algebraïsch op in $\mathbb{R}$.\\
+        {\em Hint: zorg dat de macht in het rechterlid grondtal 2 krijgt.}
+  \item Maak van het linkerlid de exponentiële functie $f(x)=2^{x-1}$ en teken de grafiek.
+  \item Maak ook van het rechterlid een functie, noem deze $g(x)$, en teken de grafiek op hetzelfde assenstelsel.
+  \item De $x$-waarden van de snijpunten van de grafieken zijn oplossingen, zoek de oplossingen en vergelijk deze met (a).
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}*
+Los volgende exponentiële vergelijking algebraïsch op, zonder gebruik te maken van substitutie.
+$$4^x+2=3\cdot2^x$$
+{\em Hint: $a\cdot b=0$ als $a=0$ of $b=0$.}
+\end{oefening}
+
+\pagebreak
 \section{Exponentiële functies}
 
 \begin{oefening}
@@ -649,15 +727,50 @@ Gegeven de grafiek van $f(x)=e^x$, schets de grafieken van de functies met voors
 Een functie met voorschrift $y=k\cdot a^x$ gaat door $P(-1,2)$ en $Q(2,\dfrac{125}{32})$. Bepaal $a$ en $k$.
 \end{oefening}
 
-%\pagebreak
+\pagebreak
 \section{Toepassingen op exponentiële functies}
 
 \begin{oefening}
-In een school met $n$ leerlingen wordt het aantal leerlingen $n'$ die een gerucht gehoord hebben, $t$ dagen na het ontstaan, gegeven door de formule $(t\geq 1)$:
-$$n' = n(1-e^{-0.12\cdot t})\;.$$
-Hoeveel percent van de leerlingen kent het gerucht na 1 dag, hoeveel na 8 dagen en hoeveel na 30 dagen?
+In een bepaald land neemt de bevolking jaarlijks met $2\%$ toe. Momenteel wonen er 500 000 mensen. Hoeveel inwoners zijn er over 10 jaar?
 \end{oefening}
 
+\begin{oefening}
+  Je erft een stuk land van je suikernonkel. Hij kocht dat stuk land in 1995 voor $600000$ Belgische frank (bij de overgang naar euro was 1 euro = 40 Belgische frank). De waarde van het land stijgt ongeveer met $5\%$ per jaar.
+  \begin{enumerate}[(a)]
+  \item Moest de euro al bestaan hebben. Hoeveel zou je nonkel toen hebben uitgegeven in euro.
+  \item Tijdens de eeuwwisseling twijfelde je nonkel om het te verkopen. Hoeveel zou hij toen gekregen hebben voor het stuk land.
+  \item Als jij het nu zou verkopen, hoeveel krijg je dan?
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}\\[-1.5cm]
+  \begin{minipage}{0.6\linewidth}
+    Een amateur renner neemt doping bij het begin van de Ronde van Vlaanderen voor amateurs. Elk uur vermindert de hoeveelheid doping met $18\%$. De start was om 10u30 en na $270 \km$ komt de renner aan in Oudenaarde om 17u41.
+  \end{minipage}
+  \begin{minipage}{0.39\linewidth}
+    \vspace{-0.5cm}
+    \includegraphics[width=\textwidth]{rvv-logo}
+  \end{minipage}
+  \vspace{-1.5cm}
+  \begin{enumerate}[(a)]
+  \item Hoe lang was de renner onderweg?
+  \item Hoe snel reed de renner gemiddeld?
+  \item Hoeveel procent van de doping was nog aanwezig in zijn bloed bij aankomst?
+  \item Stel dat renner initieel $20 \ml$ van het product nam, na hoeveel tijd moet hij opnieuw doping nemen zodat er steeds op zijn minst $5 \ml$ van het product aanwezig blijft.
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Als je ademt, dan wordt ongeveer $12\%$ van de lucht in de longen vervangen na één ademhaling.
+  \begin{enumerate}[(a)]
+  \item Geef een functie die de exponentiële daling modelleert als de hoeveelheid originele lucht over in de longen $500 \ml$ is.
+  \item Hoeveel van de originele lucht is over na 200 ademhalingen?
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Een volwassen vrouw neemt $400 \mg$ ibuprofen. Elk uur vermindert de hoeveelheid ibuprofen in de vrouw haar bloed met $26\%$. Hoeveel ibuprofen is er over na 6 uur.
+\end{oefening}
 
 \begin{oefening}
 In een bedrijf wordt de waarde $P$ in euro van een productiemachine $t$ jaar na aankoop geschat op:
@@ -681,100 +794,24 @@ met $P_0$ de luchtdruk op zeeniveau. Welk percentage van $P_0$ heb je op:
 \end{oefening}
 
 \begin{oefening}
-De ziekte cholera wordt veroorzaakt door de cholerabacterie. Is $N_0$ het aantal bacteriën op het tijdstip 0, dan wordt het aantal bacteriën $N$ na $t$ uur gegeven door:
+De ziekte cholera wordt veroorzaakt door de cholera bacterie. Is $N_0$ het aantal bacteriën op het tijdstip 0, dan wordt het aantal bacteriën $N$ na $t$ uur gegeven door:
 $$N=N_0\cdot e^{1.386 t}\;.$$
 Veronderstel dat er bij aanvang 20 bacteriën zijn. Hoeveel zijn er na 1 uur, na 2 uur, na 5 uur, na 1 dag en na één week?
 \end{oefening}
 
-\begin{oefening}
-In een bepaald land neemt de bevolking jaarlijks met $2\%$ toe. Momenteel wonen er 500 000 mensen. Hoeveel inwoners zijn er over 10 jaar?
-\end{oefening}
-
-\pagebreak
-\section{Exponentiële vergelijkingen}
-
-\begin{oefening}
-Los op in $\mathbb{R}$.
-\begin{exlist}{3}
-  \item $5^{3x}=5^{7x-2}$
-  \item $4^{t^2}=4^{6-t}$
-  \item $3^z=9^{z+5}$
-  \item $4^{5-9x}=\dfrac{1}{8^{x-2}}$
-  \item $2^{4x}=8^{x+1}$
-  \item $2^{4x}=16^{x+1}$
-\end{exlist}
-\end{oefening}
-
-
-\begin{oefening}
-Los op in $\mathbb{R}$, geef telkens de oplossingenverzameling en maak de proef.
-\begin{multicols}{3}
-\begin{enumerate}[(a)]
-  \itemsep.5em
-  \item $7^x=49$
-  \item $4^x=1$
-  \item $6^{3x}=36$
-  \item $8^{3x}=-7$
-  \item $8^x=2^{x-1}$
-  \item $0.5^{4x}=\dfrac{1}{2}$
-  \item $36^{x-1}=\sqrt{6}$
-  \item $5^{3x-2}=25^x$
-  \item $2^{5x}=16^{x+1}$
-\end{enumerate}
-\end{multicols}
-\end{oefening}
-
-\begin{oefening}
-Los op in $\mathbb{R}$, geef telkens de oplossingenverzameling en maak de proef.
-\begin{multicols}{3}
-\begin{enumerate}[(a)]
-  \itemsep.5em
-  \item $\left(2^{x+1}\right)^2=1024$
-  \item $2^{x+1}+2^{x-2}=72$
-  \item $9^{x+1}-28\cdot 3^x=-3$
-\end{enumerate}
-\end{multicols}
-\end{oefening}
-
-
 \begin{oefening}*
-Los op in $\mathbb{R}$ door telkens een gepaste substitutie te maken, geef telkens de oplossingenverzameling en maak de proef.
-\begin{multicols}{2}
-\begin{enumerate}[(a)]
-  \item $3^{2x}+3^x-12=0$
-  \item $2^{2x}-2^x-12=0$
-  \item $4^{2x}-17\cdot 4^x + 16=0$
-  \item $4^x+3\cdot 2^x+2=0$
-  \item $5^{2x}-30\cdot 5^x+125=0$
-  \item $4^x-5\cdot 2^{x+1}+16=0$
-\end{enumerate}
-\end{multicols}
+In een school met $n$ leerlingen wordt het aantal leerlingen $n'$ die een gerucht gehoord hebben, $t$ dagen na het ontstaan, gegeven door de formule $(t\geq 1)$:
+$$n' = n(1-e^{-0.12\cdot t})\;.$$
+Hoeveel percent van de leerlingen kent het gerucht na 1 dag, hoeveel na 8 dagen en hoeveel na 30 dagen?
 \end{oefening}
 
-\begin{oefening}
-We kunnen exponentiële vergelijkingen ook grafisch oplossen. We doen dit bijvoorbeeld voor de vergelijking
-$$2^{x-2}=0.5^{x-2}\;.$$
-\begin{enumerate}[(a)]
-  \item Los deze eerst algebraïsch op in $\mathbb{R}$.\\
-        {\em Hint: zorg dat de macht in het rechterlid grondtal 2 krijgt.}
-  \item Maak van het linkerlid de exponentiële functie $f(x)=2^{x-1}$ en teken de grafiek.
-  \item Maak ook van het rechterlid een functie, noem deze $g(x)$, en teken de grafiek op hetzelfde assenstelsel.
-  \item De $x$-waarden van de snijpunten van de grafieken zijn oplossingen, zoek de oplossingen en vergelijk deze met (a).
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}*
-Los volgende exponentiële vergelijking algebraïsch op, zonder gebruik te maken van substitutie.
-$$4^x+2=3\cdot2^x$$
-{\em Hint: $a\cdot b=0$ als $a=0$ of $b=0$.}
-\end{oefening}
-
-\pagebreak
 \appendix
+\pagebreak
 \section{Machten met natuurlijk grondtal en natuurlijke exponent}
 
 Volgende machten kennen we nog uit het hoofd:
 
+\begin{adjustwidth}{-1cm}{1cm}
 \begin{center}
 \begin{tabular}{|c|c|c|c|c|c|c|c|c|c|}
   \hline
@@ -820,5 +857,6 @@ Volgende machten kennen we nog uit het hoofd:
   \cline{1-2}
 \end{tabular}
 \end{center}
+\end{adjustwidth}
 
 \end{document}
