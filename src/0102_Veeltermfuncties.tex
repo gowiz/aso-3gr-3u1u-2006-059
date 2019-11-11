@@ -340,7 +340,25 @@ De ring links en de cirkel rechts hebben dezelfde oppervlakte. Bepaal $x$.
 
 Veeltermvergelijkingen van hogere graad kunnen we oplossen door handmatig (m.b.v. een ZRM) één oplossing $x=a$ te zoeken waardoor we van de veelterm een deler $x-a$ kunnen afsplitsen. De restveelterm kan gevonden worden m.b.v. het {\bf algoritme van Horner}.
 
-\paragraph{Voorbeeld}
+\subsubsection*{Voorbeeld zonder Horner}
+
+Los op in R:
+\[-8x^3+18x^2+35x=0\]
+
+Dit is een veelterm met drie termen, elk van deze termen heeft $x$ gemeenschappelijk. Laten we dan ook deze $x$ voorop plaatsen:
+
+\begin{eqnarray*}
+  -8x^3+18x^2+35x &= 0\\
+  \lra x(-8x^2+18x+35) &= 0
+\end{eqnarray*}
+
+We hebben dus al één oplossing gevonden, namelijk $x_0=0$. In de factor $-8x^2+18x+35$ kunnen ook nog oplossingen zitten. We vinden dat er twee oplossing zijn m.b.v. de discriminant $D=38^2$. De oplossingen zijn $x_1=\frac{7}{2}$ en $x_2=\frac{5}{4}$.
+
+We kunnen dus de oplossingenverzameling opschrijven:
+
+\[V=\{0, \dfrac{7}{2}, \dfrac{5}{4}\}\]
+
+\subsubsection*{Voorbeeld waar we Horner nodig hebben}
 
 We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
 
