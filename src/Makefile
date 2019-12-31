@@ -34,7 +34,9 @@ clean:
 	$(RM) *.fls
 	$(RM) *.log
 	$(RM) *.aux
-	$(RM) build/*
+	$(RM) *.out
+	$(RM) *.synctex.gz
+	$(RM) -fr build/
 
 .PHONY: cleanall
 cleanall: clean
