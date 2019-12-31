@@ -272,7 +272,7 @@ Je kan nu uit elke vaas een balletje nemen. Zo stel je bijvoorbeeld {\em ga,la,t
 
 Om een ander voorbeeld te bekijken: we wensen ons aan te kleden en we hebben keuze uit 3 truien en 2 broeken, dan kunnen we ons op $3 \cdot 2 = 6$ manieren kleden. Je kiest eerst een trui wat op 3 manieren kan, en bij elk van de drie keuzes van truien heb je twee mogelijkheden om een broek te kiezen. Dit soort telproblemen kunnen we oplossen met wat we de productregel noemen:
 
-\paragraph*{Productregel}
+\subsubsection*{Productregel}
 \begin{mdframed}
 Als een telprobleem bestaat uit $r$ onafhankelijke deelbeslissingen waarbij er voor de deelbeslissingen respectievelijk $n_1, n_2, \ldots , n_r$ mogelijkheden zijn, dan zijn er in het totaal
 \[n_1 \cdot n_2 \cdot \ldots \cdot n_r\]
@@ -347,7 +347,7 @@ Maak een venndiagram van de verzameling van de voorgerecht-eters en de nagerecht
 \end{center}
 Als je dus het aantal personen met een dessert het aantal personen met een voorgerecht optelt dan tel je de personen die een voorgerecht en een dessert hebben gegeten dubbel. Je kan dit compenseren door door eenmaal de personen die je dubbel hebt geteld er weer van af te trekken.
 
-\paragraph*{Somregel}
+\subsubsection*{Somregel}
 \begin{mdframed}
 Voor het aantal elementen van de unie van twee verzamelingen $A$ en $B$ geldt:
 $$\#(A \cup B) = \#A + \#B - \#(A \cap B)$$
@@ -400,7 +400,8 @@ We zeggen dat de deelverzamelingen elkaar {\bf uitsluitende mogelijkheden} zijn.
 \Rightarrow \#(A \cup B) &= 504 + 448 = 952
 \end{align*}
 
-\paragraph*{Somregel voor elkaar uitsluitende mogelijkheden}
+\needspace{3cm}
+\subsubsection*{Somregel voor elkaar uitsluitende mogelijkheden}
 \begin{mdframed}
 Zijn de twee verzamelingen $A$ en $B$ elkaar uitsluitende mogelijkheden omdat ze geen elementen gemeenschappelijk hebben, dan geldt voor het aantal elementen in hun unie:
 \[\#(A\cup B) = \#A + \#B\]
@@ -535,7 +536,7 @@ Het aantal variaties kunnen we nu gemakkelijk vinden als we de productregel gebr
 
 \subsection{Formule}
 
-\paragraph*{Stelling}
+\subsubsection*{Stelling}
 \begin{mdframed}
 Het aantal {\bf variaties van $k$ verschillende elementen gekozen uit $n$ verschillende elementen} noteren we $V^k_n$ en er geldt:
 $$V^k_n=n \cdot (n-1) \cdot (n-2) \cdots (n-k+1)$$
@@ -728,7 +729,7 @@ De $\bar{V}$ is het symbool voor het aantal herhalingsvariaties. Het aantal deel
 
 \subsection{Formule}
 
-\paragraph*{Stelling}
+\subsubsection*{Stelling}
 \begin{mdframed}
 Het aantal {\bf herhalingsvariaties van $k$ verschillende elementen gekozen uit $n$ verschillende elementen} noteren we $\bar{V}^k_n$ en er geldt:
 $$\bar{V}^k_n=n^k$$
@@ -832,7 +833,7 @@ Iedereen weet dat een trol 12 tanden heeft, 6 in elke kaak. Ooit was er eens een
 
 \subsection{Definitie}
 
-\paragraph*{n-faculteit}
+\subsubsection*{Faculteit}
 \begin{mdframed}
 \begin{align*}
 \forall n \in \mathbb{N}\backslash\{0,1\}: n!&=n\cdot(n-1)\cdot(n-2)\cdot \cdots \cdot 3\cdot2\cdot1\\
@@ -841,9 +842,9 @@ Iedereen weet dat een trol 12 tanden heeft, 6 in elke kaak. Ooit was er eens een
 \end{align*}
 \end{mdframed}
 
-\subsection{Berekenen met behulp van het rekentoetstel}
+\subsection{Berekenen met behulp van het rekentoestel}
 
-De toets voor $n$-faculteit bevindt zich boven het rechter haakje. Om bijvoorbeeld $24!$ uit te rekenen toetsen we
+Faculteiten hoeven we uiteraard niet van buiten te kennen of uit het hoofd uitrekenen. We doen dit met het rekentoestel. De toets voor faculteit bevindt zich boven het rechter haakje. Om bijvoorbeeld $24!$ uit te rekenen, toetsen we
 $$24 \zrm{SHIFT} \zrm{x!} \zrm{EXE}\;.$$
 
 We krijgen een heel groot getal, namelijk $620448401733239439360000$. Voor de leesbaarheid zullen we deze grote getallen steeds in wetenschappelijke notatie schrijven. Dit wil zeggen dat de getallen zullen schrijven in de vorm $a \cdot 10^b$ met $1 \leq a < 10$ en met 2 cijfers na de komma. In ons geval schrijven we dus
@@ -859,8 +860,10 @@ Bereken we de eerste faculteiten zonder \zrm{ZRM}
   5! &= 5 \cdot \underbrace{4 \cdot 3 \cdot 2 \cdot 1}_{=4!} = 5 \cdot 24 = 120
 \end{align*}
 
-Dan zien we snel dat er een manier is om faculteiten uit re rekenen als we reeds de waarde van de vorige faculteiten kennen. Daarom ook
-\paragraph*{Eigenschap van de n-faculteit}
+Dan zien we snel dat er een manier is om faculteiten uit re rekenen als we reeds de waarde van de vorige faculteiten kennen. Daarom ook:
+
+\needspace{4cm}
+\subsubsection*{Eigenschap van de faculteit}
 \begin{mdframed}
 \begin{align*}
   (n+1)! &= (n+1) \cdot n!\\
@@ -935,7 +938,7 @@ We bereken $V^3_7$ door gebruik te maken van faculteiten:
 
 We krijgen algemeen dan volgende formule
 
-\paragraph*{Stelling}
+\subsubsection*{Stelling}
 \begin{mdframed}
 $$V^k_n=\dfrac{n!}{(n-k)!}$$
 \end{mdframed}
@@ -966,7 +969,7 @@ Om het aantal variaties van 20 elementen uit 24 elementen te berekenen hebben we
 
 We verkrijgen een recursieve definitie als we {\em iets} gaan definiëren door in de definitie gebruik te maken van dat {\em iets}. Daar voorgaande eigenschap telkens een grotere faculteit kan geven door gebruik te maken van een lagere faculteit kunnen we onze definitie wijzigen. Het enige dat we nu nog nodig hebben is een randvoorwaarde, een voorwaarde waardoor de recursie kan stoppen. Hiervoor kunnen we gewoon onze kleinste mogelijke waarde apart definiëren. We krijgen dus volgende nieuwe definitie:
 
-\paragraph*{Definitie}
+\subsubsection*{Definitie}
 \begin{mdframed}
   \[\forall n \in \mathbb{N} : n!=
     \begin{cases}
@@ -1262,7 +1265,7 @@ De coëfficiënten van $(x+y)^4$ zijn te vinden in rij $4$ van de driehoek van P
 
 Deze formule is dusdanig handig dat we deze coëfficiënten een naam geven, algemeen noemen we dit de {\bf binomiaalcoëfficiënt van $n$ over $k$} en we noteren
 
-\paragraph*{Binomiaalcoëfficiënten}
+\subsubsection*{Binomiaalcoëfficiënten}
 \begin{mdframed}
 \[{n \choose k} = \dfrac{n!}{k!\cdot\left(n-k\right)!}\]
 \end{mdframed}
@@ -1294,7 +1297,7 @@ Nu kunnen we uiteindelijk gebruik maken van het somatiesymbool $\sum$ om de oors
 
 \needspace{5cm}
 We krijgen algemeen
-\paragraph{Binomium van Newton}
+\subsubsection{Binomium van Newton}
 \begin{mdframed}
 Voor $a,b\in\mathbb{R}$ en $n\in\mathbb{N}_0$ geldt:
 $$(a+b)^n=\sum^n_{k=0}{n \choose k}a^{n-k}b^k$$
@@ -1428,7 +1431,7 @@ Let op de notatie : De $C$ is het symbool voor het aantal combinaties zonder her
 
 \subsection{Formule}
 
-\paragraph*{Combinaties}
+\subsubsection*{Combinaties}
 \begin{mdframed}
 Het aantal {\bf combinaties van $k$ elementen gekozen uit $n$ elementen} noteren we $C^k_n$ en er geldt:
 $$C^k_n=\dfrac{n!}{k!\cdot(n-k)!}$$
@@ -1564,7 +1567,7 @@ We noemen het aantal keuzemogelijkheden het aantal {\bf herhalingscombinaties va
 
 \subsection{Algemeen}
 
-\paragraph*{Herhalingscombinaties}
+\subsubsection*{Herhalingscombinaties}
 \begin{mdframed}
 Het aantal {\bf herhalingscombinaties van $k$ elementen gekozen uit $n$ verschillende elementen} noteren we $\bar{C}^k_n$ en er geldt:
 $$\bar{C}^k_n=C^k_{n+k-1}$$
@@ -1658,7 +1661,7 @@ We rangschikken $n$ elementen, waarvan
 \end{itemize}
 met $n_1+n_2+n_3+\dots+n_k=n$. De bekomen resultaten noemen we {\bf anagrammen}. Het aantal anagrammen wordt gegeven door
 
-\paragraph*{Anagrammen}
+\subsubsection*{Anagrammen}
 \begin{mdframed}
 $$P^{n_1,n_2,n_3,\dots,n_k}_n = \dfrac{n!}{n_1!\cdot n_2!\cdot n_3!\cdot \cdots \cdot n_k!}$$
 \end{mdframed}
