@@ -825,7 +825,7 @@ Schrijf volgende veeltermfuncties in hun standaardvorm.
   \item Tekenverloop:
     \begin{itemize}
     \item $D>0$
-      \begin{tabular}{c|p{1.5cm}cp{2.5cm}cp{1.5cm}}
+      \begin{tabular}{c|p{1.2cm}cp{2.2cm}cp{1.2cm}}
         $x$ & & $x_1$ & & $x_2$ &\\
         \hline
         $f(x)$ & teken van $a$ & 0 & tegengesteld teken van $a$ & 0 & teken van $a$
@@ -973,27 +973,38 @@ Bepaal het functievoorschrift van
 \end{enumerate}
 \end{oefening}
 
-\subsection{Veeltermfuncties van graad 3 of hoger}
+\subsection{Veeltermfuncties van graad 3}
 
 \begin{itemize}
-\item We noemen zulk een functie wel nog eens een {\bf hogeregraadsveeltermfunctie}.
-\item Deze functies hebben de algemene vorm van een veeltermfunctie
-  $$f(x)= a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\;.$$
-\item We kunnen voor elke reële waarde de functiewaarde bereken, dus het domein is $\mathbb{R}$.
-\item Een veeltermfunctie van graad $n$ heeft hoogstens $n$ nulwaarden.
-\item Veelal vinden we de nulwaarden m.b.v. Horner.
+\item Deze noemen we voor het gemak {\bf derdegraadsfuncties}
+\item Algemeen hebben ze de vorm
+  \[f(x)=a_3x^3+a_2x^2+a_1x+a_0\]
+\item Grafisch hebben ze steeds één van onderstaande vormen
+  \begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \clip(-2.5,-1.5) rectangle (1.,2.5);
+      \draw[line width=2.pt,smooth,samples=100,domain=-2.5:1.0] plot(\x,{(\x)^(3.0)+2.0*(\x)^(2.0)});
+      \draw [->,line width=1.pt] (-1.3,1.3) -- (-1.3,2.0);
+      \draw [->,line width=1.pt] (-1.3,1.1) -- (-1.3,0.4);
+      \draw [->,line width=1.pt] (0.0,0.1) -- (0.0,0.8);
+      \draw [->,line width=1.pt] (0.0,-0.1) -- (0.,-0.8);
+    \end{tikzpicture}
+  \end{center}
+  op spiegeling rond een horizontale en verschuivingen na. Daarnaast zullen afhankelijk van het functievoorschrift de extrema naar boven of naar onder verschuiven, waardoor zelfs extrema weg kunnen vallen.
+\item Nulwaarden vinden we door de functie gelijk te stellen aan 0. We proberen dan de veelterm te ontbinden in factoren, bijvoorbeeld door een $x$ voorop te plaatsen of door Horner te gebruiken.
+\item Het tekenverloop kunnen we bepalen door het tekenverloop van de verschillende factoren te combineren.
+\item Het stijgen, dalen en de extra kunnen we voorlopig nog bepalen m.b.v. een schets van de grafiek. Benaderingen zullen voorlopig voldoende zijn. Later, in het hoofdstuk afgeleiden, zullen we zien hoe we exact de extrema vinden.
 \end{itemize}
 
-\paragraph*{Hogeregraadsveeltermfuncties bespreken}
+\paragraph*{Derdegraadsfuncties bespreken}
 \begin{mdframed}
   \begin{itemize}
-  \item Functievoorschrift: $f(x)= a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\;.$
+  \item Functievoorschrift: $f(x)= a_3x^3+a_2x^2+a_1x+a_0\;.$
   \item $\dom f = \mathbb{R}$
-  \item Nulwaarden bepalen, bijvoorbeeld m.b.v. Horner.
-  \item Functiewaardentabel maken, zorg dat de nulwaarden en voldoende waarden rond de nulwaarde in de tabel staan.
-  \item Grafiek maken.
-  \item Bereik: a.d.h.v. de grafiek
-  \item Tekenverloop: a.d.h.v. de grafiek
+  \item $\ber f = \mathbb{R}$
+  \item Nulwaarden bepalen, bijvoorbeeld factor voorop of Horner.
+  \item Tekenverloop m.b.v. het ontbinden van de functie in verschillende factoren.
+  \item Schets van de grafiek maken, desnoods eerst nog een functiewaardentabel maken.
   \item Stijgen\&dalen: a.d.h.v. de grafiek
   \end{itemize}
 \end{mdframed}
@@ -1014,6 +1025,32 @@ Bespreek (domein, bereik, nulwaarden, tekenverloop, schets, stijgen\&dalen):
 \end{enumerate}
 \end{multicols}
 \end{oefening}
+
+\subsection{Veeltermfuncties van graad hoger dan 3}
+
+\begin{itemize}
+\item We noemen zulk een functie wel nog eens een {\bf hogeregraadsveeltermfunctie}.
+\item Deze functies hebben de algemene vorm van een veeltermfunctie
+  $$f(x)= a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\;.$$
+\item We kunnen voor elke reële waarde de functiewaarde bereken, dus het domein is $\mathbb{R}$.
+\item Een veeltermfunctie van graad $n$ heeft hoogstens $n$ nulwaarden.
+\item Veelal vinden we de nulwaarden m.b.v. Horner.
+\end{itemize}
+
+\needspace{4cm}
+\paragraph*{Hogeregraadsveeltermfuncties bespreken}
+\begin{mdframed}
+  \begin{itemize}
+  \item Functievoorschrift: $f(x)= a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\;.$
+  \item $\dom f = \mathbb{R}$
+  \item Nulwaarden bepalen, bijvoorbeeld m.b.v. Horner.
+  \item Functiewaardentabel maken, zorg dat de nulwaarden en voldoende waarden rond de nulwaarde in de tabel staan.
+  \item Tekenverloop m.b.v. het ontbinden van de functie in verschillende factoren.
+  \item Grafiek maken.
+  \item Bereik: a.d.h.v. de grafiek
+  \item Stijgen\&dalen: a.d.h.v. de grafiek
+  \end{itemize}
+\end{mdframed}
 
 \begin{oefening}
   Bespreek volgende functies:
