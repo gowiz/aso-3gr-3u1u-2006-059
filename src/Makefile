@@ -5,17 +5,15 @@ BASE = $(basename $(TEXIN))
 OEFTEX = $(addsuffix _Oefeningen.tex, $(BASE))
 OEFPDF = $(addsuffix _Oefeningen.pdf, $(BASE))
 
-PDFLATEXOPTS = "pdflatex --synctex=1 -interaction=nonstopmode -shell-escape"
-
 #.PHONY: $(PDFOUT) $(OEFPDF)
 all: $(PDFOUT) $(OEFPDF)
 
 %.pdf: %.tex
 	mkdir -p build
-	latexmk -pdf -silent -pdflatex=$(PDFLATEXOPTS) -use-make $<
+	latexmk -pdf -silent -use-make $<
 
 %_Oefeningen.pdf: %_Oefeningen.tex
-	latexmk -pdf -silent -pdflatex=$(PDFLATEXOPTS) -use-make $<
+	latexmk -pdf -silent -use-make $<
 
 %_Oefeningen.tex:  %.tex
 	cat $< | ../exex.o > $@
@@ -36,6 +34,7 @@ clean:
 	$(RM) *.aux
 	$(RM) *.out
 	$(RM) *.synctex.gz
+	$(RM) _region_*
 	$(RM) -fr build/
 
 .PHONY: cleanall
