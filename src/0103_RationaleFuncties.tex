@@ -28,7 +28,7 @@
   \includegraphics[width=8cm]{youshallnotpass}
 %  \vfill
 \end{center}
-\vspace*{-3.5cm}
+\vspace*{-3cm}
 \begin{singlespace}
 \subsection*{Doelstelling}
 Je kan \hfill  {\scriptsize(LP 2006-059, LI 1.3, ET 14, 31, 32)}
@@ -103,6 +103,7 @@ Als we vergelijkingen oplossen, dan eisen we dat de gevonden oplossingen wel deg
 We krijgen dus de eis:
 $$ \text{BV: } n(x) \neq 0 $$
 
+\needspace{4cm}
 \subsection{Algebraïsch oplossen van rationale vergelijkingen}
 \begin{enumerate}[(1)]
 \item Je herleidt de gegeven vergelijking op nul.
@@ -206,7 +207,7 @@ Een handelaar bestelt een aantal kristallen glazen en betaalt hiervoor 6000 euro
 Een knutselaar kocht voor 1200 euro verf. Als elke pot 20 euro meer zou kosten, dan had hij 5 potten minder kunnen kopen voor hetzelfde bedrag. Hoeveel potten verf kocht die knutselaar? \hfill {\em (20)}
 \end{oefening}
 
-\pagebreak
+\cleardoublepage
 \section{Rationale functies}
 
 \subsection{Definities}
@@ -249,10 +250,10 @@ We spreken expliciet van naderen. Dit wordt soms verward met niet mogen snijden.
       xmax=10.4,
       ymin=-1.1,
       ymax=2.4,
-      xlabel={x},
-      ylabel={y},
+      xlabel={$x$},
+      ylabel={$y$},
       samples=100]
-      \addplot[line width=1.6pt,smooth,domain=-5.4:10.4] {-2*x*exp(-(x-5)^2)+10*exp(-(x-5)^2) + 1};
+      \addplot[line width=1.6pt,smooth,domain=-5.4:10.4] {-2.1*x*exp(-(x-5)^2)+10*exp(-(x-5)^2) + 1};
     \end{axis}
   \end{tikzpicture}
 \end{center}
@@ -588,88 +589,30 @@ Volgende stappenplan werkt goed, op voorwaarde dat de nulwaarden van teller en n
 \end{mdframed}
 
 \begin{oefening}
-Bespreek volgende rationale functies (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):
+Bespreek volgende rationale functies (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen\&dalen en extrema):
 \begin{exlist}{2}
-  \item $f:y=\dfrac{x^2-1}{x^2-4}$
-  \item $f:y=\dfrac{x^2-2x-24}{x^2-9}$
+  \item $f:y=\dfrac{x^2-1}{2x^2-8}$
+  \item $f:y=\dfrac{3x^2-6x-72}{x^2-9}$
   \item $f:y=\dfrac{x^2+2x-15}{x^2-4}$
   \item $f:y=\dfrac{2x^2+2x+1}{x^2-1}$
   \item $f:y=\dfrac{x+1}{(x-1)^2}$
-  \item $f:y=\dfrac{x^2}{x^2+2x+1}$
+  \item $f:y=\dfrac{4x^2}{x^2+2x+1}$
   \item $f:y=\dfrac{x^2}{(x+1)^2}$
-  \item $f:y=\dfrac{x^2-4}{x^2-1}$
+  \item $f:y=\dfrac{3x^2-12}{2x^2-2}$
 \end{exlist}
 \end{oefening}
 
 \begin{oefening}*
-Bespreek volgende rationale functies (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen/dalen/extrema):
+Bespreek volgende rationale functies (polen, domein, asymptoten, bereik, nulwaarden, snijpunten met de y-as, tekenschema, grafiek, stijgen\&dalen en extrema):
 \begin{exlist}{2}
-\item $f:y=\dfrac{x^2-1}{x+1}$
+\item $f:y=\dfrac{2x^2-2}{x+1}$
 \item $f:y=\dfrac{x-1}{x^2}$
-\item $f:y=\dfrac{x^2-4x+4}{x-2}$
-\item $f:y=\dfrac{x^2-9}{x-3}$
-
+\item $f:y=\dfrac{x^2-4x+4}{3x-6}$
+\item $f:y=\dfrac{2x^2-18}{3x-9}$
 \end{exlist}
 \end{oefening}
 
-\subsection{Toepassingen}
-
-
-\begin{oefening}
-De grootte van een konijnenpopulatie wordt gegeven door
-$$f(x)=\dfrac{150x+90}{x+3}\;.$$
-De functie $f(x)$ stelt het aantal konijnen voor en $x$ de tijd in maanden.
-\begin{enumerate}[(a)]
-  \item Bepaal het praktische domein.
-  \item Hoeveel konijnen zijn er op tijdstip 0?
-  \item Na hoeveel maand zijn er meer dan 100 konijnen?
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}
-Het lokaal van de jeugdbeweging is aan een grondige opknapbeurt toe. {\em ''Vele handen maken licht werk''} redeneert men. De functie
-$$d(x)=\dfrac{3x+25}{x}$$
-geeft het aantal dagen nodig voor de opknapbeurt, in functie van het aantal vrijwilligers $x$.
-\begin{enumerate}[(a)]
-  \item Bepaal het praktische domein.
-  \item Hoeveel vrijwilligers heeft men minimaal nodig om de klus in 4 dagen te klaren?
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}
-Een schoonmaakbedrijf hanteert de formule $k(x)=9+\dfrac{40}{x}$ voor het schoonmaken van gebouwen. Hierin is $k(x)$ het bedrag in euro dat per jaar per $\m^2$ moet worden betaald en $x$ de oppervlakte in $100 \m^2$.
-\begin{enumerate}[(a)]
-  \item Een vloeroppervlak is $2000 \m^2$. Hoeveel moet er per jaar voor het schoonmaken betaald worden?
-  \item Kasper zou zijn studentenkot van 8 bij 6 meter door het bedrijf willen laten onderhouden. Hoeveel kost hem dat per jaar?
-  \item Firma Xanders betaalt jaarlijks 9.16 euro per $\m^2$ voor het schoonmaken van zijn gebouw. Hoe groot is de oppervlakte van dit gebouw?
-\end{enumerate}
-\end{oefening}
-
-\begin{oefening}
-De populatie vossen in een bepaald gebied was nagenoeg constant. Doch door een tot nu toe onbekende oorzaak werd dit evenwicht verstoord. De hoeveelheid vossen in functie van de tijd wordt nu benaderd door de functie
-$$v(t)=\dfrac{3t^2-12t+13}{t^2-4t+5}\;.$$
-Hierbij is
-\begin{itemize}
-  \item v = aantal vossen, uitgedrukt in duizendtallen
-  \item t = tijd in jaren
-  \item t = 0 komt overeen met januari 2010
-\end{itemize}
-Van wanneer tot wanneer waren er minder dan 2000 vossen in het gebied?
-\end{oefening}
-
-\begin{oefening}
-De temperatuur in een koele berging wordt gegeven door de volgende functie:
-$$T(t)=\dfrac{3t^2-6t+3}{t^2-2t+2}\;.$$
-Hierbij is
-\begin{itemize}
-  \item T = de temperatuur in graden Celsius
-  \item t = tijd in uren
-  \item t = 0 komt overeen met 3 uur 's nachts.
-\end{itemize}
-Als de temperatuur lager wordt dan 1 $^\circ$C is er gevaar voor schade aan het voedsel. Hoe lang bevond de temperatuur zich onder 1 $^\circ$C? Van wanneer tot wanneer?
-\end{oefening}
-
-\pagebreak
+\cleardoublepage
 \section{Rationale ongelijkheden}
 
 \begin{oefening}
@@ -685,6 +628,7 @@ Los op in $\mathbb{R}$. Met andere woorden bepaal $V$.
   \item $\dfrac{x^2+3x+2}{x^2-16}\geq0$
   \item $\dfrac{(-2x-10)(3-x)}{(x^2+5)(x-2)^2}<0$
   \item $\dfrac{x+1}{x-5}\leq 0$
+  \item $\dfrac{x+1}{x+5}\leq 0$
   \item $\dfrac{x^2+4x+3}{x-1}>0$
   \item $\dfrac{x^2-16}{(x-1)^2}<0$
   \item $\dfrac{3x+1}{x+4}\geq 1$
@@ -715,8 +659,8 @@ Bepaal de oplossingsverzameling van $\dfrac{1}{x} - 4 \geq 1$\\
 \end{enumerate}
 \end{oefening}
 
-\needspace{3cm}
-\subsection{Toepassingen}
+\cleardoublepage
+\section{Toepassingen}
 
 \begin{oefening}
 De grootte van een konijnenpopulatie wordt gegeven door
@@ -725,7 +669,8 @@ De functie $f(x)$ stelt het aantal konijnen voor en $x$ de tijd in maanden.
 \begin{enumerate}[(a)]
   \item Bepaal het praktische domein.
   \item Hoeveel konijnen zijn er op tijdstip 0?
-  \item Na hoeveel maand zijn er meer dan 100 konijnen?
+  \item Na hoeveel maand zijn er 100 konijnen?
+  \item Hoeveel konijnen zijn er maximaal?
 \end{enumerate}
 \end{oefening}
 
@@ -740,11 +685,11 @@ geeft het aantal dagen nodig voor de opknapbeurt, in functie van het aantal vrij
 \end{oefening}
 
 \begin{oefening}
-Een schoonmaakbedrijf hanteert de formule $k(x)=9+\dfrac{40}{x}$ voor het schoonmaken van gebouwen. Hierin is $k(x)$ het bedrag in euro dat per jaar per m$^2$ moet worden betaald en $x$ de oppervlakte in 100 m$^2$.
+Een schoonmaakbedrijf hanteert de formule $k(x)=9+\dfrac{40}{x}$ voor het schoonmaken van gebouwen. Hierin is $k(x)$ het bedrag in euro dat per jaar per $\m^2$ moet worden betaald en $x$ de oppervlakte in $100 \m^2$.
 \begin{enumerate}[(a)]
-  \item Een vloeroppervlak is 2000 m$^2$. Hoeveel moet er per jaar voor het schoonmaken betaald worden?
+  \item Een vloeroppervlak is $2000 \m^2$. Hoeveel moet er per jaar voor het schoonmaken betaald worden?
   \item Kasper zou zijn studentenkot van 8 bij 6 meter door het bedrijf willen laten onderhouden. Hoeveel kost hem dat per jaar?
-  \item Firma Xanders betaalt jaarlijks 9.16 euro per m$^2$ voor het schoonmaken van zijn gebouw. Hoe groot is de oppervlakte van dit gebouw?
+  \item Firma Xanders betaalt jaarlijks 9.16 euro per $\m^2$ voor het schoonmaken van zijn gebouw. Hoe groot is de oppervlakte van dit gebouw?
 \end{enumerate}
 \end{oefening}
 
@@ -753,11 +698,15 @@ De populatie vossen in een bepaald gebied was nagenoeg constant. Doch door een t
 $$v(t)=\dfrac{3t^2-12t+13}{t^2-4t+5}\;.$$
 Hierbij is
 \begin{itemize}
-  \item $v$ = aantal vossen, uitgedrukt in duizendtallen
-  \item $t$ = tijd in jaren
-  \item $t = 0$ komt overeen met januari $2010$
+\item v = aantal vossen, uitgedrukt in duizendtallen
+\item t = tijd in jaren
+\item t = 0 komt overeen met januari 2010
 \end{itemize}
-Van wanneer tot wanneer waren er minder dan $2000$ vossen in het gebied?
+\begin{enumerate}[(a)]
+\item Hoeveel vossen waren er ongeveer in 2020
+\item Van wanneer tot wanneer waren er minder dan 2000 vossen in het  gebied?
+\item Neemt het aantal vossen toe of af?
+\end{enumerate}
 \end{oefening}
 
 \begin{oefening}
@@ -765,11 +714,11 @@ De temperatuur in een koele berging wordt gegeven door de volgende functie:
 $$T(t)=\dfrac{3t^2-6t+3}{t^2-2t+2}\;.$$
 Hierbij is
 \begin{itemize}
-  \item $T$ = de temperatuur in graden Celsius ($\grC$)
-  \item $t$ = tijd in uren
-  \item $t = 0$ komt overeen met 3 uur 's nachts.
+  \item T = de temperatuur in graden Celsius
+  \item t = tijd in uren
+  \item t = 0 komt overeen met 3 uur 's nachts.
 \end{itemize}
-Als de temperatuur lager wordt dan $1 \grC$ is er gevaar voor schade aan het voedsel. Hoe lang bevond de temperatuur zich onder $1 \grC$? Van wanneer tot wanneer?
+Als de temperatuur lager wordt dan $1\grC$ is er gevaar voor schade aan het voedsel. Hoe lang bevond de temperatuur zich onder $1\grC$? Van wanneer tot wanneer?
 \end{oefening}
 
 \end{document}
