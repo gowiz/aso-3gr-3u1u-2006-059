@@ -14,6 +14,8 @@
 
 \usepackage{array}
 
+\usepackage{rotating}
+
 \makeatletter
 \newcommand\binomialCoefficient[2]{%
     % Store values
@@ -1718,17 +1720,38 @@ Gegeven een normale pak kaarten zijn er $52!$ verschillende permutaties van de k
 \cleardoublepage
 \appendix
 \section{Het kaartspel}
-
-Het kaartspel bestaat uit 4 soorten: klaveren (k), ruiten (r), harten (h) en schoppen (s). De soorten worden verder onderverdeeld in 13 kaarten: de aas (1), 2, 3, 4, 5, 6, 7, 8, 9, 10, boer (J), koningin (Q) en koning (K). Er zijn ook twee soorten kleuren, de klaveren en de schoppen zijn zwart, de ruiten en harten zijn rood. De jokers negeren wij.
-
+\vspace*{-1em}
+\begin{minipage}[t]{.37\linewidth}
+    \vspace*{.5em}
+  Het kaartspel bestaat uit 4 soorten: klaveren (k), ruiten (r), harten (h) en schoppen (s). De soorten worden verder onderverdeeld in 13 kaarten: de aas (1), 2, 3, 4, 5, 6, 7, 8, 9, 10, boer (J), koningin (Q) en koning (K). Er zijn ook twee soorten kleuren, de klaveren en de schoppen zijn zwart, de ruiten en harten zijn rood. De jokers negeren wij.
+\end{minipage}
+\begin{minipage}[t]{.7\linewidth}
+  \raisebox{-\height}{
+    \begin{sideways}
 \begin{postscript}
-  \psset{unit=.85}
+  \psset{unit=1.1}
   \psset{colorset=bw}
-  \crdAc\crdtwoc\crdtreec\crdfourc\crdfivec\crdsixc\crdsevc\crdeigtc\crdninec\crdtenc\crdJc\crdQc\crdKc\\
-  \crdAd\crdtwod\crdtreed\crdfourd\crdfived\crdsixd\crdsevd\crdeigtd\crdnined\crdtend\crdJd\crdQd\crdKd\\
-  \crdAh\crdtwoh\crdtreeh\crdfourh\crdfiveh\crdsixh\crdsevh\crdeigth\crdnineh\crdtenh\crdJh\crdQh\crdKh\\
-  \crdAs\crdtwos\crdtrees\crdfours\crdfives\crdsixs\crdsevs\crdeigts\crdnines\crdtens\crdJs\crdQs\crdKs\\
+
+  \crdAc\crdtwoc\crdtrec\crdfourc\crdfivec
+  \crdsixc\crdsevc\crdeigc\crdninec\crdtenc
+  \crdJc\crdQc\crdKc
+
+  \crdAd\crdtwod\crdtred\crdfourd\crdfived
+  \crdsixd\crdsevd\crdeigd\crdnined\crdtend
+  \crdJd\crdQd\crdKd
+
+  \crdAh\crdtwoh\crdtreh\crdfourh\crdfiveh
+  \crdsixh\crdsevh\crdeigh\crdnineh\crdtenh
+  \crdJh\crdQh\crdKh
+
+  \crdAs\crdtwos\crdtres\crdfours\crdfives
+  \crdsixs\crdsevs\crdeigs\crdnines\crdtens
+  \crdJs\crdQs\crdKs
 \end{postscript}
+\end{sideways}
+}
+\end{minipage}
+
 
 \cleardoublepage
 \section{Driehoek van Pascal}
