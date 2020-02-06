@@ -152,7 +152,7 @@ Met voorgaande definitie kunnen we nu $x^2+4=0$ oplossen. De oplossingen zijn na
 
 \subsubsection*{Definitie}
 \begin{mdframed}
-Twee complexe getallen zijn {\bf gelijk} als en slechts als hun reële delen en hun imaginaire delen gelijk zijn.
+Twee complexe getallen zijn {\bf gelijk} als en slechts als hun overeenkomstige reële delen en hun imaginaire delen gelijk zijn.
 \end{mdframed}
 
 \subsubsection*{Notatie}
@@ -256,7 +256,7 @@ Het verschil van een twee complexe getallen is hetzelfde als de som van het eers
   \itemsep1em
   \item $\displaystyle (2-i)+(3+4i)$
   \item $\displaystyle (4i-2)-(2+5i)$
-  \item $\displaystyle (7+6i)+2(1+i)$
+  \item $\displaystyle (7+6i)+(1+i)$
   \end{enumerate}
 \end{oefening}
 
@@ -335,7 +335,7 @@ Dus, om te delen door een complex getal, vermenigvuldigen we teller en noemer me
                     &= 3.5 + 0.5i \mbox{ of } \frac{7}{2} + \frac{1}{2}i
 \end{align*}
 
-De laatste stap is nodig, want we schrijven een complex getal altijd in zijn Carthesische vorm als antwoord.
+De laatste stap is nodig, want we schrijven een complex getal altijd in zijn cartesische vorm als antwoord.
 
 \begin{oefening}
   Bereken
@@ -393,7 +393,13 @@ De laatste stap is nodig, want we schrijven een complex getal altijd in zijn Car
 
 \subsubsection*{Definitie}
 \begin{mdframed}
-$$(a+bi)^n = \underbrace{(a+bi)\cdot(a+bi)\cdot\cdots\cdot(a+bi)}_{n\mbox{ \scriptsize factoren}}$$
+  $\forall a,b\in\mathbb{R}$ en $\forall n\in\mathbb{N}$:
+  \begin{align*}
+    (a+bi)^n &= \underbrace{(a+bi)\cdot(a+bi)\cdot\cdots\cdot(a+bi)}_{n\mbox{ \scriptsize factoren}}\\
+    (a+bi)^1 &= a+bi\\
+    (a+bi)^0 &= 1\\
+    (a+bi)^{-n} &= \dfrac{1}{(a+bi)^{-n}}
+  \end{align*}
 \end{mdframed}
 
 \subsubsection*{Voorbeelden}
@@ -451,7 +457,7 @@ $$i^{4n}=1 \qquad i^{4n+1}=i \qquad i^{4n+2}=-1 \qquad i^{4n+3}=-i$$
   \begin{enumerate}[(a)]
     \itemsep 1em
   \item $\frac{1+i}{1-i}-(1+2i)(2+2i)+\frac{3-i}{1+i}$;
-  \item $2i(i-1)+\left(\overline{\sqrt(3)+i}\right)^3+(1+i)\overline{(1+i)}.$
+  \item $2i(i-1)+\left(\overline{\sqrt{3}+i}\right)^3+(1+i)\overline{(1+i)}.$
   \end{enumerate}
 \end{oefening}
 
@@ -484,7 +490,7 @@ Bepaal $w$ zodat $(2+3i)\cdot w = 1$.
 \end{oefening}
 
 \begin{oefening}*
-Bewijs volgende eigenshappen i.v.m. de complex toegevoegde van een complex getal:
+Bewijs volgende eigenschappen i.v.m. de complex toegevoegde van een complex getal:
 \begin{enumerate}[a]
   \item $\overline{z+w}=\overline{z}+\overline{w}$
   \item $\overline{z\cdot w}=\overline{z}\cdot\overline{w}$
@@ -597,6 +603,15 @@ Dus $-a\in\mathbb{R}^+_0$ heeft 2 zuiver imaginaire wortels.
 \pagebreak
 \section{Vierkantsvergelijkingen in $\mathbb{C}$}
 
+\subsection{Standaardvorm}
+
+\begin{mdframed}
+  Een vierkantsvergelijking in $\mathbb{C}$ is een vergelijking van de vorm
+  \[az^2+bz+c=0 \text{ met } a\in\mathbb{C}_0, b,c\in\mathbb{C}\]
+\end{mdframed}
+
+Merk op: $a$ en $a$ zijn worden hier gezien als complexe coëfficiënten, en niet langer als een reëel deel en een imaginair deel.
+
 \subsection{Eigenschap}
 
 \begin{mdframed}
@@ -631,10 +646,11 @@ $$V=\{ -1-2i, -1+2i \}$$
 
 Los op in $\mathbb{C}$
 \begin{align*}
-       && (2-i)(z^2-6) &= 5(2i+1)\\
-  \lra && \underbrace{(2-i)}_a z^2 + \underbrace{(-5-10i)}_b z + \underbrace{(-12+6i)}_c &= 0\\
-  \Rightarrow D = -3+4i
+       && (2-i)(z^2-6) &= 5(2i+1)z\\
+  \lra && \underbrace{(2-i)}_a z^2 + \underbrace{(-5-10i)}_b z + \underbrace{(-12+6i)}_c &= 0
 \end{align*}
+\[\Rightarrow D = -3+4i\]
+
 
 We willen nu $\sqrt{D}$ bepalen, m.a.w. we zoeken de wortels van $-3+4i$:
 \begin{align*}
@@ -665,6 +681,7 @@ En dus de oplossingenverzameling wordt $V=\{2i, 3i\}$.
 \begin{mdframed}
 De vierkantsvergelijking $az^2+bz+c=0$ met $a,b,c\in\mathbb{C}$ en $a\neq 0$ in $\mathbb{C}$ heeft als wortels
 $$ z_{1,2}=\dfrac{-b\pm\sqrt{D}}{2a}$$
+met $D=b^2-4ac$
 \end{mdframed}
 
 \begin{oefening}
@@ -726,7 +743,7 @@ met $a, b \in \mathbb{R}$ heeft zeker als oplossing
 
 \begin{oefening}*
 Toon aan dat de vergelijking in $\mathbb{C}$
-\[4z^3-6i\sqrt{3}z^2-3(3+i\sqrt{3})z-4=0\]
+\[4z^3-6i\sqrt{3}z^2-3(3+i\sqrt{3})z+4=0\]
 minstens één reële oplossing heeft.
 \end{oefening}
 
@@ -897,7 +914,7 @@ We stellen nu het beeldpunt $P(a,b)$ van een complex getal $z=a+bi \in \mathbb{C
   \item de hoek $\phi=\arg z$ noemen we een {\bf argument} van het complex getal $z$, deze hoek heeft oneindig veel waarden want
   $$\phi = \phi + k\cdot 360\degree \mbox{ met } k\in\mathbb{Z}$$
   Wij gebruiken steeds de hoofdwaarde van $\arg z$, namelijk het argument waarvoor geldt
-  $0\degree \leq \arg z \leq 360\degree$
+  $0\degree \leq \arg z < 360\degree$
 \end{itemize}
 \end{mdframed}
 
@@ -994,7 +1011,6 @@ In de rechthoekige driehoek $OPQ$ geldt:
   \item Dit is niet geldig voor zuiver imaginaire getallen ($a=0$), maar in dat geval is $\phi=90\degree$ ($b>0$) of $\phi=-90\degree$ ($b<0$).
 \end{itemize}
 
-\pagebreak
 \subsection{Omgekeerde berekening}
 
 \subsubsection*{Gegeven: } $r, \phi$
@@ -1047,7 +1063,7 @@ Bepaal de Carthesische vorm, dus de vorm $z=a+bi$
 \end{oefening}
 
 \pagebreak
-\section{Bewerkingen m.b.v de goniometrische gedaante}
+\section{Bewerkingen m.b.v. de goniometrische gedaante}
 
 \subsection{Product}
 
@@ -1099,7 +1115,7 @@ Indien we reeds over de goniometrische vorm beschikken gaat deze methode snel.
 Bereken:
 \begin{enumerate}[(a)]
   \itemsep.5em
-  \item Vermenigvuldig $z_1=3\left(\cos(20\degree)+i\sin(20\degree)\right)$ met $z_2=4\left(\cos(70\degree)+i\sin(70\degree)\right)$
+  \item Vermenigvuldig $z_1=4\left(\cos(40\degree)+i\sin(40\degree)\right)$ met $z_2=\left(\cos(-50\degree)+i\sin(-50\degree)\right)$
   \item Vermenigvuldig $z_1=2\left(\cos(50\degree)+i\sin(50\degree)\right)$ met $z_2=8\left(\cos(10\degree)+i\sin(10\degree)\right)$
   \item Vermenigvuldig $z_1=6\left(\cos(80\degree)+i\sin(80\degree)\right)$ met $z_2=2\left(\cos(20\degree)+i\sin(20\degree)\right)$
   \item Vermenigvuldig $z_1=2\left(\cos(50\degree)+i\sin(50\degree)\right)$ met $z_2=8\left(\cos(-40\degree)+i\sin(-40\degree)\right)$
@@ -1196,7 +1212,7 @@ We bepalen nu op goniometrische manier de macht en vormen het antwoord om in Car
 \end{align*}
 
 \subsubsection*{Opmerking}
-We merken dat deze methode merkelijk sneller gaat dan de macht via distributiviteit te willen uitrekenen, ook al moeten we eerst van Carthesische naar goniometrische vorm omvormen.
+We merken dat deze methode merkelijk sneller gaat dan de macht via distributiviteit te willen uitrekenen, ook al moeten we eerst van cartesische naar goniometrische vorm omvormen.
 
 
 \begin{oefening}
@@ -1401,7 +1417,7 @@ Bepaal alle
 \subsection{Binomiale vergelijkingen}
 
 % bron: LEERBOEK DER ALGEBRA VOOR H.B.S., GYMNASIUM EN LYCEUM, W.E.J.TJEENK WILLINK, ZWOLLE, 1937
-Onder een binomiaalvergelijking verstaat men een vergelijking van de $n$-de de graad ($n \geq 1$), waarvan het op nul herleide lid uit twee termen bestaat.
+Onder een binomiaalvergelijking verstaat men een vergelijking van de $n$-de graad ($n \geq 1$), waarvan het op nul herleide lid uit twee termen bestaat.
 
 De algemene gedaante van een binomiaal vergelijking is
 \[az^n + bz^m=0\]
@@ -1485,13 +1501,13 @@ Los op in $\mathbb{C}$ en geef de oplossing grafisch weer in het vlak van Gauss.
     \bf uitspraak & \bf klein & \bf groot \\
     \hline
     alfa & $\alpha$ & A\\
-    b\`eta & $\beta$ & B\\
+    bèta & $\beta$ & B\\
     gamma & $\gamma$ & $\Gamma$ \\
     delta & $\delta$ & $\Delta$ \\
     e-psilon & $\epsilon$ & E\\
-    z\`eta & $\zeta$ & Z\\
-    \`eta & $\eta$ & H\\
-    th\`eta & $\theta$ of $\vartheta$ & $\Theta$\\
+    zèta & $\zeta$ & Z\\
+    èta & $\eta$ & H\\
+    thèta & $\theta$ of $\vartheta$ & $\Theta$\\
     jota & $\iota$ & I\\
     kappa & $\kappa$ & K\\
     lambda & $\lambda$ & $\Lambda$\\
