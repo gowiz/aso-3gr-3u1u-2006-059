@@ -187,7 +187,28 @@ Limieten van functies in een reëel getal $a$ (zowel eindige limieten als limiet
 \end{oefening}
 
 \begin{oefening}
-  Bepaal nogmaals de limiet $\displaystyle\lim_{x\to-1} f(x)$ van de functie in oefening 2. Gebruik nu linker- en rechterlimieten.
+  Bepaal nogmaals de limiet $\displaystyle\lim_{x\to-1} f(x)$ van de volgende functie
+  \begin{center}
+    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+    \begin{tikzpicture}[scale=1.5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-3.2,-1.38) grid (2.38,3.18);
+      \draw[->,color=black] (-3.2,0) -- (2.38,0);
+      \foreach \x in {-3,-2,-1,1,2}
+      \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+      \draw[->,color=black] (0,-1.38) -- (0,3.18);
+      \foreach \y in {-1,1,2,3}
+      \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+      \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+      \clip(-3.2,-1.38) rectangle (2.38,3.18);
+      \draw[line width=1.6pt, smooth,samples=100,domain=-3.2:-1.1] plot(\x,{(((\x)+1)^2+2)});
+      \draw[line width=1.6pt, smooth,samples=100,domain=-0.9:2.38] plot(\x,{(-((\x)+1)^2+1)});
+      \begin{scriptsize}
+        \draw [color=black] (-1,2) circle (2.0pt);
+        \draw [color=black] (-1,1) circle (2.0pt);
+      \end{scriptsize}
+    \end{tikzpicture}
+  \end{center}
+  Gebruik nu echter linker- en rechterlimieten.
 \end{oefening}
 
 Ook oneindige linker- en rechterlimieten in een getal worden gedefinieerd. Bijvoorbeeld voor linkerlimieten wordt dit:
@@ -331,7 +352,7 @@ Voor oneindige limieten gelden vorige rekenregels enkel als ze welbepaald zijn, 
 
 De volgende uitdrukkingen hebben geen rekenregels:
 $$(+\infty)-(+\infty)\;,\quad(+\infty)+(-\infty)\;,\quad\dfrac{\pm\infty}{\pm\infty}\;,\quad\dfrac{0}{0}\;,\quad 0\cdot(\pm\infty)\;,\quad 1^{\pm\infty}$$
-We noemen ze {\bf onbepaalde vormen}, deze kunnen in sommige gevallen
+We noemen ze {\bf onbepaalde vormen (VOV)}, deze kunnen in sommige gevallen
 toch berekend worden. We noemen dit de onbepaaldheid opheffen, zie
 verder.
 
@@ -339,7 +360,7 @@ verder.
 Bereken:
 \begin{exlist}{2}
   \itemsep.5em
-  \item $-\infty*3+10^{100}$
+  \item $-\infty\cdot3+10^{100}$
   \item $\dfrac{100}{0}$
   \item $-\dfrac{99}{0}$
   \item $\dfrac{0}{0}$
@@ -370,8 +391,8 @@ Zoek op internet de naam op van $10^{100}$. Machten kunnen textueel weergegeven 
   \item $\displaystyle \lim_{x\to -\infty}x$
   \item $\displaystyle \lim_{x\to -\infty}x^3$
   \item $\displaystyle \lim_{x\to 0}\dfrac{1}{x}$
-  \item $\displaystyle \lim_{x\to -\infty}2x^3-3x^2+4x-6$
-  \item $\displaystyle \lim_{x\to -\infty}7x^4-8x^2-9$
+  \item $\displaystyle \lim_{x\to -\infty}(2x^3-3x^2+4x-6)$
+  \item $\displaystyle \lim_{x\to -\infty}(7x^4-8x^2-9)$
   \end{exlist}
 \end{oefening}
 
@@ -416,38 +437,50 @@ Dat deze definitie klopt kunnen we bijvoorbeeld zien m.b.v. volgende voorbeeld.
 \paragraph*{Voorbeeld:}
 
 Beschouw de functie
-\[f(x)=-0.5x^6+2x^4+9x^2+6x\]
+\[f(x)=-0.0001x^6 - 0.001x^4 + 0.05x^3 + x^2 - 2x\]
 
-Tekenen we de grafiek van deze functie in het interval $[-1.5,1]$
+Tekenen we de grafiek van deze functie in het interval $[-5,5]$
 
 \begin{center}
-  \begin{tikzpicture}[xscale=3, yscale=0.5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \draw[->,color=black] (-1.41,0) -- (1.26,0);
-    \foreach \x in {-1.4,-1.2,-1,-0.8,-0.6,-0.4,-0.2,0.2,0.4,0.6,0.8,1,1.2}
-    \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-    \draw[->,color=black] (0,-1.5) -- (0,9.78);
-    \foreach \y in {-1,1,2,3,4,5,6,7,8,9}
-    \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-    \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-    \clip(-1.41,-1.5) rectangle (1.26,9.78);
-    \draw[line width=2pt, smooth,samples=100,domain=-1.40625:1.2589285714285714] plot(\x,{0-0.5*(\x)^6+2*(\x)^4+9*(\x)^2+6*(\x)});
+  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \begin{axis}[
+      x=1.0cm,y=0.3cm,
+      axis lines=middle,
+      xmin=-5.0,
+      xmax=5.0,
+      ymin=-2.0,
+      ymax=15.0,
+      xtick={-5.0,0.0,...,5.0},
+      ytick={-0.0,5.0,...,15.0},]
+      \clip(-5.,-2.) rectangle (5.,15.);
+      \draw[line width=2.pt,smooth,samples=100,domain=-5.0:5.0] plot(\x,{0-1.0E-4*(\x)^(6.0)-0.001*(\x)^(4.0)+0.05*(\x)^(3.0)+(\x)^(2.0)-2.0*(\x)});
+      \begin{scriptsize}
+        \draw (-8.706835340066094,-21.52772092098425) node {$f$};
+      \end{scriptsize}
+    \end{axis}
   \end{tikzpicture}
 \end{center}
 
-Dan lijkt het in eerste instantie dat de term $9x^2$ de overhand heeft, dit omdat deze de hoogste graad heeft. Bekijken we nu echter dezelfde functie in het interval $[-3,3]$ dan krijgen we een gans ander beeld. Geleidelijk aan krijgt de hoogste term $-0.5x^6$ de overhand.
+Dan lijkt het in eerste instantie dat we een dalparabool krijgen, dit omdat de coëfficiënten bij de termen met graad hoger dan twee zo klein zijn. Bekijken we nu echter dezelfde functie in het interval $[-10,10]$ dan krijgen we een gans ander beeld. Geleidelijk aan krijgt de hoogste term $-0.0001x^6$ de overhand.
 
 \begin{center}
-  \begin{tikzpicture}[xscale=2,yscale=0.1,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw[->,color=black] (-3.13,0) -- (3.14,0);
-\foreach \x in {-3,-2.5,-2,-1.5,-1,-0.5,0.5,1,1.5,2,2.5,3}
-\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-\draw[->,color=black] (0,-15.96) -- (0,49.33);
-\foreach \y in {-15,-10,-5,5,10,15,20,25,30,35,40,45}
-\draw[shift={(0,\y)},color=black] (-2pt,0pt) node[left] {\footnotesize $\y$};
-\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
-\clip(-3.13,-15.96) rectangle (3.14,49.33);
-\draw[line width=2pt, smooth,samples=100,domain=-3.125:3.142857142857143] plot(\x,{0-0.5*(\x)^6+2*(\x)^4+9*(\x)^2+6*(\x)});
-\end{tikzpicture}
+  \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+    \begin{axis}[
+      x=0.5cm,y=0.2cm,
+      axis lines=middle,
+      xmin=-10.0,
+      xmax=12.0,
+      ymin=-20.0,
+      ymax=45.0,
+      xtick={-10.0,-5.0,...,10.0},
+      ytick={-20.0,-15.0,...,45.0},]
+      \clip(-10.,-20.) rectangle (12.,45.);
+      \draw[line width=2.pt,smooth,samples=100,domain=-10.0:12.0] plot(\x,{0-1.0E-4*(\x)^(6.0)-0.001*(\x)^(4.0)+0.05*(\x)^(3.0)+(\x)^(2.0)-2.0*(\x)});
+      \begin{scriptsize}
+        \draw (-8.706835340066094,-21.52772092098425) node {$f$};
+      \end{scriptsize}
+    \end{axis}
+  \end{tikzpicture}
 \end{center}
 
 \begin{oefening}
@@ -671,8 +704,6 @@ $$\lim_{x\underset{>}{\to}a} f(x)=+\infty$$
 \vfill
 \end{minipage}
 
-\subsubsection*{Definitie}
-
 We krijgen:
 
 \begin{definitie}
@@ -738,9 +769,7 @@ $$\lim_{x\to +\infty} f(x)=b$$
 \vfill
 \end{minipage}
 
-\needspace{3cm}
-\subsubsection*{Definitie}
-
+\needspace{2cm}
 \begin{definitie}
 Een horizontale rechte met vergelijking $y=b$ is een {\bf horizontale asymptoot} van $f$ als één van de volgende limieten waar is:
 \begin{multicols}{2}
@@ -807,8 +836,6 @@ $$\mbox{S.A.: }y=mx+q$$
   \item $g(x)=\dfrac{1}{2}x+1$
   \item $h(x)=f(x)-g(x)$
 \end{itemize}
-
-\subsubsection*{Definitie}
 
 \begin{definitie}
 Een schuine rechte met vergelijking $y=mx+q$ is een {\bf schuine asymptoot} van $f$ als één van de volgende limieten waar is:
