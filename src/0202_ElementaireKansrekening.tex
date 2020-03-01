@@ -2,6 +2,14 @@
 
 \input{../gowiz.tex}
 
+\usepackage{auto-pst-pdf}
+\usepackage{pst-poker}
+\psset{inline=symbol}
+
+\usepackage{array}
+
+\usepackage{rotating}
+
 \newcommand{\dice}[1]{
 \begin{tikzpicture}[x=1em,y=1em,radius=0.1]
   \draw[rounded corners=1] (0,0) rectangle (1,1);
@@ -1108,16 +1116,45 @@ In een bepaalde stad zijn er twee taxibedrijven. Het ene heeft groene taxi's, en
   Antwoord: $22\%$
 \end{oefening}
 
-\cleardoublepage
 \appendix
 \section{Het kaartspel}
-Het kaartspel bestaat uit 4 soorten: klaveren (k), ruiten (r), harten (h) en schoppen (s). De soorten worden verder onderverdeeld in 13 kaarten: 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, boer (b), dame (d) en koning (k). De 1 wordt ook de aas genoemd. Er zijn ook twee soorten kleuren, de klaveren en de schoppen zijn zwart, de ruiten en harten zijn rood. De jokers negeren wij. Als we over een kaart spreken, dan schrijven we eerst de soort en dan als index de volgorde. Zo wordt de harten dame $h_q$ en de schoppen zeven $s_7$.
+\vspace*{-1em}
+\begin{minipage}[t][\paperheight]{.37\linewidth}
+    \vspace*{.5em}
+    Het kaartspel bestaat uit 4 soorten: klaveren (k), ruiten (r), harten (h) en schoppen (s). De soorten worden verder onderverdeeld in 13 kaarten: de aas (1 of A), 2, 3, 4, 5, 6, 7, 8, 9, 10, boer (J), koningin (Q) en koning (K). Er zijn ook twee soorten kleuren, de klaveren en de schoppen zijn zwart, de ruiten en harten zijn rood. De jokers negeren wij.
+    \vfill
+    \begin{center}
+      \includegraphics{Ming_Dynasty_playing_card}
+    \end{center}
+    \vfill\vfill
+    \mbox\
+\end{minipage}
+\begin{minipage}[t]{.7\linewidth}
+  \raisebox{-\height}{
+    \begin{sideways}
+\begin{postscript}
+  \psset{unit=1.1}
+  \psset{colorset=bw}
 
-\includegraphics[width=\textwidth, angle=0]{kaartspel}
+  \crdAc\crdtwoc\crdtrec\crdfourc\crdfivec
+  \crdsixc\crdsevc\crdeigc\crdninec\crdtenc
+  \crdJc\crdQc\crdKc
 
-\newpage
-\thispagestyle{empty}
-\includegraphics[width=1.4\textwidth, angle=90]{kaartspel_2}
+  \crdAd\crdtwod\crdtred\crdfourd\crdfived
+  \crdsixd\crdsevd\crdeigd\crdnined\crdtend
+  \crdJd\crdQd\crdKd
+
+  \crdAh\crdtwoh\crdtreh\crdfourh\crdfiveh
+  \crdsixh\crdsevh\crdeigh\crdnineh\crdtenh
+  \crdJh\crdQh\crdKh
+
+  \crdAs\crdtwos\crdtres\crdfours\crdfives
+  \crdsixs\crdsevs\crdeigs\crdnines\crdtens
+  \crdJs\crdQs\crdKs
+\end{postscript}
+\end{sideways}
+}
+\end{minipage}
 
 \end{document}
 
