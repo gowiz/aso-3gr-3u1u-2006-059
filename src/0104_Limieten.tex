@@ -315,17 +315,6 @@ Limieten op oneindig karakteriseren een bepaald gedrag van de functiewaarden als
 \cleardoublepage
 \section{Berekenen van limieten}
 
-\subsection{Rekenregels voor limieten}
-
-Voor eindige limieten hebben we de volgende rekenregels:
-\begin{align*}
-  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c &\Rightarrow \lim_{x\to a}\left(f(x)\pm g(x)\right)=b\pm c\\
-  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad k\in\mathbb{R} &\Rightarrow \lim_{x\to a} kf(x)=kb\\
-  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c &\Rightarrow \lim_{x\to a}\left(f(x)\cdot g(x)\right)=b\cdot c\\
-  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c \neq 0 &\Rightarrow \lim_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac{b}{c}\\
-  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad n\in\mathbb{N}_0 &\Rightarrow \lim_{x\to a} [f(x)]^n=b^n\\
-\end{align*}
-
 \subsection{Rekenregels voor rekenen met oneindig}
 
 Voor oneindige limieten gelden vorige rekenregels enkel als ze welbepaald zijn, dit wil zeggen dat één van de volgende rekenregels toepasbaar is ($k\in\mathbb{R}$):
@@ -339,19 +328,21 @@ Voor oneindige limieten gelden vorige rekenregels enkel als ze welbepaald zijn, 
     (+\infty)\cdot(+\infty) &= +\infty\\
     (+\infty)\cdot(-\infty) &= -\infty\\
     (-\infty)\cdot(+\infty) &= -\infty\\
-    (-\infty)\cdot(-\infty) &= +\infty\\
+    (-\infty)\cdot(-\infty) &= +\infty
   \end{align*}
 
   \begin{align*}
     k\cdot(+\infty)&=\begin{cases}+\infty & \mbox{ als } k>0\\-\infty & \mbox{ als } k<0\end{cases}\\
     k\cdot(-\infty)&=\begin{cases}-\infty & \mbox{ als } k>0\\+\infty & \mbox{ als } k<0\end{cases}\\
-    \dfrac{k}{+\infty}=0\\
-    \dfrac{k}{-\infty}=0\\
+    \dfrac{k}{+\infty}&=0\\
+    \dfrac{k}{-\infty}&=0\\
+    \dfrac{k}{0} &= +\infty \mbox{ of } -\infty
   \end{align*}
 \end{multicols}
 
 De volgende uitdrukkingen hebben geen rekenregels:
-$$(+\infty)-(+\infty)\;,\quad(+\infty)+(-\infty)\;,\quad\dfrac{\pm\infty}{\pm\infty}\;,\quad\dfrac{0}{0}\;,\quad 0\cdot(\pm\infty)\;,\quad 1^{\pm\infty}$$
+$$(+\infty)-(+\infty)\;,\quad(+\infty)+(-\infty)\;,$$
+$$\dfrac{\pm\infty}{\pm\infty}\;,\quad\dfrac{0}{0}\;,\quad 0\cdot(\pm\infty)\;,\quad 1^{\pm\infty}$$
 We noemen ze {\bf onbepaalde vormen (VOV)}, deze kunnen in sommige gevallen
 toch berekend worden. We noemen dit de onbepaaldheid opheffen, zie
 verder.
@@ -372,6 +363,8 @@ Bereken:
 
 Zoek op internet de naam op van $10^{100}$. Machten kunnen textueel weergegeven worden m.b.v. een \textasciicircum, dus voorgaande getal wordt \texttt{10\textasciicircum 100}.
 
+
+\needspace{4cm}
 \subsection{Basislimieten}
 
 \begin{itemize}
@@ -390,11 +383,40 @@ Zoek op internet de naam op van $10^{100}$. Machten kunnen textueel weergegeven 
   \item $\displaystyle \lim_{x\to 3}x$
   \item $\displaystyle \lim_{x\to -\infty}x$
   \item $\displaystyle \lim_{x\to -\infty}x^3$
+  \item $\displaystyle \lim_{x\to -\infty}x^6$
   \item $\displaystyle \lim_{x\to 0}\dfrac{1}{x}$
-  \item $\displaystyle \lim_{x\to -\infty}(2x^3-3x^2+4x-6)$
-  \item $\displaystyle \lim_{x\to -\infty}(7x^4-8x^2-9)$
+%  \item $\displaystyle \lim_{x\to -\infty}(2x^3-3x^2+4x-6)$
+%  \item $\displaystyle \lim_{x\to -\infty}(7x^4-8x^2-9)$
   \end{exlist}
 \end{oefening}
+
+\subsection{Rekenregels voor limieten}
+
+Voor eindige limieten hebben we de volgende rekenregels:
+\begin{align*}
+  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c &\Rightarrow \lim_{x\to a}\left(f(x)\pm g(x)\right)=b\pm c\\
+  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad k\in\mathbb{R} &\Rightarrow \lim_{x\to a} kf(x)=kb\\
+  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c &\Rightarrow \lim_{x\to a}\left(f(x)\cdot g(x)\right)=b\cdot c\\
+  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad \lim_{x\to a}g(x)=c \neq 0 &\Rightarrow \lim_{x\to a}\dfrac{f(x)}{g(x)}=\dfrac{b}{c}\\
+  \displaystyle\lim_{x\to a}f(x)=b\quad\mbox{en}\quad n\in\mathbb{N}_0 &\Rightarrow \lim_{x\to a} [f(x)]^n=b^n\\
+\end{align*}
+
+\begin{oefening}
+  Bereken volgende limieten
+  \begin{exlist}{2}
+  \item $\displaystyle \lim_{x\to 3}x^2+x$
+  \item $\displaystyle \lim_{x\to 4}3x^2$
+  \end{exlist}
+\end{oefening}
+
+\begin{oefening}
+  Bereken volgende limieten op twee manieren
+  \begin{exlist}{2}
+  \item $\displaystyle \lim_{x\to 3}x^2$ en $\displaystyle \lim_{x\to 3}\left(x\cdot x\right)$
+  \item $\displaystyle \lim_{x\to 4}x^3$ en $\displaystyle \left(\lim_{x\to 4}x\right)^3$
+  \end{exlist}
+\end{oefening}
+
 
 \needspace{4cm}
 \subsection{Limiet van een veeltermfunctie}
