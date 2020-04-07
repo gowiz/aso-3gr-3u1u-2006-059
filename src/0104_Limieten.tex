@@ -6,7 +6,7 @@
 {
   \vspace{0.4cm}
   \begin{mdframed}[nobreak=true,frametitle={Definitie}]
-  }{%
+n  }{%
   \end{mdframed}
 }
 
@@ -341,8 +341,9 @@ Voor oneindige limieten gelden vorige rekenregels enkel als ze welbepaald zijn, 
 \end{multicols}
 
 De volgende uitdrukkingen hebben geen rekenregels:
-$$(+\infty)-(+\infty)\;,\quad(+\infty)+(-\infty)\;,$$
-$$\dfrac{\pm\infty}{\pm\infty}\;,\quad\dfrac{0}{0}\;,\quad 0\cdot(\pm\infty)\;,\quad 1^{\pm\infty}$$
+$$(\pm\infty)-(\pm\infty)\;,\quad(\pm\infty)+(\mp\infty)$$
+$$\dfrac{\pm\infty}{\pm\infty}\;,\quad\dfrac{0}{0}\;,\quad \dfrac{k}{0} $$
+$$0\cdot(\pm\infty)\;,\quad 1^{\pm\infty}$$
 We noemen ze {\bf onbepaalde vormen (VOV)}, deze kunnen in sommige gevallen
 toch berekend worden. We noemen dit de onbepaaldheid opheffen, zie
 verder.
@@ -416,7 +417,6 @@ Voor eindige limieten hebben we de volgende rekenregels:
   \item $\displaystyle \lim_{x\to 4}x^3$ en $\displaystyle \left(\lim_{x\to 4}x\right)^3$
   \end{exlist}
 \end{oefening}
-
 
 \needspace{4cm}
 \subsection{Limiet van een veeltermfunctie}
@@ -572,7 +572,7 @@ Hier zullen we de onbepaaldheid $\dfrac{0}{0}$ krijgen die we kunnen opheffen. H
 
 \subsubsection*{Geval 4: limiet naar oneindig van een rationale functie}
 
-Deze limiet zal gelijk zijn aan de limiet van het quotiën van de termen met de hoogste graad in teller en noemer, in symbolen:
+Deze limiet zal gelijk zijn aan de limiet van het quotiënt van de termen met de hoogste graad in teller en noemer, in symbolen:
 
 \begin{eigenschap}
   $$\lim_{x\to \pm\infty}\dfrac{\left(a_nx^n+a_{n-1}x^{n-1}+\cdots+a_1x+a_0\right)}{\left(b_mx^m+b_{m-1}x^{m-1}+\cdots+b_1x+b_0\right)}=\lim_{x\to \pm\infty}\dfrac{a_nx^n}{b_mx^m}$$
