@@ -1,27 +1,25 @@
-TEXIN = $(shell echo *.tex)
-PDFOUT = $(patsubst %.tex,%.pdf, $(TEXIN))
+BUILDDIR = ../build
+SRCIN = $(shell echo *.tex *.png *.jpg *.m)
+SRCOUT = $(addprefix $(BUILDDIR)/, $(SRCIN))
 
-BASE = $(basename $(TEXIN))
-OEFTEX = $(addsuffix _Oefeningen.tex, $(BASE))
-OEFPDF = $(addsuffix _Oefeningen.pdf, $(BASE))
+BUILDFILES = $(BUILDDIR)/Makefile $(BUILDDIR)/latexmkrc
 
-#.PHONY: $(PDFOUT) $(OEFPDF)
-all: $(PDFOUT) $(OEFPDF)
+all: $(BUILDDIR) $(BUILDFILES) $(SRCOUT)
+	$(MAKE) -C $(BUILDDIR)
 
-%.pdf: %.tex
-	mkdir -p build
-	latexmk -pdf -silent -use-make $<
+.PHONY:
+$(BUILDDIR):
+	mkdir -p $(BUILDDIR)
+	mkdir -p $(BUILDDIR)/tmp
 
-%_Oefeningen.pdf: %_Oefeningen.tex
-	latexmk -pdf -silent -use-make $<
+$(BUILDDIR)/Makefile: BuildMakefile
+	cp BuildMakefile $(BUILDDIR)/Makefile
 
-%_Oefeningen.tex:  %.tex
-	cat $< | ../exex.o > $@
+$(BUILDDIR)/latexmkrc: latexmkrc
+	cp latexmkrc $(BUILDDIR)/latexmkrc
 
-.PHONY: release
-release: all
-	mkdir -p ../release
-	cp *.pdf ../release
+$(BUILDDIR)/%: %
+	cp $< $@
 
 .PHONY: clean
 clean:
@@ -35,7 +33,6 @@ clean:
 	$(RM) *.out
 	$(RM) *.synctex.gz
 	$(RM) _region_*
-	$(RM) -fr build/
 
 .PHONY: cleanall
 cleanall: clean
@@ -43,4 +40,11 @@ cleanall: clean
 	$(RM) *.pdf
 	$(RM) *_Oefeningen.pdf
 
+.PHONY: cleanbuild
+cleanbuild:
+	$(RM) ../build
+
+.PHONY: release
+release: all
+	$(MAKE) -C $(BUILDDIR) release
 
