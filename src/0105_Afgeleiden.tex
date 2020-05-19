@@ -722,9 +722,8 @@ We gaan als volgt te werk voor een gegeven functie $f(x)=y$:
 \begin{oefening}
 Gegeven de grafiek van de functie $f(x)$
 \begin{center}
-\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-\begin{tikzpicture}[scale=0.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=cqcqcq,dash pattern=on 2pt off 2pt, xstep=1.0cm,ystep=1.0cm] (-9.46,-5.51) grid (7.5,3.36);
+\begin{tikzpicture}[scale=0.9,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+\draw [color=lightgray,dash pattern=on 2pt off 2pt, xstep=1.0cm,ystep=1.0cm] (-9.46,-5.51) grid (7.5,3.36);
 \draw[->,color=black] (-9.46,0) -- (7.5,0);
 \foreach \x in {-9,-8,-7,-6,-5,-4,-3,-2,-1,1,2,3,4,5,6,7}
 \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
@@ -733,8 +732,8 @@ Gegeven de grafiek van de functie $f(x)$
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
 \clip(-9.46,-5.51) rectangle (7.5,3.36);
-\draw[line width=1.6pt, smooth,samples=100,domain=-9.459065715956372:7.503140032986307] plot(\x,{1/100*((\x)-5)*((\x)-1)*((\x)+3)*((\x)+8)});
-\draw (-7.97,2.23) node[anchor=north west] {f};
+\draw[line width=1.6pt, smooth,samples=100,domain=-9.5:7.5] plot(\x,{1/100*((\x)-5)*((\x)-1)*((\x)+3)*((\x)+8)});
+\draw (-8.1,2.2) node[anchor=north west] {$f$};
 \end{tikzpicture}
 \end{center}
 schets de grafiek van de afgeleide functie $f'(x)$.
@@ -743,9 +742,8 @@ schets de grafiek van de afgeleide functie $f'(x)$.
 \begin{oefening}
 Gegeven de grafiek van de afgeleide functie $f'$
 \begin{center}
-  \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
-  \begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-  \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-5.12) grid (5.11,5.11);
+  \begin{tikzpicture}[scale=0.8,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+  \draw [color=lightgray,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-5.12) grid (5.11,5.11);
   \draw[->,color=black] (-5.1,0) -- (5.11,0);
   \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
   \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
@@ -755,10 +753,7 @@ Gegeven de grafiek van de afgeleide functie $f'$
   \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
   \clip(-5.1,-5.12) rectangle (5.11,5.11);
   \draw[line width=1.6pt, smooth,samples=100,domain=-5.099666282866462:5.106622595766759] plot(\x,{((\x)-1)*((\x)+2)});
-  \draw (-3.19,1.81) node[anchor=north west] {f};
-  \begin{scriptsize}
-  \draw[color=black] (-3.07,5.05) node {$f$};
-  \end{scriptsize}
+  \draw (-3.07,2) node {$f'$};
   \end{tikzpicture}
 \end{center}
 bepaal de grafiek van de functie $f$:
@@ -766,9 +761,8 @@ bepaal de grafiek van de functie $f$:
   \begin{enumerate}[(A)]
     \item
     \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
     \begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-5.12) grid (5.11,5.11);
+    \draw [color=lightgray,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-5.12) grid (5.11,5.11);
     \draw[->,color=black] (-5.1,0) -- (5.11,0);
     \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
     \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
@@ -778,17 +772,13 @@ bepaal de grafiek van de functie $f$:
     \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
     \clip(-5.1,-5.12) rectangle (5.11,5.11);
     \draw[line width=1.6pt, smooth,samples=100,domain=-5.099666282866462:5.106622595766759] plot(\x,{1/6*(-12*(\x)+3*(\x)^2+2*(\x)^3)});
-    \draw (-3.19,1.81) node[anchor=north west] {f};
-    \begin{scriptsize}
-    \draw[color=black] (-3.9,-5.75) node {$f$};
-    \end{scriptsize}
+    \draw (-3.19,1.81) node[anchor=north west] {$f$};
     \end{tikzpicture}
     \end{center}
     \item
     \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
     \begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-5.12) grid (5.11,5.11);
+    \draw [color=lightgray,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-5.12) grid (5.11,5.11);
     \draw[->,color=black] (-5.1,0) -- (5.11,0);
     \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
     \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
@@ -798,17 +788,13 @@ bepaal de grafiek van de functie $f$:
     \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
     \clip(-5.1,-5.12) rectangle (5.11,5.11);
     \draw[line width=1.6pt, smooth,samples=100,domain=-5.099666282866462:5.106622595766759] plot(\x,{-1/6*(-12*(\x)+3*(\x)^2+2*(\x)^3)});
-    \draw (-3.19,1.81) node[anchor=north west] {f};
-    \begin{scriptsize}
-    \draw[color=black] (-3.9,-5.75) node {$f$};
-    \end{scriptsize}
+    \draw (-3.6,2.2) node[anchor=north west] {$f$};
     \end{tikzpicture}
     \end{center}
     \item
     \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
     \begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-5.12) grid (5.11,5.11);
+    \draw [color=lightgray,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-5.12) grid (5.11,5.11);
     \draw[->,color=black] (-5.1,0) -- (5.11,0);
     \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
     \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
@@ -818,17 +804,13 @@ bepaal de grafiek van de functie $f$:
     \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
     \clip(-5.1,-5.12) rectangle (5.11,5.11);
     \draw[line width=1.6pt, smooth,samples=100,domain=-5.099666282866462:5.106622595766759] plot(\x,{1/6*(-12*(-\x)+3*(-\x)^2+2*(-\x)^3)});
-    \draw (-3.19,1.81) node[anchor=north west] {f};
-    \begin{scriptsize}
-    \draw[color=black] (-3.9,-5.75) node {$f$};
-    \end{scriptsize}
+    \draw (-3.1,2.1) node[anchor=north west] {$f$};
     \end{tikzpicture}
     \end{center}
     \item
     \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
     \begin{tikzpicture}[scale=0.6,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-    \draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-5.12) grid (5.11,5.11);
+    \draw [color=lightgray,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-5.12) grid (5.11,5.11);
     \draw[->,color=black] (-5.1,0) -- (5.11,0);
     \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
     \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
@@ -838,10 +820,7 @@ bepaal de grafiek van de functie $f$:
     \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
     \clip(-5.1,-5.12) rectangle (5.11,5.11);
     \draw[line width=1.6pt, smooth,samples=100,domain=-5.099666282866462:5.106622595766759] plot(\x,{1/6*(-12*(-\x)+3*(\x)^2+2*(\x)^3)});
-    \draw (-3.19,1.81) node[anchor=north west] {f};
-    \begin{scriptsize}
-    \draw[color=black] (-3.9,-5.75) node {$f$};
-    \end{scriptsize}
+    \draw (1.1,2.4) node[anchor=north west] {$f$};
     \end{tikzpicture}
     \end{center}
   \end{enumerate}
@@ -853,9 +832,8 @@ Bepaal het tekenverloop van de afgeleide functie $f'$ als de grafiek van de func
 \begin{enumerate}[(a)]
   \item
   \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
 \begin{tikzpicture}[scale=0.9,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-7.12) grid (5.11,3.11);
+\draw [color=lightgray,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-5.1,-7.12) grid (5.11,3.11);
 \draw[->,color=black] (-5.1,0) -- (5.11,0);
 \foreach \x in {-5,-4,-3,-2,-1,1,2,3,4,5}
 \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
@@ -865,17 +843,13 @@ Bepaal het tekenverloop van de afgeleide functie $f'$ als de grafiek van de func
 \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
 \clip(-5.1,-7.12) rectangle (5.11,3.11);
 \draw[line width=1.6pt, smooth,samples=100,domain=-5.099666282866462:5.106622595766759] plot(\x,{(-90*(\x)-48*(\x)^2+2*(\x)^3+3*(\x)^4)/72});
-\draw (-3.18,1.87) node[anchor=north west] {f};
-\begin{scriptsize}
-\draw[color=black] (-4.41,7.66) node {$f$};
-\end{scriptsize}
+\draw (-3.6,1.87) node[anchor=north west] {$f$};
 \end{tikzpicture}
   \end{center}
   \item
   \begin{center}
-    \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
 \begin{tikzpicture}[scale=0.9,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
-\draw [color=cqcqcq,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-3.1,-6.12) grid (7.11,4.11);
+\draw [color=lightgray,dash pattern=on 1pt off 1pt, xstep=1.0cm,ystep=1.0cm] (-3.1,-6.12) grid (7.11,4.11);
 \draw[->,color=black] (-3.1,0) -- (7.11,0);
 \foreach \x in {-3,-2,-1,1,2,3,4,5,6,7}
 \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
@@ -885,10 +859,7 @@ Bepaal het tekenverloop van de afgeleide functie $f'$ als de grafiek van de func
 \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
 \clip(-3.1,-6.12) rectangle (7.11,4.11);
 \draw[line width=1.6pt, smooth,samples=100,domain=-3.099666282866462:7.106622595766759] plot(\x,{(48*(\x)-6*(\x)^2-16*(\x)^3+3*(\x)^4)/36});
-\draw (4.78,1) node[anchor=north west] {f};
-\begin{scriptsize}
-\draw[color=black] (-2.44,7.66) node {$f$};
-\end{scriptsize}
+\draw (4.4,1.1) node[anchor=north west] {$f$};
 \end{tikzpicture}
   \end{center}
 \end{enumerate}
