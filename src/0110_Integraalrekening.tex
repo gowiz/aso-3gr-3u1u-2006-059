@@ -103,13 +103,13 @@ In volgende figuur kennen we het verloop van de functie $f$ tot aan $x=a$. We wi
 \end{tikzpicture}
 \end{center}
 
-Voor de eenvoud noemen we $(a,f(a))=A$, $(b,f(b))=B$ en $(b,f(a))=C$. We zoeken dus de afstand $\Delta y=|BC|$. Teken nu de raaklijn $t$ van $f$ in $A$ en noem het snijpunt $BC \cap t=D$.Als $A$ en $B$ voldoende dicht bij elkaar liggen wordt $\Delta y$ benaderd door $|CD|$.
+Voor de eenvoud noemen we $(a,f(a))=A$, $(b,f(b))=B$ en $(b,f(a))=C$. We zoeken dus de afstand $\Delta y=|BC|$. Teken nu de raaklijn $t$ van $f$ in $A$ en noem het snijpunt $BC \cap t=D$. Als $A$ en $B$ voldoende dicht bij elkaar liggen wordt $\Delta y$ benaderd door $|CD|$.
 
 We berekenen nu de rico $m$ van $t$ op 2 manieren:
 \begin{itemize}
 \item M.b.v. definitie rico waarbij $(x_1,y_1)$ en $(x_2, y_2)$ zelf te kiezen punten op $t$ zijn:
   $$m=\dfrac{y_2-y_1}{x_2-x_1}=\dfrac{y_D-y_A}{x_D-x_A}=\dfrac{y_D-y_C}{b-a}=\dfrac{y_D-y_C}{\Delta x}$$
-\item M.b.v. afgeleid getal waarbij we omdat $t$ een rechte is zelf mogen kiezen waar:
+\item M.b.v. afgeleide waarde van $f$ in $a$. We kunnen kiezen om deze te berekenen in $a$ omdat de raaklijn $t$ een rechte is en dus zal de afgeleide waarde overal dezelfde zijn.
   $$m = f'(a)$$
 \end{itemize}
 
@@ -238,7 +238,7 @@ Bepaal de differentiaal van de volgende functies
 
 \subsection{Toepassing}
 
-Benader de waarde van $\log_2 5$, veronderstel dat je rekentoestel geen logaritmen kan uitrekenen.
+Benader de waarde van $\log_2 5$, veronderstel dat je rekentoestel geen logaritmen kan uitrekenen maar dat je wel weet dat $\ln 2 \approx 0.7$ is.
 
 \begin{center}
 \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -432,7 +432,7 @@ plot(\x,{\x}) -- (1,0) -- (0,0) -- cycle;
   \item Opsplitsen van de integraal: $\forall c\in[a,b]:$
   $$\int_a^b f(x)\;dx = \int_a^c f(x)\;dx + \int_c^b f(x)\;dx$$
   \item Lineariteit van de integraal: $\alpha, \beta\in\mathbb{R}$
-  $$\int_a^b \alpha f(x) + \beta f(x)\;dx = \alpha \int_a^b f(x) \;dx+ \beta \int_a^b f(x)\;dx$$
+  $$\int_a^b \alpha f(x) + \beta g(x)\;dx = \alpha \int_a^b f(x) \;dx+ \beta \int_a^b g(x)\;dx$$
 \end{itemize}
 
 \subsection{Primitieve functie}
@@ -533,18 +533,18 @@ M.b.v. de lineariteit van een bepaalde integraal kunnen we de bepaalde integraal
                        &= 2\int_1^3 x^3 \;dx - 3\int_1^3 x \;dx + \int_1^3 \;dx\\
                        &= 2\cdot\left[\dfrac{x^4}{4}\right]_1^3
                          - 3\cdot\left[\dfrac{x^2}{2}\right]_1^3
-                         + 2\cdot\left[x\right]_1^3\\
+                         + \left[x\right]_1^3\\
                        &= 2\cdot \left(\dfrac{81}{4}-\dfrac{1}{4}\right)
                          - 3\cdot \left(\dfrac{9}{2}-\dfrac{1}{2}\right)
-                         + 2\cdot \left(3-1\right)\\
+                         + \left(3-1\right)\\
                        &= 40 - 12 + 2\\
                        &= 30
 \end{align*}
 of veel korter!
 \begin{align*}
-  \int_1^3 2x^3-3x+1 \;dx &= \cdot\left[2\cdot\dfrac{x^4}{4} - 3\cdot\dfrac{x^2}{2} +2\cdot x\right]_1^3\\
-                       &= (2\cdot \dfrac{81}{4} - 3\cdot \dfrac{9}{2} + 2\cdot 3)
-                         - (2\cdot \dfrac{1}{4} - 3\cdot \dfrac{1}{2} + 2\cdot 1)\\
+  \int_1^3 2x^3-3x+1 \;dx &= \cdot\left[2\cdot\dfrac{x^4}{4} - 3\cdot\dfrac{x^2}{2} + x\right]_1^3\\
+                       &= (2\cdot \dfrac{81}{4} - 3\cdot \dfrac{9}{2} + 3)
+                         - (2\cdot \dfrac{1}{4} - 3\cdot \dfrac{1}{2} + 1)\\
                        &= 30
 \end{align*}
 
@@ -639,7 +639,7 @@ Bepaal de oppervlakte tussen
   \item $\displaystyle y=x^2-6x,\quad y=0,\quad x=2, \quad x=4$
   \item $\displaystyle y=\sqrt{x},\quad y=0,\quad x=0, \quad x=9$
   \item $\displaystyle y=\sqrt[3]{x},\quad y=0,\quad x=-4, \quad x=4$
-  \item $\displaystyle y=\dfrac{x^2-}{x^2},\quad y=0,\quad x=-3, \quad x=-1$
+  \item $\displaystyle y=\dfrac{x^2-1}{x^2},\quad y=0,\quad x=-3, \quad x=-1$
   \item $\displaystyle y=\dfrac{x^2-4}{x^2},\quad y=0,\quad x=1, \quad x=6$
   \item $\displaystyle y=x(x-3),\quad y=0,\quad x=0, \quad x=5$
 \end{enumerate}
@@ -647,7 +647,7 @@ Bepaal de oppervlakte tussen
 
 \begin{oefening}
 Bepaal de oppervlakte tussen de gegeven kromme en de $x$-as
-\begin{multicols}{2}
+%\begin{multicols}{2}
 \begin{enumerate}[(a)]
 \itemsep1em
   \item $\displaystyle y=4x-x^2$
@@ -655,7 +655,7 @@ Bepaal de oppervlakte tussen de gegeven kromme en de $x$-as
   \item $\displaystyle y=-x^3+5x^2-7x+3$
   \item $\displaystyle y=4x^4-8x^3-12x^2+16x+16$
 \end{enumerate}
-\end{multicols}
+%\end{multicols}
 \end{oefening}
 
 \subsection{Berekenen van de oppervlakte tussen twee krommen}
@@ -757,8 +757,80 @@ En definiëren nu de operator die op zoek gaat naar die primitieve:
        &= F(x) + c\\
        &= RL
   \end{align*}
-\item 
+\item Lineariteit van de onbepaalde integraal:
+  $$\int \alpha \cdot f(x) + \beta \cdot g(x)\;dx = \alpha \int f(x)\;dx + \beta \int g(x)\;dx$$
 \end{itemize}
+
+\subsection{Basisformules van de integraalrekening}
+
+De basisintegralen volgen uit de lijst van de basisafgeleiden, de afgeleide van de functie in het rechterlid is namelijk gelijk aan de integrand. We hebben telkens een {\bf integratieconstante} $C\in\mathbb{R}$.
+
+\subsubsection*{Basisintegralen}
+
+\begin{align*}
+  \int \;dx &= x + C\\
+  \int x^n \;dx &= \dfrac{x^{n+1}}{n+1} + C\\
+  \int \dfrac{1}{x} \;dx &= \ln|x| + C\\
+  \int e^x \;dx &= e^x + C\\
+  \int a^x \;dx &= \dfrac{a^x}{\ln a} + C\\
+  \int \sin x \;dx &= -\cos x + C\\
+  \int \cos x \;dx &= \sin x + C
+\end{align*}
+
+\needspace{3cm}
+\subsubsection*{Voorbeelden}
+
+\begin{enumerate}[(a)]
+\item $\displaystyle \int x^6 \;dx &= \dfrac{x^7}{7} + C$
+\item $\displaystyle \int \dfrac{1}{x^3} \;dx &= -\dfrac{1}{2x^2} + C$
+\item $\displaystyle \int \sqrt{x^3} \;dx &= \dfrac{2}{5}\sqrt{x^5} + C$
+\item $\displaystyle \int 2^x \;dx &= \dfrac{2^x}{\ln 2} + C$
+\item $\displaystyle \int (2x^2 - 4x + 1) \;dx &= x^3 - 2x^2 + x + C$
+\item $\displaystyle \int (3 \sin x - 2 \cos x) \;dx &= -3 \cos x - 2 \sin x + C$
+\end{enumerate}
+
+\begin{oefening}
+  Werk uit
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep.5em
+    \item $\displaystyle \int \;dx$
+    \item $\displaystyle \int x^2 \;dx$
+    \item $\displaystyle \int x^\pi \;dx$
+    \item $\displaystyle \int (4x^3 + 2x) \;dx$
+    \item $\displaystyle \int (x^3 + x^2 + x + 1) \;dx$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Werk uit
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep.5em
+    \item $\displaystyle \int \dfrac{1}{x^3} \;dx$
+    \item $\displaystyle \int \left(\dfrac{8}{x^4} - \dfrac{3}{x^2}\right) \;dx$
+    \item $\displaystyle \int \sqrt[3]{x} \;dx$
+    \item $\displaystyle \int \dfrac{1}{\sqrt[3]{x}} \;dx$
+    \item $\displaystyle \int \dfrac{\sqrt[3]{x}}{x} \;dx$
+    \item $\displaystyle \int \dfrac{\sqrt[4]{x}}{\sqrt[3]{x}} + \dfrac{x^3}{x^2} \;dx$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Werk uit
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep.5em
+    \item $\displaystyle \int \dfrac{2}{x} \;dx$
+    \item $\displaystyle \int \dfrac{-x^2 + x - 1}{x} \;dx$
+    \item $\displaystyle \int 5^x \;dx$
+    \item $\displaystyle \int 2^x \cdot 3^x \;dx$
+    \item $\displaystyle \int \dfrac{e^x}{e} \;dx$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
 
 \begin{oefening} {\scriptsize \em IJkingsproef industrieel ingenieur}\\
 Bereken
