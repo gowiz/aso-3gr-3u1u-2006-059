@@ -626,7 +626,7 @@ $
 =
 \begin{pmatrix}
   2 & 0\\
-  3 & -8\\
+  6 & -8\\
   0 & -12
 \end{pmatrix}
 $
@@ -749,12 +749,12 @@ Als $A,B \in \mathbb{R}^{m \times n}$ en als $\lambda,\,\mu \in \mathbb{R}$, dan
     &=
   \begin{pmatrix}
     1 \cdot 0 + 0 \cdot 2 + 5 \cdot 4    & 1 \cdot 1 + 0 \cdot 6 + 5 \cdot (-3)\\
-    -2 \cdot 0 + 3 \cdot 2 + (-1)\cdot 4 & -2 \cdot 0 + 3 \cdot 6 + (-1) \cdot (-3)
+    -2 \cdot 0 + 3 \cdot 2 + (-1)\cdot 4 & -2 \cdot 1 + 3 \cdot 6 + (-1) \cdot (-3)
   \end{pmatrix}\\
     &=
   \begin{pmatrix}
     20 & -14\\
-    2  & 21
+    2  & 19
   \end{pmatrix}
 \end{align*}
 
@@ -858,7 +858,8 @@ Bereken de volgende matrices, indien mogelijk:
     &= \begin{pmatrix}3 & 2\\ 2 & 1\end{pmatrix}\\
 \end{align*}
 
-\todo{OEFENING} Beschouw $A=\begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix}$ en bereken
+\begin{oefening}
+Beschouw $A=\begin{pmatrix}1 & 1\\ 1 & -1\end{pmatrix}$ en bereken
 \begin{multicols}{3}
 \begin{enumerate}[(a)]
 \item $A^2$
@@ -866,7 +867,7 @@ Bereken de volgende matrices, indien mogelijk:
 \item $A^4$
 \end{enumerate}
 \end{multicols}
-
+\end{oefening}
 
 \subsection{Getransponeerde van een matrix}
 
@@ -910,7 +911,7 @@ Bereken de volgende matrices, indien mogelijk:
 
 \paragraph*{Eigenschappen:}
 \begin{itemize}
-\item $(A^T)^T$
+\item $(A^T)^T=A$
 \item $(\lambda \cdot A)^T=\lambda \cdot A^T$
 \item $(A + B)^T = A^T + B^T$
 \item $(A \cdot B)^T = B^T \cdot A^T$
@@ -1155,7 +1156,7 @@ In een ontwikkelingsland is er een wekelijks mededelingsprogramma voor landbouwe
 \end{oefening}
 
 \begin{oefening}
-De migratie tussen de steden Antwerpen, Mechelen en Brussel  voor een periode van 3 jaar
+De migratie tussen de steden Antwerpen, Mechelen en Brussel  voor een periode van 1 jaar
 is gegeven door
 
 $$
@@ -1166,13 +1167,13 @@ M = \begin{pmatrix}
 \end{pmatrix}
 $$
 
-De bevolking in deze steden is nu Antwerpen – 55, Mechelen – 98, Brussel – 112.
+De bevolking in deze steden is nu Antwerpen - 490, Mechelen – 75, Brussel – 1180 in duizendtallen.
 
 \begin{enumerate}[(a)]
   \item Geef bijhorende graaf.
   \item Geef populatiematrix nu.
   \item Bereken de bevolkingsaantallen na 1, 2 en 3 jaar en voorspel wat er zal gebeuren.
-  \item Controleer nu je voorspelling en bereken m.b.v. ICT de bevolkingsaantallen naar een veel jaar.
+  \item Controleer nu je voorspelling en bereken m.b.v. ICT de bevolkingsaantallen na veel jaar.
 \end{enumerate}
 \end{oefening}
 
@@ -1198,7 +1199,7 @@ We nemen aan dat deze wijziging zich elk jaar opnieuw voordoet.
 \subsection{Voorbeeld}
 
 \begin{minipage}{.5\linewidth}
-Beschouw een vlindersoort, die net als andere vlindersoorten een volledige gedaanteverwisseling doormaakt. In het eerste stadium is de vlinder een eitje. Doordat de eitjes betrekkelijk goed gecamoufleerd zijn komen ongeveer 30\% van de eitjes uit. Daarna wordt de vlinder een rups. Dit is het gevaarlijkste stadium als vlinder, 95\% van de rupsen zullen geen pop worden! Ook de poppen zijn goed gecamoufleerd en ongeveer 25\% van de poppen wordt dan een mooie vlinder. De vlinders paren dan gemiddeld 950 eitjes. Waarna deze cyclus opnieuw begint. Voor de eenvoud gaan we ervan uit dat de stadia even lang duren, ongeveer een maand.
+Beschouw een vlindersoort, die net als andere vlindersoorten een volledige gedaanteverwisseling doormaakt. In het eerste stadium is de vlinder een eitje. Doordat de eitjes betrekkelijk goed gecamoufleerd zijn komen ongeveer 30\% van de eitjes uit. Daarna wordt de vlinder een rups. Dit is het gevaarlijkste stadium als vlinder, 95\% van de rupsen zullen geen pop worden! Ook de poppen zijn goed gecamoufleerd en ongeveer 25\% van de poppen wordt dan een mooie vlinder. De vlinders baren dan gemiddeld 950 eitjes. Waarna deze cyclus opnieuw begint. Voor de eenvoud gaan we ervan uit dat de stadia even lang duren, ongeveer een maand.
 \end{minipage}
 \begin{minipage}{.5\linewidth}
   \begin{center}
