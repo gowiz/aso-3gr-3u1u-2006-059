@@ -1037,7 +1037,8 @@ Samengevat in het stijgen\&dalen:
 
 \begin{oefening}
 Bepaal het tekenverloop van de functies die bij de volgende grafieken horen:
-    \vspace*{1cm}
+\begin{enumerate}[(a)]
+\item \mbox{}
     \begin{center}
       \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
       \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -1045,17 +1046,17 @@ Bepaal het tekenverloop van de functies die bij de volgende grafieken horen:
         \draw[->,color=black] (-3.28,0) -- (6.38,0);
         \foreach \x in {-3,-2,-1,1,2,3,4,5,6}
         \draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
-        \draw[color=black] (6.06,0.08) node [anchor=south west] { x};
+        \draw[color=black] (6.06,0.08) node [anchor=south west] {$x$};
         \draw[->,color=black] (0,-3.34) -- (0,2.18);
         \foreach \y in {-3,-2,-1,1,2}
         \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-        \draw[color=black] (0.1,1.78) node [anchor=west] { y};
+        \draw[color=black] (0.1,1.78) node [anchor=west] {$y$};
         \draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
         \clip(-3.28,-3.34) rectangle (6.38,2.18);
         \draw[line width=1.6pt, smooth,samples=100,domain=-3.2800000000000002:6.379999999999999] plot(\x,{0.5*(\x)-1.5});
       \end{tikzpicture}
     \end{center}
-    \vspace*{1cm}
+\item \mbox{}
     \begin{center}
       \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
       \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -1078,7 +1079,7 @@ Bepaal het tekenverloop van de functies die bij de volgende grafieken horen:
         \draw [color=black] (5,1) circle (2.5pt);
       \end{tikzpicture}
     \end{center}
-    \vspace*{1cm}
+\item \mbox{}
     \begin{center}
       \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
       \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -1095,7 +1096,7 @@ Bepaal het tekenverloop van de functies die bij de volgende grafieken horen:
         \draw[line width=1.8pt, smooth,samples=500,domain=4.01:8.1] plot(\x,{1/((\x)-4)+1});
       \end{tikzpicture}
     \end{center}
-    \vspace*{1cm}
+\item \mbox{}
     \begin{center}
       \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
         \draw[->,color=black] (-5.42,0) -- (5.31,0);
@@ -1112,6 +1113,7 @@ Bepaal het tekenverloop van de functies die bij de volgende grafieken horen:
         \draw (2.3,1.25) node[anchor=north west] {$f$};
       \end{tikzpicture}
     \end{center}
+\end{enumerate}
 \end{oefening}
 
 \subsection{Extrema}
@@ -1171,7 +1173,8 @@ Als we inzoomen op het interval $[0.5,1.5]$ dan merken we dat dit interval bij $
 
 \begin{oefening}
 Bepaal alle extrema van de volgende grafieken.
-    \vspace*{1cm}
+\begin{enumerate}[(a)]
+\item \mbox{}
     \begin{center}
       \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
       \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -1190,7 +1193,7 @@ Bepaal alle extrema van de volgende grafieken.
         \draw [color=black] (5,1) circle (2.5pt);
       \end{tikzpicture}
     \end{center}
-    \vspace*{1cm}
+\item \mbox{}
     \begin{center}
       \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
       \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -1207,7 +1210,7 @@ Bepaal alle extrema van de volgende grafieken.
         \draw[line width=1.8pt, smooth,samples=500,domain=4.01:8.1] plot(\x,{1/((\x)-4)+1});
       \end{tikzpicture}
     \end{center}
-    \vspace*{1cm}
+\item \mbox{}
     \begin{center}
       \definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
       \begin{tikzpicture}[scale=0.7,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -1226,6 +1229,7 @@ Bepaal alle extrema van de volgende grafieken.
         \draw (2.3,1.25) node[anchor=north west] {$f$};
       \end{tikzpicture}
     \end{center}
+  \end{enumerate}
 \end{oefening}
 
 \cleardoublepage
