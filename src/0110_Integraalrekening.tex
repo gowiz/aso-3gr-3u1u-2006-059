@@ -845,10 +845,64 @@ $$\int \dfrac{(1+x)^2}{\sqrt{x}}\;dx$$
 \end{oefening}
 
 \cleardoublepage
-\section{Integratiemethoden}
+\subsection{Substitutiemethode}
 
-\todo{Dit staat nog niet juist}
+\subsubsection{$t=x+a$ met $a\in\mathbb{R}$}
 
+\begin{align*}
+  t = x+a \Rightarrow dt &= d(x+a)\\ &= (x+a)'\cdot dx \\ &= dx
+\end{align*}
+
+\subsubsection*{Voorbeeld 1}
+\begin{align*}
+  \int \left(x+4\right)^8\cdot dx
+  &= \int t^8 \cdot dt \qquad\qquad\mbox{subs }t=x+3 \Rightarrow dx = dt\\
+  &= \dfrac{t^9}{9} + C\\
+  &= \dfrac{(x+3)^9}{9} + C
+\end{align*}
+Of korter genoteerd:
+\begin{align*}
+  \int \left(x+4\right)^8\cdot dx &= \int (x+4)^8 \cdot d(x+4)\\
+  &= \dfrac{(x+3)^9}{9} + C
+\end{align*}
+
+\subsubsection*{Voorbeeld 2}
+\begin{align*}
+  \int \dfrac{1}{x-5} \cdot dx &= \int \dfrac{1}{t} \cdot dt \qquad\qquad\mbox{subs }t=x-5 \Rightarrow dx = dt\\
+  &= \ln|t| + C\\
+  &= \ln|x-5| + C
+\end{align*}
+Of korter:
+\begin{align*}
+  \int \dfrac{1}{x-5} \cdot dx &= \int \dfrac{1}{x-5} \cdot d(x-5)\\
+  &= \ln|x-5| + C
+\end{align*}
+
+\begin{oefening}
+  Bereken
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \item $\displaystyle\int \sqrt{x+6} dx$
+  \item $\displaystyle\int e^{x+9}x dx$
+  \item $\displaystyle\int \dfrac{1}{\cos^2(x-1)} dx$
+  \item $\displaystyle\int \dfrac{1}{3(x-8)^4} dx$
+  \item $\displaystyle\int (2x-2)\cdot\sqrt{x-1} dx$
+  \end{enumerate}
+\end{multicols}
+\end{oefening}
+
+
+
+
+
+
+
+
+
+
+
+\pagebreak
+% Substitutie en Partiële integratie nodig
 \begin{oefening}{\scriptsize Bron: Examencommissie Toelatingsexamen Arts en Tandarts, Juli 2016, id: 12190}\\
 De afgeleide van een functie $f$, gedefinieerd op $]0,+\infty[$, is gegeven door $f'(x)=\ln x$. Bovendien is $f(e)=e^2$. Dan is $f(e^2)$ gelijk aan \hfill(geen giscorrectie)
 \begin{enumerate}[(A)]
