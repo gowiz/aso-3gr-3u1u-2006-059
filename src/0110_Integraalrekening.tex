@@ -942,7 +942,7 @@ Of korter genoteerd:
 \end{oefening}
 
 \pagebreak
-\subsubsection{Integrand $\dfrac{f'(x)}{f(x)}$}
+\subsubsection{Integrand $f'(x)/f(x)$}
 
 De integrand bestaat dus uit een teller die de afgeleide is van de noemer.
 
@@ -959,17 +959,17 @@ De integrand bestaat dus uit een teller die de afgeleide is van de noemer.
 \subsubsection*{Voorbeeld 1}
 \begin{align*}
   \int \dfrac{2x}{x^2+1} \;dx
-  &= \int \dfrac{dt}{t} \qquad\qquad\mbox{subs }t=x^2+1 \Rightarrow dt = 2x\;dx\\
+  &= \int \dfrac{dt}{t} && \mbox{subs }t=x^2+1 \Rightarrow dt = 2x\;dx\\
   &= \ln |t| +C\\
   &= \ln |x^2+1| + C\\
-  &= \ln(x^2+1) + C \qquad \mbox{ want } x^2+1 > 0 \;  \forall x \in \mathbb{R}
+  &= \ln(x^2+1) + C  &&\mbox{ want } x^2+1 > 0 \;  \forall x \in \mathbb{R}
 \end{align*}
 
 \vspace{-1cm}
 \subsubsection*{Voorbeeld 2}
 \begin{align*}
   \int \tan \;dx &= \int \dfrac{\sin x}{\cos x} \;dx\\
-  &= - \int \dfrac{dt}{t} \qquad\qquad\mbox{subs }t=\cos x \Rightarrow dt = -\sin x\;dx\\
+  &= - \int \dfrac{dt}{t} &&\mbox{subs }t=\cos x \Rightarrow dt = -\sin x\;dx\\
   &= - \ln |t| +C\\
   &= - \ln |\cos x| + C\\
 \end{align*}
@@ -1025,14 +1025,14 @@ bekomen.
 
 Bereken $\displaystyle\int \dfrac{dx}{\sin x}$
 \begin{alignat*}{2}
-  && \mbox{stel } t =\tan \dfrac{x}{2}\\
-  && \Rightarrow \sin x &= \dfrac{2t}{1+t^2} \qquad \mbox{herinner je de $t$-formule}\\
-  && \Rightarrow dt &= d\left(\tan\dfrac{x}{2}\right)\\
+  \mbox{stel } t =\tan \dfrac{x}{2}\\
+  \Rightarrow &&\sin x &= \dfrac{2t}{1+t^2} && \mbox{herinner je de $t$-formule}\\
+  \Rightarrow &&dt &= d\left(\tan\dfrac{x}{2}\right)\\
   && &=\dfrac{1}{\cos^2\dfrac{x}{2}} \; d\left(\dfrac{x}{2}\right)\\
   && &=\dfrac{1}{2 \cdot \cos^2\dfrac{x}{2}} \; dx\\
-  && \Leftrightarrow dx &= 2 \cdot \cos^2\dfrac{x}{2} \; dt\\
-  && &= \dfrac{2}{1+\tan^2\dfrac{x}{2}} \; dt \qquad \mbox{herinner je de grondformule}\\
-  && &= \dfrac{2}{1+t^2} \; dt \qquad \mbox{herinner je $t$ is in de $t$-formules}\\
+  \Leftrightarrow &&dx &= 2 \cdot \cos^2\dfrac{x}{2} \; dt\\
+  && &= \dfrac{2}{1+\tan^2\dfrac{x}{2}} \; dt \qquad && \mbox{herinner je de grondformule}\\
+  && &= \dfrac{2}{1+t^2} \; dt && \mbox{herinner je wat $t$ is in de $t$-formules}\\
 \end{alignat*}
 En dus
 \begin{align*}
@@ -1047,6 +1047,8 @@ En dus
   Geen oefeningen op de algemene methode.
 \end{oefening}
 
+\pagebreak
+\subsection{Partiële integratie}
 
 
 \pagebreak
