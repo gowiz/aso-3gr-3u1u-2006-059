@@ -853,6 +853,7 @@ $$\int \dfrac{(1+x)^2}{\sqrt{x}}\;dx$$
   t = x+a \Rightarrow dt &= d(x+a)\\ &= (x+a)'\cdot dx \\ &= dx
 \end{align*}
 
+\vspace{-1cm}
 \subsubsection*{Voorbeeld 1}
 \begin{align*}
   \int \left(x+4\right)^8\cdot dx
@@ -866,6 +867,7 @@ Of korter genoteerd:
   &= \dfrac{(x+3)^9}{9} + C
 \end{align*}
 
+\vspace{-1cm}
 \subsubsection*{Voorbeeld 2}
 \begin{align*}
   \int \dfrac{1}{x-5} \cdot dx &= \int \dfrac{1}{t} \cdot dt \qquad\qquad\mbox{subs }t=x-5 \Rightarrow dx = dt\\
@@ -939,6 +941,7 @@ Of korter genoteerd:
 \end{multicols}
 \end{oefening}
 
+\pagebreak
 \subsubsection{Integrand $\dfrac{f'(x)}{f(x)}$}
 
 De integrand bestaat dus uit een teller die de afgeleide is van de noemer.
@@ -952,6 +955,7 @@ De integrand bestaat dus uit een teller die de afgeleide is van de noemer.
   &&                                          &= \ln |f(x)| + C
 \end{alignat*}
 
+\vspace{-1cm}
 \subsubsection*{Voorbeeld 1}
 \begin{align*}
   \int \dfrac{2x}{x^2+1} \;dx
@@ -961,14 +965,16 @@ De integrand bestaat dus uit een teller die de afgeleide is van de noemer.
   &= \ln(x^2+1) + C \qquad \mbox{ want } x^2+1 > 0 \;  \forall x \in \mathbb{R}
 \end{align*}
 
+\vspace{-1cm}
 \subsubsection*{Voorbeeld 2}
 \begin{align*}
   \int \tan \;dx &= \int \dfrac{\sin x}{\cos x} \;dx\\
-  &= - \int \dfrac{dt}{t} \qquad\qquad\mbox{subs }t=cos x \Rightarrow dt = -\sin x\;dx\\
+  &= - \int \dfrac{dt}{t} \qquad\qquad\mbox{subs }t=\cos x \Rightarrow dt = -\sin x\;dx\\
   &= - \ln |t| +C\\
   &= - \ln |\cos x| + C\\
 \end{align*}
 
+\vspace{-1cm}
 \begin{oefening}
   Bereken
   \begin{multicols}{2}
@@ -984,7 +990,62 @@ De integrand bestaat dus uit een teller die de afgeleide is van de noemer.
 \end{multicols}
 \end{oefening}
 
+\subsubsection{Andere substituties}
 
+Geen algemene regel, wat je kiest voor de substitutie $t$ hangt af van de integrand.
+
+\subsubsection*{Voorbeeld 1}
+\begin{align*}
+  \int \sin^5x \cdot \cos x \cdot \;dx
+  &= \int t^5 \;dt \qquad\qquad\mbox{subs }t=\sin x \Rightarrow dt = \cos x \;dx\\
+  &= \dfrac{t^6}{6} +C\\
+  &= \dfrac{1}{6}\sin^6 x + C
+\end{align*}
+
+\subsubsection*{Voorbeeld 2}
+\begin{align*}
+  \int x \cdot \sqrt{x+3} \;dx
+  &= \int (t-3) \cdot \sqrt{t} \cdot \;dt \qquad\qquad\mbox{subs }t=x+3 \Rightarrow dt = dx\\
+  &= \int t\cdot t^{1/2} - 3\cdot t^{1/2} \;dt\\
+  &= \int t^{3/2} \;dt - 3 \int t^{1/2} \;dt\\
+  &= \dfrac{t^{5/2}}{5/2} - 3\cdot \dfrac{t^{3/2}}{3/2} + C\\
+  &= \frac{2}{5}t^2\sqrt{t} - 2 t \sqrt{t} + C\\
+  &= 2t\sqrt{t}(\frac{t}{5}-1) + C\\
+  &= 2(x+3)\sqrt{x+3}\left(\frac{x+3}{5}-1\right) + C\\
+  &= \dfrac{2}{5}(x+3)\sqrt{x+3}\left(x-2\right) + C\\
+\end{align*}
+
+\subsubsection*{Voorbeeld 3}
+
+Voor het volgende voorbeeld herinneren we ons nog de $t$-formules waarbij $t=\tan\dfrac{x}{2}$
+$$\sin x = \dfrac{2t}{1+t^2} \qquad \cos x = \dfrac{1-t^2}{1+t^2} \qquad \tan x = \dfrac{2t}{1-t^2}$$
+en dat we m.b.v. de grondformule (beide leden delen door $\cos^2\theta$)
+$$\cos^2\theta + \sin^2\theta = 1 \Leftrightarrow 1 + \tan^2\theta = \dfrac{1}{\cos^2\theta}$$
+bekomen.
+
+Bereken $\displaystyle\int \dfrac{dx}{\sin x}$
+\begin{alignat*}{2}
+  && \mbox{stel } t =\tan \dfrac{x}{2}\\
+  && \Rightarrow \sin x &= \dfrac{2t}{1+t^2} \qquad \mbox{herinner je de $t$-formule}\\
+  && \Rightarrow dt &= d\left(\tan\dfrac{x}{2}\right)\\
+  && &=\dfrac{1}{\cos^2\dfrac{x}{2}} \; d\left(\dfrac{x}{2}\right)\\
+  && &=\dfrac{1}{2 \cdot \cos^2\dfrac{x}{2}} \; dx\\
+  && \Leftrightarrow dx &= 2 \cdot \cos^2\dfrac{x}{2} \; dt\\
+  && &= \dfrac{2}{1+\tan^2\dfrac{x}{2}} \; dt \qquad \mbox{herinner je de grondformule}\\
+  && &= \dfrac{2}{1+t^2} \; dt \qquad \mbox{herinner je $t$ is in de $t$-formules}\\
+\end{alignat*}
+En dus
+\begin{align*}
+  \int \dfrac{dx}{\sin x}
+  &= \int \dfrac{1}{\text{\footnotesize$\dfrac{2t}{1+t^2}$}} \cdot \dfrac{2}{1+t^2} \;dt\\
+  &= \int \dfrac{1}{t}\;dt\\
+  &= \ln|t| + C\\
+  &= \ln|\tan\dfrac{x}{2}| + C\\
+\end{align*}
+
+\begin{oefening}
+  Geen oefeningen op de algemene methode.
+\end{oefening}
 
 
 
