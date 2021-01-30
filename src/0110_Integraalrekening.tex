@@ -939,8 +939,50 @@ Of korter genoteerd:
 \end{multicols}
 \end{oefening}
 
+\subsubsection{Integrand $\dfrac{f'(x)}{f(x)}$}
 
+De integrand bestaat dus uit een teller die de afgeleide is van de noemer.
 
+\begin{alignat*}{2}
+  \mbox{subst } t = f(x) &&\Rightarrow dt &= df(x)\\
+  &&               &= \dfrac{df(x)}{dx} \cdot dx \\
+  &&               &= f'(x) \cdot dx\\
+  &&\Rightarrow \int \dfrac{f'(x)}{f(x)} \;dx &= \int \dfrac{1}{t} \;dt\\
+  &&                                          &= \ln |t| + C\\
+  &&                                          &= \ln |f(x)| + C
+\end{alignat*}
+
+\subsubsection*{Voorbeeld 1}
+\begin{align*}
+  \int \dfrac{2x}{x^2+1} \;dx
+  &= \int \dfrac{dt}{t} \qquad\qquad\mbox{subs }t=x^2+1 \Rightarrow dt = 2x\;dx\\
+  &= \ln |t| +C\\
+  &= \ln |x^2+1| + C\\
+  &= \ln(x^2+1) + C \qquad \mbox{ want } x^2+1 > 0 \;  \forall x \in \mathbb{R}
+\end{align*}
+
+\subsubsection*{Voorbeeld 2}
+\begin{align*}
+  \int \tan \;dx &= \int \dfrac{\sin x}{\cos x} \;dx\\
+  &= - \int \dfrac{dt}{t} \qquad\qquad\mbox{subs }t=cos x \Rightarrow dt = -\sin x\;dx\\
+  &= - \ln |t| +C\\
+  &= - \ln |\cos x| + C\\
+\end{align*}
+
+\begin{oefening}
+  Bereken
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \item $\displaystyle\int \dfrac{x^2}{x^3+1} \;dx$
+  \item $\displaystyle\int \dfrac{2x+1}{x^2+x+3} \;dx$
+  \item $\displaystyle\int \dfrac{12x}{x^2-5} \;dx$
+  \item $\displaystyle\int \dfrac{x^2}{13-x^3} \;dx$
+  \item $\displaystyle\int \dfrac{1-\sin x}{x+\cos x} \;dx$
+  \item $\displaystyle\int \dfrac{e^x}{e^x-9} \;dx$
+  \item $\displaystyle\int \dfrac{1}{(2x+5) \cdot \ln(2x+5)} \;dx$
+  \end{enumerate}
+\end{multicols}
+\end{oefening}
 
 
 
