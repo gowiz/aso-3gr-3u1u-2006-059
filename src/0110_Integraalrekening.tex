@@ -941,7 +941,6 @@ Of korter genoteerd:
 \end{multicols}
 \end{oefening}
 
-\pagebreak
 \subsubsection{Integrand $f'(x)/f(x)$}
 
 De integrand bestaat dus uit een teller die de afgeleide is van de noemer.
@@ -1149,8 +1148,35 @@ Bereken $\displaystyle I=\int \ln x \cdot dx$
   &= x\ln x - x + C\\
 \end{align*}
 
-\needspace{5cm}
-\subsubsection*{Voorbeeld 4}
+\subsubsection{Oefeningen}
+
+\begin{oefening}
+  Bereken
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \item $\displaystyle\int x \cdot \cos 2x \;dx$
+  \item $\displaystyle\int x \cdot \sin 5x \;dx$
+  \item $\displaystyle\int x \cdot e^{3x} \;dx$
+  \item $\displaystyle\int x \cdot e^{-4x} \;dx$
+  \item $\displaystyle\int x \cdot e^{7x} \;dx$
+  \item $\displaystyle\int \dfrac{x}{\cos^2 x} \;dx$
+  \item $\displaystyle\int \dfrac{x}{\sin^2 x} \;dx$
+  \item $\displaystyle\int \dfrac{\ln x}{x^2} \;dx$
+  \item $\displaystyle\int \dfrac{\ln x}{x^3} \;dx$
+  \item $\displaystyle\int x \ln x \;dx$
+  \item $\displaystyle\int \ln(x^2 + 1) \;dx$
+  \item $\displaystyle\int \dfrac{\ln(\tan x)}{\cos^2 x} \;dx$
+  \end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\subsection{Geavanceerde integratietechnieken}
+
+\subsubsection{Meerdere keren partiële integratie}
+
+Het kan gebeuren dat we een integraal oplossen m.b.v. partiële integratie en dat de bekomen integraal weliswaar eenvoudiger is, maar nog niet eenvoudig op te lossen is. Dan kan het soms zijn dat nogmaals een partiële integratie uitvoeren soelaas brengt.
+
+\subsubsection*{Voorbeeld}
 Bereken $\displaystyle I=\int x^2 \cdot e^x \; dx$
 \begin{alignat*}{3}
   f(x) &= x^2 \qquad & dg(x) &= e^x \;dx\\
@@ -1172,19 +1198,10 @@ Bereken $\displaystyle I=\int x^2 \cdot e^x \; dx$
   &= \left( x^2 -2 x + 2\right )  e^x + C
 \end{align*}
 
-\subsubsection{Oefeningen}
-
 \begin{oefening}
   Bereken
   \begin{multicols}{2}
   \begin{enumerate}[(a)]
-  \item $\displaystyle\int x \cdot \cos 2x \;dx$
-  \item $\displaystyle\int x \cdot \sin 5x \;dx$
-  \item $\displaystyle\int x \cdot e^{3x} \;dx$
-  \item $\displaystyle\int x \cdot e^{-4x} \;dx$
-  \item $\displaystyle\int x \cdot e^{7x} \;dx$
-  \item $\displaystyle\int \dfrac{x}{\cos^2 x} \;dx$
-  \item $\displaystyle\int \dfrac{x}{\sin^2 x} \;dx$
   \item $\displaystyle\int x^2 \cdot \cos x \;dx$
   \item $\displaystyle\int x^2 \sin 4x \;dx$
   \item $\displaystyle\int x^3 \sin 6x \;dx$
@@ -1192,15 +1209,52 @@ Bereken $\displaystyle I=\int x^2 \cdot e^x \; dx$
   \item $\displaystyle\int x^2 e^{2x} \;dx$
   \item $\displaystyle\int x^2 e^{-2x} \;dx$
   \item $\displaystyle\int x^3 e^{-7x} \;dx$
-  \item $\displaystyle\int \dfrac{\ln x}{x^2} \;dx$
-  \item $\displaystyle\int \dfrac{\ln x}{x^3} \;dx$
-  \item $\displaystyle\int x \ln x \;dx$
-  \item $\displaystyle\int \dfrac{\ln(\tan x)}{\cos^2 x} \;dx$
   \end{enumerate}
 \end{multicols}
 \end{oefening}
 
-\pagebreak
+\subsubsection{Integraal oplossen als een vergelijking}
+
+Het kan gebeuren dat we tijdens het oplossen van een integraal, de te berekenen integraal terugzien in het rechter lid. Het rechterlid is dus een uitdrukking die de initiële integraal bevat. Stel de integraal dan gelijk aan $I$ en los op dat moment
+$$I=u(I)$$
+op naar $I$.
+
+\subsubsection*{Voorbeeld}
+
+Bereken $\displaystyle I=\int e^x \cdot \sin x \; dx$
+\begin{alignat*}{3}
+  f(x) &= e^x \qquad & dg(x) &= \sin x \; dx\\
+  df(x) &= e^x \; dx \qquad & g(x) &= - \cos x
+\end{alignat*}
+\begin{align*}
+  I
+  &\overset{\text{PI}}{=} -e^x \cdot \cos x + \int e^x \cos x \; dx
+\end{align*}
+\begin{alignat*}{3}
+  f(x) &= e^x \qquad & dg(x) &= \cos x \; dx\\
+  df(x) &= e^x \; dx \qquad & g(x) &= \sin x
+\end{alignat*}
+\begin{alignat*}{2}
+  \Rightarrow \qquad && I
+  &\overset{\text{PI}}{=} -e^x \cdot \cos x + e^x \cdot \sin x - \underbrace{\int e^x \sin x \; dx}_{=I}\\
+  \Leftrightarrow \qquad && I & = -e^x \cdot \cos x + e^x \cdot \sin x - I\\
+  \Leftrightarrow \qquad && 2I & = -e^x \cdot \cos x + e^x \cdot \sin x + C\\
+  \Leftrightarrow \qquad && 2I & = e^x \left(\sin x - \cos x\right) + C\\
+  \Leftrightarrow \qquad && I & = \frac{1}{2} e^x \left(\sin x - \cos x\right) + C \qquad \text{Opmerking: } C/2\\
+\end{alignat*}
+
+\begin{oefening}
+  Bereken
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \item $\displaystyle\int e^{2x} \cos 3x \;dx$
+  \item $\displaystyle\int e^{-x} \sin 2x \;dx$
+  \end{enumerate}
+\end{multicols}
+\end{oefening}
+
+\subsubsection{Andere}
+
 % Substitutie en Partiële integratie nodig
 \begin{oefening}{\scriptsize Bron: Examencommissie Toelatingsexamen Arts en Tandarts, Juli 2016, id: 12190}\\
 De afgeleide van een functie $f$, gedefinieerd op $]0,+\infty[$, is gegeven door $f'(x)=\ln x$. Bovendien is $f(e)=e^2$. Dan is $f(e^2)$ gelijk aan \hfill(geen giscorrectie)
