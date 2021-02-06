@@ -1026,13 +1026,13 @@ bekomen.
 Bereken $\displaystyle\int \dfrac{dx}{\sin x}$
 \begin{alignat*}{2}
   \mbox{stel } t =\tan \dfrac{x}{2}\\
-  \Rightarrow &&\sin x &= \dfrac{2t}{1+t^2} && \mbox{herinner je de $t$-formule}\\
+  \Rightarrow &&\;\sin x &= \dfrac{2t}{1+t^2} \qquad \mbox{herinner je de $t$-formule}\\
   \Rightarrow &&dt &= d\left(\tan\dfrac{x}{2}\right)\\
   && &=\dfrac{1}{\cos^2\dfrac{x}{2}} \; d\left(\dfrac{x}{2}\right)\\
   && &=\dfrac{1}{2 \cdot \cos^2\dfrac{x}{2}} \; dx\\
   \Leftrightarrow &&dx &= 2 \cdot \cos^2\dfrac{x}{2} \; dt\\
-  && &= \dfrac{2}{1+\tan^2\dfrac{x}{2}} \; dt \qquad && \mbox{herinner je de grondformule}\\
-  && &= \dfrac{2}{1+t^2} \; dt && \mbox{herinner je wat $t$ is in de $t$-formules}\\
+  && &= \dfrac{2}{1+\tan^2\dfrac{x}{2}} \; dt \qquad \mbox{herinner je de grondformule}\\
+  && &= \dfrac{2}{1+t^2} \; dt \qquad \mbox{herinner je wat $t$ is in de $t$-formules}\\
 \end{alignat*}
 En dus
 \begin{align*}
@@ -1043,11 +1043,40 @@ En dus
   &= \ln|\tan\dfrac{x}{2}| + C\\
 \end{align*}
 
+\subsubsection{Gemengde oefeningen}
+
 \begin{oefening}
-  Geen oefeningen op de algemene methode.
+  Bereken
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \item $\displaystyle\int (x-2)^5 \;dx$
+  \item $\displaystyle\int \dfrac{1}{2x} \;dx$
+  \item $\displaystyle\int \dfrac{2x-1}{x^2-x}  \;dx$
+  \item $\displaystyle\int \dfrac{3x-1}{\sqrt{3x-1}}  \;dx$
+  \item $\displaystyle\int \dfrac{1}{x \ln 2x}  \;dx$
+  \item $\displaystyle\int e^{2x+3} \;dx$
+  \item $\displaystyle\int \dfrac{6x^2+x}{4x^3-x^2+3} \;dx$
+  \item $\displaystyle\int \cos (-5x) \;dx$
+  \item $\displaystyle\int \dfrac{1}{\sin^2(-x)} \;dx$
+  \item $\displaystyle\int \dfrac{2}{\cos^2(2x)\tan(2x)} \;dx$
+  \end{enumerate}
+\end{multicols}
 \end{oefening}
 
-\pagebreak
+\begin{oefening}
+  Bereken
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \item $\displaystyle\int (4x-2)^3 \;dx$
+  \item $\displaystyle\int \dfrac{1}{\cos^2(3x)} \;dx$
+  \item $\displaystyle\int \dfrac{6x^2-10}{x^3-5x+2} \;dx$
+  \item $\displaystyle\int \sin(-2x) \;dx$
+  \item $\displaystyle\int \dfrac{3}{\sin^2(3x) \cdot \cot(3x)}  \;dx$
+  \end{enumerate}
+\end{multicols}
+\end{oefening}
+
+%\pagebreak
 \subsection{Partiële integratie}
 
 
