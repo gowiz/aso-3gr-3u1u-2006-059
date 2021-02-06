@@ -1079,6 +1079,126 @@ En dus
 %\pagebreak
 \subsection{Partiële integratie}
 
+\subsubsection{Stelling}
+
+
+\begin{mdframed}
+Als de functies $f$ en $g$ differentieerbaar zijn in alle beschouwde punten, dan geldt
+$$\int f(x) \cdot \dg(x) = f(x) \cdot g(x) - \int g(x) \cdot df(x)$$
+\end{mdframed}
+
+\subsubsection{Voorbeelden}
+
+\subsubsection*{Voorbeeld 1}
+Bereken
+$$\int \cos(x)\cdot x\;dx$$
+
+We berekenen eerst
+\begin{alignat*}{3}
+  f(x) &= \cos x \qquad & dg(x) &= x\cdot dx\\
+  df(x) &= - \sin x \; dx \qquad & g(x) &= \dfrac{1}{2} x^2
+\end{alignat*}
+
+Dus
+\begin{align*}
+  \int \cos(x)\cdot x\;dx
+  &\overset{\text{PI}}{=} \cos x \cdot \dfrac{1}{2}x - \int \dfrac{1}{2} x^2 \cdot (-\sin x) \cdot dx\\
+  &= \dfrac{1}{2}x \cos x + \dfrac{1}{2} \underbrace{\int x^2 \cdot \sin x \; dx}_{\text{moeilijker}}
+\end{align*}
+
+Maar nu is de integraal die overblijft in het rechterlid moeilijker dan de oorspronkelijke integraal. We zijn geen opgevers en proberen opnieuw, maar nu met een andere keuze voor $f$ en $dg$ want we kunnen de integraal ook schrijven als
+$$\int \cos(x)\cdot x\;dx = \int x\cdot \cos x\;dx$$
+
+We berekenen nu dus
+\begin{alignat*}{3}
+  f(x) &= x \qquad & dg(x) &= \cos x\cdot dx\\
+  df(x) &= dx \qquad & g(x) &= \sin x
+\end{alignat*}
+
+\vspace{-0.5cm}
+En dus
+\begin{align*}
+  \int x \cdot \cos x \;dx
+  &\overset{\text{PI}}{=} x\cdot \sin x - \int \sin x \cdot dx\\
+  &= x\cdot \sin x + \cos x + C\\
+\end{align*}
+
+\subsubsection*{Voorbeeld 2}
+Bereken $\displaystyle I=\int x\cdot \sin(3x) \cdot dx$
+\begin{alignat*}{3}
+  f(x) &= x \qquad & dg(x) &= \sin 3x\cdot dx\\
+  df(x) &= dx \qquad & g(x) &= -\dfrac{1}{3} \cos 3x
+\end{alignat*}
+\begin{align*}
+  I
+  &\overset{\text{PI}}{=} x\cdot (-\dfrac{1}{3}\cos 3x) - \int (-\dfrac{1}{3})\cos 3x \cdot dx\\
+  &= -\dfrac{1}{3}x\cos 3x + \dfrac{1}{3} \int \cos 3x \; dx\\
+  &= -\dfrac{1}{3}x\cos 3x + \dfrac{1}{3} \int \cos t \; \dfrac{1}{3}dt \qquad t=3x\Rightarrow dt=3dx \Rightarrow dx=\dfrac{1}{3}dt\\
+  &= -\dfrac{1}{3} x \cos 3x + \dfrac{1}{9} \sin 3x + C\\
+\end{align*}
+
+\subsubsection*{Voorbeeld 3}
+Bereken $\displaystyle I=\int \ln x \cdot dx$
+\begin{alignat*}{3}
+  f(x) &= \ln x \qquad & dg(x) &=  dx\\
+  df(x) &= \dfrac{1}{x} \;dx \qquad & g(x) &= x
+\end{alignat*}
+\begin{align*}
+  I
+  &\overset{\text{PI}}{=} x\cdot \ln x - \int \dfrac{1}{x} \cdot x \; dx\\
+  &= x\ln x - x + C\\
+\end{align*}
+
+\needspace{5cm}
+\subsubsection*{Voorbeeld 4}
+Bereken $\displaystyle I=\int x^2 \cdot e^x \; dx$
+\begin{alignat*}{3}
+  f(x) &= x^2 \qquad & dg(x) &= e^x \;dx\\
+  df(x) &= 2x \;dx \qquad & g(x) &= e^x
+\end{alignat*}
+\begin{align*}
+  I
+  &\overset{\text{PI}}{=} x^2 \cdot e^x + 2\int x \cdot e^x \; dx
+\end{align*}
+\begin{alignat*}{3}
+  f(x) &= x \qquad & dg(x) &= e^x \;dx\\
+  df(x) &= dx \qquad & g(x) &= e^x
+\end{alignat*}
+\begin{align*}
+  I
+  &\overset{\text{PI}}{=} x^2 \cdot e^x -2 \left (x \cdot e^x - \int x e^x \; dx\right)\\
+  &= x^2 \cdot e^x -2 x \cdot e^x + 2 \int x e^x \; dx\\
+  &= x^2 \cdot e^x -2 x \cdot e^x + 2  e^x + C\\
+  &= \left( x^2 -2 x + 2\right )  e^x + C
+\end{align*}
+
+\subsubsection{Oefeningen}
+
+\begin{oefening}
+  Bereken
+  \begin{multicols}{2}
+  \begin{enumerate}[(a)]
+  \item $\displaystyle\int x \cdot \cos 2x \;dx$
+  \item $\displaystyle\int x \cdot \sin 5x \;dx$
+  \item $\displaystyle\int x \cdot e^{3x} \;dx$
+  \item $\displaystyle\int x \cdot e^{-4x} \;dx$
+  \item $\displaystyle\int x \cdot e^{7x} \;dx$
+  \item $\displaystyle\int \dfrac{x}{\cos^2 x} \;dx$
+  \item $\displaystyle\int \dfrac{x}{\sin^2 x} \;dx$
+  \item $\displaystyle\int x^2 \cdot \cos x \;dx$
+  \item $\displaystyle\int x^2 \sin 4x \;dx$
+  \item $\displaystyle\int x^3 \sin 6x \;dx$
+  \item $\displaystyle\int x^2 e^{-x} \;dx$
+  \item $\displaystyle\int x^2 e^{2x} \;dx$
+  \item $\displaystyle\int x^2 e^{-2x} \;dx$
+  \item $\displaystyle\int x^3 e^{-7x} \;dx$
+  \item $\displaystyle\int \dfrac{\ln x}{x^2} \;dx$
+  \item $\displaystyle\int \dfrac{\ln x}{x^3} \;dx$
+  \item $\displaystyle\int x \ln x \;dx$
+  \item $\displaystyle\int \dfrac{\ln(\tan x)}{\cos^2 x} \;dx$
+  \end{enumerate}
+\end{multicols}
+\end{oefening}
 
 \pagebreak
 % Substitutie en Partiële integratie nodig
