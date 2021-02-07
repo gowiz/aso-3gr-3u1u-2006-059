@@ -766,16 +766,21 @@ En definiëren nu de operator die op zoek gaat naar die primitieve:
 De basisintegralen volgen uit de lijst van de basisafgeleiden, de afgeleide van de functie in het rechterlid is namelijk gelijk aan de integrand. We hebben telkens een {\bf integratieconstante} $C\in\mathbb{R}$.
 
 \subsubsection*{Basisintegralen}
-
+\begin{mdframed}
+\begin{multicols}{2}
 \begin{align*}
   \int \;dx &= x + C\\
   \int x^n \;dx &= \dfrac{x^{n+1}}{n+1} + C\\
-  \int \dfrac{1}{x} \;dx &= \ln|x| + C\\
+  \int \dfrac{1}{x} \;dx &= \ln|x| + C
+\end{align*}
+\begin{align*}
   \int e^x \;dx &= e^x + C\\
   \int a^x \;dx &= \dfrac{a^x}{\ln a} + C\\
   \int \sin x \;dx &= -\cos x + C\\
   \int \cos x \;dx &= \sin x + C
 \end{align*}
+\end{multicols}
+\end{mdframed}
 
 \needspace{3cm}
 \subsubsection*{Voorbeelden}
@@ -844,7 +849,6 @@ $$\int \dfrac{(1+x)^2}{\sqrt{x}}\;dx$$
 \end{enumerate}
 \end{oefening}
 
-\cleardoublepage
 \subsection{Substitutiemethode}
 
 \subsubsection{$t=x+a$ met $a\in\mathbb{R}$}
