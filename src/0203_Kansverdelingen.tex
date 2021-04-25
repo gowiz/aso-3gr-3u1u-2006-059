@@ -196,6 +196,7 @@ We associëren nu met de beelden van $X$ een functie $f$ van $\mathbb{R}$ naar $
   $$f(1) = \dfrac{1}{2} \qquad\qquad f(2) = \dfrac{1}{2}$$
 
 Deze functie $f$ noemen we de kansfunctie van de kansvariabele $X$ en kan geplot worden:
+
 \begin{center}
 \begin{tikzpicture}[scale=3, line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
 \draw[->,color=black] (-0.21,0) -- (2.25,0);
@@ -204,10 +205,11 @@ Deze functie $f$ noemen we de kansfunctie van de kansvariabele $X$ en kan geplot
 \draw[->,color=black] (0,-0.26) -- (0,1.11);
 \foreach \y in {,0.5,1}
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\clip(-0.21,-0.26) rectangle (2.25,1.11);
+\clip(-0.21,-0.26) rectangle (2.4,1.4);
 \draw [fill] (1,0.5) circle (0.6pt);
 \draw [fill] (2,0.5) circle (0.6pt);
-\draw (1.7,0.7) node[anchor=north west] {$f$};
+\draw (-0.1,1.2) node[anchor=center] {$f$};
+\draw (2.3,-0.1) node[anchor=center] {$X$};
 \end{tikzpicture}
 \end{center}
 
