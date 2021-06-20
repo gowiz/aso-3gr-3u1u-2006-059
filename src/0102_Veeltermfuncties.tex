@@ -373,9 +373,9 @@ We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
 \item Dus $x=-1$ is een oplossing. Dit wil zeggen dat $x-(-1)$ of korter $x+1$ een deler is van de de veelterm. We herschrijven de vergelijking:
   \begin{eqnarray*}
     x^3-4x^2+x+6&=&0\\
-    \lra (x+1)\underbrace{(\qquad ? \qquad)}_{\mbox{restveelterm}}&=&0\\
+    \lra (x+1)\underbrace{(\qquad ? \qquad)}_{\mbox{quotiënt}}&=&0\\
   \end{eqnarray*}
-\item De restveelterm vinden we m.b.v. het algoritme van Horner:
+\item Het quotiënt vinden we m.b.v. het algoritme van Horner:
   \begin{center}
     \begin{tabular}{c|cccc}
       & 1 & -4 & 1 & 6\\
@@ -396,6 +396,16 @@ We lossen de vergelijking $$x^3-4x^2+x+6=0$$ op.
 \item Dus $x^3-4x^2+x+6=0$ heeft als oplossingenverzameling
   $$V=\{-1, 2, 3\}$$
 \end{itemize}
+
+\subsubsection*{Opmerkingen}
+
+Als we een deler zoeken van de vorm $(x-a)$ dan maken we gebruik van de reststelling die we in het vierde middelbaar geleerd hebben. Deze stelt
+\subsubsection*{Reststelling}
+\begin{mdframed}
+  De rest van de deling van een veelterm door $(x-a)$ vinden we als we op de plaats van $x$ de waarde $a$ invullen.
+\end{mdframed}
+
+We noemen een veelterm nu deelbaar door $(x-a)$ als deze rest nul is.
 
 \begin{oefening}
   Los op in $\mathbb{R}$
