@@ -1631,7 +1631,7 @@ Een ecologische verbindingsbrug moet worden ontworpen over een belangrijke snelw
 \cleardoublepage
 \section{Extra oefeningen}
 
-Onderstaand, oefeningen die ooit examenvragen geweest zijn voor dit hoofdstuk.
+Onderstaand vooral oude examenvragen.
 
 \begin{oefening}
 Bespreek de volgende functies in $\mathbb{R}$:
@@ -1675,7 +1675,6 @@ Het wegdek van de brug valt samen met de $x$-as en de eerste pijler ligt op de $
 \end{oefening}
 
 \begin{oefening}{\em Bron: Pearson Edexcel, Pure Mathematics, may 2018}
-
   \begin{center}
     \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
       \begin{axis}[
@@ -1700,12 +1699,48 @@ Het wegdek van de brug valt samen met de $x$-as en de eerste pijler ligt op de $
   Een bedrijf maakt een bepaald type kinderspeelgoed. De jaarlijkse winst wordt gemodelleerd door
   $$ P = 100 - 6.25(x-9)^2 $$
   waarbij $P$ de winst is in duizend euro en $x$ de verkoopsprijs van het speelgoed in euro. Een sketch van de $P$ in functie van $x$ wordt gegeven in de grafiek hierboven.
-
   \begin{enumerate}[(a)]
   \item Verklaar waarom dat 15 euro geen goede verkoopsprijs is voor het speelgoed.
   \item Gegeven dat het bedrijf een jaarlijkse winst maakt van $80000$ euro, bepaal dan de laagst mogelijke verkoopsprijs van het speelgoed.
   \item Wat is de maximaal mogelijke jaarlijkse winst?
   \item Wat moet de verkoopsprijs van het speelgoed zijn bij de maximaal mogelijke jaarlijkse winst?
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}{\em Bron: Pearson Edexcel, Pure Mathematics, may 2018}
+  $$g(x)=4x^3-12x^2-15x+50$$
+
+  \begin{center}
+    \begin{tikzpicture}[line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
+      \begin{axis}[
+        x=.7cm,y=0.03cm,
+        axis lines=middle,
+        xmin=-4.4,
+        xmax=6.4,
+        ymin=-84.6,
+        ymax=114.6,
+        tick style={draw=none},
+        xticklabel=\empty,
+        yticklabel=\empty,
+        xlabel={$x$},
+        ylabel={$y$},
+        ]
+        \clip(-4.403628411996042,-84.61940293696044) rectangle (6.409714395319561,114.61940293696033);
+        \draw[line width=2.pt,smooth,samples=100,domain=-4.403628411996042:6.409714395319561] plot(\x,{4*(\x)^(3)-12*(\x)^(2)-15*(\x)+50});
+        \draw (5,50) node {\scriptsize $ y=g(x) $};
+      \end{axis}
+    \end{tikzpicture}
+  \end{center}
+  \begin{enumerate}[(a)]
+  \item Gebruik de reststelling om aan te tonen dat $(x+2)$ een deler is van $g(x)$.
+  \item Toon nu aan dat $g(x)$ geschreven kan worden als
+    $$g(x)=(x+2)(ax+b)^2$$
+    en waarbij $a$ en $b$ gehele getallen zijn.
+  \item Gebruik je antwoord uit deel (b) en de bovenstaande schets om de waarden van $x$ af te leiden waarvoor:
+    \begin{enumerate}[(i)]
+    \item $g(x) \leq 0$
+    \item $g(2x) = 0$
+    \end{enumerate}
   \end{enumerate}
 \end{oefening}
 
