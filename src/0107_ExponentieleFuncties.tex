@@ -126,11 +126,11 @@ $$\left(\dfrac{a}{b}\right)^{-n} = \left(\dfrac{b}{a}\right)^{n} \qquad \text{Vb
 
 \paragraph{Merk op:} Veel van bovenstaande eigenschappen werden gegeven met maar twee termen of factoren. Ze kunnen gerust uitgebreid worden naar meerdere termen of factoren. Bijvoorbeeld $$(abcd)^n=a^nb^nc^nd^n$$
 
-\paragraph{Veel voorkomende fouten:} Er worden snel fouten gemaakt bij het rekenen met machten. Laten we eens een paar voorbeelden bespreken.
+\paragraph{Veel voorkomende fout:} Er worden snel fouten gemaakt bij het rekenen met machten. Laten we eens een paar voorbeelden bespreken.
 
 \begin{align*}
   \text{Juist: } ab^{-2} &= a\dfrac{1}{b^2} = \dfrac{a}{b^2}\\
-  \text{Fout:  } ab^{-2} &\neq \dfrac{1}{ab^2}
+  \text{Fout:  } ab^{-2} &\neq \color{gray}{\dfrac{1}{ab^2}}
 \end{align*}
 
 De exponent werkt enkel in op hetgeen onmiddellijk links van de exponent staat. In dit geval enkel op de $b$. Je mag dus de $a$ NIET meenemen naar de noemer. Vergelijk dit met het volgende voorbeeld:
@@ -139,7 +139,7 @@ $$ (ab)^{-2} = \dfrac{1}{(ab)^2} $$
 Een gelijkaardig voorbeeld is
 \begin{align*}
   \text{Juist: } \dfrac{1}{3a^{-5}} &= \dfrac{1}{3}\dfrac{1}{a^{-5}} = \dfrac{1}{3}a^5 = \dfrac{a^5}{3}\\
-  \text{Fout:  } \dfrac{1}{3a^{-5}} &= 3a^5
+  \text{Fout:  } \dfrac{1}{3a^{-5}} &\neq \color{gray}{3a^5}
 \end{align*}
 
 Vergelijk dit met
@@ -259,7 +259,7 @@ Vereenvoudig volgende uitdrukkingen. Gebruik in je antwoord enkel nog positieve 
   \item ${\left( {3{x^{ - 2}}{y^{ - 4}}} \right)^{ - 1}}$
   \item ${\left( {{{\left( {2{a^2}} \right)}^{ - 3}}{b^4}} \right)^{ - 3}}$
   \item $\displaystyle \frac{{{c^{ - 6}}{b^{10}}}}{{{b^9}{c^{ - 11}}}}$
-  \item $\displaystyle \frac{{4{a^3}{{\left( {{b^2}a} \right)}^{ - 4}}}}{{{c^{ - 6} 7}}}}$
+  \item $\displaystyle \frac{{4{a^3}{{\left( {{b^2}a} \right)}^{ - 4}}}}{{{c^{ - 6} 7}}}$
 \item $\displaystyle \frac{{{{\left( {6{v^2}} \right)}^{ - 1}}{w^{ - 4}}}}{{{{\left( {2v} \right)}^{ - 3}}{w^{10}}}}$
 \item ${\left( {\displaystyle \frac{{{{\left( {8{x^{21}}} \right)}^0}{y^{ - 3}}{x^8}}}{{{y^{ - 9}}{x^{ - 1}}}}} \right)^6}$
 \item ${\left( {\displaystyle \frac{{{a^2}{b^{ - 4}}{c^{ - 1}}}}{{{b^{ - 9}}{c^8}{a^{ - 4}}}}} \right)^{ - 2}}$
@@ -280,6 +280,160 @@ Vereenvoudig volgende uitdrukkingen. Gebruik in je antwoord enkel nog positieve 
   \end{enumerate}
 \end{oefening}
 
+\pagebreak
+\section{Machten met rationale exponenten}
+
+We weten nu hoe we met machten met gehele exponenten moeten werken. Laten we eens een stapje verder gaan en naar machten met rationale exponenten kijken. Dit zijn exponenten van de vorm
+$$b^{\frac{m}{n}}$$
+met $m$ en $n$ gehele getallen.
+
+\subsection{Vereenvoudigd geval}
+
+We beginnen eenvoudig met
+$$b^{\frac{1}{n}}$$
+met $n$ een geheel getal. In dit geval kunnen we exponenten van deze vorm definiëren als
+\paragraph{Definitie}
+\begin{mdframed}
+  $$a=b^{\frac{1}{n}} \quad\Leftrightarrow\quad a^n=b$$
+\end{mdframed}
+Als we dus $b^{1/n}$ berekenen, dan vragen we ons af welk nummer (in dit geval $a$) we tot de macht $n$ moeten verheffen om $b$ te krijgen.
+
+\paragraph{Benaming:} Vaak noemen we $b^{1/n}$ de $n$-de machtswortel van $b$. Meer hierover verder.
+
+\begin{oefening}
+  Bereken elk van volgende machten.
+  \begin{multicols}{3}
+    \begin{enumerate}[(a)]
+      \itemsep1em
+    \item $25^{\frac{1}{2}}$
+    \item $32^{\frac{1}{5}}$
+    \item $81^{\frac{1}{4}}$
+    \item $(-8)^{\frac{1}{3}}$
+    \item $(-16)^{\frac{1}{4}}$
+    \item $-16^{\frac{1}{4}}$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+Achteraan in de bijlage zit een tabel met machten die je kunnen helpen dit soort oefeningen op te lossen. Maak je niet te veel zorgen als het niet lukt om deze machten op te lossen uit je hoofd, de tabel kan je gebruiken op toetsen en examens.
+
+Alle eigenschappen voor machten met gehele exponent blijven ook geldig voor machten met rationale exponent. Er moeten dus geen nieuwe rekenregels geleerd worden.
+
+\subsection{Algemeen geval}
+
+In het algemeen geval kunnen we de macht herschrijven tot het vereenvoudigd geval m.b.v. macht van een macht:
+$$b^{\frac{m}{n}} = \left(b^{\frac{1}{n}}\right)^m \text{ of } \left(b^m\right)^{\frac{1}{n}}$$
+
+Vaak is het zelfs niet nodig om de macht te herschrijven. Maken we gebruik van de eigenschappen van machten, en herschrijven we 'grote' getallen als een macht, dan worden de berekeningen vaak heel erg eenvoudig:
+\begin{align*}
+  8^{\frac{2}{3}} &= \left(2^3\right)^{\frac{2}{3}}\\
+                  &= 2^{3\cdot \frac{2}{3}}\\
+                  &= 2^2\\
+                  &= 4
+\end{align*}
+
+\begin{oefening}
+  Bereken of vereenvoudig elk van volgende machten.
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep1em
+    \item $ {625^{\frac{3}{4}}}  $
+    \item $ {\left( {\displaystyle \frac{{243}}{{32}}} \right)^{\frac{4}{5}}}  $
+    \item $ {\left( {\displaystyle \frac{{{w^{ - 2}}}}{{16{v^{\frac{1}{2}}}}}} \right)^{\frac{1}{4}}}  $
+    \item $ {\left( {\displaystyle \frac{{{x^2}{y^{ - \frac{2}{3}}}}}{{{x^{ - \frac{1}{2}}}{y^{ - 3}}}}} \right)^{ - \frac{1}{7}}}  $
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\paragraph{Veel voorkomende fout:} Nog een waarschuwing voor een veel voorkomende fout, verwar negatieve exponenten niet met rationale exponenten:
+
+\begin{align*}
+  \text{Juist: }b^{-n} &= \dfrac{1}{b^n}\\
+  \text{Fout:  } b^{-n} &\neq \color{gray}{b^{\frac{1}{n}}}
+\end{align*}
+
+\begin{oefening}
+  Bereken zonder \zrm{ZRM} en geef je antwoord als één enkel getal zonder exponenten.
+  \begin{multicols}{3}
+    \begin{enumerate}[(a)]
+      \itemsep1em
+    \item $ {36^{\frac{1}{2}}}  $
+    \item $ {\left( { - 125} \right)^{\frac{1}{3}}}  $
+    \item $ - {16^{\frac{3}{2}}}  $
+    \item $ {27^{ -\frac{5}{3}}}  $
+    \item $ {\displaystyle \left( {\frac{9}{4}} \right)^{\frac{1}{2}}}  $
+    \item $ {\displaystyle \left( {\frac{8}{{343}}} \right)^{ - \frac{2}{3}}}  $
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+
+\begin{oefening}
+  Vereenvoudig en laat in het antwoord geen negatieve exponenten staan.
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep1em
+    \item $ {\left( {{a^3}\,{b^{ - \frac{1}{4}}}} \right)^{\frac{2}{3}}}  $
+    \item $ {\displaystyle \left( {\frac{{{q^3}\,{p^{ - \frac{1}{2}}}}}{{{q^{ - \frac{1}{3}}}\,p}}} \right)^{\frac{3}{7}}}  $
+    \item $ {x^{\frac{1}{4}}}\,{x^{ - \frac{1}{5}}}  $
+    \item $ {\displaystyle \left( {\frac{{{m^{\frac{1}{2}}}\,{n^{ - \frac{1}{3}}}}}{{{n^{\frac{2}{3}}}\,{m^{ - \frac{7}{4}}}}}} \right)^{ - \frac{1}{6}}}  $
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\subsection{Extra oefeningen}
+
+\begin{oefening}
+  Bereken zonder \zrm{ZRM}. Geef het antwoord als één enkel getal zonder exponenten.
+  \begin{multicols}{3}
+    \begin{enumerate}[(a)]
+      \itemsep1em
+    \item ${64^{\frac{1}{2}}}$
+    \item $- {64^{\frac{1}{2}}}$
+    \item ${16^{\frac{1}{2}}}$
+    \item ${16^{\frac{1}{4}}}$
+    \item ${\left( { - 243} \right)^{\frac{1}{5}}}$
+    \item ${121^{ - \,\,\frac{1}{2}}}$
+    \item ${\left( { - 64} \right)^{ - \,\,\frac{1}{3}}}$
+    \item ${\left( { \displaystyle \frac{{625}}{{256}}} \right)^{\frac{1}{4}}}$
+    \item ${\left( { \displaystyle  - \frac{{27}}{8}} \right)^{\frac{1}{3}}}$
+    \item ${49^{\frac{5}{2}}}$
+    \item ${64^{ - \,\,\frac{5}{6}}}$
+    \item ${\left( { - 729} \right)^{\frac{4}{3}}}$
+    \item ${\left( { \displaystyle \frac{{121}}{{36}}} \right)^{ - \,\,\frac{3}{2}}}$
+    \item ${\left( { \displaystyle  - \frac{{32}}{{243}}} \right)^{\frac{2}{5}}}$
+    \item ${\left( { \displaystyle \frac{{81}}{{625}}} \right)^{\frac{3}{4}}}$
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+
+\begin{oefening}
+  Vereenvoudig volgende uitdrukkingen. Gebruik in je antwoord enkel nog positieve exponenten.
+  \begin{multicols}{3}
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item ${\left( {{p^{ - 2}}{q^{ - 4}}} \right)^{\frac{3}{2}}}$
+  \item ${x^{\frac{3}{4}}}{\left( {{x^2}\,{x^{ - \,\,\frac{1}{3}}}} \right)^{\frac{3}{2}}}$
+  \item ${a^{\frac{1}{2}}}\,{a^{ - \,\,\frac{1}{3}}}\,{a^{\frac{1}{4}}}$
+  \item ${\left( {{m^{ - \,\,\frac{7}{3}}}{n^{\frac{5}{4}}}} \right)^{ - \,\,\frac{8}{9}}}$
+  \item ${\left( { \displaystyle \frac{{{a^{ - \,\,\frac{1}{3}}}\,{b^2}}}{{{b^{\frac{2}{3}}}\,{a^{ - \,\,\frac{3}{4}}}}}} \right)^{\frac{1}{5}}}$
+  \item ${\left( { \displaystyle \frac{{{p^{\frac{1}{2}}}\,{q^{\frac{1}{3}}}}}{{{p^{ - \,\,\frac{1}{3}}}{q^{ - \,\,\frac{1}{4}}}}}} \right)^{ - 3}}$
+  \item ${\left( { \displaystyle \frac{{{x^{\frac{3}{4}}}\,{y^{ - \,\,\frac{2}{3}}}}}{{{x^{\frac{7}{4}}}}}} \right)^{\frac{7}{8}}}$
+  \item ${\left( { \displaystyle \frac{{{b^3}\,{c^{ - \,\,\frac{1}{4}}}\,{a^{ - 1}}}}{{{b^{\frac{1}{4}}}\,{a^{ - \,\,\frac{2}{7}}}{c^{\frac{3}{2}}}}}} \right)^{\frac{2}{3}}}$
+  \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+
+\begin{oefening}
+  Zijn volgende beweringen waar of vals?
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item ${a^{ - \,\,\frac{3}{2}}} = {a^{\frac{2}{3}}}$ \hfill \texttt{WAAR / VALS}\mbox{\hspace{5cm}}
+  \item ${x^{ - n}} = {x^{\frac{1}{n}}}$ \hfill \texttt{WAAR / VALS}\mbox{\hspace{5cm}}
+  \end{enumerate}
+\end{oefening}
 
 \pagebreak
 \section{Machtswortels}
