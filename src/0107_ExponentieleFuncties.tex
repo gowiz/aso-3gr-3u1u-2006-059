@@ -42,7 +42,7 @@
 
 \vfill
 
-De hoofdstukken over machten en machtswortels zijn met toestemming gebaseerd op {\em Paul's Online Notes} die men kan terugvinden op \url{https://tutorial.math.lamar.edu/}. Deze site in je bookmarks plaatsen kan nuttig zijn.
+De hoofdstukken over machten en machtswortels zijn met toestemming gebaseerd op {\em Paul's Online Notes} die men kan terugvinden op \url{https://tutorial.math.lamar.edu/}. Deze site bij je favorieten plaatsen kan nuttig zijn.
 
 \thispagestyle{empty}
 \newpage
@@ -438,6 +438,246 @@ Vaak is het zelfs niet nodig om de macht te herschrijven. Maken we gebruik van d
 \pagebreak
 \section{Machtswortels}
 
+\subsection{Definitie}
+
+\begin{mdframed}
+  Als $n$ een natuurlijk getal groter dan 1 is en $a$ in een reëel getal, dan definiëren we
+  \[\sqrt[n]{a} = {a^{\frac{1}{n}}}\]
+  We noemen $n$ de \textbf{(wortel)index} en $a$ het \textbf{(wortel)grondtal}, het symbool $\sqrt{\mbox{ }}$ wordt de \textbf{machtswortel} genoemd.
+\end{mdframed}
+
+Uit deze definitie blijkt dat de machtswortel een andere manier is om machten met rationale exponent op te schrijven.
+
+\paragraph*{Merk op:} De index moet steeds bij het machtswortelsymbool staan. We zien dit als één enkel symbool.
+
+\paragraph*{Uitzondering:} De \textbf{vierkantswortel} $\sqrt{\mbox{ }}$ is de machtswortel met wortelindex $2$, m.a.w.:
+\[\sqrt[2]{a} = \sqrt a \]
+
+\begin{oefening}
+  Schrijf elk van volgende machtswortels als machten met rationale exponent
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item \(\sqrt[4]{{16}}\)
+  \item \(\sqrt[{10}]{{8x}}\)
+  \item \(\sqrt {{x^2} + {y^2}} \)
+\end{enumerate}
+\end{oefening}
+
+\paragraph*{Veel voorkomende fout:} We moeten terug opletten met haakjes. Wanneer we een uitdrukking van machtswortel naar macht omzetten die meerdere termen of factoren bevat, dan moeten het juiste wortelargument tussen haakjes plaatsen. Beschouw
+\[8{x^{\frac{1}{{10}}}}\]
+
+Uit het voorafgaande weten we dat de exponent enkel werkt op de factor die onmiddellijk gevolgd wordt door de exponent. Dus omzetten geeft
+\[8{x^{\frac{1}{{10}}}} = 8\cdot\sqrt[{10}]{x} \ne \sqrt[{10}]{{8x}}\]
+
+\subsection{Vereenvoudigen van machtswortels}
+
+Zet machtswortels altijd eerst om in machten, vereenvoudig dan de machten met de eigenschappen van machten. Als er na het vereenvoudigen nog machten met rationale exponenten over blijven, dan kan je deze nog omzetten in machtswortels. In je tussenstappen vermijd je dus machtswortels, in je eind antwoord kunnen er wel machtswortels staan.
+
+\paragraph*{Voorbeelden:} We beginnen met een eenvoudig voorbeeld om het principe te tonen. Het lijkt verleidelijk om de tussenstappen over te slaan en met machtswortels te blijven werken. De kracht om over te gaan naar machten wordt gaandeweg als de opgave moeilijker is, wel duidelijk.
+\begin{enumerate}[(a)]
+\item \mbox{}\vspace{-2em}
+  \begin{align*}
+    \sqrt {16} &= {16^{\frac{1}{2}}}\\
+               &= \left(4^2\right)^{\frac{1}{2}}\\
+               &= 4
+  \end{align*}
+\item \mbox{}\vspace{-2em}
+  \begin{align*}
+    \sqrt[4]{16} &= {16^{\frac{1}{4}}}\\
+               &= \left(2^4\right)^{\frac{1}{4}}\\
+               &= 2
+  \end{align*}
+\item \mbox{}\vspace{-2em}
+  \begin{align*}
+    \sqrt[3] {16} &= {16^{\frac{1}{3}}}\\
+               &= \left(2^4\right)^{\frac{1}{3}}\\
+               &= \left(2^3\cdot 2\right)^{\frac{1}{3}}\\
+               &= 2 \cdot 2^{\frac{1}{3}}\\
+               &= 2 \cdot \sqrt[3]{2}
+  \end{align*}
+\item \mbox{}\vspace{-2em}
+  \begin{align*}
+    \sqrt[5] {16^3\cdot\sqrt[3]{16}} &= \left(16^3\cdot 16^{1/3}\right)^{1/5}\\
+               &= 16^{3/5}\cdot 16^{1/15}\\
+               &= 16^{3/5+1/15}\\
+               &= 16^{10/15}\\
+               &= 16^{1/3}\\
+               &= 2 \cdot \sqrt[3]{2}
+  \end{align*}
+\end{enumerate}
+
+\paragraph*{Opmerking: }
+Hierboven beweren we dat $\sqrt{16} = 4$ dit omdat we $16=4^2$. Maar $4$ is niet het enige getal dat we kunnen kwadrateren om $16$ uit te komen! Er geldt ook $16=(-4)^2$. Dus waarom hebben we dan niet als antwoord $-4$? Of beide? Goede vraag! Het is de algemene afspraak, dat als we \textbf{machten met even index vereenvoudigen, dat we dan altijd het positieve antwoord} nemen. Als we het negatieve antwoord willen, dan schrijven we $$- \sqrt {16} = - 4$$.
+
+Merk ook op dat dit probleem zich niet stelt met machtswortels waarbij de wortelindex oneven is. Daar hebben we altijd maar één enkel antwoord.
+
+\begin{oefening}
+  Vereenvoudig
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item \(\sqrt[5]{{243}}\)
+  \item \(\sqrt[4]{{1296}}\)
+  \item \(\sqrt[3]{{ - 125}}\)
+  \item \(\sqrt[4]{{ - 16}}\)
+\end{enumerate}
+\end{oefening}
+
+\paragraph*{Opmerking: }
+We kunnen machtswortels met een negatief grondtal niet uitrekenen als de wortelindex even is, wel als deze oneven is.
+
+\subsection{Vereenvoudigde wortelvorm}
+
+\paragraph{Definitie}
+\begin{mdframed}
+  We noemen de \textbf{vereenvoudigde wortelvorm} de machtswortel waarbij elk van volgende voorwaarde vervuld is:
+  \begin{itemize}
+  \item Alle exponenten in het wortelargument moeten kleiner zijn dan de wortelindex.
+  \item Geen enkele exponent in het wortelargument mag nog een factor gemeenschappelijk hebben met de wortelindex.
+  \item Er bevinden zich geen breuken in het wortelargument.
+  \item Er bevinden zich geen machtswortels in de noemer van een breuk.
+  \end{itemize}
+\end{mdframed}
+
+\subsection{Eigenschappen van machtswortels}
+
+Als $n\in\mathbb{N}\setminus{0,1}$ en $a,b\in\mathbb{R}^+$
+\begin{align*}
+  \sqrt[n]{{{a^n}}} &= a\\
+  \sqrt[n]{{ab}} &= \sqrt[n]{a}\,\sqrt[n]{b}\\
+  \displaystyle \sqrt[n]{{\frac{a}{b}}} &= \frac{{\sqrt[n]{a}}}{{\sqrt[n]{b}}}
+\end{align*}
+
+\paragraph*{Merk op: } Doordat we machtswortels kunnen schrijven als machten, hebben bovenstaande eigenschappen weinig belang. Je kan alle berekeningen doen zonder deze definities.
+
+\paragraph*{Veel voorkomende fout:}
+We kunnen producten en quotiënten onder een machtswortel splitsen. Maar we kunnen hetzelfde niet doen bij een som of een verschil!
+\[\sqrt[n]{{a + b}} \ne {\color{gray}\sqrt[n]{a} + \sqrt[n]{b}}\qquad \text{EN}\qquad\sqrt[n]{{a - b}} \ne {\color{gray}\sqrt[n]{a} - \sqrt[n]{b}}\]
+
+Controleer maar eens met een eenvoudig getalvoorbeeld:
+\[5 = \sqrt {25} = \sqrt {9 + 16} \ne \sqrt 9 + \sqrt {16} = 3 + 4 = 7\]
+
+
+
+\subsection{Som en verschil met machtswortels}
+
+Het optellen en aftrekken met machtswortels verloopt analoog als dat met veeltermen. Herinner je dat we bij het optellen en aftrekken van alle gelijksoortige termen met een $x$, we alle coëfficiënten moeten optellen en aftrekken horende bij de gelijksoortige termen, bijvoorbeeld
+
+\[4x + 9x = \left( {4 + 9} \right)x = 13x\hspace{0.25in}\hspace{0.25in}3x - 11x = \left( {3 - 11} \right)x = - 8x\]
+
+Het optellen en aftrekken van machtswortels werkt net op dezelfde manier, bijvoorbeeld
+
+\[4\sqrt x + 9\sqrt x = \left( {4 + 9} \right)\sqrt x = 13\sqrt x\]
+\[3\,\,\sqrt[{10}]{5} - 11\,\,\sqrt[{10}]{5} = \left( {3 - 11} \right)\sqrt[{10}]{5} = - 8\,\,\sqrt[{10}]{5}\]
+
+\begin{oefening}
+  Vereenvoudig volgende producten, veronderstel dat $x$ positief is
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item \(\left( {\sqrt x + 2} \right)\left( {\sqrt x - 5} \right)\)
+  \item \(\left( {3\,\sqrt x - \sqrt y } \right)\left( {2\sqrt x - 5\sqrt y } \right)\)
+  \item \(\left( {5\sqrt x + 2} \right)\left( {5\sqrt x - 2} \right)\)
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Vereenvoudig (schrijf dus alle machtswortels in hun vereenvoudigde wortelvorm):
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item \(\sqrt {{y^7}} \)
+  \item \(\sqrt[9]{{{x^6}}}\)
+  \item \(\sqrt {18{x^6}{y^{11}}} \)
+  \item \(\sqrt[4]{{32{x^9}{y^5}{z^{12}}}}\)
+  \item \(\sqrt[5]{{{x^{12}}{y^4}{z^{24}}}}\)
+  \item \(\sqrt[3]{{9{x^2}}}\,\sqrt[3]{{6{x^2}}}\)
+\end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Vereenvoudig (schrijf dus alle machtswortels in hun vereenvoudigde wortelvorm):
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item \( \displaystyle \frac{4}{{\sqrt x }}\)
+  \item \( \displaystyle \sqrt[5]{{\frac{2}{{{x^3}}}}}\)
+  \item \( \displaystyle \frac{1}{{3 - \sqrt x }}\)
+  \item \( \displaystyle \frac{5}{{4\sqrt x + \sqrt 3 }}\)
+\end{enumerate}
+\end{oefening}
+
+\subsection{Correcte eigenschap \sqrt[n]{a^n}}
+
+In bovenstaande eigenschappen hebben we geëist dat het grondtal $a$ positief moest zijn. Dit om ons werk in dit hoofdstuk gemakkelijker te maken. Dit hoeft echter niet, hier is de algemene regel:
+
+\[\sqrt[n]{{{a^n}}} = \left\{ {\begin{array}{*{20}{l}}{\left| a \right|}&{{\mbox{if }}n{\mbox{ is
+even}}}\\a&{{\mbox{if }}n{\mbox{ is odd}}}\end{array}} \right.\]
+
+waarbij \(\left| a \right|\) de absolute waarde is van $a$. De uitkomst is dus altijd positief als de index en exponent $n$ even zijn.
+
+Een voorbeeld:
+
+\[\sqrt[8]{{{x^8}}} = \left| x
+\right|\hspace{0.25in}\hspace{0.25in}{\mbox{AND}}\hspace{0.25in}\hspace{0.25in}\,\,\,\,\,\,\sqrt[{11}]{{{x^
+{11}}}} = x\]
+
+Voor vierkantswortels wordt dit
+
+\[\sqrt {{x^2}} = \left| x \right|\]
+
+\begin{oefening}
+  Schrijf volgende uitdrukkingen als macht
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item \(\sqrt[7]{y}\)
+  \item \(\sqrt[3]{{{x^2}}}\)
+  \item \(\sqrt[6]{{ab}}\)
+  \item \(\sqrt {{w^2}{v^3}} \)
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Bereken zonder \zrm{ZRM}
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item  \(\sqrt[4]{{81}}\)
+  \item \(\sqrt[3]{{ - 512}}\)
+  \item \(\sqrt[3]{{1000}}\)
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Vereenvoudig, veronderstel dat $x$, $y$ en $z$ positief zijn
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item \(\sqrt[3]{{{x^8}}}\)
+  \item \(\sqrt {8{y^3}} \)
+  \item \(\sqrt[4]{{{x^7}{y^{20}}{z^{11}}}}\)
+  \item \(\sqrt[3]{{54{x^6}{y^7}{z^2}}}\)
+  \item \(\sqrt[4]{{4{x^3}y}}\,\,\sqrt[4]{{8{x^2}{y^3}{z^5}}}\)
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Vereenvoudig, veronderstel dat $x$ positief is
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item \(\sqrt x \left( {4 - 3\sqrt x } \right)\)
+  \item \(\left( {2\sqrt x + 1} \right)\left( {3 - 4\sqrt x } \right)\)
+\item \(\left( {\sqrt[3]{x} + 2\,\,\sqrt[3]{{{x^2}}}} \right)\left( {4 - \sqrt[3]{{{x^2}}}} \right)\)
+  \end{enumerate}
+\end{oefening}
+
+\begin{oefening}
+  Vereenvoudig, veronderstel dat $x$ en $y$ positief zijn
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item \(\displaystyle \frac{6}{{\sqrt x }}\)
+  \item \(\displaystyle \frac{9}{{\sqrt[3]{{2x}}}}\)
+  \item \(\displaystyle \frac{4}{{\sqrt x + 2\sqrt y }}\)
+  \item \(\displaystyle \frac{{10}}{{3 - 5\sqrt x }}\)
+  \end{enumerate}
+\end{oefening}
+
+\subsection{Extra oefeningen}
+
 \begin{oefening}
 Geef de definitie van een $n$-de machtswortel. ($b$ is een $n$-de machtswortel uit $a$ \ldots)
 \end{oefening}
@@ -459,30 +699,93 @@ Leid mbv. de definitie de volgende eigenschappen van machtswortels af:
 \end{oefening}
 
 \begin{oefening}
-Werk uit en vereenvoudig:
-\begin{multicols}{3}
-\begin{enumerate}[(a)]
-  \itemsep.5em
-  \item $2\sqrt[3]{8}+\sqrt[3]{8}$
-  \item $\left(\sqrt{4}\right)^2$
-  \item $\sqrt{32}$
-  \item $\sqrt[3]{\frac{64}{125}}$
-  \item $\sqrt[4]{16}$
-  \item $\sqrt[3]{4}$
-  \item $\left(-2\sqrt[3]{4}\right)^6$
-  \item $\left(\sqrt[4]{5}\right)^8$
-  \item $\sqrt{98}+\sqrt{72}-\sqrt{32}$
-  \item $\sqrt{80}+\sqrt{45}-\sqrt{125}$
-  \item $\left(\sqrt{27}-\sqrt{12}\right)\sqrt{3}$
-  \item $\left(\sqrt{27}-\sqrt{12}\right):\sqrt{3}$
-  \item $\left(\sqrt[3]{4}+\sqrt[3]{108}\right)\sqrt[3]{2}$
-  \item $\left(\sqrt[3]{16}+\sqrt[3]{1024}\right)\sqrt[3]{4}$
-  \item $\left(\sqrt[4]{128}+\sqrt[4]{8}\right)\sqrt[4]{2}$
-  \item $\left(\sqrt{7}+2\right)\left(\sqrt{7}-2\right)$
-  \item $\left(\sqrt{40}-\sqrt{10}\right)^2$
-  \item $\left(\sqrt{10}-\sqrt{5}\right)^2$
-\end{enumerate}
-\end{multicols}
+  Schrijf volgende uitdrukkingen als macht
+  \begin{multicols}{3}
+    \begin{enumerate}[(a)]
+      \itemsep1em
+    \item \(\sqrt {3n} \)
+    \item \(\sqrt[6]{{2y}}\)
+    \item \(\sqrt[5]{{7{x^3}}}\)
+    \item \(\sqrt[4]{{xyz}}\)
+    \item \(\sqrt {x + y} \)
+    \item \(\sqrt[3]{{{a^3} + {b^3}}}\)
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Bereken zonder \zrm{ZRM}
+  \begin{multicols}{3}
+    \begin{enumerate}[(a)]
+      \itemsep1em
+    \item \(\sqrt {256} \)
+    \item \(\sqrt[4]{{256}}\)
+    \item \(\sqrt[8]{{256}}\)
+    \item \(\sqrt[5]{{ - 1024}}\)
+    \item \(\sqrt[3]{{ - 216}}\)
+    \item \(\sqrt[3]{{343}}\)
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Vereenvoudig, veronderstel dat $x$, $y$ en $z$ positief zijn
+  \begin{multicols}{3}
+    \begin{enumerate}[(a)]
+      \itemsep1em
+    \item \(\sqrt {{z^5}} \)
+    \item \(\sqrt[3]{{{z^5}}}\)
+    \item \(\sqrt[3]{{16{x^{17}}}}\)
+    \item \(\sqrt[6]{{128{y^{11}}}}\)
+    \item \(\sqrt {{x^3}{y^{17}}{z^4}} \)
+    \item \(\sqrt[4]{{{x^3}{y^{20}}{z^5}}}\)
+    \item \(\sqrt[4]{{729{x^7}y\,{z^{13}}}}\)
+    \item \(\sqrt[3]{{4{x^2}y}}\,\,\,\sqrt[3]{{10{x^5}{y^2}}}\)
+    \item \(\sqrt {3x} \,\,\sqrt {6x} \,\,\sqrt {14x} \)
+    \item \(\sqrt[4]{{2x{y^3}}}\,\,\,\sqrt[4]{{32{x^2}{y^2}}}\)
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Vereenvoudig, veronderstel dat $x$ positief is
+  \begin{multicols}{2}
+    \begin{enumerate}[(a)]
+      \itemsep1em
+    \item \(\left( {2\sqrt x + 4} \right)\left( {\sqrt x - 7} \right)\)
+    \item \(\sqrt[3]{x}\left( {\sqrt[3]{x} + 2\sqrt[3]{{{x^4}}}} \right)\)
+    \item \(\left( {\sqrt x + \sqrt {2y} } \right)\left( {\sqrt x - \sqrt {2y} } \right)\)
+    \item \({\left( {\sqrt[4]{x} + \sqrt[4]{{{x^2}}}} \right)^2}\)
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Vereenvoudig, veronderstel dat $x$ en $y$ positief zijn
+  \begin{multicols}{3}
+    \begin{enumerate}[(a)]
+      \itemsep1em
+    \item \(\displaystyle \frac{9}{{\sqrt y }}\)
+    \item \(\displaystyle \frac{3}{{\sqrt {7x} }}\)
+    \item \(\displaystyle \frac{1}{{\sqrt[4]{x}}}\)
+    \item \(\displaystyle \frac{{12}}{{\sqrt[5]{{3{x^2}}}}}\)
+    \item \(\displaystyle \frac{2}{{4 - \sqrt x }}\)
+    \item \(\displaystyle \frac{9}{{\sqrt {3y} + 2}}\)
+    \item \(\displaystyle \frac{4}{{\sqrt 7 - 6\sqrt x }}\)
+    \item \(\displaystyle \frac{{ - 6}}{{\sqrt {5x} + 10\sqrt y }}\)
+    \item \(\displaystyle \frac{{4 + x}}{{x - \sqrt x }}\)
+    \end{enumerate}
+  \end{multicols}
+\end{oefening}
+
+\begin{oefening}
+  Zijn volgende beweringen waar of vals?
+  \begin{enumerate}[(a)]
+    \itemsep1em
+  \item $3{x^{\frac{1}{2}}} = \sqrt {3x}$ \hfill \texttt{WAAR / VALS}\mbox{\hspace{5cm}}
+  \item $\sqrt[3]{{x + 6}} = \sqrt[3]{x} + \sqrt[3]{6}$ \hfill \texttt{WAAR / VALS}\mbox{\hspace{5cm}}
+  \item $\sqrt[4]{{{x^2}}} = \sqrt x$ \hfill \texttt{WAAR / VALS}\mbox{\hspace{5cm}}
+  \end{enumerate}
 \end{oefening}
 
 \begin{oefening}*
