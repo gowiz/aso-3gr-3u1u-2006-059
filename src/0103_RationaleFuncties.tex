@@ -147,6 +147,7 @@ Los op in $\mathbb{R}$:
 \end{exlist}
 \end{oefening}
 
+\needspace{4cm}
 \begin{oefening} % hogere graads oefeningen
 Los op in $\mathbb{R}$:\\
 \begin{enumerate}[(a)]
@@ -188,11 +189,15 @@ Een vrachtwagen moet 400 ton zand vervoeren en maakt daarvoor een aantal ritten,
 \end{oefening}
 
 \begin{oefening}
-Een getal en driemaal zijn omgekeerde zijn samen vier. Welk getal zoeken we? \hfill {\em (1 of 3)}
+  De {\em gulden snede} is de verdeling van een lijnstuk in twee delen met een speciale verhouding. Bij de gulden snede verhoudt het grootste van de twee delen zich tot het kleinste, zoals het gehele lijnstuk zich verhoudt tot het grootste. Geven we het grootste deel aan met $a$ en het kleinste deel met $b$, dan is de verhouding van beide zo dat $$\dfrac{a}{b}=\dfrac{a+b}{a}$$
+  Noem die verhouding nu $\varphi$ en bepaal deze door eerst de lange breuk te splitsen en te vereenvoudigen.
 \end{oefening}
 
 \begin{oefening}
-De som van de omgekeerden van twee opeenvolgende gehele getallen is $\frac{9}{20}$. Bepaal die getallen. \hfill {\em (4 en 5)}
+  \begin{enumerate}[(a)]
+  \item Een getal en driemaal zijn omgekeerde zijn samen vier. Welk getal zoeken we? \hfill {\em (1 of 3)}
+  \item De som van de omgekeerden van twee opeenvolgende gehele getallen is $\frac{9}{20}$. Bepaal die getallen. \hfill {\em (4 en 5)}
+  \end{enumerate}
 \end{oefening}
 
 \begin{oefening}
@@ -276,10 +281,8 @@ $$f(x) = \dfrac{1}{x}$$
       xmax=12.4,
       ymin=-5.4,
       ymax=6.4,
-      xlabel={x},
-      ylabel={y},
-%      xticklabels={-6,-5},
-%      yticklabels={-1,0,1},
+      xlabel={$x$},
+      ylabel={$y$},
       samples=100]
       \addplot[line width=1.6pt,smooth,domain=-12.4:-0.1] (x,1/x);
       \addplot[line width=1.6pt,smooth,domain=0.1:12.4] (x,1/x);
@@ -527,7 +530,7 @@ $$\dom f = \mathbb{R} \setminus \{-3, 3\}$$
 
 \paragraph{Asymptoten}
 De functie nadert naar elk van de polen, we vinden dus twee verticale asymptoten:
-$$\text{V.A. } f: x=-1 \wedge x=1$$
+$$\text{V.A. } f: x=-3 \wedge x=3$$
 
 Teller en noemer zijn van dezelfde graad, hierdoor kunnen we opnieuw eenvoudig de horizontale asymptoot bepalen. We delen hiervoor de hoogstegraadsterm van teller door de hoogstegraadsterm van noemer op voorwaarde dat ze van dezelfde graad zijn.
 $$\text{H.A. } f: y=\dfrac{2\color{gray}x^2}{1\color{gray}x^2} \Rightarrow y=2 $$
