@@ -2,9 +2,9 @@
 
 \input{../gowiz.tex}
 
-\usepackage{auto-pst-pdf}
-\usepackage{pst-poker}
-\psset{inline=symbol}
+% \usepackage{auto-pst-pdf}
+% \usepackage{pst-poker}
+% \psset{inline=symbol}
 
 \usepackage{array}
 
@@ -551,7 +551,7 @@ $$A\mbox{ en }B\mbox{ disjunct }\Leftrightarrow A\cap B = \emptyset$$
 \paragraph*{Voorbeeld}
 Beschouw experiment $E$, het kiezen van een leerling uit de klas. Dan is de gebeurtenis $A$ een jongen kiezen disjunct met de gebeurtenis $B$ een meisje kiezen.
 
-\begin{samepage}
+\needspace{4cm}
 \subsubsection{De kans op de vereniging van twee gebeurtenissen}
 
 \paragraph*{Stelling }Voor de vereniging van twee willekeurige gebeurtenissen A en B, geldt:\\
@@ -578,7 +578,6 @@ Neem $\#U = n$. Op het Venndiagram stel je vast dat: $\#(A\cup B)=\#A + \#B - \#
               &=& \dfrac{\#A}{n} + \dfrac{\#B}{n} - \dfrac{\#(A\cap B)}{n}\\
               &=& P(A) + P(B) - P(A\cap B)
 \end{eqnarray*}
-\end{samepage}
 
 \begin{oefening}
 We gooien lukraak met een zuivere dobbelsteen. Bereken de kans op gebeurtenis C:
@@ -657,6 +656,8 @@ Uit een spel van 32 kaarten (2, 3, 4, 5 en 6 zijn weggenomen) trekt men op asele
   \item Het drie azen zijn.
   \item Er precies één aas bij is.
   \item Er precies 1 heer en 1 dame bij is.
+  \item Dat het 3 gezichten zijn.
+  \item Dat er zeker geen gezichten zijn.
 \end{enumerate}
 \end{oefening}
 
@@ -689,7 +690,11 @@ A en B zijn 2 gebeurtenissen bij een kansexperiment waarvoor geldt dat $P(A\bigc
 \end{oefening}
 
 \begin{oefening}
-Uit een spel van 52 kaarten trekken we lukraak een kaart. Bereken de kans dat het geen getal is (dus boer, koningin of koning)  is.
+  Uit een spel van 52 kaarten trekken we lukraak twee kaarten.
+  \begin{enumerate}[(a)]
+  \item Bereken de kans dat het geen getal is (dus boer, koningin of koning)  is.
+  \item Bereken de kans dat er precies één gezicht (dus precies één kaart is boer, koningin of koning) is.
+  \end{enumerate}
 \end{oefening}
 
 \begin{oefening}
@@ -697,7 +702,7 @@ Je doet mee aan een waar/vals quiz met 10 vragen. Wat is de kans dat je alle vra
 \end{oefening}
 
 \begin{oefening}
-Op een meerkeuze examen met 40 vragen waarbij er telkens 4 keuzes, A-B-C-D, zijn.
+Bij een multiplechoice-examen met 40 vragen waarbij er telkens 4 keuzes (\verb#A B C D#) zijn.
 \begin{enumerate}[(a)]
   \item Wat is de kans dat alle vragen juist beantwoord worden?
   \item Wat is de kans dat de helft of meer dan de helft van de vragen juist beantwoord worden?
@@ -1106,13 +1111,25 @@ Een lot bevat 60 rode en 40 blauwe lampen. De kans dat een rode lamp kapot is be
 In een bepaalde stad zijn er twee taxibedrijven. Het ene heeft groene taxi's, en het andere blauwe. 75\% van de taxi's zijn blauw, de overige zijn groen. Op een nacht raakt een taxi betrokken in een ongeluk en pleegt vluchtmisdrijf. Er was een getuige die beweert dat de taxi groen was. Het gerecht onderzoekt het zicht van de getuige, gezien de duisternis op het ogenblik van het ongeluk. Ze stellen vast dat de getuige in 80\% van de gevallen de juiste kleur ziet, maar in de overige gevallen zich vergist. Wat is de kans dat de taxi die in het ongeluk betrokken was inderdaad groen was, gegeven het feit dat de getuige "groen" zei?
 \end{oefening}
 
+\begin{oefening} {\em Los opnieuw op.}\\
+Je doet mee aan een waar/vals quiz met 10 vragen. Wat is de kans dat je alle vragen juist hebt als je op elk antwoord gokt.
+\end{oefening}
+
+\begin{oefening} {\em Los opnieuw op.}\\
+Bij een multiplechoice-examen met 40 vragen waarbij er telkens 4 keuzes (\verb#A B C D#) zijn.
+\begin{enumerate}[(a)]
+  \item Wat is de kans dat alle vragen juist beantwoord worden?
+  \item Wat is de kans dat de helft of meer dan de helft van de vragen juist beantwoord worden?
+\end{enumerate}
+\end{oefening}
+
 \cleardoublepage
 \section{Extra oefeningen}
 
 \begin{oefening}
   {\em \small Bron: Quiz van TTC De Pinte 2016\\}
   Bij een koppel is de kans dat de vrouw tv kijkt $70\%$. De kans dat de man kijkt is $50\%$. De kans dat de man kijkt als zijn vrouw kijkt is $60\%$. Wat is de kans dat niemand tv kijkt?\\
-  Antwoord: $22\%$
+  \mbox{}\hfill\rotatebox[origin=c]{180}{\em\scriptsize tweeëntwintig procent}
 \end{oefening}
 
 \appendix
@@ -1129,32 +1146,35 @@ In een bepaalde stad zijn er twee taxibedrijven. Het ene heeft groene taxi's, en
     \mbox\
 \end{minipage}
 \begin{minipage}[t]{.7\linewidth}
-  \raisebox{-\height}{
-    \begin{sideways}
-\begin{postscript}
-  \psset{unit=1.1}
-  \psset{colorset=bw}
-
-  \crdAc\crdtwoc\crdtrec\crdfourc\crdfivec
-  \crdsixc\crdsevc\crdeigc\crdninec\crdtenc
-  \crdJc\crdQc\crdKc
-
-  \crdAd\crdtwod\crdtred\crdfourd\crdfived
-  \crdsixd\crdsevd\crdeigd\crdnined\crdtend
-  \crdJd\crdQd\crdKd
-
-  \crdAh\crdtwoh\crdtreh\crdfourh\crdfiveh
-  \crdsixh\crdsevh\crdeigh\crdnineh\crdtenh
-  \crdJh\crdQh\crdKh
-
-  \crdAs\crdtwos\crdtres\crdfours\crdfives
-  \crdsixs\crdsevs\crdeigs\crdnines\crdtens
-  \crdJs\crdQs\crdKs
-\end{postscript}
-\end{sideways}
-}
+  \begin{center}
+    \raisebox{-\height}{\includegraphics[angle=90,width=0.85\textwidth]{kaartspel_2}}
+  \end{center}
 \end{minipage}
 
+%   \raisebox{-\height}{
+%     \begin{sideways}
+% \begin{postscript}
+%   \psset{unit=1.1}
+%   \psset{colorset=bw}
+
+%   \crdAc\crdtwoc\crdtrec\crdfourc\crdfivec
+%   \crdsixc\crdsevc\crdeigc\crdninec\crdtenc
+%   \crdJc\crdQc\crdKc
+
+%   \crdAd\crdtwod\crdtred\crdfourd\crdfived
+%   \crdsixd\crdsevd\crdeigd\crdnined\crdtend
+%   \crdJd\crdQd\crdKd
+
+%   \crdAh\crdtwoh\crdtreh\crdfourh\crdfiveh
+%   \crdsixh\crdsevh\crdeigh\crdnineh\crdtenh
+%   \crdJh\crdQh\crdKh
+
+%   \crdAs\crdtwos\crdtres\crdfours\crdfives
+%   \crdsixs\crdsevs\crdeigs\crdnines\crdtens
+%   \crdJs\crdQs\crdKs
+% \end{postscript}
+% \end{sideways}
+% }
 \end{document}
 
 
