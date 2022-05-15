@@ -112,9 +112,9 @@ We associëren opnieuw met elk element van U een reëel getal, nl. het aantal de
 \end{itemize}
 We krijgen opnieuw een functie $Y$ van $U$ naar $\mathbb{R}$, de kansvariabele $Y:U\to\mathbb{R}$.
 
-\needspace{4cm}
+\needspace{5cm}
 \subsection{Definitie}
-
+\mbox{}
 \begin{mdframed}
 Bij het uitvoeren van een experiment met uitkomstenverzameling $U$ noemen we een {\bf kansvariabele} $X$ een functie die elk element van $U$ afbeeldt op een reëel getal.
 $$X:U\to\mathbb{R}:u\mapsto X(u)=x$$
@@ -157,6 +157,8 @@ Een kansvariabele $X$ is {\bf discreet} als de verzameling van haar getalwaarden
 
 Een kansvariabele $X$ is {\bf continu} als de verzameling van haar getalwaarden overaftelbaar is (voorbeeld: bereik van $X = \mathbb{R}$ of bereik van $X = [0,15]$)
 
+Wij zullen ons beperken tot discrete kansvariabelen.
+
 \begin{oefening}
 Zijn de volgende kansvariabelen discreet of continu?
 \begin{enumerate}[(a)]
@@ -166,8 +168,6 @@ Zijn de volgende kansvariabelen discreet of continu?
 \end{enumerate}
 \end{oefening}
 
-{\scriptsize Wij zullen ons beperken tot discrete kansvariabelen.}
-\vspace*{-1cm}
 
 \cleardoublepage
 \section{Kansfunctie van een discrete kansvariabele}
@@ -205,11 +205,11 @@ Deze functie $f$ noemen we de kansfunctie van de kansvariabele $X$ en kan geplot
 \draw[->,color=black] (0,-0.26) -- (0,1.11);
 \foreach \y in {,0.5,1}
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
-\clip(-0.21,-0.26) rectangle (2.4,1.4);
+\clip(-0.5,-0.26) rectangle (2.4,1.4);
 \draw [fill] (1,0.5) circle (0.6pt);
 \draw [fill] (2,0.5) circle (0.6pt);
-\draw (-0.1,1.2) node[anchor=center] {$f$};
-\draw (2.3,-0.1) node[anchor=center] {$X$};
+\draw (-0.1,1.2) node[anchor=center] {\footnotesize $f(X)$};
+\draw (2.3,-0.1) node[anchor=center] {\footnotesize $X$};
 \end{tikzpicture}
 \end{center}
 
@@ -251,7 +251,7 @@ Deze functie $f$ noemen we de kansfunctie van de kansvariabele $X$ en kan geplot
 
 \pagebreak
 \subsection{Definitie}
-
+\mbox{}
 \begin{mdframed}
 Bij het uitvoeren van een experiment met uitkomstenverzameling $U$ en kansvariabele $X$, noemen we de {\bf kansfunctie} van $X$ de functie van $\mathbb{R}$ naar $[0,1]$ die aangeeft met welke kans elke getalwaarde van $X$ wordt aangenomen.
 \end{mdframed}
@@ -272,7 +272,7 @@ Bepaal voor de kansvariabele dat het aantal fietsbellen dat getest wordt door ze
 \section{Verdelingsfunctie van een kansvariabele}
 
 \subsection{Definitie}
-
+\mbox{}
 \begin{mdframed}
 Bij het uitvoeren van een experiment met uitkomstenverzameling $U$ en kansvariabele $X$, noemen we de {\bf verdelingsfunctie} van $X$ de functie $F$ van $\mathbb{R}$ naar $[0,1]$ die voor elk reëel getal $x$ aangeeft met welke kans de getalwaarde van $X$ kleiner is of gelijk is aan $x$.
 \end{mdframed}
@@ -463,7 +463,7 @@ De te verwachten winst per tablet noemen we de {\bf verwachtingswaarde} van de k
 
 \pagebreak
 \subsection{Definitie}
-
+\mbox{}
 \begin{mdframed}
 Is aan een experiment met uitkomstenverzameling $U$ een kansvariabele $X$ verbonden, dan noemen we de {\bf verwachtingswaarde} $E(X)$ van deze kansvariabele:
 
@@ -503,7 +503,7 @@ We beschouwen opnieuw het farmaceutisch bedrijf waar tabletten van een geneesmid
   \end{center}
   en met verwachtingswaarde
   $$E(X) = 0.2$$
-  \item We wijzigen nu de gegevens door voor de winst en verlies de getallen $0.50$ en $–7.00$ te gebruiken. We krijgen dan een kansvariabele $Y$ met kansfunctie $g$ en verwachtingswaarde $E(Y)$:
+  \item We wijzigen nu de gegevens door voor de winst en verlies de getallen $0.50$ en $-7.00$ te gebruiken.We krijgen dan een kansvariabele $Y$ met kansfunctie $g$ en verwachtingswaarde $E(Y)$:
   \begin{center}
     \begin{tabular}{c|c}
     $y_i$ & $f(y_i)$\\
@@ -526,7 +526,7 @@ Om te weten over welke kansvariabele deze verwachtingswaarde het meest zegt, ber
 
 \pagebreak
 \subsection{Definitie}
-
+\mbox{}
 \begin{mdframed}
 Is aan een experiment met uitkomstenverzameling $U$ een kansvariabele $X$ verbonden met verwachtingswaarde $E(X)$, dan noemen we de {\bf variantie} $\Var(X)$ van deze kansvariabele:
 $$\Var(X)=\sum_i(x_i-E(X))^2\cdot f(x_i)$$
@@ -624,7 +624,7 @@ De kansvariabele $X$ die als getalwaarde het aantal mogelijke successen aanneemt
 \end{oefening}
 
 \subsection{Definitie}
-
+\mbox{}
 \begin{mdframed}
 Een kansexperiment dat bestaat uit $n$ onafhankelijke deelexperimenten, elk met juist twee uitkomsten, {\em succes} met kans $p$ en {\em mislukking} met kans $q=1-p$ heeft een $n$-tal als uitkomst. De kansvariabele $X$ die elke uitkomst afbeeldt op het aantal successen volgt een {\bf binomiale verdeling}.
 \end{mdframed}
@@ -661,7 +661,7 @@ We gooien 20 maal een muntstuk op en we nemen de uitslag kop als succes.
 \needspace{5cm}
 
 \subsection{Eigenschappen van de binomiale verdeling}
-
+\mbox{}
 \begin{mdframed}
 Als $X \sim B(n,p)$ met $q=1-p$, dan geldt:
 \begin{itemize}
@@ -760,7 +760,7 @@ Men mag hier echter niet uit besluiten dat alles normaal verdeeld zou zijn. Typi
 
 \pagebreak
 \subsection{Definitie}
-
+\mbox{}
 \begin{mdframed}
 Een kansvariabele $X$ is {\bf normaal verdeeld} als haar kansfunctie $f$ gegeven wordt door
 $$f(x)=\dfrac{1}{\sigma{\sqrt{2\pi}}}\;e^{-\dfrac{1}{2}\left(\dfrac{x-\mu}{\sigma}\right)^2}$$
@@ -869,7 +869,7 @@ Voor elke $x$ geldt $f(\mu-x)=f(\mu+x)$. $f$ is dus {\em symmetrisch} ten opzich
 \begin{oefening}
 Bepaal in de onderstaande grafieken het gemiddelde $\mu$ en de standaardafwijking $\sigma$ van de vet gedrukte functie.
 
-\definecolor{cqcqcq}{rgb}{0.75,0.75,0.75}
+\definecolor{cqcqcq}{rgb}{0.95,0.95,0.95}
 \begin{multicols}{2}
 \begin{center}
 \begin{tikzpicture}[xscale=0.6,yscale=5,line cap=round,line join=round,>=triangle 45,x=1.0cm,y=1.0cm]
@@ -881,7 +881,7 @@ Bepaal in de onderstaande grafieken het gemiddelde $\mu$ en de standaardafwijkin
 \foreach \y in {,0.2,0.4,0.6,0.8}
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \clip(-6,-0.1) rectangle (6,1);
-\draw[line width=1.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[color=gray,line width=.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
 \draw[line width=2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x)-3)/0.5)^2)/2)/(sqrt(2*3.1415926535)*abs(0.5))});
 \end{tikzpicture}
 $$\mu=\arule{1cm} \sigma=\arule{1cm}$$
@@ -897,7 +897,7 @@ $$\mu=\arule{1cm} \sigma=\arule{1cm}$$
 \foreach \y in {,0.2,0.4,0.6,0.8}
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \clip(-6,-0.1) rectangle (6,1);
-\draw[line width=1.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[color=gray,line width=.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
 \draw[line width=2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x)+2)/2)^2)/2)/(sqrt(2*3.1415926535)*abs(2))});
 \end{tikzpicture}
 $$\mu=\arule{1cm} \sigma=\arule{1cm}$$
@@ -913,7 +913,7 @@ $$\mu=\arule{1cm} \sigma=\arule{1cm}$$
 \foreach \y in {,0.2,0.4,0.6,0.8}
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \clip(-6,-0.1) rectangle (6,1);
-\draw[line width=1.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[color=gray,line width=.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
 \draw[line width=2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x)+3)/1)^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
 \end{tikzpicture}
 $$\mu=\arule{1cm} \sigma=\arule{1cm}$$
@@ -929,7 +929,7 @@ $$\mu=\arule{1cm} \sigma=\arule{1cm}$$
 \foreach \y in {,0.2,0.4,0.6,0.8}
 \draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
 \clip(-6,-0.1) rectangle (6,1);
-\draw[line width=1.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
+\draw[color=gray,line width=.2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-((\x))^2)/2)/(sqrt(2*3.1415926535)*abs(1))});
 \draw[line width=2pt, smooth,samples=100,domain=-6.0:6.0] plot(\x,{exp((-(((\x)-0)/4)^2)/2)/(sqrt(2*3.1415926535)*abs(4))});
 \end{tikzpicture}
 $$\mu=\arule{1cm} \sigma=\arule{1cm}$$
@@ -1199,7 +1199,7 @@ Omdat er geen tabellen bestaan voor de niet-standaard normaal verdeelde populati
   $$z=\dfrac{x-\mu}{\sigma}=\dfrac{22-20}{4}=0.5$$
   \item Vervolgens zoeken we in de tabel van de standaardnormale verdeling het percentage waarnemingen met een $z$-score kleiner dan $0.5$:
   $$P(X\leq 22)=P(Z\leq 0.5)=\Phi(0.5)=0.69146=69.15\%$$
-  \item Antwoord: $30.85\%$ van de waarnemingen is kleiner dan $22$.
+  \item Antwoord: $69.15\%$ van de waarnemingen is kleiner dan $22$.
 \end{enumerate}
 
 \paragraph*{Opmerking: } De $z$-score mag afgerond worden op $2$ cijfers na de komma want de tabel achteraan is maar correct op 2 cijfers na de komma.
@@ -1335,7 +1335,7 @@ Van een groot aantal schapen in een bepaald gebied is één op de twintig bruin.
 \end{oefening}
 
 \begin{oefening}
-Ongeveer 1 op elke 20 mannen heeft last van "rood-groen" kleurenblindheid.
+Ongeveer 1 op elke 20 mannen heeft last van {\em rood-groen} kleurenblindheid.
 \begin{enumerate}[(a)]
   \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen juist 750 rood-groen-kleurenblinden voorkomen?
   \item Hoe groot is de kans dat in een representatieve steekproef van 15.000 mannen minstens 750 rood-groen-kleurenblinden voorkomen?
