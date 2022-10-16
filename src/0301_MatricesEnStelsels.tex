@@ -38,6 +38,7 @@
 \clearpage
 
 {
+  \scriptsize
   \singlespacing
   \tableofcontents
 }
@@ -1330,13 +1331,170 @@ Veronderstel dat we een bepaalde vissoort hebben die enkel tijdens het derde lev
 \pagebreak
 \section{Gauss-Jordan}
 
-\subsection{Stelsels van eerstegraadsvergelijkingen}
+\subsection{Voorbeeld}
 
-\subsubsection{Voorbeeld}
+\subsubsection*{Opgave}
 
-Stel dat Iana, Layana en Yana in volle coronatijd gaan aanschuiven in de rij voor de supermarkt om mondmaskertjes, ontsmettingsspray en flesjes zeep te kopen. Iana koopt vijf mondmaskertjes, één spray en één flesje zeep en geeft 22 euro uit. Layana koopt 2 mondmaskertjes, 2 sprays en 2 flesjes zeep en geeft 28 euro uit. Yana geeft tenslotte 38 euro uit aan één mondmaskertje, drie sprays en drie flesjes zeep.
+Stel dat Iana, Layana en Yana in volle coronatijd gaan aanschuiven in de rij voor de supermarkt om mondmaskertjes, ontsmettingsspray en flesjes zeep te kopen. Iana koopt vijf mondmaskertjes, één spray en één flesje zeep en geeft 22 euro uit. Layana koopt 2 mondmaskertjes, 2 sprays en 2 flesjes zeep en geeft 28 euro uit. Yana geeft tenslotte 26 euro uit aan één mondmaskertje en drie flesjes zeep.
 
 Ze komen thuis en vragen zich plots af hoeveel één mondmaskertje, één ontsmettingsspray en één flesje zeep koste? (2,4,8)
+
+\subsubsection*{Herschrijven in een stelsel}
+
+Kiezen we als {\bf onbekenden}
+\begin{itemize}
+\item prijs van één mondmaskertje: $x$
+\item prijs van één ontsmettingsspray: $y$
+\item prijs van één flesje zeep: $z$
+\end{itemize}
+
+Dan kunnen we uit het probleem een {\bf stelsel van vergelijkingen} halen
+$$\left\{
+\begin{aligned}
+  5x + 1y + 1z &= 22\\
+  2x + 2y + 2z &= 28\\
+  1x + 0y + 3z &= 26
+\end{aligned}\right.$$
+
+Dit stelsel bevat 3 vergelijkingen van de eerste graad en 3 onbekenden, we spreken van een\\
+{\bf 3\texttimes 3-stelsel}
+
+\subsubsection*{Herschrijven als een matrixvergelijking}
+
+Definiëren we de volgende matrices
+\begin{itemize}
+\item $A$: de coëfficiëntenmatrix van het stelsel
+  $$A = \begin{pmatrix}5 & 1 & 1\\ 2 & 2 & 2 \\ 1 & 0 & 3\end{pmatrix}$$
+\item $X$: onbekendenmatrix
+  $$X = \begin{pmatrix} x \\ y \\ z \end{pmatrix}$$
+\item $B$: matrix van constante termen (bekenden)
+  $$B = \begin{pmatrix} 22 \\ 28 \\ 26 \end{pmatrix}$$
+\end{itemize}
+
+Dan kunnen we voorgaande stelsel herschrijven als een {\bf matrixvergelijking}
+
+$$A \cdot X = B$$
+
+Theoretisch kan zo een matrixvergelijking opgelost worden m.b.v. de inverse matrix van $A$:
+
+\begin{align*}
+  &&  A \cdot X &= B\\
+  \Leftrightarrow&&  A^{-1} \cdot A \cdot X &= A^{-1} \cdot B\\
+  \Leftrightarrow&&  I \cdot X &= A^{-1} \cdot B\\
+  \Leftrightarrow&&  X &= A^{-1} \cdot B\\
+\end{align*}
+
+Maar die inverse matrix vinden is niet eenvoudig. Gelukkig vonden Gauss en Jordan een gemakkelijke methode om zo een soort stelsel op te lossen. We doen de methode als voorbeeld en leggen dan daarna de operaties en stappen uit.
+
+\subsubsection*{Herschrijven in verhoogde matrix}
+
+Uiteindelijk zal bij zo een soort probleem de naam van de onbekenden geen verschil maken. We werken dus voorlopig alleen met de coëfficiënten en de bekende termen. Laten we deze samenvoegen in wat we de {\bf verhoogde matrix} noemen
+
+$$
+\begin{pmatrix}
+  5 & 1 & 1 & | & 22\\
+  2 & 2 & 2 & | & 28\\
+  1 & 0 & 3 & | & 26
+\end{pmatrix}
+$$
+
+\subsubsection*{Methode van Gauss-Jordan toepassen}
+
+$$
+\begin{pmatrix}
+  5 & 1 & 1 & | & 22\\
+  2 & 2 & 2 & | & 28\\
+  1 & 0 & 3 & | & 26
+\end{pmatrix}
+\thicksim\text{even freestylen}\thicksim
+\begin{pmatrix}
+  1 & 0 & 0 & | & 2\\
+  0 & 1 & 0 & | & 4\\
+  0 & 0 & 1 & | & 8
+\end{pmatrix}
+$$
+
+\subsubsection*{Terug schrijven als stelsel}
+
+$$\left\{
+\begin{aligned}
+  1x + 0y + 0z &= 2\\
+  0x + 1y + 0z &= 4\\
+  0x + 0y + 1z &= 8
+\end{aligned}\right. \Leftrightarrow
+\left\{
+\begin{aligned}
+  x &= 2\\
+  y &= 4\\
+  z &= 8
+\end{aligned}\right.$$
+
+\subsubsection*{Antwoord op de opgave}
+
+We vinden nu een {\bf oplossingenverzameling} voor het stelsel
+$$V = \{ (2,4,8) \}$$
+en dus een {\bf antwoord} op het oorspronkelijke probleem:\\
+{\it De mondmaskertjes hadden een prijs van 2 euro, de ontsmettingsspray van 4 euro en de zeep koste 8 euro. Wat een tijden.}
+
+\subsection{Gelijkwaardige stelsel}
+
+\paragraph{Definitie}
+
+Gelijkwaardige stelsel zijn stelsels met dezelfde oplossingenverzameling.
+
+\paragraph{Vroeger}
+
+2\texttimes 2-stelsels met substitutiemethode of combinatiemethode
+
+\paragraph{Nu}
+$n \times n$-stelsels met de methode van Gauss-Jordan
+
+\subsection{Elementaire rijoperaties}
+
+\paragraph{Verwisselen twee rijen}
+
+$$R_i \leftrightarrow R_j$$
+
+\paragraph{Vermenigvuldigen rij met getal}
+
+$$R_i \leftarrow k \cdot R_i \qquad \text{ met } k \neq 0$$
+
+\paragraph{Veelvoud rij bij andere rij}
+
+$$R_i \leftarrow R_i + k \cdot R_j \qquad \text{ met } i \neq j$$
+
+\subsection{Trapvorm}
+
+\paragraph{Rij canonieke trapmatrix} voldoet aan
+\begin{itemize}
+\item alle nulrijen staan onderaan
+\item \textbf{hoofdelement}: eerste niet-nulelement in een rij is 1
+\item alle elementen boven of onder een hoofdelement zijn 0
+\item \textbf{trapvorm}: elke rij begint met meer nullen van de vorige
+\end{itemize}
+
+$$
+\begin{pmatrix}
+  1 & 0 & a_1 & 0 & b_1 \\
+  0 & 1 & a_2 & 0 & b_2 \\
+  0 & 0 & 0   & 1 & b_3 \\
+  0 & 0 & 0   & 0 & 0   \\
+\end{pmatrix}
+$$
+
+
+\subsection{Methode van Gauss-Jordan}
+
+\begin{itemize}
+\item Methode uitvoeren op de verhoogde matrix van het stelsel.
+\item Gebruik enkel elementaire rijoperaties om de verhoogde matrix om te vormen tot een rij canonieke trapmatrix.
+  \begin{itemize}
+  \item Door verwisselen twee rijen of door delen van een rij zorg je dat het hoofdelement bekomt.
+  \item Daarna kuis je de kolom op door in deze kolom allemaal nullen te creëren door telkens het veelvoud van de rij bij een andere rij op te tellen.
+  \end{itemize}
+\item Nu kan je de oplossingenverzameling aflezen uit de verhoogde matrix.
+\end{itemize}
+
 
 \begin{oefening}
 Los op in $\mathbb{R}^3$:
@@ -1376,6 +1534,10 @@ Los op in $\mathbb{R}^3$:
 \end{multicols}
 \end{oefening}
 
+\subsection{Bijzondere gevallen}
+
+
+
 \begin{oefening}
 Los op in $\mathbb{R}^3$:
 \begin{multicols}{2}
@@ -1413,6 +1575,8 @@ Los op in $\mathbb{R}^3$:
 \end{enumerate}
 \end{multicols}
 \end{oefening}
+
+\subsection{Extra oefeningen}
 
 \begin{oefening}
 Los op in $\mathbb{R}^3$:
