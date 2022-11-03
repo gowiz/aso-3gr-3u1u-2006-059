@@ -1,16 +1,19 @@
 BUILDDIR = ../build
+TMPBUILDDIR = ../build/tmp
 SRCIN = $(shell echo *.tex *.png *.jpg *.m)
 SRCOUT = $(addprefix $(BUILDDIR)/, $(SRCIN))
 
 BUILDFILES = $(BUILDDIR)/Makefile $(BUILDDIR)/latexmkrc
 
-all: $(BUILDDIR) $(BUILDFILES) $(SRCOUT)
+all: $(TMPBUILDDIR) $(BUILDDIR) $(BUILDFILES) $(SRCOUT)
 	$(MAKE) -C $(BUILDDIR)
 
 .PHONY:
+$(TMPBUILDDIR):
+	mkdir -p $(TMPBUILDDIR)
+
 $(BUILDDIR):
 	mkdir -p $(BUILDDIR)
-	mkdir -p $(BUILDDIR)/tmp
 
 $(BUILDDIR)/Makefile: BuildMakefile
 	cp BuildMakefile $(BUILDDIR)/Makefile
@@ -42,6 +45,7 @@ cleanall: clean
 
 .PHONY: cleanbuild
 cleanbuild:
+	$(RM) ../build/tmp
 	$(RM) ../build
 
 .PHONY: release
