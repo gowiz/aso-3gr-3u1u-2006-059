@@ -27,6 +27,8 @@
 \usepackage{mathtools}
 \usepackage{changepage}
 \usepackage{calc}
+\usepackage{xparse}
+
 
 \newcommand{\todo}[1]{{\color{red} TODO: #1}}
 
@@ -324,6 +326,24 @@ Onderwerp & \multicolumn{2}{l|}{\bf #3} &\\
   \begin{enumerate}[(a)]
     \setlength{\itemsep}{0.5em} }
 { \end{enumerate}
-  \end{multicols} }
+\end{multicols} }
+
+
+\NewDocumentEnvironment{exenum}{O{1}}{%
+  \ifnum#1=1\relax
+    \vspace{0.6em}
+  \else
+    \vspace{-0.5em}
+    \begin{multicols}{#1}
+   \fi
+   \begin{enumerate}[(a)]
+   \itemsep=0.6em
+ }{%
+  \end{enumerate}
+  \ifnum#1=1\relax
+  \else
+    \end{multicols}
+  \fi
+}
 
 
