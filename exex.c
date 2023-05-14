@@ -46,6 +46,7 @@ int main() {
 
     if (strstr(line, "\\appendix") ==  line) {
       state = IN_APPENDIX;
+      printf("\\cleardoublepage\n");
     }
 
     if (strstr(line, "\\begin{document}") == line) {
